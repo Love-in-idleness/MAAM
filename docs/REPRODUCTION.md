@@ -58,6 +58,12 @@ Missing declaration ranges, absent source files, and lexical failures remain mis
 全声明 token 总数尚未拆成命题和证明两部分，因此全库兴趣排名明确使用引用计数口径，源码压缩比和论文图表独立报告。
 Whole-declaration token totals are not split into statement and proof lengths, so full-corpus interest rankings explicitly use the reference-count convention, with source compression and paper plots reported separately.
 
+索引保留各声明的原始 wrapped 计数和其所在分量的展开量；若分量含多个声明，则不把两种对象混合成单个声明的压缩比，而返回空比值。
+The index retains each declaration's original wrapped counts and its component's expansion; for a component containing multiple declarations, it returns null ratios rather than combining measurements of different objects.
+
+共享或生成的源码范围仍保留供检查，但只对具名源码范围提供源码压缩比。
+Shared or generated source ranges remain available for inspection, but source compression ratios are supplied only for named source ranges.
+
 ## 核对目标 / Comparison targets
 
 论文报告的节点数为收缩前 463719、收缩后 463661，最大展开量约为 `10^104`，最大深度约为 300。

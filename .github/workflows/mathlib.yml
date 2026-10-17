@@ -7,12 +7,13 @@ on:
       - 'scripts/analyze_mathlib.py'
       - 'scripts/paper_config.json'
       - 'scripts/build_paper_exporter.sh'
+      - 'lean/native/**'
       - '.github/workflows/mathlib.yml'
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: fixed-mathlib-reproduction
+  group: fixed-mathlib-native-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   reproduce:

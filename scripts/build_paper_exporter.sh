@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Compile the unchanged Lean exporter through Lean's official C backend.
+# Compile with interpreter symbols needed to import Lean environment extensions.
 set -euo pipefail
 MAAM_EXPORT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-mkdir -p "$MAAM_EXPORT_ROOT/build"
-lean -o "$MAAM_EXPORT_ROOT/build/PaperExport.olean" \
-  -c "$MAAM_EXPORT_ROOT/build/PaperExport.c" "$MAAM_EXPORT_ROOT/maam/PaperExport.lean"
-leanc -O3 -o "$MAAM_EXPORT_ROOT/build/maam-paper-export" \
-  "$MAAM_EXPORT_ROOT/build/PaperExport.c"
+mkdir -p "$MAAM_EXPORT_ROOT/build/native"
+cp "$MAAM_EXPORT_ROOT/maam/PaperExport.lean" "$MAAM_EXPORT_ROOT/build/native/PaperExport.lean"
+cp "$MAAM_EXPORT_ROOT/lean/native/lakefile.lean" "$MAAM_EXPORT_ROOT/build/native/lakefile.lean"
+cp "$MAAM_EXPORT_ROOT/lean/lean-toolchain" "$MAAM_EXPORT_ROOT/build/native/lean-toolchain"
+(cd "$MAAM_EXPORT_ROOT/build/native" && lake build maam-paper-export)
+cp "$MAAM_EXPORT_ROOT/build/native/.lake/build/bin/maam-paper-export" \
+  "$MAAM_EXPORT_ROOT/build/maam-paper-export"
