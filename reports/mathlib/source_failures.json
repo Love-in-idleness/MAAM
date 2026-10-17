@@ -1,0 +1,2315 @@
+{
+  "Mathlib.Algebra.Lie.OfAssociative": {
+    "declarations": 61,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Order.Defs.Unbundled": {
+    "declarations": 150,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Order.Directed": {
+    "declarations": 74,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Data.List.Perm.Basic": {
+    "declarations": 41,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.Finset.Fold": {
+    "declarations": 31,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.Multiset.Fold": {
+    "declarations": 18,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Order.CauSeq.Basic": {
+    "declarations": 160,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.List.Basic": {
+    "declarations": 225,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Order.Preorder.Chain": {
+    "declarations": 82,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Order.Zorn": {
+    "declarations": 18,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Topology.UniformSpace.UniformEmbedding": {
+    "declarations": 93,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Defs": {
+    "declarations": 107,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Basic": {
+    "declarations": 171,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Integral.Bochner.L1": {
+    "declarations": 87,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Order.Monotone.Basic": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 603; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Orthogonal": {
+    "declarations": 71,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.PiL2": {
+    "declarations": 172,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.TensorProduct.Tower": {
+    "declarations": 109,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.open"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.Matrix.Determinant.Basic": {
+    "declarations": 90,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Logic.Function.Iterate": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 80; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 203; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.PGame.Basic": {
+    "declarations": 14,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 338; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 347; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 350; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Order.Filter.FilterProduct": {
+    "declarations": 25,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.GroupAction.Defs": {
+    "declarations": 145,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.QuotientGroup.Defs": {
+    "declarations": 117,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Orthonormal": {
+    "declarations": 61,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.LinearMap": {
+    "declarations": 45,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Projection.Submodule": {
+    "declarations": 33,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Projection.Basic": {
+    "declarations": 115,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Projection.Minimal": {
+    "declarations": 10,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional": {
+    "declarations": 23,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.List.Sort": {
+    "declarations": 93,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Topology.UniformSpace.AbstractCompletion": {
+    "declarations": 78,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Continuous": {
+    "declarations": 10,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.PGame.Order": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 173; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 564; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 557; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Analysis.BoxIntegral.UnitPartition": {
+    "declarations": 51,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Calculus": {
+    "declarations": 71,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Spectrum.Prime.Topology": {
+    "declarations": 164,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Category.Ring.FilteredColimits": {
+    "declarations": 36,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.open"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Category.MonCat.FilteredColimits": {
+    "declarations": 58,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.open"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Category.Grp.FilteredColimits": {
+    "declarations": 46,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.open"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Limits.Shapes.Pullback.Assoc": {
+    "declarations": 94,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Limits.Shapes.Pullback.Pasting": {
+    "declarations": 110,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup": {
+    "declarations": 78,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.Solvable": {
+    "declarations": 64,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.PresentedMonoid.Basic": {
+    "declarations": 37,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.Matrix.Hermitian": {
+    "declarations": 53,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Ring.Ext": {
+    "declarations": 38,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 423; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 275; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 82; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Probability.Density": {
+    "declarations": 16,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 118; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 63; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 164; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.Coxeter.Basic": {
+    "declarations": 71,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Geometry.RingedSpace.PresheafedSpace.Gluing": {
+    "declarations": 64,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.RootSystem.Finite.Lemmas": {
+    "declarations": 27,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.QuotientGroup.Basic": {
+    "declarations": 94,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.GroupAction.Quotient": {
+    "declarations": 83,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Integral.DivergenceTheorem": {
+    "declarations": 33,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.BoxIntegral.Basic": {
+    "declarations": 72,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.Seq.Defs": {
+    "declarations": 111,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn": {
+    "declarations": 34,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Topology.Instances.AddCircle.Defs": {
+    "declarations": 91,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.TensorProduct.Graded.External": {
+    "declarations": 30,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Defs": {
+    "declarations": 68,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Truncated": {
+    "declarations": 70,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.InitTail": {
+    "declarations": 23,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.FieldTheory.Finite.Basic": {
+    "declarations": 86,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Basic": {
+    "declarations": 55,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.AffineSpace.Ordered": {
+    "declarations": 50,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.l2Space": {
+    "declarations": 61,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Subspace": {
+    "declarations": 26,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Function.L2Space": {
+    "declarations": 38,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Function.StronglyMeasurable.Inner": {
+    "declarations": 9,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Group.FundamentalDomain": {
+    "declarations": 202,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Measure.Haar.Quotient": {
+    "declarations": 40,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Galois.Prorepresentability": {
+    "declarations": 56,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Tactic.FunProp.Types": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 106; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 107; kind=Lean.Parser.Command.deriving"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Scheme": {
+    "declarations": 85,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.ProjectiveSpectrum.StructureSheaf": {
+    "declarations": 41,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.Data.Seq.Computation": {
+    "declarations": 192,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Data.Stream.Init": {
+    "declarations": 153,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Analysis.LocallyConvex.WeakOperatorTopology": {
+    "declarations": 47,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.Convex.Cone.Basic": {
+    "declarations": 39,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Projective.Basic": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 339; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 316; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 293; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.Coxeter.Length": {
+    "declarations": 50,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.PresentedGroup": {
+    "declarations": 26,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Algebra.Spectrum.Basic": {
+    "declarations": 104,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Instances": {
+    "declarations": 44,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Geometry.Euclidean.Angle.Oriented.Basic": {
+    "declarations": 121,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.TwoDim": {
+    "declarations": 86,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Dual": {
+    "declarations": 28,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho": {
+    "declarations": 43,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.Gluing": {
+    "declarations": 100,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Topology.Gluing": {
+    "declarations": 49,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Topology.Sheaves.Presheaf": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 117; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Analysis.CStarAlgebra.Module.Defs": {
+    "declarations": 47,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.Normed.Algebra.Spectrum": {
+    "declarations": 88,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.CStarAlgebra.Spectrum": {
+    "declarations": 34,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.FieldTheory.IsAlgClosed.Spectrum": {
+    "declarations": 23,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Polynomial.Eisenstein.IsIntegral": {
+    "declarations": 12,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.Weights.Basic": {
+    "declarations": 3,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 151; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 76; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 71; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.TraceForm": {
+    "declarations": 41,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Comma.Over.OverClass": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 44; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.DedekindDomain.Different": {
+    "declarations": 61,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Function.ConditionalExpectation.CondexpL2": {
+    "declarations": 40,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Formula": {
+    "declarations": 15,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 339; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 305; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 325; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 131; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 191; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 175; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Bicategory.Adjunction.Basic": {
+    "declarations": 8,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 40; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 49; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 163; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.AffineSpace": {
+    "declarations": 4,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 40; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 64; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 63; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RepresentationTheory.Homological.Resolution": {
+    "declarations": 55,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 239; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 249; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 244; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.GroupAction.Basic": {
+    "declarations": 64,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Category.Grp.EpiMono": {
+    "declarations": 82,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Limits.Indization.FilteredColimits": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Comma.Presheaf.Colimit": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Pointwise.Stabilizer": {
+    "declarations": 68,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.RamificationInertia.Basic": {
+    "declarations": 77,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Conductor": {
+    "declarations": 16,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Data.PFunctor.Univariate.M": {
+    "declarations": 92,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.Sl2": {
+    "declarations": 28,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.Derivation.Killing": {
+    "declarations": 17,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Util.Notation3": {
+    "declarations": 62,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Spectrum": {
+    "declarations": 36,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Symmetric": {
+    "declarations": 46,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Rayleigh": {
+    "declarations": 18,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Adjoint": {
+    "declarations": 118,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Ideal.Over": {
+    "declarations": 8,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 115; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 117; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 174; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.CartanMatrix": {
+    "declarations": 38,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point": {
+    "declarations": 6,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 290; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 298; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 256; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Completion": {
+    "declarations": 12,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Geometry.Manifold.VectorBundle.Hom": {
+    "declarations": 30,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.MeasureTheory.Function.SpecialFunctions.Inner": {
+    "declarations": 9,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Geometry.Manifold.VectorBundle.Tangent": {
+    "declarations": 62,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.SpecialFunctions.Log.ERealExp": {
+    "declarations": 3,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 34; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 43; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 49; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Kaehler.Basic": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 535; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 523; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 512; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.LocalRing.Module": {
+    "declarations": 21,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Tactic.FunProp.Theorems": {
+    "declarations": 4,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 163; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 166; kind=Lean.Parser.Command.deriving"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 307; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Jacobian.Basic": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 505; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 300; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 346; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.UniversalEnveloping": {
+    "declarations": 20,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.PowerSeries.Trunc": {
+    "declarations": 3,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 36; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 37; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 61; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Topology.Algebra.Valued.ValuativeRel": {
+    "declarations": 46,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Discriminant": {
+    "declarations": 20,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.NumberField.InfinitePlace.Ramification": {
+    "declarations": 77,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Preadditive.Projective.Basic": {
+    "declarations": 5,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 150; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 144; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 166; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.FLT.Three": {
+    "declarations": 100,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.NumberField.Cyclotomic.Three": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 185; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 174; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 165; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.DiscreteValuationRing": {
+    "declarations": 12,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Identities": {
+    "declarations": 26,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Frobenius": {
+    "declarations": 31,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.IsPoly": {
+    "declarations": 37,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Verschiebung": {
+    "declarations": 24,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.MulP": {
+    "declarations": 7,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Domain": {
+    "declarations": 10,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.MulCoeff": {
+    "declarations": 27,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.Padics.MahlerBasis": {
+    "declarations": 9,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 199; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 160; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 151; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Group.ForwardDiff": {
+    "declarations": 15,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 163; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 135; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 120; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Compare": {
+    "declarations": 22,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Trace.Quotient": {
+    "declarations": 19,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.PGame.Algebra": {
+    "declarations": 10,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 171; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 512; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 496; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.FrobeniusFractionField": {
+    "declarations": 23,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.TensorPower.Basic": {
+    "declarations": 37,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.Coxeter.Inversion": {
+    "declarations": 64,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Localization.Monoidal": {
+    "declarations": 74,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.EckmannHilton": {
+    "declarations": 4,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 87; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 81; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Valuation.Discrete.Basic": {
+    "declarations": 56,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Valuation.Extension": {
+    "declarations": 35,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Positive": {
+    "declarations": 66,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Bicategory.Modification.Oplax": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 86; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Linarith.Oracle.SimplexAlgorithm.Datatypes": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 56; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.Cover.Over": {
+    "declarations": 33,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.Geometry.Euclidean.Angle.Oriented.Rotation": {
+    "declarations": 53,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Sites.Over": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 155; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Analysis.Calculus.Gradient.Basic": {
+    "declarations": 69,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.Projection.Reflection": {
+    "declarations": 24,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.CliffordAlgebra.Contraction": {
+    "declarations": 55,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Complete": {
+    "declarations": 8,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Category.ModuleCat.Sheaf.PushforwardContinuous": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 43; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.GroupAction.CardCommute": {
+    "declarations": 8,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Spectrum.Prime.ChevalleyComplexity": {
+    "declarations": 41,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.Padics.Hensel": {
+    "declarations": 65,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Jacobian.Formula": {
+    "declarations": 10,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 741; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 715; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 710; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.LinearPMap": {
+    "declarations": 34,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Teichmuller": {
+    "declarations": 14,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Homology.DerivedCategory.Ext.ExtClass": {
+    "declarations": 29,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.Matrix.ZPow": {
+    "declarations": 43,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Semisimple": {
+    "declarations": 14,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.WittVector.Isocrystal": {
+    "declarations": 44,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.Sites.Small": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 101; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 226; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.OfNorm": {
+    "declarations": 21,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.GroupAction.MultipleTransitivity": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 493; kind=Lean.Parser.Command.in"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.LieTheorem": {
+    "declarations": 9,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 288; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 300; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.Preadditive.OfBiproducts": {
+    "declarations": 14,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.mixfix"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.WellApproximable": {
+    "declarations": 28,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Polynomial.CoeffMem": {
+    "declarations": 13,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "a parser-context command failed to parse"
+      }
+    ]
+  },
+  "Mathlib.FieldTheory.ChevalleyWarning": {
+    "declarations": 8,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.CartanExists": {
+    "declarations": 11,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.Restrict": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 57; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Lemmas": {
+    "declarations": 13,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Tactic.NormNum.NatFactorial": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 56; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.Game.Impartial": {
+    "declarations": 5,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 168; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 162; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 132; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.Game.Nim": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 207; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 190; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Linter.DeprecatedSyntaxLinter": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 123; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.LocalRing.Quotient": {
+    "declarations": 14,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Topology.Algebra.Order.Floor": {
+    "declarations": 35,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.GroupTheory.Perm.DomMulAct": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 116; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Algebra.BigOperators.Module": {
+    "declarations": 5,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.FractionalIdeal.Extended": {
+    "declarations": 12,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Algebra.Lie.Rank": {
+    "declarations": 30,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Projective.Formula": {
+    "declarations": 11,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 847; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 808; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 834; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.DivisionPolynomial.Basic": {
+    "declarations": 4,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 335; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 116; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 327; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.RamificationInertia.Unramified": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 31; kind=lemma"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 82; kind=Lean.Parser.Command.in"
+      }
+    ]
+  },
+  "Mathlib.Analysis.Calculus.ContDiff.Operations": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 71; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.NumberTheory.ModularForms.DedekindEta": {
+    "declarations": 22,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Geometry.Manifold.PoincareConjecture": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 49; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.FunProp.Core": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 413; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Card": {
+    "declarations": 12,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.Analysis.InnerProductSpace.MeanErgodic": {
+    "declarations": 5,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.Stalk": {
+    "declarations": 2,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 69; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Tactic.TFAE": {
+    "declarations": 4,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 278; kind=Lean.Parser.Command.elab_rules"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 245; kind=Lean.Parser.Command.declaration"
+      },
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 224; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.RingTheory.Spectrum.Prime.LTSeries": {
+    "declarations": 6,
+    "examples": [
+      {
+        "status": "source_context_error",
+        "error": "parser context replay failed: Lean.Parser.Command.notation"
+      }
+    ]
+  },
+  "Mathlib.CategoryTheory.MorphismProperty.Comma": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 88; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Recall": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 16; kind=Lean.Parser.Command.syntax"
+      }
+    ]
+  },
+  "Mathlib.SetTheory.Game.Basic": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 159; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Bound.Attribute": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 77; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Simps.Basic": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 292; kind=Lean.Parser.Command.syntax"
+      }
+    ]
+  },
+  "Mathlib.Analysis.ODE.PicardLindelof": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 414; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Says": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 100; kind=Lean.Parser.Command.syntax"
+      }
+    ]
+  },
+  "Mathlib.Data.Finsupp.Notation": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 25; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Jacobian.Point": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 611; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.AlgebraicGeometry.EllipticCurve.Projective.Point": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 598; kind=lemma"
+      }
+    ]
+  },
+  "Mathlib.Tactic.Lemma": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 16; kind=Lean.Parser.Command.syntax"
+      }
+    ]
+  },
+  "Mathlib.Data.TypeVec": {
+    "declarations": 1,
+    "examples": [
+      {
+        "status": "source_parse_error",
+        "error": "command parse failed at line 562; kind=Lean.Parser.Command.declaration"
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 {
   "export": {
+    "exporter_commit": "fc871dec1e3ccef1855b2be750ef2eabe52fe42e",
     "import_policy": "initializers enabled; imported environment persistent until process exit",
     "lean_version": "4.24.0",
     "module": "Mathlib",
@@ -9,15 +10,27 @@
     "root_count": 463719,
     "schema_version": 1,
     "scope": "Mathlib",
-    "token_policy": "Lean tokenFn on declaration ranges; all comments excluded; named/shared source reported separately"
+    "token_policy": "distinct original syntax-leaf starts in declaration ranges; parser context replay; comments excluded; named/shared source and modifier sensitivity separate"
   },
-  "input_sha256": "78980bd8111dd9be9f1ada633d627b04eea435c0c1a53243f3b70accff077d35",
+  "input_sha256": "76bf0aa7198153e028306c3004f8af3d28286691e145818ba38de07abc0713eb",
+  "dependency_evidence_sha256": "aa6a9f45f81f7a0c97bb519d11975f99c5a18c4e799140bfd0a22509cae9f537",
   "vertices_before_scc": 473345,
   "vertices_after_scc": 473287,
+  "scope_counts": {
+    "module_prefix": "Mathlib",
+    "declarations_before_scc": 463719,
+    "components_after_scc": 463661,
+    "explicit_primitive_boundary_vertices": 9626,
+    "other_nonprimitive_vertices": 0
+  },
   "edges_before_scc": 13773290,
   "edges_after_scc": 13769765,
   "cyclic_components": 979,
   "vertices_in_cyclic_components": 1037,
+  "nontrivial_scc_components": 27,
+  "vertices_in_nontrivial_sccs": 85,
+  "singleton_self_loop_components": 952,
+  "scc_vertex_reduction": 58,
   "scc_policy": "remove internal arcs, sum external multiplicities, assign each condensed sink primitive length 1",
   "unsafe_definitions_retained": 98,
   "maximum_depth": 299,
@@ -26,15 +39,49 @@
     "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType"
   ],
   "source_status_counts": {
-    "no_declaration_range": 113094,
-    "shared_or_generated_source": 30890,
-    "named_source": 137217,
+    "no_declaration_range": 187444,
+    "shared_or_generated_source": 54955,
+    "named_source": 212013,
     "absent": 1,
     "primitive": 9625,
-    "lexical_error": 182518
+    "source_context_error": 9015,
+    "source_parse_error": 292
   },
-  "named_source_components": 146843,
-  "any_source_components": 177733,
+  "named_source_components": 221638,
+  "source_failure_modules": 229,
+  "any_source_components": 276587,
+  "modifier_sensitivity": {
+    "policy": "exclude declaration modifier syntax nodes, including attributes and protected/private/noncomputable; primary full-command counts unchanged",
+    "named_components": 220105,
+    "log2_unwrapped_by_source_tokens": {
+      "status": "fitted",
+      "slope": 0.2280249977010228,
+      "intercept": 35.61676125310733,
+      "r_squared": 0.7983069489747292,
+      "stderr": 0.008337043565345325,
+      "bins": 191,
+      "range": [
+        10,
+        200
+      ],
+      "minimum_count": 20,
+      "weighting": "unweighted regression of exact-bucket medians; prespecified range"
+    },
+    "source_tokens_by_depth": {
+      "status": "fitted",
+      "slope": 0.19295600005958016,
+      "intercept": 27.6072336256033,
+      "r_squared": 0.5798016545611424,
+      "stderr": 0.010647735468240816,
+      "bins": 240,
+      "range": [
+        10,
+        250
+      ],
+      "minimum_count": 20,
+      "weighting": "unweighted regression of exact-bucket medians; prespecified range"
+    }
+  },
   "fits": {
     "log2_unwrapped_by_depth": {
       "status": "fitted",
@@ -52,10 +99,10 @@
     },
     "log2_unwrapped_by_source_tokens": {
       "status": "fitted",
-      "slope": 0.20767648079372655,
-      "intercept": 29.231380515344064,
-      "r_squared": 0.7812126881324212,
-      "stderr": 0.007994344064989356,
+      "slope": 0.22806594860717389,
+      "intercept": 35.26038542978438,
+      "r_squared": 0.8476668627479171,
+      "stderr": 0.007032571169113223,
       "bins": 191,
       "range": [
         10,
@@ -66,11 +113,11 @@
     },
     "source_tokens_by_depth": {
       "status": "fitted",
-      "slope": 0.20727700704012317,
-      "intercept": 28.379955731420928,
-      "r_squared": 0.5103801940388644,
-      "stderr": 0.01384568610416523,
-      "bins": 217,
+      "slope": 0.186674543352924,
+      "intercept": 29.13678362115272,
+      "r_squared": 0.5856848877930504,
+      "stderr": 0.010177239556241847,
+      "bins": 240,
       "range": [
         10,
         250
@@ -89,7 +136,11 @@
       "median_log2_unwrapped_per_source_token_approx": 0.4
     },
     "vertex_count_difference_before_scc": 9626,
-    "vertex_count_difference_after_scc": 9626
+    "vertex_count_difference_after_scc": 9626,
+    "scope_vertex_count_difference_before_scc": 0,
+    "scope_vertex_count_difference_after_scc": 0,
+    "maximum_unwrapped_log10_difference": 6.639362722731477,
+    "count_interpretation": "full graph includes explicit primitive boundary; module-scope counts are reported separately without dropping dependencies"
   },
   "landmarks": [
     {
@@ -101,8 +152,9 @@
       "matches": [
         {
           "name": "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType",
-          "source_status": "lexical_error",
-          "source_tokens": -1,
+          "source_status": "named_source",
+          "source_tokens": 678,
+          "source_tokens_without_modifiers": 673,
           "unwrapped_log10": 110.63936272273148,
           "depth": 205
         }
@@ -120,6 +172,7 @@
           "name": "VectorBundleCore.isOpenMap_proj",
           "source_status": "named_source",
           "source_tokens": 7,
+          "source_tokens_without_modifiers": 7,
           "unwrapped_log10": 48.027667210850005,
           "depth": 136
         }
@@ -137,6 +190,7 @@
           "name": "ContDiffBump.integrable",
           "source_status": "named_source",
           "source_tokens": 10,
+          "source_tokens_without_modifiers": 9,
           "unwrapped_log10": 54.38682398216572,
           "depth": 166
         }
@@ -154,6 +208,7 @@
           "name": "Hyperreal.infinitesimal_zero",
           "source_status": "named_source",
           "source_tokens": 8,
+          "source_tokens_without_modifiers": 8,
           "unwrapped_log10": 31.56051160408926,
           "depth": 74
         }
@@ -165,12 +220,12 @@
     "beta": 0.5,
     "length_basis": "references",
     "iterations": 44,
-    "l1_residual": 4.313080437608765e-13,
+    "l1_residual": 4.3130907611867694e-13,
     "mass": 0.9999999999999767,
     "eligible_theorems": 356733
   },
   "interpretation": "independent operational reproduction; discrepancies are reported, not fitted away",
-  "source_measurement": "full declaration-range Lean lexical tokens; comments excluded; named and shared/generated ranges analysed separately",
+  "source_measurement": "distinct original syntax-leaf starts in declaration ranges; parser context replay; comments excluded; named/shared source and modifier sensitivity separate",
   "unresolved": [
     "paper does not specify exact source-range filtering or regression windows",
     "no source-level signature/proof token split is inferred from whole-range counts",
