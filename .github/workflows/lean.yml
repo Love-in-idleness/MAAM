@@ -1,6 +1,20 @@
 name: Lean adapter
-# Separate opt-in check: not locally compiled in the authoring environment.
+# Check the pinned Lean toolchain when the adapter or its fixtures change.
 on:
+  push:
+    paths:
+      - 'maam/Export.lean'
+      - 'maam/lean.py'
+      - 'lean/**'
+      - 'scripts/check_lean_smoke.py'
+      - '.github/workflows/lean.yml'
+  pull_request:
+    paths:
+      - 'maam/Export.lean'
+      - 'maam/lean.py'
+      - 'lean/**'
+      - 'scripts/check_lean_smoke.py'
+      - '.github/workflows/lean.yml'
   workflow_dispatch:
 permissions:
   contents: read
