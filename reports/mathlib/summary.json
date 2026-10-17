@@ -1,0 +1,179 @@
+{
+  "export": {
+    "import_policy": "initializers enabled; imported environment persistent until process exit",
+    "lean_version": "4.24.0",
+    "module": "Mathlib",
+    "primitive_policy": "Sort and out-of-scope declarations only; unsafe definitions retained",
+    "record": "metadata",
+    "revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+    "root_count": 463719,
+    "schema_version": 1,
+    "scope": "Mathlib",
+    "token_policy": "Lean tokenFn on declaration ranges; all comments excluded; named/shared source reported separately"
+  },
+  "input_sha256": "78980bd8111dd9be9f1ada633d627b04eea435c0c1a53243f3b70accff077d35",
+  "vertices_before_scc": 473345,
+  "vertices_after_scc": 473287,
+  "edges_before_scc": 13773290,
+  "edges_after_scc": 13769765,
+  "cyclic_components": 979,
+  "vertices_in_cyclic_components": 1037,
+  "scc_policy": "remove internal arcs, sum external multiplicities, assign each condensed sink primitive length 1",
+  "unsafe_definitions_retained": 98,
+  "maximum_depth": 299,
+  "maximum_unwrapped_log10": 110.63936272273148,
+  "maximising_declarations": [
+    "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType"
+  ],
+  "source_status_counts": {
+    "no_declaration_range": 113094,
+    "shared_or_generated_source": 30890,
+    "named_source": 137217,
+    "absent": 1,
+    "primitive": 9625,
+    "lexical_error": 182518
+  },
+  "named_source_components": 146843,
+  "any_source_components": 177733,
+  "fits": {
+    "log2_unwrapped_by_depth": {
+      "status": "fitted",
+      "slope": 0.9956569695499585,
+      "intercept": 20.866917532054288,
+      "r_squared": 0.9884064334941982,
+      "stderr": 0.006975117608599767,
+      "bins": 241,
+      "range": [
+        10,
+        250
+      ],
+      "minimum_count": 20,
+      "weighting": "unweighted regression of exact-bucket medians; prespecified range"
+    },
+    "log2_unwrapped_by_source_tokens": {
+      "status": "fitted",
+      "slope": 0.20767648079372655,
+      "intercept": 29.231380515344064,
+      "r_squared": 0.7812126881324212,
+      "stderr": 0.007994344064989356,
+      "bins": 191,
+      "range": [
+        10,
+        200
+      ],
+      "minimum_count": 20,
+      "weighting": "unweighted regression of exact-bucket medians; prespecified range"
+    },
+    "source_tokens_by_depth": {
+      "status": "fitted",
+      "slope": 0.20727700704012317,
+      "intercept": 28.379955731420928,
+      "r_squared": 0.5103801940388644,
+      "stderr": 0.01384568610416523,
+      "bins": 217,
+      "range": [
+        10,
+        250
+      ],
+      "minimum_count": 20,
+      "weighting": "unweighted regression of exact-bucket medians; prespecified range"
+    }
+  },
+  "reported_comparison": {
+    "expected": {
+      "vertices_before_scc": 463719,
+      "vertices_after_scc": 463661,
+      "maximum_depth_approx": 300,
+      "maximum_unwrapped_log10_approx": 104,
+      "median_log2_unwrapped_per_depth_approx": 1.0,
+      "median_log2_unwrapped_per_source_token_approx": 0.4
+    },
+    "vertex_count_difference_before_scc": 9626,
+    "vertex_count_difference_after_scc": 9626
+  },
+  "landmarks": [
+    {
+      "expected": {
+        "name": "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType",
+        "module": "Mathlib.AlgebraicGeometry.AffineTransitionLimit",
+        "unwrapped_log10_approx": 104
+      },
+      "matches": [
+        {
+          "name": "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType",
+          "source_status": "lexical_error",
+          "source_tokens": -1,
+          "unwrapped_log10": 110.63936272273148,
+          "depth": 205
+        }
+      ]
+    },
+    {
+      "expected": {
+        "suffix": ".isOpenMap_proj",
+        "module": "Mathlib.Topology.VectorBundle.Basic",
+        "wrapped_tokens": 7,
+        "unwrapped_log10_approx": 48
+      },
+      "matches": [
+        {
+          "name": "VectorBundleCore.isOpenMap_proj",
+          "source_status": "named_source",
+          "source_tokens": 7,
+          "unwrapped_log10": 48.027667210850005,
+          "depth": 136
+        }
+      ]
+    },
+    {
+      "expected": {
+        "suffix": ".integrable",
+        "module": "Mathlib.Analysis.Calculus.BumpFunction.Normed",
+        "wrapped_tokens": 9,
+        "unwrapped_log10_approx": 54.30102999566398
+      },
+      "matches": [
+        {
+          "name": "ContDiffBump.integrable",
+          "source_status": "named_source",
+          "source_tokens": 10,
+          "unwrapped_log10": 54.38682398216572,
+          "depth": 166
+        }
+      ]
+    },
+    {
+      "expected": {
+        "name": "Hyperreal.infinitesimal_zero",
+        "module": "Mathlib.Analysis.Real.Hyperreal",
+        "wrapped_tokens": 8,
+        "unwrapped_log10_approx": 31.556302500767288
+      },
+      "matches": [
+        {
+          "name": "Hyperreal.infinitesimal_zero",
+          "source_status": "named_source",
+          "source_tokens": 8,
+          "unwrapped_log10": 31.56051160408926,
+          "depth": 74
+        }
+      ]
+    }
+  ],
+  "reference_basis_interest": {
+    "alpha": 0.85,
+    "beta": 0.5,
+    "length_basis": "references",
+    "iterations": 44,
+    "l1_residual": 4.313080437608765e-13,
+    "mass": 0.9999999999999767,
+    "eligible_theorems": 356733
+  },
+  "interpretation": "independent operational reproduction; discrepancies are reported, not fitted away",
+  "source_measurement": "full declaration-range Lean lexical tokens; comments excluded; named and shared/generated ranges analysed separately",
+  "unresolved": [
+    "paper does not specify exact source-range filtering or regression windows",
+    "no source-level signature/proof token split is inferred from whole-range counts",
+    "no empirical validation against human interest judgements"
+  ]
+}

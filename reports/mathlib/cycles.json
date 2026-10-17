@@ -1,0 +1,5934 @@
+[
+  {
+    "members": [
+      "FreeAddMagma.rec._@.Mathlib.Algebra.Free.2051233953._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Monoidal.Mor₂OfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerRight.srcM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Util.MemoFix.0.memoFixImplObj.fix"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimplexCategoryGenRel.simplicialInsert._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PFunctor.Approx.sCorec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.diagSub._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.addWeight._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.ofSubtype'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.findPrefix._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.RefinedDiscrTree.encodeExprWithEta.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Vector.ofFn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.Mor₁.src._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Export.exportDef.ind._unsafe_rec",
+      "Lean.Export.exportExpr._unsafe_rec",
+      "Lean.Export.exportDef._unsafe_rec",
+      "Lean.Export.exportDef.axdef._unsafe_rec",
+      "Lean.Export.exportDef.defn._unsafe_rec",
+      "Lean.Export.exportDef.indbody._unsafe_rec"
+    ],
+    "size": 6
+  },
+  {
+    "members": [
+      "FreeMagma.liftAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "GenContFract.IntFractPair.stream._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Lookup.0.Lean.Meta.RefinedDiscrTree.getMatchLoop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.SetTheory.Nimber.Field.0.Nimber.List.toNimber._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.transformDeclAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PSum.rec.eq._@.Mathlib.Util.CompileInductive.2377832586._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeMagma.repr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.toExprCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "lowerCentralSeries._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.withNestedExistsIntro._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.ofAscListAux₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.DepRewrite.visit._unsafe_rec",
+      "Mathlib.Tactic.DepRewrite.visitInner._unsafe_rec",
+      "Mathlib.Tactic.DepRewrite.visitAndCast._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Mathlib.Linter.getImportIds._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.listDecode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Deriving.Traversable.nestedTraverse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Balanced._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FunProp.ToBatteries.0.Mathlib.Meta.FunProp.betaThroughLetAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.splitWrtCompositionAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.isPrefixOf?._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExProd.evalIntCast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExBase.evalIntCast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExSum.evalIntCast._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Relabelling.refl._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "preCantorSet._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.parse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.GeneralizeProofs.abstractProofs.visitProof._unsafe_rec",
+      "Mathlib.Tactic.GeneralizeProofs.abstractProofs._unsafe_rec",
+      "Mathlib.Tactic.GeneralizeProofs.abstractProofs.visit._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.stepNormal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddMagma.repr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.stepRet._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "iteratedWreathToPermHom._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.nf_opowAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "catalan._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.linarith._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.sMod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.MeasureTheory.VectorMeasure.Decomposition.Hahn.0.MeasureTheory.SignedMeasure.restrictNonposSeq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Multiset.strongInductionOn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "IntermediateField.delabAdjoinNotation.delabInsertArray._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.appendStream'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Any._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.sum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Poly.sumsq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Std.Format.mapStringsM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Algebra.Order.Ring.Abs.0.geomSum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.contSupp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.kextract._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.numeral?._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.Cont.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.contStack._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Relabelling.negCongr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.NormalizedHom.src._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.zipWith4._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.zeckendorf._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.355"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.evalHorizontalComp._unsafe_rec",
+      "Mathlib.Tactic.BicategoryLike.evalWhiskerRight._unsafe_rec",
+      "Mathlib.Tactic.BicategoryLike.evalWhiskerRightAux._unsafe_rec",
+      "Mathlib.Tactic.BicategoryLike.evalHorizontalCompAux'._unsafe_rec",
+      "Mathlib.Tactic.BicategoryLike.evalHorizontalCompAux._unsafe_rec"
+    ],
+    "size": 5
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.realize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.alter._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.restrictVarLeft._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.map₂Left'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.findSquares._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Vector3.recOn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Homotopy.mkInductiveAux₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.normalizeIsoApp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.getHEqProof._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.getEqProofCore._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.mkProof._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.getEqProof._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.mkCongrProof._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.mkSymmCongrProof._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.mkCongrProofCore._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.mkDelayedProof._unsafe_rec"
+    ],
+    "size": 8
+  },
+  {
+    "members": [
+      "ZFSet.Hereditarily._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.inclusionObj._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.additiveTestUnsafe.visit"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.ProdTree.size._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.buildReify.mkPS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.oneBits._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.diff._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.dlookup._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.mul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.div._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.leRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.ldiff._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findLeAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.prove._unsafe_rec",
+      "Mathlib.Tactic.ITauto.search._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Stream'.Seq.drop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.norm_num_ext.sModNat_aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalMul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Sum.rec.eq._@.Mathlib.Util.CompileInductive.1115872101._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.applyAttributes._unsafe_rec",
+      "ToAdditive.addToAdditiveAttr._unsafe_rec",
+      "ToAdditive.transformDecl._unsafe_rec",
+      "ToAdditive.copyMetaData._unsafe_rec"
+    ],
+    "size": 4
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.TFAE.dfs._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "IsFreeGroupoid.SpanningTree.homOfPath._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "GenContFract.contsAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.remapLeft._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.chineseRemainderOfList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.buildClauses._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.listEncode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.ofNatCode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExProd.coeff._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.boddDiv2._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.normalize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin.find._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Command.MinImports.getSyntaxNodeKinds._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.sub._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.insertMin._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "MvPFunctor.M.corecContents._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.twoStepInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.support._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.Exists._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Plausible.InjectiveFunction.sliceSizes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.listShortGet._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.mkEntry._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.processSubsingletonElem._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.internalizeCore._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.internalizeAppLit._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.applySimpleEqvs._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.propagateUp._unsafe_rec",
+      "Mathlib.Tactic.CC.CCM.propagateImpUp._unsafe_rec"
+    ],
+    "size": 7
+  },
+  {
+    "members": [
+      "PosNum.pred'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerLeft.tgtM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "memPartition._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.scale._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.toFormula._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.evaln._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExBase.cmp._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExSum.cmp._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExProd.cmp._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Flexible.toStained._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.discharge._unsafe_rec",
+      "Mathlib.Meta.NormNum.deriveSimp._unsafe_rec",
+      "Mathlib.Meta.NormNum.methods._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Qq.mkSetLiteralQ._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Peel.peelUnbounded._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.reverseAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.ProdTree.pack._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.ranges._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.toPrenexImp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.restrictVar._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.strongSubRecursion._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.mul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.ascFactorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tactic.ReduceModChar.normIntNumeral'._unsafe_rec",
+      "Tactic.ReduceModChar.normPow._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Ordnode.split._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.TermCongr.mkCongrOfApp.go._unsafe_rec",
+      "Mathlib.Tactic.TermCongr.mkCongrOfAux._unsafe_rec",
+      "Mathlib.Tactic.TermCongr.mkCongrOfApp._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Lean.Meta.mkRichHCongr.doubleTelescope.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.left._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "hyperoperation._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin.snocInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "UInt16.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.378"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqTree.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.inv'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.lookupAll._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Int.inductionOn'.neg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Bicategory.Mor₂OfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExProd.eq._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExBase.eq._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExSum.eq._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "derivedSeries._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.Forall._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findGeAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Order.Graph.tarjanDFS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.sublistsLenAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.repr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.numNodes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.instFintype._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.ofList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Function.Iterate.rec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.Enumerative.DyckWord.0.DyckWord.equivTreeInvFun._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.repeat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Computation.thinkN._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.minFacAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Analysis.Real.Pi.Irrational.0.sinPoly._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.Mor₁.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeGroup.Red.decidableRel._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Lex.decidableRel._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Monoidal.mor₁OfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.NormalExpr.tgtM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.normalizeAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.const._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.iterate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "YoungDiagram.cellsOfRowLens._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.isExplicitNumber._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.FindSyntax.extractSymbols._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Tauto.distribNotAt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Encodable.encodeList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.Functor.OfSequence.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.reverse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.renameBVar._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monad.sequence'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.GCongr.addGCongrLemmaEntry.insert._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Sigma.rec.eq._@.Mathlib.Util.CompileInductive.4222055393._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Peel.peelArgs._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.nCasesSum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.realSize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerRight.nodes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.insert'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "EuclideanDomain.gcd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.buildReify.reifyFmla._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Explode.rowToMessageData._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.strongRec'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.alls._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lists'.rec._@.Mathlib.SetTheory.Lists.1973585389._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lists'.rec.eq._@.Mathlib.SetTheory.Lists.1973585389._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.shortOfStateAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.toTree.go._unsafe_rec",
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.toTree.processBinOp._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "CoxeterSystem.rightInvSeq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.orderedInsert._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.zeroAddRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.composePath._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TProd.instMeasurableSpace._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.TermCongr.0.Mathlib.Tactic.TermCongr.getJointAppFns._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.HorizontalComp.tgtM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.Proof.app._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapDiagM'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.twoStepInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Lookup.0.Lean.Meta.RefinedDiscrTree.matchQueryStar._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "arithGeom._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.ofSubtype._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Superscript.satisfyTokensFn.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqLists'.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Superscript.partitionPoint._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Sat.Valuation.implies._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "OrdinalApprox.gfpApprox._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.toSubtype._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.prev._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Part.Fix.approx._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.rec._@.Mathlib.Util.CompileInductive.1590845460._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.insertPerm._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Polynomial.powSubPowFactor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.destutter'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.maxPowDiv.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.partition._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.Λ'.Supports._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Congr!.plausiblyEqualTypes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.capSyntax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.subst._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.TFAE.proveGetLastDImpl._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.normalize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.binCast._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.extractCoeff._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.Proof.format._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.ToExpr.0.Mathlib.instToExprLevel_mathlib.toExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.take._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Tauto.distribNotAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Bool.rec.eq._@.Mathlib.Util.CompileInductive.3618634379._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected.0.SimpleGraph.ConnectedComponent.walk_toSimpleGraph'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Any.decidable._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PFunctor.Approx.CofixA.default._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.rec._@.Mathlib.Computability.PartrecCode.3125930148._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.normalizeIsoApp'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.rec._@.Mathlib.Data.Tree.Basic.629293304._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.removeZeros._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.lctxIsDefEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1.stepAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.traverse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.IntervalCases.Methods.bisect._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.rec._@.Mathlib.SetTheory.Ordinal.Notation.239335852._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExBase.cast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExSum.cast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExProd.cast._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Style.lambdaSyntax.findLambdaSyntax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.modifyRevArg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.sub'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.ofStateAuxRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.extractS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.elabSubsingletonInsts.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CoxeterSystem.leftInvSeq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.dropAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lists.Subset.decidable._unsafe_rec",
+      "Lists.mem.decidable._unsafe_rec",
+      "Lists.Equiv.decidable._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Quiver.Path.rec._@.Mathlib.Combinatorics.Quiver.Path.3963176020._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.rec.eq._@.Mathlib.Combinatorics.Quiver.Path.3963176020._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapIdxMAux'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "NzsNum.drec'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.norm_num_ext.sModNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Finset.strongInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.addNegEqProofs._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.instDecidableEqCont'.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddMagma.traverse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.decidableDuplicate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.toNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Function.FromTypes.curry._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.unfoldCases._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PiFin.mkLiteralQ.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Data.Num.Basic.0.PosNum.sqrtAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Style.multiGoal.getManyGoals._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.Linexp.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.freeVarFinset._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.compactRelation._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "UInt32.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.393"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.binaryRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ChainComplex.mkHomAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinEnum.recEmptyOption._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.FieldTheory.IntermediateField.Adjoin.Defs.0.IntermediateField.mkInsertTerm.run._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.nCasesProd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ListBlank.modifyNth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PFunctor.Approx.truncate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.s._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.psub._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.MoveAdd.getOps._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Export.exportName._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "NFA.Path.supp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM2.stepAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.ITauto.0.Mathlib.Tactic.ITauto.instToExprIProp.toExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.rec._@.Mathlib.Util.CompileInductive.350617726._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.factorialBinarySplitting.prodRange._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAlgebra.liftFun._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.getUnassignedGoalMVarDependencies.addMVars._unsafe_rec",
+      "Mathlib.Tactic.getUnassignedGoalMVarDependencies.go._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.evalMinFac.aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.NormalExpr.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Simps.headStructureEtaReduce._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.Linexp.get._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.AtomM.RecurseM.run.rctx._unsafe_rec",
+      "Mathlib.Tactic.AtomM.RecurseM.run.evalAtom._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "bernoulli'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Equiv.Perm.cycleFactorsAux.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.iterateAtMost._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Expr.Basic.0.Lean.Expr.getAppAppsAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1to1.write._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.addZeroRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.proveNatFibAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monoid.CoprodI.NeWord.last._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.mkNestedExists._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Balanced.dec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CommRingCat.Colimits.descFunLift._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nimber.invSet._unsafe_rec",
+      "Nimber.invAux._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.evalWhiskerLeft._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod.snd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.toFin._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.mapForallBinderNames._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.updateMT._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.analyze.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nimber.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.CategoryTheory.Elementwise.0.Tactic.Elementwise.mkUnusedName.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.pmap._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.rec.eq._@.Mathlib.Util.CompileInductive.1590845460._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.LinearCombination'.expandLinearCombo._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.dual._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.evalFinsetBigop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.restrictFreeVar._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.mkDivProof._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.mem._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.mkOpList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.reverseRecOn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.castSucc._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.inter._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.ProxyType.defaultMkProxyType.mkCType._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.mapTermRel._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "castPosNum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.toSubtype'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Empty.rec.eq._@.Mathlib.Util.CompileInductive.3332165805._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tactic.mkHigherOrderType._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.pincerRecursion._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.fromComponents.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CochainComplex.mkAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Bicategory.Mor₂IsoOfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.drop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.ProdTree.unpack._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.introsClean.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.splitLengths._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Finset.strongDownwardInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.splitMin'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.splitThenConstructor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.kabstractPositions.visit._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.repr'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.getNatComparisons._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.Code.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.pappAck._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.append._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.findCDot._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.eraseMin._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.chooseX._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.negAddRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCState.foldEqcCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.ofStateAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PSet.Lift._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Function.FromTypes.uncurry._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.mkMulProof._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ChainComplex.mkAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.size._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ListBlank.append._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.isConstantApplication.aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.removeNth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.Mor₂Iso.isStructural._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Simps.getCompositeOfProjectionsAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.mulOneRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.casesMatching.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.permutations'Aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.listBoolMerge._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.foldr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "GradedMonoid.GMonoid.gnpowRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.disjoint._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.ToExpr.0.Mathlib.instToExprExpr_mathlib.toExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Deriving.Traversable.traverseConstructor.mkFunCtor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Function.FromTypes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Bound.hypPriority._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.projectMapAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.isSubsetAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Abel.evalAdd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.log._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Notation3.matchScoped.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.ProxyType.defaultMkProxyType.wrapSumAccess._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.sym2._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.qNF.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.applyNameDict._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instReprTree.repr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.darts._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddMagma.length._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LinearRecurrence.mkSol._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeSemigroup.rec.eq._@.Mathlib.Algebra.Free.1302402631._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.rev._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.link._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.insertWith._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Bicategory.mor₁OfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.MoveAdd.uniquify._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.IProp.cmp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.GeneralizeProofs.withGeneralizedProofs.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RingTheory.Sequence.IsWeaklyRegular.recIterModByRegular._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.mul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.insertMax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.erase._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Superscript.scriptFnNoAntiquot.alignSyntax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CancelDenoms.mkProdPrf._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.toSubgraph._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.testBit._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.UnusedTactic.getTactics._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Util.compileSizeOf._unsafe_rec",
+      "Mathlib.Util.compileInductive._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Nat.factorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.ofDigits._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeMagma.traverse._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monoid.CoprodI.NeWord.head._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.take._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Cycle.decidableNontrivialCoe._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.CompSource.flatten._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.prod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol.0.fastJacobiSymAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.land._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.listEncode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.constructorMatching.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Abel.evalSMul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.addExprs'.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "preNormEDS'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.stirlingSecond._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.reify._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.permutationsAux.rec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.filter._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "complEDS'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.varsToConstants._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapAccumLM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Simps.addProjections._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.norm_num_ext.sModNatTR.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod.fst._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.decidableInfix._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.LibraryRewrite.isExplicitEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.descFactorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.instDecidableEqIProp.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.instDecidableEqCode.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.rec._@.Mathlib.Data.Ordmap.Ordnode.1389437611._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Style.CommandStart.getUnlintedRanges._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lists'.ofList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.Linexp.cmp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.invVal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.minSqFacAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Equiv.Perm.swapFactorsAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Choose.mk_sometimes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.Λ'.rec._@.Mathlib.Computability.TMToPartrec.669200864._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.mkHCongrWithArity'.process._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.powHalf._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.forallNot_of_notExists.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.iterate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Command.Variable.completeBinders'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Abel.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.findEq.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.Simproc.Factors.0.Mathlib.Meta.Simproc.evalPrimeFactorsListAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM2to1.trNormal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Style.getDeprecatedSyntax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Float.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.438"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.zipWith5._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqNzsNum.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinEnum.Finset.enum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.nthRoot.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.K'.rec.eq._@.Mathlib.Computability.TMToPartrec.4294818590._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.nextOr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Erw?.logDiffs._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.Λ'.rec.eq._@.Mathlib.Computability.TMToPartrec.669200864._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1to0.trAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.DiscrTree.getSubexpressionMatches._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.naturality._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.comp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.FunProp.Mor.getAppFn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Data.Vector.Basic.0.List.Vector.traverseAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.iterate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Monoidal.Mor₂IsoOfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FBinop.0.FBinopElab.applyCoe.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Computability.unaryEncodeNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.SingleObj.listToPath._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monoid.CoprodI.NeWord.inv._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.transfer._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.split'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeMagma.length._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RingTheory.Sequence.IsWeaklyRegular.recIterModByRegularWithRing._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monoid.CoprodI.NeWord.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.Enumerative.DyckWord.0.DyckWord.equivTreeToFun._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimplexCategoryGenRel.standardσ._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.succ._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PNat.strongInductionOn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.toPrenex._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.fold._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalPowProd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.Hint.0.Mathlib.Tactic.Hint.getFirstTryThisFromMessage?._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Lookup.0.Lean.Meta.RefinedDiscrTree.matchTreeStars.drop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.qNF.mkAddProof._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Basic.0.Lean.Meta.RefinedDiscrTree.format.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CochainComplex.mkHomAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerLeft.srcM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExSum.evalNatCast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExProd.evalNatCast._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExBase.evalNatCast._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "Quiver.SingleObj.pathToList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.insertionSort._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.rec._@.Mathlib.SetTheory.PGame.Basic.686807361._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.rec.eq._@.Mathlib.SetTheory.PGame.Basic.686807361._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.TFAE.getTFAEList.getExplicitList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.alternatingSum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Computation.run"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.smartHCongr?.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin.consInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.GeneralizeProofs.generalizeProofsCore.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.const._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.primeFactorsList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "GenContFract.convs'Aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.propagateConstructorEq.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trLList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.inclusionMapCompAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Order.Graph.buildTransitiveLeProofDFS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1to1.readAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findMin'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.seq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Nat.antidiagonalTuple._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.SplitIfs.0.Mathlib.Tactic.findIfToSplit?._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Pell.pell._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.permutations'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.CompSource.toString._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.rec.eq._@.Mathlib.Data.Tree.Basic.629293304._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.findM?'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Impartial.impartial_add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.letDepth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.indexOf._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalPowNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.last._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "UInt8.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.347"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.getDeclModifiers._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "OrdinalApprox.lfpApprox._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FieldSimp.0.Mathlib.Tactic.FieldSimp.qNF.evalPrettyAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Notation3.exprToMatcher._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.All.decidable._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.subtypeVal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.mkRichHCongr.withNewEqs.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "iterateInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.opowAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.shortAdd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.isEmpty_nat_rightMoves._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CancelDenoms.findCancelFactor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.eval._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.LHom.onTerm._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.IProp.format._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Util.Superscript.0.Mathlib.Tactic.Superscript.isValid._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "MeasurableSpace.generateMeasurableRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.decidableBExistsUnique._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.normalizeObj._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.inclusionPathAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.find._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "MonCat.Colimits.descFunLift._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "String.ltb._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PSet.Equiv._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Flexible.extractCtxAndGoals._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Encode.0.Lean.Meta.RefinedDiscrTree.etaPossibilities._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExBase.evalPos._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExSum.evalPos._unsafe_rec",
+      "Mathlib.Tactic.Ring.ExProd.evalPos._unsafe_rec"
+    ],
+    "size": 3
+  },
+  {
+    "members": [
+      "ContinuousCohomology.MultiInd.functor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Set.enumerate._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.natSize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.normalizeIso._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.mulCommRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RingCat.Colimits.descFunLift._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PNat.XgcdType.reduce._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.TProd.elim._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.SetTheory.Game.Impartial.0.SetTheory.PGame.ImpartialAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.ToExpr.0.Mathlib.instToExprSyntax_mathlib.toExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.digitsAux.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.iterateTR.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.FunProp.Mor.whnfPred._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.MoveAdd.getAddends._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.UnusedTactic.eraseUsedTactics._unsafe_rec",
+      "Mathlib.Linter.UnusedTactic.eraseUsedTacticsList._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Prefunctor.mapPath._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Command.resolveNamespace._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalNegProd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Rack.toEnvelGroup.mapAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Equiv.Perm.signAux2._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.Seq.toMLList"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "zipWithM'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Matrix.matchVecConsPrefix._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.stirlingFirst._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ack._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.Seq.splitAt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.lxor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalMulProd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.splitAtAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.removeNe_aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Homotopy.mkCoinductiveAux₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.findGreatest._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.Linter.HashCommandLinter.0.Mathlib.Linter.HashCommandLinter.withSetOptionIn'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.capitalizeLikeAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.eraseMax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.Parser.parseInts._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.splitAtPred._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "QPF.recF._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.Code.rec._@.Mathlib.Computability.TMToPartrec.3125930148._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.choose._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Encode.0.Lean.Meta.RefinedDiscrTree.getStackEntries.loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.cmp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FixedDetMatrices.reduce_rec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.ofRBNode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.Finset.proveEmptyOrCons._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.clog._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqFreeMagma.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.isCongruent._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "numDerangements._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.Cont'.rec._@.Mathlib.Computability.TMToPartrec.4159225414._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.Cont'.rec.eq._@.Mathlib.Computability.TMToPartrec.4159225414._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "And.rec.eq._@.Mathlib.Util.CompileInductive.318578898._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Coherence.coherence_loop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Numeric._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Encode.0.Lean.Meta.RefinedDiscrTree.lambdaTelescopeReduce._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Abel.evalNeg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.WSeq.drop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ModCases.IntMod.proveOnModCases._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tactic.ReduceModChar.typeToCharP._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.Context.add._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.convertAC._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.mkProdEqQ.makeRHS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Num.gcdAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Matrix.Forall._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.rec.eq._@.Mathlib.Computability.PartrecCode.3125930148._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ComputeDegree.miscomputedDegree?._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "NumberField.Units.dirichletUnitTheorem.seq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.buildReify.reifyClause1._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.ExProd.evalInv._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Vector.mOfFn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.kunion._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Matrix.transposeᵣ._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.ofNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Matrix.Exists._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.negMulRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.instDecidableEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.List.splitEvenOdd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeMagma.rec._@.Mathlib.Algebra.Free.2492573129._hygCtx._hyg.3"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeMagma.rec.eq._@.Mathlib.Algebra.Free.2492573129._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.mapPrefix._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.gcongr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "String.rec.eq._@.Mathlib.Util.CompileInductive.3964927263._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lists'.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.castLE._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.Enumerative.IncidenceAlgebra.0.IncidenceAlgebra.muFun._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.dropRepeat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.concatRecAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.ProdTree.components._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.withExistsElimAlongPathImp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.withNestedExistsElim._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.span._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.ofNatSucc._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Choose.elabChoose._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.cmp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalPow._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ModCases.NatMod.proveOnModCases._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "IteratedWreathProduct._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.findEqPath._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.xgcdAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trCont._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Flexible.getStained._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trPosNum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RegularExpression.matchEpsilon._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.sym._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Denumerable.raise'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.linearFormOfExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.nth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddMagma.liftAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PEmpty.rec.eq._@.Mathlib.Util.CompileInductive.1077078790._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Impartial.impartial_neg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FixedDetMatrices.reduce._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.fundamentalSequence._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1.SupportsStmt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Option.rec.eq._@.Mathlib.Util.CompileInductive.3128836237._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.buildConj._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.iterateExactly'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.logC.step._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findMax'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.HorizontalComp.nodes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Initialize.0.Lean.Meta.RefinedDiscrTree.loadImportedModule._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol.0.fastJacobiSym._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Peel.peelArgsIff._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.Cont.then._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod.diag._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Vector.mmap._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.takeWhile._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapAccumr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findGtAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimplexCategoryGenRel.simplicialEvalσ._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.toCatExpr.apprec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.repeatEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.FunProp.funProp._unsafe_rec",
+      "_private.Mathlib.Tactic.FunProp.Core.0.Mathlib.Meta.FunProp.main._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Lean.Expr.instReprProdTree.repr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.ToPartrec.Code.rec.eq._@.Mathlib.Computability.TMToPartrec.3125930148._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Sized._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.ofAscListAux₂._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqFreeAddMagma.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.replaceIf._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Computability.decodePosNum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.finsetWalkLength._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "String.ltb.inductionOn._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.InteractiveUnfold.unfolds.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.vertices._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.ofNat'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Denumerable.raise._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.ITauto.applyProof._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.WSeq.drop.aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Prod.rec.eq._@.Mathlib.Util.CompileInductive.3167448894._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.permutationsAux2._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.simpIntroCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.ofBoxProdLeft._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Cardinal.preBeth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerRight.tgtM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.union._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.height._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.MoveAdd.sumList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "VectorAll._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.weight._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CoxeterSystem.alternatingWord._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.toString._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.mkBeforeToAfter.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Multiset.strongDownwardInduction._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.List.proveNilOrCons._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Function.FromTypes.const._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.multichoose._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.decidableNF._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.fastGrowing._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.shiftl._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.optOfNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.FunProp.mkProdProj._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.takeAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.liftHom._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.neg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.dropUntil._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.pi._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCM.invertTrans._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.reduceCoefficientwise._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.rec.eq._@.Mathlib.SetTheory.Ordinal.Notation.239335852._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monoid.CoprodI.NeWord.replaceHead._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.length._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.iterateRange._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RegularExpression.matches'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.updateWith._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "NzsNum.sign._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordinal.CNF.rec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.Enumerative.IncidenceAlgebra.0.IncidenceAlgebra.muFun'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.ofRepeat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "finSigmaFinEquiv._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.get._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Command.MinImports.getIds._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "False.rec.eq._@.Mathlib.Util.CompileInductive.697101310._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.leLFDecidable._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.Bounded._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.addAssocRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.evalIntrov.introsDep._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.getLastI._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.ProdTree.getType._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.Equivalence.powNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tactic.mkComp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Finset.sym._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.ofBoxProdRight._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.Sum.pow._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeBicategory.liftHom₂._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Stream'.Seq.take._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.Simps.Basic.0.Simps.splitOnNotNumber.process._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM2.SupportsStmt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.LHom.onBoundedFormula._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Char.rec.eq._@.Mathlib.Util.CompileInductive.3964927263._hygCtx._hyg.8"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "BestFirstQueue.ensureFirstIsBest._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.varFinset._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.proveJacobiSymOdd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapAccumr₂._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.congrN!.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.evalNatPowMod.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.Find.0.Mathlib.Tactic.Find.matchHyps._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddSemigroup.rec.eq._@.Mathlib.Algebra.Free.2508704951._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.HorizontalComp.srcM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.RefinedDiscrTree.encodeExprWithEta.go.fold._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.RefinedDiscrTree.keysAsPattern.go._unsafe_rec",
+      "Lean.Meta.RefinedDiscrTree.keysAsPattern.mkApp._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "_private.Mathlib.Combinatorics.SimpleGraph.Circulant.0.SimpleGraph.cycleGraph_EulerianCircuit_cons._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.takeUntil._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PiNat.res._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.foldl._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Denumerable.lower'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Encodable.decodeList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.TFAE.proveChain._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PFunctor.M.isubtree._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "NzsNum.not._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "npowRec'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.LinearCombination.expandLinearCombo._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "permsOfList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.NumberTheory.Padics.Hensel.0.newton_seq_aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.bypass._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Array.cyclicPermute!.cyclicPermuteAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.rec.eq._@.Mathlib.Util.CompileInductive.350617726._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.parallelScanAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Identical._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Export.exportLevel._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "nsmulRec'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Denumerable.lower._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Int.inductionOn'.pos._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.ITauto.0.Mathlib.Tactic.ITauto.instToExprProof.toExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ToAdditive.fixAbbreviation._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.numLeaves._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.Forall._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Encode.0.Lean.Meta.RefinedDiscrTree.etaPossibilities.isStarWithArg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.lor._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.qNF.mkSubProof._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.divMod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ChevalleyThm.MvPolynomialC.numBound._unsafe_rec",
+      "ChevalleyThm.MvPolynomialC.degBound._unsafe_rec"
+    ],
+    "size": 2
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.iterateUntilFailure._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.superFactorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SNum.bits._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.Subtype_._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FreeAddMagma.rec.eq._@.Mathlib.Algebra.Free.2051233953._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.insert._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.extractp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.MkIffOfInductiveProp.0.Mathlib.Tactic.MkIff.select._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.elim._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.dropWhile._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Linter.Style.dollarSyntax.findDollarSyntax._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.minFacAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quotient.listChoice._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "AList.insertRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "memPartitionSet._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.split3._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.unaryCast._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.etaExpandAll._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Sat.Parser.parseNats._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.bidirectionalRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.CC.CCState.eqcOfCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM1to1.trNormal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Estimator.improveUntilAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Sat.Valuation.satisfies._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "BestFirstQueue.toMLListWithPriority._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.shortNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.doubleFactorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.normalizeMapAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Deriving.Traversable.nestedMap._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.evalComp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Notation3.matchFoldl._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.mapAccumRM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.split._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.varFinsetLeft._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "zipWithM._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.getVert._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.qNF.gcd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.map₂Left._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findGt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Composition.recOnSingleAppend._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.ProxyType.defaultMkCtorProxyType._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trStmts₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "USize.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.423"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findLtAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.listDecode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RegularExpression.map._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Quiver.Path.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "String.splitCase._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalAdd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalNeg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.MoveAdd.pairUp._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.substFunc._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PUnit.rec.eq._@.Mathlib.Util.CompileInductive.2121875758._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.splitConjunctions.aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.MkIff.List.init._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "BestFirstQueue.popWithBound._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.relabel._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalPow₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Explode.explodeCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.TM2to1.stmtStRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ONote.split._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ContinuousCohomology.MultiInd.d._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalMul₁._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "BitVec.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.351"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Finset.finAntidiagonal.aux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.NormalExpr.nodesAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.exs._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "ExistsAndEq.mkAfterToBefore.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.projectObj._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Set.tprod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RegularExpression.deriv._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.evalNatPow.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Tree.treesOfNumNodesEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.FieldSimp.discharge._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.DeriveEncodable.0.Mathlib.Deriving.Encodable.S.decode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.shortOfRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.toPrenexImpRight._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nimber.mul._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.size._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Relabelling.trans._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.shortNeg._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.splitMax'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "MvPFunctor.wpRec._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "LucasLehmer.sZMod._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.All._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.MVarId.intros!.run._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.RefinedDiscrTree.LazyEntry.toList._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.PrintSorries.collect._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Subtype.ofNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.addCommRelabelling._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findGe._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.LibraryRewrite.isMVarSwap.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqPosNum.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SNum.testBit._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.useLoop._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Relabelling.addCongr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "instDecidableEqONote.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.adjustWith._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Lookup.0.Lean.Meta.RefinedDiscrTree.matchTreeStars.isEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.TProd.mk._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.BoundedFormula.Realize._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.WhiskerLeft.nodes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FirstOrder.Language.Term.constantsToVars._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "DihedralGroup.reciprocalFactors._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "RegularExpression.rmatch._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.DeriveEncodable.0.Mathlib.Deriving.Encodable.S.encode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.recNeNil._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Computability.encodePosNum._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.FastInstance.0.Mathlib.Elab.FastInstance.makeFastInstance._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SetTheory.PGame.Relabelling.symm._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Expr.mkProdTree._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findIndexAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "FinVec.mkSumEqQ.makeRHS._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PosNum.shiftr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Meta.RefinedDiscrTree.createImportedDiscrTree.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Polynomial.powAddExpansion._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "EuclideanDomain.xgcdAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Tactic.SplitIfs.0.Mathlib.Tactic.splitIfsCore._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.NormNum.proveAscFactorial._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findLe._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Meta.FunProp.Mor.withApp.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Sat.Valuation.mk._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.zipWith3._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.shiftLeft'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "WType.depth._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "CategoryTheory.FreeMonoidalCategory.inverseAux._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "UInt64.rec.eq._@.Mathlib.Util.CompileInductive.3197476844._hygCtx._hyg.408"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.instDecidableEqWalk.decEq._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Order.addAtom._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "PSet.ofNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Analysis.Real.Pi.Irrational.0.cosPoly._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Name.prefixes._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.rec.eq._@.Mathlib.Data.Ordmap.Ordnode.1389437611._hygCtx._hyg.4"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Ring.evalAddOverlap._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "VectorEx._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordinal.veblenWith._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.iterateUntilFailureWithResults._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "List.alternatingProd._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "SimpleGraph.Walk.length._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Monad.sequence._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.codeSupp'._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Module.qNF.sub._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Fin2.toNat._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "TypeVec.prod.mk._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Order.collectFactsImp.processExpr._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Nat.Partrec.Code.encodeCode._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Turing.PartrecToTM2.trNormal._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Lean.Elab.Tactic.finCasesAt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "_private.Mathlib.Lean.Meta.RefinedDiscrTree.Initialize.0.Lean.Meta.RefinedDiscrTree.createImportInitResults.go._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.Linarith.toCompFold._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Mathlib.Tactic.BicategoryLike.Mor₁.tgt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "Ordnode.findLt._unsafe_rec"
+    ],
+    "size": 1
+  },
+  {
+    "members": [
+      "upperCentralSeriesAux._unsafe_rec"
+    ],
+    "size": 1
+  }
+]
