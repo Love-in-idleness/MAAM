@@ -54,8 +54,10 @@ def parseSource (env : Environment) (fileName source : String) : IO Source := do
       let kind := cmd.getKind.toString
       let text := (source.extract (cmd.getPos?.getD oldState.pos) (cmd.getTailPos?.getD next.pos)).trim
       if messages.hasErrors then
-        failures := failures.push { startByte := oldState.pos.byteIdx, endByte := next.pos.byteIdx,
-          message := s!"command parse failed at line {(inputCtx.fileMap.toPosition oldState.pos).line}; kind={kind}" }
+        failures := failures.push
+          { startByte := oldState.pos.byteIdx
+            endByte := next.pos.byteIdx
+            message := s!"command parse failed at line {(inputCtx.fileMap.toPosition oldState.pos).line}; kind={kind}" }
         if ["local ", "open ", "namespace ", "section", "noncomputable section", "end"].any text.startsWith then
           contextError := some "a parser-context command failed to parse"
       else
