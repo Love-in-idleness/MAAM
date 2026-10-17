@@ -1,0 +1,38 @@
+name: Mathlib import resource check
+on:
+  push:
+    branches: [research/import-probe]
+    paths:
+      - 'scripts/import_probe/**'
+      - '.github/workflows/import-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the fixed Lean toolchain
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile the import check
+        working-directory: scripts/import_probe
+        run: lake build import-probe
+      - uses: actions/checkout@v4
+        with:
+          repository: leanprover-community/mathlib4
+          ref: d167cc6dc962ab340507362ea2f4bcfcff44f01b
+          path: vendor/mathlib
+      - name: Obtain the fixed compiled library
+        working-directory: vendor/mathlib
+        run: |
+          test "$(git rev-parse HEAD)" = d167cc6dc962ab340507362ea2f4bcfcff44f01b
+          lake exe cache get
+          free -h
+      - name: Bound the import to three minutes and record resources
+        working-directory: vendor/mathlib
+        run: |
+          LEAN_SYSROOT="$(lean --print-prefix)" lake env /usr/bin/time -v timeout --kill-after=10s 180s ../../scripts/import_probe/.lake/build/bin/import-probe Mathlib
