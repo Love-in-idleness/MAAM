@@ -1,4 +1,4 @@
-name: Mathlib import resource check
+name: Mathlib lexer diagnostic
 on:
   push:
     branches: [research/import-probe]
@@ -32,7 +32,21 @@ jobs:
           test "$(git rev-parse HEAD)" = d167cc6dc962ab340507362ea2f4bcfcff44f01b
           lake exe cache get
           free -h
-      - name: Bound the import to three minutes and record resources
+      - name: Locate source lexical failures with bounded resources
         working-directory: vendor/mathlib
         run: |
-          LEAN_SYSROOT="$(lean --print-prefix)" lake env /usr/bin/time -v timeout --kill-after=10s 180s ../../scripts/import_probe/.lake/build/bin/import-probe Mathlib
+          mkdir -p ../../data
+          LEAN_SYSROOT="$(lean --print-prefix)" lake env /usr/bin/time -v timeout --kill-after=10s 180s ../../scripts/import_probe/.lake/build/bin/import-probe Mathlib | tee ../../data/lexer-probe.jsonl
+          python - <<'PY'
+          import json, pathlib, re
+          for line in pathlib.Path('../../data/lexer-probe.jsonl').read_text().splitlines():
+              row = json.loads(line)
+              if not row.get('error'):
+                  continue
+              source = pathlib.Path(row['module'].replace('.', '/')+'.lean').read_bytes()
+              print(row['module'], row['error'])
+              for key, offset in re.findall(r'(byte|lexer_pos)=(\d+)', row['error']):
+                  pos = int(offset)
+                  print(key, pos, 'line', source[:pos].count(b'\n')+1,
+                        repr(source[max(0,pos-100):pos+100].decode('utf-8', errors='replace')))
+          PY

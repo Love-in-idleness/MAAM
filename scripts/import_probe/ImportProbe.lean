@@ -1,5 +1,51 @@
+-- Lexer instrumentation copied from maam/PaperExport.lean; only error positions added.
 import Lean
 open Lean
+namespace ProbeLexer
+partial def skipBlock (s : String) (p : String.Pos) (depth : Nat) : String.Pos :=
+  if s.atEnd p then p else
+  let q := s.next p
+  if s.get p == '/' && s.get q == '-' then skipBlock s (s.next q) (depth + 1)
+  else if s.get p == '-' && s.get q == '/' then
+    if depth == 1 then s.next q else skipBlock s (s.next q) (depth - 1)
+  else skipBlock s q depth
+
+partial def skipLine (s : String) (p : String.Pos) : String.Pos :=
+  if s.atEnd p || s.get p == '\n' then p else skipLine s (s.next p)
+
+partial def skipComments (s : String) (p : String.Pos) : String.Pos :=
+  if s.atEnd p then p else
+  let q := s.next p
+  if (s.get p).isWhitespace then skipComments s q
+  else if s.get p == '-' && s.get q == '-' then skipComments s (skipLine s (s.next q))
+  else if s.get p == '/' && s.get q == '-' then skipComments s (skipBlock s (s.next q) 1)
+  else p
+
+structure Source where
+  map : FileMap
+  starts : Array Nat
+  lexicalError : Option String
+  deriving Inhabited
+
+def lexSource (env : Environment) (fileName source : String) : Source := Id.run do
+  let ctx := Parser.mkInputContext source fileName
+  let mut state := Parser.mkParserState ctx.inputString
+  let mut starts : Array Nat := #[]
+  let table := Parser.getTokenTable env
+  repeat
+    let pos := skipComments ctx.inputString state.pos
+    if ctx.atEnd pos then break
+    state := { state with pos, stxStack := .empty, errorMsg := none }
+    let next := (Parser.tokenFn []).run ctx { env, options := {} } table state
+    if let some err := next.errorMsg then
+      return { map := ctx.fileMap, starts := #[], lexicalError := some s!"{toString err}; byte={pos.byteIdx}; lexer_pos={next.pos.byteIdx}" }
+    if next.pos <= pos then
+      return { map := ctx.fileMap, starts := #[], lexicalError := some "lexer made no progress" }
+    starts := starts.push pos.byteIdx
+    state := next
+  return { map := ctx.fileMap, starts, lexicalError := none }
+
+end ProbeLexer
 
 unsafe def main (args : List String) : IO UInt32 := do
   initSearchPath (← findSysroot)
@@ -9,21 +55,13 @@ unsafe def main (args : List String) : IO UInt32 := do
   let start ← IO.monoNanosNow
   let env ← importModules #[{module := moduleName}] {} (leakEnv := true) (loadExts := true)
   let stop ← IO.monoNanosNow
-  let mut total := 0
-  let mut mathlib := 0
-  for (name, _) in env.constants.toList do
-    total := total + 1
-    if let some idx := env.getModuleIdxFor? name then
-      let owner := env.header.moduleNames[idx.toNat]!.toString
-      if owner == "Mathlib" || owner.startsWith "Mathlib." then mathlib := mathlib + 1
   IO.println <| (Json.mkObj [("phase", toJson "import_complete"),
     ("import_ms", toJson ((stop-start) / 1000000)),
-    ("constants", toJson total), ("mathlib_constants", toJson mathlib),
     ("modules", toJson env.header.moduleNames.size)]).compress
-  for name in #[`Hyperreal.infinitesimal_zero,
-      `AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType] do
-    let range := declRangeExt.find? (level := .exported) env name <|>
-      declRangeExt.find? (level := .server) env name
-    IO.println <| (Json.mkObj [("name", toJson name.toString),
-      ("found", toJson (env.find? name).isSome), ("source_range", toJson range.isSome)]).compress
+  for owner in #["Mathlib.Order.Basic", "Mathlib.Tactic.NormNum.Basic", "Mathlib.AlgebraicGeometry.AffineTransitionLimit", "Mathlib.Order.Interval.Set.Basic", "Mathlib.Algebra.Quaternion", "Mathlib.Topology.Separation.Basic", "Mathlib.ModelTheory.Syntax"] do
+    let path := System.FilePath.mk ((owner.replace "." "/") ++ ".lean")
+    let source ← IO.FS.readFile path
+    let tokens := ProbeLexer.lexSource env path.toString source
+    IO.println <| (Json.mkObj [("module", toJson owner),
+      ("error", toJson tokens.lexicalError), ("tokens", toJson tokens.starts.size)]).compress
   return 0
