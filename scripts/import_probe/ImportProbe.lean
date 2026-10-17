@@ -80,11 +80,11 @@ def measure (env : Environment) (fileName source : String) : IO Json := do
       commands := commands + 1
       if messages.hasErrors then
         if errors.size < 10 then
-          errors := errors.push <| Json.mkObj [("line", toJson (inputCtx.fileMap.toPosition cmd.getPos!).line), ("kind", toJson cmd.getKind.toString)]
+          errors := errors.push <| Json.mkObj [("line", toJson (inputCtx.fileMap.toPosition (cmd.getPos?.getD 0)).line), ("kind", toJson cmd.getKind.toString)]
       else
         tokens := tokens ++ leaves cmd
         let kind := cmd.getKind.toString
-        let text := (source.extract (cmd.getPos?.getD 0) (cmd.getTailPos?.getD 0)).trimAscii.toString
+        let text := (source.extract (cmd.getPos?.getD 0) (cmd.getTailPos?.getD 0)).trim
         let localNotation := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && text.startsWith "local "
         if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open"].contains kind || localNotation then
           elabCommandAtFrontend cmd
