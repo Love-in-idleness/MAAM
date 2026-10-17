@@ -7,6 +7,7 @@ on:
       - 'scripts/analyze_mathlib.py'
       - 'scripts/paper_config.json'
       - 'scripts/build_paper_exporter.sh'
+      - 'scripts/run_paper_exporter.sh'
       - 'lean/native/**'
       - '.github/workflows/mathlib.yml'
   workflow_dispatch:
@@ -31,10 +32,11 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
           mkdir -p data reports/mathlib
       - name: Smoke-check the streaming exporter
+        timeout-minutes: 5
         run: |
           (cd lean && lean -o Demo.olean Demo.lean)
           bash scripts/build_paper_exporter.sh
-          LEAN_SYSROOT="$(lean --print-prefix)" LEAN_PATH=lean build/maam-paper-export Demo Demo lean data/paper-smoke.jsonl smoke
+          LEAN_SYSROOT="$(lean --print-prefix)" LEAN_PATH=lean MAAM_PROGRESS_INTERVAL=1 bash scripts/run_paper_exporter.sh Demo Demo lean data/paper-smoke.jsonl smoke
           python scripts/check_paper_smoke.py data/paper-smoke.jsonl
           python -m unittest discover -s tests -p test_paper_analysis.py -v
           python scripts/analyze_mathlib.py --input data/paper-smoke.jsonl --output data/paper-smoke-report --index data/paper-smoke.sqlite
@@ -53,7 +55,7 @@ jobs:
       - name: Export all declarations and source measurements
         working-directory: vendor/mathlib
         run: |
-          LEAN_SYSROOT="$(lean --print-prefix)" lake env /usr/bin/time -v ../../build/maam-paper-export Mathlib Mathlib . ../../data/mathlib.jsonl d167cc6dc962ab340507362ea2f4bcfcff44f01b
+          LEAN_SYSROOT="$(lean --print-prefix)" lake env bash ../../scripts/run_paper_exporter.sh Mathlib Mathlib . ../../data/mathlib.jsonl d167cc6dc962ab340507362ea2f4bcfcff44f01b
       - name: Recompute SCCs, exact expansions, fits, plots, and interest rankings
         run: |
           python scripts/analyze_mathlib.py --input data/mathlib.jsonl --output reports/mathlib --index data/mathlib-metrics.sqlite
@@ -73,6 +75,7 @@ jobs:
             data/mathlib.jsonl.gz
             data/mathlib-metrics.sqlite.gz
             data/paper-smoke.jsonl
+            data/mathlib-progress.txt
           if-no-files-found: warn
           retention-days: 30
       - name: Commit measured reports without overwriting concurrent work

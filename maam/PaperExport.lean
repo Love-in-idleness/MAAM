@@ -13,18 +13,92 @@ namespace MAAMPaper
 abbrev Counts := Std.HashMap Name Nat
 def sortName : Name := Name.mkSimple "@Sort"
 def bump (a : Counts) (n : Name) : Counts := a.insert n (a.getD n 0 + 1)
-partial def collect (e : Expr) (a : Counts := {}) : Counts :=
+partial def collectTree (e : Expr) (a : Counts := {}) : Counts :=
   match e with
   | .const n _ => bump a n
   | .sort _ => bump a sortName
-  | .app f x => collect x (collect f a)
-  | .lam _ t b _ | .forallE _ t b _ => collect b (collect t a)
-  | .letE _ t v b _ => collect b (collect v (collect t a))
-  | .mdata _ x | .proj _ _ x => collect x a
+  | .app f x => collectTree x (collectTree f a)
+  | .lam _ t b _ | .forallE _ t b _ => collectTree b (collectTree t a)
+  | .letE _ t v b _ => collectTree b (collectTree v (collectTree t a))
+  | .mdata _ x | .proj _ _ x => collectTree x a
   | _ => a
+
+def children : Expr → Array Expr
+  | .app f x => #[f, x]
+  | .lam _ t b _ | .forallE _ t b _ => #[t, b]
+  | .letE _ t v b _ => #[t, v, b]
+  | .mdata _ x | .proj _ _ x => #[x]
+  | _ => #[]
+
+def collectShared (root : Expr) : Counts := Id.run do
+  -- Structural equality includes metadata wrappers: using Expr.eqv here could
+  -- identify a wrapper with its child and create a spurious self-edge.
+  let mut seen : Std.HashSet ExprStructEq := {}
+  let mut pending : Array (Expr × Bool) := #[(root, false)]
+  let mut order : Array Expr := #[]
+  while !pending.isEmpty do
+    let (e, finish) := pending.back!
+    pending := pending.pop
+    if finish then
+      order := order.push e
+    else if !(seen.contains ⟨e⟩) then
+      seen := seen.insert ⟨e⟩
+      pending := pending.push (e, true)
+      for child in children e do pending := pending.push (child, false)
+  let mut multiplicity : Std.HashMap ExprStructEq Nat := ({} : Std.HashMap ExprStructEq Nat).insert ⟨root⟩ 1
+  let mut result : Counts := {}
+  for e in order.reverse do
+    let count := multiplicity.getD ⟨e⟩ 0
+    match e with
+    | .const name _ => result := result.insert name (result.getD name 0 + count)
+    | .sort _ => result := result.insert sortName (result.getD sortName 0 + count)
+    | _ =>
+      for child in children e do
+        let key : ExprStructEq := ⟨child⟩
+        multiplicity := multiplicity.insert key (multiplicity.getD key 0 + count)
+  return result
+
+def collect (root : Expr) : Counts := Id.run do
+  -- Most declarations are small. Bound the ordinary tree walk so a compact
+  -- shared Expr cannot require exponentially many physical visits.
+  let mut pending := #[root]
+  let mut result : Counts := {}
+  let mut steps := 0
+  while !pending.isEmpty && steps < 4096 do
+    let e := pending.back!
+    pending := pending.pop
+    steps := steps + 1
+    match e with
+    | .const name _ => result := bump result name
+    | .sort _ => result := bump result sortName
+    | _ =>
+      for child in children e do pending := pending.push child
+  return if pending.isEmpty then result else collectShared root
+
+def checkCounts : IO Unit := do
+  let leaf := Expr.const `MAAMCountingTest.leaf []
+  let universe := Expr.sort .zero
+  let sample := Expr.letE `x universe (Expr.app leaf (Expr.mdata {} leaf))
+    (Expr.lam `y universe (Expr.forallE `z universe (Expr.proj `Ignored 0 leaf) .default) .default) false
+  let same (a b : Counts) := a.size == b.size && a.toList.all (fun (n, k) => b.getD n 0 == k)
+  if !(same (collectTree sample) (collectShared sample)) || !(same (collectTree sample) (collect sample)) then
+    throw <| IO.userError "shared-expression reference counts disagree with the paper's tree walk"
+  let counts := collect sample
+  if counts.getD `MAAMCountingTest.leaf 0 != 3 || counts.getD sortName 0 != 3 || counts.size != 2 then
+    throw <| IO.userError "expression constructor occurrence check failed"
+  let mut shared := leaf
+  for _ in [:80] do shared := Expr.app shared shared
+  let counts := collect shared
+  if counts.size != 1 || counts.getD `MAAMCountingTest.leaf 0 != (2 : Nat)^80 then
+    throw <| IO.userError "shared-expression stress check failed"
+  IO.eprintln "Expression occurrence checks passed, including an 81-node DAG with 2^80 references"
 
 def refsJson (a : Counts) : Json :=
   Json.mkObj (a.toList.map fun (n, k) => (n.toString, toJson k))
+
+def progress (message : String) : IO Unit := do
+  if let some path ← IO.getEnv "MAAM_PROGRESS_FILE" then
+    IO.FS.writeFile path message
 
 def moduleOf (env : Environment) (n : Name) : String :=
   match env.getModuleIdxFor? n with
@@ -127,6 +201,7 @@ def kindOf (info : ConstantInfo) : String :=
 def exportAll (env : Environment) (mod scope sourceRoot output revision : String) : IO Unit := do
   let roots := env.constants.toList.filterMap fun (n, _) => if inScope env scope n then some n else none
   if roots.isEmpty then throw <| IO.userError "empty module scope"
+  progress s!"exporting; vertices=0; roots={roots.length}"
   let handle ← IO.FS.Handle.mk output .write
   handle.putStrLn <| (Json.mkObj [
     ("record", toJson "metadata"), ("schema_version", toJson (1 : Nat)),
@@ -173,8 +248,10 @@ def exportAll (env : Environment) (mod scope sourceRoot output revision : String
       ("signature", refsJson sig), ("body", body.map refsJson |>.getD Json.null),
       ("source", source)]).compress
     done := done + 1
+    if done % 1000 == 0 then progress s!"exporting; vertices={seen.size}; modules={sources.size}"
     if done % 25000 == 0 then IO.eprintln s!"Exported {done} declarations"
   handle.flush
+  progress s!"complete; vertices={seen.size}; modules={sources.size}"
   IO.eprintln s!"Finished: {seen.size} vertices; {sources.size} source modules"
 
 end MAAMPaper
@@ -183,7 +260,10 @@ def main (args : List String) : IO UInt32 := do
   let [mod, scope, sourceRoot, output, revision] := args
     | throw <| IO.userError "usage: PaperExport.lean MODULE MODULE_PREFIX SOURCE_ROOT OUTPUT_JSONL REVISION"
   initSearchPath (← findSysroot)
+  MAAMPaper.progress "importing environment"
   let env ← importModules #[{ module := mod.toName }] {} (loadExts := true)
+  MAAMPaper.progress "environment loaded; checking occurrence counts and lexer"
+  MAAMPaper.checkCounts
   MAAMPaper.checkLexer env
   MAAMPaper.exportAll env mod scope sourceRoot output revision
   return 0

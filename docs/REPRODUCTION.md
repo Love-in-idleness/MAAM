@@ -10,9 +10,10 @@ The workflow checks streaming export and source lexical counts on actual Lean pr
 
 ```bash
 python -m pip install '.[reproduction]'
+bash scripts/build_paper_exporter.sh
 cd /absolute/path/to/the/fixed/mathlib4
 lake exe cache get
-lake env lean --run /absolute/path/to/MAAM/maam/PaperExport.lean \
+LEAN_SYSROOT="$(lean --print-prefix)" lake env /absolute/path/to/MAAM/build/maam-paper-export \
   Mathlib Mathlib . /absolute/path/to/MAAM/data/mathlib.jsonl \
   d167cc6dc962ab340507362ea2f4bcfcff44f01b
 cd /absolute/path/to/MAAM
@@ -20,11 +21,17 @@ python scripts/analyze_mathlib.py --input data/mathlib.jsonl \
   --output reports/mathlib --index data/mathlib-metrics.sqlite
 ```
 
+原生程序由固定 Lean 版本的 Lake 配置构建，并启用加载环境扩展所需的解释器符号；CI 会比较原生版与解释执行版的小例，要求依赖次数、声明范围及 token 计数一致。
+The native executable is built with the pinned Lean Lake configuration and the interpreter symbols required by environment extensions; CI compares it with interpreted execution on small cases and requires identical dependency multiplicities, declaration ranges, and token counts.
+
 运行完成后，摘要、图表、分桶中位数、循环清单及前 100 个参考口径定理评分写入 `reports/mathlib/`。
 On completion, the summary, plots, bucket medians, cycle list, and top 100 reference-basis theorem scores are written to `reports/mathlib/`.
 
 原始 JSONL 和完整 SQLite 索引以压缩工作流产物保存；工作流会把体量较小的报告提交到仓库，若有并发提交则拒绝覆盖它们。
 The raw JSONL and complete SQLite index are retained as compressed workflow artifacts; smaller reports are committed to the repository, and concurrent commits are never overwritten.
+
+工作流产物当前保留 30 天；仓库中的脚本、固定版本和报告可用于重新生成完整索引。
+Workflow artifacts are currently retained for 30 days; the committed scripts, fixed version, and reports allow the complete index to be regenerated.
 
 下载并解压 `mathlib-metrics.sqlite.gz` 后，可在没有 Lean 的机器上查询实际测量的声明。
 After downloading and decompressing `mathlib-metrics.sqlite.gz`, declarations can be queried on a machine without Lean.

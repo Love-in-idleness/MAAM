@@ -1,32 +1,42 @@
 {
-  "schema_version": 1,
-  "subject_commit": "c02a39551edf2fdac0c8d6154d0081de5f970d2b",
+  "schema_version": 2,
+  "subject_commit": "fad8f88da1b5eccf0ecb07985663db7ca7eb8008",
   "python": {
-    "run_id": 39039262717,
-    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39039262717",
+    "run_id": 39042684071,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684071",
     "conclusion": "success",
     "versions": [
       "3.11",
       "3.12",
       "3.13"
     ],
-    "tests_per_version": 42,
+    "tests_per_version": 53,
+    "skipped_per_version": 3,
+    "skip_reason": "the optional NumPy/SciPy/Matplotlib tests run separately with scientific dependencies",
     "reproduction_checks": true,
     "package_build_and_install": true
   },
   "lean": {
-    "run_id": 39039262709,
-    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39039262709",
+    "run_id": 39042684075,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684075",
     "conclusion": "success",
     "version": "4.24.0",
-    "scope": "small Demo module: three proved propositions and one intentionally admitted proposition",
+    "scope": "Demo module: three proved propositions, one intentionally admitted proposition; streaming export has 19 vertices",
     "checks": [
-      "compile module and exporter",
+      "compile module and exporters",
       "export a closed reference corpus",
       "calculate and rank theorems",
       "match paper small-example counts",
-      "exclude sorry-dependent declaration from scoring"
+      "exclude sorry-dependent declaration from scoring",
+      "Lean lexical token checks including source comments and string literals",
+      "native and interpreted exports agree on dependency multiplicities, source ranges, and token counts"
     ]
+  },
+  "full_mathlib": {
+    "status": "running",
+    "run_id": 39042684086,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684086",
+    "revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b"
   },
   "full_mathlib_replication": false,
   "human_interest_calibration": false

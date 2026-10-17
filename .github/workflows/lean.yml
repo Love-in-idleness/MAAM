@@ -21,6 +21,7 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -43,7 +44,7 @@ jobs:
           bash scripts/build_paper_exporter.sh
           mkdir -p data
           LEAN_PATH=lean lean --run maam/PaperExport.lean Demo Demo lean data/interpreted.jsonl smoke
-          LEAN_SYSROOT="$(lean --print-prefix)" LEAN_PATH=lean build/maam-paper-export Demo Demo lean data/native.jsonl smoke
+          LEAN_SYSROOT="$(lean --print-prefix)" LEAN_PATH=lean MAAM_PROGRESS_INTERVAL=1 bash scripts/run_paper_exporter.sh Demo Demo lean data/native.jsonl smoke
           python scripts/check_paper_smoke.py data/native.jsonl
           python - <<'PY'
           import json
