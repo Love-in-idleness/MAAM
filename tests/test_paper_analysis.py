@@ -73,6 +73,11 @@ class PaperAnalysisTests(unittest.TestCase):
             result=score_index(str(root/"metrics.sqlite"),"T")
             self.assertEqual(result["assessment"]["unwrapped_exact"],"4")
             self.assertEqual(result["assessment"]["score"],50)
+            cyclic_result=score_index(str(root/"metrics.sqlite"),"A")["assessment"]
+            self.assertEqual(cyclic_result["component_size"],2)
+            self.assertIsNone(cyclic_result["I0_reference"])
+            self.assertIsNone(cyclic_result["T0_reference_log2"])
+            self.assertIsNone(cyclic_result["T0_source_log2"])
             self.assertEqual(len(list((root/"report").glob("*.png"))),4)
 
 

@@ -6,12 +6,14 @@ on:
       - 'maam/**'
       - 'lean/**'
       - 'scripts/check_lean_smoke.py'
+      - 'scripts/build_paper_exporter.sh'
       - '.github/workflows/lean.yml'
   pull_request:
     paths:
       - 'maam/**'
       - 'lean/**'
       - 'scripts/check_lean_smoke.py'
+      - 'scripts/build_paper_exporter.sh'
       - '.github/workflows/lean.yml'
   workflow_dispatch:
 permissions:
@@ -36,3 +38,18 @@ jobs:
           python -m maam export-lean --runner lean --project lean --module Demo --target Demo.andRight --target Demo.modusPonens --target Demo.andSwap --target Demo.admittedExample --output results/lean-demo.json
           python -m maam rank --corpus results/lean-demo.json --format text
           python scripts/check_lean_smoke.py results/lean-demo.json
+      - name: Compare native and interpreted streaming exports
+        run: |
+          bash scripts/build_paper_exporter.sh
+          mkdir -p data
+          LEAN_PATH=lean lean --run maam/PaperExport.lean Demo Demo lean data/interpreted.jsonl smoke
+          LEAN_SYSROOT="$(lean --print-prefix)" LEAN_PATH=lean build/maam-paper-export Demo Demo lean data/native.jsonl smoke
+          python scripts/check_paper_smoke.py data/native.jsonl
+          python - <<'PY'
+          import json
+          def read(path):
+              with open(path) as stream:
+                  return {r.get('name', '@metadata'): r for line in stream if (r := json.loads(line))}
+          assert read('data/native.jsonl') == read('data/interpreted.jsonl'), 'native export changed measurements'
+          print('Native and interpreted exports agree, including source ranges and multiplicities.')
+          PY
