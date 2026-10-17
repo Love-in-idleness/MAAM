@@ -58,6 +58,7 @@ structure Source where
   map : FileMap
   starts : Array Nat
   lexicalError : Option String
+  deriving Inhabited
 
 def lexSource (env : Environment) (fileName source : String) : Source := Id.run do
   let ctx := Parser.mkInputContext source fileName
