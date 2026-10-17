@@ -1,0 +1,11 @@
+{
+  "python_version": "3.12.14",
+  "tests_run": 41,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "lean_toolchain_available": false,
+  "remote_ci_executed": false,
+  "scope": "local implementation checks, including independent linear-system and hypergraph-relaxation oracles; no human-interest validation"
+}

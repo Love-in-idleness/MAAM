@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "corpus_id": "synthetic-compression-reuse-v1",
+  "length_basis": "references",
+  "provenance": {
+    "kind": "synthetic",
+    "seed": null,
+    "purpose": "exercise hierarchy, reuse, proof padding, and missing-proof handling",
+    "not_human_interest_ground_truth": true
+  },
+  "nodes": [
+    {
+      "name": "Primitive",
+      "kind": "primitive"
+    },
+    {
+      "name": "Toy.Definition01",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Primitive": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition02",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition01": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition03",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition02": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition04",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition03": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition05",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition04": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition06",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition05": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition07",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition06": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition08",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition07": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition09",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition08": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition10",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition09": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition11",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition10": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Definition12",
+      "kind": "definition",
+      "signature": {
+        "Primitive": 1
+      },
+      "body": {
+        "Toy.Definition11": 2
+      },
+      "domain": "toy.definitions"
+    },
+    {
+      "name": "Toy.Trivial",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Primitive": 1
+      },
+      "domain": "toy.logic"
+    },
+    {
+      "name": "Toy.StructuralLemma",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.Definition12": 4
+      },
+      "domain": "toy.algebra"
+    },
+    {
+      "name": "Toy.IsolatedLongProof",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Primitive": 2000
+      },
+      "domain": "toy.padding"
+    },
+    {
+      "name": "Toy.OpenQuestion",
+      "kind": "conjecture",
+      "signature": {
+        "Toy.Definition12": 1
+      },
+      "statement": "An unproved toy conjecture"
+    },
+    {
+      "name": "Toy.Corollary0",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 1
+      },
+      "domain": "toy.geometry"
+    },
+    {
+      "name": "Toy.Corollary1",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 2
+      },
+      "domain": "toy.analysis"
+    },
+    {
+      "name": "Toy.Corollary2",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 3
+      },
+      "domain": "toy.geometry"
+    },
+    {
+      "name": "Toy.Corollary3",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 4
+      },
+      "domain": "toy.analysis"
+    },
+    {
+      "name": "Toy.Corollary4",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 5
+      },
+      "domain": "toy.geometry"
+    },
+    {
+      "name": "Toy.Corollary5",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 6
+      },
+      "domain": "toy.analysis"
+    },
+    {
+      "name": "Toy.Corollary6",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 7
+      },
+      "domain": "toy.geometry"
+    },
+    {
+      "name": "Toy.Corollary7",
+      "kind": "theorem",
+      "signature": {
+        "Primitive": 2
+      },
+      "body": {
+        "Toy.StructuralLemma": 8
+      },
+      "domain": "toy.analysis"
+    }
+  ]
+}

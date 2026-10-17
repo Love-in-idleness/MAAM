@@ -1,0 +1,21 @@
+{
+  "calculator_checks": {
+    "paper_reference_I0": true,
+    "paper_reference_T0": true,
+    "finite_E": true,
+    "open_question_not_scored": true,
+    "pagerank_residual": true
+  },
+  "all_passed": true,
+  "paper_equations": "T0/I0 algebra and weighted personalised PageRank implemented",
+  "measurement": "reference counts; not source-token counts",
+  "followup": "exact minimum on a supplied finite tree-proof hypergraph",
+  "not_reproduced": [
+    "full Mathlib snapshot extraction and source-token figures",
+    "SCC condensation",
+    "published empirical growth fits",
+    "universal minimum proof complexity",
+    "human mathematical-interest validation"
+  ],
+  "lean_adapter": "not compiled locally; run the optional pinned-toolchain workflow"
+}

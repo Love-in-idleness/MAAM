@@ -1,0 +1,26 @@
+name: Lean adapter
+# Separate opt-in check: not locally compiled in the authoring environment.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install official pinned Lean toolchain
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build small propositions
+        working-directory: lean
+        run: lean -o Demo.olean Demo.lean
+      - name: Export and evaluate
+        run: |
+          python -m maam export-lean --runner lean --project lean --module Demo --target Demo.andRight --target Demo.modusPonens --target Demo.andSwap --target Demo.admittedExample --output results/lean-demo.json
+          python -m maam rank --corpus results/lean-demo.json --format text
+          python scripts/check_lean_smoke.py results/lean-demo.json

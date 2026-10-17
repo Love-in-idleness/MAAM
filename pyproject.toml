@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maam-interest"
+version = "0.1.0"
+description = "Auditable mathematical-interest metrics for formal propositions"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Idleness"}]
+dependencies = []
+
+[project.scripts]
+maam = "maam.cli:main"
+
+[tool.setuptools]
+packages = ["maam"]
+
+[tool.setuptools.package-data]
+maam = ["Export.lean"]

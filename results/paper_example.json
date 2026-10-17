@@ -1,0 +1,116 @@
+{
+  "status": "evaluated",
+  "metadata": {
+    "corpus_id": "abfm-section-3.1-simple-lemma",
+    "corpus_sha256": "ca293a185f8687ac2bd36fc3df8f90f9f87597f9e6d09550c2a9262244a4cd2e",
+    "length_basis": "references",
+    "nodes": 4,
+    "comparison_theorems": 1,
+    "provenance": {
+      "kind": "paper_example_manually_transcribed",
+      "source": "https://arxiv.org/html/2603.20396v1#S3.SS1",
+      "scope": "one theorem; demonstration only; not a representative comparison corpus",
+      "kernel_checked_here": false,
+      "note": "The displayed internal expression has signature Sort:2 And:1; body Sort:2 And:1 And.right:1. Core constants are primitive boundaries."
+    },
+    "parameters": {
+      "alpha": 0.85,
+      "beta": 0.5,
+      "smoothing": 1e-12,
+      "normalisation": "log1p_divide_by_corpus_max",
+      "score": "I1_midrank_percentile_among_eligible_theorems"
+    },
+    "pagerank": {
+      "converged": true,
+      "iterations": 26,
+      "l1_residual": 2.0472512574087887e-13,
+      "mass": 1.0,
+      "dangling_policy": "redistribute_to_personalisation"
+    },
+    "measurement_status": "paper_alternative_reference_length",
+    "interpretation": "relative research heuristic; not an objective probability of mathematical interest",
+    "formal_correctness": "not checked by the Python calculator; inspect corpus provenance",
+    "sources": [
+      "https://arxiv.org/html/2603.20396v1#S5",
+      "https://arxiv.org/abs/2604.06107v1"
+    ]
+  },
+  "assessment": {
+    "name": "simple_lemma",
+    "kind": "theorem",
+    "statement": "A ∧ B → B",
+    "wrapped_signature": 3,
+    "wrapped_body": 4,
+    "unwrapped_signature": {
+      "exact": "3",
+      "bits": 2,
+      "log2": 1.584962500721156
+    },
+    "unwrapped_body": {
+      "exact": "4",
+      "bits": 3,
+      "log2": 2.0
+    },
+    "unwrapped_total": {
+      "exact": "7",
+      "bits": 3,
+      "log2": 2.807354922057604
+    },
+    "depth": 1,
+    "T0": {
+      "value": 1.0,
+      "log2": 0.0,
+      "numerator": {
+        "exact": "7",
+        "bits": 3,
+        "log2": 2.807354922057604
+      },
+      "denominator": {
+        "exact": "7",
+        "bits": 3,
+        "log2": 2.807354922057604
+      }
+    },
+    "I0": {
+      "value": 1.3333333333333333,
+      "log2": 0.4150374992788439,
+      "numerator": {
+        "exact": "4",
+        "bits": 3,
+        "log2": 2.0
+      },
+      "denominator": {
+        "exact": "3",
+        "bits": 2,
+        "log2": 1.584962500721156
+      }
+    },
+    "primitive_proof_to_statement": {
+      "value": 1.3333333333333333,
+      "log2": 0.4150374992788439,
+      "numerator": {
+        "exact": "4",
+        "bits": 3,
+        "log2": 2.0
+      },
+      "denominator": {
+        "exact": "3",
+        "bits": 2,
+        "log2": 1.584962500721156
+      }
+    },
+    "direct_users": 0,
+    "reference_occurrences_from_users": 0,
+    "user_domains": [],
+    "admitted_dependency": false,
+    "notes": [
+      "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+    ],
+    "J0": 1.0,
+    "teleportation": 0.39999999999985003,
+    "I1": 0.2985074626865505,
+    "score": 50.0,
+    "score_kind": "corpus_relative_heuristic_percentile",
+    "eligible_for_score": true
+  }
+}

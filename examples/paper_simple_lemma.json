@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "corpus_id": "abfm-section-3.1-simple-lemma",
+  "length_basis": "references",
+  "provenance": {
+    "kind": "paper_example_manually_transcribed",
+    "source": "https://arxiv.org/html/2603.20396v1#S3.SS1",
+    "scope": "one theorem; demonstration only; not a representative comparison corpus",
+    "kernel_checked_here": false,
+    "note": "The displayed internal expression has signature Sort:2 And:1; body Sort:2 And:1 And.right:1. Core constants are primitive boundaries."
+  },
+  "nodes": [
+    {"name": "Sort", "kind": "primitive"},
+    {"name": "And", "kind": "primitive"},
+    {"name": "And.right", "kind": "primitive"},
+    {
+      "name": "simple_lemma",
+      "kind": "theorem",
+      "statement": "A ∧ B → B",
+      "signature": {"Sort": 2, "And": 1},
+      "body": {"Sort": 2, "And": 1, "And.right": 1},
+      "domain": "propositional_logic"
+    }
+  ]
+}

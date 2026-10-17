@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "system_id": "synthetic-alternative-tree-proofs",
+  "statement_lengths": {"A": 2, "B": 3, "C": 4, "D": 5, "Unreachable": 6},
+  "axioms": ["A"],
+  "rules": [
+    {"id": "build-B", "conclusion": "B", "premises": ["A"]},
+    {"id": "expensive-C", "conclusion": "C", "premises": ["B", "B"]},
+    {"id": "short-C", "conclusion": "C", "premises": ["A"]},
+    {"id": "combine", "conclusion": "D", "premises": ["B", "C"]},
+    {"id": "unfounded-cycle", "conclusion": "Unreachable", "premises": ["Unreachable"]}
+  ]
+}

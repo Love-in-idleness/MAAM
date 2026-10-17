@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Please cite the two source papers as well as this implementation."
+title: "MAAM: Mathematical-interest metrics calculator"
+version: 0.1.0
+date-released: 2026-10-17
+type: software
+license: MIT
+authors:
+  - name: "Idleness"
+references:
+  - type: preprint
+    title: "Compression is all you need: Modeling Mathematics"
+    authors:
+      - family-names: Aksenov
+        given-names: Vitaly
+      - family-names: Bodnia
+        given-names: Eve
+      - family-names: Freedman
+        given-names: Michael H.
+      - family-names: Mulligan
+        given-names: Michael
+    year: 2026
+    doi: "10.48550/arXiv.2603.20396"
+  - type: preprint
+    title: "Artificial Intelligence and the Structure of Mathematics"
+    authors:
+      - family-names: Barkeshli
+        given-names: Maissam
+      - family-names: Douglas
+        given-names: Michael R.
+      - family-names: Freedman
+        given-names: Michael H.
+    year: 2026
+    doi: "10.48550/arXiv.2604.06107"

@@ -1,0 +1,70 @@
+{
+  "system_id": "synthetic-alternative-tree-proofs",
+  "name": "D",
+  "status": "derived",
+  "statement_length": 5,
+  "minimum_tree_proof_cost": {
+    "exact": "16",
+    "bits": 5,
+    "log2": 4.0
+  },
+  "E_finite": {
+    "value": 3.2,
+    "log2": 1.6780719051126378,
+    "numerator": {
+      "exact": "16",
+      "bits": 5,
+      "log2": 4.0
+    },
+    "denominator": {
+      "exact": "5",
+      "bits": 3,
+      "log2": 2.321928094887362
+    }
+  },
+  "witness": {
+    "kind": "rule",
+    "rule": "combine"
+  },
+  "cost_witnesses": {
+    "A": {
+      "cost": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "kind": "axiom"
+    },
+    "B": {
+      "cost": {
+        "exact": "5",
+        "bits": 3,
+        "log2": 2.321928094887362
+      },
+      "kind": "rule",
+      "rule": "build-B"
+    },
+    "C": {
+      "cost": {
+        "exact": "6",
+        "bits": 3,
+        "log2": 2.584962500721156
+      },
+      "kind": "rule",
+      "rule": "short-C"
+    },
+    "D": {
+      "cost": {
+        "exact": "16",
+        "bits": 5,
+        "log2": 4.0
+      },
+      "kind": "rule",
+      "rule": "combine"
+    }
+  },
+  "scope": "exact minimum for the supplied finite tree-proof hypergraph; each premise occurrence is counted",
+  "global_minimum_status": "not computed; no search over all proofs, equivalent statements, or formal systems",
+  "correctness": "rule validity is supplied by the caller, not verified by this solver",
+  "source": "https://arxiv.org/html/2604.06107v1#S3.SS4.SSS1"
+}

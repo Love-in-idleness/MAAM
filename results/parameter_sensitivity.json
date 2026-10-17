@@ -1,0 +1,554 @@
+{
+  "scope": "synthetic only; no human-interest calibration",
+  "runs": [
+    {
+      "alpha": 0,
+      "beta": 0,
+      "ranking": [
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 100.0,
+          "I1": 0.2267971272761799
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 90.0,
+          "I1": 0.052833818355008604
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 80.0,
+          "I1": 0.0493750963359451
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 70.0,
+          "I1": 0.04550857407802548
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 60.0,
+          "I1": 0.04112507267787507
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 45.0,
+          "I1": 0.036064691687488916
+        },
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 45.0,
+          "I1": 0.036064691687488916
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 30.0,
+          "I1": 0.03007953131601587
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 20.0,
+          "I1": 0.022754287039032737
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 5.0,
+          "I1": 0.013310404648496182
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.013310404648496182
+        }
+      ]
+    },
+    {
+      "alpha": 0,
+      "beta": 0.5,
+      "ranking": [
+        {
+          "name": "Toy.Corollary7",
+          "score": 100.0,
+          "I1": 0.0678120048728969
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 90.0,
+          "I1": 0.06682097008924864
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 80.0,
+          "I1": 0.06568673488199575
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 70.0,
+          "I1": 0.06435998129481234
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 60.0,
+          "I1": 0.06275987869318589
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 50.0,
+          "I1": 0.06073893560209293
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 40.0,
+          "I1": 0.05874657950394972
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 30.0,
+          "I1": 0.057977029072684386
+        },
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 20.0,
+          "I1": 0.05526642034977672
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 10.0,
+          "I1": 0.05349527778167606
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 0.0,
+          "I1": 0.006974903652962641
+        }
+      ]
+    },
+    {
+      "alpha": 0,
+      "beta": 1,
+      "ranking": [
+        {
+          "name": "Toy.Corollary7",
+          "score": 100.0,
+          "I1": 0.07260714195318671
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 90.0,
+          "I1": 0.07240611593000926
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 80.0,
+          "I1": 0.07214659882931758
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 70.0,
+          "I1": 0.07179843666009703
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 60.0,
+          "I1": 0.07130611230587394
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 50.0,
+          "I1": 0.07055427914693292
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 40.0,
+          "I1": 0.06925328579397251
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 30.0,
+          "I1": 0.06636011792754566
+        },
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 20.0,
+          "I1": 0.06141368797821996
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 5.0,
+          "I1": 0.0049466477149280996
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.0049466477149280996
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0,
+      "ranking": [
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 100.0,
+          "I1": 0.13504118229031406
+        },
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 90.0,
+          "I1": 0.08163621674457339
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 80.0,
+          "I1": 0.031458693420238076
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 70.0,
+          "I1": 0.029399276194467364
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 60.0,
+          "I1": 0.02709704360743177
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 50.0,
+          "I1": 0.024486987568552963
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 40.0,
+          "I1": 0.021473898999097577
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 30.0,
+          "I1": 0.017910171616534104
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 20.0,
+          "I1": 0.013548521803727792
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 5.0,
+          "I1": 0.007925377195393603
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.007925377195393603
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "ranking": [
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 100.0,
+          "I1": 0.12683578368894
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 90.0,
+          "I1": 0.03935529781051709
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 80.0,
+          "I1": 0.03878014199372384
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 70.0,
+          "I1": 0.03812187854240311
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 60.0,
+          "I1": 0.037351885343667235
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 50.0,
+          "I1": 0.03642325162265538
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 40.0,
+          "I1": 0.03525037939513245
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 30.0,
+          "I1": 0.03409409788223525
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 20.0,
+          "I1": 0.033647482471594825
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 10.0,
+          "I1": 0.031046458403645495
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 0.0,
+          "I1": 0.004047947129369127
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "beta": 1,
+      "ranking": [
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 100.0,
+          "I1": 0.14082648976057216
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 90.0,
+          "I1": 0.04179954846283825
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 80.0,
+          "I1": 0.04168381884214178
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 70.0,
+          "I1": 0.04153441621678722
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 60.0,
+          "I1": 0.04133398109327493
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 50.0,
+          "I1": 0.04105055256062381
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 40.0,
+          "I1": 0.04061772617856643
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 30.0,
+          "I1": 0.03986875117081911
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 20.0,
+          "I1": 0.038203169697831135
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 5.0,
+          "I1": 0.0028477589852254227
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.0028477589852254227
+        }
+      ]
+    },
+    {
+      "alpha": 0.85,
+      "beta": 0,
+      "ranking": [
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 100.0,
+          "I1": 0.08671586207947084
+        },
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 90.0,
+          "I1": 0.07946519575372823
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 80.0,
+          "I1": 0.020201005897334975
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 70.0,
+          "I1": 0.018878563831254004
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 60.0,
+          "I1": 0.017400199378971207
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 50.0,
+          "I1": 0.015724167996185107
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 40.0,
+          "I1": 0.013789331760373627
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 30.0,
+          "I1": 0.01150090620785702
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 20.0,
+          "I1": 0.00870009968949325
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 5.0,
+          "I1": 0.005089232070895672
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.005089232070895672
+        }
+      ]
+    },
+    {
+      "alpha": 0.85,
+      "beta": 0.5,
+      "ranking": [
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 100.0,
+          "I1": 0.11771705602605641
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 90.0,
+          "I1": 0.02398311846831605
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 80.0,
+          "I1": 0.02363261851381673
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 70.0,
+          "I1": 0.02323147276687313
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 60.0,
+          "I1": 0.022762238911904174
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 50.0,
+          "I1": 0.022196329522730433
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 40.0,
+          "I1": 0.021481581187796906
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 30.0,
+          "I1": 0.020776943234348956
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 20.0,
+          "I1": 0.020504775803302292
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 10.0,
+          "I1": 0.018919711737444812
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 0.0,
+          "I1": 0.0024668189788464995
+        }
+      ]
+    },
+    {
+      "alpha": 0.85,
+      "beta": 1,
+      "ranking": [
+        {
+          "name": "Toy.StructuralLemma",
+          "score": 100.0,
+          "I1": 0.128778884316505
+        },
+        {
+          "name": "Toy.Corollary7",
+          "score": 90.0,
+          "I1": 0.02507684514035944
+        },
+        {
+          "name": "Toy.Corollary6",
+          "score": 80.0,
+          "I1": 0.025007415352644433
+        },
+        {
+          "name": "Toy.Corollary5",
+          "score": 70.0,
+          "I1": 0.024917784085385402
+        },
+        {
+          "name": "Toy.Corollary4",
+          "score": 60.0,
+          "I1": 0.02479753684019147
+        },
+        {
+          "name": "Toy.Corollary3",
+          "score": 50.0,
+          "I1": 0.024627499275599825
+        },
+        {
+          "name": "Toy.Corollary2",
+          "score": 40.0,
+          "I1": 0.02436783330898862
+        },
+        {
+          "name": "Toy.Corollary1",
+          "score": 30.0,
+          "I1": 0.023918499979467676
+        },
+        {
+          "name": "Toy.Corollary0",
+          "score": 20.0,
+          "I1": 0.022919266011571963
+        },
+        {
+          "name": "Toy.IsolatedLongProof",
+          "score": 5.0,
+          "I1": 0.001708458911537152
+        },
+        {
+          "name": "Toy.Trivial",
+          "score": 5.0,
+          "I1": 0.001708458911537152
+        }
+      ]
+    }
+  ]
+}

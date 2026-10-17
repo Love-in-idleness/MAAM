@@ -1,0 +1,69 @@
+{
+  "status": "metrics_only",
+  "metadata": {
+    "corpus_id": "synthetic-compression-reuse-v1",
+    "corpus_sha256": "2937ffd448059b81504ca064f09ec449aa9d7274c2bd99c1171f8d7f99f0b87b",
+    "length_basis": "references",
+    "nodes": 25,
+    "comparison_theorems": 11,
+    "provenance": {
+      "kind": "synthetic",
+      "seed": null,
+      "purpose": "exercise hierarchy, reuse, proof padding, and missing-proof handling",
+      "not_human_interest_ground_truth": true
+    },
+    "parameters": {
+      "alpha": 0.85,
+      "beta": 0.5,
+      "smoothing": 1e-12,
+      "normalisation": "log1p_divide_by_corpus_max",
+      "score": "I1_midrank_percentile_among_eligible_theorems"
+    },
+    "pagerank": {
+      "converged": true,
+      "iterations": 53,
+      "l1_residual": 5.334331067141692e-13,
+      "mass": 0.9999999999999999,
+      "dangling_policy": "redistribute_to_personalisation"
+    },
+    "measurement_status": "paper_alternative_reference_length",
+    "interpretation": "relative research heuristic; not an objective probability of mathematical interest",
+    "formal_correctness": "not checked by the Python calculator; inspect corpus provenance",
+    "sources": [
+      "https://arxiv.org/html/2603.20396v1#S5",
+      "https://arxiv.org/abs/2604.06107v1"
+    ]
+  },
+  "assessment": {
+    "name": "Toy.OpenQuestion",
+    "kind": "conjecture",
+    "statement": "An unproved toy conjecture",
+    "wrapped_signature": 1,
+    "wrapped_body": null,
+    "unwrapped_signature": {
+      "exact": "8191",
+      "bits": 13,
+      "log2": 12.999823879015725
+    },
+    "unwrapped_body": null,
+    "unwrapped_total": null,
+    "depth": 13,
+    "T0": null,
+    "I0": null,
+    "primitive_proof_to_statement": null,
+    "direct_users": 0,
+    "reference_occurrences_from_users": 0,
+    "user_domains": [],
+    "admitted_dependency": false,
+    "notes": [
+      "unproved: no proof-dependent interest score is available",
+      "I1 is graph mass only here; unavailable intrinsic metrics were not imputed"
+    ],
+    "J0": 0.0,
+    "teleportation": 4e-14,
+    "I1": 1.4146827549646226e-14,
+    "score": null,
+    "score_kind": "corpus_relative_heuristic_percentile",
+    "eligible_for_score": false
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "metadata": {
+    "corpus_id": "synthetic-compression-reuse-v1",
+    "corpus_sha256": "2937ffd448059b81504ca064f09ec449aa9d7274c2bd99c1171f8d7f99f0b87b",
+    "length_basis": "references",
+    "nodes": 25,
+    "comparison_theorems": 11,
+    "provenance": {
+      "kind": "synthetic",
+      "seed": null,
+      "purpose": "exercise hierarchy, reuse, proof padding, and missing-proof handling",
+      "not_human_interest_ground_truth": true
+    },
+    "parameters": {
+      "alpha": 0.85,
+      "beta": 0.5,
+      "smoothing": 1e-12,
+      "normalisation": "log1p_divide_by_corpus_max",
+      "score": "I1_midrank_percentile_among_eligible_theorems"
+    },
+    "pagerank": {
+      "converged": true,
+      "iterations": 53,
+      "l1_residual": 5.334331067141692e-13,
+      "mass": 0.9999999999999999,
+      "dangling_policy": "redistribute_to_personalisation"
+    },
+    "measurement_status": "paper_alternative_reference_length",
+    "interpretation": "relative research heuristic; not an objective probability of mathematical interest",
+    "formal_correctness": "not checked by the Python calculator; inspect corpus provenance",
+    "sources": [
+      "https://arxiv.org/html/2603.20396v1#S5",
+      "https://arxiv.org/abs/2604.06107v1"
+    ]
+  },
+  "ranking": [
+    {
+      "name": "Toy.StructuralLemma",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 4,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "32764",
+        "bits": 15,
+        "log2": 14.999823879015725
+      },
+      "unwrapped_total": {
+        "exact": "32766",
+        "bits": 15,
+        "log2": 14.99991194219542
+      },
+      "depth": 13,
+      "T0": {
+        "value": 5461.0,
+        "log2": 12.414949441474263,
+        "numerator": {
+          "exact": "32766",
+          "bits": 15,
+          "log2": 14.99991194219542
+        },
+        "denominator": {
+          "exact": "6",
+          "bits": 3,
+          "log2": 2.584962500721156
+        }
+      },
+      "I0": {
+        "value": 2.0,
+        "log2": 1.0,
+        "numerator": {
+          "exact": "4",
+          "bits": 3,
+          "log2": 2.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 16382.0,
+        "log2": 13.999823879015725,
+        "numerator": {
+          "exact": "32764",
+          "bits": 15,
+          "log2": 14.999823879015725
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 8,
+      "reference_occurrences_from_users": 36,
+      "user_domains": [
+        "toy.analysis",
+        "toy.geometry"
+      ],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5024263842953504,
+      "teleportation": 0.05526642034977672,
+      "I1": 0.11771705602605641,
+      "score": 100.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary7",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 8,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "262128",
+        "bits": 18,
+        "log2": 17.99991194219542
+      },
+      "unwrapped_total": {
+        "exact": "262130",
+        "bits": 18,
+        "log2": 17.999922949714932
+      },
+      "depth": 14,
+      "T0": {
+        "value": 26213.0,
+        "log2": 14.67799485482757,
+        "numerator": {
+          "exact": "262130",
+          "bits": 18,
+          "log2": 17.999922949714932
+        },
+        "denominator": {
+          "exact": "10",
+          "bits": 4,
+          "log2": 3.321928094887362
+        }
+      },
+      "I0": {
+        "value": 4.0,
+        "log2": 2.0,
+        "numerator": {
+          "exact": "8",
+          "bits": 4,
+          "log2": 3.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 131064.0,
+        "log2": 16.99991194219542,
+        "numerator": {
+          "exact": "262128",
+          "bits": 18,
+          "log2": 17.99991194219542
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.6164781472091577,
+      "teleportation": 0.0678120048728969,
+      "I1": 0.02398311846831605,
+      "score": 90.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary6",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 7,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "229362",
+        "bits": 18,
+        "log2": 17.807266864253023
+      },
+      "unwrapped_total": {
+        "exact": "229364",
+        "bits": 18,
+        "log2": 17.807279444268467
+      },
+      "depth": 14,
+      "T0": {
+        "value": 25484.88888888889,
+        "log2": 14.637354442826155,
+        "numerator": {
+          "exact": "229364",
+          "bits": 18,
+          "log2": 17.807279444268467
+        },
+        "denominator": {
+          "exact": "9",
+          "bits": 4,
+          "log2": 3.169925001442312
+        }
+      },
+      "I0": {
+        "value": 3.5,
+        "log2": 1.8073549220576042,
+        "numerator": {
+          "exact": "7",
+          "bits": 3,
+          "log2": 2.807354922057604
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 114681.0,
+        "log2": 16.807266864253023,
+        "numerator": {
+          "exact": "229362",
+          "bits": 18,
+          "log2": 17.807266864253023
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.6074686615231232,
+      "teleportation": 0.06682097008924864,
+      "I1": 0.02363261851381673,
+      "score": 80.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary5",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 6,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "196596",
+        "bits": 18,
+        "log2": 17.584874442916576
+      },
+      "unwrapped_total": {
+        "exact": "196598",
+        "bits": 18,
+        "log2": 17.584889119590592
+      },
+      "depth": 14,
+      "T0": {
+        "value": 24574.75,
+        "log2": 14.584889119590592,
+        "numerator": {
+          "exact": "196598",
+          "bits": 18,
+          "log2": 17.584889119590592
+        },
+        "denominator": {
+          "exact": "8",
+          "bits": 4,
+          "log2": 3.0
+        }
+      },
+      "I0": {
+        "value": 3.0,
+        "log2": 1.584962500721156,
+        "numerator": {
+          "exact": "6",
+          "bits": 3,
+          "log2": 2.584962500721156
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 98298.0,
+        "log2": 16.584874442916576,
+        "numerator": {
+          "exact": "196596",
+          "bits": 18,
+          "log2": 17.584874442916576
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5971573424524415,
+      "teleportation": 0.06568673488199575,
+      "I1": 0.02323147276687313,
+      "score": 70.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary4",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 5,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "163830",
+        "bits": 18,
+        "log2": 17.321840037082783
+      },
+      "unwrapped_total": {
+        "exact": "163832",
+        "bits": 18,
+        "log2": 17.321857649073685
+      },
+      "depth": 14,
+      "T0": {
+        "value": 23404.571428571428,
+        "log2": 14.514502727016081,
+        "numerator": {
+          "exact": "163832",
+          "bits": 18,
+          "log2": 17.321857649073685
+        },
+        "denominator": {
+          "exact": "7",
+          "bits": 3,
+          "log2": 2.807354922057604
+        }
+      },
+      "I0": {
+        "value": 2.5,
+        "log2": 1.3219280948873622,
+        "numerator": {
+          "exact": "5",
+          "bits": 3,
+          "log2": 2.321928094887362
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 81915.0,
+        "log2": 16.321840037082783,
+        "numerator": {
+          "exact": "163830",
+          "bits": 18,
+          "log2": 17.321840037082783
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5850958410300388,
+      "teleportation": 0.06435998129481234,
+      "I1": 0.022762238911904174,
+      "score": 60.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary3",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 4,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "131064",
+        "bits": 17,
+        "log2": 16.99991194219542
+      },
+      "unwrapped_total": {
+        "exact": "131066",
+        "bits": 17,
+        "log2": 16.999933957150457
+      },
+      "depth": 14,
+      "T0": {
+        "value": 21844.333333333332,
+        "log2": 14.414971456429301,
+        "numerator": {
+          "exact": "131066",
+          "bits": 17,
+          "log2": 16.999933957150457
+        },
+        "denominator": {
+          "exact": "6",
+          "bits": 3,
+          "log2": 2.584962500721156
+        }
+      },
+      "I0": {
+        "value": 2.0,
+        "log2": 1.0,
+        "numerator": {
+          "exact": "4",
+          "bits": 3,
+          "log2": 2.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 65532.0,
+        "log2": 15.999911942195421,
+        "numerator": {
+          "exact": "131064",
+          "bits": 17,
+          "log2": 16.99991194219542
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5705493268981425,
+      "teleportation": 0.06275987869318589,
+      "I1": 0.022196329522730433,
+      "score": 50.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary2",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 3,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "98298",
+        "bits": 17,
+        "log2": 16.584874442916576
+      },
+      "unwrapped_total": {
+        "exact": "98300",
+        "bits": 17,
+        "log2": 16.584903796115306
+      },
+      "depth": 14,
+      "T0": {
+        "value": 19660.0,
+        "log2": 14.262975701227944,
+        "numerator": {
+          "exact": "98300",
+          "bits": 17,
+          "log2": 16.584903796115306
+        },
+        "denominator": {
+          "exact": "5",
+          "bits": 3,
+          "log2": 2.321928094887362
+        }
+      },
+      "I0": {
+        "value": 1.5,
+        "log2": 0.5849625007211561,
+        "numerator": {
+          "exact": "3",
+          "bits": 2,
+          "log2": 1.584962500721156
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 49149.0,
+        "log2": 15.584874442916576,
+        "numerator": {
+          "exact": "98298",
+          "bits": 17,
+          "log2": 16.584874442916576
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5521769567735892,
+      "teleportation": 0.06073893560209293,
+      "I1": 0.021481581187796906,
+      "score": 40.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.IsolatedLongProof",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 2000,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "2000",
+        "bits": 11,
+        "log2": 10.965784284662087
+      },
+      "unwrapped_total": {
+        "exact": "2002",
+        "bits": 11,
+        "log2": 10.967226258835993
+      },
+      "depth": 1,
+      "T0": {
+        "value": 1.0,
+        "log2": 0.0,
+        "numerator": {
+          "exact": "2002",
+          "bits": 11,
+          "log2": 10.967226258835993
+        },
+        "denominator": {
+          "exact": "2002",
+          "bits": 11,
+          "log2": 10.967226258835993
+        }
+      },
+      "I0": {
+        "value": 1000.0,
+        "log2": 9.965784284662087,
+        "numerator": {
+          "exact": "2000",
+          "bits": 11,
+          "log2": 10.965784284662087
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 1000.0,
+        "log2": 9.965784284662087,
+        "numerator": {
+          "exact": "2000",
+          "bits": 11,
+          "log2": 10.965784284662087
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5340644706692915,
+      "teleportation": 0.05874657950394972,
+      "I1": 0.020776943234348956,
+      "score": 30.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary1",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 2,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "65532",
+        "bits": 16,
+        "log2": 15.99991194219542
+      },
+      "unwrapped_total": {
+        "exact": "65534",
+        "bits": 16,
+        "log2": 15.999955971769559
+      },
+      "depth": 14,
+      "T0": {
+        "value": 16383.5,
+        "log2": 13.999955971769559,
+        "numerator": {
+          "exact": "65534",
+          "bits": 16,
+          "log2": 15.999955971769559
+        },
+        "denominator": {
+          "exact": "4",
+          "bits": 3,
+          "log2": 2.0
+        }
+      },
+      "I0": {
+        "value": 1.0,
+        "log2": 0.0,
+        "numerator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 32766.0,
+        "log2": 14.99991194219542,
+        "numerator": {
+          "exact": "65532",
+          "bits": 16,
+          "log2": 15.99991194219542
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.5270684966534819,
+      "teleportation": 0.057977029072684386,
+      "I1": 0.020504775803302292,
+      "score": 20.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Corollary0",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 1,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "32766",
+        "bits": 15,
+        "log2": 14.99991194219542
+      },
+      "unwrapped_total": {
+        "exact": "32768",
+        "bits": 16,
+        "log2": 15.0
+      },
+      "depth": 14,
+      "T0": {
+        "value": 10922.666666666666,
+        "log2": 13.415037499278844,
+        "numerator": {
+          "exact": "32768",
+          "bits": 16,
+          "log2": 15.0
+        },
+        "denominator": {
+          "exact": "3",
+          "bits": 2,
+          "log2": 1.584962500721156
+        }
+      },
+      "I0": {
+        "value": 0.5,
+        "log2": -1.0,
+        "numerator": {
+          "exact": "1",
+          "bits": 1,
+          "log2": 0.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 16383.0,
+        "log2": 13.99991194219542,
+        "numerator": {
+          "exact": "32766",
+          "bits": 15,
+          "log2": 14.99991194219542
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.48632494781853264,
+      "teleportation": 0.05349527778167606,
+      "I1": 0.018919711737444812,
+      "score": 10.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    },
+    {
+      "name": "Toy.Trivial",
+      "kind": "theorem",
+      "statement": null,
+      "wrapped_signature": 2,
+      "wrapped_body": 1,
+      "unwrapped_signature": {
+        "exact": "2",
+        "bits": 2,
+        "log2": 1.0
+      },
+      "unwrapped_body": {
+        "exact": "1",
+        "bits": 1,
+        "log2": 0.0
+      },
+      "unwrapped_total": {
+        "exact": "3",
+        "bits": 2,
+        "log2": 1.584962500721156
+      },
+      "depth": 1,
+      "T0": {
+        "value": 1.0,
+        "log2": 0.0,
+        "numerator": {
+          "exact": "3",
+          "bits": 2,
+          "log2": 1.584962500721156
+        },
+        "denominator": {
+          "exact": "3",
+          "bits": 2,
+          "log2": 1.584962500721156
+        }
+      },
+      "I0": {
+        "value": 0.5,
+        "log2": -1.0,
+        "numerator": {
+          "exact": "1",
+          "bits": 1,
+          "log2": 0.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "primitive_proof_to_statement": {
+        "value": 0.5,
+        "log2": -1.0,
+        "numerator": {
+          "exact": "1",
+          "bits": 1,
+          "log2": 0.0
+        },
+        "denominator": {
+          "exact": "2",
+          "bits": 2,
+          "log2": 1.0
+        }
+      },
+      "direct_users": 0,
+      "reference_occurrences_from_users": 0,
+      "user_domains": [],
+      "admitted_dependency": false,
+      "notes": [
+        "small comparison cohort: this percentile is not a calibrated judgement of mathematical value"
+      ],
+      "J0": 0.06340876794570699,
+      "teleportation": 0.006974903652962641,
+      "I1": 0.0024668189788464995,
+      "score": 0.0,
+      "score_kind": "corpus_relative_heuristic_percentile",
+      "eligible_for_score": true
+    }
+  ]
+}
