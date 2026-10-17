@@ -3,8 +3,8 @@
 输入一个有证明及依赖数据的形式命题，计算压缩、证明效率和结构用途，并给出可追溯的相对评分。
 Evaluate a formal proposition using compression, proof efficiency, and structural usefulness, with a traceable relative score.
 
-本项目根据 Freedman 参与的两篇论文实现研究用指标；目前发布的是可运行的 Python 计算核心，尚未完成全量 Mathlib 实验或人类兴趣标注验证。
-This project implements research metrics from two papers coauthored by Freedman; the Python core runs, while full Mathlib replication and validation against human interest judgements remain unfinished.
+本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
+This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 
 ## 快速运行 / Quick start
 
@@ -90,13 +90,14 @@ Unmatched statements and unproved conjectures return the missing evidence and a 
 适配器从已有 Lean 工程导出命题类型、证明体及带重复次数的依赖；已通过 GitHub Actions 上 Lean 4.24.0 的小命题端到端检查。
 The adapter exports statement types, proof bodies, and dependency multiplicities from an existing Lean project; it passes the small-proposition end-to-end check on Lean 4.24.0 in GitHub Actions.
 
-该检查包含真实证明导出、指标计算与 `sorry` 污染排除；它不代表全量 Mathlib 已经复现，证据见 [远程验证记录](results/remote_validation.json)。
-The check covers actual proof export, metric calculation, and exclusion of `sorry` taint; it does not establish full Mathlib replication; see the [remote validation record](results/remote_validation.json).
+小例检查包含真实证明导出、指标计算与 `sorry` 污染排除；全库实验的执行证据另见 [远程验证记录](results/remote_validation.json) 和 [实际报告](reports/mathlib/summary.json)。
+The small cases check actual proof export, metric calculation, and exclusion of `sorry` taint; see the [remote validation record](results/remote_validation.json) and [measured report](reports/mathlib/summary.json) for the separate full-library experiment.
 
 ```bash
-python -m maam export-lean --project /absolute/path/to/mathlib4 \
-  --module Mathlib --expand-prefix Mathlib --output data/mathlib.json
-python -m maam score --corpus data/mathlib.json --name YourNamespace.yourTheorem
+python -m maam export-lean --project /absolute/path/to/your/lean/project \
+  --module YourModule --target YourNamespace.yourTheorem \
+  --expand-prefix YourModule --output data/your-corpus.json
+python -m maam score --corpus data/your-corpus.json --name YourNamespace.yourTheorem
 ```
 
 工具链、边界设置、局部导出偏差与测试步骤见 [Lean 接口说明](lean/README.md)。
@@ -112,6 +113,36 @@ The workflow generates a complete SQLite metric index; after downloading and dec
 python -m maam score-index --index data/mathlib-metrics.sqlite \
   --name Hyperreal.infinitesimal_zero
 ```
+
+## 已测得的 Mathlib 结果 / Measured Mathlib results
+
+固定使用论文给出的提交 `d167cc6d` 和 Lean 4.24.0；下表区分模块范围内声明与为递推保留的基础依赖节点。
+The experiment pins the paper's commit `d167cc6d` and Lean 4.24.0; the table distinguishes module-scope declarations from primitive boundary nodes retained for the recurrence.
+
+| 测量 / Measurement | MAAM | 原文 / Paper |
+| --- | ---: | ---: |
+| Mathlib 声明，收缩前 / declarations before SCC | 463,719 | 463,719 |
+| Mathlib 分量，收缩后 / components after SCC | 463,661 | 463,661 |
+| 额外显式基础边界 / additional explicit primitive boundary | 9,626 | 未单列 / not separate |
+| 最大深度 / maximum depth | 299 | ≈300 |
+| 深度对中位 `log2 U` 的斜率 / depth-to-median-log2 slope | 0.9957 | ≈1 |
+| 最大 `log10 U` / maximum log10 expansion | 110.6394 | ≈104 |
+| token 对中位 `log2 U` 的斜率 / token-to-median-log2 slope | 0.2281 | ≈0.4 |
+| 可评分已证明定理 / eligible proved theorems | 356,733 | 未报告 / not reported |
+
+最大展开量对应同一条代数几何定理，但数值尚未一致；[依赖贡献表](reports/mathlib/max_expansion_dependencies.csv) 可用于逐层追查，程序不会调整引用次数来强行匹配。
+The maximum occurs at the same algebraic-geometry theorem but its magnitude still differs; the [dependency contribution table](reports/mathlib/max_expansion_dependencies.csv) supports inspection without tuning reference counts to force agreement.
+
+完整图保留 473,345 个节点，收缩后为 473,287 个；27 个多声明 SCC 共减少 58 个节点，另有 952 个单节点自环。
+The complete graph retains 473,345 vertices and 473,287 after condensation; 27 multi-declaration SCCs account for the reduction of 58 vertices, alongside 952 singleton self-loops.
+
+正长度的具名源码测量覆盖 212,012 个声明，较初次实验的 137,217 个增加 54.5%；仍有 9,307 个有范围的声明因上下文或解析失败而缺失，187,444 个声明没有源码范围。
+Positive named-source measurements cover 212,012 declarations, up 54.5% from the initial 137,217; 9,307 ranged declarations remain missing because of context or parse failures, and 187,444 declarations have no source range.
+
+[完整实验记录](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) 保留原始数据和完整索引；[原文示例指标](results/mathlib_examples.json) 可直接查看四个真实声明的计算结果。
+The [completed experiment](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) retains raw data and the complete index; the [measured paper examples](results/mathlib_examples.json) show calculated results for four actual declarations.
+
+![Median expansion versus dependency depth](reports/mathlib/figure5_expansion_by_depth.png)
 
 ## 验证与复现状态 / Validation and reproduction status
 
@@ -136,8 +167,8 @@ The [monoid experiments](reports/monoids/summary.json) enumerate additive models
 这些检查验证算法实现；尚没有证据表明本项目的综合分与数学家对任意命题的兴趣判断一致。
 These checks validate the implementation; they do not establish agreement between the overall score and mathematicians' interest judgements for arbitrary propositions.
 
-全量 Mathlib token 图表、SCC 收缩、普遍最短证明复杂度及人类标注评估均未完成，详见 [复现状态](results/reproduction_status.json)。
-Full Mathlib token plots, SCC condensation, universal minimum proof complexity, and human-label evaluation remain unfinished; see [reproduction status](results/reproduction_status.json).
+全量 Mathlib 实验已执行；尚未解决的目标包括与原作者全部数值的一致性、普遍最短证明复杂度和人类兴趣评估，详见 [复现状态](results/reproduction_status.json)。
+The full Mathlib experiment has run; remaining targets include agreement with every reported numerical result, universal minimum proof complexity, and human-interest evaluation; see [reproduction status](results/reproduction_status.json).
 
 ## 论文与发布 / Papers and publishing
 

@@ -1,9 +1,9 @@
 {
-  "schema_version": 2,
-  "subject_commit": "fad8f88da1b5eccf0ecb07985663db7ca7eb8008",
+  "schema_version": 3,
+  "subject_commit": "fc871dec1e3ccef1855b2be750ef2eabe52fe42e",
   "python": {
-    "run_id": 39042684071,
-    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684071",
+    "run_id": 39060623065,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39060623065",
     "conclusion": "success",
     "versions": [
       "3.11",
@@ -12,32 +12,84 @@
     ],
     "tests_per_version": 53,
     "skipped_per_version": 3,
-    "skip_reason": "the optional NumPy/SciPy/Matplotlib tests run separately with scientific dependencies",
+    "skip_reason": "optional scientific tests run separately with NumPy/SciPy/Matplotlib",
     "reproduction_checks": true,
     "package_build_and_install": true
   },
   "lean": {
-    "run_id": 39042684075,
-    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684075",
+    "run_id": 39060623015,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39060623015",
     "conclusion": "success",
     "version": "4.24.0",
-    "scope": "Demo module: three proved propositions, one intentionally admitted proposition; streaming export has 19 vertices",
+    "scope": "Demo: three proved propositions, one intentionally admitted proposition; 19 streaming vertices",
     "checks": [
-      "compile module and exporters",
-      "export a closed reference corpus",
-      "calculate and rank theorems",
+      "compile module and both exporters",
       "match paper small-example counts",
-      "exclude sorry-dependent declaration from scoring",
-      "Lean lexical token checks including source comments and string literals",
-      "native and interpreted exports agree on dependency multiplicities, source ranges, and token counts"
+      "exclude sorry-dependent declarations from scoring",
+      "compare native and interpreted dependency multiplicities, source ranges and source counts",
+      "check exact expression occurrence counts including an 81-node DAG with 2^80 references",
+      "check local notation with attributes, numeric field access, interpolated strings, modifiers, and parser error recovery"
     ]
   },
-  "full_mathlib": {
-    "status": "running",
-    "run_id": 39042684086,
-    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39042684086",
-    "revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b"
+  "source_parser_probe": {
+    "run_id": 39060409603,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39060409603",
+    "conclusion": "success",
+    "source_commit": "ae29b8d61b47391d34035b0223f3e2ceda46a998",
+    "modules_checked": 10,
+    "module_parse_failures": 0
   },
+  "full_mathlib": {
+    "status": "measured",
+    "conclusion": "success",
+    "run_id": 39060623030,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030",
+    "exporter_commit": "fc871dec1e3ccef1855b2be750ef2eabe52fe42e",
+    "revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+    "artifact_id": 12111726181,
+    "artifact_sha256": "adff81d38873847c887ae9ec93df108eb072514ff29444985c075c0ecef7f258",
+    "artifact_expires_at": "2026-11-16T19:10:11Z",
+    "input_sha256": "76bf0aa7198153e028306c3004f8af3d28286691e145818ba38de07abc0713eb",
+    "input_sha256_basis": "decompressed JSONL bytes",
+    "dependency_evidence_sha256": "aa6a9f45f81f7a0c97bb519d11975f99c5a18c4e799140bfd0a22509cae9f537",
+    "baseline_dependency_evidence_identical": true,
+    "scope_counts": {
+      "module_prefix": "Mathlib",
+      "declarations_before_scc": 463719,
+      "components_after_scc": 463661,
+      "explicit_primitive_boundary_vertices": 9626,
+      "other_nonprimitive_vertices": 0
+    },
+    "source_status_counts": {
+      "no_declaration_range": 187444,
+      "shared_or_generated_source": 54955,
+      "named_source": 212013,
+      "absent": 1,
+      "primitive": 9625,
+      "source_context_error": 9015,
+      "source_parse_error": 292
+    },
+    "scientific_tests_run": 3,
+    "native_export_wall_seconds": 313.43,
+    "native_export_max_rss_kib": 6125396,
+    "source_coverage": {
+      "positive_named_declarations": 212012,
+      "empty_named_ranges": 1,
+      "positive_shared_or_generated_declarations": 54949,
+      "empty_shared_or_generated_ranges": 6
+    }
+  },
+  "post_run_validation": {
+    "archive_digest_verified": true,
+    "gzip_content_digest_matches_index_and_report": true,
+    "stale_index_rejected": true,
+    "landmark_assessments_rebuilt_from_index": 4,
+    "scored_rows_violating_eligibility": 0,
+    "additional_regression": "uncompressed and gzip JSONL inputs retain identical provenance hashes; see tests/test_paper_analysis.py",
+    "additional_report_metadata": "decompressed content-hash basis and positive/empty source coverage are recorded explicitly"
+  },
+  "full_mathlib_experiment_completed": true,
   "full_mathlib_replication": false,
+  "full_mathlib_replication_limit": "maximum log10 expansion 110.6394 versus paper approximately 104; token slope 0.2281 versus approximately 0.4; remaining source context/parse failures and unspecified author filters",
   "human_interest_calibration": false
 }

@@ -33,9 +33,13 @@ In an existing Mathlib checkout, use its own Lean version and Lake environment:
 ```bash
 # Run from the MAAM repository after building/importing the required Mathlib module.
 python -m maam export-lean --project /absolute/path/to/mathlib4 \
-  --module Mathlib --expand-prefix Mathlib --output data/mathlib.json
-python -m maam rank --corpus data/mathlib.json --limit 30 --format text
+  --module Mathlib.Analysis.Real.Hyperreal --target Hyperreal.infinitesimal_zero \
+  --expand-prefix Mathlib.Analysis.Real.Hyperreal --output data/hyperreal-local.json
+python -m maam score --corpus data/hyperreal-local.json --name Hyperreal.infinitesimal_zero
 ```
+
+This is a limited dependency-closure example with an explicit module boundary; its score is not the full-corpus index score. Use the fixed-snapshot workflow for the complete Mathlib experiment.
+这是有明确模块边界的局部依赖闭包示例，其评分不同于全语料索引；完整 Mathlib 实验应使用固定快照工作流。
 
 The paper's snapshot is `d167cc6dc962ab340507362ea2f4bcfcff44f01b`, whose
 `lean-toolchain` specifies Lean 4.24.0. Changing the snapshot changes the scores.

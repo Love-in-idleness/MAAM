@@ -1,4 +1,6 @@
 import importlib.util
+import gzip
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -16,6 +18,17 @@ class PaperAnalysisTests(unittest.TestCase):
         sys.path.insert(0, str(Path(__file__).parents[1]/"scripts"))
         import analyze_mathlib
         cls.analysis = analyze_mathlib
+
+    def test_provenance_is_stable_after_archiving(self):
+        evidence = '{"name":"示例","signature":{"p":2}}\n'.encode()
+        with tempfile.TemporaryDirectory() as temp:
+            raw = Path(temp)/"corpus.jsonl"
+            compressed = Path(temp)/"corpus.jsonl.gz"
+            raw.write_bytes(evidence)
+            compressed.write_bytes(gzip.compress(evidence))
+            expected = hashlib.sha256(evidence).hexdigest()
+            self.assertEqual(self.analysis.input_fingerprint(raw), expected)
+            self.assertEqual(self.analysis.input_fingerprint(compressed), expected)
 
     def test_scc_multiplicity_and_exact_expansion(self):
         import numpy as np

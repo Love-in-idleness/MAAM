@@ -230,5 +230,12 @@
     "paper does not specify exact source-range filtering or regression windows",
     "no source-level signature/proof token split is inferred from whole-range counts",
     "no empirical validation against human interest judgements"
-  ]
+  ],
+  "input_sha256_basis": "decompressed JSONL bytes",
+  "source_coverage": {
+    "positive_named_declarations": 212012,
+    "empty_named_ranges": 1,
+    "positive_shared_or_generated_declarations": 54949,
+    "empty_shared_or_generated_ranges": 6
+  }
 }

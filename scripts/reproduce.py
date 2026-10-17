@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Deterministic calculator fixtures and reports. Not a full Mathlib replication."""
+"""Recompute calculator fixtures, status, and optional measured-index examples."""
 
+import argparse
 import json
 from pathlib import Path
 import sys
@@ -46,6 +47,9 @@ def toy_corpus():
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--index", help="also regenerate paper-landmark assessments from the measured SQLite index")
+    args = parser.parse_args()
     write("examples/toy_corpus.json", toy_corpus())
     paper = Calculator(Corpus.load(ROOT/"examples/paper_simple_lemma.json"))
     toy = Calculator(Corpus.load(ROOT/"examples/toy_corpus.json"))
@@ -71,13 +75,32 @@ def main():
     }
     full_report = ROOT/"reports/mathlib/summary.json"
     monoid_report = ROOT/"reports/monoids/summary.json"
+    baseline_report = ROOT/"results/mathlib_baseline.json"
     full = json.loads(full_report.read_text()) if full_report.exists() else None
     monoids = json.loads(monoid_report.read_text()) if monoid_report.exists() else None
+    baseline = json.loads(baseline_report.read_text()) if baseline_report.exists() else None
+    if args.index:
+        from maam.index import score_index
+        if full is None:
+            parser.error("the measured reports/mathlib/summary.json is required with --index")
+        assessments = []
+        for landmark in full["landmarks"]:
+            for match in landmark["matches"]:
+                result = score_index(args.index, match["name"])
+                if result["metadata"]["input_sha256"] != full["input_sha256"]:
+                    parser.error("index provenance differs from reports/mathlib/summary.json")
+                assessments.append(result["assessment"])
+        write("results/mathlib_examples.json", {
+            "revision": full["export"]["revision"], "input_sha256": full["input_sha256"],
+            "exporter_commit": full["export"].get("exporter_commit"),
+            "score_kind": "reference-basis I1 percentile among eligible theorems in the complete fixed corpus",
+            "human_interest_calibrated": False, "assessments": assessments})
     pending = ["universal minimum proof complexity", "human mathematical-interest validation"]
     if full is None:
         pending += ["completed full Mathlib experiment; implemented workflow awaits a measured report"]
     else:
-        pending += ["exact agreement with the authors' source filters and regression windows"]
+        pending += ["exact agreement with the authors' source filters and regression windows",
+                    "maximum expansion differs from the paper; inspect reports/mathlib/max_expansion_dependencies.csv"]
     write("results/reproduction_status.json", {
         "calculator_checks": checks, "all_passed": all(checks.values()),
         "paper_equations": "T0/I0 algebra and weighted personalised PageRank implemented",
@@ -87,6 +110,11 @@ def main():
                           "revision": full["export"]["revision"], "input_sha256": full["input_sha256"],
                           "vertices_before_scc": full["vertices_before_scc"],
                           "vertices_after_scc": full["vertices_after_scc"],
+                          "scope_counts": full.get("scope_counts"),
+                          "dependency_evidence_sha256": full.get("dependency_evidence_sha256"),
+                          "source_status_counts": full["source_status_counts"],
+                          "baseline_graph_preserved": (full.get("dependency_evidence_sha256") == baseline.get("dependency_evidence_sha256")
+                                                       if baseline and full.get("dependency_evidence_sha256") else None),
                           "reported_comparison": full["reported_comparison"],
                           "interpretation": "independent operational reproduction; numerical differences remain explicit"}
                          if full else {"status": "pipeline_implemented_not_yet_measured"}),
@@ -94,7 +122,7 @@ def main():
                                 "checks": monoids["checks"], "scope": monoids["scope"]}
                                if monoids else {"status": "not_run"}),
         "not_reproduced": pending,
-        "lean_adapter": "Lean 4.24.0 small-proposition and streaming/source-lexer checks passed in GitHub Actions; see results/remote_validation.json and the fixed-snapshot workflow"})
+        "lean_adapter": "Lean 4.24.0 small-proposition and streaming/contextual-source-parser checks passed in GitHub Actions; see results/remote_validation.json and the fixed-snapshot workflow"})
     print(json.dumps({"checks": checks, "all_passed": all(checks.values())}, indent=2))
     return 0 if all(checks.values()) else 1
 

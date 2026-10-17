@@ -11,7 +11,47 @@
   "measurement": "reference-basis calculator; independently measured whole-declaration source tokens in the fixed-snapshot pipeline",
   "followup": "exact minimum on a supplied finite tree-proof hypergraph",
   "full_mathlib": {
-    "status": "pipeline_implemented_not_yet_measured"
+    "status": "measured",
+    "report": "reports/mathlib/summary.json",
+    "revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+    "input_sha256": "76bf0aa7198153e028306c3004f8af3d28286691e145818ba38de07abc0713eb",
+    "vertices_before_scc": 473345,
+    "vertices_after_scc": 473287,
+    "scope_counts": {
+      "module_prefix": "Mathlib",
+      "declarations_before_scc": 463719,
+      "components_after_scc": 463661,
+      "explicit_primitive_boundary_vertices": 9626,
+      "other_nonprimitive_vertices": 0
+    },
+    "dependency_evidence_sha256": "aa6a9f45f81f7a0c97bb519d11975f99c5a18c4e799140bfd0a22509cae9f537",
+    "source_status_counts": {
+      "no_declaration_range": 187444,
+      "shared_or_generated_source": 54955,
+      "named_source": 212013,
+      "absent": 1,
+      "primitive": 9625,
+      "source_context_error": 9015,
+      "source_parse_error": 292
+    },
+    "baseline_graph_preserved": true,
+    "reported_comparison": {
+      "expected": {
+        "vertices_before_scc": 463719,
+        "vertices_after_scc": 463661,
+        "maximum_depth_approx": 300,
+        "maximum_unwrapped_log10_approx": 104,
+        "median_log2_unwrapped_per_depth_approx": 1.0,
+        "median_log2_unwrapped_per_source_token_approx": 0.4
+      },
+      "vertex_count_difference_before_scc": 9626,
+      "vertex_count_difference_after_scc": 9626,
+      "scope_vertex_count_difference_before_scc": 0,
+      "scope_vertex_count_difference_after_scc": 0,
+      "maximum_unwrapped_log10_difference": 6.639362722731477,
+      "count_interpretation": "full graph includes explicit primitive boundary; module-scope counts are reported separately without dropping dependencies"
+    },
+    "interpretation": "independent operational reproduction; numerical differences remain explicit"
   },
   "monoid_experiments": {
     "status": "finite_checks_passed",
@@ -26,7 +66,8 @@
   "not_reproduced": [
     "universal minimum proof complexity",
     "human mathematical-interest validation",
-    "completed full Mathlib experiment; implemented workflow awaits a measured report"
+    "exact agreement with the authors' source filters and regression windows",
+    "maximum expansion differs from the paper; inspect reports/mathlib/max_expansion_dependencies.csv"
   ],
-  "lean_adapter": "Lean 4.24.0 small-proposition and streaming/source-lexer checks passed in GitHub Actions; see results/remote_validation.json and the fixed-snapshot workflow"
+  "lean_adapter": "Lean 4.24.0 small-proposition and streaming/contextual-source-parser checks passed in GitHub Actions; see results/remote_validation.json and the fixed-snapshot workflow"
 }

@@ -36,6 +36,13 @@ def records(path):
                 yield json.loads(line)
 
 
+def input_fingerprint(path):
+    """Identify JSONL content independently of its gzip transport container."""
+    opener = gzip.open if str(path).endswith(".gz") else open
+    with opener(path, "rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
 def write_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False)+"\n", encoding="utf-8")
 
@@ -285,13 +292,13 @@ def analyse(input_path, output, index_path, config_path):
         "explicit_primitive_boundary_vertices": int(primitive.sum()),
         "other_nonprimitive_vertices": int((~in_scope & ~primitive).sum()),
     }
-    with open(input_path, "rb") as raw_input:
-        fingerprint = hashlib.file_digest(raw_input, "sha256").hexdigest()
+    fingerprint = input_fingerprint(input_path)
     graph_digest = hashlib.sha256(b"maam-dependency-evidence-v1\0")
     for k in sorted(range(n), key=names.__getitem__):
         graph_digest.update(graph_fingerprints[k])
     summary = {
         "export": metadata, "input_sha256": fingerprint,
+        "input_sha256_basis": "decompressed JSONL bytes",
         "dependency_evidence_sha256": graph_digest.hexdigest(),
         "vertices_before_scc": n, "vertices_after_scc": len(values),
         "scope_counts": scoped_counts,
@@ -305,6 +312,11 @@ def analyse(input_path, output, index_path, config_path):
         "unsafe_definitions_retained": sum(unsafe), "maximum_depth": int(depth.max()),
         "maximum_unwrapped_log10": float(logu.max()/math.log2(10)), "maximising_declarations": max_names,
         "source_status_counts": status_counts, "named_source_components": int(np.isfinite(source_wrapped).sum()),
+        "source_coverage": {
+            "positive_named_declarations": int((named & ~primitive).sum()),
+            "empty_named_ranges": sum(s == "named_source" and t <= 0 for s, t in zip(source_status, source_tokens)),
+            "empty_shared_or_generated_ranges": sum(s == "shared_or_generated_source" and t <= 0 for s, t in zip(source_status, source_tokens)),
+            "positive_shared_or_generated_declarations": sum(s == "shared_or_generated_source" and t > 0 for s, t in zip(source_status, source_tokens))},
         "source_failure_modules": len(source_failures),
         "any_source_components": int(np.isfinite(any_wrapped).sum()),
         "modifier_sensitivity": {

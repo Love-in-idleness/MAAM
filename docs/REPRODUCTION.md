@@ -5,8 +5,11 @@ The `Fixed Mathlib reproduction` workflow uses the paper's Mathlib commit `d167c
 
 ## 运行与数据 / Running and data
 
+全库实验在研究分支的相关代码变更时自动执行，也可在 GitHub Actions 中手动选择主分支运行；主分支合并复用已验证的实验结果，Python 和 Lean 小例 CI 仍正常执行。
+The full experiment runs automatically for relevant research-branch changes and can also be dispatched manually on main in GitHub Actions; main integration reuses the validated experiment while Python and Lean smoke CI still run.
+
 工作流先检查真实 Lean 小命题的流式导出和源码词法计数，再获取固定快照的编译缓存，导出全量依赖并计算图统计。
-The workflow checks streaming export and source lexical counts on actual Lean propositions before obtaining the snapshot's compiled cache, exporting its dependencies, and computing graph statistics.
+The workflow checks streaming export and contextual source-parser counts on actual Lean propositions before obtaining the snapshot's compiled cache, exporting its dependencies, and computing graph statistics.
 
 ```bash
 python -m pip install '.[reproduction]'
@@ -42,7 +45,20 @@ python -m maam score-index --index mathlib-metrics.sqlite \
   --name AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType
 ```
 
+下载的索引与当前报告指纹一致时，可重新生成原文示例的实际兴趣指标；错误版本的索引会被拒绝。
+When the downloaded index matches the current report fingerprint, regenerate measured interest metrics for the paper's examples; an index from another run is rejected.
+
+```bash
+python scripts/reproduce.py --index data/mathlib-metrics.sqlite
+```
+
+结果写入 [原文示例指标](../results/mathlib_examples.json)，包含完整语料的参考口径百分位、精确展开量、深度和来源；这不是人工兴趣标注。
+The [measured paper examples](../results/mathlib_examples.json) contain full-corpus reference-basis percentiles, exact expansions, depth, and provenance; these are not human-interest labels.
+
 ## 方法与可比性 / Method and comparability
+
+来源模块内的节点数单列为 463,719 → 463,661；额外保留的 9,626 个基础边界使完整图为 473,345 → 473,287，所有依赖仍参与递推。
+Module-scope counts are reported separately as 463,719 → 463,661; retaining 9,626 explicit primitive boundary vertices gives a complete graph of 473,345 → 473,287, with every dependency retained in the recurrence.
 
 原始表达式中的每个 `const` 和 `Sort` 都计入重复次数；来自 Mathlib 模块的 unsafe 定义保留在图中，外部声明和 `Sort` 作为原始边界。
 Every `const` and `Sort` occurrence is counted with multiplicity; unsafe definitions from Mathlib modules are retained, while external declarations and `Sort` form the primitive boundary.
@@ -53,14 +69,23 @@ After SCC condensation, internal edges are removed and external multiplicities s
 递归定义的收缩值是一种图统计约定，不等于把递归程序真正展开成有限字符串。
 A condensed recursive definition's value is a graph-statistical convention, not an actual finite expansion of a recursive program.
 
-源码计数使用 Lean 自身的 `tokenFn`，按声明位置范围统计，并排除普通注释、文档注释和嵌套注释；字符串里的注释标记仍属于字符串。
-Source counts use Lean's own `tokenFn` within declaration ranges, excluding ordinary, documentation, and nested comments; comment markers inside strings remain part of the string.
+源码计数使用 Lean 自身的命令解析器，统计声明范围内带原始位置的 atom 与 identifier 叶节点的不同起始位置；普通、嵌套和文档注释排除，字符串内容仍保留。
+Source counts use Lean's command parser and count distinct original atom/identifier leaf starts within declaration ranges; ordinary, nested, and documentation comments are excluded while string contents remain represented.
+
+解析时使用固定全库的环境，按文件重放 namespace、section、open、本地语法和独立 set_option 命令；不会重新检查或生成证明，失败命令影响对应声明，环境重放失败则保守地排除该文件有范围的测量。
+Parsing uses the fixed full-library environment and replays namespace, section, open, local-syntax, and standalone set_option commands per file; proofs are not re-elaborated, command failures affect overlapping declarations, and a context-replay failure conservatively excludes ranged measurements in that file.
+
+这是一种明确的上下文重建，未声称拥有原作者的完整解析环境；缺失状态和 [按模块的失败清单](../reports/mathlib/source_failures.json) 均保留供检查。
+This is an explicit context reconstruction, not a claim to possess the authors' complete parsing environment; missing statuses and the [module failure list](../reports/mathlib/source_failures.json) remain available for inspection.
+
+主要口径保留属性和 protected 等声明修饰符；另行输出统一排除 declModifiers 语法节点的敏感性结果，不按个别例子手动减 token。
+The primary convention retains attributes and declaration modifiers such as protected; a separate sensitivity analysis excludes declModifiers syntax nodes systematically, without subtracting tokens from individual examples.
 
 具名声明的选择范围与声明名称匹配时标为 `named_source`；共享或生成的范围另行记录，两种过滤口径的中位数均输出。
 A declaration is marked `named_source` when its selection range matches its name; shared or generated ranges are recorded separately, and medians under both filters are exported.
 
-没有声明位置、源码缺失或词法失败时计数保持缺失，并报告覆盖率；不会改用内部引用数填补。
-Missing declaration ranges, absent source files, and lexical failures remain missing measurements with reported coverage; internal reference counts are never used to fill them.
+没有声明位置、源码缺失或解析失败时计数保持缺失，并报告覆盖率；不会改用内部引用数填补。
+Missing declaration ranges, absent source files, and parse failures remain missing measurements with reported coverage; internal reference counts are never used to fill them.
 
 全声明 token 总数尚未拆成命题和证明两部分，因此全库兴趣排名明确使用引用计数口径，源码压缩比和论文图表独立报告。
 Whole-declaration token totals are not split into statement and proof lengths, so full-corpus interest rankings explicitly use the reference-count convention, with source compression and paper plots reported separately.
@@ -72,6 +97,24 @@ The index retains each declaration's original wrapped counts and its component's
 Shared or generated source ranges remain available for inspection, but source compression ratios are supplied only for named source ranges.
 
 ## 核对目标 / Comparison targets
+
+[实际完整实验](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) 已成功执行；归档下载、内容指纹、索引来源匹配和四条原文示例的查询均已检查。
+The [completed full experiment](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) succeeded; archive download, content fingerprint, index provenance, and queries for all four paper landmarks have been checked.
+
+源码修复前后的依赖证据指纹完全相同，见 [基线报告](../results/mathlib_baseline.json)；源码覆盖率的提升没有改变引用次数、精确展开量或评分语料。
+Dependency-evidence fingerprints are identical before and after the source repair; see the [baseline report](../results/mathlib_baseline.json). The coverage improvement preserves reference multiplicities, exact expansions, and the scoring corpus.
+
+| 例子 / Landmark | 完整 token / Full | 去修饰符 / Without modifiers | 原文 / Paper | 测得展开量 / Measured expansion |
+| --- | ---: | ---: | ---: | ---: |
+| `VectorBundleCore.isOpenMap_proj` | 7 | 7 | 7 | ≈1.066×10^48 |
+| `ContDiffBump.integrable` | 10 | 9 | 9 | ≈2.437×10^54 |
+| `Hyperreal.infinitesimal_zero` | 8 | 8 | 8 | ≈3.635×10^31 |
+
+`integrable` 的一个 token 差异来自 protected 修饰符；统一排除修饰符后计数为 9，但全库 token 斜率仍约为 0.228，尚未得到原文约 0.4 的数值。
+The extra token in integrable is its protected modifier; excluding modifiers systematically gives 9, while the full-corpus token slope remains about 0.228, short of reproducing the paper's approximate 0.4.
+
+最大展开量仍为 10^110.6394，原文约为 10^104；最大值对应相同定理，主要贡献可在依赖贡献表中逐项检查，原因仍未确定。
+Maximum expansion remains 10^110.6394 against the paper's approximately 10^104; the same theorem maximises it, and the contribution table exposes its main dependencies, with the cause of the discrepancy unresolved.
 
 论文报告的节点数为收缩前 463719、收缩后 463661，最大展开量约为 `10^104`，最大深度约为 300。
 The paper reports 463719 vertices before condensation, 463661 afterward, maximum expansion around `10^104`, and maximum depth around 300.
