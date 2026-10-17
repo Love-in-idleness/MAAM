@@ -31,6 +31,10 @@ def uniqueStarts (starts : Array Nat) : Array Nat := Id.run do
     if result.back? != some pos then result := result.push pos
   return result
 
+partial def hasLocalModifier : Syntax → Bool
+  | .node _ kind args => kind == `Lean.Parser.Term.local || args.any hasLocalModifier
+  | _ => false
+
 -- Replay only parser context: proofs and definitions are never re-elaborated.
 -- Global/scoped syntax is already present in the imported fixed environment;
 -- namespace/open/section/end and local syntax commands restore file context.
@@ -63,10 +67,8 @@ def parseSource (env : Environment) (fileName source : String) : IO Source := do
       else
         starts := starts ++ leaves cmd
         coreStarts := coreStarts ++ leaves cmd true
-        if kind.endsWith ".mixfix" then
-          liftM <| IO.eprintln s!"MIXFIX kind={kind}; text={text}"
-        let localSyntax := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && text.startsWith "local "
-        if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open"].contains kind || localSyntax then
+        let localSyntax := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && hasLocalModifier cmd
+        if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open", "Lean.Parser.Command.set_option"].contains kind || localSyntax then
           Lean.Elab.Frontend.elabCommandAtFrontend cmd
           if (← Lean.Elab.Frontend.getCommandState).messages.hasErrors then
             contextError := some s!"parser context replay failed: {kind}"
@@ -100,10 +102,13 @@ def checkParser (env : Environment) : IO Unit := do
     let count := (uniqueStarts (leaves parsed)).size
     if count != expected then
       throw <| IO.userError s!"Lean parser token check failed: expected {expected}, got {count}: {text}"
-  let fixture := "namespace MAAMSourceCheck\nlocal infix:50 \" ≺ \" => LT.lt\ntheorem localTest (a b : Nat) (h : a ≺ b) : a < b := h\ndef field (x : Nat × Nat) := x.1.eq_self\ndef text := s!\"\\{ {repr (1, 2).1} }\"\nend MAAMSourceCheck"
+  let fixture := "namespace MAAMSourceCheck\n@[inherit_doc] local infix:50 \" ≺ \" => LT.lt\ntheorem localTest (a b : Nat) (h : a ≺ b) : a < b := h\ndef field (x : Nat × Nat) := x.1.eq_self\ndef text := s!\"\\{ {repr (1, 2).1} }\"\nend MAAMSourceCheck"
   let source ← parseSource env "parser-check" fixture
   if source.contextError.isSome || !source.failures.isEmpty || source.starts.isEmpty then
-    throw <| IO.userError s!"contextual parser check failed: context={source.contextError}; failures={source.failures.size}"
+    throw <| IO.userError "contextual parser check failed on local notation, numeric field access, or string interpolation"
+  let recovery ← parseSource env "recovery-check" "theorem beforeError : True := True.intro\n#maam_invalid_syntax\ntheorem afterError : True := True.intro"
+  if recovery.contextError.isSome || recovery.failures.isEmpty || !(recovery.starts.any (· > 70)) then
+    throw <| IO.userError "source parser failed to isolate an invalid command from later declarations"
   let protectedSyntax ← IO.ofExcept <| Parser.runParserCategory env `command "protected theorem integrable : Integrable f μ := f.continuous.integrable_of_hasCompactSupport f.hasCompactSupport"
   if (uniqueStarts (leaves protectedSyntax)).size != 10 || (uniqueStarts (leaves protectedSyntax true)).size != 9 then
     throw <| IO.userError "declaration modifier sensitivity check failed"
@@ -149,8 +154,6 @@ unsafe def main (args : List String) : IO UInt32 := do
       `VectorBundleCore.isOpenMap_proj, `ContDiffBump.integrable, `Hyperreal.infinitesimal_zero] do
       let some moduleIdx := env.getModuleIdxFor? target | continue
       if env.header.moduleNames[moduleIdx.toNat]!.toString != owner then continue
-      if let some range := declRangeExt.find? (level := .server) env target then
-        if source.map.source.extract (source.map.ofPosition range.selectionRange.pos) (source.map.ofPosition range.selectionRange.endPos) == target.componentsRev.head!.toString then
-          IO.println <| (Json.mkObj [("target", toJson target.toString), ("source", MAAMPaper.sourceData env target source)]).compress
+      IO.println <| (Json.mkObj [("target", toJson target.toString), ("source", MAAMPaper.sourceData env target source)]).compress
   MAAMPaper.checkParser env
   return 0
