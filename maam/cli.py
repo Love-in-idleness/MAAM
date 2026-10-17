@@ -45,7 +45,7 @@ def parser():
     p = commands.add_parser("export-lean", help="export declarations from an existing Lean project")
     p.add_argument("--project", default=".")
     p.add_argument("--module", required=True)
-    p.add_argument("--output", required=True)
+    p.add_argument("--output", dest="corpus_output", required=True)
     p.add_argument("--target", action="append", default=[])
     p.add_argument("--expand-prefix", action="append", default=[])
     p.add_argument("--runner", choices=("lake", "lean"), default="lake")
@@ -98,7 +98,7 @@ def main(argv=None):
             report = system.evaluate(args.name) if args.command == "efficiency" else system.reuse_gain(args.name, args.goal)
         elif args.command == "export-lean":
             from .lean import export
-            report = export(args.project, args.module, args.output, targets=args.target,
+            report = export(args.project, args.module, args.corpus_output, targets=args.target,
                             expand_prefixes=args.expand_prefix, runner=args.runner, timeout=args.timeout)
         else:
             calc = Calculator(Corpus.load(args.corpus), alpha=args.alpha, beta=args.beta)

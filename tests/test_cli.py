@@ -60,6 +60,26 @@ class CLITests(unittest.TestCase):
             with self.assertRaisesRegex(CorpusError, "not installed"):
                 export(temp, "Demo", str(Path(temp)/"out.json"), targets=[], expand_prefixes=[])
 
+    def test_lean_export_corpus_output_is_not_reused_as_report_output(self):
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from unittest.mock import patch
+        from maam.cli import main
+
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "corpus.json"
+
+            def successful_export(project, module, output, **kwargs):
+                Path(output).write_text('{"corpus": "preserve exported data"}', encoding="utf-8")
+                return {"status": "exported", "output": output, "nodes": 4}
+
+            stdout = StringIO()
+            with patch("maam.lean.export", side_effect=successful_export), redirect_stdout(stdout):
+                code = main(["export-lean", "--project", temp, "--module", "Demo", "--output", str(path)])
+            self.assertEqual(code, 0)
+            self.assertEqual(json.loads(stdout.getvalue())["status"], "exported")
+            self.assertEqual(json.loads(path.read_text()), {"corpus": "preserve exported data"})
+
 
 if __name__ == "__main__":
     unittest.main()

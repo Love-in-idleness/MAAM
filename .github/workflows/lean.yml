@@ -3,15 +3,13 @@ name: Lean adapter
 on:
   push:
     paths:
-      - 'maam/Export.lean'
-      - 'maam/lean.py'
+      - 'maam/**'
       - 'lean/**'
       - 'scripts/check_lean_smoke.py'
       - '.github/workflows/lean.yml'
   pull_request:
     paths:
-      - 'maam/Export.lean'
-      - 'maam/lean.py'
+      - 'maam/**'
       - 'lean/**'
       - 'scripts/check_lean_smoke.py'
       - '.github/workflows/lean.yml'
