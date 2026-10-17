@@ -77,9 +77,9 @@ def collect (root : Expr) : Counts := Id.run do
 
 def checkCounts : IO Unit := do
   let leaf := Expr.const `MAAMCountingTest.leaf []
-  let universe := Expr.sort .zero
-  let sample := Expr.letE `x universe (Expr.app leaf (Expr.mdata {} leaf))
-    (Expr.lam `y universe (Expr.forallE `z universe (Expr.proj `Ignored 0 leaf) .default) .default) false
+  let sortExpr := Expr.sort .zero
+  let sample := Expr.letE `x sortExpr (Expr.app leaf (Expr.mdata {} leaf))
+    (Expr.lam `y sortExpr (Expr.forallE `z sortExpr (Expr.proj `Ignored 0 leaf) .default) .default) false
   let same (a b : Counts) := a.size == b.size && a.toList.all (fun (n, k) => b.getD n 0 == k)
   if !(same (collectTree sample) (collectShared sample)) || !(same (collectTree sample) (collect sample)) then
     throw <| IO.userError "shared-expression reference counts disagree with the paper's tree walk"

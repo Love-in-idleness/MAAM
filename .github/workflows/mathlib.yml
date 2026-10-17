@@ -1,7 +1,7 @@
 name: Fixed Mathlib reproduction
 on:
   push:
-    branches: [main]
+    branches: [main, research/monoid-reproduction]
     paths:
       - 'maam/PaperExport.lean'
       - 'scripts/analyze_mathlib.py'
@@ -79,12 +79,12 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
       - name: Commit measured reports without overwriting concurrent work
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/research/monoid-reproduction'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add reports/mathlib
           if ! git diff --cached --quiet; then
             git commit -m 'Record fixed-snapshot Mathlib measurements'
-            git push origin HEAD:main
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
