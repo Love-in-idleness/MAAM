@@ -51,8 +51,8 @@ def moduleOf (env : Environment) (name : Name) : String :=
   | none => ""
   | some idx => env.header.moduleNames[idx.toNat]!.toString
 
-def matchesPrefix (text prefix : String) : Bool :=
-  text == prefix || text.startsWith (prefix ++ ".")
+def matchesPrefix (text modulePrefix : String) : Bool :=
+  text == modulePrefix || text.startsWith (modulePrefix ++ ".")
 
 def inScope (env : Environment) (cfg : Config) (name : Name) : Bool :=
   cfg.prefixes.any (matchesPrefix (moduleOf env name))
