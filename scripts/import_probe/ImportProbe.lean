@@ -75,8 +75,7 @@ def parseSource (env : Environment) (fileName source : String) : IO Source := do
       if next.pos <= oldState.pos then
         contextError := some "command parser made no progress"
         break
-    return { map := inputCtx.fileMap, starts := uniqueStarts starts, coreStarts := uniqueStarts coreStarts,
-      failures, contextError }
+    return { map := inputCtx.fileMap, starts := uniqueStarts starts, coreStarts := uniqueStarts coreStarts, failures, contextError }
   let (result, _) ← (action.run { inputCtx }).run
     { commandState := Lean.Elab.Command.mkState env {} {}, parserState := initial, cmdPos := 0 }
   return result
