@@ -17,5 +17,5 @@
     "universal minimum proof complexity",
     "human mathematical-interest validation"
   ],
-  "lean_adapter": "not compiled locally; run the optional pinned-toolchain workflow"
+  "lean_adapter": "Lean 4.24.0 small-proposition end-to-end check passed in GitHub Actions; see results/remote_validation.json; full Mathlib unverified"
 }

@@ -77,7 +77,7 @@ def main():
         "not_reproduced": ["full Mathlib snapshot extraction and source-token figures",
                            "SCC condensation", "published empirical growth fits",
                            "universal minimum proof complexity", "human mathematical-interest validation"],
-        "lean_adapter": "not compiled locally; run the optional pinned-toolchain workflow"})
+        "lean_adapter": "Lean 4.24.0 small-proposition end-to-end check passed in GitHub Actions; see results/remote_validation.json; full Mathlib unverified"})
     print(json.dumps({"checks": checks, "all_passed": all(checks.values())}, indent=2))
     return 0 if all(checks.values()) else 1
 

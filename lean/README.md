@@ -5,10 +5,14 @@ Lean 4.24.0 adapter / Lean 4.24.0 适配器
 including every `const` and `Sort` occurrence, with primitives explicitly recorded.
 `maam/Export.lean` 从展开后的命题类型及证明体中提取每个 `const` 和 `Sort` 的出现次数，并显式记录原始节点。
 
-This adapter was inspected against the official Lean 4.24.0 API but **could not be
-compiled in the authoring environment**, which has no Lean installation and blocks
-the release download; run the `Lean adapter` workflow before relying on it.
-本适配器已对照 Lean 4.24.0 官方 API 检查，但编写环境没有 Lean 且无法下载工具链，**尚未编译验证**；使用前请运行 `Lean adapter` 工作流。
+This adapter passes the `Lean adapter` workflow on **Lean 4.24.0**, including
+compilation, export of the demo declarations, metric checks, and `sorry`-taint
+exclusion. The evidence is in [remote_validation.json](../results/remote_validation.json).
+本适配器已在 **Lean 4.24.0** 上通过 `Lean adapter` 工作流，包括编译、演示命题导出、指标检查和 `sorry` 污染排除；证据见 [remote_validation.json](../results/remote_validation.json)。
+
+The authoring container still has no local Lean toolchain; the successful check
+ran in GitHub Actions. Full Mathlib extraction remains unverified.
+编写容器仍没有本地 Lean 工具链，成功检查运行于 GitHub Actions；全量 Mathlib 提取仍未验证。
 
 Standalone smoke check (after installing the pinned Lean toolchain):
 安装指定 Lean 版本后，可执行以下独立检查：

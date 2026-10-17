@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "subject_commit": "c02a39551edf2fdac0c8d6154d0081de5f970d2b",
+  "python": {
+    "run_id": 39039262717,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39039262717",
+    "conclusion": "success",
+    "versions": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "tests_per_version": 42,
+    "reproduction_checks": true,
+    "package_build_and_install": true
+  },
+  "lean": {
+    "run_id": 39039262709,
+    "url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39039262709",
+    "conclusion": "success",
+    "version": "4.24.0",
+    "scope": "small Demo module: three proved propositions and one intentionally admitted proposition",
+    "checks": [
+      "compile module and exporter",
+      "export a closed reference corpus",
+      "calculate and rank theorems",
+      "match paper small-example counts",
+      "exclude sorry-dependent declaration from scoring"
+    ]
+  },
+  "full_mathlib_replication": false,
+  "human_interest_calibration": false
+}

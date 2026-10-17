@@ -17,8 +17,8 @@ python -m maam rank --corpus examples/toy_corpus.json --format text
 对现有仓库提交修改时，按常规 Git 流程建立分支、提交并推送；Python 工作流会检查测试与已提交的数值结果。
 For changes to the existing repository, use the normal Git branch, commit, and push workflow; the Python workflow checks tests and the committed numerical reports.
 
-Lean 适配器有独立的手动工作流 `Lean adapter`；在该工作流实际通过之前，不应将适配器描述为已编译验证。
-The Lean adapter has a separate manually triggered `Lean adapter` workflow; it must not be described as compilation-verified before that workflow actually passes.
+Lean 适配器有独立的 `Lean adapter` 工作流，相关代码变化时自动运行，也可手动触发；Lean 4.24.0 的小命题检查已经通过，记录见 [远程验证](../results/remote_validation.json)。
+The separate `Lean adapter` workflow runs on relevant code changes and can also be triggered manually; its small-proposition check on Lean 4.24.0 has passed, as recorded in [remote validation](../results/remote_validation.json).
 
 `results/validation.json` 记录的是本地验证，不会因文件被推送就自动变成远程 CI 运行记录；远程结果以 GitHub Actions 的实际记录为准。
 `results/validation.json` records local validation, and pushing that file does not turn it into a remote CI record; actual GitHub Actions runs are authoritative for remote results.

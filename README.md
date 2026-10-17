@@ -87,8 +87,11 @@ Unmatched statements and unproved conjectures return the missing evidence and a 
 
 ## Lean 接口 / Lean adapter
 
-实验性适配器从已有 Lean 工程导出命题类型、证明体及带重复次数的依赖；本次环境未能编译验证该适配器。
-The experimental adapter exports statement types, proof bodies, and dependency multiplicities from an existing Lean project; it could not be compiled in the authoring environment.
+适配器从已有 Lean 工程导出命题类型、证明体及带重复次数的依赖；已通过 GitHub Actions 上 Lean 4.24.0 的小命题端到端检查。
+The adapter exports statement types, proof bodies, and dependency multiplicities from an existing Lean project; it passes the small-proposition end-to-end check on Lean 4.24.0 in GitHub Actions.
+
+该检查包含真实证明导出、指标计算与 `sorry` 污染排除；它不代表全量 Mathlib 已经复现，证据见 [远程验证记录](results/remote_validation.json)。
+The check covers actual proof export, metric calculation, and exclusion of `sorry` taint; it does not establish full Mathlib replication; see the [remote validation record](results/remote_validation.json).
 
 ```bash
 python -m maam export-lean --project /absolute/path/to/mathlib4 \
