@@ -1,0 +1,19 @@
+{
+  "paper": "https://arxiv.org/abs/2603.20396v1",
+  "mathlib_revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+  "lean_toolchain": "leanprover/lean4:v4.24.0",
+  "reported": {
+    "vertices_before_scc": 463719,
+    "vertices_after_scc": 463661,
+    "maximum_depth_approx": 300,
+    "maximum_unwrapped_log10_approx": 104,
+    "median_log2_unwrapped_per_depth_approx": 1.0,
+    "median_log2_unwrapped_per_source_token_approx": 0.4
+  },
+  "landmarks": [
+    {"name": "AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType", "module": "Mathlib.AlgebraicGeometry.AffineTransitionLimit", "unwrapped_log10_approx": 104},
+    {"suffix": ".isOpenMap_proj", "module": "Mathlib.Topology.VectorBundle.Basic", "wrapped_tokens": 7, "unwrapped_log10_approx": 48},
+    {"suffix": ".integrable", "module": "Mathlib.Analysis.Calculus.BumpFunction.Normed", "wrapped_tokens": 9, "unwrapped_log10_approx": 54.30102999566398},
+    {"name": "Hyperreal.infinitesimal_zero", "module": "Mathlib.Analysis.Real.Hyperreal", "wrapped_tokens": 8, "unwrapped_log10_approx": 31.556302500767288}
+  ]
+}

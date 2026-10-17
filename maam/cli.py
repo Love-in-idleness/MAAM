@@ -35,6 +35,9 @@ def parser():
     p.add_argument("--body-unwrapped", type=int)
     p = commands.add_parser("validate")
     p.add_argument("corpus")
+    p = commands.add_parser("score-index", help="evaluate a Mathlib declaration in a measured SQLite index")
+    p.add_argument("--index", required=True)
+    p.add_argument("--name", required=True)
     p = commands.add_parser("efficiency", help="finite hypergraph minimum proof efficiency")
     p.add_argument("--system", required=True)
     p.add_argument("--name", required=True)
@@ -89,6 +92,9 @@ def main(argv=None):
         if args.command == "metrics":
             report = direct_metrics(args.signature_wrapped, args.body_wrapped,
                                     args.signature_unwrapped, args.body_unwrapped)
+        elif args.command == "score-index":
+            from .index import score_index
+            report = score_index(args.index, args.name)
         elif args.command == "validate":
             corpus = Corpus.load(args.corpus)
             report = {"status": "valid", "nodes": len(corpus.nodes), "sha256": corpus.sha256,

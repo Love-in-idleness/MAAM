@@ -1,0 +1,78 @@
+name: Fixed Mathlib reproduction
+on:
+  push:
+    paths:
+      - 'maam/PaperExport.lean'
+      - 'scripts/analyze_mathlib.py'
+      - 'scripts/paper_config.json'
+      - '.github/workflows/mathlib.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fixed-mathlib-reproduction
+  cancel-in-progress: false
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install analysis dependencies and pinned Lean
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          mkdir -p data reports/mathlib
+      - name: Smoke-check the streaming exporter
+        run: |
+          (cd lean && lean -o Demo.olean Demo.lean)
+          LEAN_PATH=lean lean --run maam/PaperExport.lean Demo Demo lean data/paper-smoke.jsonl smoke
+          python scripts/check_paper_smoke.py data/paper-smoke.jsonl
+          python -m unittest discover -s tests -p test_paper_analysis.py -v
+          python scripts/analyze_mathlib.py --input data/paper-smoke.jsonl --output data/paper-smoke-report --index data/paper-smoke.sqlite
+      - uses: actions/checkout@v4
+        with:
+          repository: leanprover-community/mathlib4
+          ref: d167cc6dc962ab340507362ea2f4bcfcff44f01b
+          path: vendor/mathlib
+      - name: Fetch the fixed snapshot's compiled library
+        working-directory: vendor/mathlib
+        run: |
+          test "$(git rev-parse HEAD)" = d167cc6dc962ab340507362ea2f4bcfcff44f01b
+          test "$(cat lean-toolchain)" = leanprover/lean4:v4.24.0
+          lake exe cache get
+          df -h .
+      - name: Export all declarations and source measurements
+        working-directory: vendor/mathlib
+        run: |
+          lake env lean --run ../../maam/PaperExport.lean Mathlib Mathlib . ../../data/mathlib.jsonl d167cc6dc962ab340507362ea2f4bcfcff44f01b
+      - name: Recompute SCCs, exact expansions, fits, plots, and interest rankings
+        run: |
+          python scripts/analyze_mathlib.py --input data/mathlib.jsonl --output reports/mathlib --index data/mathlib-metrics.sqlite
+          gzip -n data/mathlib.jsonl
+          gzip -n data/mathlib-metrics.sqlite
+      - name: Retain raw data and complete metric index
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixed-mathlib-reproduction
+          path: |
+            reports/mathlib/
+            data/mathlib.jsonl.gz
+            data/mathlib-metrics.sqlite.gz
+            data/paper-smoke.jsonl
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit measured reports without overwriting concurrent work
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/mathlib
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record fixed-snapshot Mathlib measurements'
+            git push origin HEAD:main
+          fi
