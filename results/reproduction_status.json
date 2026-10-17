@@ -8,14 +8,25 @@
   },
   "all_passed": true,
   "paper_equations": "T0/I0 algebra and weighted personalised PageRank implemented",
-  "measurement": "reference counts; not source-token counts",
+  "measurement": "reference-basis calculator; independently measured whole-declaration source tokens in the fixed-snapshot pipeline",
   "followup": "exact minimum on a supplied finite tree-proof hypergraph",
+  "full_mathlib": {
+    "status": "pipeline_implemented_not_yet_measured"
+  },
+  "monoid_experiments": {
+    "status": "finite_checks_passed",
+    "report": "reports/monoids/summary.json",
+    "checks": {
+      "powers_of_two_match_exact_digit_sum_boundary": true,
+      "all_integers_through_cutoff_use_at_most_four_squares": true,
+      "binary_unary_power_macros_have_worst_length_equal_to_radius_through_cutoff": true
+    },
+    "scope": "exact finite computations consistent with selected regimes; not proofs of the paper's universal asymptotics"
+  },
   "not_reproduced": [
-    "full Mathlib snapshot extraction and source-token figures",
-    "SCC condensation",
-    "published empirical growth fits",
     "universal minimum proof complexity",
-    "human mathematical-interest validation"
+    "human mathematical-interest validation",
+    "completed full Mathlib experiment; implemented workflow awaits a measured report"
   ],
-  "lean_adapter": "Lean 4.24.0 small-proposition end-to-end check passed in GitHub Actions; see results/remote_validation.json; full Mathlib unverified"
+  "lean_adapter": "Lean 4.24.0 small-proposition and streaming/source-lexer checks passed in GitHub Actions; see results/remote_validation.json and the fixed-snapshot workflow"
 }

@@ -18,8 +18,11 @@ Summing separately over signature and body references gives `Us` and `Ub`; a ref
 这一过程只做引用的递归代换，不做 beta 归约、自动寻找最佳定义、或最短证明搜索。
 This recursively substitutes references; it does not perform beta reduction, search for optimal definitions, or find shortest proofs.
 
-循环会使这种展开失去有限解释，因此本版拒绝带环数据；不会将环悄悄改成原始节点。
-Cycles prevent a finite interpretation of this expansion, so this version rejects cyclic data instead of silently making the cycles primitive.
+循环会使这种展开失去有限解释，因此通用 JSON 语料接口拒绝带环数据。
+Cycles prevent a finite interpretation of this expansion, so the general JSON corpus interface rejects cyclic data.
+
+独立的全库复现脚本按论文先收缩强连通分量，删除内部边、合并外部重复次数，再计算图统计；每条索引结果都标出分量大小，该约定不声称将递归程序真正展开成了有限字符串。
+The separate full-library reproduction script first condenses strongly connected components, removes internal edges, and combines external multiplicities before computing graph statistics; each indexed result records its component size, and this convention does not claim an actual finite expansion of a recursive program.
 
 ## 论文指标 / Paper metrics
 

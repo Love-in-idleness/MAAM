@@ -1,0 +1,25 @@
+{
+  "source": "https://arxiv.org/abs/2603.20396v1",
+  "models": [
+    "A1_powers_of_two",
+    "A1_double_logarithmic",
+    "A1_finite_macros",
+    "A1_squares",
+    "F2_unary_power_macros"
+  ],
+  "additive_radius": 65536,
+  "binary_word_radius": 12,
+  "checks": {
+    "powers_of_two_match_exact_digit_sum_boundary": true,
+    "all_integers_through_cutoff_use_at_most_four_squares": true,
+    "binary_unary_power_macros_have_worst_length_equal_to_radius_through_cutoff": true
+  },
+  "scope": "exact finite computations consistent with selected regimes; not proofs of the paper's universal asymptotics",
+  "censoring": "radius=null means only a lower bound at the enumeration cutoff, never infinity",
+  "method": "shortest additive representations and shortest noncommutative substring segmentations",
+  "not_tested": [
+    "all polynomial-density macro sets in the free monoid",
+    "almost-sure probabilistic macro construction",
+    "general nilpotent monoids"
+  ]
+}

@@ -10,9 +10,10 @@ compilation, export of the demo declarations, metric checks, and `sorry`-taint
 exclusion. The evidence is in [remote_validation.json](../results/remote_validation.json).
 本适配器已在 **Lean 4.24.0** 上通过 `Lean adapter` 工作流，包括编译、演示命题导出、指标检查和 `sorry` 污染排除；证据见 [remote_validation.json](../results/remote_validation.json)。
 
-The authoring container still has no local Lean toolchain; the successful check
-ran in GitHub Actions. Full Mathlib extraction remains unverified.
-编写容器仍没有本地 Lean 工具链，成功检查运行于 GitHub Actions；全量 Mathlib 提取仍未验证。
+The checks run in GitHub Actions on the pinned toolchain. For the separate full
+Mathlib pipeline, source tokens, and SCC treatment, see the
+[fixed-snapshot reproduction guide](../docs/REPRODUCTION.md).
+检查使用固定工具链在 GitHub Actions 上执行；全库管线、源码 token 和 SCC 处理见独立的[固定快照复现说明](../docs/REPRODUCTION.md)。
 
 Standalone smoke check (after installing the pinned Lean toolchain):
 安装指定 Lean 版本后，可执行以下独立检查：
@@ -40,13 +41,14 @@ The paper's snapshot is `d167cc6dc962ab340507362ea2f4bcfcff44f01b`, whose
 `lean-toolchain` specifies Lean 4.24.0. Changing the snapshot changes the scores.
 原论文使用的 Mathlib 提交为 `d167cc6dc962ab340507362ea2f4bcfcff44f01b`，其工具链为 Lean 4.24.0；更换版本会改变评分。
 
-Full Mathlib exports may contain recursive cycles. MAAM fails explicitly instead
-of claiming a finite expansion. The paper condenses SCCs; this adapter does not
-reproduce that convention. An explicit primitive boundary changes the metric and
-must be recorded as a distinct corpus.
-全量 Mathlib 可能含递归环；MAAM 会明确报错，不会将其冒充有限展开；论文使用 SCC 收缩，本实现尚未复现该约定；显式设置原始节点边界会改变指标，必须记录为不同语料库。
+This small-corpus adapter treats unsafe declarations as admitted primitive
+boundaries, and the JSON calculator rejects remaining cycles. The independent
+`maam/PaperExport.lean` pipeline instead retains unsafe declarations and condenses
+SCCs for the paper experiment. These boundary policies define distinct corpora.
+小语料适配器将 unsafe 声明标成带 admission 的原始边界，JSON 计算器拒绝其余循环；独立的 `maam/PaperExport.lean` 管线则为论文实验保留 unsafe 声明并收缩 SCC；这些边界政策定义了不同的语料。
 
 Source token lengths are not inferred from elaborated proof sizes: `simp` and
 other tactics make them different. This export uses the reference-count alternative
-discussed in §3.2, **not** a numerical reproduction of the paper's token figures.
-由于 `simp` 等策略会展开，证明内部引用数不能冒充源代码词法单元数；导出采用 §3.2 提到的引用计数替代口径，**并未数值复现论文中的 token 图表**。
+discussed in §3.2. Source-token figures are produced only by the separate
+fixed-snapshot pipeline, which explicitly reports missing source ranges.
+由于 `simp` 等策略会展开，证明内部引用数不能冒充源代码词法单元数；此导出采用 §3.2 提到的引用计数替代口径；源码 token 图表仅由独立的固定快照管线生成，并显式报告缺少的源码范围。

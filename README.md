@@ -102,6 +102,17 @@ python -m maam score --corpus data/mathlib.json --name YourNamespace.yourTheorem
 工具链、边界设置、局部导出偏差与测试步骤见 [Lean 接口说明](lean/README.md)。
 See the [Lean adapter guide](lean/README.md) for toolchains, primitive boundaries, local-export bias, and smoke checks.
 
+全库实验使用独立的流式导出器 `maam/PaperExport.lean`，保留 unsafe 声明，收缩 SCC 并测量真实源码 token；运行方法与明确的过滤约定见 [固定快照复现说明](docs/REPRODUCTION.md)。
+The full-library experiment uses the separate streaming exporter `maam/PaperExport.lean`, retains unsafe declarations, condenses SCCs, and measures actual source tokens; see the [fixed-snapshot reproduction guide](docs/REPRODUCTION.md) for commands and explicit filtering conventions.
+
+工作流生成完整 SQLite 指标索引；下载并解压后，可直接查询固定语料中的命题，无需本地 Lean 工具链。
+The workflow generates a complete SQLite metric index; after downloading and decompressing it, query propositions in the fixed corpus without a local Lean toolchain.
+
+```bash
+python -m maam score-index --index data/mathlib-metrics.sqlite \
+  --name Hyperreal.infinitesimal_zero
+```
+
 ## 验证与复现状态 / Validation and reproduction status
 
 执行以下命令生成确定性的演示语料、九组参数敏感性结果，以及每项复现目标的状态。
@@ -109,6 +120,7 @@ Run the following to generate deterministic demonstration corpora, nine paramete
 
 ```bash
 python scripts/reproduce.py
+python scripts/reproduce_monoids.py
 python -m unittest discover -s tests -v
 ```
 
@@ -117,6 +129,9 @@ The committed [results](results/) come from actual runs and cover the paper's sm
 
 测试还将 PageRank 与独立的稠密线性方程求解器比较，将超图最小证明算法与独立松弛算法比较。
 The tests also compare PageRank against an independent dense linear solver and the hypergraph minimum-proof algorithm against an independent relaxation solver.
+
+[单子实验](reports/monoids/summary.json) 已实际枚举加法模型至 65536、二元字符串至长度 12；覆盖半径到达枚举上限时只报告下界，有限数值实验不冒充渐近定理的证明。
+The [monoid experiments](reports/monoids/summary.json) enumerate additive models through 65536 and binary words through length 12; coverage reaching the cutoff is only a lower bound, and finite computations are not presented as proofs of asymptotic theorems.
 
 这些检查验证算法实现；尚没有证据表明本项目的综合分与数学家对任意命题的兴趣判断一致。
 These checks validate the implementation; they do not establish agreement between the overall score and mathematicians' interest judgements for arbitrary propositions.
