@@ -207,6 +207,7 @@ def exportAll (env : Environment) (mod scope sourceRoot output revision : String
     ("record", toJson "metadata"), ("schema_version", toJson (1 : Nat)),
     ("module", toJson mod), ("scope", toJson scope), ("revision", toJson revision),
     ("lean_version", toJson Lean.versionString),
+    ("import_policy", toJson "initializers enabled; imported environment persistent until process exit"),
     ("primitive_policy", toJson "Sort and out-of-scope declarations only; unsafe definitions retained"),
     ("token_policy", toJson "Lean tokenFn on declaration ranges; all comments excluded; named/shared source reported separately"),
     ("root_count", toJson roots.length)]).compress
@@ -256,12 +257,13 @@ def exportAll (env : Environment) (mod scope sourceRoot output revision : String
 
 end MAAMPaper
 
-def main (args : List String) : IO UInt32 := do
+unsafe def main (args : List String) : IO UInt32 := do
   let [mod, scope, sourceRoot, output, revision] := args
     | throw <| IO.userError "usage: PaperExport.lean MODULE MODULE_PREFIX SOURCE_ROOT OUTPUT_JSONL REVISION"
   initSearchPath (← findSysroot)
+  enableInitializersExecution
   MAAMPaper.progress "importing environment"
-  let env ← importModules #[{ module := mod.toName }] {} (loadExts := true)
+  let env ← importModules #[{ module := mod.toName }] {} (leakEnv := true) (loadExts := true)
   MAAMPaper.progress "environment loaded; checking occurrence counts and lexer"
   MAAMPaper.checkCounts
   MAAMPaper.checkLexer env

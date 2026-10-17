@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: fixed-mathlib-native-${{ github.ref }}
+  group: fixed-mathlib-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: false
 jobs:
   reproduce:
