@@ -47,21 +47,65 @@ def lexSource (env : Environment) (fileName source : String) : Source := Id.run 
 
 end ProbeLexer
 
+namespace ProbeParser
+open Lean.Elab.Frontend
+
+partial def leaves (stx : Syntax) : Array Nat :=
+  match stx with
+  | .missing => #[]
+  | .atom (.original _ pos _ _) _ => #[pos.byteIdx]
+  | .ident (.original _ pos _ _) _ _ _ => #[pos.byteIdx]
+  | .node _ kind args =>
+    if kind.toString.endsWith ".docComment" || kind.toString.endsWith ".moduleDoc" then #[]
+    else args.foldl (fun acc s => acc ++ leaves s) #[]
+  | _ => #[]
+
+def measure (env : Environment) (fileName source : String) : IO Json := do
+  let inputCtx := Parser.mkInputContext source fileName
+  let (_, initial, _) ← Parser.parseHeader inputCtx
+  let action : FrontendM Json := do
+    let mut tokens : Array Nat := #[]
+    let mut errors : Array Json := #[]
+    let mut contexts : Array Json := #[]
+    let mut commands := 0
+    repeat
+      updateCmdPos
+      let state ← getCommandState
+      let ps ← getParserState
+      let scope := state.scopes.head!
+      let (cmd, ps, messages) := Parser.parseCommand inputCtx
+        { env := state.env, options := scope.opts, currNamespace := scope.currNamespace, openDecls := scope.openDecls } ps {}
+      setParserState ps
+      setMessages {}
+      commands := commands + 1
+      if messages.hasErrors then
+        if errors.size < 10 then
+          errors := errors.push <| Json.mkObj [("line", toJson (inputCtx.fileMap.toPosition cmd.getPos!).line), ("kind", toJson cmd.getKind.toString)]
+      else
+        tokens := tokens ++ leaves cmd
+        let kind := cmd.getKind.toString
+        let text := (source.extract (cmd.getPos?.getD 0) (cmd.getTailPos?.getD 0)).trimAscii.toString
+        let localNotation := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && text.startsWith "local "
+        if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open"].contains kind || localNotation then
+          elabCommandAtFrontend cmd
+          let next ← getCommandState
+          if next.messages.hasErrors && contexts.size < 10 then
+            contexts := contexts.push <| Json.mkObj [("kind", toJson kind), ("text", toJson text)]
+          setMessages {}
+      if Parser.isTerminalCommand cmd then break
+    return Json.mkObj [("commands", toJson commands), ("tokens", toJson tokens.size), ("errors", toJson errors), ("context_errors", toJson contexts)]
+  let (result, _) ← (action.run { inputCtx }).run
+    { commandState := Lean.Elab.Command.mkState env {} {}, parserState := initial, cmdPos := 0 }
+  return result
+end ProbeParser
+
 unsafe def main (args : List String) : IO UInt32 := do
   initSearchPath (← findSysroot)
   enableInitializersExecution
   let moduleName := (args.headD "Mathlib").toName
-  IO.eprintln s!"phase=import_start; module={moduleName}"
-  let start ← IO.monoNanosNow
   let env ← importModules #[{module := moduleName}] {} (leakEnv := true) (loadExts := true)
-  let stop ← IO.monoNanosNow
-  IO.println <| (Json.mkObj [("phase", toJson "import_complete"),
-    ("import_ms", toJson ((stop-start) / 1000000)),
-    ("modules", toJson env.header.moduleNames.size)]).compress
   for owner in #["Mathlib.Order.Basic", "Mathlib.Tactic.NormNum.Basic", "Mathlib.AlgebraicGeometry.AffineTransitionLimit", "Mathlib.Order.Interval.Set.Basic", "Mathlib.Algebra.Quaternion", "Mathlib.Topology.Separation.Basic", "Mathlib.ModelTheory.Syntax"] do
     let path := System.FilePath.mk ((owner.replace "." "/") ++ ".lean")
     let source ← IO.FS.readFile path
-    let tokens := ProbeLexer.lexSource env path.toString source
-    IO.println <| (Json.mkObj [("module", toJson owner),
-      ("error", toJson tokens.lexicalError), ("tokens", toJson tokens.starts.size)]).compress
+    IO.println <| (Json.mkObj [("module", toJson owner), ("parsed", ← ProbeParser.measure env path.toString source)]).compress
   return 0
