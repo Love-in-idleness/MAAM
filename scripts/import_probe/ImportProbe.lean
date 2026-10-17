@@ -1,111 +1,155 @@
--- Lexer instrumentation copied from maam/PaperExport.lean; only error positions added.
 import Lean
 open Lean
-namespace ProbeLexer
-partial def skipBlock (s : String) (p : String.Pos) (depth : Nat) : String.Pos :=
-  if s.atEnd p then p else
-  let q := s.next p
-  if s.get p == '/' && s.get q == '-' then skipBlock s (s.next q) (depth + 1)
-  else if s.get p == '-' && s.get q == '/' then
-    if depth == 1 then s.next q else skipBlock s (s.next q) (depth - 1)
-  else skipBlock s q depth
-
-partial def skipLine (s : String) (p : String.Pos) : String.Pos :=
-  if s.atEnd p || s.get p == '\n' then p else skipLine s (s.next p)
-
-partial def skipComments (s : String) (p : String.Pos) : String.Pos :=
-  if s.atEnd p then p else
-  let q := s.next p
-  if (s.get p).isWhitespace then skipComments s q
-  else if s.get p == '-' && s.get q == '-' then skipComments s (skipLine s (s.next q))
-  else if s.get p == '/' && s.get q == '-' then skipComments s (skipBlock s (s.next q) 1)
-  else p
+namespace MAAMPaper
+structure ParseFailure where
+  startByte : Nat
+  endByte : Nat
+  message : String
+  deriving Inhabited
 
 structure Source where
   map : FileMap
   starts : Array Nat
-  lexicalError : Option String
+  coreStarts : Array Nat
+  failures : Array ParseFailure := #[]
+  contextError : Option String := none
   deriving Inhabited
 
-def lexSource (env : Environment) (fileName source : String) : Source := Id.run do
-  let ctx := Parser.mkInputContext source fileName
-  let mut state := Parser.mkParserState ctx.inputString
-  let mut starts : Array Nat := #[]
-  let table := Parser.getTokenTable env
-  repeat
-    let pos := skipComments ctx.inputString state.pos
-    if ctx.atEnd pos then break
-    state := { state with pos, stxStack := .empty, errorMsg := none }
-    let next := (Parser.tokenFn []).run ctx { env, options := {} } table state
-    if let some err := next.errorMsg then
-      return { map := ctx.fileMap, starts := #[], lexicalError := some s!"{toString err}; byte={pos.byteIdx}; lexer_pos={next.pos.byteIdx}" }
-    if next.pos <= pos then
-      return { map := ctx.fileMap, starts := #[], lexicalError := some "lexer made no progress" }
-    starts := starts.push pos.byteIdx
-    state := next
-  return { map := ctx.fileMap, starts, lexicalError := none }
-
-end ProbeLexer
-
-namespace ProbeParser
-open Lean.Elab.Frontend
-
-partial def leaves (stx : Syntax) : Array Nat :=
+partial def leaves (stx : Syntax) (omitModifiers := false) : Array Nat :=
   match stx with
   | .missing => #[]
   | .atom (.original _ pos _ _) _ => #[pos.byteIdx]
   | .ident (.original _ pos _ _) _ _ _ => #[pos.byteIdx]
   | .node _ kind args =>
-    if kind.toString.endsWith ".docComment" || kind.toString.endsWith ".moduleDoc" then #[]
-    else args.foldl (fun acc s => acc ++ leaves s) #[]
+    if kind.toString.endsWith ".docComment" || kind.toString.endsWith ".moduleDoc" || (omitModifiers && kind.toString.endsWith ".declModifiers") then #[]
+    else args.foldl (fun acc s => acc ++ leaves s omitModifiers) #[]
   | _ => #[]
 
-def measure (env : Environment) (fileName source : String) : IO Json := do
+def uniqueStarts (starts : Array Nat) : Array Nat := Id.run do
+  let mut result : Array Nat := #[]
+  for pos in starts.qsort (· < ·) do
+    if result.back? != some pos then result := result.push pos
+  return result
+
+-- Replay only parser context: proofs and definitions are never re-elaborated.
+-- Global/scoped syntax is already present in the imported fixed environment;
+-- namespace/open/section/end and local syntax commands restore file context.
+def parseSource (env : Environment) (fileName source : String) : IO Source := do
   let inputCtx := Parser.mkInputContext source fileName
-  let (_, initial, _) ← Parser.parseHeader inputCtx
-  let action : FrontendM Json := do
-    let mut tokens : Array Nat := #[]
-    let mut errors : Array Json := #[]
-    let mut contexts : Array Json := #[]
-    let mut commands := 0
+  let (_, initial, headerMessages) ← Parser.parseHeader inputCtx
+  let action : Lean.Elab.Frontend.FrontendM Source := do
+    let mut starts : Array Nat := #[]
+    let mut coreStarts : Array Nat := #[]
+    let mut failures : Array ParseFailure := #[]
+    let mut contextError := if headerMessages.hasErrors then some "module header parse failed" else none
     repeat
-      updateCmdPos
-      let state ← getCommandState
-      let ps ← getParserState
+      Lean.Elab.Frontend.updateCmdPos
+      let state ← Lean.Elab.Frontend.getCommandState
+      let oldState ← Lean.Elab.Frontend.getParserState
       let scope := state.scopes.head!
-      let (cmd, ps, messages) := Parser.parseCommand inputCtx
-        { env := state.env, options := scope.opts, currNamespace := scope.currNamespace, openDecls := scope.openDecls } ps {}
-      setParserState ps
-      setMessages {}
-      commands := commands + 1
+      let (cmd, next, messages) := Parser.parseCommand inputCtx
+        { env := state.env, options := scope.opts, currNamespace := scope.currNamespace, openDecls := scope.openDecls } oldState {}
+      Lean.Elab.Frontend.setParserState next
+      Lean.Elab.Frontend.setMessages {}
+      let kind := cmd.getKind.toString
+      let text := (source.extract (cmd.getPos?.getD oldState.pos) (cmd.getTailPos?.getD next.pos)).trim
       if messages.hasErrors then
-        if errors.size < 10 then
-          errors := errors.push <| Json.mkObj [("line", toJson (inputCtx.fileMap.toPosition (cmd.getPos?.getD 0)).line), ("kind", toJson cmd.getKind.toString)]
+        failures := failures.push { startByte := oldState.pos.byteIdx, endByte := next.pos.byteIdx,
+          message := s!"command parse failed at line {(inputCtx.fileMap.toPosition oldState.pos).line}; kind={kind}" }
+        if ["local ", "open ", "namespace ", "section", "noncomputable section", "end"].any text.startsWith then
+          contextError := some "a parser-context command failed to parse"
       else
-        tokens := tokens ++ leaves cmd
-        let kind := cmd.getKind.toString
-        let text := (source.extract (cmd.getPos?.getD 0) (cmd.getTailPos?.getD 0)).trim
-        let localNotation := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && text.startsWith "local "
-        if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open"].contains kind || localNotation then
-          elabCommandAtFrontend cmd
-          let next ← getCommandState
-          if next.messages.hasErrors && contexts.size < 10 then
-            contexts := contexts.push <| Json.mkObj [("kind", toJson kind), ("text", toJson text)]
-          setMessages {}
+        starts := starts ++ leaves cmd
+        coreStarts := coreStarts ++ leaves cmd true
+        if kind.endsWith ".mixfix" then
+          liftM <| IO.eprintln s!"MIXFIX kind={kind}; text={text}"
+        let localSyntax := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && text.startsWith "local "
+        if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open"].contains kind || localSyntax then
+          Lean.Elab.Frontend.elabCommandAtFrontend cmd
+          if (← Lean.Elab.Frontend.getCommandState).messages.hasErrors then
+            contextError := some s!"parser context replay failed: {kind}"
+          Lean.Elab.Frontend.setMessages {}
       if Parser.isTerminalCommand cmd then break
-    return Json.mkObj [("commands", toJson commands), ("tokens", toJson tokens.size), ("errors", toJson errors), ("context_errors", toJson contexts)]
+      if next.pos <= oldState.pos then
+        contextError := some "command parser made no progress"
+        break
+    return { map := inputCtx.fileMap, starts := uniqueStarts starts, coreStarts := uniqueStarts coreStarts,
+      failures, contextError }
   let (result, _) ← (action.run { inputCtx }).run
     { commandState := Lean.Elab.Command.mkState env {} {}, parserState := initial, cmdPos := 0 }
   return result
-end ProbeParser
+
+def lowerBound (a : Array Nat) (value : Nat) : Nat := Id.run do
+  let mut low := 0
+  let mut high := a.size
+  while low < high do
+    let mid := (low + high) / 2
+    if a[mid]! < value then low := mid + 1 else high := mid
+  return low
+
+def checkParser (env : Environment) : IO Unit := do
+  let examples : List (String × Nat) := [
+    ("theorem isOpenMap_proj : IsOpenMap Z.proj := Z.toFiberBundleCore.isOpenMap_proj", 7),
+    ("theorem integrable : Integrable f μ := f.continuous.integrable_of_hasCompactSupport f.hasCompactSupport", 9),
+    ("theorem infinitesimal_zero : Infinitesimal 0 := isSt_refl_real 0", 8),
+    ("/- outer /- nested -/ -/ /-- docs -/ theorem tiny : P := Q -- trailing", 6),
+    ("def text : String := \"a b /- c -/\"", 6)]
+  for (text, expected) in examples do
+    let parsed ← IO.ofExcept <| Parser.runParserCategory env `command text
+    let count := (uniqueStarts (leaves parsed)).size
+    if count != expected then
+      throw <| IO.userError s!"Lean parser token check failed: expected {expected}, got {count}: {text}"
+  let fixture := "namespace MAAMSourceCheck\nlocal infix:50 \" ≺ \" => LT.lt\ntheorem localTest (a b : Nat) (h : a ≺ b) : a < b := h\ndef field (x : Nat × Nat) := x.1.eq_self\ndef text := s!\"\\{ {repr (1, 2).1} }\"\nend MAAMSourceCheck"
+  let source ← parseSource env "parser-check" fixture
+  if source.contextError.isSome || !source.failures.isEmpty || source.starts.isEmpty then
+    throw <| IO.userError s!"contextual parser check failed: context={source.contextError}; failures={source.failures.size}"
+  let protectedSyntax ← IO.ofExcept <| Parser.runParserCategory env `command "protected theorem integrable : Integrable f μ := f.continuous.integrable_of_hasCompactSupport f.hasCompactSupport"
+  if (uniqueStarts (leaves protectedSyntax)).size != 10 || (uniqueStarts (leaves protectedSyntax true)).size != 9 then
+    throw <| IO.userError "declaration modifier sensitivity check failed"
+  IO.eprintln "Contextual source-parser checks passed"
+
+def sourceData (env : Environment) (name : Name) (source : Source) : Json := Id.run do
+  let range := declRangeExt.find? (level := .exported) env name <|>
+    declRangeExt.find? (level := .server) env name
+  let some range := range | return Json.mkObj [("status", toJson "no_declaration_range")]
+  if let some err := source.contextError then
+    return Json.mkObj [("status", toJson "source_context_error"), ("error", toJson err)]
+  let startPos := source.map.ofPosition range.range.pos
+  let stopPos := source.map.ofPosition range.range.endPos
+  for failure in source.failures do
+    if failure.startByte < stopPos.byteIdx && startPos.byteIdx < failure.endByte then
+      return Json.mkObj [("status", toJson "source_parse_error"), ("error", toJson failure.message)]
+  let selectedStart := source.map.ofPosition range.selectionRange.pos
+  let selectedEnd := source.map.ofPosition range.selectionRange.endPos
+  let selected := source.map.source.extract selectedStart selectedEnd
+  let userName := (privateToUserName name.eraseMacroScopes).toString
+  let named := selected == userName || userName.endsWith ("." ++ selected)
+  let count := lowerBound source.starts stopPos.byteIdx - lowerBound source.starts startPos.byteIdx
+  return Json.mkObj [
+    ("status", toJson (if named && !selected.isEmpty then "named_source" else "shared_or_generated_source")),
+    ("tokens", toJson count),
+    ("tokens_without_modifiers", toJson (lowerBound source.coreStarts stopPos.byteIdx - lowerBound source.coreStarts startPos.byteIdx)),
+    ("selected_name", toJson selected),
+    ("start_line", toJson range.range.pos.line), ("end_line", toJson range.range.endPos.line),
+    ("start_byte", toJson startPos.byteIdx), ("end_byte", toJson stopPos.byteIdx)]
+
+end MAAMPaper
 
 unsafe def main (args : List String) : IO UInt32 := do
   initSearchPath (← findSysroot)
   enableInitializersExecution
-  let moduleName := (args.headD "Mathlib").toName
-  let env ← importModules #[{module := moduleName}] {} (leakEnv := true) (loadExts := true)
-  for owner in #["Mathlib.Order.Basic", "Mathlib.Tactic.NormNum.Basic", "Mathlib.AlgebraicGeometry.AffineTransitionLimit", "Mathlib.Order.Interval.Set.Basic", "Mathlib.Algebra.Quaternion", "Mathlib.Topology.Separation.Basic", "Mathlib.ModelTheory.Syntax"] do
+  let env ← importModules #[{module := (args.headD "Mathlib").toName}] {} (leakEnv := true) (loadExts := true)
+  for owner in #["Mathlib.Order.Basic", "Mathlib.Tactic.NormNum.Basic", "Mathlib.AlgebraicGeometry.AffineTransitionLimit", "Mathlib.Order.Interval.Set.Basic", "Mathlib.Algebra.Quaternion", "Mathlib.Topology.Separation.Basic", "Mathlib.ModelTheory.Syntax", "Mathlib.Topology.VectorBundle.Basic", "Mathlib.Analysis.Calculus.BumpFunction.Normed", "Mathlib.Analysis.Real.Hyperreal"] do
     let path := System.FilePath.mk ((owner.replace "." "/") ++ ".lean")
-    let source ← IO.FS.readFile path
-    IO.println <| (Json.mkObj [("module", toJson owner), ("parsed", ← ProbeParser.measure env path.toString source)]).compress
+    let source ← MAAMPaper.parseSource env path.toString (← IO.FS.readFile path)
+    IO.println <| (Json.mkObj [("module", toJson owner), ("context_error", toJson source.contextError),
+      ("parse_failures", toJson source.failures.size), ("tokens", toJson source.starts.size)]).compress
+    for target in #[`AlgebraicGeometry.Scheme.exists_hom_hom_comp_eq_comp_of_locallyOfFiniteType,
+      `VectorBundleCore.isOpenMap_proj, `ContDiffBump.integrable, `Hyperreal.infinitesimal_zero] do
+      let some moduleIdx := env.getModuleIdxFor? target | continue
+      if env.header.moduleNames[moduleIdx.toNat]!.toString != owner then continue
+      if let some range := declRangeExt.find? (level := .server) env target then
+        if source.map.source.extract (source.map.ofPosition range.selectionRange.pos) (source.map.ofPosition range.selectionRange.endPos) == target.componentsRev.head!.toString then
+          IO.println <| (Json.mkObj [("target", toJson target.toString), ("source", MAAMPaper.sourceData env target source)]).compress
+  MAAMPaper.checkParser env
   return 0
