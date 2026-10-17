@@ -57,15 +57,19 @@ def parseSource (env : Environment) (fileName source : String) : IO Source := do
       Lean.Elab.Frontend.setMessages {}
       let kind := cmd.getKind.toString
       let text := (source.extract (cmd.getPos?.getD oldState.pos) (cmd.getTailPos?.getD next.pos)).trim
+      let commandStarts := uniqueStarts (leaves cmd)
+      let commandStart := commandStarts[0]?.getD oldState.pos.byteIdx
+      let commandFailed := next.recovering || messages.toList.any (fun msg =>
+        msg.severity == .error && (inputCtx.fileMap.ofPosition msg.pos).byteIdx >= commandStart)
       if messages.hasErrors then
         failures := failures.push
           { startByte := oldState.pos.byteIdx
-            endByte := next.pos.byteIdx
+            endByte := if commandFailed then next.pos.byteIdx else commandStart
             message := s!"command parse failed at line {(inputCtx.fileMap.toPosition oldState.pos).line}; kind={kind}" }
         if ["local ", "open ", "namespace ", "section", "noncomputable section", "end"].any text.startsWith then
           contextError := some "a parser-context command failed to parse"
-      else
-        starts := starts ++ leaves cmd
+      if !commandFailed then
+        starts := starts ++ commandStarts
         coreStarts := coreStarts ++ leaves cmd true
         let localSyntax := (kind.endsWith ".notation" || kind.endsWith ".mixfix" || kind.endsWith ".syntax") && hasLocalModifier cmd
         if ["Lean.Parser.Command.namespace", "Lean.Parser.Command.section", "Lean.Parser.Command.end", "Lean.Parser.Command.open", "Lean.Parser.Command.set_option"].contains kind || localSyntax then

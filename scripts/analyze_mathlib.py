@@ -151,7 +151,8 @@ def interest(dag, values, ws, wb, tainted, theorem, alpha=.85, beta=.5):
 def analyse(input_path, output, index_path, config_path):
     output.mkdir(parents=True, exist_ok=True)
     config = json.loads(config_path.read_text())
-    names, kinds, modules, source_tokens, source_status, unsafe = [], [], [], [], [], []
+    names, kinds, modules, source_tokens, core_tokens, source_status, unsafe = [], [], [], [], [], [], []
+    source_failures = {}
     metadata = None
     for row in records(input_path):
         if row["record"] == "metadata":
@@ -163,9 +164,18 @@ def analyse(input_path, output, index_path, config_path):
         source = row.get("source", {})
         source_status.append(sys.intern(source.get("status", "absent")))
         source_tokens.append(source.get("tokens", -1))
+        core_tokens.append(source.get("tokens_without_modifiers", -1))
+        if source.get("error"):
+            key = row.get("module", "")
+            failure = source_failures.setdefault(key, {"declarations": 0, "examples": []})
+            failure["declarations"] += 1
+            example = {"status": source.get("status"), "error": source["error"]}
+            if example not in failure["examples"] and len(failure["examples"]) < 3:
+                failure["examples"].append(example)
         unsafe.append(row.get("unsafe", False))
     if metadata is None or not names:
         raise ValueError("missing export metadata or nodes")
+    write_json(output/"source_failures.json", source_failures)
     index = {name: i for i, name in enumerate(names)}
     if len(index) != len(names):
         raise ValueError("duplicate exported declarations")
@@ -174,12 +184,15 @@ def analyse(input_path, output, index_path, config_path):
     columns, weights, ptr = array("i"), array("q"), array("q", [0])
     ws, wb = np.zeros(n, dtype=np.int64), np.zeros(n, dtype=np.int64)
     primitive = np.array([k == "primitive" for k in kinds])
+    graph_fingerprints = []
     cursor = 0
     for row in records(input_path):
         if row["record"] != "node":
             continue
         if row["name"] != names[cursor]:
             raise ValueError("input order changed between passes")
+        evidence = {k: row.get(k) for k in ("name", "kind", "module", "unsafe", "signature", "body")}
+        graph_fingerprints.append(hashlib.sha256(json.dumps(evidence, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).digest())
         refs = Counter(row.get("signature", {}))
         ws[cursor] = sum(refs.values())
         body = row.get("body") or {}
@@ -213,25 +226,44 @@ def analyse(input_path, output, index_path, config_path):
     raw_source[primitive] = 1
     named[primitive], any_source[primitive] = True, True
 
-    def wrapped(mask):
+    def wrapped(mask, lengths=raw_source):
         counts = np.bincount(labels, weights=mask, minlength=len(values))
-        total = np.bincount(labels, weights=np.where(mask, raw_source, 0), minlength=len(values))
+        total = np.bincount(labels, weights=np.where(mask, lengths, 0), minlength=len(values))
         total[counts != sizes] = np.nan
         return total
 
     source_wrapped, any_wrapped = wrapped(named), wrapped(any_source)
+    raw_core = np.array(core_tokens, dtype=np.int64)
+    raw_core[primitive] = 1
+    core_wrapped = wrapped(named & (raw_core > 0), raw_core)
     med_depth = grouped(depth, logu)
     med_source = grouped(source_wrapped, logu)
     med_wrapped = grouped(depth, source_wrapped)
     med_any_source = grouped(any_wrapped, logu)
     med_any_wrapped = grouped(depth, any_wrapped)
+    med_core_source = grouped(core_wrapped, logu)
+    med_core_wrapped = grouped(depth, core_wrapped)
     for filename, rows in [("log_unwrapped_by_depth.csv", med_depth), ("log_unwrapped_by_source_tokens.csv", med_source),
                             ("source_tokens_by_depth.csv", med_wrapped), ("log_unwrapped_by_any_source_tokens.csv", med_any_source),
-                            ("any_source_tokens_by_depth.csv", med_any_wrapped)]:
+                            ("any_source_tokens_by_depth.csv", med_any_wrapped),
+                            ("log_unwrapped_by_tokens_without_modifiers.csv", med_core_source),
+                            ("tokens_without_modifiers_by_depth.csv", med_core_wrapped)]:
         save_rows(output/filename, rows)
     expected = config["reported"]
     max_c = int(np.argmax(logu))
     max_names = [names[k] for k in np.flatnonzero(labels == max_c)]
+    representative = {}
+    for k, name in enumerate(names):
+        representative.setdefault(int(labels[k]), name)
+    contributions = []
+    for v, weight in zip(dag.indices[dag.indptr[max_c]:dag.indptr[max_c+1]],
+                         dag.data[dag.indptr[max_c]:dag.indptr[max_c+1]]):
+        contribution = int(weight)*values[int(v)]
+        contributions.append({"dependency": representative[int(v)], "component_size": int(sizes[v]),
+            "references": int(weight), "dependency_unwrapped_log10": math.log10(values[int(v)]),
+            "contribution_log10": math.log10(contribution), "fraction_of_maximum": contribution/values[max_c]})
+    contributions.sort(key=lambda r: (-r["contribution_log10"], r["dependency"]))
+    save_rows(output/"max_expansion_dependencies.csv", contributions)
     landmarks = []
     for target in config["landmarks"]:
         matches = [k for k, name in enumerate(names) if
@@ -239,30 +271,60 @@ def analyse(input_path, output, index_path, config_path):
                    and modules[k] == target["module"]]
         landmarks.append({"expected": target, "matches": [
             {"name": names[k], "source_status": source_status[k], "source_tokens": int(raw_source[k]),
+             "source_tokens_without_modifiers": int(raw_core[k]) if raw_core[k] >= 0 else None,
              "unwrapped_log10": float(logu[labels[k]]/math.log2(10)), "depth": int(depth[labels[k]])}
             for k in matches]})
     status_counts = dict(Counter(source_status))
+    scope = metadata.get("scope", "Mathlib")
+    in_scope = np.array([m == scope or m.startswith(scope+".") for m in modules]) & ~primitive
+    scoped_components = np.unique(labels[in_scope])
+    scoped_counts = {
+        "module_prefix": scope,
+        "declarations_before_scc": int(in_scope.sum()),
+        "components_after_scc": int(scoped_components.size),
+        "explicit_primitive_boundary_vertices": int(primitive.sum()),
+        "other_nonprimitive_vertices": int((~in_scope & ~primitive).sum()),
+    }
     with open(input_path, "rb") as raw_input:
         fingerprint = hashlib.file_digest(raw_input, "sha256").hexdigest()
+    graph_digest = hashlib.sha256(b"maam-dependency-evidence-v1\0")
+    for k in sorted(range(n), key=names.__getitem__):
+        graph_digest.update(graph_fingerprints[k])
     summary = {
         "export": metadata, "input_sha256": fingerprint,
+        "dependency_evidence_sha256": graph_digest.hexdigest(),
         "vertices_before_scc": n, "vertices_after_scc": len(values),
+        "scope_counts": scoped_counts,
         "edges_before_scc": int(graph.nnz), "edges_after_scc": int(dag.nnz),
         "cyclic_components": int(cyclic.sum()), "vertices_in_cyclic_components": int(sizes[cyclic].sum()),
+        "nontrivial_scc_components": int((sizes > 1).sum()),
+        "vertices_in_nontrivial_sccs": int(sizes[sizes > 1].sum()),
+        "singleton_self_loop_components": int((cyclic & (sizes == 1)).sum()),
+        "scc_vertex_reduction": int(n-len(values)),
         "scc_policy": "remove internal arcs, sum external multiplicities, assign each condensed sink primitive length 1",
         "unsafe_definitions_retained": sum(unsafe), "maximum_depth": int(depth.max()),
         "maximum_unwrapped_log10": float(logu.max()/math.log2(10)), "maximising_declarations": max_names,
         "source_status_counts": status_counts, "named_source_components": int(np.isfinite(source_wrapped).sum()),
+        "source_failure_modules": len(source_failures),
         "any_source_components": int(np.isfinite(any_wrapped).sum()),
+        "modifier_sensitivity": {
+            "policy": "exclude declaration modifier syntax nodes, including attributes and protected/private/noncomputable; primary full-command counts unchanged",
+            "named_components": int(np.isfinite(core_wrapped).sum()),
+            "log2_unwrapped_by_source_tokens": fit(med_core_source, 10, 200),
+            "source_tokens_by_depth": fit(med_core_wrapped, 10, 250)},
         "fits": {"log2_unwrapped_by_depth": fit(med_depth, 10, 250),
                  "log2_unwrapped_by_source_tokens": fit(med_source, 10, 200),
                  "source_tokens_by_depth": fit(med_wrapped, 10, 250)},
         "reported_comparison": {"expected": expected,
             "vertex_count_difference_before_scc": n-expected["vertices_before_scc"],
-            "vertex_count_difference_after_scc": len(values)-expected["vertices_after_scc"]},
+            "vertex_count_difference_after_scc": len(values)-expected["vertices_after_scc"],
+            "scope_vertex_count_difference_before_scc": int(in_scope.sum())-expected["vertices_before_scc"],
+            "scope_vertex_count_difference_after_scc": int(scoped_components.size)-expected["vertices_after_scc"],
+            "maximum_unwrapped_log10_difference": float(logu.max()/math.log2(10))-expected["maximum_unwrapped_log10_approx"],
+            "count_interpretation": "full graph includes explicit primitive boundary; module-scope counts are reported separately without dropping dependencies"},
         "landmarks": landmarks, "reference_basis_interest": rank_info,
         "interpretation": "independent operational reproduction; discrepancies are reported, not fitted away",
-        "source_measurement": "full declaration-range Lean lexical tokens; comments excluded; named and shared/generated ranges analysed separately",
+        "source_measurement": metadata.get("token_policy", "source-token policy not supplied by export"),
         "unresolved": ["paper does not specify exact source-range filtering or regression windows",
                        "no source-level signature/proof token split is inferred from whole-range counts",
                        "no empirical validation against human interest judgements"]}
