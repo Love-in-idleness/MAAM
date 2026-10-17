@@ -58,9 +58,9 @@ class PaperAnalysisTests(unittest.TestCase):
         from maam.index import score_index
         rows=[{"record":"metadata","revision":"synthetic-scc-test"},
               {"record":"node","name":"p","kind":"primitive","signature":{},"body":None},
-              {"record":"node","name":"A","kind":"definition","signature":{"p":1},"body":{"B":2},"source":{"status":"named_source","tokens":10}},
-              {"record":"node","name":"B","kind":"definition","signature":{"p":2},"body":{"A":3},"source":{"status":"named_source","tokens":12}},
-              {"record":"node","name":"T","kind":"theorem","signature":{"p":1},"body":{"A":1},"source":{"status":"named_source","tokens":20}}]
+              {"record":"node","name":"A","module":"Mathlib.Test","kind":"definition","signature":{"p":1},"body":{"B":2},"source":{"status":"named_source","tokens":10}},
+              {"record":"node","name":"B","module":"Mathlib.Test","kind":"definition","signature":{"p":2},"body":{"A":3},"source":{"status":"named_source","tokens":12}},
+              {"record":"node","name":"T","module":"Mathlib.Test","kind":"theorem","signature":{"p":1},"body":{"A":1},"source":{"status":"named_source","tokens":20}}]
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp); raw=root/"raw.jsonl"
             raw.write_text("\n".join(json.dumps(r) for r in rows)+"\n")
@@ -68,6 +68,12 @@ class PaperAnalysisTests(unittest.TestCase):
             report=self.analysis.analyse(raw,root/"report",root/"metrics.sqlite",config)
             self.assertEqual(report["vertices_before_scc"],4)
             self.assertEqual(report["vertices_after_scc"],3)
+            self.assertEqual(report["scope_counts"]["declarations_before_scc"],3)
+            self.assertEqual(report["scope_counts"]["components_after_scc"],2)
+            self.assertEqual(report["scope_counts"]["explicit_primitive_boundary_vertices"],1)
+            self.assertEqual(report["nontrivial_scc_components"],1)
+            self.assertEqual(report["singleton_self_loop_components"],0)
+            self.assertEqual(report["scc_vertex_reduction"],1)
             self.assertEqual(report["maximum_depth"],2)
             self.assertAlmostEqual(report["maximum_unwrapped_log10"],math.log10(4))
             result=score_index(str(root/"metrics.sqlite"),"T")
