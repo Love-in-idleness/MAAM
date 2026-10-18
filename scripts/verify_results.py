@@ -71,6 +71,9 @@ def main():
         assert str(receipt["workflow_run_id"]) == report["provenance"]["workflow_run_id"]
         assert receipt["negative_cases"] == len(negative["cases"])
         print("Archived theory-package fingerprints and accounting replayed; fresh Lean verification is a separate workflow.")
+    if (ROOT / "results/migration/validation.json").exists():
+        from verify_migration_results import verify
+        verify()
 
 
 if __name__ == "__main__":

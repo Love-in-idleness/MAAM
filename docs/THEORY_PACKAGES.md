@@ -103,8 +103,8 @@ An increase in net source cost after charging the package is a valid result; one
 源码解析、缺少声明范围等证据问题会使本轮被拒绝；它们与证明不成立是不同的诊断原因，失败信息与阶段保留在报告中。
 Source parsing and missing declaration-range evidence can reject a run; these differ from invalid proofs, and reports retain the diagnostic and stage.
 
-程序目前提供输入格式、实际 Lean 验证与成本比较；自动生成候选、LLM 迁移 skill、约 20 个任务及预留评价属于下一阶段。
-The current interface provides manifests, actual Lean verification and cost comparison; candidate generation, an LLM migration skill, approximately 20 tasks and held-out evaluation are the next stage.
+本页描述 M1 参考接口；M2 已在独立模块提供 20 个校准任务、LLM 迁移 skill 与逐任务请求／提交协议，见 [迁移协议](MIGRATION_PROTOCOL.md)。自动生成候选与完整独立预留评价仍待实现。
+This page describes the M1 reference interface; M2 adds 20 calibration tasks, an LLM migration skill and a task-local request/submission protocol in a separate module; see the [migration protocol](MIGRATION_PROTOCOL.md). Candidate generation and complete independent held-out evaluation remain pending.
 
 参见 [研究计划](RESEARCH_PLAN.md)、[实验源码](../experiments/hom_kernel/) 与 [验证工作流](../.github/workflows/theory-package.yml)。
 See the [research plan](RESEARCH_PLAN.md), [experiment sources](../experiments/hom_kernel/) and [verification workflow](../.github/workflows/theory-package.yml).

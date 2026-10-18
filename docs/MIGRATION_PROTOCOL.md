@@ -105,6 +105,26 @@ Report local proof-body and expression sizes separately; referencing a lemma nei
 
 ## 当前验收与后续工作 / Validation and next work
 
+2026-10-18 的 [Lean 工作流](https://github.com/Love-in-idleness/MAAM/actions/runs/39099496688) 已通过 40/40 份参考证明、2/2 份独立 skill 工作上下文的提交和 6/6 项错误输入检查；本地 80 项 Python 测试也通过。
+The 2026-10-18 [Lean workflow](https://github.com/Love-in-idleness/MAAM/actions/runs/39099496688) passed 40/40 reference proofs, 2/2 submissions from fresh skill-worker contexts and 6/6 invalid-input checks; all 80 local Python tests also passed.
+
+| 已验证轨迹 / Verified traces | baseline 源码 token / Baseline source tokens | treatment 含整包 / Treatment including package | 净节省 / Net saving |
+| --- | ---: | ---: | ---: |
+| 20 个参考任务 / 20 reference tasks | 904 | 1426 | −522 |
+| d02 的独立 skill 求解 / Fresh skill workers on d02 | 34 | 353 | −319 |
+
+两行都将固定候选包的 312 个源码 token 计费一次；第二行只是一对开发任务提交，不能据此估计模型的整体表现。
+Both rows charge the fixed candidate's 312 source tokens once; the second row is only one paired development-task submission and cannot estimate overall model performance.
+
+这些轨迹尚未显示净源码压缩收益；报告同时保留局部证明体与表达式大小，以免把不同成本口径强行合成一个排序。
+These traces have not shown a net source-compression gain; reports also retain local proof-body and expression sizes rather than forcing different cost conventions into one ranking.
+
+校验过的报告与工作流收据见 [results/migration](../results/migration/)；`python scripts/verify_results.py` 可重算账本并检查所有归档指纹，真实 Lean 重放由独立工作流完成。
+Verified reports and the workflow receipt are in [results/migration](../results/migration/); `python scripts/verify_results.py` replays accounting and checks archived fingerprints, while a separate workflow performs actual Lean replay.
+
+完整命令日志与各次尝试保存在保留 30 天的 CI 产物中，之后可用下述命令从已提交的证明源码重新生成。
+Complete command logs and attempts are retained in CI artifacts for 30 days and can subsequently be regenerated from committed proof sources with the command below.
+
 `python scripts/check_migration.py --output data/migration` 运行 40 份公开参考证明、实际错误输入检查，以及两个独立 skill 求解器输出的重放；详细结果以 CI 产物为准。
 `python scripts/check_migration.py --output data/migration` runs 40 public reference proofs, actual invalid-input checks and replays of two fresh skill-worker outputs; CI artifacts provide the detailed results.
 

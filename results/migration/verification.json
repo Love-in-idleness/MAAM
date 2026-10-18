@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "verified_reference_witnesses": 40,
+  "failures": [],
+  "forward_workers": [
+    {
+      "condition": "baseline",
+      "status": "verified",
+      "failure": null,
+      "original_request_sha256": "6ec09d39868d124e0a9ce3715a05ddb1cbd51cc72fd35cc00339b312593e575b",
+      "original_submission_sha256": "706e99fa3a246833863e48a0dedf15cd15d68f6f83e8b92a15857fda60aaf29b"
+    },
+    {
+      "condition": "treatment",
+      "status": "verified",
+      "failure": null,
+      "original_request_sha256": "efb316281051b5b4510e47dbb25e4ec54c16b91196f8362aec6cba6686c251e9",
+      "original_submission_sha256": "c0ea308cb2b0ffd971c0c2c14961b41c80afb766c23f41b54e4fa28d01ef89da"
+    }
+  ]
+}

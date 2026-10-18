@@ -155,8 +155,8 @@ Allow definitions to develop supporting lemmas and compare packages, subpackages
 
 ## 首个 skill 的职责 / Responsibilities of the first skill
 
-拟议 skill：evaluate-theory-package；此处只定义接口和职责，尚未创建或安装 SKILL.md。
-Proposed skill: evaluate-theory-package; this document defines its interface and responsibilities only, and does not create or install a SKILL.md.
+evaluate-theory-package 已创建，仓库版本见 [SKILL.md](../skills/evaluate-theory-package/SKILL.md)；其职责与下述研究目标衔接。
+The evaluate-theory-package skill is created; see its [repository version](../skills/evaluate-theory-package/SKILL.md), whose responsibilities connect to the research goals below.
 
 输入：固定实验清单、候选包、允许读取的开发或评价任务、预算和输出路径。
 Input: a frozen experiment manifest, candidate package, permitted development or evaluation tasks, budget and output paths.
@@ -164,8 +164,8 @@ Input: a frozen experiment manifest, candidate package, permitted development or
 执行顺序：核对前提与阶段 → 检索适用位置 → 提出迁移计划 → 输出 Lean 证明与转换 → 调用检查器 → 修复预算内错误 → 汇总结构化证据。
 Sequence: check assumptions and evaluation phase → retrieve application sites → propose a migration plan → produce Lean proofs and translations → invoke the checker → repair errors within budget → summarise structured evidence.
 
-skill 负责指导 LLM 操作；证明接受、依赖白名单、预留集隔离、预算和计费由程序强制，不能仅靠提示词。
-The skill guides LLM operations; proof acceptance, dependency allowlists, held-out isolation, budgets and accounting are enforced in software rather than prompts alone.
+skill 指导 LLM 操作；程序检查证明、依赖、逐任务请求、提交预算和计费，独立的求解上下文与外部模型生成预算还需实验控制器管理。
+The skill guides LLM operations; software checks proofs, dependencies, task-local requests, submission budgets and accounting, while the experiment controller must manage independent solver contexts and external model generation budgets.
 
 LLM 可以提出新证明和找不到用途的解释，但其自我评价不作为通过验证或有效性的证据。
 The LLM may propose proofs and explain unsuccessful searches, but its self-assessment does not count as proof verification or evidence of effectiveness.
@@ -181,8 +181,8 @@ Topic: introduce group homomorphisms and kernels into a small base library conta
 这是把已知数学当作受控的新概念输入，用来检查评估系统；不声称发现历史上未知的数学。
 Known mathematics serves as a controlled new-concept input to test the evaluator; this is not a claim of historically novel mathematics.
 
-原有目标用函数 f 及条件 f(xy)=f(x)f(y)、集合 {x | f(x)=1} 等表达；候选提供 Hom、Ker、复合以及单位元、逆元、核封闭性等配套结论。
-Original goals use a function f satisfying f(xy)=f(x)f(y) and sets such as {x | f(x)=1}; the candidate supplies Hom, Ker, composition and results about identities, inverses and kernel closure.
+原有目标用函数 f 及条件 f(xy)=f(x)f(y)、集合 {x | f(x)=1} 等表达；完整实验计划比较 Hom、Ker、复合以及单位元、逆元、核封闭性等配套结论，当前固定校准包只含同态、核载体和乘法闭合。
+Original goals use a function f satisfying f(xy)=f(x)f(y) and sets such as {x | f(x)=1}; the full experiment plans to compare Hom, Ker, composition and identity/inverse/closure results, while the fixed calibration package currently contains homomorphisms, kernel carriers and multiplication closure.
 
 在此基础上，预留不同推理模式的迁移任务，例如复合下核的描述、平凡核与单射的关系；具体划分在生成候选前固定，近重复归入同组。
 Reserve transfer tasks with different reasoning patterns, such as kernels of composites and the connection between trivial kernels and injectivity; freeze the exact split before candidate generation and keep near-duplicates together.

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "verified",
+  "implementation_commit": "6f16edf0aa4223666ee5be5732ed356dcf8ae3d7",
+  "workflow_run_id": 39099496688,
+  "workflow_job_id": 117592662819,
+  "workflow_conclusion": "success",
+  "workflow_url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39099496688",
+  "artifact_id": 12126221477,
+  "artifact_digest": "sha256:bc3e952c94b199fee88f70e1c16dcc58248373a927f9377295e3c76a8292b218",
+  "verified_reference_witnesses": 40,
+  "verified_skill_worker_witnesses": 2,
+  "negative_cases": 6,
+  "reports_sha256": {
+    "comparison.json": "d5f552eae80352f270b7b9bd20bf565ff6fb72a2c8e61f9e8b007dba3c3a79f2",
+    "baseline-summary.json": "79b15e2bdcea77a07003782ae4cfba37c4d4f9d841083a54924ba3bdf47a202c",
+    "treatment-summary.json": "f01b76ef126accd42b96cd2241e8e6b63cda9d5cf041ecf8c01c6d7ccf6fe823",
+    "forward-comparison.json": "a5c22d640f386167490e7b073bdaf7f4c206c5ec2e5aff38374e67eb529e1d2b",
+    "forward-baseline-summary.json": "fca85ad3dc83669058f8a10374013a90098c1a87e3551f669ec8433e26be5388",
+    "forward-treatment-summary.json": "916e347658f19827a0d508e06b18c420aeeca39d2c7eba2222ee17f05c89b843",
+    "negative.json": "28f0ae132311cb4c0cbaf9dcfef7e1e78ab8d63d34003204a399f4f164663018",
+    "verification.json": "977cf6a4d3e77b0d4220fc33dd75367567728b7c10c32029917ee94910f10fad"
+  },
+  "scope": "Replay of public calibration witnesses and one paired development task from fresh skill workers; not an independent held-out model experiment or training label."
+}
