@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "study_id": "hom-kernel-independent-contexts-v1",
+  "suite": {
+    "path": "suite.json",
+    "sha256": "bc3a6cb4d9a4a0983ea0bde406716f754e10605c0765ed950010c3e129ad6a1d"
+  },
+  "candidate_frozen_commit": "b8a6a10ebae0c4971200ec59a2c85293efeca905",
+  "worker_skill_sha256": {
+    "SKILL.md": "fec2f755665a1126d1309b0405fecec7ef384a42862b3730fc27765acc7cbdc0",
+    "agents/openai.yaml": "42089d95b083a3cd1c1f01933ae4ce57637d541d374f08b8adc5533e00e7eee9",
+    "references/protocol.md": "7a4e2693e237f579746c3d15e959ccc76235ce5afb7afd21d858ce8c6f29f9ea",
+    "scripts/pack_submission.py": "da8c09a9f3b44fd2a36880a00a7e2cb2f348643b8031bae883525a0a1f7aae7f"
+  },
+  "solver": {
+    "id": "codex-fresh-task-contexts-unspecified-revision-v1",
+    "mode": "interactive_agent",
+    "model_revision": null,
+    "sampling_parameters": null,
+    "generation_token_usage": null,
+    "unknown_reason": "The collaboration runtime exposes agent identifiers, not exact model revision, sampling or generation-token accounting. No model override is requested."
+  },
+  "prompt_template": "Use the evaluate-theory-package skill at {skill_root}/SKILL.md as a task-local worker. Read only that skill (including its referenced packager/protocol) and {worker_root}/request.json; do not inspect other directories, repository files, other tasks, reference proofs, or other workers. Do not delegate or use network/tools to obtain mathematical solutions. Produce your own proof term and bridge explanation. Do not run Lean yourself: the controller will perform verification and return exact feedback for repairs within the request budget. Write immutable proof-01.lean, bridge-01.txt and submission-01.json inside {worker_root}, using the skill packager. Return the submission path and explicitly state that packaging is not Lean verification. After a verified result stop; after rejection wait for controller feedback. Do not invent model/version, token usage or compilation success.",
+  "order_seed": 20261018,
+  "launch_order": [
+    {
+      "worker": "w01",
+      "task_id": "d06",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w02",
+      "task_id": "d06",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w03",
+      "task_id": "r05",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w04",
+      "task_id": "r05",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w05",
+      "task_id": "d09",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w06",
+      "task_id": "d09",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w07",
+      "task_id": "d12",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w08",
+      "task_id": "d12",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w09",
+      "task_id": "d08",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w10",
+      "task_id": "d08",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w11",
+      "task_id": "r08",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w12",
+      "task_id": "r08",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w13",
+      "task_id": "d02",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w14",
+      "task_id": "d02",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w15",
+      "task_id": "r01",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w16",
+      "task_id": "r01",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w17",
+      "task_id": "r06",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w18",
+      "task_id": "r06",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w19",
+      "task_id": "r07",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w20",
+      "task_id": "r07",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w21",
+      "task_id": "d05",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w22",
+      "task_id": "d05",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w23",
+      "task_id": "d10",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w24",
+      "task_id": "d10",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w25",
+      "task_id": "d01",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w26",
+      "task_id": "d01",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w27",
+      "task_id": "r04",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w28",
+      "task_id": "r04",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w29",
+      "task_id": "r02",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w30",
+      "task_id": "r02",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w31",
+      "task_id": "d04",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w32",
+      "task_id": "d04",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w33",
+      "task_id": "r03",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w34",
+      "task_id": "r03",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w35",
+      "task_id": "d03",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w36",
+      "task_id": "d03",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w37",
+      "task_id": "d11",
+      "condition": "baseline"
+    },
+    {
+      "worker": "w38",
+      "task_id": "d11",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w39",
+      "task_id": "d07",
+      "condition": "treatment"
+    },
+    {
+      "worker": "w40",
+      "task_id": "d07",
+      "condition": "baseline"
+    }
+  ],
+  "stopping_rule": "At most three controller submissions per task and condition. Stop on first verified witness; repair only from own exact Lean feedback. No proof-length optimisation after success.",
+  "generation_budget": {
+    "enforced": false,
+    "limit": null,
+    "observed_usage": null
+  },
+  "information_boundary": "Fresh fork_turns=none worker per task and condition; only its request and the identical skill are supplied. Prompt/context isolation, not filesystem access control or signed attestation.",
+  "cost_rule": "M2 full Proof module source plus whole candidate once on common solved tasks; additionally M3 inventory of all charged declarations, including generated ones. Verification times are diagnostics, not causal speed measurements.",
+  "selection_rule": "Retain every attempt, failure and feedback. Use the first verified witness under the stopping rule. Missing/unsolved is unknown, never zero cost or negative mathematical value.",
+  "scope": {
+    "constructed_cohort": true,
+    "independent_solving_contexts_intended": true,
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false
+  }
+}

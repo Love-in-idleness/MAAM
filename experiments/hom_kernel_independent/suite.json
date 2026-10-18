@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "suite_id": "hom-kernel-independent-contexts-v1",
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "package": "package.json",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+    },
+    "Tasks.D01": {
+      "path": "Tasks/D01.lean",
+      "sha256": "a97916a3c4c06e4ab9b2769812ecca3cfaa6c919a80375053ca489441d642f0e"
+    },
+    "Tasks.D02": {
+      "path": "Tasks/D02.lean",
+      "sha256": "8f7db84cffe760681358d6aeab954934da3342884c5cfc2668f96792a336c4c6"
+    },
+    "Tasks.D03": {
+      "path": "Tasks/D03.lean",
+      "sha256": "9315ec625348bc8822bcc34db5554786660c1decd05b48f2682280fd36908890"
+    },
+    "Tasks.D04": {
+      "path": "Tasks/D04.lean",
+      "sha256": "20690ce97a83bdb1708f81ae022348f9526d1e78746fadc01f384ebcb10b7c43"
+    },
+    "Tasks.D05": {
+      "path": "Tasks/D05.lean",
+      "sha256": "1a80167c053d30c3dbd255f31099f4a4782001ff7aaa7b502c9d43955b14b7ee"
+    },
+    "Tasks.D06": {
+      "path": "Tasks/D06.lean",
+      "sha256": "3d40d04a839e99b57b2706f2b421410618c0f2b40677df324cce38dafc39772e"
+    },
+    "Tasks.D07": {
+      "path": "Tasks/D07.lean",
+      "sha256": "93641b3819b816ebe283fed7f57ad8328d3924ba308c2749f64c4c6ea290e5b5"
+    },
+    "Tasks.D08": {
+      "path": "Tasks/D08.lean",
+      "sha256": "c2e15bfa5ca1cfbc897b5300aaec6f22e43fd5d04421ebfed1dd6c736ff304df"
+    },
+    "Tasks.D09": {
+      "path": "Tasks/D09.lean",
+      "sha256": "57a5cfeb3787b7ed56a2c5f41b4acc312bc735bd28d2027ae1defb1066c14603"
+    },
+    "Tasks.D10": {
+      "path": "Tasks/D10.lean",
+      "sha256": "f4da52fe09bf177c655d6f1d06a45db0440d16df26c2d56a67c7ac9bc4299d0c"
+    },
+    "Tasks.D11": {
+      "path": "Tasks/D11.lean",
+      "sha256": "2f664e4c2b3d9122b9435ff2dfd5849f08f814318f876eb061f79c8583490d48"
+    },
+    "Tasks.D12": {
+      "path": "Tasks/D12.lean",
+      "sha256": "7962128a42efa0b1f4fd7d326ffd9c4a57365d5556d3c2f71139f877e541c70d"
+    },
+    "Tasks.R01": {
+      "path": "Tasks/R01.lean",
+      "sha256": "cd389f99c166e9425dd39e54a7e27aaf86ce7d76c03995a2d82b13ee46dee6db"
+    },
+    "Tasks.R02": {
+      "path": "Tasks/R02.lean",
+      "sha256": "bf444b5c665dbe5c4f905516f3216fcbf93d263549a81234e556f6a009290d36"
+    },
+    "Tasks.R03": {
+      "path": "Tasks/R03.lean",
+      "sha256": "88613d2917f577524b6aaa3cc204bf3af58f6f6771c0ac56f6358453174b35f5"
+    },
+    "Tasks.R04": {
+      "path": "Tasks/R04.lean",
+      "sha256": "ab42108ee51ca4b313a6b2376d54a7e12fa439f83af870ea3e27457afdd05a53"
+    },
+    "Tasks.R05": {
+      "path": "Tasks/R05.lean",
+      "sha256": "91bd97a6c8749a5a0d033dddb93328f6c20867d4a96679ba3cf4d0da690dd1c6"
+    },
+    "Tasks.R06": {
+      "path": "Tasks/R06.lean",
+      "sha256": "9c87072110c53ea0ec7462b85ea3af1b335d5098aa6b5e9b7950f6b719ec3d89"
+    },
+    "Tasks.R07": {
+      "path": "Tasks/R07.lean",
+      "sha256": "fdd53a3a71995a3a10e1deeb7261bc9fa8fc90057702b0c07cb41b507c655a77"
+    },
+    "Tasks.R08": {
+      "path": "Tasks/R08.lean",
+      "sha256": "cd4becb282815767cd530bc0a330bb4c820f31748a0de228312be98abf1f3d65"
+    }
+  },
+  "tasks": [
+    {
+      "id": "d01",
+      "split": "development",
+      "family": "balanced_closure",
+      "module": "Tasks.D01",
+      "goal": "Tasks.d01"
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "family": "balanced_closure",
+      "module": "Tasks.D02",
+      "goal": "Tasks.d02"
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "family": "fibre_recovery",
+      "module": "Tasks.D03",
+      "goal": "Tasks.d03"
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "family": "fibre_recovery",
+      "module": "Tasks.D04",
+      "goal": "Tasks.d04"
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "family": "hom_laws",
+      "module": "Tasks.D05",
+      "goal": "Tasks.d05"
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "family": "hom_laws",
+      "module": "Tasks.D06",
+      "goal": "Tasks.d06"
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "family": "kernel_carrier",
+      "module": "Tasks.D07",
+      "goal": "Tasks.d07"
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "family": "kernel_carrier",
+      "module": "Tasks.D08",
+      "goal": "Tasks.d08"
+    },
+    {
+      "id": "d09",
+      "split": "development",
+      "family": "range_lifting",
+      "module": "Tasks.D09",
+      "goal": "Tasks.d09"
+    },
+    {
+      "id": "d10",
+      "split": "development",
+      "family": "range_lifting",
+      "module": "Tasks.D10",
+      "goal": "Tasks.d10"
+    },
+    {
+      "id": "d11",
+      "split": "development",
+      "family": "finite_iteration",
+      "module": "Tasks.D11",
+      "goal": "Tasks.d11"
+    },
+    {
+      "id": "d12",
+      "split": "development",
+      "family": "finite_iteration",
+      "module": "Tasks.D12",
+      "goal": "Tasks.d12"
+    },
+    {
+      "id": "r01",
+      "split": "reserved",
+      "family": "quotient_relation",
+      "module": "Tasks.R01",
+      "goal": "Tasks.r01"
+    },
+    {
+      "id": "r02",
+      "split": "reserved",
+      "family": "quotient_relation",
+      "module": "Tasks.R02",
+      "goal": "Tasks.r02"
+    },
+    {
+      "id": "r03",
+      "split": "reserved",
+      "family": "structured_folds",
+      "module": "Tasks.R03",
+      "goal": "Tasks.r03"
+    },
+    {
+      "id": "r04",
+      "split": "reserved",
+      "family": "structured_folds",
+      "module": "Tasks.R04",
+      "goal": "Tasks.r04"
+    },
+    {
+      "id": "r05",
+      "split": "reserved",
+      "family": "indexed_constructions",
+      "module": "Tasks.R05",
+      "goal": "Tasks.r05"
+    },
+    {
+      "id": "r06",
+      "split": "reserved",
+      "family": "indexed_constructions",
+      "module": "Tasks.R06",
+      "goal": "Tasks.r06"
+    },
+    {
+      "id": "r07",
+      "split": "reserved",
+      "family": "conjugation_transport",
+      "module": "Tasks.R07",
+      "goal": "Tasks.r07"
+    },
+    {
+      "id": "r08",
+      "split": "reserved",
+      "family": "conjugation_transport",
+      "module": "Tasks.R08",
+      "goal": "Tasks.r08"
+    }
+  ],
+  "budget": {
+    "max_attempts_per_task": 3,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "provenance": {
+    "candidate_frozen_at": "b8a6a10ebae0c4971200ec59a2c85293efeca905",
+    "candidate_sources": "Byte-identical to M1; no edits based on this cohort.",
+    "task_authorship": "20 constructed, correlated, known group-theoretic exercises. No reference proofs supplied. Not a random or pretraining-unseen sample.",
+    "split_status": "12 development and 8 reserved goals by reasoning family. All goals fixed before any worker sees a request; no candidate revision in this run.",
+    "schema_note": "Uses the conservative migration_calibration schema; fresh solving contexts are recorded separately, not a blind held-out or training-eligible claim."
+  }
+}
