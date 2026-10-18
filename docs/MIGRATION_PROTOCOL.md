@@ -131,8 +131,11 @@ Complete command logs and attempts are retained in CI artifacts for 30 days and 
 独立求解器各自只看到了 d02 的单任务请求与 skill，原始输入输出保存在 `skill_forward.json`；CI 用相同证明项重新绑定请求并检查，不能将它扩展解释为 20 个任务的自动求解表现。
 Each fresh worker saw only a task-local d02 request and the skill, with original inputs/outputs retained in `skill_forward.json`; CI rebinds and checks the same proof terms, which does not establish autonomous performance on all 20 tasks.
 
-接下来在新的冻结任务集上运行完整的配对求解实验，记录生成预算和顺序，保持候选不可变，再进入整包消融与多轮版本比较。
-Next, run a complete paired solving experiment on a new frozen task set, record generation budgets and order, keep the candidate immutable, then proceed to package ablations and multi-round comparisons.
+新的 [独立上下文实验](INDEPENDENT_EXPERIMENT.md) 已在另一组 20 个冻结目标上运行 40 个全新求解上下文，两边均通过全部目标；40 份见证和 6 次基础设施失败的完整记录已保存，候选始终不变。
+The new [independent-context experiment](INDEPENDENT_EXPERIMENT.md) ran 40 fresh solving contexts on another 20 frozen goals, with both conditions passing every goal; complete records of 40 verified witnesses and six infrastructure failures are retained, with the candidate unchanged throughout.
+
+该轮记录了冻结顺序、实际提示词和上下文标识，但精确模型版本、采样参数和生成 token 未取得；因此 M2 的生成预算公平性验收仍未完成，不能直接导出训练偏好。整包校准消融见 [包消融](PACKAGE_ABLATIONS.md)，下一步是 M3 多轮版本与新的冻结评价任务。
+That round records frozen order, actual prompts and context identifiers, but exact model revision, sampling and generation tokens were unavailable; M2 generation-budget fairness therefore remains unaccepted and no training preferences are exported directly. See [package ablations](PACKAGE_ABLATIONS.md) for calibration controls; next are M3 multi-round versions and fresh frozen evaluation tasks.
 
 引入新命题或对象时，应把定义、表示桥接、性质和推论一起放入候选清单，先在开发集修改，再冻结新版本；不能依据预留集反馈修改同一版本。
 When introducing a new proposition or object, include its definitions, representation bridges, properties and corollaries in the candidate manifest, revise on development tasks, then freeze a new version; reserved feedback must not alter that version.

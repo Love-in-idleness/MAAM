@@ -1,0 +1,476 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "worker": "w01",
+      "task": "d06",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w01",
+      "task": "d06",
+      "condition": "baseline",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w02",
+      "task": "d06",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w02",
+      "task": "d06",
+      "condition": "treatment",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w03",
+      "task": "r05",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w03",
+      "task": "r05",
+      "condition": "treatment",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w04",
+      "task": "r05",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w04",
+      "task": "r05",
+      "condition": "baseline",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w05",
+      "task": "d09",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w05",
+      "task": "d09",
+      "condition": "baseline",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w06",
+      "task": "d09",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "rejected",
+      "original_infrastructure_failure": true,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w06",
+      "task": "d09",
+      "condition": "treatment",
+      "attempt": 2,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w07",
+      "task": "d12",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w08",
+      "task": "d12",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w09",
+      "task": "d08",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w10",
+      "task": "d08",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w11",
+      "task": "r08",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w12",
+      "task": "r08",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w13",
+      "task": "d02",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w14",
+      "task": "d02",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w15",
+      "task": "r01",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w16",
+      "task": "r01",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w17",
+      "task": "r06",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w18",
+      "task": "r06",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w19",
+      "task": "r07",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w20",
+      "task": "r07",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w21",
+      "task": "d05",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w22",
+      "task": "d05",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w23",
+      "task": "d10",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w24",
+      "task": "d10",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w25",
+      "task": "d01",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w26",
+      "task": "d01",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w27",
+      "task": "r04",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w28",
+      "task": "r04",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w29",
+      "task": "r02",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w30",
+      "task": "r02",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w31",
+      "task": "d04",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w32",
+      "task": "d04",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w33",
+      "task": "r03",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w34",
+      "task": "r03",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w35",
+      "task": "d03",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w36",
+      "task": "d03",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w37",
+      "task": "d11",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w38",
+      "task": "d11",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w39",
+      "task": "d07",
+      "condition": "treatment",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "w40",
+      "task": "d07",
+      "condition": "baseline",
+      "attempt": 1,
+      "original_status": "verified",
+      "original_infrastructure_failure": false,
+      "status": "verified",
+      "matched": true
+    }
+  ],
+  "attempts": 46,
+  "original_summary_sha256": "bd73407aeb08106a1adbc9fec1b0e87184433091e595f154ff389efe060a29d4",
+  "original_scope": {
+    "constructed_cohort": true,
+    "independent_solving_contexts_intended": true,
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false
+  },
+  "scope": "Lean/inventory replay of archived outputs; no new LLM generation"
+}

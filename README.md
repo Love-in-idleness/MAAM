@@ -17,8 +17,14 @@ M1 implements the first [homomorphism/kernel reference migration](experiments/ho
 局部证明体从 77 降至 29 个源码 token；计入候选定义和引理后，总非共享源码从 89 增至 353 个 token，这是单条参考任务上的实际结果。
 The local proof body shrinks from 77 to 29 source tokens; including candidate definitions and lemmas, total nonshared source grows from 89 to 353 tokens, as measured on this single reference task.
 
-M1 运行方法见 [理论包接口](docs/THEORY_PACKAGES.md)，M2 的 20 个校准任务与 LLM skill 见 [迁移协议](docs/MIGRATION_PROTOCOL.md)；独立预留评价和学习接口继续按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
-See the [theory-package interface](docs/THEORY_PACKAGES.md) for M1 and the [migration protocol](docs/MIGRATION_PROTOCOL.md) for M2’s 20 calibration tasks and LLM skill; independent held-out evaluation and learning interfaces remain in the [research plan](docs/RESEARCH_PLAN.md).
+M1 运行方法见 [理论包接口](docs/THEORY_PACKAGES.md)，M2 的校准任务与 LLM skill 见 [迁移协议](docs/MIGRATION_PROTOCOL.md)。新增的 [独立上下文实验](docs/INDEPENDENT_EXPERIMENT.md) 在另 20 个冻结目标上实际运行了 40 个求解上下文，两边均通过 20/20 个原目标核验。
+See the [theory-package interface](docs/THEORY_PACKAGES.md) for M1 and the [migration protocol](docs/MIGRATION_PROTOCOL.md) for M2 calibration and the LLM skill. The new [independent-context experiment](docs/INDEPENDENT_EXPERIMENT.md) actually ran 40 solving contexts on another 20 frozen goals, with both conditions verifying 20/20 original goals.
+
+本轮计入整包后，源码成本为 2632→3251 token，完整表达式成本为 29006→23136 节点，观察到的证明在两项成本上不可比；生成预算与精确模型版本未取得，因此不声称公平模型效果或可训练偏好。
+Charging the whole package, this round measures 2632→3251 source tokens and 29006→23136 complete expression nodes: the observed witnesses are incomparable on these costs. Generation budgets and exact model revision were unavailable, so no fair model-effectiveness or training-preference claim is made.
+
+M3 的 [四配置消融](docs/PACKAGE_ABLATIONS.md) 已检查 140 份给定证明与完整声明成本；多轮版本、延迟价值和实际学习继续按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
+M3's [four-configuration ablation](docs/PACKAGE_ABLATIONS.md) checks 140 supplied proofs and complete declaration costs; multi-round versions, delayed value and actual learning remain in the [research plan](docs/RESEARCH_PLAN.md).
 
 ## 快速运行 / Quick start
 

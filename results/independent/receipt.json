@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "local_verified_pending_clean_replay",
+  "status": "verified_clean_replay",
   "freeze_commit": "2e44eac5b724f9e1303a37da6ca0e3139ed96e3b",
   "original_attempts": 46,
   "controller_sha256": "c768390310d8de6ca856ff8a4c4c7b962fe348014f2db5baf88bc2048397d164",
@@ -9,7 +9,22 @@
     "baseline.json": "be688df69fcf7d18892d8cffac0766c5a4dc7b7e3d26315362a688af27877dc4",
     "controller.json": "d5f1fb158353835474e04b0e5198b2765989c3439d6f049a83e340e94cd647d1",
     "summary.json": "bd73407aeb08106a1adbc9fec1b0e87184433091e595f154ff389efe060a29d4",
-    "treatment.json": "4fddbe9071ca8d24001c8564e3709b532eaa00ecbc6670d66f6be811d86d72e4"
+    "treatment.json": "4fddbe9071ca8d24001c8564e3709b532eaa00ecbc6670d66f6be811d86d72e4",
+    "validation.json": "fc1ffd81c2cacdb62404f22387c7b6bf75b9fda9187ceddacb381a8742ef0c51"
   },
-  "scope": "Original fresh-context generation plus local Lean verification; clean GitHub replay pending. Generation tokens/model revision unavailable; no fair model-performance or training preference claim."
+  "scope": "Original fresh-context generation with complete Lean/inventory checks, followed by clean CI replay of every archived submission. Exact model revision, sampling and generation-token budgets remain unavailable; no fair model-effectiveness or training-preference claim.",
+  "implementation_commit": "fdd39914a8090c2c9c47f4e91e1e67407c2175b3",
+  "workflow_head_sha": "fdd39914a8090c2c9c47f4e91e1e67407c2175b3",
+  "workflow_run_id": 39121421850,
+  "workflow_job_id": 117657646235,
+  "workflow_conclusion": "success",
+  "workflow_url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39121421850",
+  "artifact_id": 12134351712,
+  "artifact_digest": "sha256:80a37f9b2e0aff439ce6903095687a0f1dc491f7170faa6b4ca149ff0b9f8489",
+  "artifact_size_bytes": 560032,
+  "artifact_members": 1267,
+  "verified_original_witnesses": 40,
+  "original_infrastructure_failures": 6,
+  "original_proof_failures": 0,
+  "original_session_code_commit_scope": "The original controller manually populated code_commit with the input-freeze commit; verifier file fingerprints match that freeze. This is not a complete controller execution-checkout attestation. Controller recording/export features evolved during the round; implementation_commit identifies the archived controller and clean replayer."
 }

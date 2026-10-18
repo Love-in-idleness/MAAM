@@ -1,7 +1,7 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-18。状态：M1 已完成参考迁移；M2 已实现冻结的逐任务迁移协议、20 个校准目标和 LLM skill，完整独立预留实验仍待开展；M3 已实现四配置校准消融与有限证明组合比较；多轮、延迟价值与 M4 尚未完成。
-Date: 2026-10-18. Status: M1 has a checked reference migration; M2 implements a frozen per-task migration protocol, 20 calibration goals and an LLM skill, while a complete independent held-out experiment remains pending; M3 implements four-configuration calibration ablations and finite proof-portfolio comparison; multi-round work, delayed value and M4 remain unfinished.
+日期：2026-10-18。状态：M1 已完成参考迁移；M2 已有逐任务协议、skill、20 个公开校准目标，并在另一组 20 个冻结目标上完成 40 个独立求解上下文，两边均核验 20/20；生成预算公平性与严格预留效果验收仍待完成。M3 已实现四配置校准消融和成本比较；多轮、延迟价值与 M4 尚未完成。
+Date: 2026-10-18. Status: M1 has a checked reference migration. M2 has a per-task protocol, skill and 20 public calibration goals, plus 40 fresh solving contexts on another 20 frozen goals, with 20/20 verified in both conditions; generation-budget fairness and strict held-out effectiveness acceptance remain unfinished. M3 implements four-configuration calibration ablations and cost comparisons; multi-round work, delayed value and M4 remain unfinished.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
@@ -203,8 +203,11 @@ First prepare one complete checkable migration as a reference trace, then expand
 | M3：整包与延迟价值 / Packages and delayed value | 定义与配套引理的对照、多轮版本档案、成本与用途的比较 / Definition/lemma controls, multi-round archives and cost/use comparisons | 能区分单项贡献、组合效果、权衡与探索不足 / Distinguish individual contributions, joint effects, trade-offs and insufficient exploration |
 | M4：学习接口 / Learning interface | 可重放轨迹、比较数据和选定训练算法的反馈适配器 / Replayable trajectories, comparison data and a feedback adapter for the selected learning algorithm | 在另一个冻结任务集上比较训练前后表现，并检查奖励投机 / Compare pre/post-training performance on another frozen task set and check reward exploitation |
 
-M1 已完成参考迁移、两边的目标与依赖审计、源码拆分、完整包成本计费及实际错误输入检查；M2 的协议、校准任务与 skill 已实现；M3 的校准消融与完整成本计费见 [包消融](PACKAGE_ABLATIONS.md)，独立模型实验、多轮与 M4 仍待完成。
-M1 has a reference migration, goal and dependency audits, source splitting, full package-cost accounting and actual invalid-input checks; the M2 protocol, calibration tasks and skill are implemented; see [package ablations](PACKAGE_ABLATIONS.md) for M3 calibration and complete-cost accounting, while independent model experiments, multi-round work and M4 remain pending.
+M1 已完成参考迁移与完整审计；M2 的 [独立上下文实验](INDEPENDENT_EXPERIMENT.md) 已实际生成并核验 40 份见证，保留全部 46 次提交记录，但模型修订、采样和生成 token 未取得，预算公平性未验收；M3 的校准消融见 [包消融](PACKAGE_ABLATIONS.md)。
+M1 has a reference migration and complete audits; M2's [independent-context experiment](INDEPENDENT_EXPERIMENT.md) generated and verified 40 witnesses and retains all 46 submissions, but model revision, sampling and generation tokens were unavailable, so budget fairness remains unaccepted; see [package ablations](PACKAGE_ABLATIONS.md) for M3 calibration.
+
+接下来先以单位元、逆元和核群结构构建有父版本的新理论包，记录整个构造与迁移成本，并在新的冻结任务上比较版本与后续用途。本轮公开后的 20 题仅作为开发/校准材料，不继续充当新版本的最终预留集。
+Next, develop a parent-linked package version with identity/inverse preservation and a kernel group structure, record complete construction/migration costs, and compare versions and later uses on fresh frozen tasks. The 20 published tasks from this round become development/calibration material and cannot remain the final reserved set for a revised package.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
@@ -214,14 +217,14 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.
 
-maam/theory.py 与 PackageCheck.lean 已提供隔离编译、给定迁移证明的目标检查和成本报告；当前迁移通过定义相等回到原始目标，尚未自动寻找桥接或生成证明。
-maam/theory.py and PackageCheck.lean provide isolated compilation, goal checks for supplied migration proofs and cost reports; the current migration returns to the original goal by definitional equality, while automatic bridge search and proof generation remain future work.
+maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录实际独立求解上下文的输入输出、反馈和完整成本。LLM 已按 skill 构造表示桥接并生成证明，控制器检查其返回原始目标；供应商调用和生成计量尚未集成到 Python 驱动器。
+maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records inputs/outputs, feedback and complete costs from actual fresh solving contexts. LLM workers have constructed representation bridges and proofs through the skill, checked back against original goals by the controller; provider calls and generation metering are not yet integrated into the Python driver.
 
 Mathlib 索引、压缩计数、PageRank 和源代码分析可复用作检索及描述；第一轮受控实验采用隔离基础库，以免完整 Mathlib 已经包含待引入概念。
 The Mathlib index, compression counts, PageRank and source analysis remain useful for retrieval and description; the first controlled experiment uses an isolated base so full Mathlib does not already supply the candidate concepts.
 
-M2 当前实现见 [迁移协议](MIGRATION_PROTOCOL.md)：12 个开发目标、8 个按推理模式划分的预留校准目标、模型无关的请求／提交接口及 evaluate-theory-package skill；下一步是记录生成预算的完整独立求解实验。
-See the [migration protocol](MIGRATION_PROTOCOL.md) for M2: 12 development goals, 8 reserved calibration goals split by reasoning family, a model-independent request/submission interface and the skill; next is a complete independent solving experiment with recorded generation budgets.
+M2 的公开校准接口见 [迁移协议](MIGRATION_PROTOCOL.md)，新的 20 题实测见 [独立上下文实验](INDEPENDENT_EXPERIMENT.md)；源码与完整表达式出现权衡，当前输出保留条件性不可比，尚未转成强化学习奖励或偏好标签。
+See the [migration protocol](MIGRATION_PROTOCOL.md) for M2 calibration and the [independent-context experiment](INDEPENDENT_EXPERIMENT.md) for the new 20-task run; source and complete-expression costs trade off, so outputs retain contextual incomparability without converting it into an RL reward or preference label.
 
 ## 参考文献 / References
 
