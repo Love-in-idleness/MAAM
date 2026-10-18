@@ -137,6 +137,9 @@ def main(argv=None):
                             expand_prefixes=args.expand_prefix, runner=args.runner, timeout=args.timeout)
         elif args.command == "ablation":
             from .ablation import run_study
+            from shutil import which
+            if which(args.lean) is None:
+                raise CorpusError(f"{args.lean} is not installed; install the study's pinned Lean toolchain first")
             report = run_study(args.study, args.workdir, lean=args.lean, workers=args.workers)
         elif args.command.startswith("migration-"):
             from .migration import start_session, task_request, submit_attempt, session_report, compare_sessions
@@ -172,6 +175,9 @@ def main(argv=None):
                 handle.write(rendered)
         else:
             print(rendered, end="")
+        if args.command == "ablation" and (not report["common_measured_tasks"] or any(
+                frontier["status"] != "exact_finite_portfolio" for frontier in report["frontiers"].values())):
+            return 2
         if report.get("status") == "rejected":
             return 3
         if report.get("status") in {"insufficient_evidence", "ambiguous_statement", "inconclusive"}:

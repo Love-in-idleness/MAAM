@@ -202,3 +202,11 @@ M2 supplies task-local requests for frozen candidates, budgeted submissions, Lea
 
 参见 [迁移协议与运行方法](docs/MIGRATION_PROTOCOL.md)；公开参考证明用于校准，完整的独立预留实验与强化学习仍是后续工作。
 See the [migration protocol and commands](docs/MIGRATION_PROTOCOL.md); public reference proofs are calibration material, while a complete independent held-out experiment and reinforcement learning remain future work.
+
+## 整包消融与成本偏序 / Package ablations and cost order
+
+已增加四种配置、140 份冻结证明候选和完整声明表达式计量；每个候选保留原证明，输出源码／表达式成本的有限 Pareto 前沿，允许等价与不可比。
+Four configurations, 140 frozen proof candidates and complete declaration-expression inventories are implemented; each candidate retains the original proofs and produces finite Pareto frontiers over source/expression costs, allowing equivalence and incomparability.
+
+运行与口径见 [包消融协议](docs/PACKAGE_ABLATIONS.md)；本轮是公开任务上的校准，多轮概念发展与独立模型实验仍待开展。
+See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) for commands and conventions; this is calibration on public tasks, with multi-round concept development and independent model experiments still pending.

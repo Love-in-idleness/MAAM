@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "verified",
+  "implementation_commit": "0e713015a68b5a8303818fe0e3c3706404feb129",
+  "workflow_run_id": 39116120183,
+  "workflow_job_id": 117642145792,
+  "workflow_conclusion": "success",
+  "workflow_url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39116120183",
+  "artifact_id": 12132408782,
+  "artifact_digest": "sha256:a2c2fc1bf50316f324fe0d710c8b55691dc3ecbd7edcd5f00188116dcfc73f7c",
+  "verified_attempts": 140,
+  "measured_attempts": 140,
+  "control_cases": 3,
+  "runner_sha256": "3e5f172dd38b01087793228cfecfc052e7209fc89c6c951eac3ff37ca75bbaa4",
+  "reports_sha256": {
+    "baseline.json": "9a0eb4fed9f2e8b55686cbb7349602ecf42c3799f391ad72304170dc8c43bec0",
+    "naming.json": "cb77dacbac1a53d6d9232d141741e6964773bb49247d8cf828504a6d4043bce4",
+    "definitions.json": "d4eecb194171279fbab20fdb9a8ccfcddc1435a3451ce1378b515eb12ac78eb5",
+    "full.json": "b1530e81f4311a84f721a79cae7988701fd51fc20efbec0c51fac70963a8f20a",
+    "comparison.json": "9daea3dc14b9442d1ccec1d3910d1d60fbb5873440ab8893dcf04af366eab985",
+    "validation.json": "4c5a859aa5e5b778d7dba090495e0905c1688746d6c894ee6486087c7e8b2eff",
+    "frozen-study.json": "d47f5f1e1e1b25592310a4153339305a8d4ce3c8ddefda118955dddd7b4e2d53"
+  },
+  "scope": "Public supplied calibration proof portfolios with raw fallbacks, not an independent LLM or held-out experiment."
+}

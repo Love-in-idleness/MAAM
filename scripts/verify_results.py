@@ -74,6 +74,9 @@ def main():
     if (ROOT / "results/migration/validation.json").exists():
         from verify_migration_results import verify
         verify()
+    if (ROOT / "results/ablation/receipt.json").exists():
+        from verify_ablation_results import verify
+        verify()
 
 
 if __name__ == "__main__":

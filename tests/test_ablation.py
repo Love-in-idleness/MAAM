@@ -1,5 +1,7 @@
 """Accounting and experiment controls, independent of a local Lean install."""
 import copy
+from contextlib import redirect_stderr, redirect_stdout
+import io
 from itertools import product
 import json
 from pathlib import Path
@@ -7,11 +9,13 @@ import random
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from maam import CorpusError
 from maam.ablation import (cost, frontier_relation, load_study, package_uses,
                            pareto, portfolio, validate_module)
 from maam.theory import digest
+from maam.cli import main
 
 ROOT = Path(__file__).resolve().parents[1]
 STUDY = ROOT/"experiments/hom_kernel_ablation/study.json"
@@ -150,6 +154,23 @@ class AblationTests(unittest.TestCase):
         with self.assertRaises(CorpusError):cost(True,3)
         with self.assertRaisesRegex(CorpusError,"duplicated"):
             validate_module({"declarations":[{"name":"same"},{"name":"same"}]})
+
+    def test_cli_without_lean_fails_before_creating_a_session(self):
+        with tempfile.TemporaryDirectory() as temp:
+            output=Path(temp)/"new-run"
+            with patch("shutil.which",return_value=None), redirect_stderr(io.StringIO()) as stderr:
+                result=main(["ablation","--study",str(STUDY),"--workdir",str(output)])
+            self.assertEqual(result,1)
+            self.assertIn("not installed",stderr.getvalue())
+            self.assertFalse(output.exists())
+
+    def test_cli_incomplete_cost_evidence_is_not_a_success_exit(self):
+        for goals,status,expected in [([],"no_common_tasks",2),(["a"],"frontier_budget_exhausted",2),
+                                      (["a"],"exact_finite_portfolio",0)]:
+            report={"status":"observed_ablation","common_measured_tasks":goals,"frontiers":{"baseline":{"status":status}}}
+            with patch("shutil.which",return_value="/tool/lean"), patch("maam.ablation.run_study",return_value=report), redirect_stdout(io.StringIO()):
+                actual=main(["ablation","--study",str(STUDY),"--workdir","unused"])
+            self.assertEqual(actual,expected)
 
 
 if __name__=="__main__":

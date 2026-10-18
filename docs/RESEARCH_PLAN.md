@@ -1,7 +1,7 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-18。状态：M1 已完成参考迁移；M2 已实现冻结的逐任务迁移协议、20 个校准目标和 LLM skill，完整独立预留实验仍待开展；M3–M4 尚未完成。
-Date: 2026-10-18. Status: M1 has a checked reference migration; M2 implements a frozen per-task migration protocol, 20 calibration goals and an LLM skill, while a complete independent held-out experiment remains pending; M3–M4 are unfinished.
+日期：2026-10-18。状态：M1 已完成参考迁移；M2 已实现冻结的逐任务迁移协议、20 个校准目标和 LLM skill，完整独立预留实验仍待开展；M3 已实现四配置校准消融与有限证明组合比较；多轮、延迟价值与 M4 尚未完成。
+Date: 2026-10-18. Status: M1 has a checked reference migration; M2 implements a frozen per-task migration protocol, 20 calibration goals and an LLM skill, while a complete independent held-out experiment remains pending; M3 implements four-configuration calibration ablations and finite proof-portfolio comparison; multi-round work, delayed value and M4 remain unfinished.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
@@ -203,11 +203,11 @@ First prepare one complete checkable migration as a reference trace, then expand
 | M3：整包与延迟价值 / Packages and delayed value | 定义与配套引理的对照、多轮版本档案、成本与用途的比较 / Definition/lemma controls, multi-round archives and cost/use comparisons | 能区分单项贡献、组合效果、权衡与探索不足 / Distinguish individual contributions, joint effects, trade-offs and insufficient exploration |
 | M4：学习接口 / Learning interface | 可重放轨迹、比较数据和选定训练算法的反馈适配器 / Replayable trajectories, comparison data and a feedback adapter for the selected learning algorithm | 在另一个冻结任务集上比较训练前后表现，并检查奖励投机 / Compare pre/post-training performance on another frozen task set and check reward exploitation |
 
-M1 已完成参考迁移、两边的目标与依赖审计、源码拆分、完整包成本计费及实际错误输入检查；M2 的协议、校准任务与 skill 已实现，独立模型实验与 M3–M4 仍待完成。
-M1 has a reference migration, goal and dependency audits, source splitting, full package-cost accounting and actual invalid-input checks; the M2 protocol, calibration tasks and skill are implemented, while independent model experiments and M3–M4 remain pending.
+M1 已完成参考迁移、两边的目标与依赖审计、源码拆分、完整包成本计费及实际错误输入检查；M2 的协议、校准任务与 skill 已实现；M3 的校准消融与完整成本计费见 [包消融](PACKAGE_ABLATIONS.md)，独立模型实验、多轮与 M4 仍待完成。
+M1 has a reference migration, goal and dependency audits, source splitting, full package-cost accounting and actual invalid-input checks; the M2 protocol, calibration tasks and skill are implemented; see [package ablations](PACKAGE_ABLATIONS.md) for M3 calibration and complete-cost accounting, while independent model experiments, multi-round work and M4 remain pending.
 
-本轮局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
-The local proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
+M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
+The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
 
 ## 与当前代码的衔接 / Connection to existing code
 

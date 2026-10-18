@@ -1,0 +1,3450 @@
+{
+  "id": "full",
+  "condition": "treatment",
+  "tasks": [
+    {
+      "id": "d01",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D01",
+      "goal": "Tasks.d01",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "a4646840d7c3dd429d59a3f400133728fcc3b4d4b567b0fe7edc9296a444c753",
+          "cost": {
+            "source_tokens": 39,
+            "expr_nodes": 372
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 28,
+              "body_tokens": 23
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 371,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d01",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 372,
+            "declarations": [
+              {
+                "value_expr_nodes": 371,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d01",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "303226f41330c4f69d4573fa6ebda923b16c13149b63a57712f611bbb3f72be1",
+          "measurement_result_sha256": "7bda8f026c56b11a537eb678d6d1b5158e41a45e76c1676aec4d921ac66b63aa"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "fdffc57d7ffb76dfdd853a684c43bb4c2c48cf8a66a7ffcf9ce7cd4dfb3c0658",
+          "cost": {
+            "source_tokens": 45,
+            "expr_nodes": 125
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 34,
+              "body_tokens": 29
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 124,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d01",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 125,
+            "declarations": [
+              {
+                "value_expr_nodes": 124,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d01",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "16b845554f1550ffd2001016917bdd8e308bb723a5d67478f38769f6f4d7e7bf",
+          "measurement_result_sha256": "13b9ae95399184cb06f6da5a25eac84465b427a89b258daa6637bd7210728248"
+        }
+      ]
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D02",
+      "goal": "Tasks.d02",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "82239b0d0bed0f1733517fda1abf49e9ad4c7213bc034129e2bdde974e98a8d8",
+          "cost": {
+            "source_tokens": 35,
+            "expr_nodes": 356
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 24,
+              "body_tokens": 19
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 355,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d02",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 356,
+            "declarations": [
+              {
+                "value_expr_nodes": 355,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d02",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "c3265d58557bc07fdbeda3f1a48cbfb279cc95ff91cbcf27c365a365467bbf30",
+          "measurement_result_sha256": "77e4d6ebd8d4fd65fd21f45431a0775948c34d4d6699bcad0161c72700ca3891"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "d6f4f21c7d9fbdc32a49440521f6048734147036bc6980b8d80fc33a0f458cc8",
+          "cost": {
+            "source_tokens": 43,
+            "expr_nodes": 109
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 32,
+              "body_tokens": 27
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 108,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d02",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 109,
+            "declarations": [
+              {
+                "value_expr_nodes": 108,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d02",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "0b73231ab195bb40347c2df78054ee887bda361cedec8216e20ba0dd01dff4b6",
+          "measurement_result_sha256": "e0fa3d5bf28b5669852fc01c9f0f6d6cbd7f8239fd07d531c41baf92602b42cb"
+        }
+      ]
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D03",
+      "goal": "Tasks.d03",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "b9274c30743b73c7d04160f11d3884b47fabecfb57a4b5b01754e8cab377f03f",
+          "cost": {
+            "source_tokens": 43,
+            "expr_nodes": 632
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 32,
+              "body_tokens": 27
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 631,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d03",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 632,
+            "declarations": [
+              {
+                "value_expr_nodes": 631,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d03",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "b533d48e5b35d6afec6c022189b87790f495c993df9c3b53c893d47ad5e0da45",
+          "measurement_result_sha256": "0fdf1f27c136a792ec82e18491da7a8b4abefa74c31bf9b0914aed89da8630cb"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "fbf8f9587a7cb6eb780d8bb51e368d83b0ed46c81bbdac1159e465200eb0fc86",
+          "cost": {
+            "source_tokens": 52,
+            "expr_nodes": 167
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 41,
+              "body_tokens": 36
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 166,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d03",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 167,
+            "declarations": [
+              {
+                "value_expr_nodes": 166,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d03",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "dc7a66f71b1e40db80eccf63e557d792f3b160a1ab0a45d56bace2ed3d483908",
+          "measurement_result_sha256": "9661cb247b086bfd3949a8bf305997677ece1a73d85d0ec9270810312c78fa5e"
+        }
+      ]
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D04",
+      "goal": "Tasks.d04",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "ad24dee1ca9112ef30f10401cfd2602c734127225cd06d539222df9ed000cc41",
+          "cost": {
+            "source_tokens": 43,
+            "expr_nodes": 624
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 32,
+              "body_tokens": 27
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 623,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d04",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 624,
+            "declarations": [
+              {
+                "value_expr_nodes": 623,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d04",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "52a95b52b965aab5ae77765dbc8a59959a5041ecd3bb4e7b5073fc68d8106253",
+          "measurement_result_sha256": "d35c23be587150ce6dbe339cafa44786603cccddc1512989207a4ec002982472"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "7bcbdc62fff83b81f89d08dfc4d0f689868438a479fb21e8875970e104b16308",
+          "cost": {
+            "source_tokens": 52,
+            "expr_nodes": 167
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 41,
+              "body_tokens": 36
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 166,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d04",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 167,
+            "declarations": [
+              {
+                "value_expr_nodes": 166,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d04",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "c9e029170b7b4a6b343927df9d74362109791a3d937af3c0e13942fc06c4d8dc",
+          "measurement_result_sha256": "7e53677ada4281b2d90ab794ea23506f59e338127b5bb5f8f3c228727f790ee4"
+        }
+      ]
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D05",
+      "goal": "Tasks.d05",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "4d5a1bf942619ca5aeee1f6222d0c527f081aa1da4792e450f06d4c0d04a5b11",
+          "cost": {
+            "source_tokens": 36,
+            "expr_nodes": 302
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 25,
+              "body_tokens": 20
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 301,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d05",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 302,
+            "declarations": [
+              {
+                "value_expr_nodes": 301,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d05",
+                  "True",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "f6ea2cb0107ffcf6fb5634e15852bda8ef51e02133f1c4da1c1b8c6eb5d50357",
+          "measurement_result_sha256": "8388f16a8025db3a39268ccfcc817ee9513f2bb4884fa66e76d74c05ae9f9116"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "4d5a1bf942619ca5aeee1f6222d0c527f081aa1da4792e450f06d4c0d04a5b11",
+          "cost": {
+            "source_tokens": 36,
+            "expr_nodes": 302
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 25,
+              "body_tokens": 20
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 301,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d05",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 302,
+            "declarations": [
+              {
+                "value_expr_nodes": 301,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d05",
+                  "True",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "6bb947765127cbeaef688d2dca31f2b73685f374bd51889a30b9ab2bb79ac695",
+          "measurement_result_sha256": "052a29cf2ab7648f6c4a5ec8c990007a4820c09aa24a9485498e400da49cfb44"
+        }
+      ]
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D06",
+      "goal": "Tasks.d06",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "2bd8d939af1f1c63f0b2ad664a7384ea479e61a29876bd3f8b225a57dacde013",
+          "cost": {
+            "source_tokens": 36,
+            "expr_nodes": 298
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 25,
+              "body_tokens": 20
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 297,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d06",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_one",
+              "Foundation.Group.one",
+              "True",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 298,
+            "declarations": [
+              {
+                "value_expr_nodes": 297,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.mul_one",
+                  "Foundation.Group.one",
+                  "Tasks.d06",
+                  "True",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "b0109f285219b4b68a547acf90b217e45b2faa3e525973eaa3460ef7ee1d011b",
+          "measurement_result_sha256": "a221d60566766b3cdeffe98cef87e445906d386a8a56a1f61d62523b996b6986"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "2bd8d939af1f1c63f0b2ad664a7384ea479e61a29876bd3f8b225a57dacde013",
+          "cost": {
+            "source_tokens": 36,
+            "expr_nodes": 298
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 25,
+              "body_tokens": 20
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 297,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d06",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_one",
+              "Foundation.Group.one",
+              "True",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 298,
+            "declarations": [
+              {
+                "value_expr_nodes": 297,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.mul_one",
+                  "Foundation.Group.one",
+                  "Tasks.d06",
+                  "True",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "f1112001c0a6304aaa46ad15ec5770f2756e84e917356800aa83fd7d7e3e7ea1",
+          "measurement_result_sha256": "4ffddb82976f50a1ed0fa89b23851fee9739967819b659b3268c58e6c6d259f3"
+        }
+      ]
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D07",
+      "goal": "Tasks.d07",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "f8c6aab446e3226901a904cf3569e3bf39e21283a9c4e6e839330672eabf7be2",
+          "cost": {
+            "source_tokens": 40,
+            "expr_nodes": 348
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 29,
+              "body_tokens": 24
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 347,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d07",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 348,
+            "declarations": [
+              {
+                "value_expr_nodes": 347,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d07",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "bc9e735ad3ce10fd22c8c6e529c3cfeab5ae52d1ef66e6c20d34dcc03b67edae",
+          "measurement_result_sha256": "cf0eae2210299afa0e81a4ddd33f383dfc7aaac4b1ac1ac1b0363b20e09555b4"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "f8c6aab446e3226901a904cf3569e3bf39e21283a9c4e6e839330672eabf7be2",
+          "cost": {
+            "source_tokens": 40,
+            "expr_nodes": 348
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 29,
+              "body_tokens": 24
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 347,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d07",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 348,
+            "declarations": [
+              {
+                "value_expr_nodes": 347,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d07",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "aa37a068eb165d89971e0360332fcf7720c091566fd79c4b2fee2039c5ada3d7",
+          "measurement_result_sha256": "2510f84d6bcab74ce48f7e592d63d36f962c6c41862c0c68a5fc9630916a9e45"
+        }
+      ]
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "family": "input_output_transport",
+      "module": "Tasks.D08",
+      "goal": "Tasks.d08",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "abd38d9a04cb34b2e9a2e21974363b4b71fa852093c8f3584c526738196aeb77",
+          "cost": {
+            "source_tokens": 47,
+            "expr_nodes": 460
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 36,
+              "body_tokens": 31
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 459,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d08",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.ndrec",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 460,
+            "declarations": [
+              {
+                "value_expr_nodes": 459,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.ndrec",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d08",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "172e3ed660afe5664aa52fd35e8f231fd27077016bd0ad508d4f7cd9fab2ac48",
+          "measurement_result_sha256": "743b9d527ed719cd378183a17080daffe95fd73fc166dd33799e141e38de431a"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "906f71a3969d6d7b591b3adb70ace59517b603377120dbeb1f59896491e7f9de",
+          "cost": {
+            "source_tokens": 53,
+            "expr_nodes": 213
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 42,
+              "body_tokens": 37
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 212,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d08",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.ndrec",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 213,
+            "declarations": [
+              {
+                "value_expr_nodes": 212,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.ndrec",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d08",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "85b4f9d79e7ea4d1d3208c74a6736bf7b1575cccefc352ca7668aeb936b320ff",
+          "measurement_result_sha256": "31bd2764dd785b3e8b65b1be7257eadef33c194e5f3a4dae4c560c076905e625"
+        }
+      ]
+    },
+    {
+      "id": "d09",
+      "split": "development",
+      "family": "intersections",
+      "module": "Tasks.D09",
+      "goal": "Tasks.d09",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "58fb9759fdecda6d40562a28ae53a37783b7ab6d5ea0d0ee4606453ff67eae4b",
+          "cost": {
+            "source_tokens": 55,
+            "expr_nodes": 780
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 44,
+              "body_tokens": 39
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 779,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d09",
+            "direct_proof_dependencies": [
+              "And.intro",
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 780,
+            "declarations": [
+              {
+                "value_expr_nodes": 779,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "And.intro",
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d09",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "1334027fbc07a4fbaf9eff80f4a88f070274fcf0293b1b70ff1dbde4e9a35376",
+          "measurement_result_sha256": "5abe5ff73b8cd7d330e83fc2b6850317267ec2a21f4e8145b9d5b2ae38dcc661"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "0f0c14e82e785bc24aae9cc12b061cfe86435ec978b208cd3fb438049b87336a",
+          "cost": {
+            "source_tokens": 70,
+            "expr_nodes": 286
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 59,
+              "body_tokens": 54
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 285,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d09",
+            "direct_proof_dependencies": [
+              "And.intro",
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 286,
+            "declarations": [
+              {
+                "value_expr_nodes": 285,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "And.intro",
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d09",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "ff260a18e2e5bc82aab563a42b98bff001ea97b7654f4bd1bb875f246ab2ee69",
+          "measurement_result_sha256": "c4644b987c1ef2861cadddce9c7c0c6835cedd9bf5ef8303b8c7f84861e46556"
+        }
+      ]
+    },
+    {
+      "id": "d10",
+      "split": "development",
+      "family": "input_output_transport",
+      "module": "Tasks.D10",
+      "goal": "Tasks.d10",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "c6b450782ffb911e46dd91e5b5d843f4fa6664ebcfd201763a6f75fd1c8b3e20",
+          "cost": {
+            "source_tokens": 43,
+            "expr_nodes": 440
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 32,
+              "body_tokens": 27
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 439,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d10",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.ndrec",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 440,
+            "declarations": [
+              {
+                "value_expr_nodes": 439,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.ndrec",
+                  "Eq.symm",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d10",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "b214d5a9172227734a855936e679df6b8b585b2eb2232c42640017facb80cbf6",
+          "measurement_result_sha256": "0d2137223064cb24e8cc87d3a423b5988f35b6544f63ba5c9144d87cb6ff6e58"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "d03412a23bf4eced21d6132daea4f8651d56be8fdcad5480a79d67e432b960d9",
+          "cost": {
+            "source_tokens": 49,
+            "expr_nodes": 193
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 38,
+              "body_tokens": 33
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 192,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d10",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.ndrec",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 193,
+            "declarations": [
+              {
+                "value_expr_nodes": 192,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.ndrec",
+                  "Eq.symm",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d10",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "f3daacaedc9327f2819f38decbe056deead18f42fc6388f45d97eb6abae7a91f",
+          "measurement_result_sha256": "1f59d59d87dafab22151356f51acc7ef7ad617c3bad7dc2cc1177065c84e03ed"
+        }
+      ]
+    },
+    {
+      "id": "d11",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D11",
+      "goal": "Tasks.d11",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "8e30832f0490f69feac5dde18135ef1073fa9b4b5fb93cdf939d319f4490ab35",
+          "cost": {
+            "source_tokens": 39,
+            "expr_nodes": 372
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 28,
+              "body_tokens": 23
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 371,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d11",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 372,
+            "declarations": [
+              {
+                "value_expr_nodes": 371,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d11",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "ec5b89afee180d084dc94fb8d88fd770b5c53c3eb1da19836cca3caa98460258",
+          "measurement_result_sha256": "62d526ed10354ea9b4b048429bb76050e8c0f8c45d57b58e2d3d430853fc3169"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "a1363548592f78da82e5f275413573bf85bd10d944d3d85b76ebe7efb818f629",
+          "cost": {
+            "source_tokens": 45,
+            "expr_nodes": 125
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 34,
+              "body_tokens": 29
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 124,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d11",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 125,
+            "declarations": [
+              {
+                "value_expr_nodes": 124,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d11",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "9632f46a66058ed13d5a2bddc3602842202bb9d42f6eb6259bf74c2e6704ef2a",
+          "measurement_result_sha256": "a9bcc4b165d394a677873f2d3d2104034f058784559ce76d9cb6d4db95f5e16b"
+        }
+      ]
+    },
+    {
+      "id": "d12",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D12",
+      "goal": "Tasks.d12",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "0744b2edef2f98521094e42ed9e1c3640dd838dc3a50f1cd055e94ddda8b7ba6",
+          "cost": {
+            "source_tokens": 39,
+            "expr_nodes": 852
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 28,
+              "body_tokens": 23
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 851,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d12",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 852,
+            "declarations": [
+              {
+                "value_expr_nodes": 851,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.d12",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "44a5a0fdc5341070669dcc141ff23adbf3a9a6a9556fff56fa8bfefd10388354",
+          "measurement_result_sha256": "01702669fff863c108274173e5fb8344e418fe98f1d7b4734087ef989a2574f1"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "60e5969cafdde1adeafde710a48562f8d04ffd52e01ce0aa5342273945d28bfa",
+          "cost": {
+            "source_tokens": 55,
+            "expr_nodes": 177
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 44,
+              "body_tokens": 39
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 176,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.d12",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 177,
+            "declarations": [
+              {
+                "value_expr_nodes": 176,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.d12",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "fcf3e254f02cf393a68e03ade95d897cc68d4283a23ee138a9d7576bf0f87518",
+          "measurement_result_sha256": "2ce3ba3c473796eed65ebdb60ec816df077be6e302706ac1f17823df8c19f719"
+        }
+      ]
+    },
+    {
+      "id": "r01",
+      "split": "reserved",
+      "family": "postcomposition",
+      "module": "Tasks.R01",
+      "goal": "Tasks.r01",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "9020663207b9b8305d19a4dd4508e95d95cced307ddd08afb105a4c04e9df55d",
+          "cost": {
+            "source_tokens": 45,
+            "expr_nodes": 546
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 34,
+              "body_tokens": 29
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 545,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r01",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 546,
+            "declarations": [
+              {
+                "value_expr_nodes": 545,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.r01",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "932883253120747118234a64831739c1719a3621982608df7d2114e5ec8f9918",
+          "measurement_result_sha256": "3ffcfee257b32a674dd1d03694c2c79ba7fa4f1f248ae1859e5ce34c732d442d"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "889039d99c5e1c68d30b6931a53350e7d37ea09c83e81c443fc6f01f28f7427f",
+          "cost": {
+            "source_tokens": 82,
+            "expr_nodes": 291
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 71,
+              "body_tokens": 66
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 290,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r01",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul",
+              "congrArg"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 291,
+            "declarations": [
+              {
+                "value_expr_nodes": 290,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.r01",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul",
+                  "congrArg"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "c535d2e0a2c51e9e65546cb558591161f174b88c031c7e66dcdf920b8a23827f",
+          "measurement_result_sha256": "0329dc762aaf7651434a835b53657ff75268a244b5056f68c08b6f5d289cbaf9"
+        }
+      ]
+    },
+    {
+      "id": "r02",
+      "split": "reserved",
+      "family": "postcomposition",
+      "module": "Tasks.R02",
+      "goal": "Tasks.r02",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "01812758dfa0b5ed1ed2b1dd36698f3c7ddffa4e6a7788062cffcce6eaed2fac",
+          "cost": {
+            "source_tokens": 49,
+            "expr_nodes": 1010
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 38,
+              "body_tokens": 33
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 1009,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r02",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 1010,
+            "declarations": [
+              {
+                "value_expr_nodes": 1009,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "Tasks.r02",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "fe15e1e705c4cff9cb4f2da6ec75a14fe52346bb49402415cfda60438b64ca43",
+          "measurement_result_sha256": "8dd0286e847ddd0bb8db131ef7d865ea9f227909dd41a2d71ae79a18cad0201c"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "eefb282a493025a4ce7d95356e3336cd87d9fa935c8c9c7804fb769d623d0989",
+          "cost": {
+            "source_tokens": 89,
+            "expr_nodes": 335
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 78,
+              "body_tokens": 73
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 334,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r02",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul",
+              "congrArg"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 335,
+            "declarations": [
+              {
+                "value_expr_nodes": 334,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Tasks.r02",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul",
+                  "congrArg"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "b50860c50e6f16f7196998f83c19e8d9875242dc4502eeae7b2d9ace15d52dc6",
+          "measurement_result_sha256": "5cd57effd3e08a77c10654e49b20d40a2ac054c79f7b84006fe0087088421e41"
+        }
+      ]
+    },
+    {
+      "id": "r03",
+      "split": "reserved",
+      "family": "predicate_pullback",
+      "module": "Tasks.R03",
+      "goal": "Tasks.r03",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "2e303d9893ac6443e8a7f37ec7d0184c2b870fd8cbe24841456b7071a87782b0",
+          "cost": {
+            "source_tokens": 46,
+            "expr_nodes": 220
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 35,
+              "body_tokens": 30
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 219,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r03",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "congrArg",
+              "id"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 220,
+            "declarations": [
+              {
+                "value_expr_nodes": 219,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.mpr",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r03",
+                  "congrArg",
+                  "id"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "8f3604893ee377bdce4c3dac301c1e79238e71df31cca82631c8a7d78dfc8606",
+          "measurement_result_sha256": "ffb38ce5f72b40b772f15b492311768593075c6c9c6bbc6845adc0bbe6e49400"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "2e303d9893ac6443e8a7f37ec7d0184c2b870fd8cbe24841456b7071a87782b0",
+          "cost": {
+            "source_tokens": 46,
+            "expr_nodes": 220
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 35,
+              "body_tokens": 30
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 219,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r03",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "congrArg",
+              "id"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 220,
+            "declarations": [
+              {
+                "value_expr_nodes": 219,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.mpr",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r03",
+                  "congrArg",
+                  "id"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "675aec19792c980d209bf00bdf081d4f2cfc8b44e81416dfe42e91557a528ecc",
+          "measurement_result_sha256": "623fcbb1ebfc66d81b3ef1c6284a2dc2b9b0ac765ee50cb696fa42c38ace1833"
+        }
+      ]
+    },
+    {
+      "id": "r04",
+      "split": "reserved",
+      "family": "predicate_pullback",
+      "module": "Tasks.R04",
+      "goal": "Tasks.r04",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "1ae5917b2fc6420988f6840e1bd26498bbd5804cb96eff8f4390891f5cf1b107",
+          "cost": {
+            "source_tokens": 70,
+            "expr_nodes": 442
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 59,
+              "body_tokens": 54
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 441,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r04",
+            "direct_proof_dependencies": [
+              "And",
+              "And.intro",
+              "And.left",
+              "And.right",
+              "Eq",
+              "Eq.mpr",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "congrArg",
+              "id"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 442,
+            "declarations": [
+              {
+                "value_expr_nodes": 441,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "And",
+                  "And.intro",
+                  "And.left",
+                  "And.right",
+                  "Eq",
+                  "Eq.mpr",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r04",
+                  "congrArg",
+                  "id"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "9a87917852822a1336438519dc9252268cd4eb841946ac5cdec80ca9a6403b12",
+          "measurement_result_sha256": "091b8c535e5fced7463a7681af45fd8eab9f8e3b54c58a75cb85a10e1738bac0"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "1ae5917b2fc6420988f6840e1bd26498bbd5804cb96eff8f4390891f5cf1b107",
+          "cost": {
+            "source_tokens": 70,
+            "expr_nodes": 442
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 59,
+              "body_tokens": 54
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 441,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r04",
+            "direct_proof_dependencies": [
+              "And",
+              "And.intro",
+              "And.left",
+              "And.right",
+              "Eq",
+              "Eq.mpr",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "congrArg",
+              "id"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 442,
+            "declarations": [
+              {
+                "value_expr_nodes": 441,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "And",
+                  "And.intro",
+                  "And.left",
+                  "And.right",
+                  "Eq",
+                  "Eq.mpr",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r04",
+                  "congrArg",
+                  "id"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "1508d58fe924417b79ba492e0bc9b4af7fec16278862bbd5542bd0ee5f1666da",
+          "measurement_result_sha256": "04f2888f389cdb48495f08642feeeeff2a382fde1d8779c63e430594589dbce4"
+        }
+      ]
+    },
+    {
+      "id": "r05",
+      "split": "reserved",
+      "family": "equalizers",
+      "module": "Tasks.R05",
+      "goal": "Tasks.r05",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "a2921b89c42043f064c3ea7acbae46147d88db7c796e780bfb30615264995950",
+          "cost": {
+            "source_tokens": 41,
+            "expr_nodes": 466
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 30,
+              "body_tokens": 25
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 465,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r05",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 466,
+            "declarations": [
+              {
+                "value_expr_nodes": 465,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r05",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "eb1171d57440346144a3f4aea2368018d4d1cf24db74082b37743d8621be34f3",
+          "measurement_result_sha256": "73734ffefc66ce08fdab858b853b6bd8131cb7b9dbe5c0dd4f9703f3840529f0"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "a2921b89c42043f064c3ea7acbae46147d88db7c796e780bfb30615264995950",
+          "cost": {
+            "source_tokens": 41,
+            "expr_nodes": 466
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 30,
+              "body_tokens": 25
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 465,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r05",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 466,
+            "declarations": [
+              {
+                "value_expr_nodes": 465,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r05",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "797aad0806512462c7f8752cdc7a4f4e11d22c01ee5d41cfa6a94f0045215d5e",
+          "measurement_result_sha256": "d1d732454b145215a8f6a39b4037f531f67c8e8c4c7f6124655fa9ee2bae6f6f"
+        }
+      ]
+    },
+    {
+      "id": "r06",
+      "split": "reserved",
+      "family": "equalizers",
+      "module": "Tasks.R06",
+      "goal": "Tasks.r06",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "690f063758a62f4e0d91af21255ce897cc88fc29f2c54a9e4c658f6485a425e0",
+          "cost": {
+            "source_tokens": 45,
+            "expr_nodes": 920
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 34,
+              "body_tokens": 29
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 919,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r06",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 920,
+            "declarations": [
+              {
+                "value_expr_nodes": 919,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r06",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "57c2110c3cab101dd66a0ba2ad4d8c808cb4768884282ff593202790dbda84df",
+          "measurement_result_sha256": "f32ed19eb6563425f81a2d830ac6fa5cc6c37e8275df952fd7f18219fdcd0c29"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "690f063758a62f4e0d91af21255ce897cc88fc29f2c54a9e4c658f6485a425e0",
+          "cost": {
+            "source_tokens": 45,
+            "expr_nodes": 920
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 34,
+              "body_tokens": 29
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 919,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r06",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 920,
+            "declarations": [
+              {
+                "value_expr_nodes": 919,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Tasks.r06",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "16f07b9ea4e77cd89a582541e2a18c3325752d3ad627bee51cf71831eb268730",
+          "measurement_result_sha256": "47cc2965d30e581ad6fe3f137b5232577a52218d0b8a75b3f4b6152d4426b787"
+        }
+      ]
+    },
+    {
+      "id": "r07",
+      "split": "reserved",
+      "family": "recursive_products",
+      "module": "Tasks.R07",
+      "goal": "Tasks.r07",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "1e178bc586b2356a8f6234c656c6ae25c4b95ea6b8ddbfdd5fec40cb5859ac96",
+          "cost": {
+            "source_tokens": 78,
+            "expr_nodes": 1050
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 67,
+              "body_tokens": 62
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 1049,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r07",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "List",
+              "List.cons",
+              "List.foldl",
+              "List.rec",
+              "Subtype",
+              "Subtype.property",
+              "Subtype.val",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "id",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 1050,
+            "declarations": [
+              {
+                "value_expr_nodes": 1049,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "List",
+                  "List.cons",
+                  "List.foldl",
+                  "List.rec",
+                  "Subtype",
+                  "Subtype.property",
+                  "Subtype.val",
+                  "Tasks.r07",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "id",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "28b42c51eaa3ef5b40ad83f04182818bb0b13fcdffef495fa28d469b4631e93d",
+          "measurement_result_sha256": "fb9e69a9cbe2ef3275218be396b825b8de23f70f7784ff51fa3f7b02491d1544"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "431c2865cdf5327261560989ceb628f5a4755cb484e5794de57b44ad25ce8357",
+          "cost": {
+            "source_tokens": 84,
+            "expr_nodes": 663
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 73,
+              "body_tokens": 68
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 662,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r07",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "List",
+              "List.cons",
+              "List.foldl",
+              "List.rec",
+              "Subtype",
+              "Subtype.property",
+              "Subtype.val",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul",
+              "id"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 663,
+            "declarations": [
+              {
+                "value_expr_nodes": 662,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "List",
+                  "List.cons",
+                  "List.foldl",
+                  "List.rec",
+                  "Subtype",
+                  "Subtype.property",
+                  "Subtype.val",
+                  "Tasks.r07",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul",
+                  "id"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "795407d1cad82a4b53eedf99011a25f728334957d8b8457e2f67d3c1715fee68",
+          "measurement_result_sha256": "73c7c338a4019fad95722db29f585e5f2e823973cc522cdaf9f6bbc1b7551a23"
+        }
+      ]
+    },
+    {
+      "id": "r08",
+      "split": "reserved",
+      "family": "recursive_products",
+      "module": "Tasks.R08",
+      "goal": "Tasks.r08",
+      "attempts": [
+        {
+          "attempt": 1,
+          "label": "raw_fallback",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "956f3abd534b65b0db5fb6f2948785ccd12497cdf4572e467a53c0a54567e921",
+          "cost": {
+            "source_tokens": 75,
+            "expr_nodes": 716
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 64,
+              "body_tokens": 59
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 715,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r08",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "HAdd.hAdd",
+              "Nat",
+              "Nat.rec",
+              "Nat.recAux",
+              "OfNat.ofNat",
+              "True",
+              "congr",
+              "congrArg",
+              "eq_self",
+              "id",
+              "instAddNat",
+              "instHAdd",
+              "instOfNatNat",
+              "of_eq_true"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 716,
+            "declarations": [
+              {
+                "value_expr_nodes": 715,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Eq.trans",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "Foundation.Group.one_mul",
+                  "HAdd.hAdd",
+                  "Nat",
+                  "Nat.rec",
+                  "Nat.recAux",
+                  "OfNat.ofNat",
+                  "Tasks.r08",
+                  "True",
+                  "congr",
+                  "congrArg",
+                  "eq_self",
+                  "id",
+                  "instAddNat",
+                  "instHAdd",
+                  "instOfNatNat",
+                  "of_eq_true"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [],
+          "formal_result_sha256": "d3682c5c5687bd6d59c75f5fc9e87ee81de97ee02af44310b957d5c14e81b542",
+          "measurement_result_sha256": "bd0871987e5294bf4ca6e08addd448d5f0adb351dd5a69f0ababfef8af90d7ff"
+        },
+        {
+          "attempt": 2,
+          "label": "package_migration",
+          "formal_status": "verified",
+          "formal_failure": null,
+          "measurement_status": "measured",
+          "proof_sha256": "85090e3f6b5518c0e109ece453d87f180802b2ce965a8cb9b2c1358e21151fc1",
+          "cost": {
+            "source_tokens": 81,
+            "expr_nodes": 293
+          },
+          "measurement_failure": null,
+          "target": {
+            "source": {
+              "status": "parsed_simple_declaration",
+              "signature_tokens": 4,
+              "separator_tokens": 1,
+              "declaration_tokens": 70,
+              "body_tokens": 65
+            },
+            "signature_expr_nodes": 1,
+            "proof_expr_nodes": 292,
+            "name": "Submission.solve",
+            "goal_preserved": true,
+            "expected": "Tasks.r08",
+            "direct_proof_dependencies": [
+              "Eq",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "HAdd.hAdd",
+              "Nat",
+              "Nat.rec",
+              "Nat.recAux",
+              "OfNat.ofNat",
+              "Theory.Hom",
+              "Theory.Hom.mk",
+              "Theory.kernel_mul",
+              "id",
+              "instAddNat",
+              "instHAdd",
+              "instOfNatNat"
+            ]
+          },
+          "proof_inventory": {
+            "module": "Proof",
+            "expr_nodes": 293,
+            "declarations": [
+              {
+                "value_expr_nodes": 292,
+                "signature_expr_nodes": 1,
+                "name": "Submission.solve",
+                "kind": "theorem",
+                "direct_dependencies": [
+                  "Eq",
+                  "Foundation.Group",
+                  "Foundation.Group.mul",
+                  "Foundation.Group.one",
+                  "HAdd.hAdd",
+                  "Nat",
+                  "Nat.rec",
+                  "Nat.recAux",
+                  "OfNat.ofNat",
+                  "Tasks.r08",
+                  "Theory.Hom",
+                  "Theory.Hom.mk",
+                  "Theory.kernel_mul",
+                  "id",
+                  "instAddNat",
+                  "instHAdd",
+                  "instOfNatNat"
+                ]
+              }
+            ],
+            "declaration_count": 1
+          },
+          "used_package_declarations": [
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.mk",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ],
+          "formal_result_sha256": "faf9a73c3c4fe34607665ba0284cb07c4d195f0386570a7eb1cbd3b5d3e3b8f6",
+          "measurement_result_sha256": "181f35ba4f7ed0e62996710efdd60d5b2a1e200b122868236ef8617d5939f04e"
+        }
+      ]
+    }
+  ],
+  "suite_fingerprints": {
+    "suite_sha256": "1250bc3c27d3555948ecd785070617fd5231971d7a35e1e19bcc9ec48a7a722c",
+    "package_sha256": "96fa1c2645ef1ded61d7401d30c1ed10ce229fb9be424cfb096e712d3aa5fefd",
+    "source_sha256": {
+      "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+      "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+      "Tasks.D01": "1dfc0f5c0ed0c5fa6b69c35da7ee53db5b106b749f85b5fafe7bed532fe07952",
+      "Tasks.D02": "3849c9f8a46027a70019b064b39ea81ad2fb683d14d7e15bc3bfe7cb917dc656",
+      "Tasks.D03": "0ee19528127bc457dfa26b9df75567de463e50b8fe940a19ccf4d434b9b1c16f",
+      "Tasks.D04": "e6ed1d573916bf023ade52ae7d6932e628cfedbfa9a5f632bc0a995d5e8d1b5e",
+      "Tasks.D05": "243de33dec089c3ba39b67530c500db60003d02871f83b319050232c9186d693",
+      "Tasks.D06": "5b93bcac6cdb6a674841e237ec48ea3b597a746614c519bfa9607ad48edf6c92",
+      "Tasks.D07": "9b9540fbb098ba1b10f6b0fff994648c7d499ea953fbe1e1c08e2e3549883fbe",
+      "Tasks.D08": "84da53addb3fa33f104cf8dda601ea406f7df253378a5db0fdb499094ffa6609",
+      "Tasks.D09": "c79b8c73ac44db632ebaeab8acc522e942b4e557f5c1536dba28731a15c072f4",
+      "Tasks.D10": "c02be7524f17bb0862ad9f52478045747a15c44a3f487e04cf27a74839ce29dc",
+      "Tasks.D11": "a7c921545e9927dc84b4780f6e95f7b4a62e468c3122458d1ff454c947d802a2",
+      "Tasks.D12": "691a402ec8c9ac8754152d7118f5e4d88e03aa953c73e9af10fbdc38cfa5a8f0",
+      "Tasks.R01": "50ad1fe695ac1e3a9786d1383f9385326f9cf57e342dde6cb1b8271359f7e054",
+      "Tasks.R02": "4e9ea08c906bfa3fd063ae40917cf9e9b737bd371551a0a8348604d265d48a21",
+      "Tasks.R03": "fda52b35cea14512f4aa46fb632ab2f6b258dc8ea03e153fc35c91b4c315f2cc",
+      "Tasks.R04": "45aca0c5d73b17220e2c67fe7cb95ab932631904cd761fe1437db6418c87ea33",
+      "Tasks.R05": "ebccfdf6980913fcbcd866d16c46daccb73df1d3d7969ef16b099856b5e07201",
+      "Tasks.R06": "1f50bda9dad17684430809ce1c06295ad4cb7fba1880bf4d05d1e7290b07e200",
+      "Tasks.R07": "0e99b8d29c6b2b55524d26630df56607f8e7075deff2b12ead8baa5ac83128a5",
+      "Tasks.R08": "c5a3e6017341c26e5151e19493a8442e52f361fa340919007b6376e4ea682816"
+    },
+    "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+    "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+  },
+  "package_cost": {
+    "source_tokens": 312,
+    "expr_nodes": 4341
+  },
+  "package_inventory": [
+    {
+      "module": "Candidate",
+      "expr_nodes": 4341,
+      "declarations": [
+        {
+          "value_expr_nodes": 0,
+          "signature_expr_nodes": 13,
+          "name": "Theory.Hom",
+          "kind": "inductive",
+          "direct_dependencies": [
+            "Foundation.Group"
+          ]
+        },
+        {
+          "value_expr_nodes": 101,
+          "signature_expr_nodes": 31,
+          "name": "Theory.Hom._sizeOf_1",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Nat",
+            "Nat",
+            "OfNat.ofNat",
+            "SizeOf",
+            "SizeOf",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.rec",
+            "instOfNatNat"
+          ]
+        },
+        {
+          "value_expr_nodes": 57,
+          "signature_expr_nodes": 31,
+          "name": "Theory.Hom._sizeOf_inst",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "SizeOf",
+            "SizeOf",
+            "SizeOf.mk",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom._sizeOf_1"
+          ]
+        },
+        {
+          "value_expr_nodes": 145,
+          "signature_expr_nodes": 91,
+          "name": "Theory.Hom.casesOn",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk",
+            "Theory.Hom.rec"
+          ]
+        },
+        {
+          "value_expr_nodes": 23,
+          "signature_expr_nodes": 23,
+          "name": "Theory.Hom.ctorIdx",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "Nat",
+            "Theory.Hom",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "value_expr_nodes": 24,
+          "signature_expr_nodes": 85,
+          "name": "Theory.Hom.map_mul",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "value_expr_nodes": 0,
+          "signature_expr_nodes": 59,
+          "name": "Theory.Hom.mk",
+          "kind": "constructor",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "value_expr_nodes": 63,
+          "signature_expr_nodes": 59,
+          "name": "Theory.Hom.mk._flat_ctor",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "value_expr_nodes": 169,
+          "signature_expr_nodes": 137,
+          "name": "Theory.Hom.mk.inj",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk.noConfusion"
+          ]
+        },
+        {
+          "value_expr_nodes": 613,
+          "signature_expr_nodes": 141,
+          "name": "Theory.Hom.mk.injEq",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Eq.casesOn",
+            "Eq.ndrec",
+            "Eq.propIntro",
+            "Eq.refl",
+            "Eq.symm",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "HEq",
+            "HEq.refl",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk.noConfusion"
+          ]
+        },
+        {
+          "value_expr_nodes": 185,
+          "signature_expr_nodes": 143,
+          "name": "Theory.Hom.mk.noConfusion",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk",
+            "Theory.Hom.noConfusion"
+          ]
+        },
+        {
+          "value_expr_nodes": 71,
+          "signature_expr_nodes": 111,
+          "name": "Theory.Hom.mk.sizeOf_spec",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Eq.refl",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Nat",
+            "Nat",
+            "OfNat.ofNat",
+            "OfNat.ofNat",
+            "SizeOf",
+            "SizeOf",
+            "SizeOf.sizeOf",
+            "Theory.Hom",
+            "Theory.Hom._sizeOf_inst",
+            "Theory.Hom.mk",
+            "instOfNatNat",
+            "instOfNatNat"
+          ]
+        },
+        {
+          "value_expr_nodes": 225,
+          "signature_expr_nodes": 65,
+          "name": "Theory.Hom.noConfusion",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Eq.ndrec",
+            "Eq.refl",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.casesOn",
+            "Theory.Hom.noConfusionType",
+            "Theory.Hom.noConfusionType"
+          ]
+        },
+        {
+          "value_expr_nodes": 171,
+          "signature_expr_nodes": 35,
+          "name": "Theory.Hom.noConfusionType",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.casesOn"
+          ]
+        },
+        {
+          "value_expr_nodes": 0,
+          "signature_expr_nodes": 91,
+          "name": "Theory.Hom.rec",
+          "kind": "recursor",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "value_expr_nodes": 103,
+          "signature_expr_nodes": 91,
+          "name": "Theory.Hom.recOn",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.mk",
+            "Theory.Hom.mk",
+            "Theory.Hom.rec"
+          ]
+        },
+        {
+          "value_expr_nodes": 24,
+          "signature_expr_nodes": 25,
+          "name": "Theory.Hom.toFun",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "Theory.Hom",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "value_expr_nodes": 41,
+          "signature_expr_nodes": 23,
+          "name": "Theory.Kernel",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "Subtype",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "value_expr_nodes": 131,
+          "signature_expr_nodes": 57,
+          "name": "Theory.Kernel.mul",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Subtype.mk",
+            "Subtype.val",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Kernel",
+            "Theory.Kernel",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "value_expr_nodes": 145,
+          "signature_expr_nodes": 107,
+          "name": "Theory.Kernel.mul._proof_1",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Subtype.property",
+            "Subtype.val",
+            "Subtype.val",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Kernel",
+            "Theory.Kernel",
+            "Theory.kernel",
+            "Theory.kernel",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "value_expr_nodes": 47,
+          "signature_expr_nodes": 25,
+          "name": "Theory.kernel",
+          "kind": "definition",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.one",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "value_expr_nodes": 485,
+          "signature_expr_nodes": 75,
+          "name": "Theory.kernel_mul",
+          "kind": "theorem",
+          "direct_dependencies": [
+            "Eq",
+            "Foundation.Group",
+            "Foundation.Group",
+            "Foundation.Group.mul",
+            "Foundation.Group.mul",
+            "Foundation.Group.one",
+            "Foundation.Group.one_mul",
+            "Theory.Hom",
+            "Theory.Hom",
+            "Theory.Hom.map_mul",
+            "Theory.Hom.toFun",
+            "Theory.kernel",
+            "Theory.kernel",
+            "Trans.trans",
+            "congrArg",
+            "id",
+            "instTransEq"
+          ]
+        }
+      ],
+      "declaration_count": 22
+    }
+  ],
+  "provenance": {
+    "code_commit": "0e713015a68b5a8303818fe0e3c3706404feb129",
+    "workflow_run_id": "39116120183"
+  }
+}
