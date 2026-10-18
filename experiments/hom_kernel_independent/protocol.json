@@ -3,7 +3,7 @@
   "study_id": "hom-kernel-independent-contexts-v1",
   "suite": {
     "path": "suite.json",
-    "sha256": "bc3a6cb4d9a4a0983ea0bde406716f754e10605c0765ed950010c3e129ad6a1d"
+    "sha256": "5c2327a7c43cedafeaffcbb41798d9be14c4b93cbe90da4097fc5e5ac420931a"
   },
   "candidate_frozen_commit": "b8a6a10ebae0c4971200ec59a2c85293efeca905",
   "worker_skill_sha256": {
@@ -240,5 +240,6 @@
     "generation_budget_verified": false,
     "training_eligible": false,
     "fair_model_performance_claim": false
-  }
+  },
+  "preflight_revision": "Explicit pair type added to d12 before any worker was launched; goal-statement elaboration check only."
 }

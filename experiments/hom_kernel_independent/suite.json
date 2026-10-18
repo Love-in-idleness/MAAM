@@ -73,7 +73,7 @@
     },
     "Tasks.D12": {
       "path": "Tasks/D12.lean",
-      "sha256": "7962128a42efa0b1f4fd7d326ffd9c4a57365d5556d3c2f71139f877e541c70d"
+      "sha256": "c9db77c6a07149a27cdbdd495c5dc232b90d26d27ceae379f8071f0e2329298d"
     },
     "Tasks.R01": {
       "path": "Tasks/R01.lean",
