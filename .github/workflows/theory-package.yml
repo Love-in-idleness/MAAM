@@ -31,16 +31,19 @@ jobs:
         run: |
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/lean" --version
       - name: Verify both reference proofs and account for the package
-        run: python -m maam evaluate-package --experiment experiments/hom_kernel/experiment.json --output results/theory-package-reference.json
+        run: |
+          mkdir -p data/theory-package
+          python -m maam evaluate-package --experiment experiments/hom_kernel/experiment.json --output data/theory-package/theory-package-reference.json
       - name: Check actual Lean rejection cases
-        run: python scripts/check_theory_package.py --report results/theory-package-reference.json --negative-output results/theory-package-negative.json
+        run: python scripts/check_theory_package.py --report data/theory-package/theory-package-reference.json --negative-output data/theory-package/theory-package-negative.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: theory-package-reference
           path: |
-            results/theory-package-reference.json
-            results/theory-package-negative.json
+            data/theory-package/theory-package-reference.json
+            data/theory-package/theory-package-negative.json
           retention-days: 30
           if-no-files-found: error
