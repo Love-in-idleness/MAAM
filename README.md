@@ -6,6 +6,14 @@ Evaluate a formal proposition using compression, proof efficiency, and structura
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 
+## 下一阶段 / Next phase
+
+项目的长期目标是评估新命题、新数学对象及围绕核心思想形成的理论包，并为 LLM 学习提供可核查的比较反馈。
+The long-term goal is to evaluate new propositions, mathematical objects and theory packages built around a core idea, providing auditable comparative feedback for LLM learning.
+
+拟议主线是加入候选后实际重述、重证已有结果，再比较用途与成本；首个实验及 skill 职责见 [研究计划](docs/RESEARCH_PLAN.md)，这些新能力尚未实现。
+The proposed next phase introduces candidates, actually reformulates and reproves existing results, and compares usefulness and cost; see the [research plan](docs/RESEARCH_PLAN.md) for the first experiment and skill responsibilities, which are not yet implemented.
+
 ## 快速运行 / Quick start
 
 需要 Python 3.11 或以上，计算核心没有第三方依赖，也不调用 LLM 或外部服务。
