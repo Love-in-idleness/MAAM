@@ -32,8 +32,8 @@ def moduleOf (env : Environment) (name : Name) : String :=
   | none => ""
   | some i => env.header.moduleNames[i.toNat]!.toString
 
-def prefixMatches (name prefix : String) : Bool :=
-  name == prefix || name.startsWith (prefix ++ ".")
+def prefixMatches (name scopePrefix : String) : Bool :=
+  name == scopePrefix || name.startsWith (scopePrefix ++ ".")
 
 def exprStats (root : Expr) : Except String (Nat × List Name) := do
   let mut pending := #[root]
@@ -97,7 +97,7 @@ def parseSource (env : Environment) (path source : String) : IO ParsedSource := 
         { env := state.env, options := scope.opts, currNamespace := scope.currNamespace,
           openDecls := scope.openDecls } old {}
       if msgs.hasErrors || next.recovering then
-        throwError "source command failed to parse"
+        throw <| IO.userError "source command failed to parse"
       Lean.Elab.Frontend.setParserState next
       Lean.Elab.Frontend.setMessages {}
       commands := commands.push cmd
@@ -106,10 +106,10 @@ def parseSource (env : Environment) (path source : String) : IO ParsedSource := 
           "Lean.Parser.Command.set_option"].contains cmd.getKind.toString then
         Lean.Elab.Frontend.elabCommandAtFrontend cmd
         if (← Lean.Elab.Frontend.getCommandState).messages.hasErrors then
-          throwError "source context replay failed"
+          throw <| IO.userError "source context replay failed"
         Lean.Elab.Frontend.setMessages {}
       if Parser.isTerminalCommand cmd then break
-      if next.pos <= old.pos then throwError "source parser made no progress"
+      if next.pos <= old.pos then throw <| IO.userError "source parser made no progress"
     return commands
   let (commands, _) ← (action.run { inputCtx }).run
     { commandState := Lean.Elab.Command.mkState env {} {}, parserState := initial, cmdPos := 0 }

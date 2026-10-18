@@ -236,8 +236,13 @@ def run_experiment(path: str | Path, *, lean="lean") -> dict:
     executable = shutil.which(lean)
     if executable is None:
         raise CorpusError(f"{lean} is not installed; install Lean {manifest['lean_version']} first")
-    version = subprocess.run([executable, "--version"], capture_output=True, text=True,
-                             timeout=15, check=False)
+    tool_env = os.environ.copy()
+    tool_env["ELAN_TOOLCHAIN"] = "leanprover/lean4:v" + manifest["lean_version"]
+    try:
+        version = subprocess.run([executable, "--version"], capture_output=True, text=True,
+                                 timeout=15, check=False, env=tool_env)
+    except subprocess.TimeoutExpired as exc:
+        raise CorpusError("Lean version check timed out") from exc
     match = re.search(r"version (\d+\.\d+\.\d+)", version.stdout)
     if version.returncode or match is None or match.group(1) != manifest["lean_version"]:
         raise CorpusError(f"experiment requires Lean {manifest['lean_version']}: {version.stdout.strip()}")
@@ -279,7 +284,7 @@ def run_experiment(path: str | Path, *, lean="lean") -> dict:
                     dest = work.joinpath(*module.split(".")).with_suffix(".lean")
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     dest.write_bytes(frozen["blobs"][module])
-                env = os.environ.copy()
+                env = tool_env.copy()
                 env["LEAN_PATH"] = str(work)
                 for module in modules:
                     relative = Path(*module.split("."))
