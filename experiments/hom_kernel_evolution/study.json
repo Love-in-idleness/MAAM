@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "phase": "version_reuse_calibration",
+  "study_id": "hom-kernel-evolution-v1",
+  "rounds": [
+    {
+      "index": 0,
+      "role": "seed",
+      "description": "Previously checked, byte-identical hom-kernel-core-v1."
+    },
+    {
+      "index": 1,
+      "role": "package_construction",
+      "description": "Controller-authored v2 from public development evidence; not autonomous discovery."
+    },
+    {
+      "index": 2,
+      "role": "later_use",
+      "description": "Four preselected downstream calibration goals, fresh task/condition contexts; no held-out value claim."
+    }
+  ],
+  "evaluation_round": 2,
+  "versions": [
+    {
+      "id": "v1",
+      "parent": null,
+      "introduced_round": 0,
+      "package": {
+        "path": "package-v1.json",
+        "sha256": "dea1026aff1d9b4b09d0c2eca1f993c6678dd74719462a08a2822e4c6b223457"
+      },
+      "sources": {
+        "Candidate": {
+          "path": "Candidate.lean",
+          "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+        }
+      }
+    },
+    {
+      "id": "v2",
+      "parent": "v1",
+      "introduced_round": 1,
+      "package": {
+        "path": "package-v2.json",
+        "sha256": "401d367bd4c15947a5366029cda3852b1b064738a7069ab53a82f42687ffbd79"
+      },
+      "sources": {
+        "Candidate": {
+          "path": "Candidate.lean",
+          "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+        },
+        "Extension": {
+          "path": "Extension.lean",
+          "sha256": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c"
+        }
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "baseline",
+      "condition": "baseline",
+      "version": null,
+      "suite": {
+        "path": "suite-v1.json",
+        "sha256": "12fb73784f8facd472e798ac9dd1267f88b339887524dffcc43b2e269accc95b"
+      }
+    },
+    {
+      "id": "v1",
+      "condition": "treatment",
+      "version": "v1",
+      "suite": {
+        "path": "suite-v1.json",
+        "sha256": "12fb73784f8facd472e798ac9dd1267f88b339887524dffcc43b2e269accc95b"
+      }
+    },
+    {
+      "id": "v2",
+      "condition": "treatment",
+      "version": "v2",
+      "suite": {
+        "path": "suite-v2.json",
+        "sha256": "7548b3427ce1e4b8eac3a3150a7f9f816414c1c5df9ca97bb4fbb7bebc62a2af"
+      }
+    }
+  ],
+  "launch_order": [
+    {
+      "worker": "e01",
+      "variant": "baseline",
+      "task_id": "restriction"
+    },
+    {
+      "worker": "e02",
+      "variant": "v1",
+      "task_id": "restriction"
+    },
+    {
+      "worker": "e03",
+      "variant": "v2",
+      "task_id": "restriction"
+    },
+    {
+      "worker": "e04",
+      "variant": "v1",
+      "task_id": "kernel_group"
+    },
+    {
+      "worker": "e05",
+      "variant": "v2",
+      "task_id": "kernel_group"
+    },
+    {
+      "worker": "e06",
+      "variant": "baseline",
+      "task_id": "kernel_group"
+    },
+    {
+      "worker": "e07",
+      "variant": "v2",
+      "task_id": "words"
+    },
+    {
+      "worker": "e08",
+      "variant": "baseline",
+      "task_id": "words"
+    },
+    {
+      "worker": "e09",
+      "variant": "v1",
+      "task_id": "words"
+    },
+    {
+      "worker": "e10",
+      "variant": "baseline",
+      "task_id": "intersection"
+    },
+    {
+      "worker": "e11",
+      "variant": "v1",
+      "task_id": "intersection"
+    },
+    {
+      "worker": "e12",
+      "variant": "v2",
+      "task_id": "intersection"
+    }
+  ],
+  "order_seed": 20261019,
+  "stopping": "First verified submission, at most three attempts per goal/variant. Retain all failures.",
+  "solver": {
+    "id": "work-mode-inherited-fresh-context-v1",
+    "mode": "interactive_agent",
+    "generation": {
+      "status": "unavailable",
+      "model_revision": null,
+      "sampling": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null,
+      "note": "Inherited model and effort; no model override. Exact provider usage was not exposed. Unknown is not zero."
+    }
+  },
+  "worker_skill_sha256": {
+    "SKILL.md": "fec2f755665a1126d1309b0405fecec7ef384a42862b3730fc27765acc7cbdc0",
+    "agents/openai.yaml": "42089d95b083a3cd1c1f01933ae4ce57637d541d374f08b8adc5533e00e7eee9",
+    "references/protocol.md": "7a4e2693e237f579746c3d15e959ccc76235ce5afb7afd21d858ce8c6f29f9ea",
+    "scripts/pack_submission.py": "da8c09a9f3b44fd2a36880a00a7e2cb2f348643b8031bae883525a0a1f7aae7f"
+  },
+  "prompt_template": "You are a task-local MAAM proof worker. Read only {skill_root}/SKILL.md, its references/protocol.md and {worker_root}/request.json. Use only the supplied sources and goal. Do not inspect the repository, other requests, opposite-condition outputs or archived/reference proofs. Do not use network or solution-search tools, run Lean yourself, or delegate. Produce your own Lean proof term and bridge explanation, then package using the skill script. Save immutable {worker_root}/proof-01.lean, bridge-01.txt and submission-01.json. The controller will verify; do not claim Lean success before its feedback. If given your exact feedback, use the next numbered files within the request budget. Stop after the first verified submission. Return only the submission path and a short statement of what you supplied.",
+  "measurement_budget": {
+    "per_command_timeout_seconds": 60,
+    "total_timeout_seconds": 180,
+    "max_heartbeats": 200000
+  },
+  "max_frontier_states": 10000,
+  "scope": {
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false,
+    "autonomous_discovery_claim": false
+  }
+}

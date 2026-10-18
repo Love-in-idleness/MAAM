@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "package_id": "hom-kernel-group-v2",
+  "base_id": "minimal-groups-v1",
+  "idea": "Extend the unchanged v1 homomorphism/kernel API with derived identity and inverse preservation and the group structure on the kernel.",
+  "status": "proved_extension",
+  "modules": [
+    "Candidate",
+    "Extension"
+  ],
+  "declarations": [
+    "Theory.Hom",
+    "Theory.kernel",
+    "Theory.Kernel",
+    "Theory.kernel_mul",
+    "Theory.Kernel.mul",
+    "Theory.GroupFacts.left_cancel",
+    "Theory.GroupFacts.mul_inv",
+    "Theory.GroupFacts.inv_one",
+    "Theory.Hom.map_one",
+    "Theory.Hom.map_inv",
+    "Theory.kernel_one",
+    "Theory.kernel_inv",
+    "Theory.Kernel.group"
+  ],
+  "conjectures": []
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "budget": {
+    "max_attempts_per_task": 3,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "suite_id": "hom-kernel-evolution-v2",
+  "package": "package-v2.json",
+  "tasks": [
+    {
+      "id": "kernel_group",
+      "module": "Tasks.KernelGroup",
+      "goal": "Tasks.kernelGroup",
+      "split": "development",
+      "family": "subobject_group"
+    },
+    {
+      "id": "restriction",
+      "module": "Tasks.Restriction",
+      "goal": "Tasks.restriction",
+      "split": "development",
+      "family": "factor_through_subobject"
+    },
+    {
+      "id": "intersection",
+      "module": "Tasks.Intersection",
+      "goal": "Tasks.intersection",
+      "split": "development",
+      "family": "intersection_of_subobjects"
+    },
+    {
+      "id": "words",
+      "module": "Tasks.Words",
+      "goal": "Tasks.words",
+      "split": "development",
+      "family": "recursive_group_words"
+    }
+  ],
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+    },
+    "Extension": {
+      "path": "Extension.lean",
+      "sha256": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c"
+    },
+    "Tasks.KernelGroup": {
+      "path": "Tasks/KernelGroup.lean",
+      "sha256": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b"
+    },
+    "Tasks.Restriction": {
+      "path": "Tasks/Restriction.lean",
+      "sha256": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed"
+    },
+    "Tasks.Intersection": {
+      "path": "Tasks/Intersection.lean",
+      "sha256": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7"
+    },
+    "Tasks.Words": {
+      "path": "Tasks/Words.lean",
+      "sha256": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a"
+    }
+  }
+}

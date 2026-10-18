@@ -80,6 +80,9 @@ def main():
     if (ROOT / "results/independent/receipt.json").exists():
         from verify_independent_results import verify
         verify()
+    if (ROOT / "results/evolution/receipt.json").exists():
+        from verify_evolution_results import verify
+        verify()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,59 @@
+name: Package-version reuse replay
+on:
+  push:
+    paths:
+      - 'maam/evolution.py'
+      - 'maam/independent.py'
+      - 'maam/ablation.py'
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'maam/Inventory.lean'
+      - 'experiments/hom_kernel_evolution/**'
+      - 'results/evolution/**'
+      - 'scripts/*evolution*.py'
+      - 'tests/test_evolution.py'
+      - '.github/workflows/evolution.yml'
+  pull_request:
+    paths:
+      - 'maam/**'
+      - 'experiments/hom_kernel_evolution/**'
+      - 'results/evolution/**'
+      - 'scripts/*evolution*.py'
+      - 'tests/test_evolution.py'
+      - '.github/workflows/evolution.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test protocol and restore existing evidence
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/verify_results.py
+      - name: Install and warm Lean 4.24.0
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/lean" --version
+      - name: Replay every preserved attempt and inventory
+        if: hashFiles('results/evolution/receipt.json') != ''
+        run: |
+          python scripts/verify_evolution_results.py
+          python scripts/check_evolution.py --output data/evolution-replay
+      - uses: actions/upload-artifact@v4
+        if: always() && hashFiles('results/evolution/receipt.json') != ''
+        with:
+          name: package-version-reuse-replay
+          path: data/evolution-replay
+          retention-days: 30
+          if-no-files-found: error
