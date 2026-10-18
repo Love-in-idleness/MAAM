@@ -22,4 +22,4 @@ maam = "maam.cli:main"
 packages = ["maam"]
 
 [tool.setuptools.package-data]
-maam = ["Export.lean", "PaperExport.lean", "PackageCheck.lean"]
+maam = ["Export.lean", "PaperExport.lean", "PackageCheck.lean", "Inventory.lean"]

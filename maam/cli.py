@@ -68,6 +68,12 @@ def parser():
     p.add_argument("--baseline", required=True)
     p.add_argument("--treatment", required=True)
     p.add_argument("--output")
+    p = commands.add_parser("ablation", help="verify frozen package ablations and finite proof portfolios")
+    p.add_argument("--study", required=True)
+    p.add_argument("--workdir", required=True)
+    p.add_argument("--lean", default="lean")
+    p.add_argument("--workers", type=int, default=2)
+    p.add_argument("--output")
     p = commands.add_parser("export-lean", help="export declarations from an existing Lean project")
     p.add_argument("--project", default=".")
     p.add_argument("--module", required=True)
@@ -129,6 +135,9 @@ def main(argv=None):
             from .lean import export
             report = export(args.project, args.module, args.corpus_output, targets=args.target,
                             expand_prefixes=args.expand_prefix, runner=args.runner, timeout=args.timeout)
+        elif args.command == "ablation":
+            from .ablation import run_study
+            report = run_study(args.study, args.workdir, lean=args.lean, workers=args.workers)
         elif args.command.startswith("migration-"):
             from .migration import start_session, task_request, submit_attempt, session_report, compare_sessions
             from .theory import read_object

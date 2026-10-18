@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "study_id": "hom-kernel-ablation-v1",
+  "phase": "package_ablation_calibration",
+  "upstream_commit": "64e456a1f2504d1f9a76089edc2a08537dec7978",
+  "variants": [
+    {
+      "id": "baseline",
+      "condition": "baseline",
+      "suite": {
+        "path": "suite-full.json",
+        "sha256": "1250bc3c27d3555948ecd785070617fd5231971d7a35e1e19bcc9ec48a7a722c"
+      },
+      "witnesses": {
+        "path": "witnesses/baseline.json",
+        "sha256": "fd6cf3d11d110c2fdadf262d268d3a3275355978173f0fc070128e3d0e89aa6d"
+      }
+    },
+    {
+      "id": "naming",
+      "condition": "treatment",
+      "suite": {
+        "path": "suite-naming.json",
+        "sha256": "d6ad5fece825579a97261b8d1b7cdc4ee461e8d07a3a03d626a5051677952b08"
+      },
+      "witnesses": {
+        "path": "witnesses/naming.json",
+        "sha256": "c061a6760b99806a452db179cf67845a73e0b9d081dabeea9b4eba81d20985e6"
+      }
+    },
+    {
+      "id": "definitions",
+      "condition": "treatment",
+      "suite": {
+        "path": "suite-definitions.json",
+        "sha256": "f61bb159aa0ef84426393c222dbbc41bce182c596bfec1733b79c49ba9b87438"
+      },
+      "witnesses": {
+        "path": "witnesses/definitions.json",
+        "sha256": "8c6b547f79b084341be9725d2f461f6b1f66a1fdeed65870d0d6597ed1b99c71"
+      }
+    },
+    {
+      "id": "full",
+      "condition": "treatment",
+      "suite": {
+        "path": "suite-full.json",
+        "sha256": "1250bc3c27d3555948ecd785070617fd5231971d7a35e1e19bcc9ec48a7a722c"
+      },
+      "witnesses": {
+        "path": "witnesses/full.json",
+        "sha256": "eacb21911f486ef4447f7eab7dab2ed506690bcfb310a48d3378923284aa4039"
+      }
+    }
+  ],
+  "max_frontier_states": 10000,
+  "measurement_budget": {
+    "per_command_timeout_seconds": 60,
+    "total_timeout_seconds": 180,
+    "max_heartbeats": 200000
+  },
+  "scope": "Supplied finite proof portfolios with raw fallbacks; public correlated calibration tasks; no model-search, held-out or training-preference claim."
+}

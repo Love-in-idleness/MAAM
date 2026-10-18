@@ -1,0 +1,60 @@
+name: Theory-package ablations
+on:
+  push:
+    paths:
+      - 'maam/ablation.py'
+      - 'maam/Inventory.lean'
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'experiments/hom_kernel_ablation/**'
+      - 'scripts/check_ablation.py'
+      - 'tests/test_ablation.py'
+      - '.github/workflows/ablation.yml'
+  pull_request:
+    paths:
+      - 'maam/ablation.py'
+      - 'maam/Inventory.lean'
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'experiments/hom_kernel_ablation/**'
+      - 'scripts/check_ablation.py'
+      - 'tests/test_ablation.py'
+      - '.github/workflows/ablation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Protocol and accounting tests
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/verify_results.py
+      - name: Install and warm pinned Lean
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/lean" --version
+      - name: Check inventory API before replaying proofs
+        run: |
+          mkdir -p data
+          lean -o data/inventory-check.olean maam/Inventory.lean
+      - name: Verify 140 proof candidates and complete expression inventories
+        run: python scripts/check_ablation.py --output data/ablation --workers 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theory-package-ablations
+          path: data/ablation
+          retention-days: 30
+          if-no-files-found: error

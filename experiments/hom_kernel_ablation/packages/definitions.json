@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "package_id": "hom-kernel-ablation-definitions-v1",
+  "base_id": "minimal-groups-v1",
+  "idea": "Package multiplication-preserving functions as homomorphisms and their identity fibres as kernel objects.",
+  "status": "proved_extension",
+  "modules": [
+    "Candidate"
+  ],
+  "declarations": [
+    "Theory.Hom",
+    "Theory.kernel",
+    "Theory.Kernel"
+  ],
+  "conjectures": []
+}

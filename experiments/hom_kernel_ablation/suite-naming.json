@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "suite_id": "hom-kernel-ablation-naming-v1",
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "package": "packages/naming.json",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Candidate": {
+      "path": "candidates/naming.lean",
+      "sha256": "277921962a8c3f9381fc4ba3b638374352b4f04174116f81fdcf48d1c7a0dc79"
+    },
+    "Tasks.D01": {
+      "path": "Tasks/D01.lean",
+      "sha256": "1dfc0f5c0ed0c5fa6b69c35da7ee53db5b106b749f85b5fafe7bed532fe07952"
+    },
+    "Tasks.D02": {
+      "path": "Tasks/D02.lean",
+      "sha256": "3849c9f8a46027a70019b064b39ea81ad2fb683d14d7e15bc3bfe7cb917dc656"
+    },
+    "Tasks.D03": {
+      "path": "Tasks/D03.lean",
+      "sha256": "0ee19528127bc457dfa26b9df75567de463e50b8fe940a19ccf4d434b9b1c16f"
+    },
+    "Tasks.D04": {
+      "path": "Tasks/D04.lean",
+      "sha256": "e6ed1d573916bf023ade52ae7d6932e628cfedbfa9a5f632bc0a995d5e8d1b5e"
+    },
+    "Tasks.D05": {
+      "path": "Tasks/D05.lean",
+      "sha256": "243de33dec089c3ba39b67530c500db60003d02871f83b319050232c9186d693"
+    },
+    "Tasks.D06": {
+      "path": "Tasks/D06.lean",
+      "sha256": "5b93bcac6cdb6a674841e237ec48ea3b597a746614c519bfa9607ad48edf6c92"
+    },
+    "Tasks.D07": {
+      "path": "Tasks/D07.lean",
+      "sha256": "9b9540fbb098ba1b10f6b0fff994648c7d499ea953fbe1e1c08e2e3549883fbe"
+    },
+    "Tasks.D08": {
+      "path": "Tasks/D08.lean",
+      "sha256": "84da53addb3fa33f104cf8dda601ea406f7df253378a5db0fdb499094ffa6609"
+    },
+    "Tasks.D09": {
+      "path": "Tasks/D09.lean",
+      "sha256": "c79b8c73ac44db632ebaeab8acc522e942b4e557f5c1536dba28731a15c072f4"
+    },
+    "Tasks.D10": {
+      "path": "Tasks/D10.lean",
+      "sha256": "c02be7524f17bb0862ad9f52478045747a15c44a3f487e04cf27a74839ce29dc"
+    },
+    "Tasks.D11": {
+      "path": "Tasks/D11.lean",
+      "sha256": "a7c921545e9927dc84b4780f6e95f7b4a62e468c3122458d1ff454c947d802a2"
+    },
+    "Tasks.D12": {
+      "path": "Tasks/D12.lean",
+      "sha256": "691a402ec8c9ac8754152d7118f5e4d88e03aa953c73e9af10fbdc38cfa5a8f0"
+    },
+    "Tasks.R01": {
+      "path": "Tasks/R01.lean",
+      "sha256": "50ad1fe695ac1e3a9786d1383f9385326f9cf57e342dde6cb1b8271359f7e054"
+    },
+    "Tasks.R02": {
+      "path": "Tasks/R02.lean",
+      "sha256": "4e9ea08c906bfa3fd063ae40917cf9e9b737bd371551a0a8348604d265d48a21"
+    },
+    "Tasks.R03": {
+      "path": "Tasks/R03.lean",
+      "sha256": "fda52b35cea14512f4aa46fb632ab2f6b258dc8ea03e153fc35c91b4c315f2cc"
+    },
+    "Tasks.R04": {
+      "path": "Tasks/R04.lean",
+      "sha256": "45aca0c5d73b17220e2c67fe7cb95ab932631904cd761fe1437db6418c87ea33"
+    },
+    "Tasks.R05": {
+      "path": "Tasks/R05.lean",
+      "sha256": "ebccfdf6980913fcbcd866d16c46daccb73df1d3d7969ef16b099856b5e07201"
+    },
+    "Tasks.R06": {
+      "path": "Tasks/R06.lean",
+      "sha256": "1f50bda9dad17684430809ce1c06295ad4cb7fba1880bf4d05d1e7290b07e200"
+    },
+    "Tasks.R07": {
+      "path": "Tasks/R07.lean",
+      "sha256": "0e99b8d29c6b2b55524d26630df56607f8e7075deff2b12ead8baa5ac83128a5"
+    },
+    "Tasks.R08": {
+      "path": "Tasks/R08.lean",
+      "sha256": "c5a3e6017341c26e5151e19493a8442e52f361fa340919007b6376e4ea682816"
+    }
+  },
+  "tasks": [
+    {
+      "id": "d01",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D01",
+      "goal": "Tasks.d01"
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D02",
+      "goal": "Tasks.d02"
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D03",
+      "goal": "Tasks.d03"
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D04",
+      "goal": "Tasks.d04"
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D05",
+      "goal": "Tasks.d05"
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D06",
+      "goal": "Tasks.d06"
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "family": "neutral_images",
+      "module": "Tasks.D07",
+      "goal": "Tasks.d07"
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "family": "input_output_transport",
+      "module": "Tasks.D08",
+      "goal": "Tasks.d08"
+    },
+    {
+      "id": "d09",
+      "split": "development",
+      "family": "intersections",
+      "module": "Tasks.D09",
+      "goal": "Tasks.d09"
+    },
+    {
+      "id": "d10",
+      "split": "development",
+      "family": "input_output_transport",
+      "module": "Tasks.D10",
+      "goal": "Tasks.d10"
+    },
+    {
+      "id": "d11",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D11",
+      "goal": "Tasks.d11"
+    },
+    {
+      "id": "d12",
+      "split": "development",
+      "family": "finite_fibre_closure",
+      "module": "Tasks.D12",
+      "goal": "Tasks.d12"
+    },
+    {
+      "id": "r01",
+      "split": "reserved",
+      "family": "postcomposition",
+      "module": "Tasks.R01",
+      "goal": "Tasks.r01"
+    },
+    {
+      "id": "r02",
+      "split": "reserved",
+      "family": "postcomposition",
+      "module": "Tasks.R02",
+      "goal": "Tasks.r02"
+    },
+    {
+      "id": "r03",
+      "split": "reserved",
+      "family": "predicate_pullback",
+      "module": "Tasks.R03",
+      "goal": "Tasks.r03"
+    },
+    {
+      "id": "r04",
+      "split": "reserved",
+      "family": "predicate_pullback",
+      "module": "Tasks.R04",
+      "goal": "Tasks.r04"
+    },
+    {
+      "id": "r05",
+      "split": "reserved",
+      "family": "equalizers",
+      "module": "Tasks.R05",
+      "goal": "Tasks.r05"
+    },
+    {
+      "id": "r06",
+      "split": "reserved",
+      "family": "equalizers",
+      "module": "Tasks.R06",
+      "goal": "Tasks.r06"
+    },
+    {
+      "id": "r07",
+      "split": "reserved",
+      "family": "recursive_products",
+      "module": "Tasks.R07",
+      "goal": "Tasks.r07"
+    },
+    {
+      "id": "r08",
+      "split": "reserved",
+      "family": "recursive_products",
+      "module": "Tasks.R08",
+      "goal": "Tasks.r08"
+    }
+  ],
+  "budget": {
+    "max_attempts_per_task": 3,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "provenance": {
+    "phase": "public_calibration_ablation",
+    "upstream_commit": "64e456a1f2504d1f9a76089edc2a08537dec7978",
+    "candidate_policy": "Predeclared deletions/aliases of the frozen M2 package; no reserved-task tuning or held-out claim."
+  }
+}
