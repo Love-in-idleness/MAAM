@@ -129,7 +129,7 @@
         "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
       },
       "treatment": {
-        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    rw [hf, hq]⟩\n  exact Theory.kernel_mul F hx hy",
+        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    exact (congrArg q (hf a b)).trans (hq (f a) (f b))⟩\n  exact Theory.kernel_mul F hx hy",
         "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
       }
     },
@@ -139,7 +139,7 @@
         "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
       },
       "treatment": {
-        "proof": "by\n  intro G H K g h k f q hf hq x y z hx hy hz\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    rw [hf, hq]⟩\n  exact Theory.kernel_mul F hx (Theory.kernel_mul F hy hz)",
+        "proof": "by\n  intro G H K g h k f q hf hq x y z hx hy hz\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    exact (congrArg q (hf a b)).trans (hq (f a) (f b))⟩\n  exact Theory.kernel_mul F hx (Theory.kernel_mul F hy hz)",
         "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
       }
     },

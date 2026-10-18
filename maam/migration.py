@@ -145,6 +145,7 @@ def start_session(suite, output, *, condition, solver_id, mode="interactive_agen
     }
     save_new(root / "session.json", seal(record))
     (root / "attempts").mkdir()
+    (root / "reservations").mkdir()
     return {"status": "session_created", "session": str(root), **record}
 
 
@@ -294,6 +295,9 @@ def verify_attempt(frozen, request, source, artifact, *, lean="lean"):
         except VerificationFailure as exc:
             result.update(status="rejected" if exc.kind == "verification_failed" else "inconclusive",
                           failure={"kind": exc.kind, "stage": exc.stage, "message": exc.message})
+        except (CorpusError, OSError, ValueError) as exc:
+            result.update(status="inconclusive", failure={
+                "kind": "controller_error", "stage": "controller", "message": str(exc)})
     return result
 
 
@@ -314,20 +318,21 @@ def submit_attempt(path, submission, *, lean="lean"):
     with session_lock(root):
         task_folder = root / "attempts" / task_id
         task_folder.mkdir(exist_ok=True)
-        previous = list(task_folder.iterdir())
+        previous = list((root / "reservations").glob(task_id + "-*.json"))
         limit = frozen["manifest"]["budget"]["max_attempts_per_task"]
         if len(previous) >= limit:
             raise CorpusError("frozen attempt budget exhausted")
         number = len(previous) + 1
         attempt = task_folder / f"{number:03d}"
-        attempt.mkdir(exist_ok=False)
         source = proof_source(request, proof)
-        save_new(attempt / "submission.json", submission)
-        (attempt / "Proof.lean").write_text(source, encoding="utf-8")
         pending = {"task_id": task_id, "attempt": number, "request_sha256": request["request_sha256"],
                    "proof_sha256": digest(source.encode()), "submission_sha256": digest(canonical(submission)),
                    "generation_usage": "caller supplied; not independently verified"}
         # Reserve before Lean starts. Interruptions consume the same attempt slot.
+        save_new(root / "reservations" / f"{task_id}-{number:03d}.json", seal(pending))
+        attempt.mkdir(exist_ok=False)
+        save_new(attempt / "submission.json", submission)
+        (attempt / "Proof.lean").write_text(source, encoding="utf-8")
         save_new(attempt / "pending.json", seal(pending))
         try:
             result = {**pending, **verify_attempt(frozen, request, source, attempt, lean=lean)}
@@ -344,10 +349,24 @@ def session_report(path):
     for task in frozen["manifest"]["tasks"]:
         folder = root / "attempts" / task["id"]
         attempts, successes = [], []
-        for attempt in sorted(folder.iterdir()) if folder.exists() else []:
-            pending = unseal(attempt / "pending.json")
+        reserved = sorted((root / "reservations").glob(task["id"] + "-*.json"))
+        if len(reserved) > frozen["manifest"]["budget"]["max_attempts_per_task"]:
+            raise CorpusError("recorded attempts exceed the frozen budget")
+        expected_dirs = {f"{i:03d}" for i in range(1, len(reserved) + 1)}
+        if folder.exists() and {p.name for p in folder.iterdir()} - expected_dirs:
+            raise CorpusError("attempt artifact has no reservation")
+        for number, reservation in enumerate(reserved, 1):
+            pending = unseal(reservation)
+            attempt = folder / f"{number:03d}"
             request = task_request(path, task["id"])
-            if (pending["request_sha256"] != request["request_sha256"]
+            if (pending["task_id"] != task["id"] or pending["attempt"] != number
+                    or pending["request_sha256"] != request["request_sha256"]):
+                raise CorpusError("attempt reservation does not match its task or request")
+            if not (attempt / "result.json").exists():
+                attempts.append({"attempt": number, "status": "incomplete", "failure": None,
+                                 "artifact": str(attempt.relative_to(root))})
+                continue
+            if (unseal(attempt / "pending.json") != pending
                     or pending["proof_sha256"] != digest((attempt / "Proof.lean").read_bytes())
                     or pending["submission_sha256"] != digest(canonical(read_object(attempt / "submission.json")))):
                 raise CorpusError("attempt source, submission or request fingerprint changed")

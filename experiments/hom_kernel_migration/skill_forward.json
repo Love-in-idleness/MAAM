@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "task_id": "d02",
+  "solver_id": "fresh-skill-workers-v1",
+  "scope": "Two fresh task-local worker contexts using the skill and one exported development task each. Outputs were packaged without Lean; CI rebinds the same proof text to a fresh request and verifies it.",
+  "skill_sha256": "fec2f755665a1126d1309b0405fecec7ef384a42862b3730fc27765acc7cbdc0",
+  "model_and_sampling": "Parent configuration inherited; exact model revision, sampling parameters and generation usage were not independently recorded.",
+  "held_out_evaluation": false,
+  "training_eligible": false,
+  "artifacts": [
+    {
+      "condition": "baseline",
+      "agent_task": "/root/skill_worker_baseline",
+      "request": {
+        "schema_version": 1,
+        "suite_id": "hom-kernel-migration-calibration-v1",
+        "session_sha256": "4d73a92cf8d49037653b989b442ba5de0aecc7746ce89e9fd24cea718ae56675",
+        "task": {
+          "id": "d02",
+          "split": "development",
+          "family": "finite_fibre_closure",
+          "module": "Tasks.D02",
+          "goal": "Tasks.d02"
+        },
+        "condition": "baseline",
+        "solver": {
+          "id": "fresh-skill-workers-v1",
+          "mode": "interactive_agent"
+        },
+        "lean_version": "4.24.0",
+        "budget": {
+          "max_attempts_per_task": 3,
+          "max_proof_bytes": 32768,
+          "max_heartbeats": 200000,
+          "per_command_timeout_seconds": 60,
+          "per_attempt_timeout_seconds": 180
+        },
+        "sources": [
+          {
+            "module": "Base",
+            "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+            "content": "/- Isolated foundation: no Mathlib and no pre-existing homomorphism API. -/\nnamespace Foundation\n\nstructure Group (G : Type) where\n  one : G\n  mul : G → G → G\n  inv : G → G\n  one_mul : ∀ x, mul one x = x\n  mul_one : ∀ x, mul x one = x\n  mul_assoc : ∀ x y z, mul (mul x y) z = mul x (mul y z)\n  inv_mul : ∀ x, mul (inv x) x = one\n\ndef kernelMulGoal : Prop :=\n  ∀ (G H : Type) (g : Group G) (h : Group H)\n    (f : G → H) (hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (x y : G), f x = h.one → f y = h.one → f (g.mul x y) = h.one\n\nend Foundation\n"
+          },
+          {
+            "module": "Tasks.D02",
+            "sha256": "3849c9f8a46027a70019b064b39ea81ad2fb683d14d7e15bc3bfe7cb917dc656",
+            "content": "import Base\n\nnamespace Tasks\n\ndef d02 : Prop :=\n  ∀ (G H : Type) (g : Foundation.Group G) (h : Foundation.Group H)\n    (f : G → H) (hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (x : G), f x = h.one → f (g.mul x x) = h.one\n\nend Tasks\n"
+          }
+        ],
+        "contract": {
+          "target": "Submission.solve",
+          "expected_goal": "Tasks.d02",
+          "proof": "Lean term after :=, usually by followed by tactics",
+          "bridge": "Explain how the original goal uses the candidate, or why it does not",
+          "forbidden": "Do not change the goal, frozen files, imports, axioms or budgets"
+        },
+        "request_sha256": "6ec09d39868d124e0a9ce3715a05ddb1cbd51cc72fd35cc00339b312593e575b"
+      },
+      "submission": {
+        "task_id": "d02",
+        "request_sha256": "6ec09d39868d124e0a9ce3715a05ddb1cbd51cc72fd35cc00339b312593e575b",
+        "proof": "by\n  intro G H g h f hf x hx\n  rw [hf x x, hx, h.one_mul]\n",
+        "bridge": "Baseline: no candidate definitions or lemmas are available or used. Apply the supplied multiplication-preservation hypothesis hf at x and x. The raw hypothesis hx rewrites both occurrences of f x to h.one, and the foundation's h.one_mul proves that h.mul h.one h.one equals h.one. This directly proves the fixed original goal Tasks.d02. Packaging does not perform Lean verification."
+      }
+    },
+    {
+      "condition": "treatment",
+      "agent_task": "/root/skill_worker_treatment",
+      "request": {
+        "schema_version": 1,
+        "suite_id": "hom-kernel-migration-calibration-v1",
+        "session_sha256": "1e8c9d06eb13e3bb6f57260495540bdb29f2aaad815f85065ba0c16d73c27047",
+        "task": {
+          "id": "d02",
+          "split": "development",
+          "family": "finite_fibre_closure",
+          "module": "Tasks.D02",
+          "goal": "Tasks.d02"
+        },
+        "condition": "treatment",
+        "solver": {
+          "id": "fresh-skill-workers-v1",
+          "mode": "interactive_agent"
+        },
+        "lean_version": "4.24.0",
+        "budget": {
+          "max_attempts_per_task": 3,
+          "max_proof_bytes": 32768,
+          "max_heartbeats": 200000,
+          "per_command_timeout_seconds": 60,
+          "per_attempt_timeout_seconds": 180
+        },
+        "sources": [
+          {
+            "module": "Base",
+            "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+            "content": "/- Isolated foundation: no Mathlib and no pre-existing homomorphism API. -/\nnamespace Foundation\n\nstructure Group (G : Type) where\n  one : G\n  mul : G → G → G\n  inv : G → G\n  one_mul : ∀ x, mul one x = x\n  mul_one : ∀ x, mul x one = x\n  mul_assoc : ∀ x y z, mul (mul x y) z = mul x (mul y z)\n  inv_mul : ∀ x, mul (inv x) x = one\n\ndef kernelMulGoal : Prop :=\n  ∀ (G H : Type) (g : Group G) (h : Group H)\n    (f : G → H) (hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (x y : G), f x = h.one → f y = h.one → f (g.mul x y) = h.one\n\nend Foundation\n"
+          },
+          {
+            "module": "Tasks.D02",
+            "sha256": "3849c9f8a46027a70019b064b39ea81ad2fb683d14d7e15bc3bfe7cb917dc656",
+            "content": "import Base\n\nnamespace Tasks\n\ndef d02 : Prop :=\n  ∀ (G H : Type) (g : Foundation.Group G) (h : Foundation.Group H)\n    (f : G → H) (hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (x : G), f x = h.one → f (g.mul x x) = h.one\n\nend Tasks\n"
+          },
+          {
+            "module": "Candidate",
+            "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+            "content": "import Base\n\nnamespace Theory\n\nstructure Hom {G H : Type} (g : Foundation.Group G) (h : Foundation.Group H) where\n  toFun : G → H\n  map_mul : ∀ x y, toFun (g.mul x y) = h.mul (toFun x) (toFun y)\n\ndef kernel {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) (x : G) : Prop :=\n  f.toFun x = h.one\n\ndef Kernel {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) : Type :=\n  { x : G // kernel f x }\n\ntheorem kernel_mul {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) {x y : G} (hx : kernel f x) (hy : kernel f y) :\n    kernel f (g.mul x y) := by\n  change f.toFun (g.mul x y) = h.one\n  calc\n    f.toFun (g.mul x y) = h.mul (f.toFun x) (f.toFun y) := f.map_mul x y\n    _ = h.mul h.one (f.toFun y) := congrArg (fun z => h.mul z (f.toFun y)) hx\n    _ = h.mul h.one h.one := congrArg (fun z => h.mul h.one z) hy\n    _ = h.one := h.one_mul h.one\n\ndef Kernel.mul {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    {f : Hom g h} (x y : Kernel f) : Kernel f :=\n  ⟨g.mul x.val y.val, kernel_mul f x.property y.property⟩\n\nend Theory\n"
+          }
+        ],
+        "contract": {
+          "target": "Submission.solve",
+          "expected_goal": "Tasks.d02",
+          "proof": "Lean term after :=, usually by followed by tactics",
+          "bridge": "Explain how the original goal uses the candidate, or why it does not",
+          "forbidden": "Do not change the goal, frozen files, imports, axioms or budgets"
+        },
+        "request_sha256": "efb316281051b5b4510e47dbb25e4ec54c16b91196f8362aec6cba6686c251e9"
+      },
+      "submission": {
+        "task_id": "d02",
+        "request_sha256": "efb316281051b5b4510e47dbb25e4ec54c16b91196f8362aec6cba6686c251e9",
+        "proof": "by\n  intro G H g h f hf x hx\n  exact Theory.kernel_mul (⟨f, hf⟩ : Theory.Hom g h) hx hx\n",
+        "bridge": "Bundle the original function f and its multiplication-preservation hypothesis hf as a Theory.Hom g h. The raw hypothesis hx : f x = h.one is definitionally a Theory.kernel membership proof for that bundle. Apply the candidate theorem Theory.kernel_mul with hx in both argument positions. Its conclusion is definitionally the original target f (g.mul x x) = h.one. No additional assumptions or helper lemmas are used. Lean verification has not been run by this worker; packaging only validates fingerprints and response size."
+      }
+    }
+  ]
+}

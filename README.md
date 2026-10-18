@@ -194,3 +194,11 @@ The second is a related follow-up framework coauthored by Freedman, rather than 
 
 代码仓库为 [Love-in-idleness/MAAM](https://github.com/Love-in-idleness/MAAM)；克隆、开发与发布步骤见 [仓库使用说明](docs/PUBLISHING.md)。
 The repository is [Love-in-idleness/MAAM](https://github.com/Love-in-idleness/MAAM); see the [repository guide](docs/PUBLISHING.md) for cloning, development, and publishing instructions.
+
+## 逐任务证明迁移 / Per-task proof migration
+
+M2 已提供冻结候选的单任务请求、受预算约束的提交、Lean 审计和覆盖／成本比较；包含 12 个开发与 8 个预留校准任务，以及 [evaluate-theory-package skill](skills/evaluate-theory-package/SKILL.md)。
+M2 supplies task-local requests for frozen candidates, budgeted submissions, Lean audits and coverage/cost comparisons; it includes 12 development and 8 reserved calibration tasks and the [skill](skills/evaluate-theory-package/SKILL.md).
+
+参见 [迁移协议与运行方法](docs/MIGRATION_PROTOCOL.md)；公开参考证明用于校准，完整的独立预留实验与强化学习仍是后续工作。
+See the [migration protocol and commands](docs/MIGRATION_PROTOCOL.md); public reference proofs are calibration material, while a complete independent held-out experiment and reinforcement learning remain future work.

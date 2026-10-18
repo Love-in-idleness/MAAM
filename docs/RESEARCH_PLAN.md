@@ -1,7 +1,7 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-18。状态：M1 已完成一条经 Lean 检查的参考迁移；M2–M4 的 LLM skill、预留实验、多轮探索与学习流程尚未实现。
-Date: 2026-10-18. Status: M1 has one Lean-checked reference migration; the M2–M4 LLM skill, held-out experiments, multi-round exploration and learning pipeline remain unimplemented.
+日期：2026-10-18。状态：M1 已完成参考迁移；M2 已实现冻结的逐任务迁移协议、20 个校准目标和 LLM skill，完整独立预留实验仍待开展；M3–M4 尚未完成。
+Date: 2026-10-18. Status: M1 has a checked reference migration; M2 implements a frozen per-task migration protocol, 20 calibration goals and an LLM skill, while a complete independent held-out experiment remains pending; M3–M4 are unfinished.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
@@ -203,8 +203,8 @@ First prepare one complete checkable migration as a reference trace, then expand
 | M3：整包与延迟价值 / Packages and delayed value | 定义与配套引理的对照、多轮版本档案、成本与用途的比较 / Definition/lemma controls, multi-round archives and cost/use comparisons | 能区分单项贡献、组合效果、权衡与探索不足 / Distinguish individual contributions, joint effects, trade-offs and insufficient exploration |
 | M4：学习接口 / Learning interface | 可重放轨迹、比较数据和选定训练算法的反馈适配器 / Replayable trajectories, comparison data and a feedback adapter for the selected learning algorithm | 在另一个冻结任务集上比较训练前后表现，并检查奖励投机 / Compare pre/post-training performance on another frozen task set and check reward exploitation |
 
-M1 已完成参考迁移、两边的目标与依赖审计、源码拆分、完整包成本计费及实际错误输入检查；M2–M4 尚未完成。
-M1 has a reference migration, goal and dependency audits, source splitting, full package-cost accounting and actual invalid-input checks; M2–M4 are unfinished.
+M1 已完成参考迁移、两边的目标与依赖审计、源码拆分、完整包成本计费及实际错误输入检查；M2 的协议、校准任务与 skill 已实现，独立模型实验与 M3–M4 仍待完成。
+M1 has a reference migration, goal and dependency audits, source splitting, full package-cost accounting and actual invalid-input checks; the M2 protocol, calibration tasks and skill are implemented, while independent model experiments and M3–M4 remain pending.
 
 本轮局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The local proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
@@ -220,8 +220,8 @@ maam/theory.py and PackageCheck.lean provide isolated compilation, goal checks f
 Mathlib 索引、压缩计数、PageRank 和源代码分析可复用作检索及描述；第一轮受控实验采用隔离基础库，以免完整 Mathlib 已经包含待引入概念。
 The Mathlib index, compression counts, PageRank and source analysis remain useful for retrieval and description; the first controlled experiment uses an isolated base so full Mathlib does not already supply the candidate concepts.
 
-下一步推进 M2：围绕这条参考轨迹扩展开发与预留任务，建立 LLM 迁移接口，再据实际步骤编写并测试 evaluate-theory-package skill；源码分拆目前支持 := 形式的具名目标声明。
-Next, advance M2: expand development and held-out tasks around the reference trace, build the LLM migration interface, then write and test the skill against actual operations; source splitting currently supports named := target declarations.
+M2 当前实现见 [迁移协议](MIGRATION_PROTOCOL.md)：12 个开发目标、8 个按推理模式划分的预留校准目标、模型无关的请求／提交接口及 evaluate-theory-package skill；下一步是记录生成预算的完整独立求解实验。
+See the [migration protocol](MIGRATION_PROTOCOL.md) for M2: 12 development goals, 8 reserved calibration goals split by reasoning family, a model-independent request/submission interface and the skill; next is a complete independent solving experiment with recorded generation budgets.
 
 ## 参考文献 / References
 

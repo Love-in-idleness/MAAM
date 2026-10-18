@@ -89,6 +89,24 @@ class MigrationTests(unittest.TestCase):
         self.assertIsNone(comparison["common_task_source_ledger"]["net_tokens_saved"])
         self.assertIsNone(comparison["common_task_source_ledger"]["package_tokens_charged_once"])
 
+    def test_deleting_attempt_artifacts_does_not_restore_budget(self):
+        session = self.session()
+        with patch("maam.migration.verify_attempt", side_effect=self.fake("rejected")):
+            for _ in range(3):
+                result = submit_attempt(session, self.payload(session))
+                shutil.rmtree(result["artifact"])
+            with self.assertRaisesRegex(CorpusError, "budget exhausted"):
+                submit_attempt(session, self.payload(session))
+        self.assertEqual([a["status"] for a in session_report(session)["tasks"][0]["attempts"]],
+                         ["incomplete"] * 3)
+
+    def test_submission_cannot_replace_controller_fields(self):
+        session = self.session()
+        payload = self.payload(session)
+        payload["goal"] = "True"
+        with self.assertRaisesRegex(CorpusError, "controller-owned"):
+            submit_attempt(session, payload)
+
     def test_full_package_charged_once_and_only_common_tasks_compared(self):
         before, after = self.session(), self.session("treatment")
         with patch("maam.migration.verify_attempt", side_effect=self.fake(proof=100)):
