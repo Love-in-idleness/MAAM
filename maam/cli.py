@@ -49,6 +49,25 @@ def parser():
     p.add_argument("--experiment", required=True)
     p.add_argument("--lean", default="lean")
     p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("migration-start", help="freeze a task-local proof-migration session")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--session", required=True)
+    p.add_argument("--condition", choices=("baseline", "treatment"), required=True)
+    p.add_argument("--solver-id", required=True)
+    p.add_argument("--mode", choices=("interactive_agent", "supplied_reference"), default="interactive_agent")
+    for command in ("migration-request", "migration-submit", "migration-report"):
+        p = commands.add_parser(command)
+        p.add_argument("--session", required=True)
+        p.add_argument("--output")
+        if command == "migration-request":
+            p.add_argument("--task", required=True)
+        elif command == "migration-submit":
+            p.add_argument("--submission", required=True)
+            p.add_argument("--lean", default="lean")
+    p = commands.add_parser("migration-compare", help="compare coverage and common-task costs")
+    p.add_argument("--baseline", required=True)
+    p.add_argument("--treatment", required=True)
+    p.add_argument("--output")
     p = commands.add_parser("export-lean", help="export declarations from an existing Lean project")
     p.add_argument("--project", default=".")
     p.add_argument("--module", required=True)
@@ -110,6 +129,20 @@ def main(argv=None):
             from .lean import export
             report = export(args.project, args.module, args.corpus_output, targets=args.target,
                             expand_prefixes=args.expand_prefix, runner=args.runner, timeout=args.timeout)
+        elif args.command.startswith("migration-"):
+            from .migration import start_session, task_request, submit_attempt, session_report, compare_sessions
+            from .theory import read_object
+            if args.command == "migration-start":
+                report = start_session(args.suite, args.session, condition=args.condition,
+                                       solver_id=args.solver_id, mode=args.mode)
+            elif args.command == "migration-request":
+                report = task_request(args.session, args.task)
+            elif args.command == "migration-submit":
+                report = submit_attempt(args.session, read_object(Path(args.submission)), lean=args.lean)
+            elif args.command == "migration-report":
+                report = session_report(args.session)
+            else:
+                report = compare_sessions(args.baseline, args.treatment)
         elif args.command == "evaluate-package":
             from .theory import run_experiment
             report = run_experiment(args.experiment, lean=args.lean)

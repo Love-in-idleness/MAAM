@@ -1,0 +1,59 @@
+name: Frozen proof migrations
+on:
+  push:
+    paths:
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'maam/cli.py'
+      - 'experiments/hom_kernel_migration/**'
+      - 'skills/evaluate-theory-package/**'
+      - 'scripts/check_migration.py'
+      - 'scripts/check_migration_skill.py'
+      - 'tests/test_migration.py'
+      - '.github/workflows/migration.yml'
+  pull_request:
+    paths:
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'maam/cli.py'
+      - 'experiments/hom_kernel_migration/**'
+      - 'skills/evaluate-theory-package/**'
+      - 'scripts/check_migration.py'
+      - 'scripts/check_migration_skill.py'
+      - 'tests/test_migration.py'
+      - '.github/workflows/migration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Protocol and skill checks
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/verify_results.py
+          python scripts/check_migration_skill.py
+      - name: Install and warm pinned Lean
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/lean" --version
+      - name: Replay 40 proofs and check rejection cases
+        run: python scripts/check_migration.py --output data/migration
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frozen-proof-migrations
+          path: data/migration
+          retention-days: 30
+          if-no-files-found: error

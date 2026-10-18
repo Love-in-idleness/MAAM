@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "solver_id": "supplied-calibration-witnesses-v1",
+  "scope": "Public supplied proofs for infrastructure calibration; not autonomous LLM search or independently held-out measurements.",
+  "tasks": {
+    "d01": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hx hy",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d02": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x hx\n  simp only [hf, hx, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x hx\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hx hx",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d03": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy hz\n  simp only [hf, hx, hy, hz, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy hz\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F (Theory.kernel_mul F hx hy) hz",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d04": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy hz\n  simp only [hf, hx, hy, hz, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy hz\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hx (Theory.kernel_mul F hy hz)",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d05": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y hx\n  simp only [hf, hx, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y hx\n  simp only [hf, hx, h.one_mul]",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "d06": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y hy\n  simp only [hf, hy, h.mul_one]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y hy\n  simp only [hf, hy, h.mul_one]",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "d07": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z hx hy\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "d08": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x a y b hxa hyb hx hy\n  subst a\n  subst b\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x a y b hxa hyb hx hy\n  subst a\n  subst b\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hx hy",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d09": {
+      "baseline": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy kx ky\n  constructor <;> simp only [hf, hq, hx, hy, kx, ky, h.one_mul, k.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy kx ky\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  let Q : Theory.Hom g k := ⟨q, hq⟩\n  exact ⟨Theory.kernel_mul F hx hy, Theory.kernel_mul Q kx ky⟩",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d10": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z hz hx hy\n  subst z\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z hz hx hy\n  subst z\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hx hy",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d11": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F hy hx",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "d12": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  simp only [hf, hx, hy, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y hx hy\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact Theory.kernel_mul F (Theory.kernel_mul F hx hy) (Theory.kernel_mul F hy hx)",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "r01": {
+      "baseline": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy\n  simp only [hf, hq, hx, hy, k.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y hx hy\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    rw [hf, hq]⟩\n  exact Theory.kernel_mul F hx hy",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "r02": {
+      "baseline": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y z hx hy hz\n  simp only [hf, hq, hx, hy, hz, k.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H K g h k f q hf hq x y z hx hy hz\n  let F : Theory.Hom g k := ⟨fun a => q (f a), by\n    intro a b\n    rw [hf, hq]⟩\n  exact Theory.kernel_mul F hx (Theory.kernel_mul F hy hz)",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "r03": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf P hP x y hx hy\n  rw [hf]\n  exact hP (f x) (f y) hx hy",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf P hP x y hx hy\n  rw [hf]\n  exact hP (f x) (f y) hx hy",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "r04": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf P Q hP hQ x y hx hy\n  rw [hf]\n  exact ⟨hP (f x) (f y) hx.1 hy.1, hQ (f x) (f y) hx.2 hy.2⟩",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf P Q hP hQ x y hx hy\n  rw [hf]\n  exact ⟨hP (f x) (f y) hx.1 hy.1, hQ (f x) (f y) hx.2 hy.2⟩",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "r05": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f q hf hq x y hx hy\n  simp only [hf, hq, hx, hy]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f q hf hq x y hx hy\n  simp only [hf, hq, hx, hy]",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "r06": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f q hf hq x y z hx hy hz\n  simp only [hf, hq, hx, hy, hz]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f q hf hq x y z hx hy hz\n  simp only [hf, hq, hx, hy, hz]",
+        "bridge": "No suitable candidate lemma is used; prove this goal directly in the original vocabulary."
+      }
+    },
+    "r07": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf z hz xs\n  induction xs generalizing z with\n  | nil => exact hz\n  | cons a xs ih =>\n    change f (List.foldl (fun acc b => g.mul acc b.val) (g.mul z a.val) xs) = h.one\n    apply ih\n    simp only [hf, hz, a.property, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf z hz xs\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  induction xs generalizing z with\n  | nil => exact hz\n  | cons a xs ih =>\n    change f (List.foldl (fun acc b => g.mul acc b.val) (g.mul z a.val) xs) = h.one\n    apply ih\n    exact Theory.kernel_mul F hz a.property",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    },
+    "r08": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x z hx hz n\n  induction n with\n  | zero => exact hz\n  | succ n ih =>\n    change f (g.mul (Nat.rec z (fun _ acc => g.mul acc x) n) x) = h.one\n    simp only [hf, ih, hx, h.one_mul]",
+        "bridge": "Prove the original raw-function goal using the frozen group laws and preservation equations."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x z hx hz n\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  induction n with\n  | zero => exact hz\n  | succ n ih =>\n    change f (g.mul (Nat.rec z (fun _ acc => g.mul acc x) n) x) = h.one\n    exact Theory.kernel_mul F ih hx",
+        "bridge": "Bundle the raw multiplication-preserving map as Theory.Hom, use Theory.kernel_mul, and return by definitional equality to the original identity-fibre goal."
+      }
+    }
+  }
+}

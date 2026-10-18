@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "package_id": "hom-kernel-core-v1",
+  "base_id": "minimal-groups-v1",
+  "idea": "Package multiplication-preserving functions as homomorphisms and their identity fibres as kernel objects.",
+  "status": "proved_extension",
+  "modules": [
+    "Candidate"
+  ],
+  "declarations": [
+    "Theory.Hom",
+    "Theory.kernel",
+    "Theory.Kernel",
+    "Theory.kernel_mul",
+    "Theory.Kernel.mul"
+  ],
+  "conjectures": []
+}

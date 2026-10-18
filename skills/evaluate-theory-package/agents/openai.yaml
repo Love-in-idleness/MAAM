@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluate Theory Package"
+  short_description: "Migrate and verify proofs using frozen theory packages"
+  default_prompt: "Use $evaluate-theory-package to evaluate a frozen mathematical theory package with auditable Lean proof attempts."
