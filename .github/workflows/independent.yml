@@ -1,0 +1,63 @@
+name: Independent-context proof replay
+on:
+  push:
+    paths:
+      - 'maam/independent.py'
+      - 'maam/ablation.py'
+      - 'maam/Inventory.lean'
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'experiments/hom_kernel_independent/**'
+      - 'results/independent/**'
+      - 'skills/evaluate-theory-package/**'
+      - 'scripts/*independent*.py'
+      - 'tests/test_independent.py'
+      - '.github/workflows/independent.yml'
+  pull_request:
+    paths:
+      - 'maam/independent.py'
+      - 'maam/ablation.py'
+      - 'maam/Inventory.lean'
+      - 'maam/migration.py'
+      - 'maam/theory.py'
+      - 'maam/PackageCheck.lean'
+      - 'experiments/hom_kernel_independent/**'
+      - 'results/independent/**'
+      - 'skills/evaluate-theory-package/**'
+      - 'scripts/*independent*.py'
+      - 'tests/test_independent.py'
+      - '.github/workflows/independent.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reconstruct original evidence
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/verify_results.py
+          python scripts/verify_independent_results.py
+      - name: Install and warm pinned Lean
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/lean" --version
+      - name: Recheck every original attempt and complete verified inventories
+        run: python scripts/check_independent.py --output data/independent-replay
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: independent-context-proof-replay
+          path: data/independent-replay
+          retention-days: 30
+          if-no-files-found: error

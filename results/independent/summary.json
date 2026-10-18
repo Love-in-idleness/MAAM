@@ -1,0 +1,1269 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "study_id": "hom-kernel-independent-contexts-v1",
+  "freeze_commit": "2e44eac5b724f9e1303a37da6ca0e3139ed96e3b",
+  "protocol_sha256": "b235349d7e77b845d3562a044546c78692332eb90d54bb326c7d6ec8dcbf3df7",
+  "registered_workers": 40,
+  "attempts": 46,
+  "proof_or_other_failures": [],
+  "infrastructure_failures": [
+    {
+      "worker": "w01",
+      "condition": "baseline",
+      "task": "d06",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/d06/001"
+    },
+    {
+      "worker": "w02",
+      "condition": "treatment",
+      "task": "d06",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/d06/001"
+    },
+    {
+      "worker": "w03",
+      "condition": "treatment",
+      "task": "r05",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/r05/001"
+    },
+    {
+      "worker": "w04",
+      "condition": "baseline",
+      "task": "r05",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/r05/001"
+    },
+    {
+      "worker": "w05",
+      "condition": "baseline",
+      "task": "d09",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/d09/001"
+    },
+    {
+      "worker": "w06",
+      "condition": "treatment",
+      "task": "d09",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n"
+      },
+      "artifact": "attempts/d09/001"
+    }
+  ],
+  "comparison": {
+    "schema_version": 1,
+    "status": "observed_comparison",
+    "fingerprints": {
+      "suite_sha256": "5c2327a7c43cedafeaffcbb41798d9be14c4b93cbe90da4097fc5e5ac420931a",
+      "package_sha256": "dea1026aff1d9b4b09d0c2eca1f993c6678dd74719462a08a2822e4c6b223457",
+      "source_sha256": {
+        "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+        "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+        "Tasks.D01": "a97916a3c4c06e4ab9b2769812ecca3cfaa6c919a80375053ca489441d642f0e",
+        "Tasks.D02": "8f7db84cffe760681358d6aeab954934da3342884c5cfc2668f96792a336c4c6",
+        "Tasks.D03": "9315ec625348bc8822bcc34db5554786660c1decd05b48f2682280fd36908890",
+        "Tasks.D04": "20690ce97a83bdb1708f81ae022348f9526d1e78746fadc01f384ebcb10b7c43",
+        "Tasks.D05": "1a80167c053d30c3dbd255f31099f4a4782001ff7aaa7b502c9d43955b14b7ee",
+        "Tasks.D06": "3d40d04a839e99b57b2706f2b421410618c0f2b40677df324cce38dafc39772e",
+        "Tasks.D07": "93641b3819b816ebe283fed7f57ad8328d3924ba308c2749f64c4c6ea290e5b5",
+        "Tasks.D08": "c2e15bfa5ca1cfbc897b5300aaec6f22e43fd5d04421ebfed1dd6c736ff304df",
+        "Tasks.D09": "57a5cfeb3787b7ed56a2c5f41b4acc312bc735bd28d2027ae1defb1066c14603",
+        "Tasks.D10": "f4da52fe09bf177c655d6f1d06a45db0440d16df26c2d56a67c7ac9bc4299d0c",
+        "Tasks.D11": "2f664e4c2b3d9122b9435ff2dfd5849f08f814318f876eb061f79c8583490d48",
+        "Tasks.D12": "c9db77c6a07149a27cdbdd495c5dc232b90d26d27ceae379f8071f0e2329298d",
+        "Tasks.R01": "cd389f99c166e9425dd39e54a7e27aaf86ce7d76c03995a2d82b13ee46dee6db",
+        "Tasks.R02": "bf444b5c665dbe5c4f905516f3216fcbf93d263549a81234e556f6a009290d36",
+        "Tasks.R03": "88613d2917f577524b6aaa3cc204bf3af58f6f6771c0ac56f6358453174b35f5",
+        "Tasks.R04": "ab42108ee51ca4b313a6b2376d54a7e12fa439f83af870ea3e27457afdd05a53",
+        "Tasks.R05": "91bd97a6c8749a5a0d033dddb93328f6c20867d4a96679ba3cf4d0da690dd1c6",
+        "Tasks.R06": "9c87072110c53ea0ec7462b85ea3af1b335d5098aa6b5e9b7950f6b719ec3d89",
+        "Tasks.R07": "fdd53a3a71995a3a10e1deeb7261bc9fa8fc90057702b0c07cb41b507c655a77",
+        "Tasks.R08": "cd4becb282815767cd530bc0a330bb4c820f31748a0de228312be98abf1f3d65"
+      },
+      "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+      "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+      "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+    },
+    "solver": {
+      "id": "codex-fresh-task-contexts-unspecified-revision-v1",
+      "mode": "interactive_agent"
+    },
+    "budget": {
+      "max_attempts_per_task": 3,
+      "max_proof_bytes": 32768,
+      "max_heartbeats": 200000,
+      "per_command_timeout_seconds": 60,
+      "per_attempt_timeout_seconds": 180
+    },
+    "tasks": [
+      {
+        "id": "d01",
+        "split": "development",
+        "family": "balanced_closure",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -32,
+        "local_expr_nodes_saved": 675
+      },
+      {
+        "id": "d02",
+        "split": "development",
+        "family": "balanced_closure",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -16,
+        "local_expr_nodes_saved": 1369
+      },
+      {
+        "id": "d03",
+        "split": "development",
+        "family": "fibre_recovery",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -9,
+        "local_expr_nodes_saved": -56
+      },
+      {
+        "id": "d04",
+        "split": "development",
+        "family": "fibre_recovery",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 0,
+        "local_expr_nodes_saved": 0
+      },
+      {
+        "id": "d05",
+        "split": "development",
+        "family": "hom_laws",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 22,
+        "local_expr_nodes_saved": 201
+      },
+      {
+        "id": "d06",
+        "split": "development",
+        "family": "hom_laws",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 1,
+        "local_expr_nodes_saved": 242
+      },
+      {
+        "id": "d07",
+        "split": "development",
+        "family": "kernel_carrier",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 0,
+        "local_expr_nodes_saved": 2413
+      },
+      {
+        "id": "d08",
+        "split": "development",
+        "family": "kernel_carrier",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 4,
+        "local_expr_nodes_saved": 4
+      },
+      {
+        "id": "d09",
+        "split": "development",
+        "family": "range_lifting",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -36,
+        "local_expr_nodes_saved": 67
+      },
+      {
+        "id": "d10",
+        "split": "development",
+        "family": "range_lifting",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -87,
+        "local_expr_nodes_saved": 295
+      },
+      {
+        "id": "d11",
+        "split": "development",
+        "family": "finite_iteration",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 11,
+        "local_expr_nodes_saved": 237
+      },
+      {
+        "id": "d12",
+        "split": "development",
+        "family": "finite_iteration",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 65,
+        "local_expr_nodes_saved": 652
+      },
+      {
+        "id": "r01",
+        "split": "reserved",
+        "family": "quotient_relation",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -85,
+        "local_expr_nodes_saved": 377
+      },
+      {
+        "id": "r02",
+        "split": "reserved",
+        "family": "quotient_relation",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -11,
+        "local_expr_nodes_saved": 350
+      },
+      {
+        "id": "r03",
+        "split": "reserved",
+        "family": "structured_folds",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 2,
+        "local_expr_nodes_saved": 2253
+      },
+      {
+        "id": "r04",
+        "split": "reserved",
+        "family": "structured_folds",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 0,
+        "local_expr_nodes_saved": 0
+      },
+      {
+        "id": "r05",
+        "split": "reserved",
+        "family": "indexed_constructions",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 23,
+        "local_expr_nodes_saved": 606
+      },
+      {
+        "id": "r06",
+        "split": "reserved",
+        "family": "indexed_constructions",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -2,
+        "local_expr_nodes_saved": 517
+      },
+      {
+        "id": "r07",
+        "split": "reserved",
+        "family": "conjugation_transport",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": -117,
+        "local_expr_nodes_saved": 9
+      },
+      {
+        "id": "r08",
+        "split": "reserved",
+        "family": "conjugation_transport",
+        "baseline": "verified",
+        "treatment": "verified",
+        "local_body_tokens_saved": 0,
+        "local_expr_nodes_saved": 0
+      }
+    ],
+    "coverage": {
+      "baseline": [
+        "d01",
+        "d02",
+        "d03",
+        "d04",
+        "d05",
+        "d06",
+        "d07",
+        "d08",
+        "d09",
+        "d10",
+        "d11",
+        "d12",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08"
+      ],
+      "treatment": [
+        "d01",
+        "d02",
+        "d03",
+        "d04",
+        "d05",
+        "d06",
+        "d07",
+        "d08",
+        "d09",
+        "d10",
+        "d11",
+        "d12",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08"
+      ],
+      "relation": "same"
+    },
+    "common_task_source_ledger": {
+      "task_ids": [
+        "d01",
+        "d02",
+        "d03",
+        "d04",
+        "d05",
+        "d06",
+        "d07",
+        "d08",
+        "d09",
+        "d10",
+        "d11",
+        "d12",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08"
+      ],
+      "baseline_tokens": 2632,
+      "treatment_including_package_tokens": 3251,
+      "package_tokens_charged_once": 312,
+      "net_tokens_saved": -619,
+      "scope": "common solved tasks only; full proof modules and full candidate once; shared base and statements cancel"
+    },
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "judgement": "contextual evidence from observed attempts; no scalar mathematical-interest verdict",
+    "provenance": {
+      "baseline": {
+        "code_commit": "2e44eac5b724f9e1303a37da6ca0e3139ed96e3b",
+        "workflow_run_id": null
+      },
+      "treatment": {
+        "code_commit": "2e44eac5b724f9e1303a37da6ca0e3139ed96e3b",
+        "workflow_run_id": null
+      }
+    }
+  },
+  "common_measured_tasks": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06",
+    "d07",
+    "d08",
+    "d09",
+    "d10",
+    "d11",
+    "d12",
+    "r01",
+    "r02",
+    "r03",
+    "r04",
+    "r05",
+    "r06",
+    "r07",
+    "r08"
+  ],
+  "observed_witness_costs": {
+    "baseline": {
+      "status": "exact_finite_portfolio",
+      "points": [
+        {
+          "source_tokens": 2632,
+          "expr_nodes": 29006,
+          "choices": [
+            {
+              "task": "d01",
+              "attempt": 1
+            },
+            {
+              "task": "d02",
+              "attempt": 1
+            },
+            {
+              "task": "d03",
+              "attempt": 1
+            },
+            {
+              "task": "d04",
+              "attempt": 1
+            },
+            {
+              "task": "d05",
+              "attempt": 1
+            },
+            {
+              "task": "d06",
+              "attempt": 2
+            },
+            {
+              "task": "d07",
+              "attempt": 1
+            },
+            {
+              "task": "d08",
+              "attempt": 1
+            },
+            {
+              "task": "d09",
+              "attempt": 2
+            },
+            {
+              "task": "d10",
+              "attempt": 1
+            },
+            {
+              "task": "d11",
+              "attempt": 1
+            },
+            {
+              "task": "d12",
+              "attempt": 1
+            },
+            {
+              "task": "r01",
+              "attempt": 1
+            },
+            {
+              "task": "r02",
+              "attempt": 1
+            },
+            {
+              "task": "r03",
+              "attempt": 1
+            },
+            {
+              "task": "r04",
+              "attempt": 1
+            },
+            {
+              "task": "r05",
+              "attempt": 2
+            },
+            {
+              "task": "r06",
+              "attempt": 1
+            },
+            {
+              "task": "r07",
+              "attempt": 1
+            },
+            {
+              "task": "r08",
+              "attempt": 1
+            }
+          ]
+        }
+      ]
+    },
+    "treatment": {
+      "status": "exact_finite_portfolio",
+      "points": [
+        {
+          "source_tokens": 3251,
+          "expr_nodes": 23136,
+          "choices": [
+            {
+              "task": "d01",
+              "attempt": 1
+            },
+            {
+              "task": "d02",
+              "attempt": 1
+            },
+            {
+              "task": "d03",
+              "attempt": 1
+            },
+            {
+              "task": "d04",
+              "attempt": 1
+            },
+            {
+              "task": "d05",
+              "attempt": 1
+            },
+            {
+              "task": "d06",
+              "attempt": 2
+            },
+            {
+              "task": "d07",
+              "attempt": 1
+            },
+            {
+              "task": "d08",
+              "attempt": 1
+            },
+            {
+              "task": "d09",
+              "attempt": 2
+            },
+            {
+              "task": "d10",
+              "attempt": 1
+            },
+            {
+              "task": "d11",
+              "attempt": 1
+            },
+            {
+              "task": "d12",
+              "attempt": 1
+            },
+            {
+              "task": "r01",
+              "attempt": 1
+            },
+            {
+              "task": "r02",
+              "attempt": 1
+            },
+            {
+              "task": "r03",
+              "attempt": 1
+            },
+            {
+              "task": "r04",
+              "attempt": 1
+            },
+            {
+              "task": "r05",
+              "attempt": 2
+            },
+            {
+              "task": "r06",
+              "attempt": 1
+            },
+            {
+              "task": "r07",
+              "attempt": 1
+            },
+            {
+              "task": "r08",
+              "attempt": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cost_relation": "incomparable",
+  "variants": [
+    {
+      "id": "baseline",
+      "tasks": [
+        {
+          "id": "d01",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 45,
+                "expr_nodes": 884
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d02",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 50,
+                "expr_nodes": 1898
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d03",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 106,
+                "expr_nodes": 423
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d04",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 38,
+                "expr_nodes": 922
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d05",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 178,
+                "expr_nodes": 907
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d06",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 362,
+                "expr_nodes": 2418
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d07",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 56,
+                "expr_nodes": 2908
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d08",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 150,
+                "expr_nodes": 1574
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d09",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 61,
+                "expr_nodes": 916
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d10",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 53,
+                "expr_nodes": 760
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d11",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 66,
+                "expr_nodes": 474
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d12",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 141,
+                "expr_nodes": 2653
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r01",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 42,
+                "expr_nodes": 842
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r02",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 450,
+                "expr_nodes": 2337
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r03",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 58,
+                "expr_nodes": 2882
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r04",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 84,
+                "expr_nodes": 1122
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r05",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 74,
+                "expr_nodes": 750
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r06",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 97,
+                "expr_nodes": 764
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r07",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 488,
+                "expr_nodes": 2658
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r08",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 33,
+                "expr_nodes": 914
+              },
+              "used_package_declarations": []
+            }
+          ]
+        }
+      ],
+      "package_cost": {
+        "source_tokens": 0,
+        "expr_nodes": 0
+      }
+    },
+    {
+      "id": "treatment",
+      "tasks": [
+        {
+          "id": "d01",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 79,
+                "expr_nodes": 209
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d02",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 68,
+                "expr_nodes": 529
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d03",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 117,
+                "expr_nodes": 479
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d04",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 40,
+                "expr_nodes": 922
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d05",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 158,
+                "expr_nodes": 706
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d06",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 363,
+                "expr_nodes": 2176
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d07",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 58,
+                "expr_nodes": 495
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.Kernel",
+                "Theory.Kernel.mul",
+                "Theory.Kernel.mul._proof_1",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d08",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 148,
+                "expr_nodes": 1570
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "d09",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 99,
+                "expr_nodes": 849
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d10",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 142,
+                "expr_nodes": 465
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d11",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 57,
+                "expr_nodes": 237
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d12",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 78,
+                "expr_nodes": 2001
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r01",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 129,
+                "expr_nodes": 465
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r02",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 463,
+                "expr_nodes": 1987
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r03",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 58,
+                "expr_nodes": 629
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r04",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 86,
+                "expr_nodes": 1122
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r05",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "cost": {
+                "source_tokens": 53,
+                "expr_nodes": 144
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r06",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 101,
+                "expr_nodes": 247
+              },
+              "used_package_declarations": [
+                "Theory.Hom",
+                "Theory.Hom.map_mul",
+                "Theory.Hom.mk",
+                "Theory.Hom.toFun",
+                "Theory.kernel",
+                "Theory.kernel_mul"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r07",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 607,
+                "expr_nodes": 2649
+              },
+              "used_package_declarations": []
+            }
+          ]
+        },
+        {
+          "id": "r08",
+          "attempts": [
+            {
+              "attempt": 1,
+              "cost": {
+                "source_tokens": 35,
+                "expr_nodes": 914
+              },
+              "used_package_declarations": []
+            }
+          ]
+        }
+      ],
+      "package_cost": {
+        "source_tokens": 312,
+        "expr_nodes": 4341
+      }
+    }
+  ],
+  "scope": {
+    "constructed_cohort": true,
+    "independent_solving_contexts_intended": true,
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false
+  },
+  "interpretation": "Observed witnesses under fixed submission/Lean budgets. Generation cost and exact model revision unknown; no fair model-performance or training preference claim."
+}
