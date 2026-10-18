@@ -45,6 +45,10 @@ def parser():
     p.add_argument("--system", required=True)
     p.add_argument("--name", required=True)
     p.add_argument("--goal", action="append", required=True)
+    p = commands.add_parser("evaluate-package", help="verify a controlled Lean theory-package migration")
+    p.add_argument("--experiment", required=True)
+    p.add_argument("--lean", default="lean")
+    p.add_argument("--output", help="write the report to a new file")
     p = commands.add_parser("export-lean", help="export declarations from an existing Lean project")
     p.add_argument("--project", default=".")
     p.add_argument("--module", required=True)
@@ -106,6 +110,9 @@ def main(argv=None):
             from .lean import export
             report = export(args.project, args.module, args.corpus_output, targets=args.target,
                             expand_prefixes=args.expand_prefix, runner=args.runner, timeout=args.timeout)
+        elif args.command == "evaluate-package":
+            from .theory import run_experiment
+            report = run_experiment(args.experiment, lean=args.lean)
         else:
             calc = Calculator(Corpus.load(args.corpus), alpha=args.alpha, beta=args.beta)
             if args.command == "score":
@@ -123,7 +130,9 @@ def main(argv=None):
                 handle.write(rendered)
         else:
             print(rendered, end="")
-        if report.get("status") in {"insufficient_evidence", "ambiguous_statement"}:
+        if report.get("status") == "rejected":
+            return 3
+        if report.get("status") in {"insufficient_evidence", "ambiguous_statement", "inconclusive"}:
             return 2
         if "assessment" in report and report["assessment"]["kind"] == "conjecture":
             return 2

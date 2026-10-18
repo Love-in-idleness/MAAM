@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "experiment_id": "hom-kernel-reference-v1",
+  "phase": "reference_migration",
+  "lean_version": "4.24.0",
+  "package": "package.json",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Baseline": {
+      "path": "Baseline.lean",
+      "sha256": "e82be2d0da5dd847f65201353580ba360422577b1701346f3cede2be2d2bc250"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+    },
+    "Treatment": {
+      "path": "Treatment.lean",
+      "sha256": "40205bc5011b815f9754015f8f59e967a5fe4c0ed2ea778de6b34ee72beb46e8"
+    }
+  },
+  "conditions": {
+    "baseline": {
+      "modules": [
+        "Baseline"
+      ],
+      "entry_module": "Baseline"
+    },
+    "treatment": {
+      "modules": [
+        "Treatment"
+      ],
+      "entry_module": "Treatment"
+    }
+  },
+  "tasks": [
+    {
+      "id": "kernel_mul",
+      "split": "development",
+      "goal": "Foundation.kernelMulGoal",
+      "baseline": "Baseline.kernelMul",
+      "treatment": "Treatment.kernelMul"
+    }
+  ],
+  "resources": {
+    "per_command_timeout_seconds": 90,
+    "total_timeout_seconds": 360,
+    "max_heartbeats": 200000
+  }
+}
