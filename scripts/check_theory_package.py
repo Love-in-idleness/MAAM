@@ -49,6 +49,8 @@ def negative_cases():
                          "\naxiom HiddenPackageAxiom : False\n", "forbidden axiom"),
         "hidden_import": ("Baseline", "import Lean\n" + (folder / "Baseline.lean").read_text(),
                           "forbidden imported module"),
+        "unimported_charged_module": ("Unused", "axiom UnusedModuleAxiom : False\n",
+                                      "experiment module not imported by entry: Unused"),
     }
     outcomes = {}
     for label, (module, source, expected) in cases.items():
@@ -60,7 +62,13 @@ def negative_cases():
             manifest = json.loads((work / "experiment.json").read_text())
             # Re-freeze deliberately changed input so the Lean audit, rather than
             # only the fingerprint guard, must detect the semantic violation.
-            manifest["sources"][module]["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+            manifest["sources"][module] = {
+                "path": f"{module}.lean", "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+            if module == "Unused":
+                package_path = work / "package.json"
+                package = json.loads(package_path.read_text())
+                package["modules"].append(module)
+                package_path.write_text(json.dumps(package))
             manifest_path = work / "experiment.json"
             manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
             report = run_experiment(manifest_path)

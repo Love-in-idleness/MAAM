@@ -159,6 +159,7 @@ def load_experiment(path: str | Path) -> dict:
         "package_sha256": digest(package_path.read_bytes()),
         "source_sha256": dict(sorted(hashes.items())),
         "checker_sha256": digest(CHECKER.read_bytes()),
+        "evaluator_sha256": digest(Path(__file__).read_bytes()),
     }
     return {"manifest": data, "package": package, "blobs": blobs, "fingerprints": frozen}
 
@@ -309,6 +310,13 @@ def run_experiment(path: str | Path, *, lean="lean") -> dict:
                 audit = read_object(audit_path)
                 if audit.get("lean_version") != manifest["lean_version"]:
                     raise CorpusError("auditor toolchain version mismatch")
+                measured = [s.get("module") for s in audit.get("sources", [])]
+                if len(measured) != len(charged) or set(measured) != set(charged):
+                    raise CorpusError("auditor omitted a charged source module")
+                if audit.get("package_declarations") != config["requiredDeclarations"]:
+                    raise CorpusError("auditor package declarations mismatch")
+                if audit.get("module") != proof["entry_module"]:
+                    raise CorpusError("auditor entry module mismatch")
                 if not set(audit.get("axioms_used", [])) <= set(CORE_AXIOMS):
                     raise CorpusError("unexpected axioms in audit")
                 report["audits"][condition] = audit

@@ -146,6 +146,9 @@ def audit (env : Environment) (cfg : Config) : IO Json := do
   for mod in modules do
     if !(cfg.allowedModules.any (prefixMatches mod)) then
       throw <| IO.userError s!"forbidden imported module: {mod}"
+  for mod in cfg.auditedModules do
+    if !(modules.contains mod) then
+      throw <| IO.userError s!"experiment module not imported by entry: {mod}"
   for declaration in cfg.requiredDeclarations do
     let name := declaration.toName
     if (env.find? name).isNone || !(cfg.packageModules.contains (moduleOf env name)) then
