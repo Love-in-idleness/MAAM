@@ -1,18 +1,24 @@
-# MAAM · 命题数学兴趣指标计算器
+# MAAM · 数学概念与命题评估
 
-输入一个有证明及依赖数据的形式命题，计算压缩、证明效率和结构用途，并给出可追溯的相对评分。
-Evaluate a formal proposition using compression, proof efficiency, and structural usefulness, with a traceable relative score.
+计算形式命题的压缩与结构指标，并通过可验证的迁移实验，比较引入新定义和理论包后的表达与证明成本。
+Calculate compression and structural metrics for formal propositions, and use verified migration experiments to compare expression and proof costs after introducing definitions and theory packages.
 
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 
-## 下一阶段 / Next phase
+## 理论包评估进度 / Theory-package evaluation progress
 
 项目的长期目标是评估新命题、新数学对象及围绕核心思想形成的理论包，并为 LLM 学习提供可核查的比较反馈。
 The long-term goal is to evaluate new propositions, mathematical objects and theory packages built around a core idea, providing auditable comparative feedback for LLM learning.
 
-拟议主线是加入候选后实际重述、重证已有结果，再比较用途与成本；首个实验及 skill 职责见 [研究计划](docs/RESEARCH_PLAN.md)，这些新能力尚未实现。
-The proposed next phase introduces candidates, actually reformulates and reproves existing results, and compares usefulness and cost; see the [research plan](docs/RESEARCH_PLAN.md) for the first experiment and skill responsibilities, which are not yet implemented.
+M1 已实现第一条 [群同态与核的参考迁移](experiments/hom_kernel/README.md)：两份证明在隔离的 Lean 4.24.0 环境中编译，检查原目标、依赖和公理，并将候选包成本纳入账本。
+M1 implements the first [homomorphism/kernel reference migration](experiments/hom_kernel/README.md): both proofs compile in isolated Lean 4.24.0 environments, with original-goal, dependency and axiom checks and explicit package-cost accounting.
+
+局部证明体从 77 降至 29 个源码 token；计入候选定义和引理后，总非共享源码从 89 增至 353 个 token，这是单条参考任务上的实际结果。
+The local proof body shrinks from 77 to 29 source tokens; including candidate definitions and lemmas, total nonshared source grows from 89 to 353 tokens, as measured on this single reference task.
+
+运行方法见 [理论包接口](docs/THEORY_PACKAGES.md)；约 20 个任务、LLM 迁移 skill、预留评价和学习接口仍按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
+See the [theory-package interface](docs/THEORY_PACKAGES.md) for commands; approximately 20 tasks, the LLM migration skill, held-out evaluation and learning interfaces remain the next steps in the [research plan](docs/RESEARCH_PLAN.md).
 
 ## 快速运行 / Quick start
 

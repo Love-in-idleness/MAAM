@@ -34,6 +34,9 @@ Both proofs establish the original goal, freshly compiled and dependency-audited
 
 ## 首次实际结果 / First measured result
 
+[实际工作流](https://github.com/Love-in-idleness/MAAM/actions/runs/39096441833) 已通过；仓库保留 [对照报告](../../results/theory-package-reference.json)、[六种错误输入的检查结果](../../results/theory-package-negative.json) 和 [运行来源记录](../../results/theory-package-validation.json)。
+The [actual workflow](https://github.com/Love-in-idleness/MAAM/actions/runs/39096441833) passed; the repository retains the [comparison report](../../results/theory-package-reference.json), [six invalid-input checks](../../results/theory-package-negative.json) and [run provenance](../../results/theory-package-validation.json).
+
 | 测量 / Measurement | 基线 / Baseline | 引入候选后 / Treatment |
 | --- | ---: | ---: |
 | 局部证明体源码 token / Local proof-body tokens | 77 | 29 |

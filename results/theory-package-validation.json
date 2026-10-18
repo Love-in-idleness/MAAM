@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "verified",
+  "implementation_commit": "44d10a393daf351c5a2602d167f319b72690a25a",
+  "workflow_run_id": 39096441833,
+  "workflow_job_id": 117583784241,
+  "workflow_url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39096441833",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "id": 12124423305,
+    "name": "theory-package-reference",
+    "digest": "sha256:077dc1823ecd68811f4b93a51966be99381323efb6a16979b8f3d8d4f29ca69e",
+    "created_at": "2026-10-18T04:16:15Z",
+    "expires_at": "2026-11-17T04:16:15Z"
+  },
+  "reference_report": "results/theory-package-reference.json",
+  "negative_report": "results/theory-package-negative.json",
+  "negative_cases": 6,
+  "scope": "one supplied reference migration; actual Lean compilation and rejection checks; no autonomous search or learned value judgement"
+}

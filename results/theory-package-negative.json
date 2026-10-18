@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "kind": "actual_lean_rejection_cases",
+  "cases": {
+    "admitted_proof": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "treatment:audit",
+      "expected_diagnostic": "forbidden axiom: sorryAx",
+      "matched": true
+    },
+    "changed_goal": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "treatment:audit",
+      "expected_diagnostic": "target proposition changed",
+      "matched": true
+    },
+    "extra_assumption": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "treatment:audit",
+      "expected_diagnostic": "target proposition changed",
+      "matched": true
+    },
+    "unused_axiom": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "treatment:audit",
+      "expected_diagnostic": "forbidden axiom",
+      "matched": true
+    },
+    "hidden_import": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "baseline:audit",
+      "expected_diagnostic": "forbidden imported module",
+      "matched": true
+    },
+    "unimported_charged_module": {
+      "status": "rejected",
+      "kind": "verification_failed",
+      "stage": "treatment:audit",
+      "expected_diagnostic": "experiment module not imported by entry: Unused",
+      "matched": true
+    }
+  },
+  "reference_fingerprints": {
+    "experiment_sha256": "650dfa73c7d6d2f6779e3f3129a0542f749ddb425ddd9ffa0c0d785bd5a9125e",
+    "package_sha256": "dea1026aff1d9b4b09d0c2eca1f993c6678dd74719462a08a2822e4c6b223457",
+    "source_sha256": {
+      "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+      "Baseline": "e82be2d0da5dd847f65201353580ba360422577b1701346f3cede2be2d2bc250",
+      "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+      "Treatment": "40205bc5011b815f9754015f8f59e967a5fe4c0ed2ea778de6b34ee72beb46e8"
+    },
+    "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+    "evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9"
+  }
+}

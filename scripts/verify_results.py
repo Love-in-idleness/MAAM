@@ -51,6 +51,26 @@ def main():
     for filename, expected in reports.items():
         compare(json.loads((ROOT/"results"/filename).read_text()), expected, filename)
     print("5 committed reports reproduced; float tolerance rtol=1e-10, atol=1e-13.")
+    reference = ROOT / "results/theory-package-reference.json"
+    if reference.exists():
+        from check_theory_package import check_reference
+        from maam.theory import compare_audits, load_experiment
+        experiment = ROOT / "experiments/hom_kernel/experiment.json"
+        frozen = load_experiment(experiment)
+        report = json.loads(reference.read_text())
+        check_reference(report)
+        compare(report["fingerprints"], frozen["fingerprints"], "theory.fingerprints")
+        compare(report["comparison"], compare_audits(frozen["manifest"], report["audits"]), "theory.accounting")
+        negative = json.loads((ROOT / "results/theory-package-negative.json").read_text())
+        compare(negative["reference_fingerprints"], frozen["fingerprints"], "theory.negative_fingerprints")
+        assert negative["status"] == "passed" and len(negative["cases"]) == 6
+        assert all(case["matched"] and case["status"] == "rejected" for case in negative["cases"].values())
+        receipt = json.loads((ROOT / "results/theory-package-validation.json").read_text())
+        assert receipt["status"] == "verified" and receipt["workflow_conclusion"] == "success"
+        assert receipt["implementation_commit"] == report["provenance"]["code_commit"]
+        assert str(receipt["workflow_run_id"]) == report["provenance"]["workflow_run_id"]
+        assert receipt["negative_cases"] == len(negative["cases"])
+        print("Archived theory-package fingerprints and accounting replayed; fresh Lean verification is a separate workflow.")
 
 
 if __name__ == "__main__":
