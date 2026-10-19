@@ -12,7 +12,7 @@ on:
       - 'experiments/hom_kernel_evolution/**'
       - 'results/evolution/**'
       - 'scripts/*evolution*.py'
-      - 'tests/test_evolution.py'
+      - 'tests/test_evolution*.py'
       - '.github/workflows/evolution.yml'
   pull_request:
     paths:
@@ -20,7 +20,7 @@ on:
       - 'experiments/hom_kernel_evolution/**'
       - 'results/evolution/**'
       - 'scripts/*evolution*.py'
-      - 'tests/test_evolution.py'
+      - 'tests/test_evolution*.py'
       - '.github/workflows/evolution.yml'
   workflow_dispatch:
 permissions:

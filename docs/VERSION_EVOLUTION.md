@@ -62,3 +62,17 @@ The controller does not call a model provider automatically; generation metering
 
 中断后的预约仍占用预算，未完成的提交不会导出为完整实验；应保留现场并诊断，不能删除记录后重试。
 Reservations still consume budget after interruptions, and unfinished submissions cannot be exported as a completed experiment; preserve and diagnose the records rather than deleting them to retry.
+
+## 首次运行中断与替代实验 / Interrupted run and replacement cohort
+
+首次协议与实现已在 `22b8e9b` 冻结；恢复会话时，临时控制器和工作目录已不存在，原始证明字节与核验结果不可恢复，现存工具记录汇总在 `interrupted-run-01.json`。
+The first protocol and implementation were frozen at `22b8e9b`; on session resumption the temporary controller and worker directories were absent, leaving original proof bytes and verification results unrecoverable; surviving tool records are summarised in `interrupted-run-01.json`.
+
+这些结果保持未知，不计为成功或零成本，也不恢复原运行的尝试名额；`study-recovery-01.json` 明确标识一次独立的替代运行，两次运行合计的模型搜索成本仍未知。
+Those outcomes remain unknown, count as neither successes nor zero costs, and do not restore the original run's attempt slots; `study-recovery-01.json` explicitly identifies a separate replacement cohort, with aggregate model-search cost across both runs still unknown.
+
+替代运行将工作者输出放在工作区，并为控制器操作增加 `--checkpoints data/evolution-checkpoints`，在每次操作前后保存完整且不可覆盖的检查点；检查点恢复保留会话身份、提交预约与失败记录。
+The replacement keeps worker outputs in the workspace and adds `--checkpoints data/evolution-checkpoints` to controller operations, saving complete, non-overwriting checkpoints before and after each operation; recovery preserves session identities, reservations and failures.
+
+操作进行中若再次丢失临时目录，只能恢复已实际保存的检查点；不能把未观察到完成的操作假定为从未发生。
+If temporary storage is lost during an operation, only checkpoints actually saved can be recovered; an operation whose completion was unobserved cannot be assumed never to have happened.

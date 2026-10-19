@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "interrupted_artifacts_unavailable",
+  "detected_on": "2026-10-19",
+  "freeze_commit": "22b8e9b0258907e81692d9791822c7cbebefbcbe",
+  "cause_observed": "Temporary controller and worker directories no longer exist after session/environment resumption; repository files and published freeze survive. Exact deletion cause is unavailable.",
+  "source": "Surviving conversation tool records only; original controller records and proof bytes unavailable.",
+  "registered_contexts": [
+    {
+      "worker": "e01",
+      "agent": "/root/evolution_e01"
+    },
+    {
+      "worker": "e02",
+      "agent": "/root/evolution_e02"
+    },
+    {
+      "worker": "e03",
+      "agent": "/root/evolution_e03"
+    },
+    {
+      "worker": "e04",
+      "agent": "/root/evolution_e04"
+    },
+    {
+      "worker": "e05",
+      "agent": "/root/evolution_e05"
+    },
+    {
+      "worker": "e06",
+      "agent": "/root/evolution_e06_retry"
+    }
+  ],
+  "successful_spawn_responses_observed": [
+    "e01",
+    "e02",
+    "e03",
+    "e04",
+    "e05",
+    "e06",
+    "e07",
+    "e08",
+    "e09",
+    "e10"
+  ],
+  "reported_submission_paths": [
+    "/tmp/maam-evolution-workers/e01/submission-01.json",
+    "/tmp/maam-evolution-workers/e02/submission-01.json",
+    "/tmp/maam-evolution-workers/e03/submission-01.json",
+    "/tmp/maam-evolution-workers/e04/submission-01.json",
+    "/tmp/maam-evolution-workers/e05/submission-01.json"
+  ],
+  "reported_paths_contents_available": false,
+  "verification_batch_invoked": [
+    "e01",
+    "e03",
+    "e05"
+  ],
+  "verification_batch_completion_and_outcomes": "unknown",
+  "failed_spawn_before_registration": {
+    "worker": "e06",
+    "error": "thread-store internal error: metadata recovery deadline exhausted",
+    "replacement_context": "/root/evolution_e06_retry"
+  },
+  "duplicate_spawn_rejected": {
+    "worker": "e10",
+    "error": "agent path /root/evolution_e10 already exists"
+  },
+  "formal_attempts": null,
+  "generation_usage": null,
+  "verification_cost": null,
+  "eligible_for_cost_or_coverage_comparison": false,
+  "budget_policy": "Do not infer zero attempts, restore slots in this interrupted cohort, or count reported proof paths as verified. Replacement cohort has its own identity and complete evidence; aggregate search usage across the interruption is unknown."
+}

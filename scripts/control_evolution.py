@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from maam import evolution
+from checkpoint_evolution import checkpoint
 
 
 def main():
@@ -25,7 +26,20 @@ def main():
     parser.add_argument("--attempt", type=int, default=1)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--lean", default="lean")
+    parser.add_argument("--checkpoints", type=Path,
+                        help="Append a complete checkpoint before and after each operation")
     args = parser.parse_args()
+    if args.checkpoints and args.root.exists():
+        checkpoint(args.root, args.checkpoints, "before:" + args.action)
+    try:
+        result = dispatch(args, parser)
+    finally:
+        if args.checkpoints and (args.root / "run.json").exists():
+            checkpoint(args.root, args.checkpoints, "after:" + args.action)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+
+
+def dispatch(args, parser):
     if args.action == "prepare":
         if args.workers is None or args.freeze_commit is None:
             parser.error("prepare requires --workers and --freeze-commit")
@@ -44,7 +58,7 @@ def main():
         if args.output is None:
             parser.error("export requires --output")
         result = evolution.export_run(args.root, args.output)
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return result
 
 
 if __name__ == "__main__":
