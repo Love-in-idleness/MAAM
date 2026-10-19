@@ -94,3 +94,12 @@ This is a separate, deliberately incomplete development calibration, not a rerun
 
 新校准估算额度最多 US$0.035，加上旧轮已计费用为 US$0.09602975，低于本轮最初 US$0.10 的合计额度；旧失败和两轮合计费用必须一起报告。
 The new run's whole-schedule status will stop at its two-call limit; only actual retained witnesses may establish whether this larger allowance produces verifiable output.
+
+独立校准已完成两次真实调用，首个开发目标的基础库与 v2 条件均通过隔离 Lean；供应商报告 3925 输入、5359 输出 token，其中推理占 4717 token，随后按两次调用上限停止，未触及其他目标。
+Both actual proofs and their original-goal/dependency audits are retained locally in `data/transfer-deepseek-output-v2-20261020/`; this verifies one development pair, not the complete stage or a reserved evaluation.
+
+两轮合计 18 次调用、35599 输入、38127 输出 token，保守高峰价估算为 US$0.0564321，含 25% 余量为 US$0.070540125；所有失败均计入，低于最初 US$0.10 的合计额度，账户账单未核对。
+The combined input/output total is 73726 tokens, with reasoning already included in output and never added a second time.
+
+该单题的完整证明模块源码成本为基础库 150 token、v2 含完整候选包 1267 token，其中整包为 1100 token；本例没有显示净源码收益，不能从证明成功推断候选更有价值。
+Next, calibrate the remaining development goals with an explicitly frozen adequate output allowance and a new total budget before admitting the untouched reserved families.

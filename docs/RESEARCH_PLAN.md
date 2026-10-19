@@ -218,6 +218,9 @@ The unified interface now records requested and response-reported model identiti
 后续已新增 [DeepSeek 冻结对照协议](METERED_TRANSFER.md)：候选 v2 保持不变，四个开发目标与四个新预留目标按推理模式分开，并实现阶段门控、整轮调用/输入/输出/费用预约及中断停止；预留目标的声明编译不算求解证据。
 The additive controller preserves old evaluator fingerprints and calibration flags, uses only DeepSeek for new paid calls, and separates matched allocations, observed usage and effectiveness claims; formal model outcomes are recorded separately from offline fixtures.
 
+DeepSeek 首轮开发校准的 16 次调用均在 2048 token 输出上限截断；独立的两次调用改用 8192 token 上限后，首个开发目标的两个条件均通过隔离 Lean，两轮合计费用含余量估算为 US$0.070540125，四个预留目标仍未调用。
+This establishes a metered DeepSeek development workflow and exposes output-budget sensitivity, while remaining short of complete development coverage, strict reserved effectiveness, exact model-revision verification or training acceptance.
+
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
 
