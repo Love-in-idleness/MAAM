@@ -1,0 +1,3272 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "study_id": "hom-kernel-evolution-recovery-01",
+  "freeze_commit": "39e3048d8985f6a484e55cf32755895df6cca11b",
+  "study_sha256": "8685830772a387b2a0c317a368526f0afa170b55257c3d136e65b4e8e4935b5d",
+  "evaluators": {
+    "evolution.py": "02f4b3f5e2ccdee01096744d6a0b251bfec0eb653f7a1472020ac8ec77f67a35",
+    "migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+    "PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+    "ablation.py": "7f65d41b17d70397f7d631c0a548218cbe0ce7a50a59ec2d3b069ea4b026adf0",
+    "Inventory.lean": "c01d44a3522d80ac512c16c02db38307a3c5808dd548fc9b124718d640bd6068",
+    "independent.py": "c768390310d8de6ca856ff8a4c4c7b962fe348014f2db5baf88bc2048397d164"
+  },
+  "rounds": [
+    {
+      "index": 0,
+      "role": "seed",
+      "description": "Previously checked, byte-identical hom-kernel-core-v1."
+    },
+    {
+      "index": 1,
+      "role": "package_construction",
+      "description": "Controller-authored v2 from public development evidence; not autonomous discovery."
+    },
+    {
+      "index": 2,
+      "role": "later_use",
+      "description": "Four preselected downstream calibration goals, fresh task/condition contexts; no held-out value claim."
+    }
+  ],
+  "registered_workers": 12,
+  "attempts": 13,
+  "failures": [
+    {
+      "worker": "e10",
+      "variant": "baseline",
+      "task_id": "intersection",
+      "attempt": 1,
+      "status": "rejected",
+      "failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: expression traversal exceeded one million constructor visits\n"
+      },
+      "artifact": "attempts/intersection/001"
+    }
+  ],
+  "coverage": {
+    "baseline": {
+      "verified": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "measured": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ]
+    },
+    "v1": {
+      "verified": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "measured": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ]
+    },
+    "v2": {
+      "verified": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "measured": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ]
+    }
+  },
+  "variants": [
+    {
+      "id": "baseline",
+      "version": null,
+      "tasks": [
+        {
+          "id": "kernel_group",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 461,
+                "expr_nodes": 4822
+              },
+              "dependency_paths": {}
+            }
+          ]
+        },
+        {
+          "id": "restriction",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 501,
+                "expr_nodes": 6731
+              },
+              "dependency_paths": {}
+            }
+          ]
+        },
+        {
+          "id": "intersection",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "rejected",
+              "cost": null
+            },
+            {
+              "attempt": 2,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 655,
+                "expr_nodes": 9958
+              },
+              "dependency_paths": {}
+            }
+          ]
+        },
+        {
+          "id": "words",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 368,
+                "expr_nodes": 3057
+              },
+              "dependency_paths": {}
+            }
+          ]
+        }
+      ],
+      "components": {},
+      "package_cost": {
+        "source_tokens": 0,
+        "expr_nodes": 0
+      },
+      "uses": [],
+      "verification_seconds": {
+        "verification": 20.724655383000027,
+        "inventory": 13.66718922500013
+      }
+    },
+    {
+      "id": "v1",
+      "version": "v1",
+      "tasks": [
+        {
+          "id": "kernel_group",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 511,
+                "expr_nodes": 3701
+              },
+              "dependency_paths": {
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.Kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel"
+                ],
+                "Theory.Kernel.mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul"
+                ],
+                "Theory.Kernel.mul._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "restriction",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 376,
+                "expr_nodes": 6058
+              },
+              "dependency_paths": {
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.Kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel"
+                ],
+                "Theory.Kernel.mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul"
+                ],
+                "Theory.Kernel.mul._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intersection",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 628,
+                "expr_nodes": 43066
+              },
+              "dependency_paths": {
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "words",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 393,
+                "expr_nodes": 1952
+              },
+              "dependency_paths": {
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "components": {
+        "Candidate": {
+          "source_tokens": 312,
+          "expr_nodes": 4341,
+          "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+        }
+      },
+      "package_cost": {
+        "source_tokens": 312,
+        "expr_nodes": 4341
+      },
+      "uses": [
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul"
+          ]
+        }
+      ],
+      "verification_seconds": {
+        "verification": 11.848114954000152,
+        "inventory": 9.517804632999969
+      }
+    },
+    {
+      "id": "v2",
+      "version": "v2",
+      "tasks": [
+        {
+          "id": "kernel_group",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 65,
+                "expr_nodes": 1259
+              },
+              "dependency_paths": {
+                "Theory.GroupFacts.inv_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.GroupFacts.inv_one"
+                ],
+                "Theory.GroupFacts.left_cancel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one",
+                  "Theory.GroupFacts.left_cancel"
+                ],
+                "Theory.GroupFacts.mul_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.mul_inv"
+                ],
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.map_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.Kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel"
+                ],
+                "Theory.Kernel.group": [
+                  "Submission.solve",
+                  "Theory.Kernel.group"
+                ],
+                "Theory.Kernel.group._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1"
+                ],
+                "Theory.Kernel.group._proof_2": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_2"
+                ],
+                "Theory.Kernel.group._proof_3": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_3"
+                ],
+                "Theory.Kernel.group._proof_4": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_4"
+                ],
+                "Theory.Kernel.group._proof_5": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_5"
+                ],
+                "Theory.Kernel.mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul"
+                ],
+                "Theory.Kernel.mul._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul"
+                ],
+                "Theory.kernel_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "restriction",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 102,
+                "expr_nodes": 3275
+              },
+              "dependency_paths": {
+                "Theory.GroupFacts.inv_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.GroupFacts.inv_one"
+                ],
+                "Theory.GroupFacts.left_cancel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one",
+                  "Theory.GroupFacts.left_cancel"
+                ],
+                "Theory.GroupFacts.mul_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.mul_inv"
+                ],
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.map_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.Kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel"
+                ],
+                "Theory.Kernel.group": [
+                  "Submission.solve",
+                  "Theory.Kernel.group"
+                ],
+                "Theory.Kernel.group._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1"
+                ],
+                "Theory.Kernel.group._proof_2": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_2"
+                ],
+                "Theory.Kernel.group._proof_3": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_3"
+                ],
+                "Theory.Kernel.group._proof_4": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_4"
+                ],
+                "Theory.Kernel.group._proof_5": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_5"
+                ],
+                "Theory.Kernel.mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul"
+                ],
+                "Theory.Kernel.mul._proof_1": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_inv": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.group._proof_1",
+                  "Theory.kernel_inv"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.Kernel.mul",
+                  "Theory.Kernel.mul._proof_1",
+                  "Theory.kernel_mul"
+                ],
+                "Theory.kernel_one": [
+                  "Submission.solve",
+                  "Theory.Kernel.group",
+                  "Theory.kernel_one"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "intersection",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 198,
+                "expr_nodes": 41261
+              },
+              "dependency_paths": {
+                "Theory.GroupFacts.inv_one": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.GroupFacts.inv_one"
+                ],
+                "Theory.GroupFacts.left_cancel": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.left_cancel"
+                ],
+                "Theory.GroupFacts.mul_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.mul_inv"
+                ],
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.map_one": [
+                  "Submission.solve",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul"
+                ],
+                "Theory.kernel_one": [
+                  "Submission.solve",
+                  "Theory.kernel_one"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "words",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "cost": {
+                "source_tokens": 109,
+                "expr_nodes": 535
+              },
+              "dependency_paths": {
+                "Theory.GroupFacts.inv_one": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.GroupFacts.inv_one"
+                ],
+                "Theory.GroupFacts.left_cancel": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.left_cancel"
+                ],
+                "Theory.GroupFacts.mul_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv",
+                  "Theory.GroupFacts.mul_inv"
+                ],
+                "Theory.Hom": [
+                  "Submission.solve",
+                  "Theory.Hom"
+                ],
+                "Theory.Hom.map_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv",
+                  "Theory.Hom.map_inv"
+                ],
+                "Theory.Hom.map_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul",
+                  "Theory.Hom.map_mul"
+                ],
+                "Theory.Hom.map_one": [
+                  "Submission.solve",
+                  "Theory.kernel_one",
+                  "Theory.Hom.map_one"
+                ],
+                "Theory.Hom.mk": [
+                  "Submission.solve",
+                  "Theory.Hom.mk"
+                ],
+                "Theory.Hom.toFun": [
+                  "Submission.solve",
+                  "Theory.kernel",
+                  "Theory.Hom.toFun"
+                ],
+                "Theory.kernel": [
+                  "Submission.solve",
+                  "Theory.kernel"
+                ],
+                "Theory.kernel_inv": [
+                  "Submission.solve",
+                  "Theory.kernel_inv"
+                ],
+                "Theory.kernel_mul": [
+                  "Submission.solve",
+                  "Theory.kernel_mul"
+                ],
+                "Theory.kernel_one": [
+                  "Submission.solve",
+                  "Theory.kernel_one"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "components": {
+        "Candidate": {
+          "source_tokens": 312,
+          "expr_nodes": 4341,
+          "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+        },
+        "Extension": {
+          "source_tokens": 788,
+          "expr_nodes": 4816,
+          "sha256": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c"
+        }
+      },
+      "package_cost": {
+        "source_tokens": 1100,
+        "expr_nodes": 9157
+      },
+      "uses": [
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.inv_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.left_cancel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.GroupFacts.left_cancel"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.mul_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_2",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_2"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_3",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_3"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_4",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_4"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_5",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_5"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv"
+          ]
+        },
+        {
+          "task": "kernel_group",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Kernel.mul._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.inv_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.left_cancel",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.GroupFacts.left_cancel"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.mul_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_1",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_2",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_2"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_3",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_3"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_4",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_4"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Kernel.group._proof_5",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_5"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv"
+          ]
+        },
+        {
+          "task": "restriction",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_one",
+          "path": [
+            "Submission.solve",
+            "Theory.Kernel.group",
+            "Theory.kernel_one"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.inv_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.left_cancel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.left_cancel"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.mul_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv"
+          ]
+        },
+        {
+          "task": "intersection",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_one"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.map_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.mk",
+          "path": [
+            "Submission.solve",
+            "Theory.Hom.mk"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.Hom.toFun",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Candidate",
+          "declaration": "Theory.kernel_mul",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_mul"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.inv_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.left_cancel",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.left_cancel"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.GroupFacts.mul_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.Hom.map_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_inv",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_inv"
+          ]
+        },
+        {
+          "task": "words",
+          "attempt": 1,
+          "module": "Extension",
+          "declaration": "Theory.kernel_one",
+          "path": [
+            "Submission.solve",
+            "Theory.kernel_one"
+          ]
+        }
+      ],
+      "verification_seconds": {
+        "verification": 12.086113995999938,
+        "inventory": 11.382604738000055
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "left": "baseline",
+      "right": "v1",
+      "common_tasks": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "coverage_relation": "same",
+      "cost_relation": "left_dominates",
+      "left_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 1985,
+            "expr_nodes": 24568,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 2
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      },
+      "right_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 2220,
+            "expr_nodes": 59118,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 1
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "left": "baseline",
+      "right": "v2",
+      "common_tasks": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "coverage_relation": "same",
+      "cost_relation": "incomparable",
+      "left_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 1985,
+            "expr_nodes": 24568,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 2
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      },
+      "right_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 1574,
+            "expr_nodes": 55487,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 1
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "left": "v1",
+      "right": "v2",
+      "common_tasks": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "coverage_relation": "same",
+      "cost_relation": "right_dominates",
+      "left_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 2220,
+            "expr_nodes": 59118,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 1
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      },
+      "right_costs": {
+        "status": "exact_finite_portfolio",
+        "points": [
+          {
+            "source_tokens": 1574,
+            "expr_nodes": 55487,
+            "choices": [
+              {
+                "task": "kernel_group",
+                "attempt": 1
+              },
+              {
+                "task": "restriction",
+                "attempt": 1
+              },
+              {
+                "task": "intersection",
+                "attempt": 1
+              },
+              {
+                "task": "words",
+                "attempt": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "version_ledger": [
+    {
+      "version": "v1",
+      "parent": null,
+      "introduced_round": 0,
+      "added_modules": [
+        "Candidate"
+      ],
+      "incremental_representation_cost": {
+        "source_tokens": 312,
+        "expr_nodes": 4341
+      },
+      "whole_package_cost": {
+        "source_tokens": 312,
+        "expr_nodes": 4341
+      }
+    },
+    {
+      "version": "v2",
+      "parent": "v1",
+      "introduced_round": 1,
+      "added_modules": [
+        "Extension"
+      ],
+      "incremental_representation_cost": {
+        "source_tokens": 788,
+        "expr_nodes": 4816
+      },
+      "whole_package_cost": {
+        "source_tokens": 1100,
+        "expr_nodes": 9157
+      }
+    }
+  ],
+  "later_uses": [
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.map_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1",
+        "Theory.kernel_mul",
+        "Theory.Hom.map_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.mk",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom.mk"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.toFun",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel",
+        "Theory.Hom.toFun"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel.mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel.mul._proof_1",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1",
+        "Theory.kernel_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.map_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1",
+        "Theory.kernel_mul",
+        "Theory.Hom.map_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.mk",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom.mk"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.toFun",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel",
+        "Theory.Hom.toFun"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel.mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Kernel.mul._proof_1",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.mul",
+        "Theory.Kernel.mul._proof_1",
+        "Theory.kernel_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.map_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.Hom.map_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.mk",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom.mk"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.toFun",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.Hom.toFun"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.map_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.Hom.map_mul"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.mk",
+      "path": [
+        "Submission.solve",
+        "Theory.Hom.mk"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.Hom.toFun",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.Hom.toFun"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul",
+        "Theory.kernel"
+      ]
+    },
+    {
+      "version": "v1",
+      "introduced_round": 0,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Candidate",
+      "declaration": "Theory.kernel_mul",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_mul"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.inv_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.GroupFacts.inv_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.left_cancel",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one",
+        "Theory.GroupFacts.left_cancel"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.mul_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.mul_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_1",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_2",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_2"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_3",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_3"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_4",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_4"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_5",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_5"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "kernel_group",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.inv_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.GroupFacts.inv_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.left_cancel",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one",
+        "Theory.GroupFacts.left_cancel"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.mul_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.mul_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_1",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_2",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_2"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_3",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_3"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_4",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_4"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Kernel.group._proof_5",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_5"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.Kernel.group._proof_1",
+        "Theory.kernel_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "restriction",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_one",
+      "path": [
+        "Submission.solve",
+        "Theory.Kernel.group",
+        "Theory.kernel_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.inv_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.GroupFacts.inv_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.left_cancel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.left_cancel"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.mul_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.mul_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "intersection",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.inv_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.GroupFacts.inv_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.left_cancel",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.left_cancel"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.GroupFacts.mul_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv",
+        "Theory.GroupFacts.mul_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv",
+        "Theory.Hom.map_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.Hom.map_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_one",
+        "Theory.Hom.map_one"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_inv",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_inv"
+      ]
+    },
+    {
+      "version": "v2",
+      "introduced_round": 1,
+      "used_round": 2,
+      "task": "words",
+      "attempt": 1,
+      "module": "Extension",
+      "declaration": "Theory.kernel_one",
+      "path": [
+        "Submission.solve",
+        "Theory.kernel_one"
+      ]
+    }
+  ],
+  "construction": {
+    "round": 1,
+    "version": "v2",
+    "mode": "controller_authored_before_original_freeze",
+    "original_compile_and_generation_trace": "unavailable after interrupted temporary run; total construction search cost unknown",
+    "original_preflight_observed_in_tool_history": "verified and measured; underlying original logs unavailable",
+    "revalidation_after_interruption": {
+      "files": {
+        "attempts/kernel_group/001/Proof.lean": "import Base\nimport Tasks.KernelGroup\nimport Candidate\nimport Extension\n\nnamespace Submission\ntheorem solve : Tasks.kernelGroup :=\nby\n  intro G H g h f hf\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  exact ⟨Theory.Kernel.group F, rfl, (fun _ _ => rfl), (fun _ => rfl)⟩\n\nend Submission\n",
+        "attempts/kernel_group/001/command-00.stderr": "",
+        "attempts/kernel_group/001/command-00.stdout": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)\n",
+        "attempts/kernel_group/001/command-01.stderr": "",
+        "attempts/kernel_group/001/command-01.stdout": "Base.lean:15:17: warning: unused variable `hf`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+        "attempts/kernel_group/001/command-02.stderr": "",
+        "attempts/kernel_group/001/command-02.stdout": "",
+        "attempts/kernel_group/001/command-03.stderr": "",
+        "attempts/kernel_group/001/command-03.stdout": "",
+        "attempts/kernel_group/001/command-04.stderr": "",
+        "attempts/kernel_group/001/command-04.stdout": "",
+        "attempts/kernel_group/001/command-05.stderr": "",
+        "attempts/kernel_group/001/command-05.stdout": "",
+        "attempts/kernel_group/001/command-06.stderr": "",
+        "attempts/kernel_group/001/command-06.stdout": "",
+        "attempts/kernel_group/001/measurement/command-00.stderr": "",
+        "attempts/kernel_group/001/measurement/command-00.stdout": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)\n",
+        "attempts/kernel_group/001/measurement/command-01.stderr": "",
+        "attempts/kernel_group/001/measurement/command-01.stdout": "Base.lean:15:17: warning: unused variable `hf`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+        "attempts/kernel_group/001/measurement/command-02.stderr": "",
+        "attempts/kernel_group/001/measurement/command-02.stdout": "",
+        "attempts/kernel_group/001/measurement/command-03.stderr": "",
+        "attempts/kernel_group/001/measurement/command-03.stdout": "",
+        "attempts/kernel_group/001/measurement/command-04.stderr": "",
+        "attempts/kernel_group/001/measurement/command-04.stdout": "",
+        "attempts/kernel_group/001/measurement/command-05.stderr": "",
+        "attempts/kernel_group/001/measurement/command-05.stdout": "",
+        "attempts/kernel_group/001/measurement/command-06.stderr": "",
+        "attempts/kernel_group/001/measurement/command-06.stdout": "",
+        "attempts/kernel_group/001/measurement/result.json": "{\n  \"status\": \"measured\",\n  \"trace\": [\n    {\n      \"stage\": \"toolchain\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.0441791420000186,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-00.stdout\",\n          \"sha256\": \"36c0bbaf090c97bc8217c6ff497ff9144fd83d9003f12cd505162b943aaaee77\"\n        },\n        \"stderr\": {\n          \"path\": \"command-00.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Base\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.1625622639999733,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-01.stdout\",\n          \"sha256\": \"c65254481e7a9867292a62cb9a1f19f6e76038a8d07a87537a4d9e67ec0d00fb\"\n        },\n        \"stderr\": {\n          \"path\": \"command-01.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Tasks.KernelGroup\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.1416245380000305,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-02.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-02.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Candidate\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.16183314300002394,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-03.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-03.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Extension\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.16507382100002133,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-04.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-04.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Proof\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 0.13396268999997574,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-05.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-05.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"inventory\",\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"seconds\": 2.015649097999983,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-06.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-06.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"modules\": [\n      {\n        \"module\": \"Candidate\",\n        \"expr_nodes\": 4341,\n        \"declarations\": [\n          {\n            \"value_expr_nodes\": 0,\n            \"signature_expr_nodes\": 13,\n            \"name\": \"Theory.Hom\",\n            \"kind\": \"inductive\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 101,\n            \"signature_expr_nodes\": 31,\n            \"name\": \"Theory.Hom._sizeOf_1\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Nat\",\n              \"Nat\",\n              \"OfNat.ofNat\",\n              \"SizeOf\",\n              \"SizeOf\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.rec\",\n              \"instOfNatNat\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 57,\n            \"signature_expr_nodes\": 31,\n            \"name\": \"Theory.Hom._sizeOf_inst\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"SizeOf\",\n              \"SizeOf\",\n              \"SizeOf.mk\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom._sizeOf_1\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 145,\n            \"signature_expr_nodes\": 91,\n            \"name\": \"Theory.Hom.casesOn\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.rec\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 23,\n            \"signature_expr_nodes\": 23,\n            \"name\": \"Theory.Hom.ctorIdx\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Nat\",\n              \"Theory.Hom\",\n              \"Theory.Hom\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 24,\n            \"signature_expr_nodes\": 85,\n            \"name\": \"Theory.Hom.map_mul\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.toFun\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 0,\n            \"signature_expr_nodes\": 59,\n            \"name\": \"Theory.Hom.mk\",\n            \"kind\": \"constructor\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 63,\n            \"signature_expr_nodes\": 59,\n            \"name\": \"Theory.Hom.mk._flat_ctor\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 169,\n            \"signature_expr_nodes\": 137,\n            \"name\": \"Theory.Hom.mk.inj\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk.noConfusion\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 613,\n            \"signature_expr_nodes\": 141,\n            \"name\": \"Theory.Hom.mk.injEq\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.casesOn\",\n              \"Eq.ndrec\",\n              \"Eq.propIntro\",\n              \"Eq.refl\",\n              \"Eq.symm\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"HEq\",\n              \"HEq.refl\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk.noConfusion\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 185,\n            \"signature_expr_nodes\": 143,\n            \"name\": \"Theory.Hom.mk.noConfusion\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.noConfusion\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 71,\n            \"signature_expr_nodes\": 111,\n            \"name\": \"Theory.Hom.mk.sizeOf_spec\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.refl\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Nat\",\n              \"Nat\",\n              \"OfNat.ofNat\",\n              \"OfNat.ofNat\",\n              \"SizeOf\",\n              \"SizeOf\",\n              \"SizeOf.sizeOf\",\n              \"Theory.Hom\",\n              \"Theory.Hom._sizeOf_inst\",\n              \"Theory.Hom.mk\",\n              \"instOfNatNat\",\n              \"instOfNatNat\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 225,\n            \"signature_expr_nodes\": 65,\n            \"name\": \"Theory.Hom.noConfusion\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.ndrec\",\n              \"Eq.refl\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.casesOn\",\n              \"Theory.Hom.noConfusionType\",\n              \"Theory.Hom.noConfusionType\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 171,\n            \"signature_expr_nodes\": 35,\n            \"name\": \"Theory.Hom.noConfusionType\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.casesOn\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 0,\n            \"signature_expr_nodes\": 91,\n            \"name\": \"Theory.Hom.rec\",\n            \"kind\": \"recursor\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 103,\n            \"signature_expr_nodes\": 91,\n            \"name\": \"Theory.Hom.recOn\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.mk\",\n              \"Theory.Hom.rec\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 24,\n            \"signature_expr_nodes\": 25,\n            \"name\": \"Theory.Hom.toFun\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Theory.Hom\",\n              \"Theory.Hom\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 41,\n            \"signature_expr_nodes\": 23,\n            \"name\": \"Theory.Kernel\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Subtype\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.kernel\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 131,\n            \"signature_expr_nodes\": 57,\n            \"name\": \"Theory.Kernel.mul\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Subtype.mk\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.mul._proof_1\",\n              \"Theory.kernel\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 145,\n            \"signature_expr_nodes\": 107,\n            \"name\": \"Theory.Kernel.mul._proof_1\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Subtype.property\",\n              \"Subtype.val\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel_mul\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 47,\n            \"signature_expr_nodes\": 25,\n            \"name\": \"Theory.kernel\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.one\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.toFun\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 485,\n            \"signature_expr_nodes\": 75,\n            \"name\": \"Theory.kernel_mul\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one_mul\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.map_mul\",\n              \"Theory.Hom.toFun\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"id\",\n              \"instTransEq\"\n            ]\n          }\n        ],\n        \"declaration_count\": 22\n      },\n      {\n        \"module\": \"Extension\",\n        \"expr_nodes\": 4816,\n        \"declarations\": [\n          {\n            \"value_expr_nodes\": 121,\n            \"signature_expr_nodes\": 27,\n            \"name\": \"Theory.GroupFacts.inv_one\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq.symm\",\n              \"Eq.trans\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv_mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul_one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 751,\n            \"signature_expr_nodes\": 43,\n            \"name\": \"Theory.GroupFacts.left_cancel\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.symm\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv_mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul_assoc\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one_mul\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"instTransEq\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 531,\n            \"signature_expr_nodes\": 33,\n            \"name\": \"Theory.GroupFacts.mul_inv\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.symm\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv_mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul_assoc\",\n              \"Foundation.Group.mul_one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one_mul\",\n              \"Theory.GroupFacts.left_cancel\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"instTransEq\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 633,\n            \"signature_expr_nodes\": 67,\n            \"name\": \"Theory.Hom.map_inv\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.symm\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.one\",\n              \"Theory.GroupFacts.left_cancel\",\n              \"Theory.GroupFacts.mul_inv\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.map_mul\",\n              \"Theory.Hom.map_one\",\n              \"Theory.Hom.toFun\",\n              \"Theory.Hom.toFun\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"instTransEq\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 539,\n            \"signature_expr_nodes\": 49,\n            \"name\": \"Theory.Hom.map_one\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Eq\",\n              \"Eq.symm\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.mul_one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one_mul\",\n              \"Theory.GroupFacts.left_cancel\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.map_mul\",\n              \"Theory.Hom.toFun\",\n              \"Theory.Hom.toFun\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"instTransEq\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 207,\n            \"signature_expr_nodes\": 35,\n            \"name\": \"Theory.Kernel.group\",\n            \"kind\": \"definition\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.mk\",\n              \"Foundation.Group.one\",\n              \"Subtype.mk\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.group._proof_1\",\n              \"Theory.Kernel.group._proof_2\",\n              \"Theory.Kernel.group._proof_3\",\n              \"Theory.Kernel.group._proof_4\",\n              \"Theory.Kernel.group._proof_5\",\n              \"Theory.Kernel.mul\",\n              \"Theory.kernel\",\n              \"Theory.kernel_one\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 89,\n            \"signature_expr_nodes\": 73,\n            \"name\": \"Theory.Kernel.group._proof_1\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Subtype.property\",\n              \"Subtype.val\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel_inv\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 131,\n            \"signature_expr_nodes\": 109,\n            \"name\": \"Theory.Kernel.group._proof_2\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one_mul\",\n              \"Subtype\",\n              \"Subtype.eq\",\n              \"Subtype.mk\",\n              \"Subtype.mk\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.mul\",\n              \"Theory.Kernel.mul\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel_one\",\n              \"Theory.kernel_one\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 131,\n            \"signature_expr_nodes\": 109,\n            \"name\": \"Theory.Kernel.group._proof_3\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul_one\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\",\n              \"Subtype\",\n              \"Subtype.eq\",\n              \"Subtype.mk\",\n              \"Subtype.mk\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.mul\",\n              \"Theory.Kernel.mul\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel_one\",\n              \"Theory.kernel_one\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 205,\n            \"signature_expr_nodes\": 139,\n            \"name\": \"Theory.Kernel.group._proof_4\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.mul_assoc\",\n              \"Subtype\",\n              \"Subtype.eq\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.mul\",\n              \"Theory.Kernel.mul\",\n              \"Theory.kernel\",\n              \"Theory.kernel\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 233,\n            \"signature_expr_nodes\": 169,\n            \"name\": \"Theory.Kernel.group._proof_5\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv_mul\",\n              \"Foundation.Group.one\",\n              \"Foundation.Group.one\",\n              \"Subtype\",\n              \"Subtype.eq\",\n              \"Subtype.mk\",\n              \"Subtype.mk\",\n              \"Subtype.property\",\n              \"Subtype.val\",\n              \"Subtype.val\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel\",\n              \"Theory.Kernel.group._proof_1\",\n              \"Theory.Kernel.mul\",\n              \"Theory.Kernel.mul\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Theory.kernel_inv\",\n              \"Theory.kernel_one\",\n              \"Theory.kernel_one\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 263,\n            \"signature_expr_nodes\": 57,\n            \"name\": \"Theory.kernel_inv\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Eq\",\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.one\",\n              \"Theory.GroupFacts.inv_one\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.map_inv\",\n              \"Theory.Hom.toFun\",\n              \"Theory.kernel\",\n              \"Theory.kernel\",\n              \"Trans.trans\",\n              \"congrArg\",\n              \"id\",\n              \"instTransEq\"\n            ]\n          },\n          {\n            \"value_expr_nodes\": 33,\n            \"signature_expr_nodes\": 39,\n            \"name\": \"Theory.kernel_one\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"Foundation.Group\",\n              \"Foundation.Group\",\n              \"Foundation.Group.one\",\n              \"Theory.Hom\",\n              \"Theory.Hom\",\n              \"Theory.Hom.map_one\",\n              \"Theory.kernel\"\n            ]\n          }\n        ],\n        \"declaration_count\": 13\n      },\n      {\n        \"module\": \"Proof\",\n        \"expr_nodes\": 1259,\n        \"declarations\": [\n          {\n            \"value_expr_nodes\": 1258,\n            \"signature_expr_nodes\": 1,\n            \"name\": \"Submission.solve\",\n            \"kind\": \"theorem\",\n            \"direct_dependencies\": [\n              \"And\",\n              \"And.intro\",\n              \"Eq\",\n              \"Exists.intro\",\n              \"Foundation.Group\",\n              \"Foundation.Group.inv\",\n              \"Foundation.Group.mul\",\n              \"Foundation.Group.one\",\n              \"Subtype\",\n              \"Subtype.val\",\n              \"Tasks.kernelGroup\",\n              \"Theory.Hom\",\n              \"Theory.Hom.mk\",\n              \"Theory.Kernel.group\",\n              \"rfl\"\n            ]\n          }\n        ],\n        \"declaration_count\": 1\n      }\n    ],\n    \"module\": \"Proof\",\n    \"lean_version\": \"4.24.0\",\n    \"convention\": \"sum of constructor occurrences in every charged declaration type and available value; includes generated declarations; metadata wrappers excluded; constants not inlined\"\n  },\n  \"proof_sha256\": \"efe3d68c70da54f35600bf02cc9b59bf580befafd0f95420fbaf5c725dc30a0f\",\n  \"formal_result_sha256\": \"1bd009b6b9ce4e5dbccc0434f22ed26c515188c1c9d564c0e221e8a52a58bb3e\",\n  \"seal_sha256\": \"2f8c9f244facdc9741118d890c6247b91a6ea05a28bb6d62c6132060fe38f381\"\n}\n",
+        "attempts/kernel_group/001/pending.json": "{\n  \"task_id\": \"kernel_group\",\n  \"attempt\": 1,\n  \"request_sha256\": \"e9195cfbf010d86f4d337ac82bcb2f7b5600ee878db1c6dfc696ff7af81af0a4\",\n  \"proof_sha256\": \"efe3d68c70da54f35600bf02cc9b59bf580befafd0f95420fbaf5c725dc30a0f\",\n  \"submission_sha256\": \"899c6373be42c4b02fdbbead2e7dcca49e114860641c5be2221c4f857b01bbfb\",\n  \"generation_usage\": \"caller supplied; not independently verified\",\n  \"seal_sha256\": \"99d8aeac8e8a91c04323d37f64a57a38b20101ac45b155d2ab7804c82e4ce1cd\"\n}\n",
+        "attempts/kernel_group/001/result.json": "{\n  \"task_id\": \"kernel_group\",\n  \"attempt\": 1,\n  \"request_sha256\": \"e9195cfbf010d86f4d337ac82bcb2f7b5600ee878db1c6dfc696ff7af81af0a4\",\n  \"proof_sha256\": \"efe3d68c70da54f35600bf02cc9b59bf580befafd0f95420fbaf5c725dc30a0f\",\n  \"submission_sha256\": \"899c6373be42c4b02fdbbead2e7dcca49e114860641c5be2221c4f857b01bbfb\",\n  \"generation_usage\": \"caller supplied; not independently verified\",\n  \"status\": \"verified\",\n  \"trace\": [\n    {\n      \"stage\": \"toolchain\",\n      \"seconds\": 0.04942088100000319,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-00.stdout\",\n          \"sha256\": \"36c0bbaf090c97bc8217c6ff497ff9144fd83d9003f12cd505162b943aaaee77\"\n        },\n        \"stderr\": {\n          \"path\": \"command-00.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Base\",\n      \"seconds\": 0.16223094000002902,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-01.stdout\",\n          \"sha256\": \"c65254481e7a9867292a62cb9a1f19f6e76038a8d07a87537a4d9e67ec0d00fb\"\n        },\n        \"stderr\": {\n          \"path\": \"command-01.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Tasks.KernelGroup\",\n      \"seconds\": 0.15493159199996853,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-02.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-02.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Candidate\",\n      \"seconds\": 0.1889055839999969,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-03.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-03.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Extension\",\n      \"seconds\": 0.18685118400003375,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-04.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-04.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"compile:Proof\",\n      \"seconds\": 0.15767962399996804,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-05.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-05.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    },\n    {\n      \"stage\": \"audit\",\n      \"seconds\": 2.415504929000008,\n      \"returncode\": 0,\n      \"timed_out\": false,\n      \"logs\": {\n        \"stdout\": {\n          \"path\": \"command-06.stdout\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        },\n        \"stderr\": {\n          \"path\": \"command-06.stderr\",\n          \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n        }\n      }\n    }\n  ],\n  \"audit\": {\n    \"verification\": \"freshly_compiled_theorems_and_dependency_audit\",\n    \"targets\": [\n      {\n        \"source\": {\n          \"status\": \"parsed_simple_declaration\",\n          \"signature_tokens\": 4,\n          \"separator_tokens\": 1,\n          \"declaration_tokens\": 47,\n          \"body_tokens\": 42\n        },\n        \"signature_expr_nodes\": 1,\n        \"proof_expr_nodes\": 1258,\n        \"name\": \"Submission.solve\",\n        \"goal_preserved\": true,\n        \"expected\": \"Tasks.kernelGroup\",\n        \"direct_proof_dependencies\": [\n          \"And\",\n          \"And.intro\",\n          \"Eq\",\n          \"Exists.intro\",\n          \"Foundation.Group\",\n          \"Foundation.Group.inv\",\n          \"Foundation.Group.mul\",\n          \"Foundation.Group.one\",\n          \"Subtype\",\n          \"Subtype.val\",\n          \"Theory.Hom\",\n          \"Theory.Hom.mk\",\n          \"Theory.Kernel.group\",\n          \"rfl\"\n        ]\n      }\n    ],\n    \"sources\": [\n      {\n        \"source_utf8_bytes\": 1135,\n        \"source_tokens\": 312,\n        \"module\": \"Candidate\"\n      },\n      {\n        \"source_utf8_bytes\": 3262,\n        \"source_tokens\": 788,\n        \"module\": \"Extension\"\n      },\n      {\n        \"source_utf8_bytes\": 285,\n        \"source_tokens\": 60,\n        \"module\": \"Proof\"\n      }\n    ],\n    \"package_declarations\": [\n      \"Theory.Hom\",\n      \"Theory.kernel\",\n      \"Theory.Kernel\",\n      \"Theory.kernel_mul\",\n      \"Theory.Kernel.mul\",\n      \"Theory.GroupFacts.left_cancel\",\n      \"Theory.GroupFacts.mul_inv\",\n      \"Theory.GroupFacts.inv_one\",\n      \"Theory.Hom.map_one\",\n      \"Theory.Hom.map_inv\",\n      \"Theory.kernel_one\",\n      \"Theory.kernel_inv\",\n      \"Theory.Kernel.group\"\n    ],\n    \"module\": \"Proof\",\n    \"lean_version\": \"4.24.0\",\n    \"imported_modules\": [\n      \"Base\",\n      \"Candidate\",\n      \"Extension\",\n      \"Init\",\n      \"Init.BinderNameHint\",\n      \"Init.BinderPredicates\",\n      \"Init.ByCases\",\n      \"Init.Classical\",\n      \"Init.Coe\",\n      \"Init.Control\",\n      \"Init.Control.Basic\",\n      \"Init.Control.EState\",\n      \"Init.Control.Except\",\n      \"Init.Control.ExceptCps\",\n      \"Init.Control.Id\",\n      \"Init.Control.Lawful\",\n      \"Init.Control.Lawful.Basic\",\n      \"Init.Control.Lawful.Instances\",\n      \"Init.Control.Lawful.Lemmas\",\n      \"Init.Control.Lawful.MonadLift\",\n      \"Init.Control.Lawful.MonadLift.Basic\",\n      \"Init.Control.Lawful.MonadLift.Instances\",\n      \"Init.Control.Lawful.MonadLift.Lemmas\",\n      \"Init.Control.Option\",\n      \"Init.Control.Reader\",\n      \"Init.Control.State\",\n      \"Init.Control.StateCps\",\n      \"Init.Control.StateRef\",\n      \"Init.Conv\",\n      \"Init.Core\",\n      \"Init.Data\",\n      \"Init.Data.AC\",\n      \"Init.Data.Array\",\n      \"Init.Data.Array.Attach\",\n      \"Init.Data.Array.Basic\",\n      \"Init.Data.Array.BasicAux\",\n      \"Init.Data.Array.BinSearch\",\n      \"Init.Data.Array.Bootstrap\",\n      \"Init.Data.Array.Count\",\n      \"Init.Data.Array.DecidableEq\",\n      \"Init.Data.Array.Erase\",\n      \"Init.Data.Array.Extract\",\n      \"Init.Data.Array.FinRange\",\n      \"Init.Data.Array.Find\",\n      \"Init.Data.Array.GetLit\",\n      \"Init.Data.Array.InsertIdx\",\n      \"Init.Data.Array.InsertionSort\",\n      \"Init.Data.Array.Lemmas\",\n      \"Init.Data.Array.Lex\",\n      \"Init.Data.Array.Lex.Basic\",\n      \"Init.Data.Array.Lex.Lemmas\",\n      \"Init.Data.Array.MapIdx\",\n      \"Init.Data.Array.Mem\",\n      \"Init.Data.Array.Monadic\",\n      \"Init.Data.Array.OfFn\",\n      \"Init.Data.Array.Perm\",\n      \"Init.Data.Array.QSort\",\n      \"Init.Data.Array.QSort.Basic\",\n      \"Init.Data.Array.Range\",\n      \"Init.Data.Array.Set\",\n      \"Init.Data.Array.Subarray\",\n      \"Init.Data.Array.Subarray.Split\",\n      \"Init.Data.Array.TakeDrop\",\n      \"Init.Data.Array.Zip\",\n      \"Init.Data.BEq\",\n      \"Init.Data.Basic\",\n      \"Init.Data.BitVec\",\n      \"Init.Data.BitVec.Basic\",\n      \"Init.Data.BitVec.BasicAux\",\n      \"Init.Data.BitVec.Bitblast\",\n      \"Init.Data.BitVec.Bootstrap\",\n      \"Init.Data.BitVec.Decidable\",\n      \"Init.Data.BitVec.Folds\",\n      \"Init.Data.BitVec.Lemmas\",\n      \"Init.Data.Bool\",\n      \"Init.Data.ByteArray\",\n      \"Init.Data.ByteArray.Basic\",\n      \"Init.Data.ByteArray.Extra\",\n      \"Init.Data.Cast\",\n      \"Init.Data.Char\",\n      \"Init.Data.Char.Basic\",\n      \"Init.Data.Char.Lemmas\",\n      \"Init.Data.Char.Order\",\n      \"Init.Data.Dyadic\",\n      \"Init.Data.Dyadic.Basic\",\n      \"Init.Data.Dyadic.Instances\",\n      \"Init.Data.Dyadic.Inv\",\n      \"Init.Data.Dyadic.Round\",\n      \"Init.Data.Fin\",\n      \"Init.Data.Fin.Basic\",\n      \"Init.Data.Fin.Bitwise\",\n      \"Init.Data.Fin.Fold\",\n      \"Init.Data.Fin.Iterate\",\n      \"Init.Data.Fin.Lemmas\",\n      \"Init.Data.Fin.Log2\",\n      \"Init.Data.Float\",\n      \"Init.Data.Float32\",\n      \"Init.Data.FloatArray\",\n      \"Init.Data.FloatArray.Basic\",\n      \"Init.Data.Format\",\n      \"Init.Data.Format.Basic\",\n      \"Init.Data.Format.Instances\",\n      \"Init.Data.Format.Macro\",\n      \"Init.Data.Format.Syntax\",\n      \"Init.Data.Function\",\n      \"Init.Data.Hashable\",\n      \"Init.Data.Int\",\n      \"Init.Data.Int.Basic\",\n      \"Init.Data.Int.Bitwise\",\n      \"Init.Data.Int.Bitwise.Basic\",\n      \"Init.Data.Int.Bitwise.Lemmas\",\n      \"Init.Data.Int.Compare\",\n      \"Init.Data.Int.Cooper\",\n      \"Init.Data.Int.DivMod\",\n      \"Init.Data.Int.DivMod.Basic\",\n      \"Init.Data.Int.DivMod.Bootstrap\",\n      \"Init.Data.Int.DivMod.Lemmas\",\n      \"Init.Data.Int.Gcd\",\n      \"Init.Data.Int.Lemmas\",\n      \"Init.Data.Int.LemmasAux\",\n      \"Init.Data.Int.Linear\",\n      \"Init.Data.Int.OfNat\",\n      \"Init.Data.Int.Order\",\n      \"Init.Data.Int.Pow\",\n      \"Init.Data.Iterators\",\n      \"Init.Data.Iterators.Basic\",\n      \"Init.Data.Iterators.Combinators\",\n      \"Init.Data.Iterators.Combinators.Attach\",\n      \"Init.Data.Iterators.Combinators.FilterMap\",\n      \"Init.Data.Iterators.Combinators.Monadic\",\n      \"Init.Data.Iterators.Combinators.Monadic.Attach\",\n      \"Init.Data.Iterators.Combinators.Monadic.FilterMap\",\n      \"Init.Data.Iterators.Combinators.Monadic.ULift\",\n      \"Init.Data.Iterators.Combinators.ULift\",\n      \"Init.Data.Iterators.Consumers\",\n      \"Init.Data.Iterators.Consumers.Access\",\n      \"Init.Data.Iterators.Consumers.Collect\",\n      \"Init.Data.Iterators.Consumers.Loop\",\n      \"Init.Data.Iterators.Consumers.Monadic\",\n      \"Init.Data.Iterators.Consumers.Monadic.Access\",\n      \"Init.Data.Iterators.Consumers.Monadic.Collect\",\n      \"Init.Data.Iterators.Consumers.Monadic.Loop\",\n      \"Init.Data.Iterators.Consumers.Monadic.Partial\",\n      \"Init.Data.Iterators.Consumers.Partial\",\n      \"Init.Data.Iterators.Consumers.Stream\",\n      \"Init.Data.Iterators.Internal\",\n      \"Init.Data.Iterators.Internal.LawfulMonadLiftFunction\",\n      \"Init.Data.Iterators.Internal.Termination\",\n      \"Init.Data.Iterators.Lemmas\",\n      \"Init.Data.Iterators.Lemmas.Basic\",\n      \"Init.Data.Iterators.Lemmas.Combinators\",\n      \"Init.Data.Iterators.Lemmas.Combinators.Attach\",\n      \"Init.Data.Iterators.Lemmas.Combinators.FilterMap\",\n      \"Init.Data.Iterators.Lemmas.Combinators.Monadic\",\n      \"Init.Data.Iterators.Lemmas.Combinators.Monadic.Attach\",\n      \"Init.Data.Iterators.Lemmas.Combinators.Monadic.FilterMap\",\n      \"Init.Data.Iterators.Lemmas.Combinators.Monadic.ULift\",\n      \"Init.Data.Iterators.Lemmas.Combinators.ULift\",\n      \"Init.Data.Iterators.Lemmas.Consumers\",\n      \"Init.Data.Iterators.Lemmas.Consumers.Collect\",\n      \"Init.Data.Iterators.Lemmas.Consumers.Loop\",\n      \"Init.Data.Iterators.Lemmas.Consumers.Monadic\",\n      \"Init.Data.Iterators.Lemmas.Consumers.Monadic.Collect\",\n      \"Init.Data.Iterators.Lemmas.Consumers.Monadic.Loop\",\n      \"Init.Data.Iterators.Lemmas.Monadic.Basic\",\n      \"Init.Data.Iterators.PostconditionMonad\",\n      \"Init.Data.Iterators.ToIterator\",\n      \"Init.Data.List\",\n      \"Init.Data.List.Attach\",\n      \"Init.Data.List.Basic\",\n      \"Init.Data.List.BasicAux\",\n      \"Init.Data.List.Control\",\n      \"Init.Data.List.Count\",\n      \"Init.Data.List.Erase\",\n      \"Init.Data.List.FinRange\",\n      \"Init.Data.List.Find\",\n      \"Init.Data.List.Impl\",\n      \"Init.Data.List.Lemmas\",\n      \"Init.Data.List.Lex\",\n      \"Init.Data.List.MapIdx\",\n      \"Init.Data.List.MinMax\",\n      \"Init.Data.List.Monadic\",\n      \"Init.Data.List.Nat\",\n      \"Init.Data.List.Nat.BEq\",\n      \"Init.Data.List.Nat.Basic\",\n      \"Init.Data.List.Nat.Count\",\n      \"Init.Data.List.Nat.Erase\",\n      \"Init.Data.List.Nat.Find\",\n      \"Init.Data.List.Nat.InsertIdx\",\n      \"Init.Data.List.Nat.Modify\",\n      \"Init.Data.List.Nat.Pairwise\",\n      \"Init.Data.List.Nat.Perm\",\n      \"Init.Data.List.Nat.Range\",\n      \"Init.Data.List.Nat.Sublist\",\n      \"Init.Data.List.Nat.TakeDrop\",\n      \"Init.Data.List.Notation\",\n      \"Init.Data.List.OfFn\",\n      \"Init.Data.List.Pairwise\",\n      \"Init.Data.List.Perm\",\n      \"Init.Data.List.Range\",\n      \"Init.Data.List.Sort\",\n      \"Init.Data.List.Sort.Basic\",\n      \"Init.Data.List.Sort.Impl\",\n      \"Init.Data.List.Sort.Lemmas\",\n      \"Init.Data.List.Sublist\",\n      \"Init.Data.List.TakeDrop\",\n      \"Init.Data.List.ToArray\",\n      \"Init.Data.List.ToArrayImpl\",\n      \"Init.Data.List.Zip\",\n      \"Init.Data.Nat\",\n      \"Init.Data.Nat.Basic\",\n      \"Init.Data.Nat.Bitwise\",\n      \"Init.Data.Nat.Bitwise.Basic\",\n      \"Init.Data.Nat.Bitwise.Lemmas\",\n      \"Init.Data.Nat.Compare\",\n      \"Init.Data.Nat.Control\",\n      \"Init.Data.Nat.Coprime\",\n      \"Init.Data.Nat.Div\",\n      \"Init.Data.Nat.Div.Basic\",\n      \"Init.Data.Nat.Div.Lemmas\",\n      \"Init.Data.Nat.Dvd\",\n      \"Init.Data.Nat.Fold\",\n      \"Init.Data.Nat.Gcd\",\n      \"Init.Data.Nat.Lcm\",\n      \"Init.Data.Nat.Lemmas\",\n      \"Init.Data.Nat.Linear\",\n      \"Init.Data.Nat.Log2\",\n      \"Init.Data.Nat.MinMax\",\n      \"Init.Data.Nat.Mod\",\n      \"Init.Data.Nat.Order\",\n      \"Init.Data.Nat.Power2\",\n      \"Init.Data.Nat.SOM\",\n      \"Init.Data.Nat.Simproc\",\n      \"Init.Data.NeZero\",\n      \"Init.Data.OfScientific\",\n      \"Init.Data.Option\",\n      \"Init.Data.Option.Array\",\n      \"Init.Data.Option.Attach\",\n      \"Init.Data.Option.Basic\",\n      \"Init.Data.Option.BasicAux\",\n      \"Init.Data.Option.Coe\",\n      \"Init.Data.Option.Instances\",\n      \"Init.Data.Option.Lemmas\",\n      \"Init.Data.Option.List\",\n      \"Init.Data.Option.Monadic\",\n      \"Init.Data.Ord\",\n      \"Init.Data.Ord.Basic\",\n      \"Init.Data.Ord.BitVec\",\n      \"Init.Data.Ord.SInt\",\n      \"Init.Data.Ord.String\",\n      \"Init.Data.Ord.UInt\",\n      \"Init.Data.Ord.Vector\",\n      \"Init.Data.Order\",\n      \"Init.Data.Order.Classes\",\n      \"Init.Data.Order.ClassesExtra\",\n      \"Init.Data.Order.Factories\",\n      \"Init.Data.Order.FactoriesExtra\",\n      \"Init.Data.Order.Lemmas\",\n      \"Init.Data.Order.LemmasExtra\",\n      \"Init.Data.Order.Ord\",\n      \"Init.Data.Order.PackageFactories\",\n      \"Init.Data.PLift\",\n      \"Init.Data.Prod\",\n      \"Init.Data.Queue\",\n      \"Init.Data.RArray\",\n      \"Init.Data.Random\",\n      \"Init.Data.Range\",\n      \"Init.Data.Range.Basic\",\n      \"Init.Data.Range.Lemmas\",\n      \"Init.Data.Range.Polymorphic\",\n      \"Init.Data.Range.Polymorphic.Basic\",\n      \"Init.Data.Range.Polymorphic.BitVec\",\n      \"Init.Data.Range.Polymorphic.GetElemTactic\",\n      \"Init.Data.Range.Polymorphic.Instances\",\n      \"Init.Data.Range.Polymorphic.Int\",\n      \"Init.Data.Range.Polymorphic.Iterators\",\n      \"Init.Data.Range.Polymorphic.Lemmas\",\n      \"Init.Data.Range.Polymorphic.Nat\",\n      \"Init.Data.Range.Polymorphic.NatLemmas\",\n      \"Init.Data.Range.Polymorphic.PRange\",\n      \"Init.Data.Range.Polymorphic.RangeIterator\",\n      \"Init.Data.Range.Polymorphic.Stream\",\n      \"Init.Data.Range.Polymorphic.UInt\",\n      \"Init.Data.Range.Polymorphic.UpwardEnumerable\",\n      \"Init.Data.Rat\",\n      \"Init.Data.Rat.Basic\",\n      \"Init.Data.Rat.Lemmas\",\n      \"Init.Data.Repr\",\n      \"Init.Data.SInt\",\n      \"Init.Data.SInt.Basic\",\n      \"Init.Data.SInt.Bitwise\",\n      \"Init.Data.SInt.Float\",\n      \"Init.Data.SInt.Float32\",\n      \"Init.Data.SInt.Lemmas\",\n      \"Init.Data.Slice\",\n      \"Init.Data.Slice.Array\",\n      \"Init.Data.Slice.Array.Basic\",\n      \"Init.Data.Slice.Array.Iterator\",\n      \"Init.Data.Slice.Array.Lemmas\",\n      \"Init.Data.Slice.Basic\",\n      \"Init.Data.Slice.Lemmas\",\n      \"Init.Data.Slice.Notation\",\n      \"Init.Data.Slice.Operations\",\n      \"Init.Data.Stream\",\n      \"Init.Data.String\",\n      \"Init.Data.String.Basic\",\n      \"Init.Data.String.Bootstrap\",\n      \"Init.Data.String.Extra\",\n      \"Init.Data.String.Lemmas\",\n      \"Init.Data.String.Repr\",\n      \"Init.Data.Subtype\",\n      \"Init.Data.Subtype.Basic\",\n      \"Init.Data.Subtype.Order\",\n      \"Init.Data.Subtype.OrderExtra\",\n      \"Init.Data.Sum\",\n      \"Init.Data.Sum.Basic\",\n      \"Init.Data.Sum.Lemmas\",\n      \"Init.Data.ToString\",\n      \"Init.Data.ToString.Basic\",\n      \"Init.Data.ToString.Macro\",\n      \"Init.Data.ToString.Name\",\n      \"Init.Data.UInt\",\n      \"Init.Data.UInt.Basic\",\n      \"Init.Data.UInt.BasicAux\",\n      \"Init.Data.UInt.Bitwise\",\n      \"Init.Data.UInt.Lemmas\",\n      \"Init.Data.UInt.Log2\",\n      \"Init.Data.ULift\",\n      \"Init.Data.Vector\",\n      \"Init.Data.Vector.Algebra\",\n      \"Init.Data.Vector.Attach\",\n      \"Init.Data.Vector.Basic\",\n      \"Init.Data.Vector.Count\",\n      \"Init.Data.Vector.DecidableEq\",\n      \"Init.Data.Vector.Erase\",\n      \"Init.Data.Vector.Extract\",\n      \"Init.Data.Vector.FinRange\",\n      \"Init.Data.Vector.Find\",\n      \"Init.Data.Vector.InsertIdx\",\n      \"Init.Data.Vector.Lemmas\",\n      \"Init.Data.Vector.Lex\",\n      \"Init.Data.Vector.MapIdx\",\n      \"Init.Data.Vector.Monadic\",\n      \"Init.Data.Vector.OfFn\",\n      \"Init.Data.Vector.Perm\",\n      \"Init.Data.Vector.Range\",\n      \"Init.Data.Vector.Zip\",\n      \"Init.Data.Zero\",\n      \"Init.Dynamic\",\n      \"Init.Ext\",\n      \"Init.GetElem\",\n      \"Init.Grind\",\n      \"Init.Grind.AC\",\n      \"Init.Grind.Attr\",\n      \"Init.Grind.Cases\",\n      \"Init.Grind.Ext\",\n      \"Init.Grind.Lemmas\",\n      \"Init.Grind.Module\",\n      \"Init.Grind.Module.Basic\",\n      \"Init.Grind.Module.Envelope\",\n      \"Init.Grind.Module.NatModuleNorm\",\n      \"Init.Grind.Module.OfNatModule\",\n      \"Init.Grind.Norm\",\n      \"Init.Grind.Offset\",\n      \"Init.Grind.Ordered\",\n      \"Init.Grind.Ordered.Field\",\n      \"Init.Grind.Ordered.Int\",\n      \"Init.Grind.Ordered.Linarith\",\n      \"Init.Grind.Ordered.Module\",\n      \"Init.Grind.Ordered.Order\",\n      \"Init.Grind.Ordered.Rat\",\n      \"Init.Grind.Ordered.Ring\",\n      \"Init.Grind.PP\",\n      \"Init.Grind.Propagator\",\n      \"Init.Grind.Ring\",\n      \"Init.Grind.Ring.Basic\",\n      \"Init.Grind.Ring.CommSemiringAdapter\",\n      \"Init.Grind.Ring.CommSolver\",\n      \"Init.Grind.Ring.Envelope\",\n      \"Init.Grind.Ring.Field\",\n      \"Init.Grind.Ring.ToInt\",\n      \"Init.Grind.Tactics\",\n      \"Init.Grind.ToInt\",\n      \"Init.Grind.ToIntLemmas\",\n      \"Init.Grind.Util\",\n      \"Init.GrindInstances\",\n      \"Init.GrindInstances.Nat\",\n      \"Init.GrindInstances.Ring\",\n      \"Init.GrindInstances.Ring.BitVec\",\n      \"Init.GrindInstances.Ring.Fin\",\n      \"Init.GrindInstances.Ring.Int\",\n      \"Init.GrindInstances.Ring.Nat\",\n      \"Init.GrindInstances.Ring.Rat\",\n      \"Init.GrindInstances.Ring.SInt\",\n      \"Init.GrindInstances.Ring.UInt\",\n      \"Init.GrindInstances.ToInt\",\n      \"Init.Guard\",\n      \"Init.Hints\",\n      \"Init.Internal\",\n      \"Init.Internal.Order\",\n      \"Init.Internal.Order.Basic\",\n      \"Init.Internal.Order.Lemmas\",\n      \"Init.Internal.Order.Tactic\",\n      \"Init.MacroTrace\",\n      \"Init.Meta\",\n      \"Init.Meta.Defs\",\n      \"Init.MetaTypes\",\n      \"Init.Notation\",\n      \"Init.NotationExtra\",\n      \"Init.Omega\",\n      \"Init.Omega.Coeffs\",\n      \"Init.Omega.Constraint\",\n      \"Init.Omega.Int\",\n      \"Init.Omega.IntList\",\n      \"Init.Omega.LinearCombo\",\n      \"Init.Omega.Logic\",\n      \"Init.Prelude\",\n      \"Init.PropLemmas\",\n      \"Init.RCases\",\n      \"Init.ShareCommon\",\n      \"Init.SimpLemmas\",\n      \"Init.Simproc\",\n      \"Init.SizeOf\",\n      \"Init.SizeOfLemmas\",\n      \"Init.Syntax\",\n      \"Init.System\",\n      \"Init.System.FilePath\",\n      \"Init.System.IO\",\n      \"Init.System.IOError\",\n      \"Init.System.Platform\",\n      \"Init.System.Promise\",\n      \"Init.System.ST\",\n      \"Init.System.Uri\",\n      \"Init.Tactics\",\n      \"Init.TacticsExtra\",\n      \"Init.Task\",\n      \"Init.Try\",\n      \"Init.Util\",\n      \"Init.WF\",\n      \"Init.WFTactics\",\n      \"Init.While\",\n      \"Proof\",\n      \"Tasks.KernelGroup\"\n    ],\n    \"axioms_used\": [\n      \"propext\"\n    ],\n    \"audited_declarations\": 126\n  },\n  \"toolchain\": \"Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)\",\n  \"seal_sha256\": \"61a9a122a9f723b0b0ca79c269b73d46673d6c3799bdd301a2eac1734de835b0\"\n}\n",
+        "attempts/kernel_group/001/submission.json": "{\n  \"task_id\": \"kernel_group\",\n  \"request_sha256\": \"e9195cfbf010d86f4d337ac82bcb2f7b5600ee878db1c6dfc696ff7af81af0a4\",\n  \"proof\": \"by\\n  intro G H g h f hf\\n  let F : Theory.Hom g h := ⟨f, hf⟩\\n  exact ⟨Theory.Kernel.group F, rfl, (fun _ _ => rfl), (fun _ => rfl)⟩\\n\",\n  \"bridge\": \"Controller-supplied post-interruption revalidation, outside the solving cohort.\"\n}\n",
+        "reservations/kernel_group-001.json": "{\n  \"task_id\": \"kernel_group\",\n  \"attempt\": 1,\n  \"request_sha256\": \"e9195cfbf010d86f4d337ac82bcb2f7b5600ee878db1c6dfc696ff7af81af0a4\",\n  \"proof_sha256\": \"efe3d68c70da54f35600bf02cc9b59bf580befafd0f95420fbaf5c725dc30a0f\",\n  \"submission_sha256\": \"899c6373be42c4b02fdbbead2e7dcca49e114860641c5be2221c4f857b01bbfb\",\n  \"generation_usage\": \"caller supplied; not independently verified\",\n  \"seal_sha256\": \"99d8aeac8e8a91c04323d37f64a57a38b20101ac45b155d2ab7804c82e4ce1cd\"\n}\n",
+        "session.json": "{\n  \"schema_version\": 1,\n  \"condition\": \"treatment\",\n  \"solver\": {\n    \"id\": \"controller-revalidation-after-interruption\",\n    \"mode\": \"supplied_reference\"\n  },\n  \"fingerprints\": {\n    \"suite_sha256\": \"7548b3427ce1e4b8eac3a3150a7f9f816414c1c5df9ca97bb4fbb7bebc62a2af\",\n    \"package_sha256\": \"401d367bd4c15947a5366029cda3852b1b064738a7069ab53a82f42687ffbd79\",\n    \"source_sha256\": {\n      \"Base\": \"c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394\",\n      \"Candidate\": \"c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75\",\n      \"Extension\": \"b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c\",\n      \"Tasks.Intersection\": \"8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7\",\n      \"Tasks.KernelGroup\": \"3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b\",\n      \"Tasks.Restriction\": \"13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed\",\n      \"Tasks.Words\": \"fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a\"\n    },\n    \"evaluator_sha256\": \"fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4\",\n    \"reference_evaluator_sha256\": \"882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9\",\n    \"checker_sha256\": \"2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29\"\n  },\n  \"provenance\": {\n    \"code_commit\": null,\n    \"workflow_run_id\": null\n  },\n  \"seal_sha256\": \"2a75a78f45a7431b36d5713b681ce2504356c4fef8190c9a91f7b5c0e710359d\"\n}\n",
+        "snapshot/Base.lean": "/- Isolated foundation: no Mathlib and no pre-existing homomorphism API. -/\nnamespace Foundation\n\nstructure Group (G : Type) where\n  one : G\n  mul : G → G → G\n  inv : G → G\n  one_mul : ∀ x, mul one x = x\n  mul_one : ∀ x, mul x one = x\n  mul_assoc : ∀ x y z, mul (mul x y) z = mul x (mul y z)\n  inv_mul : ∀ x, mul (inv x) x = one\n\ndef kernelMulGoal : Prop :=\n  ∀ (G H : Type) (g : Group G) (h : Group H)\n    (f : G → H) (hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (x y : G), f x = h.one → f y = h.one → f (g.mul x y) = h.one\n\nend Foundation\n",
+        "snapshot/Candidate.lean": "import Base\n\nnamespace Theory\n\nstructure Hom {G H : Type} (g : Foundation.Group G) (h : Foundation.Group H) where\n  toFun : G → H\n  map_mul : ∀ x y, toFun (g.mul x y) = h.mul (toFun x) (toFun y)\n\ndef kernel {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) (x : G) : Prop :=\n  f.toFun x = h.one\n\ndef Kernel {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) : Type :=\n  { x : G // kernel f x }\n\ntheorem kernel_mul {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) {x y : G} (hx : kernel f x) (hy : kernel f y) :\n    kernel f (g.mul x y) := by\n  change f.toFun (g.mul x y) = h.one\n  calc\n    f.toFun (g.mul x y) = h.mul (f.toFun x) (f.toFun y) := f.map_mul x y\n    _ = h.mul h.one (f.toFun y) := congrArg (fun z => h.mul z (f.toFun y)) hx\n    _ = h.mul h.one h.one := congrArg (fun z => h.mul h.one z) hy\n    _ = h.one := h.one_mul h.one\n\ndef Kernel.mul {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    {f : Hom g h} (x y : Kernel f) : Kernel f :=\n  ⟨g.mul x.val y.val, kernel_mul f x.property y.property⟩\n\nend Theory\n",
+        "snapshot/Extension.lean": "import Candidate\n\n/- A proved extension of the unchanged v1 package, over the same left-inverse\n   foundation. Every helper below is part of the charged v2 package. -/\nnamespace Theory\n\nnamespace GroupFacts\n\ntheorem left_cancel {G : Type} (g : Foundation.Group G) (a b c : G)\n    (e : g.mul a b = g.mul a c) : b = c := by\n  calc\n    b = g.mul g.one b := (g.one_mul b).symm\n    _ = g.mul (g.mul (g.inv a) a) b :=\n      congrArg (fun z => g.mul z b) (g.inv_mul a).symm\n    _ = g.mul (g.inv a) (g.mul a b) := g.mul_assoc (g.inv a) a b\n    _ = g.mul (g.inv a) (g.mul a c) := congrArg (g.mul (g.inv a)) e\n    _ = g.mul (g.mul (g.inv a) a) c := (g.mul_assoc (g.inv a) a c).symm\n    _ = g.mul g.one c := congrArg (fun z => g.mul z c) (g.inv_mul a)\n    _ = c := g.one_mul c\n\ntheorem mul_inv {G : Type} (g : Foundation.Group G) (x : G) :\n    g.mul x (g.inv x) = g.one := by\n  apply left_cancel g (g.inv x)\n  calc\n    g.mul (g.inv x) (g.mul x (g.inv x)) =\n        g.mul (g.mul (g.inv x) x) (g.inv x) :=\n      (g.mul_assoc (g.inv x) x (g.inv x)).symm\n    _ = g.mul g.one (g.inv x) := congrArg (fun z => g.mul z (g.inv x)) (g.inv_mul x)\n    _ = g.inv x := g.one_mul (g.inv x)\n    _ = g.mul (g.inv x) g.one := (g.mul_one (g.inv x)).symm\n\ntheorem inv_one {G : Type} (g : Foundation.Group G) : g.inv g.one = g.one :=\n  (g.mul_one (g.inv g.one)).symm.trans (g.inv_mul g.one)\n\nend GroupFacts\n\ntheorem Hom.map_one {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) : f.toFun g.one = h.one := by\n  apply GroupFacts.left_cancel h (f.toFun g.one)\n  calc\n    h.mul (f.toFun g.one) (f.toFun g.one) = f.toFun (g.mul g.one g.one) :=\n      (f.map_mul g.one g.one).symm\n    _ = f.toFun g.one := congrArg f.toFun (g.one_mul g.one)\n    _ = h.mul (f.toFun g.one) h.one := (h.mul_one (f.toFun g.one)).symm\n\ntheorem Hom.map_inv {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) (x : G) : f.toFun (g.inv x) = h.inv (f.toFun x) := by\n  apply GroupFacts.left_cancel h (f.toFun x)\n  calc\n    h.mul (f.toFun x) (f.toFun (g.inv x)) = f.toFun (g.mul x (g.inv x)) :=\n      (f.map_mul x (g.inv x)).symm\n    _ = f.toFun g.one := congrArg f.toFun (GroupFacts.mul_inv g x)\n    _ = h.one := f.map_one\n    _ = h.mul (f.toFun x) (h.inv (f.toFun x)) :=\n      (GroupFacts.mul_inv h (f.toFun x)).symm\n\ntheorem kernel_one {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) : kernel f g.one := f.map_one\n\ntheorem kernel_inv {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) {x : G} (hx : kernel f x) : kernel f (g.inv x) := by\n  change f.toFun (g.inv x) = h.one\n  calc\n    f.toFun (g.inv x) = h.inv (f.toFun x) := f.map_inv x\n    _ = h.inv h.one := congrArg h.inv hx\n    _ = h.one := GroupFacts.inv_one h\n\ndef Kernel.group {G H : Type} {g : Foundation.Group G} {h : Foundation.Group H}\n    (f : Hom g h) : Foundation.Group (Kernel f) where\n  one := ⟨g.one, kernel_one f⟩\n  mul := Kernel.mul\n  inv := fun x => ⟨g.inv x.val, kernel_inv f x.property⟩\n  one_mul := fun x => Subtype.eq (g.one_mul x.val)\n  mul_one := fun x => Subtype.eq (g.mul_one x.val)\n  mul_assoc := fun x y z => Subtype.eq (g.mul_assoc x.val y.val z.val)\n  inv_mul := fun x => Subtype.eq (g.inv_mul x.val)\n\nend Theory\n",
+        "snapshot/Tasks/Intersection.lean": "import Base\nnamespace Tasks\ndef intersection : Prop :=\n  ∀ (G H J : Type) (g : Foundation.Group G) (h : Foundation.Group H)\n    (j : Foundation.Group J) (f : G → H) (q : G → J)\n    (_hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (_hq : ∀ x y, q (g.mul x y) = j.mul (q x) (q y)),\n    ∃ k : Foundation.Group {x : G // f x = h.one ∧ q x = j.one},\n      k.one.val = g.one ∧\n      (∀ x y, (k.mul x y).val = g.mul x.val y.val) ∧\n      (∀ x, (k.inv x).val = g.inv x.val)\nend Tasks\n",
+        "snapshot/Tasks/KernelGroup.lean": "import Base\nnamespace Tasks\ndef kernelGroup : Prop :=\n  ∀ (G H : Type) (g : Foundation.Group G) (h : Foundation.Group H)\n    (f : G → H) (_hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y)),\n    ∃ k : Foundation.Group {x : G // f x = h.one},\n      k.one.val = g.one ∧\n      (∀ x y, (k.mul x y).val = g.mul x.val y.val) ∧\n      (∀ x, (k.inv x).val = g.inv x.val)\nend Tasks\n",
+        "snapshot/Tasks/Restriction.lean": "import Base\nnamespace Tasks\ndef restriction : Prop :=\n  ∀ (A G H : Type) (a : Foundation.Group A) (g : Foundation.Group G)\n    (h : Foundation.Group H) (f : G → H)\n    (_hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (u : A → G) (_hu : ∀ x y, u (a.mul x y) = g.mul (u x) (u y))\n    (_image : ∀ x, f (u x) = h.one),\n    ∃ (k : Foundation.Group {x : G // f x = h.one})\n      (v : A → {x : G // f x = h.one}),\n      (∀ x, (v x).val = u x) ∧\n      (∀ x y, v (a.mul x y) = k.mul (v x) (v y)) ∧\n      k.one.val = g.one ∧\n      (∀ x y, (k.mul x y).val = g.mul x.val y.val) ∧\n      (∀ x, (k.inv x).val = g.inv x.val)\nend Tasks\n",
+        "snapshot/Tasks/Words.lean": "import Base\nnamespace Tasks\ninductive Word (G : Type) where\n  | unit : Word G\n  | atom : G → Word G\n  | product : Word G → Word G → Word G\n  | inverse : Word G → Word G\n\ndef Word.eval {G : Type} (g : Foundation.Group G) : Word G → G\n  | .unit => g.one\n  | .atom x => x\n  | .product x y => g.mul (x.eval g) (y.eval g)\n  | .inverse x => g.inv (x.eval g)\n\ndef Word.admissible {G : Type} (p : G → Prop) : Word G → Prop\n  | .unit => True\n  | .atom x => p x\n  | .product x y => x.admissible p ∧ y.admissible p\n  | .inverse x => x.admissible p\n\ndef words : Prop :=\n  ∀ (G H : Type) (g : Foundation.Group G) (h : Foundation.Group H)\n    (f : G → H) (_hf : ∀ x y, f (g.mul x y) = h.mul (f x) (f y))\n    (w : Word G), w.admissible (fun x => f x = h.one) → f (w.eval g) = h.one\nend Tasks\n",
+        "snapshot/package-v2.json": "{\n  \"schema_version\": 1,\n  \"package_id\": \"hom-kernel-group-v2\",\n  \"base_id\": \"minimal-groups-v1\",\n  \"idea\": \"Extend the unchanged v1 homomorphism/kernel API with derived identity and inverse preservation and the group structure on the kernel.\",\n  \"status\": \"proved_extension\",\n  \"modules\": [\n    \"Candidate\",\n    \"Extension\"\n  ],\n  \"declarations\": [\n    \"Theory.Hom\",\n    \"Theory.kernel\",\n    \"Theory.Kernel\",\n    \"Theory.kernel_mul\",\n    \"Theory.Kernel.mul\",\n    \"Theory.GroupFacts.left_cancel\",\n    \"Theory.GroupFacts.mul_inv\",\n    \"Theory.GroupFacts.inv_one\",\n    \"Theory.Hom.map_one\",\n    \"Theory.Hom.map_inv\",\n    \"Theory.kernel_one\",\n    \"Theory.kernel_inv\",\n    \"Theory.Kernel.group\"\n  ],\n  \"conjectures\": []\n}\n",
+        "snapshot/suite.json": "{\n  \"schema_version\": 1,\n  \"phase\": \"migration_calibration\",\n  \"lean_version\": \"4.24.0\",\n  \"base\": {\n    \"id\": \"minimal-groups-v1\",\n    \"modules\": [\n      \"Base\"\n    ],\n    \"allowed_core_prefixes\": [\n      \"Init\"\n    ],\n    \"allowed_axioms\": [\n      \"propext\",\n      \"Quot.sound\",\n      \"Classical.choice\"\n    ]\n  },\n  \"budget\": {\n    \"max_attempts_per_task\": 3,\n    \"max_proof_bytes\": 32768,\n    \"max_heartbeats\": 200000,\n    \"per_command_timeout_seconds\": 60,\n    \"per_attempt_timeout_seconds\": 180\n  },\n  \"suite_id\": \"hom-kernel-evolution-v2\",\n  \"package\": \"package-v2.json\",\n  \"tasks\": [\n    {\n      \"id\": \"kernel_group\",\n      \"module\": \"Tasks.KernelGroup\",\n      \"goal\": \"Tasks.kernelGroup\",\n      \"split\": \"development\",\n      \"family\": \"subobject_group\"\n    },\n    {\n      \"id\": \"restriction\",\n      \"module\": \"Tasks.Restriction\",\n      \"goal\": \"Tasks.restriction\",\n      \"split\": \"development\",\n      \"family\": \"factor_through_subobject\"\n    },\n    {\n      \"id\": \"intersection\",\n      \"module\": \"Tasks.Intersection\",\n      \"goal\": \"Tasks.intersection\",\n      \"split\": \"development\",\n      \"family\": \"intersection_of_subobjects\"\n    },\n    {\n      \"id\": \"words\",\n      \"module\": \"Tasks.Words\",\n      \"goal\": \"Tasks.words\",\n      \"split\": \"development\",\n      \"family\": \"recursive_group_words\"\n    }\n  ],\n  \"sources\": {\n    \"Base\": {\n      \"path\": \"Base.lean\",\n      \"sha256\": \"c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394\"\n    },\n    \"Candidate\": {\n      \"path\": \"Candidate.lean\",\n      \"sha256\": \"c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75\"\n    },\n    \"Extension\": {\n      \"path\": \"Extension.lean\",\n      \"sha256\": \"b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c\"\n    },\n    \"Tasks.KernelGroup\": {\n      \"path\": \"Tasks/KernelGroup.lean\",\n      \"sha256\": \"3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b\"\n    },\n    \"Tasks.Restriction\": {\n      \"path\": \"Tasks/Restriction.lean\",\n      \"sha256\": \"13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed\"\n    },\n    \"Tasks.Intersection\": {\n      \"path\": \"Tasks/Intersection.lean\",\n      \"sha256\": \"8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7\"\n    },\n    \"Tasks.Words\": {\n      \"path\": \"Tasks/Words.lean\",\n      \"sha256\": \"fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a\"\n    }\n  }\n}\n"
+      },
+      "seal_sha256": "73b92d5076e1c14e61d656c8a9242f314a64388482a258a56e399e58268cb343"
+    },
+    "scope": "This preserved recheck does not reconstruct or estimate the missing original construction cost."
+  },
+  "generation": {
+    "status": "unavailable",
+    "model_revision": null,
+    "sampling": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "reasoning_tokens": null,
+    "note": "Inherited model and effort; no model override. Exact provider usage was not exposed. Unknown is not zero."
+  },
+  "scope": {
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false,
+    "autonomous_discovery_claim": false
+  },
+  "interpretation": "Observed dependency paths include declaration types and are evidence of later reuse, not a causal value estimate. Whole packages are charged once per comparison; inherited modules are not charged twice. Generation and construction search costs remain unknown where unobserved."
+}

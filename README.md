@@ -23,8 +23,11 @@ See the [theory-package interface](docs/THEORY_PACKAGES.md) for M1 and the [migr
 本轮计入整包后，源码成本为 2632→3251 token，完整表达式成本为 29006→23136 节点，观察到的证明在两项成本上不可比；生成预算与精确模型版本未取得，因此不声称公平模型效果或可训练偏好。
 Charging the whole package, this round measures 2632→3251 source tokens and 29006→23136 complete expression nodes: the observed witnesses are incomparable on these costs. Generation budgets and exact model revision were unavailable, so no fair model-effectiveness or training-preference claim is made.
 
-M3 的 [四配置消融](docs/PACKAGE_ABLATIONS.md) 已检查 140 份给定证明与完整声明成本；多轮版本、延迟价值和实际学习继续按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
-M3's [four-configuration ablation](docs/PACKAGE_ABLATIONS.md) checks 140 supplied proofs and complete declaration costs; multi-round versions, delayed value and actual learning remain in the [research plan](docs/RESEARCH_PLAN.md).
+M3 的 [四配置消融](docs/PACKAGE_ABLATIONS.md) 已检查 140 份给定证明；[父子版本复用校准](docs/VERSION_EVOLUTION.md) 另在四个预选任务上保留 12 份核验证明及一次失败后修复，计入整包后基础库与 v2 在源码和表达式成本上不可比。
+M3's [four-configuration ablation](docs/PACKAGE_ABLATIONS.md) checks 140 supplied proofs; the [parent-child version reuse calibration](docs/VERSION_EVOLUTION.md) separately retains twelve checked proofs and one repaired failure on four preselected tasks, with baseline and v2 incomparable in source and expression costs after charging whole packages.
+
+两轮的生成预算都没有供应商计量，自动多轮探索、严格预留验证和实际学习继续按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
+Neither cohort has provider-metered generation budgets; automatic multi-round search, strict held-out validation and actual learning remain in the [research plan](docs/RESEARCH_PLAN.md).
 
 ## 快速运行 / Quick start
 
@@ -214,5 +217,5 @@ See the [migration protocol and commands](docs/MIGRATION_PROTOCOL.md); public re
 已增加四种配置、140 份冻结证明候选和完整声明表达式计量；每个候选保留原证明，输出源码／表达式成本的有限 Pareto 前沿，允许等价与不可比。
 Four configurations, 140 frozen proof candidates and complete declaration-expression inventories are implemented; each candidate retains the original proofs and produces finite Pareto frontiers over source/expression costs, allowing equivalence and incomparability.
 
-运行与口径见 [包消融协议](docs/PACKAGE_ABLATIONS.md)；本轮是公开任务上的校准，多轮概念发展与独立模型实验仍待开展。
-See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) for commands and conventions; this is calibration on public tasks, with multi-round concept development and independent model experiments still pending.
+运行与口径见 [包消融协议](docs/PACKAGE_ABLATIONS.md) 与 [版本复用实验](docs/VERSION_EVOLUTION.md)；现有版本比较只是预选任务上的校准，自动概念发展与生成预算公平的独立模型实验仍待开展。
+See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reuse experiment](docs/VERSION_EVOLUTION.md) for commands and conventions; current version comparison is calibration on preselected tasks, while automatic concept development and generation-budget-controlled independent model experiments remain pending.

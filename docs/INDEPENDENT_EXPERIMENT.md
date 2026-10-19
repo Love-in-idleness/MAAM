@@ -122,3 +122,6 @@ Identity preservation, inverse preservation and a group structure on the kernel 
 
 随后按 M3 增加有父版本和资源账本的多轮探索，最后再接入 M4 的训练与另一套任务上的训练前后比较；当前数据不直接生成强化学习偏好标签。
 Next, M3 adds multi-round exploration with parent versions and resource ledgers, followed by M4 training and pre/post-training comparison on another task set; current data does not directly produce RL preference labels.
+
+后续的 [版本复用校准](VERSION_EVOLUTION.md) 已建立 v1→v2 的父子档案并核验新任务；它仍属于开发任务上的受控演示，以上关于 M2 预算公平和 M4 的未完成状态未改变。
+A later [version reuse calibration](VERSION_EVOLUTION.md) established a v1→v2 archive and checked new tasks; it remains a controlled development-task demonstration, leaving the M2 budget-fairness and M4 limitations above unchanged.

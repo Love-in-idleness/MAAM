@@ -1,7 +1,7 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-18。状态：M1 已完成参考迁移；M2 已有逐任务协议、skill、20 个公开校准目标，并在另一组 20 个冻结目标上完成 40 个独立求解上下文，两边均核验 20/20；生成预算公平性与严格预留效果验收仍待完成。M3 已实现四配置校准消融和成本比较；多轮、延迟价值与 M4 尚未完成。
-Date: 2026-10-18. Status: M1 has a checked reference migration. M2 has a per-task protocol, skill and 20 public calibration goals, plus 40 fresh solving contexts on another 20 frozen goals, with 20/20 verified in both conditions; generation-budget fairness and strict held-out effectiveness acceptance remain unfinished. M3 implements four-configuration calibration ablations and cost comparisons; multi-round work, delayed value and M4 remain unfinished.
+日期：2026-10-19。状态：M1 已完成参考迁移；M2 已有逐任务协议、skill、20 个公开校准目标，并在另一组 20 个冻结目标上完成 40 个独立求解上下文，两边均核验 20/20；生成预算公平性与严格预留效果验收仍待完成。M3 已实现四配置消融、成本偏序及父子版本的一轮后续复用校准；自动多轮探索与 M4 尚未完成。
+Date: 2026-10-19. Status: M1 has a checked reference migration. M2 has a per-task protocol, skill and 20 public calibration goals, plus 40 fresh solving contexts on another 20 frozen goals, with 20/20 verified in both conditions; generation-budget fairness and strict held-out effectiveness acceptance remain unfinished. M3 implements four-configuration ablations, cost orders, and one parent-child version reuse calibration; automatic multi-round exploration and M4 remain unfinished.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
@@ -181,8 +181,8 @@ Topic: introduce group homomorphisms and kernels into a small base library conta
 这是把已知数学当作受控的新概念输入，用来检查评估系统；不声称发现历史上未知的数学。
 Known mathematics serves as a controlled new-concept input to test the evaluator; this is not a claim of historically novel mathematics.
 
-原有目标用函数 f 及条件 f(xy)=f(x)f(y)、集合 {x | f(x)=1} 等表达；完整实验计划比较 Hom、Ker、复合以及单位元、逆元、核封闭性等配套结论，当前固定校准包只含同态、核载体和乘法闭合。
-Original goals use a function f satisfying f(xy)=f(x)f(y) and sets such as {x | f(x)=1}; the full experiment plans to compare Hom, Ker, composition and identity/inverse/closure results, while the fixed calibration package currently contains homomorphisms, kernel carriers and multiplication closure.
+原有目标用函数 f 及条件 f(xy)=f(x)f(y)、集合 {x | f(x)=1} 等表达；v1 固定校准包含同态、核载体和乘法闭合，v2 在不改变基础的条件下另证单位元、逆元性质和核群结构；复合等更远的迁移仍待研究。
+Original goals use a function f satisfying f(xy)=f(x)f(y) and sets such as {x | f(x)=1}; the frozen v1 package contains homomorphisms, kernel carriers and multiplication closure, while v2 proves identity/inverse properties and a kernel group over the unchanged foundation; more distant transfer such as composition remains to be studied.
 
 在此基础上，预留不同推理模式的迁移任务，例如复合下核的描述、平凡核与单射的关系；具体划分在生成候选前固定，近重复归入同组。
 Reserve transfer tasks with different reasoning patterns, such as kernels of composites and the connection between trivial kernels and injectivity; freeze the exact split before candidate generation and keep near-duplicates together.
@@ -206,8 +206,11 @@ First prepare one complete checkable migration as a reference trace, then expand
 M1 已完成参考迁移与完整审计；M2 的 [独立上下文实验](INDEPENDENT_EXPERIMENT.md) 已实际生成并核验 40 份见证，保留全部 46 次提交记录，但模型修订、采样和生成 token 未取得，预算公平性未验收；M3 的校准消融见 [包消融](PACKAGE_ABLATIONS.md)。
 M1 has a reference migration and complete audits; M2's [independent-context experiment](INDEPENDENT_EXPERIMENT.md) generated and verified 40 witnesses and retains all 46 submissions, but model revision, sampling and generation tokens were unavailable, so budget fairness remains unaccepted; see [package ablations](PACKAGE_ABLATIONS.md) for M3 calibration.
 
-接下来先以单位元、逆元和核群结构构建有父版本的新理论包，记录整个构造与迁移成本，并在新的冻结任务上比较版本与后续用途。本轮公开后的 20 题仅作为开发/校准材料，不继续充当新版本的最终预留集。
-Next, develop a parent-linked package version with identity/inverse preservation and a kernel group structure, record complete construction/migration costs, and compare versions and later uses on fresh frozen tasks. The 20 published tasks from this round become development/calibration material and cannot remain the final reserved set for a revised package.
+已有父子版本的 [后续复用校准](VERSION_EVOLUTION.md) 在四个预选开发任务上得到 12 份核验证明、一次失败后修复和完整的包成本比较；这只完成 M3 的受控版本演示，并未完成自动候选搜索或严格预留效果验收。
+The parent-child [later-use calibration](VERSION_EVOLUTION.md) yielded twelve checked proofs on four preselected development tasks, one failure followed by repair, and full package-cost comparisons; this demonstrates a controlled M3 version exercise without completing automatic candidate search or strict held-out effectiveness acceptance.
+
+接下来先接入可实际调用模型的统一接口，记录精确模型修订、采样、生成用量与预算停止事件，再预先冻结未用过的迁移模式，比较同等资源下的版本；已公开的任务不得重新标为最终预留集。
+Next, add a unified interface that actually calls the model and records exact revision, sampling, generation usage and budget-stop events, then pre-freeze unused migration patterns for resource-matched version comparisons; published tasks cannot be relabelled as a final held-out set.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
@@ -217,8 +220,8 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.
 
-maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录实际独立求解上下文的输入输出、反馈和完整成本。LLM 已按 skill 构造表示桥接并生成证明，控制器检查其返回原始目标；供应商调用和生成计量尚未集成到 Python 驱动器。
-maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records inputs/outputs, feedback and complete costs from actual fresh solving contexts. LLM workers have constructed representation bridges and proofs through the skill, checked back against original goals by the controller; provider calls and generation metering are not yet integrated into the Python driver.
+maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录独立求解上下文的输入输出；maam/evolution.py 记录版本祖先、后续依赖路径、失败及完整包成本。LLM 已按 skill 构造表示桥接并生成证明，控制器检查其返回原始目标；供应商调用和生成计量尚未集成到 Python 驱动器。
+maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records fresh-context input/output; maam/evolution.py tracks version ancestry, later-use dependency paths, failures and whole-package costs. LLM workers have constructed bridges and proofs through the skill, checked back against original goals by the controller; provider calls and generation metering are not yet integrated into the Python driver.
 
 Mathlib 索引、压缩计数、PageRank 和源代码分析可复用作检索及描述；第一轮受控实验采用隔离基础库，以免完整 Mathlib 已经包含待引入概念。
 The Mathlib index, compression counts, PageRank and source analysis remain useful for retrieval and description; the first controlled experiment uses an isolated base so full Mathlib does not already supply the candidate concepts.

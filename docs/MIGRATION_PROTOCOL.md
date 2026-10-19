@@ -137,5 +137,8 @@ The new [independent-context experiment](INDEPENDENT_EXPERIMENT.md) ran 40 fresh
 该轮记录了冻结顺序、实际提示词和上下文标识，但精确模型版本、采样参数和生成 token 未取得；因此 M2 的生成预算公平性验收仍未完成，不能直接导出训练偏好。整包校准消融见 [包消融](PACKAGE_ABLATIONS.md)，下一步是 M3 多轮版本与新的冻结评价任务。
 That round records frozen order, actual prompts and context identifiers, but exact model revision, sampling and generation tokens were unavailable; M2 generation-budget fairness therefore remains unaccepted and no training preferences are exported directly. See [package ablations](PACKAGE_ABLATIONS.md) for calibration controls; next are M3 multi-round versions and fresh frozen evaluation tasks.
 
+后续已完成一次有父版本的 [复用校准](VERSION_EVOLUTION.md)，但尚无供应商计量或严格预留评价；上段保留的是当时的后续计划。
+A subsequent [parent-linked reuse calibration](VERSION_EVOLUTION.md) has been completed, but provider metering and strict held-out evaluation remain pending; the paragraph above preserves the earlier next-step plan.
+
 引入新命题或对象时，应把定义、表示桥接、性质和推论一起放入候选清单，先在开发集修改，再冻结新版本；不能依据预留集反馈修改同一版本。
 When introducing a new proposition or object, include its definitions, representation bridges, properties and corollaries in the candidate manifest, revise on development tasks, then freeze a new version; reserved feedback must not alter that version.

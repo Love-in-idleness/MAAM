@@ -76,3 +76,38 @@ The replacement keeps worker outputs in the workspace and adds `--checkpoints da
 
 操作进行中若再次丢失临时目录，只能恢复已实际保存的检查点；不能把未观察到完成的操作假定为从未发生。
 If temporary storage is lost during an operation, only checkpoints actually saved can be recovered; an operation whose completion was unobserved cannot be assumed never to have happened.
+
+## 替代实验的实测结果 / Measured replacement cohort
+
+替代实验以 `39e3048` 冻结输入和核验器；12 个全新任务上下文共提交 13 次，其中 12 份证明通过原目标与依赖审计，基础库的核交集任务首次因表达式遍历上限被拒，第二次修订通过。
+The replacement froze its inputs and verifier at `39e3048`; twelve fresh task contexts made thirteen submissions, twelve proofs passed the original-goal and dependency audit, and the baseline intersection task's first attempt hit the expression-traversal limit before its second attempt passed.
+
+每个条件均覆盖四个预选开发任务；下表将完整候选包只计入一次，随后加上四份核验成功的证明，比较的是本轮观察到的证明组合，而不是全局最短证明。
+Each condition covers all four preselected development tasks; the table charges its complete candidate package once and adds the four verified proofs, comparing observed proof portfolios rather than globally shortest proofs.
+
+| 条件 / Condition | 成功任务 / Solved | 提交 / Attempts | 整包源码 token / Package source tokens | 整包表达式节点 / Package expression nodes | 合计源码 token / Total source tokens | 合计表达式节点 / Total expression nodes |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 基础库 / Baseline | 4/4 | 5 | 0 | 0 | 1985 | 24568 |
+| v1 | 4/4 | 4 | 312 | 4341 | 2220 | 59118 |
+| v2 | 4/4 | 4 | 1100 | 9157 | 1574 | 55487 |
+
+v2 比 v1 的整包大：继承模块保持 312 个源码 token 与 4341 个表达式节点，新模块另有 788 个 token 与 4816 个节点；但本轮四份证明的合计成本仍在两个口径上低于 v1。
+V2 is a larger package than v1: the inherited module remains 312 source tokens and 4,341 expression nodes, while the new module adds 788 tokens and 4,816 nodes; the four observed proofs nevertheless give v2 a lower total in both cost units than v1.
+
+在这组证明与成本口径下，基础库支配 v1；基础库与 v2 不可比，后者节省 411 个源码 token，却增加 30919 个表达式节点。
+Under these observed proofs and cost conventions, baseline dominates v1; baseline and v2 are incomparable, as v2 saves 411 source tokens but adds 30,919 expression nodes.
+
+v2 的依赖图在四类任务中都触及新模块的声明；其中核群结构用于核群与映射限制任务，交集与递归词任务使用单位元或逆元的闭包路径。
+V2's dependency graphs reach declarations in the new module in all four task families; the kernel-group structure appears in the kernel-group and restriction tasks, while intersection and recursive-word tasks use identity or inverse closure paths.
+
+这些路径包括声明类型和编译器产生的内部证明节点，因此只是可核查的后续使用记录，不能把路径数量当成独立用途、因果收益或数学兴趣分数。
+These paths include declaration types and compiler-generated proof nodes, so they record auditable later use, not a count of independent applications, a causal gain, or a mathematical-interest score.
+
+首次中断实验的证明和生成成本未知；替代实验也没有供应商记录的模型修订、采样与生成 token，因而不能验收公平模型比较、严格预留效果、自动发现或强化学习训练标签。
+Proofs and generation costs from the interrupted first run remain unknown; the replacement also lacks provider-recorded model revision, sampling and generation tokens, so it cannot certify a fair model comparison, strict held-out effect, autonomous discovery, or reinforcement-learning labels.
+
+完整请求、提示词、13 次提交、反馈、原始命令日志、成本清单、依赖路径及中断说明均保存在 [结果档案](../results/evolution/)；`receipt.json` 区分本地核验与独立 CI 重放状态。
+The [result archive](../results/evolution/) preserves requests, prompts, all thirteen submissions and feedback, original command logs, cost inventories, dependency paths and the interruption record; `receipt.json` distinguishes local verification from independent CI replay.
+
+下一步是由统一供应商接口实际调用求解模型并记录版本、采样、生成 token 和预算截止事件，然后冻结未用过的迁移模式，比较同等资源下的新旧理论包；自动构造候选和 M4 学习仍是后续阶段。
+Next, a unified provider interface should actually call the solver and record model revision, sampling, generation tokens and budget-stop events, then freeze unused migration patterns to compare packages under matched resources; automatic candidate construction and M4 learning remain later stages.

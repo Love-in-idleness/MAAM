@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "local_verified_pending_clean_replay",
+  "study_id": "hom-kernel-evolution-recovery-01",
+  "freeze_commit": "39e3048d8985f6a484e55cf32755895df6cca11b",
+  "implementation_commit": "39e3048d8985f6a484e55cf32755895df6cca11b",
+  "attempts": 13,
+  "verified_witnesses": 12,
+  "original_audit_failures": 1,
+  "runner_sha256": "f8e17f86927e842b110dcf926e8938281d2cea504efdfc15fcd1567923c24fb4",
+  "reports_sha256": {
+    "baseline.json": "d84c8c0ecee9bb99c6cbb4169fe521be6958c8a7b63b000fe26b11e5662d62b5",
+    "controller.json": "aa86f9e2dc08bb6a86917fda9a09bc2972ccd1b619815b5fd49db8cbaae3ceaa",
+    "summary.json": "afee60f0cd792d12a6a3fcaf45c7b78eaec82b8f5cc98d4be7852f3ded4f7e57",
+    "v1.json": "b6866dda2286874bc26fc4c9c718bba70fad77940abe828724df5de9156726d6",
+    "v2.json": "dbc63bafd322b84c78f990fc7bda74698b19bd9bfc70504f7afbf4f81ea08ed1"
+  },
+  "scope": "Frozen replacement cohort. All original attempts, including one audit resource rejection, preserved. Generation usage and exact revision unavailable; interrupted first cohort has unknown outcomes/costs. No fair model-effectiveness, held-out, autonomous discovery or training claim."
+}
