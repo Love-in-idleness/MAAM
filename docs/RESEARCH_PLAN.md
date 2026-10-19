@@ -215,6 +215,9 @@ The parent-child [later-use calibration](VERSION_EVOLUTION.md) yielded twelve ch
 统一调用接口现已实现请求模型、响应模型标识、采样、生成用量与预算停止事件的记录，并完成单个公开任务上的真实调用校准，但不把模型别名当成精确修订证明；接下来应单独冻结包含新迁移模式、总实验预算和停止规则的协议，再比较同等资源下的版本，已公开的任务不得重新标为最终预留集。
 The unified interface now records requested and response-reported model identities, sampling, generation usage and budget-stop events and has completed a live calibration on one public task, without treating model aliases as proof of exact revision; next, separately freeze a protocol with new migration patterns, total experiment budgets and stop rules before resource-matched version comparisons, and never relabel published tasks as a final held-out set.
 
+后续已新增 [DeepSeek 冻结对照协议](METERED_TRANSFER.md)：候选 v2 保持不变，四个开发目标与四个新预留目标按推理模式分开，并实现阶段门控、整轮调用/输入/输出/费用预约及中断停止；预留目标的声明编译不算求解证据。
+The additive controller preserves old evaluator fingerprints and calibration flags, uses only DeepSeek for new paid calls, and separates matched allocations, observed usage and effectiveness claims; formal model outcomes are recorded separately from offline fixtures.
+
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
 

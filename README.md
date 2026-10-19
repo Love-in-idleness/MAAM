@@ -222,6 +222,9 @@ See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reus
 
 ## 生成用量与预算 / Generation usage and budgets
 
+新实验优先使用 DeepSeek：[冻结对照协议](docs/METERED_TRANSFER.md) 已加入四个开发目标、四个预留目标、阶段门控和整轮 US$0.10 费用估算上限，失败时不会回退到 OpenAI。
+New experiments use the DeepSeek-only transfer controller with fixed task splits, whole-run reservations and isolated Lean verification; preparation and offline checks make no provider calls.
+
 [生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
 The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.
 

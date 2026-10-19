@@ -1,5 +1,8 @@
 # 有计量的模型生成 / Metered model generation
 
+按用户最新要求，新运行使用 [DeepSeek 冻结对照协议](METERED_TRANSFER.md)，不会调用 OpenAI 或自动回退；下文保留原 OpenAI 校准接口与已观察证据的说明。
+The original controller remains unchanged for replay, while new provider calls go through the separately fingerprinted DeepSeek transport and whole-run guard.
+
 `maam/generation.py` 为现有迁移检查器增加真实 OpenAI Responses 调用、逐任务修复和生成用量记录，不改动已归档证据所绑定的评估器。
 `maam/generation.py` adds actual OpenAI Responses calls, task-local repair and generation records around the existing migration checker without changing the evaluators bound to archived evidence.
 

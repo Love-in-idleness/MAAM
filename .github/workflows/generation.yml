@@ -5,8 +5,14 @@ on:
       - 'maam/**'
       - 'scripts/control_generation.py'
       - 'scripts/check_generation.py'
+      - 'scripts/control_transfer.py'
+      - 'scripts/check_transfer.py'
+      - 'scripts/check_transfer_tasks.py'
       - 'tests/test_generation.py'
+      - 'tests/test_transfer*.py'
+      - 'tests/test_deepseek.py'
       - 'experiments/hom_kernel_migration/**'
+      - 'experiments/metered_transfer_v1/**'
       - '.github/workflows/generation.yml'
   pull_request:
   workflow_dispatch:
@@ -23,6 +29,10 @@ jobs:
           python-version: '3.11'
       - name: Offline accounting and failure controls
         run: python -m unittest discover -s tests -p test_generation.py -v
+      - name: Offline transfer protocol and DeepSeek boundaries
+        run: |
+          python -m unittest discover -s tests -p 'test_transfer*.py' -v
+          python -m unittest discover -s tests -p test_deepseek.py -v
       - name: Install pinned Lean
         run: |
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0

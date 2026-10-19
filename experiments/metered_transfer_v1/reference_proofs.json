@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "provenance": "Development-only author reference proofs for verifier smoke, not model output or provider usage. Reserved tasks intentionally have no proofs.",
+  "tasks": {
+    "d01": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z e\n  calc\n    f y = h.mul h.one (f y) := (h.one_mul (f y)).symm\n    _ = h.mul (h.mul (h.inv (f x)) (f x)) (f y) :=\n      congrArg (fun t => h.mul t (f y)) (h.inv_mul (f x)).symm\n    _ = h.mul (h.inv (f x)) (h.mul (f x) (f y)) :=\n      h.mul_assoc (h.inv (f x)) (f x) (f y)\n    _ = h.mul (h.inv (f x)) (f (g.mul x y)) :=\n      congrArg (h.mul (h.inv (f x))) (hf x y).symm\n    _ = h.mul (h.inv (f x)) (f z) := congrArg (h.mul (h.inv (f x))) e\n",
+        "bridge": "Recover a left image equation; treatment uses v2 left cancellation and right-inverse facts."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z e\n  apply Theory.GroupFacts.left_cancel h (f x)\n  calc\n    h.mul (f x) (f y) = f z := (hf x y).symm.trans e\n    _ = h.mul h.one (f z) := (h.one_mul (f z)).symm\n    _ = h.mul (h.mul (f x) (h.inv (f x))) (f z) :=\n      congrArg (fun t => h.mul t (f z)) (Theory.GroupFacts.mul_inv h (f x)).symm\n    _ = h.mul (f x) (h.mul (h.inv (f x)) (f z)) :=\n      h.mul_assoc (f x) (h.inv (f x)) (f z)\n",
+        "bridge": "Recover a left image equation; treatment uses v2 left cancellation and right-inverse facts."
+      }
+    },
+    "d02": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x y z e\n  have cancel : ∀ a b c : H, h.mul a b = h.mul a c → b = c := by\n    intro a b c e\n    calc\n      b = h.mul h.one b := (h.one_mul b).symm\n      _ = h.mul (h.mul (h.inv a) a) b :=\n        congrArg (fun t => h.mul t b) (h.inv_mul a).symm\n      _ = h.mul (h.inv a) (h.mul a b) := h.mul_assoc (h.inv a) a b\n      _ = h.mul (h.inv a) (h.mul a c) := congrArg (h.mul (h.inv a)) e\n      _ = h.mul (h.mul (h.inv a) a) c := (h.mul_assoc (h.inv a) a c).symm\n      _ = h.mul h.one c := congrArg (fun t => h.mul t c) (h.inv_mul a)\n      _ = c := h.one_mul c\n  have right_inv : ∀ a : H, h.mul a (h.inv a) = h.one := by\n    intro a\n    apply cancel (h.inv a)\n    calc\n      h.mul (h.inv a) (h.mul a (h.inv a)) =\n          h.mul (h.mul (h.inv a) a) (h.inv a) :=\n        (h.mul_assoc (h.inv a) a (h.inv a)).symm\n      _ = h.mul h.one (h.inv a) := congrArg (fun t => h.mul t (h.inv a)) (h.inv_mul a)\n      _ = h.inv a := h.one_mul (h.inv a)\n      _ = h.mul (h.inv a) h.one := (h.mul_one (h.inv a)).symm\n  calc\n    f y = h.mul (f y) h.one := (h.mul_one (f y)).symm\n    _ = h.mul (f y) (h.mul (f x) (h.inv (f x))) :=\n      congrArg (h.mul (f y)) (right_inv (f x)).symm\n    _ = h.mul (h.mul (f y) (f x)) (h.inv (f x)) :=\n      (h.mul_assoc (f y) (f x) (h.inv (f x))).symm\n    _ = h.mul (f (g.mul y x)) (h.inv (f x)) :=\n      congrArg (fun t => h.mul t (h.inv (f x))) (hf y x).symm\n    _ = h.mul (f z) (h.inv (f x)) :=\n      congrArg (fun t => h.mul t (h.inv (f x))) e\n",
+        "bridge": "Recover a right image equation; treatment reuses the v2 derived right-inverse theorem."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x y z e\n  calc\n    f y = h.mul (f y) h.one := (h.mul_one (f y)).symm\n    _ = h.mul (f y) (h.mul (f x) (h.inv (f x))) :=\n      congrArg (h.mul (f y)) (Theory.GroupFacts.mul_inv h (f x)).symm\n    _ = h.mul (h.mul (f y) (f x)) (h.inv (f x)) :=\n      (h.mul_assoc (f y) (f x) (h.inv (f x))).symm\n    _ = h.mul (f (g.mul y x)) (h.inv (f x)) :=\n      congrArg (fun t => h.mul t (h.inv (f x))) (hf y x).symm\n    _ = h.mul (f z) (h.inv (f x)) :=\n      congrArg (fun t => h.mul t (h.inv (f x))) e\n",
+        "bridge": "Recover a right image equation; treatment reuses the v2 derived right-inverse theorem."
+      }
+    },
+    "d03": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x e\n  have cancel : ∀ a b c : H, h.mul a b = h.mul a c → b = c := by\n    intro a b c e\n    calc\n      b = h.mul h.one b := (h.one_mul b).symm\n      _ = h.mul (h.mul (h.inv a) a) b :=\n        congrArg (fun t => h.mul t b) (h.inv_mul a).symm\n      _ = h.mul (h.inv a) (h.mul a b) := h.mul_assoc (h.inv a) a b\n      _ = h.mul (h.inv a) (h.mul a c) := congrArg (h.mul (h.inv a)) e\n      _ = h.mul (h.mul (h.inv a) a) c := (h.mul_assoc (h.inv a) a c).symm\n      _ = h.mul h.one c := congrArg (fun t => h.mul t c) (h.inv_mul a)\n      _ = c := h.one_mul c\n  have map_one : f g.one = h.one := by\n    apply cancel (f g.one)\n    calc\n      h.mul (f g.one) (f g.one) = f (g.mul g.one g.one) := (hf g.one g.one).symm\n      _ = f g.one := congrArg f (g.one_mul g.one)\n      _ = h.mul (f g.one) h.one := (h.mul_one (f g.one)).symm\n  calc\n    h.mul (f x) (f x) = f (g.mul x x) := (hf x x).symm\n    _ = f g.one := congrArg f e\n    _ = h.one := map_one\n",
+        "bridge": "Transport an element of order dividing two; treatment reuses v2 identity preservation."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x e\n  let F : Theory.Hom g h := ⟨f, hf⟩\n  calc\n    h.mul (f x) (f x) = f (g.mul x x) := (hf x x).symm\n    _ = f g.one := congrArg f e\n    _ = h.one := F.map_one\n",
+        "bridge": "Transport an element of order dividing two; treatment reuses v2 identity preservation."
+      }
+    },
+    "d04": {
+      "baseline": {
+        "proof": "by\n  intro G H g h f hf x\n  have cancel : ∀ a b c : H, h.mul a b = h.mul a c → b = c := by\n    intro a b c e\n    calc\n      b = h.mul h.one b := (h.one_mul b).symm\n      _ = h.mul (h.mul (h.inv a) a) b :=\n        congrArg (fun t => h.mul t b) (h.inv_mul a).symm\n      _ = h.mul (h.inv a) (h.mul a b) := h.mul_assoc (h.inv a) a b\n      _ = h.mul (h.inv a) (h.mul a c) := congrArg (h.mul (h.inv a)) e\n      _ = h.mul (h.mul (h.inv a) a) c := (h.mul_assoc (h.inv a) a c).symm\n      _ = h.mul h.one c := congrArg (fun t => h.mul t c) (h.inv_mul a)\n      _ = c := h.one_mul c\n  have right_inv : ∀ a : H, h.mul a (h.inv a) = h.one := by\n    intro a\n    apply cancel (h.inv a)\n    calc\n      h.mul (h.inv a) (h.mul a (h.inv a)) =\n          h.mul (h.mul (h.inv a) a) (h.inv a) :=\n        (h.mul_assoc (h.inv a) a (h.inv a)).symm\n      _ = h.mul h.one (h.inv a) := congrArg (fun t => h.mul t (h.inv a)) (h.inv_mul a)\n      _ = h.inv a := h.one_mul (h.inv a)\n      _ = h.mul (h.inv a) h.one := (h.mul_one (h.inv a)).symm\n  constructor\n  · intro e\n    calc\n      f (g.mul x x) = h.mul (f x) (f x) := hf x x\n      _ = h.mul (f x) (h.inv (f x)) := congrArg (h.mul (f x)) e\n      _ = h.one := right_inv (f x)\n  · intro e\n    apply cancel (f x)\n    calc\n      h.mul (f x) (f x) = f (g.mul x x) := (hf x x).symm\n      _ = h.one := e\n      _ = h.mul (f x) (h.inv (f x)) := (right_inv (f x)).symm\n",
+        "bridge": "Relate inverse-fixed images and square-neutral images; treatment reuses v2 cancellation and right inverse."
+      },
+      "treatment": {
+        "proof": "by\n  intro G H g h f hf x\n  constructor\n  · intro e\n    calc\n      f (g.mul x x) = h.mul (f x) (f x) := hf x x\n      _ = h.mul (f x) (h.inv (f x)) := congrArg (h.mul (f x)) e\n      _ = h.one := Theory.GroupFacts.mul_inv h (f x)\n  · intro e\n    apply Theory.GroupFacts.left_cancel h (f x)\n    calc\n      h.mul (f x) (f x) = f (g.mul x x) := (hf x x).symm\n      _ = h.one := e\n      _ = h.mul (f x) (h.inv (f x)) := (Theory.GroupFacts.mul_inv h (f x)).symm\n",
+        "bridge": "Relate inverse-fixed images and square-neutral images; treatment reuses v2 cancellation and right inverse."
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "study_id": "metered-transfer-v1",
+  "phase": "pre_registered_transfer_comparison",
+  "suite": {
+    "path": "suite.json",
+    "sha256": "934c5f0117cb4f990bdfce8fa5031a5ceffb6f3cb3e4d29b28222d2013414412"
+  },
+  "config": {
+    "model": "deepseek-flash",
+    "sampling": {
+      "reasoning_effort": "low"
+    },
+    "budget": {
+      "max_calls_per_task": 2,
+      "max_output_tokens_per_call": 2048,
+      "max_output_tokens_per_task": 4096,
+      "request_timeout_seconds": 120
+    }
+  },
+  "experiment_budget": {
+    "max_generation_calls": 32,
+    "max_input_tokens_per_call": 16384,
+    "max_total_input_tokens": 524288,
+    "max_total_output_tokens": 65536,
+    "max_cost_usd": "0.10",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "cost_margin": "1.25",
+    "pricing_checked_on": "2026-10-20",
+    "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/"
+  },
+  "task_order": {
+    "development": [
+      "d01",
+      "d02",
+      "d03",
+      "d04"
+    ],
+    "reserved": [
+      "r01",
+      "r02",
+      "r03",
+      "r04"
+    ]
+  },
+  "stopping": [
+    "first_verified",
+    "task_call_or_output_limit",
+    "run_call_input_output_or_cost_limit",
+    "unknown_usage",
+    "interrupted_call_or_verification",
+    "provider_limit_or_model_mismatch"
+  ],
+  "scope": {
+    "author_constructed_tasks": true,
+    "candidate_fixed": true,
+    "representative_population_claim": false,
+    "exact_model_revision_verified": false,
+    "training_eligible": false
+  }
+}

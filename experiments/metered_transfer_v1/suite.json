@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "suite_id": "metered-transfer-v1",
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "package": "package.json",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+    },
+    "Extension": {
+      "path": "Extension.lean",
+      "sha256": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c"
+    },
+    "Tasks.D01": {
+      "path": "Tasks/D01.lean",
+      "sha256": "29eb54c22bb48974605f919c853ba3763669babf79ef8ed03da5e7ba31750bcf"
+    },
+    "Tasks.D02": {
+      "path": "Tasks/D02.lean",
+      "sha256": "b88860a80d1e3607a2c2a4ef76bc7466258540f2948b4e29893e4710257a74b9"
+    },
+    "Tasks.D03": {
+      "path": "Tasks/D03.lean",
+      "sha256": "eb738450e9a66d41013f81fc90813fd465385436cc21f32bf6207bada0d55349"
+    },
+    "Tasks.D04": {
+      "path": "Tasks/D04.lean",
+      "sha256": "ec5155fa4da48810980444f63f5a768077e72a94e52c5950baa5c5be6fac5689"
+    },
+    "Tasks.R01": {
+      "path": "Tasks/R01.lean",
+      "sha256": "e2465924547fb18763fe1e0775e10551f343cd06c2c3517a5e283ac0a22fdb79"
+    },
+    "Tasks.R02": {
+      "path": "Tasks/R02.lean",
+      "sha256": "2739a619cc9e91b473fd08c99d1d01d1d097aedc70b7cf55b2fe33e39b163c26"
+    },
+    "Tasks.R03": {
+      "path": "Tasks/R03.lean",
+      "sha256": "dfa3704c3dedddccd677b6cb79909b9154d782f870185df2f5ae0998faf70bcf"
+    },
+    "Tasks.R04": {
+      "path": "Tasks/R04.lean",
+      "sha256": "e03582cbd4a8e43894da9d56c8296b3b2c55180112655234659ac3e023659bb8"
+    }
+  },
+  "tasks": [
+    {
+      "id": "d01",
+      "split": "development",
+      "family": "inverse_equation_solving",
+      "module": "Tasks.D01",
+      "goal": "Tasks.d01"
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "family": "inverse_equation_solving",
+      "module": "Tasks.D02",
+      "goal": "Tasks.d02"
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "family": "image_torsion",
+      "module": "Tasks.D03",
+      "goal": "Tasks.d03"
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "family": "image_torsion",
+      "module": "Tasks.D04",
+      "goal": "Tasks.d04"
+    },
+    {
+      "id": "r01",
+      "split": "reserved",
+      "family": "split_section_decomposition",
+      "module": "Tasks.R01",
+      "goal": "Tasks.r01"
+    },
+    {
+      "id": "r02",
+      "split": "reserved",
+      "family": "split_section_decomposition",
+      "module": "Tasks.R02",
+      "goal": "Tasks.r02"
+    },
+    {
+      "id": "r03",
+      "split": "reserved",
+      "family": "commutator_obstruction",
+      "module": "Tasks.R03",
+      "goal": "Tasks.r03"
+    },
+    {
+      "id": "r04",
+      "split": "reserved",
+      "family": "commutator_obstruction",
+      "module": "Tasks.R04",
+      "goal": "Tasks.r04"
+    }
+  ],
+  "budget": {
+    "max_attempts_per_task": 2,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "provenance": {
+    "candidate_frozen_at": "22b8e9b0258907e81692d9791822c7cbebefbcbe",
+    "candidate_sources": "Base, Candidate, Extension, package and lean-toolchain copied byte-for-byte from hom_kernel_evolution v2; candidate predates these goals.",
+    "task_authorship": "Author-constructed, correlated, known group-theoretic exercises; not a random or pretraining-unseen sample.",
+    "split_status": "Four public development goals and four reserved goals in disjoint declared reasoning families. Only development has reference proofs. Reserved goal declarations may be compiled, but no reference proof or solver evaluation is authorized in the preparation round.",
+    "exposure_limit": "Reserved statements are visible to task authors and protocol reviewers. Reserved is a preparation label, not an externally blind held-out claim.",
+    "schema_note": "Uses unchanged migration_calibration loader; generation usage and study admission are controlled by a separate protocol."
+  }
+}
