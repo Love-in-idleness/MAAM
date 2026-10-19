@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "attempts": 13,
+  "cases": [
+    {
+      "worker": "e01",
+      "variant": "baseline",
+      "task_id": "restriction",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e02",
+      "variant": "v1",
+      "task_id": "restriction",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e03",
+      "variant": "v2",
+      "task_id": "restriction",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e04",
+      "variant": "v1",
+      "task_id": "kernel_group",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e05",
+      "variant": "v2",
+      "task_id": "kernel_group",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e06",
+      "variant": "baseline",
+      "task_id": "kernel_group",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e07",
+      "variant": "v2",
+      "task_id": "words",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e08",
+      "variant": "baseline",
+      "task_id": "words",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e09",
+      "variant": "v1",
+      "task_id": "words",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e10",
+      "variant": "baseline",
+      "task_id": "intersection",
+      "attempt": 1,
+      "original_status": "rejected",
+      "status": "rejected",
+      "matched": true
+    },
+    {
+      "worker": "e10",
+      "variant": "baseline",
+      "task_id": "intersection",
+      "attempt": 2,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e11",
+      "variant": "v1",
+      "task_id": "intersection",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    },
+    {
+      "worker": "e12",
+      "variant": "v2",
+      "task_id": "intersection",
+      "attempt": 1,
+      "original_status": "verified",
+      "status": "verified",
+      "matched": true
+    }
+  ],
+  "original_scope": {
+    "held_out_evaluation": false,
+    "generation_budget_verified": false,
+    "training_eligible": false,
+    "fair_model_performance_claim": false,
+    "autonomous_discovery_claim": false
+  },
+  "summary_sha256": "afee60f0cd792d12a6a3fcaf45c7b78eaec82b8f5cc98d4be7852f3ded4f7e57",
+  "scope": "Recheck archived proofs and complete inventories; no new model generation"
+}

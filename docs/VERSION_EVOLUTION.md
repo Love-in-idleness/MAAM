@@ -109,5 +109,8 @@ Proofs and generation costs from the interrupted first run remain unknown; the r
 完整请求、提示词、13 次提交、反馈、原始命令日志、成本清单、依赖路径及中断说明均保存在 [结果档案](../results/evolution/)；`receipt.json` 区分本地核验与独立 CI 重放状态。
 The [result archive](../results/evolution/) preserves requests, prompts, all thirteen submissions and feedback, original command logs, cost inventories, dependency paths and the interruption record; `receipt.json` distinguishes local verification from independent CI replay.
 
+[独立 CI 重放](https://github.com/Love-in-idleness/MAAM/actions/runs/39202047986) 已在干净的 Lean 4.24.0 环境中核对 13/13 次原始提交及成功证明的完整计量，归档收据保存工作流、产物哈希和逐例一致性结果。
+The [independent CI replay](https://github.com/Love-in-idleness/MAAM/actions/runs/39202047986) checked all thirteen original submissions and full inventories for successful proofs under a clean Lean 4.24.0 environment; the archive receipt preserves its workflow, artifact digest and per-case matches.
+
 下一步是由统一供应商接口实际调用求解模型并记录版本、采样、生成 token 和预算截止事件，然后冻结未用过的迁移模式，比较同等资源下的新旧理论包；自动构造候选和 M4 学习仍是后续阶段。
 Next, a unified provider interface should actually call the solver and record model revision, sampling, generation tokens and budget-stop events, then freeze unused migration patterns to compare packages under matched resources; automatic candidate construction and M4 learning remain later stages.

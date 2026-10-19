@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "local_verified_pending_clean_replay",
+  "status": "verified_clean_replay",
   "study_id": "hom-kernel-evolution-recovery-01",
   "freeze_commit": "39e3048d8985f6a484e55cf32755895df6cca11b",
   "implementation_commit": "39e3048d8985f6a484e55cf32755895df6cca11b",
@@ -13,7 +13,18 @@
     "controller.json": "aa86f9e2dc08bb6a86917fda9a09bc2972ccd1b619815b5fd49db8cbaae3ceaa",
     "summary.json": "afee60f0cd792d12a6a3fcaf45c7b78eaec82b8f5cc98d4be7852f3ded4f7e57",
     "v1.json": "b6866dda2286874bc26fc4c9c718bba70fad77940abe828724df5de9156726d6",
-    "v2.json": "dbc63bafd322b84c78f990fc7bda74698b19bd9bfc70504f7afbf4f81ea08ed1"
+    "v2.json": "dbc63bafd322b84c78f990fc7bda74698b19bd9bfc70504f7afbf4f81ea08ed1",
+    "validation.json": "f1954c3fc7b67b2e31d381bdd5d270d8b5032e32f05035ac9381e6a8c997d903"
   },
-  "scope": "Frozen replacement cohort. All original attempts, including one audit resource rejection, preserved. Generation usage and exact revision unavailable; interrupted first cohort has unknown outcomes/costs. No fair model-effectiveness, held-out, autonomous discovery or training claim."
+  "scope": "Frozen replacement cohort. All original attempts, including one audit resource rejection, preserved. Generation usage and exact revision unavailable; interrupted first cohort has unknown outcomes/costs. No fair model-effectiveness, held-out, autonomous discovery or training claim.",
+  "archive_commit": "56d7171ccee231c9da705601fe91c25b35a455db",
+  "workflow_head_sha": "56d7171ccee231c9da705601fe91c25b35a455db",
+  "workflow_run_id": 39202047986,
+  "workflow_job_id": 117896896290,
+  "workflow_conclusion": "success",
+  "workflow_url": "https://github.com/Love-in-idleness/MAAM/actions/runs/39202047986",
+  "artifact_id": 12163724322,
+  "artifact_digest": "sha256:346690c378fc44f340eb05fc2b41cab2515115da719f6bce0b5eb7c7b062280e",
+  "artifact_size_bytes": 184730,
+  "artifact_members": 404
 }
