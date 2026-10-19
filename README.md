@@ -219,3 +219,11 @@ Four configurations, 140 frozen proof candidates and complete declaration-expres
 
 运行与口径见 [包消融协议](docs/PACKAGE_ABLATIONS.md) 与 [版本复用实验](docs/VERSION_EVOLUTION.md)；现有版本比较只是预选任务上的校准，自动概念发展与生成预算公平的独立模型实验仍待开展。
 See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reuse experiment](docs/VERSION_EVOLUTION.md) for commands and conventions; current version comparison is calibration on preselected tasks, while automatic concept development and generation-budget-controlled independent model experiments remain pending.
+
+## 生成用量与预算 / Generation usage and budgets
+
+[生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
+The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.
+
+该流程已用确定性响应和真实 Lean 检查失败后修复；真实供应商调用、精确模型修订证明与新的预留比较尚未完成。
+Deterministic responses and actual Lean checks exercise repair after failure; live provider calls, proof of exact model revision and a new held-out comparison remain unfinished.

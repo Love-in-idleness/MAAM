@@ -6,6 +6,9 @@ Date: 2026-10-19. Status: M1 has a checked reference migration. M2 has a per-tas
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
 
+新增的 [生成计量接口](GENERATION.md) 已接入 OpenAI Responses、逐任务修复、输出预算预约和原始用量收据，并通过离线控制测试及确定性响应配合真实 Lean 的流程检查；尚未执行真实供应商调用或新的预留实验。
+The new [generation-metering interface](GENERATION.md) integrates OpenAI Responses, task-local repair, output-budget reservations and raw usage receipts, with offline control tests and deterministic responses checked through actual Lean; live provider calls and a new held-out experiment have not yet run.
+
 ## 目标 / Objective
 
 MAAM 的主要目标是评估新命题、新对象及围绕一个核心思想形成的一组定义、性质和推论，为数学探索与 LLM 学习提供可核查的反馈。
@@ -209,8 +212,8 @@ M1 has a reference migration and complete audits; M2's [independent-context expe
 已有父子版本的 [后续复用校准](VERSION_EVOLUTION.md) 在四个预选开发任务上得到 12 份核验证明、一次失败后修复和完整的包成本比较；这只完成 M3 的受控版本演示，并未完成自动候选搜索或严格预留效果验收。
 The parent-child [later-use calibration](VERSION_EVOLUTION.md) yielded twelve checked proofs on four preselected development tasks, one failure followed by repair, and full package-cost comparisons; this demonstrates a controlled M3 version exercise without completing automatic candidate search or strict held-out effectiveness acceptance.
 
-接下来先接入可实际调用模型的统一接口，记录精确模型修订、采样、生成用量与预算停止事件，再预先冻结未用过的迁移模式，比较同等资源下的版本；已公开的任务不得重新标为最终预留集。
-Next, add a unified interface that actually calls the model and records exact revision, sampling, generation usage and budget-stop events, then pre-freeze unused migration patterns for resource-matched version comparisons; published tasks cannot be relabelled as a final held-out set.
+统一调用接口现已实现请求模型、响应模型标识、采样、生成用量与预算停止事件的记录，但不把模型别名当成精确修订证明；接下来应在隔离环境中做小规模真实调用校准，再预先冻结未用过的迁移模式，比较同等资源下的版本，已公开的任务不得重新标为最终预留集。
+The unified interface now records requested and response-reported model identities, sampling, generation usage and budget-stop events without treating model aliases as proof of exact revision; next, run a small live calibration in isolation before freezing unused migration patterns for resource-matched version comparisons, and never relabel published tasks as a final held-out set.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
@@ -220,8 +223,8 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.
 
-maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录独立求解上下文的输入输出；maam/evolution.py 记录版本祖先、后续依赖路径、失败及完整包成本。LLM 已按 skill 构造表示桥接并生成证明，控制器检查其返回原始目标；供应商调用和生成计量尚未集成到 Python 驱动器。
-maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records fresh-context input/output; maam/evolution.py tracks version ancestry, later-use dependency paths, failures and whole-package costs. LLM workers have constructed bridges and proofs through the skill, checked back against original goals by the controller; provider calls and generation metering are not yet integrated into the Python driver.
+maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录独立求解上下文的输入输出；maam/evolution.py 记录版本祖先、后续依赖路径、失败及完整包成本。新增 maam/generation.py 包装原有接口，调用供应商并绑定原始响应、用量与 Lean 结果，保留既有评估器指纹；真实供应商验证和生成预算公平性验收尚未完成。
+maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records fresh-context input/output; maam/evolution.py tracks version ancestry, later-use dependency paths, failures and whole-package costs. The new maam/generation.py wraps these interfaces with provider calls and bindings between raw responses, usage and Lean outcomes while preserving existing evaluator fingerprints; live-provider verification and generation-budget fairness acceptance remain unfinished.
 
 Mathlib 索引、压缩计数、PageRank 和源代码分析可复用作检索及描述；第一轮受控实验采用隔离基础库，以免完整 Mathlib 已经包含待引入概念。
 The Mathlib index, compression counts, PageRank and source analysis remain useful for retrieval and description; the first controlled experiment uses an isolated base so full Mathlib does not already supply the candidate concepts.
