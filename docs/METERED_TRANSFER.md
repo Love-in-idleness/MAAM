@@ -80,3 +80,17 @@ Run development first, inspect its complete ledger, then invoke reserved without
 .venv/bin/python scripts/control_transfer.py run --root data/transfer-deepseek-NEW \
   --phase reserved --key-file /path/to/private-deepseek-key.txt
 ```
+
+## 开发轮反馈与独立校准 / Development feedback and separate calibration
+
+2026-10-20 首次开发轮完成 16 次真实 DeepSeek 调用，供应商报告 31674 输入与 32768 输出 token，后者全部是推理 token；每次均以输出上限截断，没有产出可提交的证明，四个预留任务尚未调用。
+This is evidence that the 2048-token output allowance was inadequate for this configuration, not evidence that the mathematical goals are unsolvable or that the package lacks value.
+
+按冻结高峰价格、不计缓存优惠，费用估算为 US$0.0488238，加入 25% 余量后为 US$0.06102975；16 次失败全部保存在本机 `data/transfer-deepseek-20261020-v1/`，不恢复其调用名额。
+The local ledger is complete, but no proof-success or source-cost gain can be claimed from that run, and the account invoice remains unchecked.
+
+另冻结 [开发输出校准 v2](../experiments/metered_transfer_v1/protocol-development-output-v2.json)：仅允许两次调用，因此只会触及首个开发目标的两个条件；每次输出上限改为 8192 token，仍使用 DeepSeek Flash/low，候选与原目标保持不变。
+This is a separate, deliberately incomplete development calibration, not a rerun of the reserved evaluation or a continuation with reset allowances.
+
+新校准估算额度最多 US$0.035，加上旧轮已计费用为 US$0.09602975，低于本轮最初 US$0.10 的合计额度；旧失败和两轮合计费用必须一起报告。
+The new run's whole-schedule status will stop at its two-call limit; only actual retained witnesses may establish whether this larger allowance produces verifiable output.
