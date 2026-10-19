@@ -225,5 +225,5 @@ See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reus
 [生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
 The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.
 
-该流程已用确定性响应和真实 Lean 检查失败后修复；真实供应商调用、精确模型修订证明与新的预留比较尚未完成。
-Deterministic responses and actual Lean checks exercise repair after failure; live provider calls, proof of exact model revision and a new held-out comparison remain unfinished.
+该流程已用确定性响应和真实 Lean 检查失败后修复，另在一个公开开发任务上完成两次 GPT-6 Luna 真实调用并经隔离 Lean 核验；精确模型修订证明与新的预留比较尚未完成。
+Deterministic responses and actual Lean checks exercise repair after failure, and two live GPT-6 Luna calls on one public development task have passed isolated Lean checks; proof of exact model revision and a new held-out comparison remain unfinished.
