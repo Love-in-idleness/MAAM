@@ -141,3 +141,25 @@ Unknown usage remains unknown with its full reservation charged, and a missing s
 
 每次输出必须使用新文件名，超过合计估算额度时仍保存报告并返回非零状态，不隐藏超支、预留调用或中断。
 The summary is explicitly an adaptive development calibration across distinct protocols, with fairness, held-out, exact-revision and training claims kept false.
+
+## 剩余开发校准结果 / Remaining development results
+
+v4 的六次真实 DeepSeek 调用全部通过隔离 Lean，d02、d03、d04 各有基础库和 v2 两份原目标证明，d01 没有重复调用，预留任务仍为零调用。
+Together with the earlier d01 pair, the adaptive calibration now covers all four development goals in both conditions; distinct protocols and all sixteen earlier truncations remain visible.
+
+v4 含余量费用估算为 US$0.0630435，三轮累计 US$0.133583625，未超过本次累计 US$0.50 保护额度；这不是账户最终账单。
+The accounting records all 24 generation calls and retains usage for replay without treating API token savings as the research objective.
+
+四个共同成功目标的完整证明源码合计为基础库 1039 token、处理组含整包 2019 token，其中同一候选只计 1100 token 一次，净节省为 −980；本轮未观察到整包净源码收益。
+Local treatment proofs total 919 source tokens, but their 120-token saving does not offset the whole package cost; this is an observation about these witnesses, not a shortest-proof or mathematical-value verdict.
+
+## 下一轮正式协议：仅冻结 / Next formal protocol: frozen only
+
+已另存 [正式协议 v1](../experiments/metered_transfer_v1/protocol-formal-v1.json)：在同一次新运行中重做四个公开开发目标，再评估四个未用预留目标，两阶段都交替条件先后，候选保持冻结。
+Both conditions receive the same DeepSeek Flash/low configuration, one call and a generous 32768-token output allowance per goal, with no cross-task or cross-condition history.
+
+正式协议最多 16 次调用，全部最大预约含余量共 US$0.884736，拟设独立估算额度 US$1.00；本轮只完成协议与零调用快照准备，不将这笔拟议额度计为已发生费用。
+The already incurred calibration costs remain separate and must accompany any later experiment, while the formal run's exact model revision, effectiveness and training acceptance remain unverified.
+
+正式预留结果出现前，这仍只是待执行协议；其作者构造、模式相关性、公开开发集及模型别名等限制不因文件名而消失。
+Preparing snapshots makes no provider call; the original calibration runs cannot be relabeled as one complete formal comparison.
