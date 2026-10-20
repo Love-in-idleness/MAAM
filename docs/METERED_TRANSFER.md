@@ -114,3 +114,14 @@ The previous US$0.10 envelope remains the limit for the earlier round, while thi
 
 新顺序交替两条件的先后，但与先前 d01 的单题上下文属于不同协议；合并覆盖只能称为跨校准轮观察，不能标为一次完整公平比较。
 An aggregate source ledger charges the same full candidate once across commonly solved development goals, retains each original ledger separately, and never treats failed or unknown generation as free.
+
+### 用户调整后的 v4 / V4 after the user's update
+
+v3 仅完成协议冻结，尚未调用供应商时，用户说明 DeepSeek API 不需要考虑 token；因此实际执行改用新增的 [v4 协议](../experiments/metered_transfer_v1/protocol-development-remaining-v4.json)，不修改 v3 或早先记录。
+The active run no longer compresses its generation allowance for token savings; token usage remains part of the research evidence.
+
+v4 保持六次调用、每题每条件一次与原任务顺序，每次给出 32768 token 的宽松输出上限以防异常无限生成；不以 token 消耗多少作为数学收益或选题依据。
+Its separate spending guard is US$0.35 including margin, covering all six maximum reservations of US$0.331776; prior guarded costs remain US$0.070540125, so the cumulative upper estimate is US$0.420540125.
+
+两个预留阶段仍不会执行，候选与基础库及目标字节不变；跨轮汇总会保留每轮不同的生成设置，而不声称统一预算的公平比较。
+The generous output limit is a reproducible execution setting rather than a tokenizer-based efficiency target or an account-wide spending limit.
