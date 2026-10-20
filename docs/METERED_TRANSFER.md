@@ -103,3 +103,14 @@ The combined input/output total is 73726 tokens, with reasoning already included
 
 该单题的完整证明模块源码成本为基础库 150 token、v2 含完整候选包 1267 token，其中整包为 1100 token；本例没有显示净源码收益，不能从证明成功推断候选更有价值。
 Next, calibrate the remaining development goals with an explicitly frozen adequate output allowance and a new total budget before admitting the untouched reserved families.
+
+## 剩余开发目标校准 v3 / Remaining development calibration v3
+
+新冻结的 [v3 协议](../experiments/metered_transfer_v1/protocol-development-remaining-v3.json) 只允许六次调用：按 d02、d03、d04 的顺序各运行两个条件，开发顺序末尾的 d01 不会在本轮重新调用；预留任务也不会运行。
+It preserves DeepSeek Flash/low, one call per task and condition, an 8192-token output cap, the fixed candidate and the original goal bytes.
+
+本轮新增费用估算上限为含余量的 US$0.12，六次最大预约为 US$0.110592；此前已计 US$0.070540125 继续保留，合计估算上界 US$0.190540125 低于此次 US$0.20 的累计额度。
+The previous US$0.10 envelope remains the limit for the earlier round, while this newly authorized work uses its own frozen small-run ceiling and reports all cohorts together.
+
+新顺序交替两条件的先后，但与先前 d01 的单题上下文属于不同协议；合并覆盖只能称为跨校准轮观察，不能标为一次完整公平比较。
+An aggregate source ledger charges the same full candidate once across commonly solved development goals, retains each original ledger separately, and never treats failed or unknown generation as free.
