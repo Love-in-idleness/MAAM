@@ -3,6 +3,9 @@
 计算形式命题的压缩与结构指标，并通过可验证的迁移实验，比较引入新定义和理论包后的表达与证明成本。
 Calculate compression and structural metrics for formal propositions, and use verified migration experiments to compare expression and proof costs after introducing definitions and theory packages.
 
+新增理论包提供可选的缩短证明机会：旧证明保留，只有核验通过且按既定长度指标严格更短的新证明才替换，失败、更长、等长或长度未知都不覆盖旧证明，也不要求全库重证。
+The default source-length policy retains existing verified witnesses and reports proof savings separately from the full package cost charged once; future searches can target promising local improvements.
+
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 
@@ -225,11 +228,14 @@ See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reus
 新实验仅使用 DeepSeek：[冻结对照协议](docs/METERED_TRANSFER.md) 管理四个开发目标、四个预留目标、阶段门控和隔离核验；当前正式 v1 的独立费用估算上限为 US$1.00，失败时不会回退到 OpenAI。
 New experiments use the DeepSeek-only transfer controller with fixed task splits, whole-run reservations and isolated Lean verification; preparation and offline checks make no provider calls.
 
-正式 v1 已实际完成 16 次调用：开发集基础库通过 4/4、工具包组 3/4；预留集均为 3/4，但各有一道独有成功题，覆盖不可比，三次未通过的提交全部保留。
+作为独立模型输出对照，正式 v1 已完成 16 次调用：开发集基础库通过 4/4、工具包组 3/4；预留集均为 3/4，但各有一道独有成功题，三次未通过的提交全部保留，这些数字不代表添加理论包后要丢弃旧证明。
 The fixed-allowance run is complete with known provider usage and thirteen Lean-verified proofs; its five commonly solved goals cost 2572 baseline source tokens versus 3679 including the full candidate once, showing no net source saving on that portfolio.
 
+按保留原证的项目口径，本轮七个已有目标全部保留，仅两份更短的新证明入选，源码从 3975 降为 3651；计入整包后为 4751，净节省 -776，另一个新解出的目标单列，不给不存在的旧证明记零成本。
+The derived retained-proof portfolio covers all eight goals without promoting inherited witnesses into model-generated successes; it selects archived proofs in their original import contexts and does not build one combined Lean library.
+
 本次含余量费用估算为 US$0.296767125，连同此前三轮校准共 40 次调用、US$0.430350750；开发集另有两份明确复用引理的参考证明通过，但其生成用量未知，不混入正式结果。
-This completes a small metered reserved-stage execution, while representative effectiveness, exact model revision and training acceptance remain unverified; next, test guided lemma reuse on development goals before designing a fresh reserved evaluation.
+This completes a small metered reserved-stage execution, while representative effectiveness, exact model revision and training acceptance remain unverified; subsequent searches should target possible shortening rather than reprove the entire existing collection.
 
 [生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
 The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.

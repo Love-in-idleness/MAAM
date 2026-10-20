@@ -110,6 +110,19 @@ class FormalSummaryTests(unittest.TestCase):
         self.assertEqual(result["stages"], summary.summarize(self.root)["stages"])
         self.assertEqual(set(result["calibration_cost_only"][0]), {"root", "ledger"})
 
+    def test_retained_proof_does_not_change_raw_model_coverage(self):
+        stage = self.formal["stages"]["development"]
+        stage["comparison"]["tasks"][0]["treatment"] = "not_observed_solved"
+        stage["comparison"]["coverage"]["treatment"] = ["d2"]
+        stage["generation"]["tasks"][1].update(status="call_budget_exhausted", selected=None)
+        r = summary.summarize(self.root)
+        self.assertEqual(r["stages"]["development"]["coverage"]["treatment"], ["d2"])
+        retained = r["retained_proof_portfolio"]
+        self.assertIn("d1", retained["coverage"]["retained"])
+        self.assertEqual(retained["tasks"][0]["action"], "retain_original")
+        self.assertTrue(retained["basis"]["original_import_contexts_retained"])
+        self.assertFalse(retained["basis"]["combined_lean_library_built"])
+
     def test_duplicate_root_and_upstream_tamper_fail_closed(self):
         with self.assertRaises(CorpusError):
             summary.summarize(self.root, [self.root])

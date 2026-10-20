@@ -100,6 +100,9 @@ If a new representation changes a statement, provide a proof transporting the re
 旧证明保留，新证明作为同一目标的备选证明记录；不同推导的全部前提要分组，防止把多种证明混成一个依赖集合。
 Preserve old proofs and record new ones as alternatives for the same goal; group all premises of each inference so alternative proofs are not conflated into one dependency set.
 
+添加理论包不要求过去的定理全部重证或强制采用新对象；默认按完整证明模块源码长度，仅当新证明核验通过且严格更短时更新当前选用证明，等长、更长、失败或长度未知都保留原证。
+Search may skip unaffected goals; preserve the original certificate and import context, treat newly solved goals separately from shortening, and charge the complete theory package once when reporting net value.
+
 ### 4. 验证与核算 / Verify and account
 
 Lean 检查候选定理、迁移桥接和最终证明；运行程序检查未授权的公理、sorry 污染、依赖范围、数据指纹与预算。
@@ -231,7 +234,10 @@ This completes the small metered development-to-reserved workflow and its matche
 M2 still needs broader task coverage and independence/repetition evidence, while exact model revision, automatic candidate search and learning remain unverified; completing the execution does not require a positive candidate result.
 
 另在 d02、d03 上检查了明确复用现有引理的作者辅助参考证明，源码从 474→163、299→79 token，完整包成本后仍为 1342 对基础库 672，生成用量未知，不作为正式修复或模型成功率证据。
-Next, keep v2 fixed and run a separately frozen development-only guided-reuse calibration with DeepSeek Flash/low, because the observed development proofs missed available lemmas; any later evaluation informed by these reserved results requires fresh reserved goals.
+The user subsequently clarified that project correctness and optional shortening take priority over diagnosing individual model outputs; keep these references as historical diagnostics, not a mandate to repair each rejected proof.
+
+已新增保留原证的独立选择层，正式汇总另列其事后证明组合：七个原有目标保留，两个更短替代使证明源码为 3975→3651，扣整包后净节省 -776，新增成功目标单列，原始模型通过率不改写。
+Next, use the existing verified proof pool and retrieve only likely shortening sites for DeepSeek Flash/low search; maintain strict-shorter acceptance and complete package accounting, and use fresh reserved goals if later evaluation is informed by this run.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.

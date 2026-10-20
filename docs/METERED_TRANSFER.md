@@ -214,4 +214,18 @@ One authored eight-goal run does not estimate repeated-run uncertainty or a repr
 The references use `Theory.GroupFacts.mul_inv` and `Theory.Hom.map_one`, reducing the respective observed treatment proof modules from 474 to 163 and from 299 to 79 source tokens.
 
 两题参考证明共 242 token，加上完整工具包为 1342，仍高于原基础库两题的 672；这些是开发参考，不补入正式成功数，也不当作自动修复，参考生成 token 保留未知，诊断没有额外 API 调用。
-This demonstrates particular available reuse without establishing automated success or amortized package value; next, freeze a development-only guided-reuse calibration with DeepSeek Flash/low to test finding and applying the supplied lemmas before revising the package.
+This demonstrates particular available reuse without establishing automated success or amortized package value; these references remain historical diagnostics after the user clarified that the project should prioritize optional shortening over individual model-error analysis.
+
+## 保留原证的项目口径 / Retained-proof selection
+
+理论包是新增可选资源，原有定理无需全部重证，程序保留已验证的旧证明，只在发现核验通过且完整证明模块源码严格更短的新证明时更新选择；等长、更长、失败、未尝试或长度未知时保留原证。
+The existing ablation evaluator already retains baseline witnesses; `maam/reuse.py` applies strict source shortening to an evidence portfolio, and the nonfrozen formal summarizer adds this view without changing archived solver outcomes or controller fingerprints.
+
+本轮记录中七个 baseline 成功目标作为原证池，只有 d01、r04 的更短替代入选，其余五个原证保留，证明源码从 3975 降到 3651，毛节省 324；完整候选计一次 1100，合计 4751、净节省 -776。
+The treatment-only r03 is newly solved and reported separately at 1869 proof tokens; it is not assigned a zero-cost baseline or included in the original-goal compression ledger.
+
+这份事后组合保留了七个原有目标并加入一个新目标，但不把继承旧证算成模型生成成功，也不混入历史校准或作者辅助参考，完整整包成本未知时净收益保留未知。
+Original files and import contexts remain intact, bound through the upstream frozen report's source and result checks; the selector registers existing witnesses rather than assembling their colliding `Proof` modules into one importable Lean library.
+
+新版汇总为 schema 2，输出应使用新文件名，例如 `data/formal-transfer-retained-summary-20261020.json`，旧 schema 1 汇总和所有原始失败记录均保留。
+This run's selected baseline witnesses demonstrate the policy, not a claim to the shortest pool over all historical runs; future searches can start from an existing verified pool and skip goals without a promising shortening route.

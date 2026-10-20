@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from maam import CorpusError, generation, transfer
+from maam.reuse import retained_portfolio
 from maam.theory import digest
 
 
@@ -66,15 +67,32 @@ def summarize(root, calibration_runs=()):
             "coverage": stage["comparison"]["coverage"],
             "common_task_source_ledger": stage["comparison"]["common_task_source_ledger"],
             "reported_models": stage["generation"]["reported_models"]}
+    originals, alternatives, package_costs = {}, {}, set()
+    for phase, stage in stages.items():
+        for goal in stage["goals"]:
+            for condition, pool in (("baseline", originals), ("treatment", alternatives)):
+                selected = goal[condition]["selected_source_cost"]
+                pool[goal["task_id"]] = {**selected, "phase": phase, "condition": condition} if selected else None
+                if selected and condition == "treatment":
+                    package_costs.add(selected["package_source_tokens"])
+    if len(package_costs) > 1:
+        raise CorpusError("full package cost changed within the frozen run")
+    retained = retained_portfolio(originals, alternatives, next(iter(package_costs), None))
+    retained["basis"] = {"root": str(root), "same_run_only": True,
+        "witness_location": "stages/{phase}/{condition}/attempts/{task_id}/{attempt:03d}",
+        "original_import_contexts_retained": True, "combined_lean_library_built": False,
+        "scope": "Post-hoc selection from this run's verified records; not a new solver evaluation "
+                 "or the shortest proof pool across all historical runs."}
     calibration = [{"root": str(path), "ledger": transfer.report(path)["ledger"]}
                    for path in calibration_runs]
-    return {"schema_version": 1, "status": "offline_single_formal_run_summary",
+    return {"schema_version": 2, "status": "offline_single_formal_run_summary",
         "root": str(root), "run_status": state["status"], "study_id": state["study_id"],
         "freeze_commit": plan["freeze_commit"],
         "plan_sha256": digest((root / "plan.json").read_bytes()),
         "protocol_sha256": loaded["fingerprints"]["protocol_sha256"],
         "config": loaded["manifest"]["config"], "formal_ledger": state["ledger"],
-        "stages": stages, "stop": state["stop"], "calibration_cost_only": calibration,
+        "stages": stages, "retained_proof_portfolio": retained,
+        "stop": state["stop"], "calibration_cost_only": calibration,
         "cumulative_cost_only": total_costs([state["ledger"], *(r["ledger"] for r in calibration)]),
         "matched_allocations_complete": state["matched_allocations_complete"],
         "reserved_evaluation_started": bool(state["stages"]["reserved"]["generation"]["calls"]),
