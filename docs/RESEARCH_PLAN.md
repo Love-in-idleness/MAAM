@@ -79,7 +79,7 @@ Both conditions receive opportunities to rewrite and reprove; compare equally se
 The historical-to-final saving splits exactly into old-tool preparation, continuing old-tool search, and the package-associated net difference; the [baseline note](BASELINE_PREPARATION.md) defines the costs and explains why this identity alone does not establish causality.
 
 准备不足、未尝试或仅搜集了旧证时，不把基线声明为已充分优化；对一般 Lean 搜索只能记录指定方法与预算内找到的最好结果，未来发现更短旧证时重新冻结基线。
-The first offline inventory therefore fixes its preparation and attribution readiness flags to false; a complete bounded-search evidence controller remains to be built before treating later gains as concept-associated evidence.
+The first offline inventory fixes its preparation and attribution readiness flags to false; the additive [supplied-local workflow](BASELINE_SEARCH.md) now records incumbent-bound requests, strict-shorter candidates and clean sweeps, while metered search, actual method-execution evidence and definition acceptance remain incomplete.
 
 基线检查依赖的传递闭包及自动化扩展，防止同态、核或配套定理通过 imports、simp 规则等途径预先进入。
 Check the transitive dependency closure and automation extensions so that homomorphisms, kernels or supporting theorems do not enter the baseline through imports, simp rules or similar routes.

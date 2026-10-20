@@ -108,8 +108,8 @@ The inventory keeps `baseline_search_complete: false` and `package_attribution_r
 本次实际重放了四个已有 DeepSeek 基础库会话，在四道开发题上选取的原证共 990 个源码 token，而正式轮单次 baseline 为 1350，相差 360；这是整理已存在证书的结果，没有新生成或新 Lean 核验。
 This 360-token difference belongs to old-tool preparation, not a new-package gain; all failed attempts remain in the source records, and existing generation costs must be read from their original metered ledgers.
 
-下一步先搭建小范围旧工具缩短搜索与准备检查，继续保留原证，仅做必要的局部工具校准，不立即引入新理论包或扩大调用。
-Next, build small old-tool shortening and preparation checks while retaining old proofs, with only necessary local tool calibration rather than immediate new packages or expanded generation runs.
+后续已搭建[小范围旧工具搜索记录流程](BASELINE_SEARCH.md)，可以给出绑定原证的请求、接收候选或保留决定并调用检查器，但本地响应流程完成不等于基线充分优化，原始清单的未就绪标志不改写。
+The supplied-local workflow enforces strict shortening and clean complete sweeps; metered solver integration, evidence of actual method execution and definition-compatibility acceptance remain future work before claiming bounded baseline preparation.
 
 大规模实验留到用户指定的未来 `gpt6bel` 可用且身份确认之后，再明确配置和冻结新协议；本计划不声称它已经发布，也不会自动切换模型。
 Defer large experiments until the user-designated future `gpt6bel` is available and its identity confirmed, then specify settings and freeze a new protocol; this plan asserts no release and makes no automatic model switch.

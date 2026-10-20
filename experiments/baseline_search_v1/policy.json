@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "evidence_mode": "supplied_local",
+  "max_sweeps": 3,
+  "stable_sweeps": 2,
+  "methods": [
+    {
+      "name": "local_existing_tools",
+      "instructions": "Inspect the supplied existing declarations and the current checked proof for local shortening through existing lemmas, definitional simplification or rewriting. Keep imports, definitions and the original goal fixed. Return a candidate only as a full proof term with all helper source charged; otherwise retain the checked incumbent with an honest account of this bounded attempt. No new theory package is available, and a retain response does not certify tool exhaustion."
+    }
+  ]
+}
