@@ -222,14 +222,17 @@ See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reus
 
 ## 生成用量与预算 / Generation usage and budgets
 
-新实验优先使用 DeepSeek：[冻结对照协议](docs/METERED_TRANSFER.md) 已加入四个开发目标、四个预留目标、阶段门控和整轮 US$0.10 费用估算上限，失败时不会回退到 OpenAI。
+新实验仅使用 DeepSeek：[冻结对照协议](docs/METERED_TRANSFER.md) 管理四个开发目标、四个预留目标、阶段门控和隔离核验；当前正式 v1 的独立费用估算上限为 US$1.00，失败时不会回退到 OpenAI。
 New experiments use the DeepSeek-only transfer controller with fixed task splits, whole-run reservations and isolated Lean verification; preparation and offline checks make no provider calls.
 
-DeepSeek 已累计覆盖四个开发目标的两个条件，八份模型证明全部通过隔离 Lean；此前 16 次截断也保留计费，三轮合计含余量估算 US$0.133583625，正式协议已冻结并准备零调用快照，预留目标尚未运行。
-The adaptive calibration shows no net whole-package source saving (1039 baseline tokens versus 2019 including the candidate); formal effectiveness, model fairness and training acceptance remain unverified.
+正式 v1 已实际完成 16 次调用：开发集基础库通过 4/4、工具包组 3/4；预留集均为 3/4，但各有一道独有成功题，覆盖不可比，三次未通过的提交全部保留。
+The fixed-allowance run is complete with known provider usage and thirteen Lean-verified proofs; its five commonly solved goals cost 2572 baseline source tokens versus 3679 including the full candidate once, showing no net source saving on that portfolio.
+
+本次含余量费用估算为 US$0.296767125，连同此前三轮校准共 40 次调用、US$0.430350750；开发集另有两份明确复用引理的参考证明通过，但其生成用量未知，不混入正式结果。
+This completes a small metered reserved-stage execution, while representative effectiveness, exact model revision and training acceptance remain unverified; next, test guided lemma reuse on development goals before designing a fresh reserved evaluation.
 
 [生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
 The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.
 
-该流程已用确定性响应和真实 Lean 检查失败后修复，另在一个公开开发任务上完成两次 GPT-6 Luna 真实调用并经隔离 Lean 核验；精确模型修订证明与新的预留比较尚未完成。
-Deterministic responses and actual Lean checks exercise repair after failure, and two live GPT-6 Luna calls on one public development task have passed isolated Lean checks; proof of exact model revision and a new held-out comparison remain unfinished.
+早期接口已用确定性响应和真实 Lean 检查失败后修复，并在一个公开开发任务上完成两次 GPT-6 Luna 调用；后续新增的真实付费调用均走上述 DeepSeek 控制器。
+The historical GPT-6 Luna calibration and the later DeepSeek reserved run remain separate cohorts, without implying a verified model revision or general effectiveness.

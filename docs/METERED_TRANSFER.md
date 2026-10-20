@@ -153,15 +153,15 @@ The accounting records all 24 generation calls and retains usage for replay with
 四个共同成功目标的完整证明源码合计为基础库 1039 token、处理组含整包 2019 token，其中同一候选只计 1100 token 一次，净节省为 −980；本轮未观察到整包净源码收益。
 Local treatment proofs total 919 source tokens, but their 120-token saving does not offset the whole package cost; this is an observation about these witnesses, not a shortest-proof or mathematical-value verdict.
 
-## 下一轮正式协议：仅冻结 / Next formal protocol: frozen only
+## 正式协议 v1 的准备记录 / Formal protocol v1 preparation record
 
 已另存 [正式协议 v1](../experiments/metered_transfer_v1/protocol-formal-v1.json)：在同一次新运行中重做四个公开开发目标，再评估四个未用预留目标，两阶段都交替条件先后，候选保持冻结。
 Both conditions receive the same DeepSeek Flash/low configuration, one call and a generous 32768-token output allowance per goal, with no cross-task or cross-condition history.
 
-正式协议最多 16 次调用，全部最大预约含余量共 US$0.884736，拟设独立估算额度 US$1.00；本轮只完成协议与零调用快照准备，不将这笔拟议额度计为已发生费用。
+正式协议最多 16 次调用，全部最大预约含余量共 US$0.884736，独立估算额度 US$1.00；准备时只创建协议与零调用快照，不将预约额度计为已发生费用，后续实际执行见下文。
 The already incurred calibration costs remain separate and must accompany any later experiment, while the formal run's exact model revision, effectiveness and training acceptance remain unverified.
 
-正式预留结果出现前，这仍只是待执行协议；其作者构造、模式相关性、公开开发集及模型别名等限制不因文件名而消失。
+准备记录本身不构成运行证据；其作者构造、模式相关性、公开开发集及模型别名等限制在实际执行后仍保留。
 Preparing snapshots makes no provider call; the original calibration runs cannot be relabeled as one complete formal comparison.
 
 ## 单次正式运行的汇总 / Single-run formal reporting
@@ -180,3 +180,38 @@ Earlier calibrations contribute costs only, preserving all failed calls, while t
 
 该命令不调用模型或 Lean，只重放已保存的原始响应和核验记录；输出文件必须为新文件，阶段未完成时不会伪装成完成。
 Each phase's common-solved source comparison charges the whole candidate once; phase costs must not be added as if their shared package were introduced twice in one portfolio.
+
+## 正式 v1 实测 / Formal v1 observed execution
+
+2026-10-20 已在本机 `data/transfer-deepseek-formal-prepared-20261020/` 完成两个阶段，保留原目录名和零调用准备快照；冻结提交为 `6fce53c3d4a524853959a771e1d9ebf0e7e82fe3`，候选、目标和配置在运行中未改变。
+All sixteen DeepSeek Flash/low calls used the frozen one-call allowance, with thirteen verified proofs and three Lean rejections, complete known usage, no interruptions or budget violations, and `matched_allocations_complete=true`.
+
+| 阶段 / Phase | 基础库通过 / Baseline verified | 工具包组通过 / Treatment verified | 覆盖关系 / Coverage |
+| --- | --- | --- | --- |
+| 开发 / Development | d01, d02, d03, d04 | d01, d02, d03 | 基础库多一题 / Baseline superset |
+| 预留 / Reserved | r01, r02, r04 | r02, r03, r04 | 各有独有成功 / Incomparable |
+
+开发 d04 工具包组把结合律等式方向写反，预留 r01 工具包组未正确把等式提升到乘法上下文，预留 r03 基础库组有等式链与类型错误；三次都得到完整响应后被 Lean 拒绝，未达到输出截断上限，也未追加重试。
+These are observed proof-assembly failures under one attempt per condition, not proofs that the goals are false or unsolvable; r03 treatment success and r01 baseline success remain distinct observations.
+
+| 独立共同成功集合 / Separate common solved set | 基础库源码 / Baseline source tokens | 工具包组含整包 / Treatment with package | 净节省 / Net saving |
+| --- | ---: | ---: | ---: |
+| 开发 d01, d02, d03 / Development | 880 | 2059 | -1179 |
+| 预留 r02, r04 / Reserved | 1692 | 2720 | -1028 |
+
+上表每行独立计入完整 1100 token 工具包一次；若明确把这五题作为一个组合，重新只计整包一次，结果为基础库 2572、工具包组 3679、净节省 -1107，源码单位不与生成 token 或美元相加。
+This is a descriptive source ledger over common successes; failed proof attempts still count in coverage and generation spending, and unobserved solutions are never assigned zero source cost.
+
+正式轮供应商报告 31675 输入、189926 输出 token，含余量费用估算 US$0.296767125；加上之前三轮校准为 40 次调用、79022 输入、267145 输出 token、US$0.430350750，保留全部早期截断，未核对账户账单。
+The offline summary is `data/formal-transfer-summary-20261020.json`; calibration contributes costs only, reasoning is already included in output, and no OpenAI key or fallback transport was used for these calls.
+
+这完成了小规模固定额度预留流程，没有建立代表性效果、精确模型修订或训练资格；若依据这次预留反馈改进系统，后续最终评价需要新的预留目标，历史原始标签不改写。
+One authored eight-goal run does not estimate repeated-run uncertainty or a representative mathematical population, and observed coverage is not a general package-value ranking.
+
+## 开发集复用诊断 / Development reuse diagnostic
+
+开发阶段三份通过的工具包组证明没有 `Theory.*` 依赖，因此另在 `data/transfer-package-reuse-diagnostic-20261020/` 检查 d02、d03 两份明确调用现有引理的作者辅助参考证明，原目标和 v2 保持不变，两份均通过真实隔离 Lean。
+The references use `Theory.GroupFacts.mul_inv` and `Theory.Hom.map_one`, reducing the respective observed treatment proof modules from 474 to 163 and from 299 to 79 source tokens.
+
+两题参考证明共 242 token，加上完整工具包为 1342，仍高于原基础库两题的 672；这些是开发参考，不补入正式成功数，也不当作自动修复，参考生成 token 保留未知，诊断没有额外 API 调用。
+This demonstrates particular available reuse without establishing automated success or amortized package value; next, freeze a development-only guided-reuse calibration with DeepSeek Flash/low to test finding and applying the supplied lemmas before revising the package.

@@ -224,8 +224,14 @@ This establishes a metered DeepSeek development workflow and exposes output-budg
 按用户不以 DeepSeek token 节省为约束的调整，后续使用宽松生成额度，d02、d03、d04 六个条件均通过隔离 Lean，开发集跨轮累计四题各两条件；完整保留 24 次调用及 16 次早期截断，合计含余量费用估算 US$0.133583625，整包源码账本为 1039→2019 token，未观察到净收益。
 This completes observed development coverage across separate adaptive protocols, not one matched-budget formal experiment; source-cost aggregation charges the 1100-token candidate once and retains each original context and failure.
 
-新的 [正式协议 v1](../experiments/metered_transfer_v1/protocol-formal-v1.json) 已冻结并准备零调用快照，计划在同一次新运行中以固定相同额度重做开发阶段，再进入仍未使用的四个预留目标。
-Only the protocol and snapshots are prepared; reserved outcomes, exact model revision, strict effectiveness, automatic candidate search and learning remain unverified.
+新的 [正式协议 v1](../experiments/metered_transfer_v1/protocol-formal-v1.json) 已完成同一次固定额度运行：开发集基础库 4/4、工具包组 3/4，预留集两边均 3/4、成功题目不同，13 份证明通过隔离 Lean，3 次拒绝保留，16 次调用用量完整且没有中断或预算越界。
+This completes the small metered development-to-reserved workflow and its matched allocations, not representative model effectiveness; the five commonly solved goals cost 2572 baseline source tokens versus 3679 with the full 1100-token candidate charged once.
+
+正式轮含余量费用估算 US$0.296767125，连同此前校准共 40 次 DeepSeek 调用、US$0.430350750，账户账单未核对；原始收据与逐阶段汇总均保存在本机，历史校准证明不补入正式覆盖。
+M2 still needs broader task coverage and independence/repetition evidence, while exact model revision, automatic candidate search and learning remain unverified; completing the execution does not require a positive candidate result.
+
+另在 d02、d03 上检查了明确复用现有引理的作者辅助参考证明，源码从 474→163、299→79 token，完整包成本后仍为 1342 对基础库 672，生成用量未知，不作为正式修复或模型成功率证据。
+Next, keep v2 fixed and run a separately frozen development-only guided-reuse calibration with DeepSeek Flash/low, because the observed development proofs missed available lemmas; any later evaluation informed by these reserved results requires fresh reserved goals.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
@@ -235,8 +241,8 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.
 
-maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录独立求解上下文的输入输出；maam/evolution.py 记录版本祖先、后续依赖路径、失败及完整包成本。新增 maam/generation.py 包装原有接口，调用供应商并绑定原始响应、用量与 Lean 结果；maam/live_calibration.py 另加私密凭据、输入计数与小额防护，scripts/lean_sandbox.py 隔离宿主资源，既有评估器指纹保持不变；生成预算公平性验收仍未完成。
-maam/theory.py and PackageCheck.lean provide isolated compilation and goal audits; maam/migration.py manages task-local requests, budgets and submissions; maam/independent.py records fresh-context input/output; maam/evolution.py tracks version ancestry, later-use dependency paths, failures and whole-package costs. The new maam/generation.py binds provider responses, usage and Lean outcomes; maam/live_calibration.py adds private credentials, input counts and small-run limits, while scripts/lean_sandbox.py isolates host resources without changing existing evaluator fingerprints; generation-budget fairness acceptance remains unfinished.
+maam/theory.py 与 PackageCheck.lean 提供隔离编译和目标审计；maam/migration.py 管理逐任务请求、预算及提交；maam/independent.py 记录独立求解上下文的输入输出；maam/evolution.py 记录版本祖先、后续依赖路径、失败及完整包成本；maam/generation.py 绑定原始响应、用量与 Lean 结果，maam/live_calibration.py 管理私密凭据和小额校准，scripts/lean_sandbox.py 隔离宿主资源，既有评估器指纹保持不变。
+The additive maam/transfer.py controller now audits matched DeepSeek allocations across both phases; scripts/summarize_formal_transfer.py replays one formal run offline and includes earlier calibration costs without importing their proofs or promoting the result to general effectiveness or training claims.
 
 Mathlib 索引、压缩计数、PageRank 和源代码分析可复用作检索及描述；第一轮受控实验采用隔离基础库，以免完整 Mathlib 已经包含待引入概念。
 The Mathlib index, compression counts, PageRank and source analysis remain useful for retrieval and description; the first controlled experiment uses an isolated base so full Mathlib does not already supply the candidate concepts.
