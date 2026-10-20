@@ -49,11 +49,14 @@ Its optimum concerns only the supplied finite tree-proof graph and cost rules, w
 
 ## 定义、共享内容与继续搜索 / Definitions, sharing and continued search
 
-定义整理应先发生在两边共同使用的旧环境中，保留原接口或提供核验后的回传证明，不能仅修改目标让证明看起来更短。
-Refactor definitions first in the old environment shared by both arms, preserve the original interface or supply checked transport back, and do not shorten proofs merely by changing the goals.
+仅依靠旧工具就能完成的定义整理，发生在两边共同使用的旧环境中；依赖新理论的公理化、接口改造或表示转换，属于加入新包后的候选效果，并计入相应验证和桥接成本。
+Old-tool refactoring belongs in the shared preparation stage; specification or representation changes enabled by a new theory belong after its introduction, with their verification and transport costs charged.
 
-命题改写需要足够方向的蕴涵或等价证明，对象表示变化则可能需要等价、同构及相应运输；未经检查的“语义不变”标记不算证据。
-Proposition rewrites need the required implication or equivalence, while representation changes may require equivalences, isomorphisms and transport; an unchecked assertion of unchanged meaning is not evidence.
+原任务的对象、参数、假设及结论要固定，并给出结构对应与所需方向的核验回传；任意两个已证命题都可建立逻辑等价，所以单独一个 `iff` 不能作为任务身份判据。
+Fix the original objects, parameters, assumptions and conclusion and audit their structural interpretation and result transport; an arbitrary equivalence between proved propositions is insufficient for task identity.
+
+构造、规格、存在性、唯一性及计算接口分别保留来源和依赖；更一般的命题作为新节点，原命题通过特化连接，具体例子及分层核算见[压缩理论框架](COMPRESSION_FRAMEWORK.md)。
+Keep provenance and dependencies for constructions, specifications, existence, uniqueness and computation, and connect broader statements to retained originals by specialization as detailed in the framework.
 
 原有共同背景的成本可以抵消，但新增旧工具辅助引理、别名、桥接及包依赖要计入各自组合，共享内容只计一次，不能藏入导入文件。
 Common existing background cost may cancel, but new old-tool helpers, aliases, bridges and package dependencies belong in their respective portfolios, with shared content counted once rather than hidden in imports.
@@ -110,6 +113,9 @@ This 360-token difference belongs to old-tool preparation, not a new-package gai
 
 后续已搭建[小范围旧工具搜索记录流程](BASELINE_SEARCH.md)，可以给出绑定原证的请求、接收候选或保留决定并调用检查器，但本地响应流程完成不等于基线充分优化，原始清单的未就绪标志不改写。
 The supplied-local workflow enforces strict shortening and clean complete sweeps; the [local method executor](BASELINE_METHODS.md) now provides actual deterministic rewrite evidence, while metered solver integration and definition-compatibility acceptance remain unfinished.
+
+继续扩充搜索工具之前，优先复核[理论框架](COMPRESSION_FRAMEWORK.md)中的任务身份、共享成本和反例案例；该文档的设计要求尚未成为当前控制器的通用验收能力。
+Prioritize auditing semantic contracts, sharing costs and counterexamples before expanding search tools; the framework's requirements are not yet general controller capabilities.
 
 大规模实验留到用户指定的未来 `gpt6bel` 可用且身份确认之后，再明确配置和冻结新协议；本计划不声称它已经发布，也不会自动切换模型。
 Defer large experiments until the user-designated future `gpt6bel` is available and its identity confirmed, then specify settings and freeze a new protocol; this plan asserts no release and makes no automatic model switch.

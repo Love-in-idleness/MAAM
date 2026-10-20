@@ -3,8 +3,11 @@
 日期：2026-10-20。状态：M1 已完成参考迁移；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
 Date: 2026-10-20. Status: checked reference migrations, public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist; baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
 
-当前优先级调整为[基线准备与收益归因](BASELINE_PREPARATION.md)：先在原有条件下整理定义和证明、确认已有工具被充分纳入搜索，再引入新包；现阶段只做小范围实验、理论论证与工具验收，大规模实验留待用户指定的未来 `gpt6bel` 可用并确认后再另行冻结协议。
-Current work builds the preparation evidence and separates ordinary cleanup from package-associated gains; the future model name is the user's planning condition, not a claim about an available release or an automatic switch.
+当前优先级是复核[数学对象与分层压缩框架](COMPRESSION_FRAMEWORK.md)：明确任务身份、构造与公理化的关系、推广保留、共享成本及未来复用的证据，再推进[基线准备与收益归因](BASELINE_PREPARATION.md)的有限案例。
+Prioritize the semantic and measurement framework before further baseline tooling, distinguishing present compression, broader scope and evidence of subsequent reuse.
+
+旧工具能够完成的整理先于基线冻结，依赖新包的重构则属于加入新包后的候选效果；现阶段只做理论论证、工具验收与小范围实验，大规模实验留待用户指定的未来 `gpt6bel` 可用且身份确认后再冻结协议。
+Separate old-tool preparation from package-enabled refactoring and keep experiments small; the future model name is a planning condition rather than a release claim or an automatic switch.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
@@ -72,6 +75,9 @@ Let K be background knowledge, P a candidate package, T a predetermined task set
 固定基础库、目标集、声明等价判据、成本口径、证明器配置与预算。
 Fix the base library, goals, statement-equivalence criteria, cost conventions, prover configuration and budget.
 
+任务身份需要固定对象、参数、假设与结论的结构对应；任意两个已证命题都可建立 `iff`，所以逻辑等价证书本身不是完整的语义兼容标准。
+Task identity requires a structural interpretation of objects, parameters, hypotheses and conclusions, because arbitrary equivalence between proved propositions is not a complete semantic contract.
+
 两边均得到改写和重证机会；不能用一边经过优化的证明对比另一边未经同等搜索的旧证明。
 Both conditions receive opportunities to rewrite and reprove; compare equally searched conditions rather than optimised proofs against untouched historical proofs.
 
@@ -111,6 +117,9 @@ Preserve old proofs and record new ones as alternatives for the same goal; group
 
 添加理论包不要求过去的定理全部重证或强制采用新对象；默认按完整证明模块源码长度，仅当新证明核验通过且严格更短时更新当前选用证明，等长、更长、失败或长度未知都保留原证。
 Search may skip unaffected goals; preserve the original certificate and import context, treat newly solved goals separately from shortening, and charge the complete theory package once when reporting net value.
+
+该严格缩短规则决定当前采用哪份证明，不限制研究档案保留较长但可能可复用的分解；适用范围更广的命题作为新节点保留，通过核验的特化关系连接原命题，不能简单覆盖原命题。
+Strict shortening governs adoption rather than all research value; keep potentially reusable decompositions and retain broader statements as new nodes linked to the originals by checked specialization.
 
 ### 4. 验证与核算 / Verify and account
 
@@ -246,10 +255,16 @@ M2 still needs broader task coverage and independence/repetition evidence, while
 The user subsequently clarified that project correctness and optional shortening take priority over diagnosing individual model outputs; keep these references as historical diagnostics, not a mandate to repair each rejected proof.
 
 已新增保留原证的独立选择层，正式汇总另列其事后证明组合：七个原有目标保留，两个更短替代使证明源码为 3975→3651，扣整包后净节省 -776，新增成功目标单列，原始模型通过率不改写。
-Next, prepare and audit small old-tool-only baseline searches before introducing another package; use DeepSeek Flash/low only for necessary bounded checks, maintain strict-shorter retention and complete accounting, and use fresh reserved goals if later evaluation is informed by this run.
+Further necessary model checks remain DeepSeek-only, preserve strict-shorter retention and complete accounting, and require fresh reserved goals when earlier outcomes have informed revisions.
 
 已在两道开发题上实际执行两种通用旧工具改写：四次扫描产生两份候选，均通过隔离 Lean，源码 220→217 的候选被采用，150→152 的候选保留记录而不替换，所选成本合计 370→367，全部 299 项测试通过。
 This no-API pilot establishes replayable finite method execution and ordinary old-tool cleanup, leaving sufficient preparation, definition compatibility, model search and concept attribution unaccepted; the single sweep is exhausted without a later clean confirmation.
+
+后续理论审查已区分定义、规格、实现、存在性、唯一性、命题与证明，分析实数、行列式及 Cayley–Hamilton 案例，并提出分层成本、条件偏序与 19 个反例验收案例。
+The new theoretical note proposes explicit semantic contracts and layered evaluation; its general shared ledger, scope relations and acceptance cases remain design work rather than implemented or Lean-verified controls.
+
+下一步先审查这些规则是否会错误奖励偷换目标、隐藏依赖或任意拆分，再用三个小案例搭建最小验证：构造转存在性、较长分解的复用、推广后保留原命题。
+Audit these rules for counterexamples first, then implement a small validation covering realization evidence, reuse of a longer decomposition and retention under generalization.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.

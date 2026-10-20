@@ -123,6 +123,15 @@ The algorithm finds the exact minimum in the supplied finite tree-proof space, c
 
 ## 已知解释限制 / Known interpretive limits
 
+当前指标是[分层压缩框架](COMPRESSION_FRAMEWORK.md)中的部分描述量，不直接度量规格的充分性、命题的推广范围、人的理解难度或未来复用价值。
+The current metrics cover only some descriptive layers and do not directly measure specification adequacy, generality, comprehension or future reuse.
+
+构造被重新组织为存在性证据时，须保留原构造与验证的依赖；声明由定义改列为定理、或节点被拆分，会改变评分资格及图统计，但不能据此推断数学价值改变。
+Reorganizing a construction as existence evidence preserves its dependencies, while recategorizing or splitting declarations can change scoring eligibility and graph statistics without establishing a change in mathematical value.
+
+源码长度、核证明项大小、引用树展开及共享声明账本使用不同成本模型，不能把其中一个冒充另一个；改变原始边界或计量规则时应另建可辨识的比较。
+Source size, kernel-term size, reference-tree expansion and shared-declaration ledgers use distinct cost models and require explicit versioning when their boundaries or conventions change.
+
 一个命题可以有多种证明，较差或刻意冗长的证明可能抬高 `I0`；本版并不声称识别了最优证明。
 A proposition may have many proofs, and a poor or deliberately padded proof may inflate `I0`; this version does not claim to have identified an optimal proof.
 

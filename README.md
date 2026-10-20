@@ -6,6 +6,9 @@ Calculate compression and structural metrics for formal propositions, and use ve
 新增理论包提供可选的缩短证明机会：旧证明保留，只有核验通过且按既定长度指标严格更短的新证明才替换，失败、更长、等长或长度未知都不覆盖旧证明，也不要求全库重证。
 The default source-length policy retains existing verified witnesses and reports proof savings separately from the full package cost charged once; future searches can target promising local improvements.
 
+当前先进行[理论框架与反例审查](docs/COMPRESSION_FRAMEWORK.md)：区分定义、规格、实现和证明，保留推广前后的命题，分别评价表达、共享、推导、适用范围与后续复用。
+The framework treats immediate shortening as one criterion among several and documents semantic contracts, complete costs and nineteen acceptance cases; these broader controls remain proposed rather than implemented.
+
 引入新理论前，应先充分利用原有定义、引理与工具准备相对简短的基线，避免把普通整理或额外搜索的收益归给新概念；当前按[基线准备说明](docs/BASELINE_PREPARATION.md)推进理论、工具与小范围验证，大规模实验暂缓。
 The new offline inventory collects the shortest existing baseline certificates, while the attribution checker separates old-tool cleanup, continued search and package-associated differences; neither certifies that general Lean proofs are globally shortest or that baseline search is complete.
 
