@@ -125,3 +125,19 @@ Its separate spending guard is US$0.35 including margin, covering all six maximu
 
 两个预留阶段仍不会执行，候选与基础库及目标字节不变；跨轮汇总会保留每轮不同的生成设置，而不声称统一预算的公平比较。
 The generous output limit is a reproducible execution setting rather than a tokenizer-based efficiency target or an account-wide spending limit.
+
+## 跨轮离线汇总 / Offline cross-run summary
+
+新增的汇总命令只重放本地记录，不调用模型或 Lean，并保留每轮配置、原始报告、计划指纹和证明来源；同一候选在共同成功目标的源码账本中只计一次。
+Unknown usage remains unknown with its full reservation charged, and a missing successful proof never becomes a zero-cost success.
+
+```bash
+.venv/bin/python scripts/summarize_transfer.py \
+  --run data/transfer-deepseek-20261020-v1 \
+  --run data/transfer-deepseek-output-v2-20261020 \
+  --run data/transfer-deepseek-remaining-v4-20261020 \
+  --ceiling-usd 0.50 --output data/transfer-development-summary-NEW.json
+```
+
+每次输出必须使用新文件名，超过合计估算额度时仍保存报告并返回非零状态，不隐藏超支、预留调用或中断。
+The summary is explicitly an adaptive development calibration across distinct protocols, with fairness, held-out, exact-revision and training claims kept false.

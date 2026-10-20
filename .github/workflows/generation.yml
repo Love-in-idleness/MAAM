@@ -8,6 +8,7 @@ on:
       - 'scripts/control_transfer.py'
       - 'scripts/check_transfer.py'
       - 'scripts/check_transfer_tasks.py'
+      - 'scripts/summarize_transfer.py'
       - 'tests/test_generation.py'
       - 'tests/test_transfer*.py'
       - 'tests/test_deepseek.py'
