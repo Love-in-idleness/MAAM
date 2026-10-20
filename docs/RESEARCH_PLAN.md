@@ -1,13 +1,16 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-20。状态：M1 已完成参考迁移；M2 已有逐任务协议、skill、20 个公开校准目标，并在另一组 20 个冻结目标上完成 40 个独立求解上下文，两边均核验 20/20；生成预算公平性与严格预留效果验收仍待完成。M3 已实现四配置消融、成本偏序及父子版本的一轮后续复用校准；自动多轮探索与 M4 尚未完成。
-Date: 2026-10-20. Status: M1 has a checked reference migration. M2 has a per-task protocol, skill and 20 public calibration goals, plus 40 fresh solving contexts on another 20 frozen goals, with 20/20 verified in both conditions; generation-budget fairness and strict held-out effectiveness acceptance remain unfinished. M3 implements four-configuration ablations, cost orders, and one parent-child version reuse calibration; automatic multi-round exploration and M4 remain unfinished.
+日期：2026-10-20。状态：M1 已完成参考迁移；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
+Date: 2026-10-20. Status: checked reference migrations, public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist; baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
+
+当前优先级调整为[基线准备与收益归因](BASELINE_PREPARATION.md)：先在原有条件下整理定义和证明、确认已有工具被充分纳入搜索，再引入新包；现阶段只做小范围实验、理论论证与工具验收，大规模实验留待用户指定的未来 `gpt6bel` 可用并确认后再另行冻结协议。
+Current work builds the preparation evidence and separates ordinary cleanup from package-associated gains; the future model name is the user's planning condition, not a claim about an available release or an automatic switch.
 
 当前实现及实际结果见 [理论包接口](THEORY_PACKAGES.md) 与 [同态/核实验](../experiments/hom_kernel/README.md)。
 See the [theory-package interface](THEORY_PACKAGES.md) and [homomorphism/kernel experiment](../experiments/hom_kernel/README.md) for the current implementation and measured results.
 
-新增的 [生成计量接口](GENERATION.md) 已接入 OpenAI Responses、逐任务修复、输出预算预约和原始用量收据，并通过离线控制测试及确定性响应配合真实 Lean 的流程检查；2026-10-20 另用 GPT-6 Luna 在一个公开开发任务上完成两次真实调用，两边均经隔离 Lean 核验，实际用量为 2332 输入、514 输出 token，新的预留实验仍未开展。
-The new [generation-metering interface](GENERATION.md) integrates OpenAI Responses, task-local repair, output-budget reservations and raw usage receipts, with offline controls and deterministic responses checked through actual Lean; on 2026-10-20, two live GPT-6 Luna calls on one public development task both passed isolated Lean checks, using 2332 input and 514 output tokens, while a new held-out experiment remains unperformed.
+早期 [生成计量接口](GENERATION.md) 接入 OpenAI Responses、逐任务修复、预算预约和原始收据，并完成两个 GPT-6 Luna 公开任务条件的隔离 Lean 核验，记录 2332 输入、514 输出 token；后续实际调用仅走 DeepSeek，计量对照与当前准备限制见下文。
+The historical OpenAI calibration stays separate from subsequent DeepSeek-only calls; neither it nor the later retained-proof summaries establish that the existing baseline was sufficiently optimized before a package comparison.
 
 ## 目标 / Objective
 
@@ -71,6 +74,12 @@ Fix the base library, goals, statement-equivalence criteria, cost conventions, p
 
 两边均得到改写和重证机会；不能用一边经过优化的证明对比另一边未经同等搜索的旧证明。
 Both conditions receive opportunities to rewrite and reprove; compare equally searched conditions rather than optimised proofs against untouched historical proofs.
+
+在引入候选之前，先仅用旧工具准备基线，包括已有定义与自动化的利用、适用引理检索和局部缩短；语义兼容与成本核验后冻结最佳保留证明及知识环境，再让两边从同一基线得到匹配的继续搜索机会。
+The historical-to-final saving splits exactly into old-tool preparation, continuing old-tool search, and the package-associated net difference; the [baseline note](BASELINE_PREPARATION.md) defines the costs and explains why this identity alone does not establish causality.
+
+准备不足、未尝试或仅搜集了旧证时，不把基线声明为已充分优化；对一般 Lean 搜索只能记录指定方法与预算内找到的最好结果，未来发现更短旧证时重新冻结基线。
+The first offline inventory therefore fixes its preparation and attribution readiness flags to false; a complete bounded-search evidence controller remains to be built before treating later gains as concept-associated evidence.
 
 基线检查依赖的传递闭包及自动化扩展，防止同态、核或配套定理通过 imports、simp 规则等途径预先进入。
 Check the transitive dependency closure and automation extensions so that homomorphisms, kernels or supporting theorems do not enter the baseline through imports, simp rules or similar routes.
@@ -237,7 +246,7 @@ M2 still needs broader task coverage and independence/repetition evidence, while
 The user subsequently clarified that project correctness and optional shortening take priority over diagnosing individual model outputs; keep these references as historical diagnostics, not a mandate to repair each rejected proof.
 
 已新增保留原证的独立选择层，正式汇总另列其事后证明组合：七个原有目标保留，两个更短替代使证明源码为 3975→3651，扣整包后净节省 -776，新增成功目标单列，原始模型通过率不改写。
-Next, use the existing verified proof pool and retrieve only likely shortening sites for DeepSeek Flash/low search; maintain strict-shorter acceptance and complete package accounting, and use fresh reserved goals if later evaluation is informed by this run.
+Next, prepare and audit small old-tool-only baseline searches before introducing another package; use DeepSeek Flash/low only for necessary bounded checks, maintain strict-shorter retention and complete accounting, and use fresh reserved goals if later evaluation is informed by this run.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.

@@ -6,6 +6,9 @@ Calculate compression and structural metrics for formal propositions, and use ve
 新增理论包提供可选的缩短证明机会：旧证明保留，只有核验通过且按既定长度指标严格更短的新证明才替换，失败、更长、等长或长度未知都不覆盖旧证明，也不要求全库重证。
 The default source-length policy retains existing verified witnesses and reports proof savings separately from the full package cost charged once; future searches can target promising local improvements.
 
+引入新理论前，应先充分利用原有定义、引理与工具准备相对简短的基线，避免把普通整理或额外搜索的收益归给新概念；当前按[基线准备说明](docs/BASELINE_PREPARATION.md)推进理论、工具与小范围验证，大规模实验暂缓。
+The new offline inventory collects the shortest existing baseline certificates, while the attribution checker separates old-tool cleanup, continued search and package-associated differences; neither certifies that general Lean proofs are globally shortest or that baseline search is complete.
+
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 
