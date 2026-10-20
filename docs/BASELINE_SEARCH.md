@@ -87,7 +87,7 @@ An operationally successful status read is not a certificate of sufficient basel
 完成有限的响应流程，不等于原工具已充分利用；当前 `baseline_search_complete`、`package_attribution_ready`、`model_search_verified` 与 `globally_shortest` 均保持为假，定义优化也没有在这个版本执行。
 Supplied local generation usage remains unknown, and the controller's provider-call count is zero because it has no API transport; existing historical costs stay in their original ledgers.
 
-后续接入计量求解器、记录声明方法的实际执行，并检查定义优化及语义兼容性后，才能进一步讨论指定搜索范围内的准备验收。
+新增[确定性局部改写执行器](BASELINE_METHODS.md)已接入两种声明方法的实际执行记录，计量求解器、定义优化与语义兼容性验收仍待完善。
 Even that evidence would establish only a bounded search result, without proving a globally shortest Lean proof or a general causal contribution from a new concept.
 
 ## 工具验收 / Workflow check
@@ -108,3 +108,6 @@ All 281 unit tests pass, the final reports replay identically, and CLI requests 
 
 四个实际开发目标另准备于 `data/baseline-search-development-prepared-20261020-v2/`，沿用已知原证 990 个源码 token，当前响应数和供应商调用均为零，尚未开始实际缩短搜索。
 Its frozen policy is the versioned local-only policy above; preparing and exporting the first request does not establish baseline sufficiency, execute a search method or introduce another theory package.
+
+随后在独立的两题目录 `data/baseline-method-pilot-20261020-v1/` 实际执行四次确定性扫描，两份候选通过 Lean，其中一份更短、另一份更长，按原策略得到 370→367 token，原四题目录保持不变。
+This executes the finite declared methods without certifying sufficient preparation; the one-sweep limit leaves the underlying search at `sweep_budget_exhausted`, with all readiness flags false.

@@ -9,8 +9,8 @@ The default source-length policy retains existing verified witnesses and reports
 引入新理论前，应先充分利用原有定义、引理与工具准备相对简短的基线，避免把普通整理或额外搜索的收益归给新概念；当前按[基线准备说明](docs/BASELINE_PREPARATION.md)推进理论、工具与小范围验证，大规模实验暂缓。
 The new offline inventory collects the shortest existing baseline certificates, while the attribution checker separates old-tool cleanup, continued search and package-associated differences; neither certifies that general Lean proofs are globally shortest or that baseline search is complete.
 
-已有[小范围搜索记录流程](docs/BASELINE_SEARCH.md)可绑定原证、接收局部候选或直接保留、核验严格缩短，并按完整轮次停止；当前只接收本地提供的响应，计量模型搜索与定义优化验收尚未接入。
-The workflow distinguishes completed local response checks from sufficient baseline preparation, with model, optimality and concept-attribution claims kept false.
+已有[小范围搜索记录流程](docs/BASELINE_SEARCH.md)可绑定原证、核验严格缩短并按完整轮次停止，另已[实际执行两种旧工具改写](docs/BASELINE_METHODS.md)：两道开发题四次扫描、两份候选通过 Lean，仅采用更短的一份，所选源码为 370→367 token。
+The local execution uses no model API and keeps the valid longer candidate as evidence; sufficient baseline preparation, metered model search, definition acceptance and concept attribution remain unfinished.
 
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.

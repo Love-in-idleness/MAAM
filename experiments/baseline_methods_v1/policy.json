@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "evidence_mode": "supplied_local",
+  "max_sweeps": 1,
+  "stable_sweeps": 1,
+  "methods": [
+    {
+      "name": "simpa_local_hypothesis",
+      "instructions": "Replace the first supported have/rw-at/exact block with simpa only using its expression; keep all other proof text and the existing imports, definitions and goal unchanged."
+    },
+    {
+      "name": "simpa_rewrite_exact",
+      "instructions": "Replace the first supported reverse-rw/exact block with simpa only using its value; keep all other proof text and the existing imports, definitions and goal unchanged."
+    }
+  ]
+}

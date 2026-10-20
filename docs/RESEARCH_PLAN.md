@@ -79,7 +79,7 @@ Both conditions receive opportunities to rewrite and reprove; compare equally se
 The historical-to-final saving splits exactly into old-tool preparation, continuing old-tool search, and the package-associated net difference; the [baseline note](BASELINE_PREPARATION.md) defines the costs and explains why this identity alone does not establish causality.
 
 准备不足、未尝试或仅搜集了旧证时，不把基线声明为已充分优化；对一般 Lean 搜索只能记录指定方法与预算内找到的最好结果，未来发现更短旧证时重新冻结基线。
-The first offline inventory fixes its preparation and attribution readiness flags to false; the additive [supplied-local workflow](BASELINE_SEARCH.md) now records incumbent-bound requests, strict-shorter candidates and clean sweeps, while metered search, actual method-execution evidence and definition acceptance remain incomplete.
+The first offline inventory fixes its preparation and attribution readiness flags to false; the additive [supplied-local workflow](BASELINE_SEARCH.md) records incumbent-bound requests, strict-shorter candidates and clean sweeps, and [two deterministic methods](BASELINE_METHODS.md) now have actual execution evidence, while metered baseline search and definition acceptance remain incomplete.
 
 基线检查依赖的传递闭包及自动化扩展，防止同态、核或配套定理通过 imports、simp 规则等途径预先进入。
 Check the transitive dependency closure and automation extensions so that homomorphisms, kernels or supporting theorems do not enter the baseline through imports, simp rules or similar routes.
@@ -247,6 +247,9 @@ The user subsequently clarified that project correctness and optional shortening
 
 已新增保留原证的独立选择层，正式汇总另列其事后证明组合：七个原有目标保留，两个更短替代使证明源码为 3975→3651，扣整包后净节省 -776，新增成功目标单列，原始模型通过率不改写。
 Next, prepare and audit small old-tool-only baseline searches before introducing another package; use DeepSeek Flash/low only for necessary bounded checks, maintain strict-shorter retention and complete accounting, and use fresh reserved goals if later evaluation is informed by this run.
+
+已在两道开发题上实际执行两种通用旧工具改写：四次扫描产生两份候选，均通过隔离 Lean，源码 220→217 的候选被采用，150→152 的候选保留记录而不替换，所选成本合计 370→367，全部 299 项测试通过。
+This no-API pilot establishes replayable finite method execution and ordinary old-tool cleanup, leaving sufficient preparation, definition compatibility, model search and concept attribution unaccepted; the single sweep is exhausted without a later clean confirmation.
 
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
