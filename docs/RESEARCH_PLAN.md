@@ -221,6 +221,12 @@ The additive controller preserves old evaluator fingerprints and calibration fla
 DeepSeek 首轮开发校准的 16 次调用均在 2048 token 输出上限截断；独立的两次调用改用 8192 token 上限后，首个开发目标的两个条件均通过隔离 Lean，两轮合计费用含余量估算为 US$0.070540125，四个预留目标仍未调用。
 This establishes a metered DeepSeek development workflow and exposes output-budget sensitivity, while remaining short of complete development coverage, strict reserved effectiveness, exact model-revision verification or training acceptance.
 
+按用户不以 DeepSeek token 节省为约束的调整，后续使用宽松生成额度，d02、d03、d04 六个条件均通过隔离 Lean，开发集跨轮累计四题各两条件；完整保留 24 次调用及 16 次早期截断，合计含余量费用估算 US$0.133583625，整包源码账本为 1039→2019 token，未观察到净收益。
+This completes observed development coverage across separate adaptive protocols, not one matched-budget formal experiment; source-cost aggregation charges the 1100-token candidate once and retains each original context and failure.
+
+新的 [正式协议 v1](../experiments/metered_transfer_v1/protocol-formal-v1.json) 已冻结并准备零调用快照，计划在同一次新运行中以固定相同额度重做开发阶段，再进入仍未使用的四个预留目标。
+Only the protocol and snapshots are prepared; reserved outcomes, exact model revision, strict effectiveness, automatic candidate search and learning remain unverified.
+
 M1 参考迁移的局部证明体为 77→29 个 token，总非共享源码为 89→353 个 token；阶段验收依据证据完整和可重放性，不要求候选得到正收益。
 The M1 reference proof body is 77→29 tokens and total nonshared source is 89→353 tokens; acceptance depends on complete replayable evidence, without requiring a positive gain for the candidate.
 
