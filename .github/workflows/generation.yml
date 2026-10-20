@@ -9,8 +9,10 @@ on:
       - 'scripts/check_transfer.py'
       - 'scripts/check_transfer_tasks.py'
       - 'scripts/summarize_transfer.py'
+      - 'scripts/summarize_formal_transfer.py'
       - 'tests/test_generation.py'
       - 'tests/test_transfer*.py'
+      - 'tests/test_formal_transfer_summary.py'
       - 'tests/test_deepseek.py'
       - 'experiments/hom_kernel_migration/**'
       - 'experiments/metered_transfer_v1/**'
@@ -33,6 +35,7 @@ jobs:
       - name: Offline transfer protocol and DeepSeek boundaries
         run: |
           python -m unittest discover -s tests -p 'test_transfer*.py' -v
+          python -m unittest discover -s tests -p test_formal_transfer_summary.py -v
           python -m unittest discover -s tests -p test_deepseek.py -v
       - name: Install pinned Lean
         run: |

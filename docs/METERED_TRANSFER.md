@@ -163,3 +163,20 @@ The already incurred calibration costs remain separate and must accompany any la
 
 正式预留结果出现前，这仍只是待执行协议；其作者构造、模式相关性、公开开发集及模型别名等限制不因文件名而消失。
 Preparing snapshots makes no provider call; the original calibration runs cannot be relabeled as one complete formal comparison.
+
+## 单次正式运行的汇总 / Single-run formal reporting
+
+正式运行使用单独的离线汇总器，开发和预留阶段分别列出成功、失败、生成额度耗尽及中断，历史校准的证明不会补入本次覆盖范围。
+Earlier calibrations contribute costs only, preserving all failed calls, while the actual reserved-stage start and completion are recorded separately from effectiveness claims.
+
+```bash
+.venv/bin/python scripts/summarize_formal_transfer.py \
+  --root data/transfer-deepseek-formal-prepared-20261020 \
+  --calibration-run data/transfer-deepseek-20261020-v1 \
+  --calibration-run data/transfer-deepseek-output-v2-20261020 \
+  --calibration-run data/transfer-deepseek-remaining-v4-20261020 \
+  --output data/formal-summary-NEW.json
+```
+
+该命令不调用模型或 Lean，只重放已保存的原始响应和核验记录；输出文件必须为新文件，阶段未完成时不会伪装成完成。
+Each phase's common-solved source comparison charges the whole candidate once; phase costs must not be added as if their shared package were introduced twice in one portfolio.
