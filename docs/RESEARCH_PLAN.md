@@ -6,6 +6,9 @@ Date: 2026-10-21. Status: checked reference migrations now include an offline co
 当前优先级是可计算、可实现的小范围工具：[整包压缩计量](COMPRESSED_PACKAGES.md)已对冻结 M1 归档完成离线计量，[方法说明](PROOF_METHODS.md)先明确一套已有证明的入口、选择和义务；随后在[已准备的基线](BASELINE_PREPARATION.md)上检查少量新实例。
 Prioritize computable package measurements and explicit existing-method interfaces, then bounded applications over prepared baselines; one archived example does not establish new transfer or concept value.
 
+旧工具检查新增[有限确认](BASELINE_STABILITY.md)：两道开发题从上次所选的 367 token 开始，两轮八次扫描没有新改善，满足两种固定模式改写的停止规则；全部旧工具充分利用、一般定义验收和新理论归因仍未完成。
+The bounded controller preserves existing certificates and frozen evaluators, adding actual clean-round evidence without promoting it to broad baseline or attribution readiness.
+
 [分层框架](COMPRESSION_FRAMEWORK.md)与[广泛数学背景下的 AI 理解成本](COGNITIVE_COMPRESSION.md)保留作为理论约束；尚不可计算或未标定的理解难度、无限未来价值和统一综合分冻结为后续研究，不阻塞当前工程。
 Keep semantic contracts and broad AI background assumptions, while deferring unimplemented cognitive scores and unobserved future-value models instead of requiring a complete evaluation theory first.
 

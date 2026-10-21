@@ -65,3 +65,8 @@ The observed three-token saving belongs entirely to old-tool cleanup, with no ev
 
 下一步完善定义兼容性和有限搜索验收约定，再考虑必要的小范围 DeepSeek 检查，不因这次有限改写完成就引入新包或扩大实验。
 Reuse the configured DeepSeek Flash/low route only when model generation is needed, keeping model changes separate from tool validation and preserving complete usage and failure records.
+
+## 2026-10-21 有限确认 / Bounded confirmation
+
+新增[外层确认工具](BASELINE_STABILITY.md)复用原单轮执行器，最多三轮，改善后须有两轮完整无改善；本次从已知 367 token 出发，实际两轮八次扫描、两份更长候选通过 Lean 后均未替换原证，最终仍为 367。
+The earlier one-sweep evidence remains unchanged, while the new run meets only the declared two-method stopping rule; comprehensive baseline preparation and concept attribution remain unverified.

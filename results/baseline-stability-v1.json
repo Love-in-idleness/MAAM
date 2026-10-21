@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "status": "observed_local_confirmation",
+  "observation": {
+    "schema_version": 1,
+    "status": "declared_method_preparation_complete",
+    "stable_rounds": 2,
+    "rounds": [
+      {
+        "round": 1,
+        "status": "declared_methods_executed",
+        "clean": true,
+        "search_status": "declared_search_finished",
+        "counts": {
+          "scans": 4,
+          "candidates": 1,
+          "retains": 3,
+          "verified": 1,
+          "rejected": 0,
+          "inconclusive": 0,
+          "replacements": 0
+        },
+        "initial_source_tokens": 367,
+        "selected_source_tokens": 367,
+        "stable_rounds_after": 1
+      },
+      {
+        "round": 2,
+        "status": "declared_methods_executed",
+        "clean": true,
+        "search_status": "declared_search_finished",
+        "counts": {
+          "scans": 4,
+          "candidates": 1,
+          "retains": 3,
+          "verified": 1,
+          "rejected": 0,
+          "inconclusive": 0,
+          "replacements": 0
+        },
+        "initial_source_tokens": 367,
+        "selected_source_tokens": 367,
+        "stable_rounds_after": 2
+      }
+    ],
+    "max_rounds": 3,
+    "required_stable_rounds": 2,
+    "task_ids": [
+      "d01",
+      "d03"
+    ],
+    "methods": [
+      {
+        "name": "simpa_local_hypothesis",
+        "instructions": "Replace the first supported have/rw-at/exact block with simpa only using its expression; keep all other proof text and the existing imports, definitions and goal unchanged."
+      },
+      {
+        "name": "simpa_rewrite_exact",
+        "instructions": "Replace the first supported reverse-rw/exact block with simpa only using its value; keep all other proof text and the existing imports, definitions and goal unchanged."
+      }
+    ],
+    "initial_source_tokens": 367,
+    "selected_source_tokens": 367,
+    "selected_certificates": [
+      {
+        "task_id": "d01",
+        "proof_sha256": "e5d41c6f77ca24ab97360b8d2a73b6c71e7c3c7f80fdc42ab346e9e3e9059823",
+        "source_tokens": 150
+      },
+      {
+        "task_id": "d03",
+        "proof_sha256": "ef6dc7c7eff5bed815363cff6fcd1a148b710325727f181c34cdd2621aecfe5a",
+        "source_tokens": 217
+      }
+    ],
+    "declared_method_preparation_complete": true,
+    "baseline_search_complete": false,
+    "package_attribution_ready": false,
+    "globally_shortest": false,
+    "model_search_verified": false,
+    "definition_optimization_performed": false,
+    "generation_usage": null,
+    "actual_provider_calls": 0,
+    "plan_sha256": "fc7b4a67ffb3a6d5f9dc99e9211270e59a52e22ccb170054ab96de7ebbb3ec28",
+    "scope": "One or two development goals, two frozen source-pattern rewrites, at most three rounds; two consecutive clean no-improvement rounds confirm only this declared scope. Repeated deterministic scans are not independent statistical evidence. Definitions and imports remain fixed; broad tool exhaustion, cognitive benefit and concept attribution are unknown."
+  },
+  "fresh_lean_verification": {
+    "candidate_checks": 2,
+    "isolation": "existing scripts/lean_sandbox.py",
+    "candidate_results": [
+      {
+        "result": "run/rounds/01/search/sessions/s01/m02/attempts/d01/001/result.json",
+        "sha256": "8f6995f9ffaf645d6b9c3d56dfa4d299fc30fbde12f0f97ba375abb13e024f6e",
+        "lean_version": "4.24.0",
+        "verification": "freshly_compiled_theorems_and_dependency_audit",
+        "source_tokens": 152,
+        "goal_preserved": true
+      },
+      {
+        "result": "run/rounds/02/search/sessions/s01/m02/attempts/d01/001/result.json",
+        "sha256": "013a6351646f118240c675c3665ff2702adc09d231dc4286119d98e440ab5492",
+        "lean_version": "4.24.0",
+        "verification": "freshly_compiled_theorems_and_dependency_audit",
+        "source_tokens": 152,
+        "goal_preserved": true
+      }
+    ],
+    "replacement_rule": "retain original verified source unless candidate full-module source tokens are strictly smaller"
+  },
+  "provenance": {
+    "local_evidence_root": "data/baseline-stability-pilot-20261021-v1",
+    "raw_records_committed": false,
+    "tool_sha256": {
+      "maam/PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+      "maam/baseline.py": "053217737cb4d1430893b87bdb6f296e42e695c3ef4825f7251d238a8213096b",
+      "maam/baseline_execution.py": "caf2e39c1879ed7c0dc78b1dd8808c3a7e2682b2e9d0843c4db35fbe5ff6e3eb",
+      "maam/baseline_methods.py": "80e5843df72de87c4c6ab975a52f35aa5fd956630953f53a6da4ce4e0df3f8cf",
+      "maam/baseline_search.py": "3479835736ad3bf9c131dc39dadf83c5a8b46543124d3fd34ba6433cba764922",
+      "maam/migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+      "maam/theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+      "scripts/control_baseline_execution.py": "d03d67d56603c94806ed992f243951811f15961d5047c9861a4040ac7f2c917a",
+      "scripts/control_baseline_search.py": "d6d099a8dadfd69647d76487583450f5682796c8a373f632545cde0a255ca307",
+      "scripts/lean_sandbox.py": "7185399db57996339f666735a3c31440728ba9775ebdb8a274b7a96534b861ab",
+      "scripts/control_baseline_stability.py": "daa757a466cb9137a5478b9321f3f92f680666c0628e0bddfbeff3859531b424"
+    },
+    "record_sha256": {
+      "pilot.json": "46696393e28cbdf1827eae4bfcac8640b70367540d6687e0c32b5aad651f4391",
+      "inventory.json": "0f8a2d59ce800c652afe5fa75f1fdf900c1cea5a9e0f635426e8ef198d7c6022",
+      "run/plan.json": "b56c0ca1a0d2fd276d705500e70fb1fa86ec0188887f0ae3193d2ddc5ca07974",
+      "run/issued.jsonl": "50b455a8971ee98d0331a938abb7beb5fb3fc8374b111215f40c9b4bc10a12ef",
+      "final-report.json": "0c338864feadc7ca5dca9a91c726018a67889a5da0d2ada3b1945a2632c66462"
+    },
+    "source_identity": "exact runtime hashes; pilot metadata records the pre-implementation base commit"
+  },
+  "scope": "Two fixed source-pattern methods on two existing development goals. Historical 370-to-367 saving is not counted again. Raw session records are retained locally, so full pilot replay needs those records; CI unit tests use explicitly mocked Lean results."
+}

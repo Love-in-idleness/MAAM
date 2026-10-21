@@ -114,8 +114,8 @@ This 360-token difference belongs to old-tool preparation, not a new-package gai
 后续已搭建[小范围旧工具搜索记录流程](BASELINE_SEARCH.md)，可以给出绑定原证的请求、接收候选或保留决定并调用检查器，但本地响应流程完成不等于基线充分优化，原始清单的未就绪标志不改写。
 The supplied-local workflow enforces strict shortening and clean complete sweeps; the [local method executor](BASELINE_METHODS.md) now provides actual deterministic rewrite evidence, while metered solver integration and definition-compatibility acceptance remain unfinished.
 
-继续扩充搜索工具之前，优先复核[理论框架](COMPRESSION_FRAMEWORK.md)中的任务身份、共享成本和反例案例；该文档的设计要求尚未成为当前控制器的通用验收能力。
-Prioritize auditing semantic contracts, sharing costs and counterexamples before expanding search tools; the framework's requirements are not yet general controller capabilities.
+当前按可计算、可实现的优先级推进：[有限确认](BASELINE_STABILITY.md)已在两道开发题上执行两轮无改善检查，原目标、定义、背景和源码选择规则不变；[理论框架](COMPRESSION_FRAMEWORK.md)中的一般语义兼容性与定义优化仍未实现。
+The new completion flag covers only the two declared deterministic rewrites and does not certify broad existing-tool sufficiency or admit general new-theory attribution.
 
 大规模实验留到用户指定的未来 `gpt6bel` 可用且身份确认之后，再明确配置和冻结新协议；本计划不声称它已经发布，也不会自动切换模型。
 Defer large experiments until the user-designated future `gpt6bel` is available and its identity confirmed, then specify settings and freeze a new protocol; this plan asserts no release and makes no automatic model switch.

@@ -111,3 +111,6 @@ Its frozen policy is the versioned local-only policy above; preparing and export
 
 随后在独立的两题目录 `data/baseline-method-pilot-20261020-v1/` 实际执行四次确定性扫描，两份候选通过 Lean，其中一份更短、另一份更长，按原策略得到 370→367 token，原四题目录保持不变。
 This executes the finite declared methods without certifying sufficient preparation; the one-sweep limit leaves the underlying search at `sweep_budget_exhausted`, with all readiness flags false.
+
+后续[有限确认工具](BASELINE_STABILITY.md)通过组合独立单轮执行、严格继承所选证书并记录外层轮次预算，完成两次无改善确认；旧单轮记录的状态不改写，全面基线与包归因标志仍为假。
+The outer controller adds a narrowly scoped completion flag instead of changing the original search protocol or claiming all existing tools have been exhausted.
