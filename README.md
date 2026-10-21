@@ -32,7 +32,12 @@ This completes only the declared method scope; broader existing-tool preparation
 | 中文 | English |
 | --- | --- |
 | 新增[旧工具的 DeepSeek 搜索](docs/MODEL_BASELINE.md)：两次真实调用、两份隔离 Lean 核验证明，完整源码合计 367→186 token；用量已记录，保守估算 $0.02043。 | The new metered old-tool search made two live DeepSeek calls and verified both candidates in isolated Lean, reducing full proof source from 367 to 186 tokens with a conservative $0.02043 cost estimate. |
-| 这份缩短来自现有工具；此前 367→229 的历史包对照尚未接入新基线，不能当作当前新理论收益。 | This gain comes from existing tools. The historical 367→229 package comparison has not incorporated the new baseline and does not establish current theory-package benefit. |
+| 这份缩短来自现有工具；367→229 的历史包对照仍使用旧基线，与下方新版本分开保存，不能当作当前新理论收益。 | This gain comes from existing tools. The historical 367→229 package comparison retains its old baseline separately from the new version below and does not establish current theory-package benefit. |
+
+| 中文 | English |
+| --- | --- |
+| 已完成[模型基线到整包压缩的来源衔接](docs/MODEL_PORTFOLIO.md)：186-token 新基线保留择优后为 121，计入完整包 1100 后合计 1221；非共享 zlib 字节 313→1293。 | The new end-to-end comparison connects the 186-token model baseline to a retained 121-token proof portfolio. Charging the full 1100-token package gives 1221 tokens; nonshared zlib size grows from 313 to 1293 bytes. |
+| 新旧版本分别保存，真实调用用量与历史未知用量分开记录。本阶段完成工程接线与可重放计量，没有新增模型调用，也不声称新理论有效。 | Versions remain separate, with known latest-call usage distinguished from unknown historical usage. This milestone completes integration and replayable measurement, with no new model calls or claim of theory effectiveness. |
 
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.

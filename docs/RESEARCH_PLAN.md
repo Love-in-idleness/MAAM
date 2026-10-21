@@ -294,7 +294,12 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 | 中文 | English |
 | --- | --- |
 | 2026-10-22 的[真实旧工具搜索](MODEL_BASELINE.md)已在两道开发题上运行 DeepSeek，各一次，无重试，两个候选均通过隔离 Lean；完整源码由 367 降至 186 token。 | The metered old-tool pilot made one DeepSeek call on each of two development goals, with no retries. Both candidates passed isolated Lean, reducing complete proof source from 367 to 186 tokens. |
-| 这属于普通旧工具搜索的改善，不属于新概念收益。下一步将新证书接入新版整包压缩对照；旧版本记录保持独立，充分基线、预留效果、方法复用和训练资格仍未验收。 | These are old-tool search gains, not concept gains. Next, use the new certificates in a versioned complete-package comparison; preserve older records separately. Sufficient baseline preparation, held-out effects, method reuse and training eligibility remain unaccepted. |
+| 这属于普通旧工具搜索的改善，不属于新概念收益；新证书现已接入下述新版整包对照，旧版本记录保持独立。充分基线、预留效果、方法复用和训练资格仍未验收。 | These are old-tool search gains, not concept gains. The new certificates now enter the versioned package comparison below, while older records stay separate. Sufficient baseline preparation, held-out effects, method reuse and training eligibility remain unaccepted. |
+
+| 中文 | English |
+| --- | --- |
+| [来源衔接阶段](MODEL_PORTFOLIO.md)已完成：真实模型收据→准确证书清单→两轮有限确认→原证保留与整包压缩。新基线 186，择优证明 121，加包 1100 后合计 1221；固定编码的压缩字节也增加。 | The provenance milestone is complete: model receipts → exact certificate inventory → two bounded confirmation rounds → retained-proof package compression. The new baseline costs 186, selected proofs 121, and the full package adds 1100 for a total of 1221; fixed-codec compressed size also increases. |
+| 新增衔接器只复用已有核验与计量，不修改冻结评估器。本阶段零新增模型调用；下一步限于少数开发题的方法接口与复用实验，继续保留公平性及基线充分性未完成的状态。 | The adapter reuses existing checks and measurements without modifying frozen evaluators. This stage adds no model calls. Next, restrict method-interface and reuse experiments to a few development goals, retaining the unaccepted fairness and baseline-sufficiency status. |
 
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.

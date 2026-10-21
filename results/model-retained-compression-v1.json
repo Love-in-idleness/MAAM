@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "status": "measured_model_seeded_retained_portfolio",
+  "inputs": {
+    "model_root": "/home/idleness/Source/MAAM/data/model-baseline-pilot-20261021-v1/run",
+    "exported_inventory": "/home/idleness/Source/MAAM/data/model-baseline-pilot-20261021-v1/selected-inventory.json",
+    "baseline_root": "/home/idleness/Source/MAAM/data/model-portfolio-pilot-20261022-v1/confirmation",
+    "model_report_sha256": "e70138049f4b3ea4b1555c663c995fdb2e56fee525f6e02b21f6641c528178e1",
+    "exported_inventory_sha256": "169126bd28b5a1dd495701c6ba9418517a3d5a503c10cef0ba62759ec435079f",
+    "confirmation_report_sha256": "8d44fc2bd7fcae726ff5ea0fa1d3e7ac7d768f9c3a7a931eac5f6219be975b2e",
+    "comparison_sha256": "1d0e4988bb1e723017e8f58dd7da95a92a1fc0b5296076cc0cd5487f1afcf82f",
+    "tool_sha256": {
+      "scripts/measure_model_portfolio.py": "82db53c1ac78458ab0b8ebcbba25cc24b7e9d223f4b85af64f9d0b9894a17078",
+      "scripts/control_model_baseline.py": "6d1c8219fb2e20458a367b2ee1cae286cd461cab1adc142f6fe4c94bcf0b2430",
+      "scripts/measure_retained_portfolio.py": "191c070b17de4c16e27972531f54aa3c27f47edd14d2ee0c13b10f9202440d8e",
+      "scripts/control_baseline_stability.py": "daa757a466cb9137a5478b9321f3f92f680666c0628e0bddfbeff3859531b424"
+    }
+  },
+  "baseline_generation_ledger": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "source_commit": "c3fc1c015825b1cc8729e23a31824ca0fd625c9d",
+    "latest_model_calls": 2,
+    "latest_generation_usage": {
+      "input_tokens": 3260,
+      "output_tokens": 12805,
+      "total_tokens": 16065
+    },
+    "latest_estimated_cost_usd": "0.02043",
+    "exact_model_revision_verified": false,
+    "inherited_generation_usage": null,
+    "inherited_generation_usage_status": "unknown",
+    "before_model_source_tokens": 367,
+    "after_model_source_tokens": 186,
+    "after_confirmation_source_tokens": 186,
+    "scope": "Known usage covers only the bound latest model pilot. Earlier inherited proof generation remains unknown; this is not the total cost of constructing the baseline."
+  },
+  "comparison": {
+    "schema_version": 1,
+    "status": "measured_retained_reference_portfolio",
+    "inputs": {
+      "baseline_root": "/home/idleness/Source/MAAM/data/model-portfolio-pilot-20261022-v1/confirmation",
+      "treatment_session": "/home/idleness/Source/MAAM/data/transfer-package-reuse-diagnostic-20261020/reference-treatment",
+      "baseline_confirmation_sha256": "8d44fc2bd7fcae726ff5ea0fa1d3e7ac7d768f9c3a7a931eac5f6219be975b2e",
+      "baseline_inventory_sha256": "32367713e2ce937da92d798e869f85b86162bc995b3669b1f99d572d1ab5e0b7",
+      "treatment_report_sha256": "92674cdf6e04a9083010c4797b73f7bd7589ebe18f20552c9fdbdcec783f2a66",
+      "treatment_fingerprints": {
+        "suite_sha256": "934c5f0117cb4f990bdfce8fa5031a5ceffb6f3cb3e4d29b28222d2013414412",
+        "package_sha256": "401d367bd4c15947a5366029cda3852b1b064738a7069ab53a82f42687ffbd79",
+        "source_sha256": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "Tasks.D01": "29eb54c22bb48974605f919c853ba3763669babf79ef8ed03da5e7ba31750bcf",
+          "Tasks.D02": "b88860a80d1e3607a2c2a4ef76bc7466258540f2948b4e29893e4710257a74b9",
+          "Tasks.D03": "eb738450e9a66d41013f81fc90813fd465385436cc21f32bf6207bada0d55349",
+          "Tasks.D04": "ec5155fa4da48810980444f63f5a768077e72a94e52c5950baa5c5be6fac5689",
+          "Tasks.R01": "e2465924547fb18763fe1e0775e10551f343cd06c2c3517a5e283ac0a22fdb79",
+          "Tasks.R02": "2739a619cc9e91b473fd08c99d1d01d1d097aedc70b7cf55b2fe33e39b163c26",
+          "Tasks.R03": "dfa3704c3dedddccd677b6cb79909b9154d782f870185df2f5ae0998faf70bcf",
+          "Tasks.R04": "e03582cbd4a8e43894da9d56c8296b3b2c55180112655234659ac3e023659bb8"
+        },
+        "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+        "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+        "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+      },
+      "tool_sha256": {
+        "scripts/measure_retained_portfolio.py": "191c070b17de4c16e27972531f54aa3c27f47edd14d2ee0c13b10f9202440d8e",
+        "scripts/control_baseline_stability.py": "daa757a466cb9137a5478b9321f3f92f680666c0628e0bddfbeff3859531b424",
+        "scripts/measure_compressed_reference.py": "5f8908db7894959217ea3207d0d0af23765db957fdd6dbf23b86e4748e90194d",
+        "maam/reuse.py": "daeac9a2f21276de75efa67edac7a79dced4bd2fc71ff0e39e1a863a72869691",
+        "maam/migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4"
+      }
+    },
+    "protocol": {
+      "selection": "verified and strictly shorter full-module source tokens; preserve original imports",
+      "encoding": "reuse reference-compression-v1 canonical JSON and codecs; exact source bytes",
+      "proof_labels": "task_id/Proof labels independent documents, not jointly importable Lean modules",
+      "package_modules_charged_once": [
+        "Candidate",
+        "Extension"
+      ],
+      "shared_modules": [
+        "Base",
+        "Tasks.D01",
+        "Tasks.D03"
+      ],
+      "nonshared_payload": "shared base and task declarations excluded before encoding; not C(K+X)-C(K)",
+      "standalone_sources": "joint local source documents; external Init/toolchain unchanged",
+      "excluded": "reports, logs, historical failures, method documentation and toolchain binaries"
+    },
+    "historical_treatment": {
+      "solver": {
+        "id": "author-assisted-development-reference-unmetered",
+        "mode": "supplied_reference"
+      },
+      "budget": {
+        "max_attempts_per_task": 2,
+        "max_proof_bytes": 32768,
+        "max_heartbeats": 200000,
+        "per_command_timeout_seconds": 60,
+        "per_attempt_timeout_seconds": 180
+      },
+      "missing_alternatives": [
+        "d01"
+      ]
+    },
+    "runtime": {
+      "python_version": "3.14.8",
+      "zlib_compile_version": "1.3.2",
+      "zlib_runtime_version": "1.3.2",
+      "bzip2_runtime_version": null
+    },
+    "retained_portfolio": {
+      "status": "derived_retained_proof_portfolio",
+      "selection_metric": "full_proof_module_source_tokens",
+      "replacement_rule": "verified and strictly shorter; ties and unknown lengths retain original",
+      "tasks": [
+        {
+          "task_id": "d01",
+          "action": "retain_original",
+          "selected_origin": "original",
+          "selected": {
+            "proof_source_tokens": 42,
+            "proof_sha256": "886b4960ad96a8ad5e59c73c974001111324709b87e15d19d487fd98418409e1",
+            "result_sha256": "50f24ee929fde0f35d11557cae1ed4a6546eaf2ef4447a4c274d9f67cc4e03f4",
+            "artifact": "/home/idleness/Source/MAAM/data/model-baseline-pilot-20261021-v1/run/search/sessions/s01/m01/attempts/d01/001",
+            "request_sha256": "a77ccc67c94facbc0baaca0efdfcb45e2d56c9472ecf6297c2d6f13065065f94",
+            "import_context": [
+              {
+                "module": "Base",
+                "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+              },
+              {
+                "module": "Tasks.D01",
+                "sha256": "29eb54c22bb48974605f919c853ba3763669babf79ef8ed03da5e7ba31750bcf"
+              }
+            ],
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "congrArg",
+              "id"
+            ]
+          },
+          "original_source_tokens": 42,
+          "alternative_source_tokens": null
+        },
+        {
+          "task_id": "d03",
+          "action": "replace_with_shorter",
+          "selected_origin": "alternative",
+          "selected": {
+            "proof_source_tokens": 79,
+            "proof_sha256": "87072a23b95005f4926ca9a592ab3b9517c1cc2a4b696b81d5c3e3acb5213777",
+            "result_sha256": "6d794119b5d3ab5ca143b140fbdaa7ffc358091870c0c8583955bc03fb61b7bd",
+            "artifact": "/home/idleness/Source/MAAM/data/transfer-package-reuse-diagnostic-20261020/reference-treatment/attempts/d03/001",
+            "request_sha256": "b482b2c447e1e03d3fb34d10899dce28f8ebec351cd45eb44df06a70ce9120c7",
+            "import_context": [
+              {
+                "module": "Base",
+                "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+              },
+              {
+                "module": "Tasks.D03",
+                "sha256": "eb738450e9a66d41013f81fc90813fd465385436cc21f32bf6207bada0d55349"
+              },
+              {
+                "module": "Candidate",
+                "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+              },
+              {
+                "module": "Extension",
+                "sha256": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c"
+              }
+            ],
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "Foundation.Group.one",
+              "Theory.Hom",
+              "Theory.Hom.map_one",
+              "Theory.Hom.mk",
+              "Trans.trans",
+              "congrArg",
+              "instTransEq"
+            ]
+          },
+          "original_source_tokens": 144,
+          "alternative_source_tokens": 79
+        }
+      ],
+      "coverage": {
+        "original": [
+          "d01",
+          "d03"
+        ],
+        "retained": [
+          "d01",
+          "d03"
+        ],
+        "newly_solved": []
+      },
+      "original_goal_source_ledger": {
+        "baseline_tokens": 186,
+        "selected_proof_tokens": 121,
+        "gross_tokens_saved": 65,
+        "package_tokens_charged_once": 1100,
+        "selected_including_package_tokens": 1221,
+        "net_tokens_saved": -1035
+      },
+      "new_goal_proof_tokens": null,
+      "scope": "Already verified same-goal witnesses only; original import contexts retained. New-only goals are outside compression comparisons; inheritance is not model generation success. The full package is charged once even when no replacement improves a proof."
+    },
+    "scopes": {
+      "nonshared_payload": {
+        "conditions": {
+          "baseline": {
+            "modules": [
+              "d01/Proof",
+              "d03/Proof"
+            ],
+            "source_utf8_bytes": 715,
+            "serialized_utf8_bytes": 771,
+            "payload_sha256": "e7088a2fa9a58cec4d80173b928664b29649a98bceb4be742dcba9ccd8af389b",
+            "compressed": {
+              "zlib-9": {
+                "bytes": 313,
+                "sha256": "28f598876a308b1ce4e0cc4da4d08644dffb4a45b3199a1afe1dab3d7372b381"
+              },
+              "bzip2-9": {
+                "bytes": 367,
+                "sha256": "5803185e767fbedc45c913e962c85d70e73e555fe3b686d3c69bcdbf0574c53b"
+              }
+            },
+            "roundtrip_verified": true
+          },
+          "retained_treatment": {
+            "modules": [
+              "Candidate",
+              "Extension",
+              "d01/Proof",
+              "d03/Proof"
+            ],
+            "source_utf8_bytes": 4919,
+            "serialized_utf8_bytes": 5113,
+            "payload_sha256": "056a9db99056a5de820c75b445a7731db247bd65b4716c92e53bfe815ef3533b",
+            "compressed": {
+              "zlib-9": {
+                "bytes": 1293,
+                "sha256": "f1e063720b1a0e185c73960a619c2a8752de2099a681c6a98d3e287db6c88e0f"
+              },
+              "bzip2-9": {
+                "bytes": 1317,
+                "sha256": "6e3aa6f9cc4d8281a0a89f02528360fa2c52995113085b54ba07186c1ca6d4be"
+              }
+            },
+            "roundtrip_verified": true
+          }
+        },
+        "net_zlib_bytes_saved": -980,
+        "outcome": "higher_cost"
+      },
+      "standalone_sources": {
+        "conditions": {
+          "baseline": {
+            "modules": [
+              "Base",
+              "Tasks.D01",
+              "Tasks.D03",
+              "d01/Proof",
+              "d03/Proof"
+            ],
+            "source_utf8_bytes": 1817,
+            "serialized_utf8_bytes": 1952,
+            "payload_sha256": "70f573783d4487d2a11265ee001871c842c95bb7af047512b792b1378947e17e",
+            "compressed": {
+              "zlib-9": {
+                "bytes": 647,
+                "sha256": "f278815918c747c9caaa59065257b4a6f8c6b9e53114dd6af64d7b5d960fb074"
+              },
+              "bzip2-9": {
+                "bytes": 710,
+                "sha256": "7beeaca2b1df567dd5b5493e485b880b18b5fed38f4c363596e2d6d048112dde"
+              }
+            },
+            "roundtrip_verified": true
+          },
+          "retained_treatment": {
+            "modules": [
+              "Base",
+              "Candidate",
+              "Extension",
+              "Tasks.D01",
+              "Tasks.D03",
+              "d01/Proof",
+              "d03/Proof"
+            ],
+            "source_utf8_bytes": 6021,
+            "serialized_utf8_bytes": 6294,
+            "payload_sha256": "42d4273751906916fdbee3ab54ec7a41fc193f4b1294f1ca5363afc36649c5fa",
+            "compressed": {
+              "zlib-9": {
+                "bytes": 1557,
+                "sha256": "8b8cdf07b2107de8309d68cde0fc0ccfde4e9793f22577590dd16ed3b804aa56"
+              },
+              "bzip2-9": {
+                "bytes": 1579,
+                "sha256": "26eb24d7b653f4aa116b3a608fde53712f4e4fa7315cf696746e926bb1c98061"
+              }
+            },
+            "roundtrip_verified": true
+          }
+        },
+        "net_zlib_bytes_saved": -910,
+        "outcome": "higher_cost"
+      }
+    },
+    "evidence": {
+      "baseline_declared_method_scope_complete": true,
+      "broad_baseline_prepared": false,
+      "fresh_lean_verification": false,
+      "new_model_calls": 0,
+      "historical_generation_usage": "unknown",
+      "fair_model_comparison": false,
+      "held_out_evaluation": false,
+      "method_card_usability_measured": false,
+      "causal_theory_attribution": false,
+      "scope": "Offline composition of archived same-goal certificates, not new discovery or matched-budget search."
+    }
+  },
+  "evidence": {
+    "new_model_calls": 0,
+    "fresh_lean_verification": false,
+    "metered_baseline_provenance_replayed": true,
+    "baseline_declared_method_scope_complete": true,
+    "broad_baseline_prepared": false,
+    "historical_treatment_generation_usage": null,
+    "fair_model_comparison": false,
+    "held_out_evaluation": false,
+    "causal_theory_attribution": false,
+    "method_card_usability_measured": false,
+    "training_eligible": false,
+    "scope": "Offline composition only. Prior generation and confirmation are separate stages; this command neither generates nor checks new proofs. The frozen nested comparison retains its original historical evidence labels."
+  }
+}

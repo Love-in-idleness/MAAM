@@ -70,3 +70,7 @@ python scripts/control_model_baseline.py status \
 | --- | --- |
 | 本地 selected-inventory.json 已导出本次最短证书，可直接作为后续有限搜索的输入；原始目录为 data/model-baseline-pilot-20261021-v1/。 | The local selected-inventory.json exports the selected certificates for later bounded searches; raw evidence lives under data/model-baseline-pilot-20261021-v1/. |
 | 两题仍不足以证明基线已充分优化；本次没有预留集实验、定义改写、认知难度测量或新理论收益归因。下一轮继续当前 GPT-6.1 Sol 做对照工具工程，真实候选仍用 DeepSeek。 | Two goals do not establish sufficient baseline optimization. No held-out experiment, definition rewrite, cognitive-difficulty measurement or new-theory attribution occurred. Continue with GPT-6.1 Sol for comparison tooling and DeepSeek for actual candidate generation. |
+
+| 中文 | English |
+| --- | --- |
+| 后续[整包对照](MODEL_PORTFOLIO.md)已接入这些证书：新基线 186，择优证明 121，加完整包后 1221。该阶段复用原始调用记录，没有新增模型生成。 | The subsequent complete-package comparison now uses these certificates: baseline 186, selected proofs 121, and 1221 including the full package. That stage reuses the original call records without additional generation. |
