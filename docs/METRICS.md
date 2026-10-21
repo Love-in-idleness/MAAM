@@ -123,8 +123,14 @@ The algorithm finds the exact minimum in the supplied finite tree-proof space, c
 
 ## 已知解释限制 / Known interpretive limits
 
-当前指标是[分层压缩框架](COMPRESSION_FRAMEWORK.md)中的部分描述量，不直接度量规格的充分性、命题的推广范围、人的理解难度或未来复用价值。
-The current metrics cover only some descriptive layers and do not directly measure specification adequacy, generality, comprehension or future reuse.
+当前指标是[分层压缩框架](COMPRESSION_FRAMEWORK.md)中的部分描述量，不直接度量规格的充分性、命题的推广范围、AI 的理解难度或未来复用价值。
+The current metrics cover only some descriptive layers and do not directly measure specification adequacy, generality, AI comprehension or future reuse.
+
+[AI 理解成本提案](COGNITIVE_COMPRESSION.md)以广泛的已有数学知识为条件，区分新增获取成本、当前使用成本与跨任务摊销；依赖展开量不表示每次都要重新学习全部前置理论。
+The proposed AI evaluation conditions on broad mathematical knowledge and separates acquisition, use and amortization, without interpreting dependency expansion as repeated learning.
+
+同依赖下的 200 与 100 长度不蕴含难度比例，1200 的模块化证明也可能比 1000 的整体证明更易被 AI 使用；非线性与统摄力须通过条件明确的行为和不同任务族验证，现有 `score` 不据此重新解释或调整。
+Equal dependencies do not make difficulty proportional to length, and longer modular proofs may help; these hypotheses leave the existing descriptive score unchanged.
 
 构造被重新组织为存在性证据时，须保留原构造与验证的依赖；声明由定义改列为定理、或节点被拆分，会改变评分资格及图统计，但不能据此推断数学价值改变。
 Reorganizing a construction as existence evidence preserves its dependencies, while recategorizing or splitting declarations can change scoring eligibility and graph statistics without establishing a change in mathematical value.

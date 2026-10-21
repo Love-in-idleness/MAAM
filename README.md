@@ -9,6 +9,9 @@ The default source-length policy retains existing verified witnesses and reports
 当前先进行[理论框架与反例审查](docs/COMPRESSION_FRAMEWORK.md)：区分定义、规格、实现和证明，保留推广前后的命题，分别评价表达、共享、推导、适用范围与后续复用。
 The framework treats immediate shortening as one criterion among several and documents semantic contracts, complete costs and nineteen acceptance cases; these broader controls remain proposed rather than implemented.
 
+理解难度面向具有广泛数学背景的 AI：通用理论已有的掌握不重复收费，新理论的获取成本计一次，再观察跨任务用途；[文献与测量提案](docs/COGNITIVE_COMPRESSION.md)说明非线性、分块及 16 项设计验收要求。
+The AI-cost proposal separates shared knowledge, marginal processing and cross-task acquisition costs; its literature review and conditional model do not constitute an implemented or calibrated comprehension score.
+
 引入新理论前，应先充分利用原有定义、引理与工具准备相对简短的基线，避免把普通整理或额外搜索的收益归给新概念；当前按[基线准备说明](docs/BASELINE_PREPARATION.md)推进理论、工具与小范围验证，大规模实验暂缓。
 The new offline inventory collects the shortest existing baseline certificates, while the attribution checker separates old-tool cleanup, continued search and package-associated differences; neither certifies that general Lean proofs are globally shortest or that baseline search is complete.
 

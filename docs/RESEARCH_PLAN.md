@@ -3,8 +3,8 @@
 日期：2026-10-20。状态：M1 已完成参考迁移；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
 Date: 2026-10-20. Status: checked reference migrations, public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist; baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
 
-当前优先级是复核[数学对象与分层压缩框架](COMPRESSION_FRAMEWORK.md)：明确任务身份、构造与公理化的关系、推广保留、共享成本及未来复用的证据，再推进[基线准备与收益归因](BASELINE_PREPARATION.md)的有限案例。
-Prioritize the semantic and measurement framework before further baseline tooling, distinguishing present compression, broader scope and evidence of subsequent reuse.
+当前优先级是复核[分层压缩框架](COMPRESSION_FRAMEWORK.md)及[广泛数学背景下的 AI 理解成本](COGNITIVE_COMPRESSION.md)：明确已有掌握、条件性处理、跨任务投入和非线性假设，再推进[基线准备与收益归因](BASELINE_PREPARATION.md)的有限案例。
+Prioritize conditional AI costs and semantic contracts, reviewing shared knowledge, new acquisition, cross-task scope and structural hypotheses before further tooling.
 
 旧工具能够完成的整理先于基线冻结，依赖新包的重构则属于加入新包后的候选效果；现阶段只做理论论证、工具验收与小范围实验，大规模实验留待用户指定的未来 `gpt6bel` 可用且身份确认后再冻结协议。
 Separate old-tool preparation from package-enabled refactoring and keep experiments small; the future model name is a planning condition rather than a release claim or an automatic switch.
@@ -20,11 +20,20 @@ The historical OpenAI calibration stays separate from subsequent DeepSeek-only c
 MAAM 的主要目标是评估新命题、新对象及围绕一个核心思想形成的一组定义、性质和推论，为数学探索与 LLM 学习提供可核查的反馈。
 MAAM's main objective is to evaluate new propositions, objects and connected collections of definitions, properties and consequences, providing auditable feedback for mathematical exploration and LLM learning.
 
+评价主体始终是面向多个数学领域、已有广泛理论背景的 AI；通用理论的历史学习成本不为每个对象重算，新增理论包的准备与获取成本计一次，并结合不同任务族的使用成本与可靠性评价。
+Evaluate an AI with broad mathematical knowledge, charging genuinely new setup once and assessing conditional use, reliability and transfer across task families.
+
+知识库中存在某个定理不等于 AI 已熟练掌握；要记录模型、检索、记忆和能力证据，实际内部知识及预训练暴露不可确定时保持未知。
+Library availability and operational competence remain separate, with unknown internal knowledge and pretraining exposure preserved.
+
 评价可以输出带条件的比较、不可比或证据不足；不要求单个数值或统一的全局排序。
 Evaluation may return a contextual comparison, incomparability or insufficient evidence; it need not produce a scalar or a universal ranking.
 
 核心实验是：在固定背景知识、任务和资源下，加入候选理论包并实际重述、重证之后，发生了什么可验证的变化？
 The central experiment asks: with background knowledge, tasks and resources fixed, what verifiable changes occur after introducing a candidate package and actually reformulating and reproving results?
+
+同背景下的模块组织效果与加入新理论后的效果分开比较，旧工具能完成的整理先做好；现有小型同态/核实验是工程和局部归因对照，不能代表广泛数学背景下的理解难度。
+Separate organization effects from new-theory effects, retaining narrow existing experiments as controls rather than evidence of broad mathematical competence.
 
 原有静态指标仍作为描述和检索信号；全库复现差异继续单列追踪，静态分数不是新概念未来价值的已验证估计。
 Existing static metrics remain descriptive and retrieval signals; full-library reproduction discrepancies remain tracked separately, and static scores are not validated estimates of a new concept's future value.

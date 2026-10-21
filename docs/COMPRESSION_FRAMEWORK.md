@@ -8,19 +8,25 @@ Date: 2026-10-20; this is a theoretical design with counterexamples, not an impl
 MAAM 应研究：在明确的数学基础、任务含义、知识背景和资源条件下，一个理论变化能否减少重复表达、组织共享论证、扩大可处理的问题范围，以及改善后续求证。
 MAAM should study whether a theory change reduces repeated expression, organizes shared arguments, extends the problems it can handle, or improves subsequent proving under explicit foundations, task meanings, background knowledge and resources.
 
+评价主体是具备广泛数学背景的 AI；理解难度指相对于其已有掌握的新增负担，通用理论的历史投入不对每个新对象重复收取，新包则按一次性投入与跨任务用途评价。
+The subject is an AI with broad mathematical knowledge, evaluated through marginal demands and cross-task use while separating shared history from new acquisition.
+
 这些效果不能由单个长度比值推断，也不必同时发生；评价结果应允许“某一方面改善、另一方面变差、未来用途未知”。
 These effects need not occur together and cannot be inferred from one length ratio; an evaluation must allow improvement on one axis, deterioration on another, and unknown future usefulness.
 
 [ABFM §5.2](https://arxiv.org/html/2603.20396v1#S5.SS2) 将动态选择定义列为未解决的问题；[BDF §4.4–4.6](https://arxiv.org/html/2604.06107v1#S4.SS4) 讨论重构、扣除抽象成本的语料重写收益及后续任务表现。
 Those sources motivate this investigation, but the semantic contracts, accounting rules and acceptance cases below are MAAM proposals rather than results established by those papers.
 
-“新证明严格更短才替换旧证明”继续作为当前采用策略；较长证明仍可作为带有可复用引理的研究候选，推广命题也可作为新节点保留。
-Strict shortening remains the current adoption policy, while a longer proof with reusable lemmas or a more general theorem can remain a research candidate without replacing the original.
+“新证明严格更短才替换旧证明”继续作为当前源码证书的采用策略；较长证明可能在首次理解时就有收益，也可能提供可复用引理，推广命题则作为新节点保留。
+Strict shortening governs current source-certificate adoption, while longer proofs can improve immediate comprehension or reuse and generalizations remain separate statements.
 
 ## 2. 首先区分评价的对象 / Distinguish the evaluated objects
 
 一次评价先声明背景 \(\mathcal C=(F,K,\mathcal E,Q,\mathcal B)\)：\(F\) 是逻辑基础与公理，\(K\) 是允许免费使用的共同背景，\(\mathcal E\) 是表示和计量规则，\(Q\) 是目标及其含义，\(\mathcal B\) 是搜索条件与资源范围。
 An evaluation fixes foundations \(F\), common background \(K\), representation and measurement rules \(\mathcal E\), goals and their meanings \(Q\), and search conditions and resources \(\mathcal B\).
+
+“免费背景”仅指本次增量账本不重复收取共同历史成本；AI 是否掌握及能否检索这些理论需另行记录，具体行为比较还须冻结模型与记忆状态。
+Common background is free only of repeated historical acquisition charges, while operational familiarity, retrieval and current use remain separate conditions.
 
 | 对象 / Object | 需要保留的内容 / Required information |
 | --- | --- |
@@ -163,45 +169,39 @@ Semantic specialization and actual proof dependence are different relations and 
 例如，一般定理若使用旧特例的原证，再把该特例的选用证明改成调用一般定理，不能同时让一般定理的依赖自动改指这个新版本；必须保留原证依赖并计费，否则会形成循环论证。
 If the general proof uses the old specialized certificate, replacing that certificate by a call to the general theorem requires preserving the original dependency version, or the resulting library becomes circular.
 
-## 8. 1000 与 10×120：即时节省和发展潜力 / Immediate saving and development potential
+## 8. 1000 与 10×120：当前理解和后续使用 / Present comprehension and subsequent use
 
-先确认“120”是否包含每个引理的完整陈述、假设、证明及最终拼装；若只计局部证明体，十步方案的实际成本还会更高。
-Check whether each block includes its statement, hypotheses, proof and final assembly, since proof-body counts alone understate the modular version's total cost.
+对已经掌握有关通用理论的 AI，1200 的结构化证明可以在首次接触这个证明时就比 1000 的整体证明更容易处理，因为模块可能减少需要协调的条件和中间结论。
+For an AI familiar with the supporting theories, a longer structured proof can reduce coordination demands on first encounter.
 
-假设完整成本确为 1000 与 1200，当前单题应保留 1000 的证明；1200 的方案只有在分解产生可独立调用的接口时，才获得尚待验证的复用机会。
-For complete costs of 1000 and 1200, retain the shorter proof on the current goal and treat reusable interfaces in the longer version as opportunities requiring evidence.
+需要测量条件辨认、整体拼装和新问题上的应用，只对尚未掌握的模块计入新增获取成本；论证、论文和跨任务摊销见[AI 理解成本](COGNITIVE_COMPRESSION.md)。
+Measure applicability, integration and transfer, charging acquisition for unfamiliar components under the conditional AI framework.
 
-只比较两个完整备选组合时差额为 200，但在当前保留 1000 原证的策略下，若另行引入的模块全部是新增的 1200，联合组合就要计 2200，而不是 1200。
-The difference between alternative portfolios is 200, but retaining the 1000 proof while adding an entirely new 1200 module set makes the combined cost 2200.
+分段和解释也可能改善呈现，即使没有新导出的形式引理；语义模块与可复用引理提供的是进一步可能性，不能只按段落数自动奖励。
+Presentation changes can help without new formal lemmas, while semantic modules and reusable interfaces require their own evidence beyond block counts.
 
-因此，后续复用的初始投入必须取实际联合账本的新增成本 \(I\)，不能一律用 \(1200-1000\)；例如，若 \(I=200\) 且每次后续净省 60，则三次仍差 20、四次净省 40，若 \(I=1200\) 则二十次才打平。
-Use the actual incremental investment \(I\): at a net saving of 60 per use, an investment of 200 pays back on the fourth use, while 1200 needs twenty uses merely to break even.
+在源码轴上，仍应确认 1200 包含完整陈述、假设、证明和最终拼装，并按当前严格缩短策略保留 1000 的选用证书；AI 理解与使用可以另选较长接口。
+The source ledger and certificate policy remain separate from the preferred interface for AI comprehension and use.
 
-这些数字仅演示核算，调用、转换及新辅助内容的成本必须先扣除，真正未来用途仍需观察。
-These illustrative figures require reference, transport and new-helper costs to be deducted first, and actual future uses still require evidence.
+源码复用的账本也单独保留：若 1000 原证仍被选用且额外加入全新 1200 模块，则组合为 2200，后续源码节省应回收实际新增成本，不能直接假定投入只有 200。
+Future source savings must repay actual incremental costs, which can differ from the difference between two alternative portfolios.
 
-局部步骤不必是可复用引理：把隐藏的局部变量、类型条件和假设导出后，接口可能很长，而且十个小步骤可能只是任意断句。
-A local step may depend on a large context when exported, and arbitrary splitting does not create reusable mathematics.
-
-短步骤能否改善搜索或理解，要另测接口所需假设、待维护上下文、搜索成功率及人的理解表现；不能从“十步”直接推出更易理解或更有前景。
-Claims about easier search or understanding require evidence about interfaces, live context, solving performance or human comprehension.
-
-如果未来任务全都复用这些引理，模块方案可能占优；若未来任务都用不上，新增投入就无法回收，因此当前两个长度不足以确定无条件的发展排序。
-The same present lengths support opposite preferences under different future tasks, so they do not determine an unconditional ranking of development potential.
+例如，实际新增成本为 200、每次后续净省 60 时，四次净省 40；新增成本为 1200 时二十次才打平，这些假设数字不用于计算理解难度。
+These illustrative break-even calculations concern source accounting, while comprehension needs its own measurements.
 
 ## 9. 200 与 100：定义的长度不是概念复杂度 / Definition length and conceptual complexity
 
-在同一编码下，200 的书写长度确实是 100 的两倍；这只对该长度成立，不能推出理解难度、语义复杂度、计算成本或数学价值也是两倍。
-The factor of two applies to the chosen encoding length, not automatically to understanding, meaning, computation or mathematical value.
+这里固定相同依赖和前置知识：200 的书写长度是 100 的两倍，但需要同时协调的关系、隐含推理与量词结构可能造成非线性理解负担。
+Under equal dependencies and prerequisites, relational and inferential demands can produce nonlinear comprehension costs despite the simple length ratio.
 
-例如，定义甲长 200 且另需 20 的未共享依赖，定义乙长 100 却另需 1000 的未共享依赖，则该边界下完整成本为 220 与 1100；若那些依赖本已属于共同背景，条件成本又会不同。
-In this illustrative ledger, dependency costs reverse the comparison, while moving genuinely preexisting dependencies into the common background changes the conditional question.
+增加内容若带来更高的耦合，理解可能远不止难两倍；增加内容若提供解释和有意义的分块，也可能使较长版本更易理解，因此不能把难度设为仅依赖长度的函数。
+Additional coupling can make comprehension disproportionately harder, while explanation and meaningful organization can make longer material easier.
 
-公理化规格变短，可能增加实现、存在性、唯一性或运输成本；一个很短的程序也可能执行极多步骤，因此这些量都要单列。
-A shorter specification can require additional realization and transport evidence, just as a short program can require extensive computation.
+[AI 理解成本说明](COGNITIVE_COMPRESSION.md)将已有掌握、模型状态、目标、交互关系和接口纳入评价，比较固定资源下的可靠性及达到指定掌握要求的资源量，具体非线性形式待检验。
+The AI note conditions outcomes on operational knowledge and compares reliability and resources without prescribing a power law.
 
-不能把所有定义完全展开后就认为得到了唯一“真实复杂度”：展开到哪里、是否重复共享项、是否进行归约，都取决于明确选择的规则。
-Complete expansion is not a unique intrinsic complexity measure without decisions about the boundary, repeated sharing and reduction.
+依赖与展开成本继续单列，但不能代替相同背景下的 AI 行为测量；通用理论的统摄力通过不同任务族的组合与迁移考察，不将全部基础知识展开成本算作每次理解负担。
+Expansion costs do not measure AI understanding, and broad theory is assessed through diverse uses without repeatedly charging shared foundations.
 
 ## 10. 哪些层面的压缩可以计算 / Measurable layers of compression
 
@@ -213,10 +213,10 @@ Complete expansion is not a unique intrinsic complexity measure without decision
 | 规格与命题族压缩 / Specifications and families | 一般陈述及证明，加选定实例的特化和回传成本 / General statement and proof plus selected instance bridges | 更一般就必然更短 / Generality guarantees brevity |
 | 搜索资源改善 / Search resources | 固定任务和条件下的解决覆盖、尝试量、生成用量及检查时间 / Coverage, attempts, generation usage and checking time | 一次失败就是没有短证 / One failure proves no short proof exists |
 | 后续复用 / Subsequent reuse | 随任务到来的累计净收益、额外解决的目标与成本曲线 / Cumulative net savings, additional solved goals and costs over subsequent tasks | 少量用途就预测无限未来 / A few uses predict unlimited future value |
-| 理解与稳健性 / Understanding and robustness | 人工评价、接口上下文、受控扰动后的表现，未测则未知 / Human assessment, interface context and controlled perturbations, unknown until measured | token 数就是认知负担 / Token count measures cognitive burden |
+| AI 理解与稳健性 / AI comprehension and robustness | 广泛背景下的条件性掌握、资源、组合与跨领域迁移，新增获取成本计一次 / Conditional competence, resources, composition and transfer, with acquisition charged once | token 数等于难度；统摄力或库中存在等于已掌握 / Tokens, generality or library presence automatically establish difficulty or mastery |
 
-前四项涉及不同表示层面的描述成本，搜索和理解属于有关效果；使用“压缩”一词时必须指明具体是哪一项。
-The first four concern description costs at different representations, while search and understanding are related outcomes that require their own names and evidence.
+前四项涉及不同表示层面的描述成本，搜索与理解还涉及 AI 的行为；使用“压缩”一词时必须指明具体测量层面。
+Description costs and AI outcomes require separate operational definitions and evidence.
 
 ### 10.1 声明与共享依赖的成本 / Declaration and dependency cost
 
@@ -314,7 +314,9 @@ evidence: certificates, semantic bridges, dependencies, provenance
 costs: source, certificate size, expansion, search usage, checking time
 coverage: original goals, additional goals, certified specialization
 development: cumulative reuse, fresh task families, observed stability
-unknowns: unmeasured comprehension, unexplored uses, uncertain costs
+comprehension: broad background, AI state, competence, integration, transfer
+acquisition_and_use: one-time setup, conditional use costs, task families, horizon
+unknowns: uncalibrated cognitive predictions, unexplored uses, uncertain costs
 ```
 
 在相同上下文、相同覆盖及可比测量下，一个候选若所有声明比较的成本都不高且至少一个更低，才在这些轴上支配另一个；各有优劣则保留不可比。
@@ -350,7 +352,7 @@ An ablation must also exclude dependent cached results and automation, and inter
 | 泛化导致原目标消失 / Lost original goals | 保留原命题及证书，新增一般命题与特化 / Retain original goals and add a generalization with specialization |
 | 实验成功被当作理论必然 / Overinterpreted experiments | 分开有限模型结论、Lean 证书、模型实测和价值假说 / Separate finite results, checked proofs, observed runs and value hypotheses |
 | 搜索能力与概念价值混淆 / Search versus concept | 保存搜索计划、失败与资源，区分未发现和不存在 / Record search conditions and distinguish unfound from impossible |
-| 人的理解被代理指标替代 / Unvalidated comprehension proxy | 接口宽度和上下文仅作描述，理解需要独立评价 / Treat interface and context measures as proxies requiring validation |
+| AI 理解被代理指标替代 / Unvalidated comprehension proxy | 固定广泛背景与 AI 状态，结构指标须由独立行为评价验证 / Condition on broad knowledge and validate proxies against behavior |
 
 定义作为缩写、规格作为接口、一般化作为覆盖扩展，并不是同一种改变；它们可以同时出现，但每一项都需要自己的证据。
 Abbreviation, interface specification and generalization are distinct changes that may coexist but require distinct evidence.
@@ -369,10 +371,10 @@ These are design-level expected outcomes, not claims that the current software i
 | A05 | 把有限生成模的湮灭多项式称为规范特征多项式 / Treat an annihilator as canonical characteristic polynomial | 缺少额外定义与条件，不接受 / Require additional definition and hypotheses |
 | A06 | 由 \(aM=0\) 推 \(a=0\) / Infer scalar equality from module annihilation | \(\mathbb Z\)-模 \(\mathbb Z/2\mathbb Z\) 与 \(a=2\) 反驳 / Reject without conditions such as faithfulness |
 | A07 | 环上 CH 覆盖域上 CH / Generalize CH to rings | 保留两命题及特化关系，原证不强制替换 / Keep both statements and optional proof replacement |
-| A08 | 1000 对比完整成本 1200 / Compare complete proof costs | 1000 当前更短；未来复用未知 / Prefer 1000 now, leave future reuse unknown |
+| A08 | 1000 整体证明对比 1200 模块化证明 / Compare whole and modular proofs | 源码与理解分别评价，1200 可有首次理解收益 / Separate source cost from possible immediate comprehension gains |
 | A09 | 每次后续净省 60，实际新增成本不同 / Saving 60 per use with different actual investments | 新增 200 时四次 +40；新增 1200 时二十次打平 / Distinguish alternative-portfolio differences from actual incremental setup |
 | A10 | 定义 200+20 对比 100+1000 / Definitions with dependencies | 完整成本 220 对 1100，边界固定 / Compare 220 and 1100 under the fixed boundary |
-| A11 | 拆成十步但没有新的可复用接口 / Split a proof without reusable interfaces | 不获得发展潜力奖励，实际包装成本仍计 / No potential bonus, actual overhead still charged |
+| A11 | 拆成十步但没有新的可复用接口 / Split a proof without reusable interfaces | 不按步数自动奖励，但允许单独验证呈现改善 / No automatic step-count reward; presentation benefits remain testable |
 | A12 | 新增别名或把目标答案藏入导入 / Add an alias or import the target answer | 展示其依赖及完整成本 / Expose dependencies and complete cost |
 | A13 | 复制题目或制造矛盾假设 / Duplicate goals or add contradictory hypotheses | 不增加有效覆盖 / No additional meaningful coverage |
 | A14 | 故意加长证明以提高 `I0` / Pad a proof to increase `I0` | 描述分数可变，不能标记为更有价值 / Metric change is not a value improvement |
@@ -393,8 +395,8 @@ The existing counters, finite solver, retention policy and package ledger remain
 本轮修正基线说明中过于笼统的定义整理顺序，并在指标及研究计划中明确语义对应、推广保留和分层比较；旧实验、评估器源码及其指纹均不改写。
 This round narrows the refactoring rule and updates the metric and research documents while preserving historical evidence and evaluator fingerprints.
 
-下一步先对本框架做一次以反例为主的理论复核，重点审查任务身份、完整共享成本与推广关系，再选择三个有限小案例实现：构造转存在性、较长分解的后续复用、推广后保留旧命题。
-Next, audit the framework for counterexamples before implementing three small cases covering realization evidence, reuse of a longer decomposition, and retention under generalization.
+下一步先审查[AI 理解成本](COGNITIVE_COMPRESSION.md)的共同背景、跨任务摊销、非线性假设与反例，再制作少量同依赖的组织对照及新增包对照。
+Review conditional AI costs, amortization and structural assumptions before preparing small organization and package comparisons.
 
 复核应明确哪些性质可在有限模型中证明、哪些需要 Lean 桥接证书、哪些只能通过后续任务观察，之后才扩充工具或进行必要的 DeepSeek 小实验。
 Classify each proposed property as a finite-model result, a Lean certificate obligation or an empirical claim before expanding tooling or running necessary small DeepSeek experiments.
@@ -402,5 +404,5 @@ Classify each proposed property as a finite-model result, a Lean certificate obl
 本轮不调用项目模型 API、不读取密钥、不进行大规模实验，也不把理论审查完成写成已通过一般定义兼容性或概念价值验收。
 This round uses no project model API or credentials and establishes neither general definition-compatibility acceptance nor validated concept-value measurement.
 
-本轮检查范围是来源核对、文档差异和 83 个本地链接检查、19 个案例编号检查，以及 \(\mathbf F_2^2\) 上反例的有限枚举和示例账本算术；有限枚举包含双线性加法关系的全部 64 组向量三元组。
-Verification covers sources, document changes and links, case numbering, finite counterexample enumeration and illustrative arithmetic; it does not establish general Lean correctness or measured future value.
+首版核对记录包含来源、文档差异和 83 个本地链接、19 个案例编号，以及 \(\mathbf F_2^2\) 上反例的有限枚举和示例账本算术；后续认知文献修订不把这些检查升级为 AI 理解的实验验证。
+The first-version checks remain evidence for documentation and finite examples, not experimental validation of the subsequent cognitive framework.
