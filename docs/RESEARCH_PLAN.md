@@ -291,6 +291,11 @@ The M1 reference proof body is 77→29 tokens and total nonshared source is 89�
 
 ## 与当前代码的衔接 / Connection to existing code
 
+| 中文 | English |
+| --- | --- |
+| 2026-10-22 的[真实旧工具搜索](MODEL_BASELINE.md)已在两道开发题上运行 DeepSeek，各一次，无重试，两个候选均通过隔离 Lean；完整源码由 367 降至 186 token。 | The metered old-tool pilot made one DeepSeek call on each of two development goals, with no retries. Both candidates passed isolated Lean, reducing complete proof source from 367 to 186 tokens. |
+| 这属于普通旧工具搜索的改善，不属于新概念收益。下一步将新证书接入新版整包压缩对照；旧版本记录保持独立，充分基线、预留效果、方法复用和训练资格仍未验收。 | These are old-tool search gains, not concept gains. Next, use the new certificates in a versioned complete-package comparison; preserve older records separately. Sufficient baseline preparation, held-out effects, method reuse and training eligibility remain unaccepted. |
+
 当前 maam/proofs.py 在调用方提供的有限规则上计算树证明成本，规则本身的逻辑有效性由调用方负责；reuse_gain 只支持一个已可导命题在固定图中的复用。
 Current maam/proofs.py computes tree-proof costs over caller-supplied finite rules, whose logical validity remains the caller's responsibility; reuse_gain supports one already-derivable proposition reused within that fixed graph.
 

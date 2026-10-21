@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "source_commit": "c3fc1c015825b1cc8729e23a31824ca0fd625c9d",
+  "provider": "deepseek",
+  "transport": "deepseek_responses",
+  "requested_model": "deepseek-flash",
+  "exact_model_revision_verified": false,
+  "actual_provider_calls": 2,
+  "call_count_scope": "Initiated slots; an interrupted transport may or may not have reached the provider.",
+  "calls": [
+    {
+      "slot": 1,
+      "task_id": "d01",
+      "status": "verified",
+      "usage": {
+        "input_tokens": 1567,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 3875,
+        "output_tokens_details": {
+          "reasoning_tokens": 3778
+        },
+        "total_tokens": 5442
+      },
+      "error": null
+    },
+    {
+      "slot": 2,
+      "task_id": "d03",
+      "status": "verified",
+      "usage": {
+        "input_tokens": 1693,
+        "input_tokens_details": {
+          "cached_tokens": 128
+        },
+        "output_tokens": 8930,
+        "output_tokens_details": {
+          "reasoning_tokens": 8651
+        },
+        "total_tokens": 10623
+      },
+      "error": null
+    }
+  ],
+  "generation_usage": {
+    "input_tokens": 3260,
+    "output_tokens": 12805,
+    "total_tokens": 16065
+  },
+  "estimated_cost_usd": "0.02043",
+  "reserved_cost_usd": "0.110592",
+  "max_cost_usd": "0.12",
+  "initial_source_tokens": 367,
+  "selected_source_tokens": 186,
+  "search_report": {
+    "schema_version": 1,
+    "status": "sweep_budget_exhausted",
+    "stop_reason": "maximum_sweeps_reached",
+    "completed_sweeps": 1,
+    "stable_sweeps": 0,
+    "replacements": [
+      {
+        "slot": 1,
+        "task_id": "d01",
+        "before": 150,
+        "after": 42
+      },
+      {
+        "slot": 2,
+        "task_id": "d03",
+        "before": 217,
+        "after": 144
+      }
+    ],
+    "initial_source_tokens": 367,
+    "selected_source_tokens": 186,
+    "tasks": [
+      {
+        "task_id": "d01",
+        "artifact": "sessions/s01/m01/attempts/d01/001",
+        "proof_source_tokens": 42,
+        "proof_sha256": "886b4960ad96a8ad5e59c73c974001111324709b87e15d19d487fd98418409e1"
+      },
+      {
+        "task_id": "d03",
+        "artifact": "sessions/s01/m01/attempts/d03/001",
+        "proof_source_tokens": 144,
+        "proof_sha256": "01b21d2f0e9085366b9b1a7acc3f6cfbd63bdfe6005bf8fa5d075d98e93216d3"
+      }
+    ],
+    "attempts": [
+      {
+        "slot": 1,
+        "sweep": 1,
+        "task_id": "d01",
+        "method": "deepseek_existing_tool_shortening",
+        "status": "verified",
+        "replaced": true,
+        "proof_source_tokens": 42
+      },
+      {
+        "slot": 2,
+        "sweep": 1,
+        "task_id": "d03",
+        "method": "deepseek_existing_tool_shortening",
+        "status": "verified",
+        "replaced": true,
+        "proof_source_tokens": 144
+      }
+    ],
+    "next_slot": null,
+    "baseline_search_complete": false,
+    "package_attribution_ready": false,
+    "globally_shortest": false,
+    "model_search_verified": false,
+    "definition_optimization_performed": false,
+    "generation_usage": null,
+    "generation_usage_status": "supplied_local_not_independently_metered",
+    "actual_provider_calls": 0,
+    "scope": "Finite supplied-local workflow only; no assertion of existing-tool exhaustion, sufficient baseline optimization, causal attribution or model performance."
+  },
+  "scope": "Development-only bounded model attempts; no sufficient-baseline, concept-attribution, cognitive-difficulty, exact-revision or training claim. Child supplied_local metadata is unchanged; actual provider provenance and metering live in this outer receipt ledger."
+}

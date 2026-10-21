@@ -40,3 +40,33 @@ python scripts/control_model_baseline.py status --root data/model-baseline-NEW
 | --- | --- |
 | 完成两次尝试只表示本协议已执行，不能宣称旧工具已充分使用、证明全局最短或新概念有收益。内层 supplied_local 标签保持原义；模型调用证据以外层收据为准。 | Completing two attempts establishes execution of this protocol, not sufficient use of existing tools, global minimality or concept value. The inner supplied_local labels retain their original meaning; provider evidence comes from the outer receipts. |
 | 测试中的供应商响应和 Lean 证书是明确的模拟夹具；现场运行结果另行记录。完整原始记录保存在 Git 忽略的 data/ 中，提交摘要不能单独替代原始回放。 | Provider responses and Lean certificates in tests are explicit fixtures. Live results are recorded separately. Full raw evidence stays in Git-ignored data/; committed summaries alone do not replace raw replay. |
+
+## 现场结果 / Live results
+
+| 中文 | English |
+| --- | --- |
+| 2026-10-22 已完成两次真实调用，均报告 deepseek-flash，两个候选均通过隔离 Lean 4.24.0 核验并严格缩短。协议与控制器先提交为 c3fc1c0，再准备和调用。 | Two live calls completed on 2026-10-22, both reporting deepseek-flash. Both candidates passed isolated Lean 4.24.0 verification and strictly shortened their incumbents. Protocol and controller commit c3fc1c0 preceded preparation and generation. |
+| [提交摘要](../results/model-baseline-v1.json)可从本地原始记录重新计算。原证、两次输入、原始响应、用量收据、候选及核验结果均保留。 | The [committed summary](../results/model-baseline-v1.json) replays from local raw evidence. Original proofs, both inputs, raw responses, usage receipts, candidates and verification results are retained. |
+
+| 目标 / Goal | 原证完整源码 token / Incumbent full-source tokens | 新证完整源码 token / New full-source tokens | 核验及采用 / Verification and selection |
+| --- | ---: | ---: | --- |
+| d01 | 150 | 42 | Lean verified; adopted |
+| d03 | 217 | 144 | Lean verified; adopted |
+| 合计 / Total | 367 | 186 | 181 tokens saved |
+
+| 中文 | English |
+| --- | --- |
+| 供应商报告输入 3260、输出 12805、合计 16065 个 token；输出已含推理，未重复计数。按固定高峰价格加 25% 余量，估算为 $0.02043，完整预约 $0.110592，上限 $0.12。无重试或修复调用。 | Provider-reported usage is 3260 input and 12805 output tokens, totaling 16065. Reasoning is included once. Fixed peak-price accounting plus a 25% margin estimates $0.02043, against $0.110592 reserved and a $0.12 ceiling. No retry or repair calls occurred. |
+| 两题仅使用原有源码。181 token 的改善属于旧工具搜索，不能归给新理论。此前两种确定性改写的有限确认仍然成立，但不代表所有原有工具已充分利用。 | Both goals used existing sources only. The 181-token gain belongs to old-tool search, not new theory. Earlier bounded confirmation of two deterministic rewrites remains valid within its scope and does not establish sufficient use of all existing tools. |
+| 历史 367→229 的整包对照继续作为旧版本记录保留；它没有使用本次 186 token 基线，也不是本轮重新测量的结果。下一步先将新证书接入新版整包对照，再讨论方法复用。 | The historical 367→229 package comparison remains an older-version record. It does not use this 186-token baseline and was not remeasured in this trial. Next, connect these certificates to a new package comparison before examining method reuse. |
+| 全部 343 项测试通过；历史结果、M1 压缩和原证保留压缩报告均通过离线回放。测试中的 Lean 夹具与本次两份真实 Lean 证书明确区分。 | All 343 tests passed; archived results, M1 compression and retained-portfolio compression replayed offline. Lean fixtures in tests remain distinct from the two fresh live Lean certificates. |
+
+```bash
+python scripts/control_model_baseline.py status \
+  --root data/model-baseline-pilot-20261021-v1/run
+```
+
+| 中文 | English |
+| --- | --- |
+| 本地 selected-inventory.json 已导出本次最短证书，可直接作为后续有限搜索的输入；原始目录为 data/model-baseline-pilot-20261021-v1/。 | The local selected-inventory.json exports the selected certificates for later bounded searches; raw evidence lives under data/model-baseline-pilot-20261021-v1/. |
+| 两题仍不足以证明基线已充分优化；本次没有预留集实验、定义改写、认知难度测量或新理论收益归因。下一轮继续当前 GPT-6.1 Sol 做对照工具工程，真实候选仍用 DeepSeek。 | Two goals do not establish sufficient baseline optimization. No held-out experiment, definition rewrite, cognitive-difficulty measurement or new-theory attribution occurred. Continue with GPT-6.1 Sol for comparison tooling and DeepSeek for actual candidate generation. |
