@@ -1,10 +1,13 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
-日期：2026-10-20。状态：M1 已完成参考迁移；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
-Date: 2026-10-20. Status: checked reference migrations, public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist; baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
+日期：2026-10-21。状态：M1 已完成参考迁移并新增离线整包压缩计量；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
+Date: 2026-10-21. Status: checked reference migrations now include an offline compression sidecar; public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist, while baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
 
-当前优先级是复核[分层压缩框架](COMPRESSION_FRAMEWORK.md)及[广泛数学背景下的 AI 理解成本](COGNITIVE_COMPRESSION.md)：明确已有掌握、条件性处理、跨任务投入和非线性假设，再推进[基线准备与收益归因](BASELINE_PREPARATION.md)的有限案例。
-Prioritize conditional AI costs and semantic contracts, reviewing shared knowledge, new acquisition, cross-task scope and structural hypotheses before further tooling.
+当前优先级是可计算、可实现的小范围工具：[整包压缩计量](COMPRESSED_PACKAGES.md)已对冻结 M1 归档完成离线计量，[方法说明](PROOF_METHODS.md)先明确一套已有证明的入口、选择和义务；随后在[已准备的基线](BASELINE_PREPARATION.md)上检查少量新实例。
+Prioritize computable package measurements and explicit existing-method interfaces, then bounded applications over prepared baselines; one archived example does not establish new transfer or concept value.
+
+[分层框架](COMPRESSION_FRAMEWORK.md)与[广泛数学背景下的 AI 理解成本](COGNITIVE_COMPRESSION.md)保留作为理论约束；尚不可计算或未标定的理解难度、无限未来价值和统一综合分冻结为后续研究，不阻塞当前工程。
+Keep semantic contracts and broad AI background assumptions, while deferring unimplemented cognitive scores and unobserved future-value models instead of requiring a complete evaluation theory first.
 
 旧工具能够完成的整理先于基线冻结，依赖新包的重构则属于加入新包后的候选效果；现阶段只做理论论证、工具验收与小范围实验，大规模实验留待用户指定的未来 `gpt6bel` 可用且身份确认后再冻结协议。
 Separate old-tool preparation from package-enabled refactoring and keep experiments small; the future model name is a planning condition rather than a release claim or an automatic switch.

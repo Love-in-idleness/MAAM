@@ -5,6 +5,9 @@
 评价的对象是 `(proposition, supplied proof, corpus, primitive boundary, representation, parameters)`，只给命题的自然语言句子不足以计算这些指标。
 The evaluated object is `(proposition, supplied proof, corpus, primitive boundary, representation, parameters)`; a natural-language statement alone does not determine these metrics.
 
+独立的[整包压缩计量](COMPRESSED_PACKAGES.md)使用固定 JSON 编码与标准库压缩器，报告完整候选和实际证明共同压缩后的绝对字节数；它不替代下述论文指标或冻结的源码选择规则。
+This implemented sidecar reports both a nonshared payload and joint local sources with the common base; its archived single-task result is not a calibrated comprehension score or a new-theory effectiveness estimate.
+
 对于依赖图中的非原始节点 `u`，用 `w(u,v)` 表示在命题类型和证明体中引用 `v` 的总次数。
 For a nonprimitive node `u`, let `w(u,v)` count occurrences of `v` in its signature and body together.
 

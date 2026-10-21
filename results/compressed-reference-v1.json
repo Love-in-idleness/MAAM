@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "status": "measured_archived_reference",
+  "experiment_id": "hom-kernel-reference-v1",
+  "package_id": "hom-kernel-core-v1",
+  "protocol": {
+    "id": "reference-compression-v1",
+    "serialization": "UTF-8 canonical JSON object: sorted module name to exact source text",
+    "source_normalization": "none; preserve names, imports, comments and whitespace",
+    "primary_metric": "absolute zlib level-9, wbits-15 bytes of the jointly serialized sources",
+    "diagnostic_metric": "absolute bzip2 level-9 bytes of the same payload",
+    "package_charged": "every candidate module and proof module exactly once",
+    "shared_base_modules": [
+      "Base"
+    ],
+    "nonshared_payload": "shared base excluded before serialization; not C(K+X)-C(K)",
+    "standalone_sources": "shared base and charged sources serialized jointly; Init/toolchain external",
+    "excluded": "reports, logs, history, method documentation and toolchain binaries"
+  },
+  "inputs": {
+    "frozen_fingerprints": {
+      "experiment_sha256": "650dfa73c7d6d2f6779e3f3129a0542f749ddb425ddd9ffa0c0d785bd5a9125e",
+      "package_sha256": "dea1026aff1d9b4b09d0c2eca1f993c6678dd74719462a08a2822e4c6b223457",
+      "source_sha256": {
+        "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+        "Baseline": "e82be2d0da5dd847f65201353580ba360422577b1701346f3cede2be2d2bc250",
+        "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+        "Treatment": "40205bc5011b815f9754015f8f59e967a5fe4c0ed2ea778de6b34ee72beb46e8"
+      },
+      "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+      "evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9"
+    },
+    "archived_reference_sha256": "bb21755c52a4353097bcb0db40e4a5dd97624de3ca835b8893fae33e7f9de860",
+    "archived_receipt_sha256": "98485684ec5404af589e21b86bdcb766ebd52055b8e51b3f2f58355ea803e5ef",
+    "measurement_script_sha256": "5f8908db7894959217ea3207d0d0af23765db957fdd6dbf23b86e4748e90194d",
+    "serializer_module_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4"
+  },
+  "runtime": {
+    "python_implementation": "CPython",
+    "python_version": "3.14.8",
+    "zlib_compile_version": "1.3.2",
+    "zlib_runtime_version": "1.3.2",
+    "bzip2_runtime_version": null
+  },
+  "evidence": {
+    "kind": "offline measurement bound to trusted committed Lean evidence",
+    "fresh_lean_verification": false,
+    "new_model_calls": 0,
+    "historical_generation_usage": "unknown",
+    "baseline_prepared": false,
+    "held_out_evaluation": false,
+    "method_transfer_evaluation": false,
+    "general_mathematical_value": "unknown"
+  },
+  "scopes": {
+    "nonshared_payload": {
+      "conditions": {
+        "baseline": {
+          "modules": [
+            "Baseline"
+          ],
+          "source_utf8_bytes": 349,
+          "serialized_utf8_bytes": 377,
+          "payload_sha256": "fa4f591a633a056179cb100036d6199cbf0ff4409a18512f4c30b3d2c4a84120",
+          "compressed": {
+            "zlib-9": {
+              "bytes": 203,
+              "sha256": "20cfd303db7a2300a5b8b8c46ad8b8103e3204ab82a9fc00f41bd0defa0441ac"
+            },
+            "bzip2-9": {
+              "bytes": 241,
+              "sha256": "4d4e97eb2768489e88da97bf08a6d8fe6840294f09b7b1cde07908dbdaf24de3"
+            }
+          },
+          "roundtrip_verified": true
+        },
+        "treatment": {
+          "modules": [
+            "Candidate",
+            "Treatment"
+          ],
+          "source_utf8_bytes": 1345,
+          "serialized_utf8_bytes": 1417,
+          "payload_sha256": "d3d6d26a06f3f53954dd5feaa8b0f8b84b291fd210a4b92759afa73de14422cb",
+          "compressed": {
+            "zlib-9": {
+              "bytes": 516,
+              "sha256": "5cda665ef51d1e2e8a3bf3e3f99068fb19953425709e46756bcea456f8b2a5ba"
+            },
+            "bzip2-9": {
+              "bytes": 567,
+              "sha256": "049ccd058a06ebd9c634f38c15071286baca0964ce3498b7d8c31b6689802b74"
+            }
+          },
+          "roundtrip_verified": true
+        }
+      },
+      "net_zlib_bytes_saved": -313,
+      "outcome": "higher_cost"
+    },
+    "standalone_sources": {
+      "conditions": {
+        "baseline": {
+          "modules": [
+            "Base",
+            "Baseline"
+          ],
+          "source_utf8_bytes": 921,
+          "serialized_utf8_bytes": 977,
+          "payload_sha256": "4e419ede9f192bf9472c7b62ee880ce67799529a8dcdc3b606ec16b7fa23c460",
+          "compressed": {
+            "zlib-9": {
+              "bytes": 438,
+              "sha256": "e121d9476132dd27916603927f2cf4d22d9f8fefc74b4b9956134da372673ebc"
+            },
+            "bzip2-9": {
+              "bytes": 494,
+              "sha256": "b50208634f46c62c690a80c696bed384e01ca155b03a83eceee6e14996e65db9"
+            }
+          },
+          "roundtrip_verified": true
+        },
+        "treatment": {
+          "modules": [
+            "Base",
+            "Candidate",
+            "Treatment"
+          ],
+          "source_utf8_bytes": 1917,
+          "serialized_utf8_bytes": 2017,
+          "payload_sha256": "bca2b89b63a7df4f7a3290e5b0fa4693bc13f0edcfc5dcac21e75e807979002c",
+          "compressed": {
+            "zlib-9": {
+              "bytes": 704,
+              "sha256": "bbf19ddd19c7ccc97804eb1e0d53891286ff65459c441ce8989daa49f6658d12"
+            },
+            "bzip2-9": {
+              "bytes": 776,
+              "sha256": "319fd521cf6c12868e54fdb479dfc64523bc20098d8622f6f4a7fd27928e43d6"
+            }
+          },
+          "roundtrip_verified": true
+        }
+      },
+      "net_zlib_bytes_saved": -266,
+      "outcome": "higher_cost"
+    }
+  }
+}
