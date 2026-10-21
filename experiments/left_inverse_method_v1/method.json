@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "left_inverse_cancel_v1",
+  "origin": {
+    "kind": "author_extraction_from_verified_model_proof",
+    "task_id": "d03",
+    "proof_sha256": "01b21d2f0e9085366b9b1a7acc3f6cfbd63bdfe6005bf8fa5d075d98e93216d3"
+  },
+  "entry": {
+    "hypothesis": "For a b c : H, an equality h.mul a b = c; b and c are inferred from its type.",
+    "conclusion": "b = h.mul (h.inv a) c, normalized by the declared associativity and identity laws.",
+    "direction": "left_inverse_cancel"
+  },
+  "parameters": {
+    "group": "A local h : Foundation.Group H, providing the four required laws.",
+    "element": "An element a : H, represented by a local variable or one unary application.",
+    "equality": "A local proof hxx : h.mul a b = c; b and c are inferred from this equality, not separate renderer bindings.",
+    "result": "A fresh local identifier for the transported equality."
+  },
+  "required_laws": ["mul_assoc", "inv_mul", "one_mul", "mul_one"],
+  "proof_template": "have {result} := congrArg ({group}.mul ({group}.inv {element})) {equality}\nsimpa only [← {group}.mul_assoc, {group}.inv_mul, {group}.one_mul, {group}.mul_one] using {result}",
+  "knowledge": {
+    "suite_id": "metered-transfer-v1",
+    "lean_version": "4.24.0",
+    "condition": "baseline",
+    "base": {
+      "module": "Base",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    }
+  },
+  "obligations": [
+    "The entry equality must have direction h.mul a b = c, with a matching the chosen element binding; b and c are inferred from its type.",
+    "Multiplication on the left by the inverse exposes the declared left-inverse law after reassociation.",
+    "The source d03 case h.mul a a = a normalizes to a = h.one; the target d04 case h.mul a a = h.one normalizes to a = h.inv a.",
+    "Transport through one chosen argument of multiplication; a broad rewrite can change both repeated occurrences.",
+    "The host must check the complete instantiated proof in isolated Lean before considering replacement."
+  ],
+  "applications": {
+    "d02": {
+      "module": "Tasks.D02",
+      "goal": "Tasks.d02",
+      "source_sha256": "b88860a80d1e3607a2c2a4ef76bc7466258540f2948b4e29893e4710257a74b9",
+      "action": "retain",
+      "reason": "right_cancellation_not_implemented: this fixed adapter does not derive the right-inverse identity. The existing group axioms can derive it; that proof obligation is outside this card."
+    },
+    "d04": {
+      "module": "Tasks.D04",
+      "goal": "Tasks.d04",
+      "source_sha256": "ec5155fa4da48810980444f63f5a768077e72a94e52c5950baa5c5be6fac5689",
+      "action": "candidate",
+      "reason": "Apply the author-extracted d03 left-inverse cancellation method to the reverse implication; transport the forward equality through one chosen argument.",
+      "bindings": {"group": "h", "element": "(f x)", "equality": "hxx", "result": "hc"},
+      "proof_wrapper": "by\n  intro G H g h f hf x\n  rw [hf x x]\n  constructor\n  · intro hx\n    exact (congrArg (fun t => h.mul t (f x)) hx).trans (h.inv_mul (f x))\n  · intro hxx\n    {core}"
+    }
+  },
+  "limits": [
+    "This is an author extraction and a fixed development application, not automatic method discovery or unseen transfer.",
+    "The card supplies no new definition, theorem or stronger assumption; it describes the existing Base laws.",
+    "The complete card is an extra artifact to charge once, separately from final Lean proof source.",
+    "No claim is made that the incumbent proofs are globally shortest or that all existing methods have been exhausted."
+  ]
+}
