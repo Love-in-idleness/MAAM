@@ -70,3 +70,7 @@ The sidecar does not change proof adoption, optimize libraries, replace archived
 
 下一步使用[证明方法说明](PROOF_METHODS.md)明确一个已有工具的接口，再在小量、已准备的基线上检查新实例；当前只完成说明与计量工具。
 Reuse experiments must retain their own applicability, verification and resource evidence before making a transfer claim.
+
+| 中文 | English |
+| --- | --- |
+| 后续[双目标证据组合](RETAINED_COMPRESSION.md)已复用本工具的编码与压缩函数，核对原始导入环境并避免同名 Proof 覆盖；这是历史证书的计量，不是新方法迁移证据。 | The two-goal portfolio now reuses this encoding and compression, preserving import contexts and separate proof labels. It measures archived certificates without claiming new method transfer. |

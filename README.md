@@ -24,6 +24,11 @@ The local execution uses no model API and keeps the valid longer candidate as ev
 已有[有限确认工具](docs/BASELINE_STABILITY.md)从已保留的 367 token 继续，完成两轮、八次扫描和两次隔离 Lean 核验，未发现更短证明，满足两种固定改写的停止规则。
 This completes only the declared method scope; broader existing-tool preparation and package-attribution readiness remain unestablished.
 
+| 中文 | English |
+| --- | --- |
+| 新增[保留原证的整包压缩对照](docs/RETAINED_COMPRESSION.md)：将有限确认后的基线与历史参考接通，所选证明 367→229 token，完整包另计 1100，非共享 zlib 字节 425→1360。 | The retained-proof comparison connects confirmed baseline certificates to archived alternatives: selected proofs shrink from 367 to 229 tokens, but the full package adds 1100 and nonshared zlib size grows from 425 to 1360 bytes. |
+| 这是已有证据的组合与计量；公平模型比较、新方法发现及因果归因仍未建立。 | This is an archived-evidence composition and measurement, without a fair model comparison, new method discovery, or causal attribution. |
+
 本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
 This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
 

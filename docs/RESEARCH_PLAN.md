@@ -9,6 +9,11 @@ Prioritize computable package measurements and explicit existing-method interfac
 旧工具检查新增[有限确认](BASELINE_STABILITY.md)：两道开发题从上次所选的 367 token 开始，两轮八次扫描没有新改善，满足两种固定模式改写的停止规则；全部旧工具充分利用、一般定义验收和新理论归因仍未完成。
 The bounded controller preserves existing certificates and frozen evaluators, adding actual clean-round evidence without promoting it to broad baseline or attribution readiness.
 
+| 中文 | English |
+| --- | --- |
+| [保留原证的对照工具](RETAINED_COMPRESSION.md)已将这组基线接入历史参考的源码选择与整包压缩：证明 367→229 token，包 1100 token 计一次，总量 1329；该接线没有新求证或同预算生成实验。 | The retained-proof tool now connects this baseline to archived alternatives and package compression: proofs shrink from 367 to 229 tokens, with 1100 package tokens charged once for a total of 1329. This is not a new proof search or matched-budget generation experiment. |
+| 下一步优先少量、完整记录的 DeepSeek 旧工具求证，再扩展方法复用；不增加新的综合评分理论，也不扩大到全库实验。 | Next prioritize a small, fully recorded DeepSeek search with existing tools, then further method reuse, without adding a new composite score or expanding to library-wide experiments. |
+
 [分层框架](COMPRESSION_FRAMEWORK.md)与[广泛数学背景下的 AI 理解成本](COGNITIVE_COMPRESSION.md)保留作为理论约束；尚不可计算或未标定的理解难度、无限未来价值和统一综合分冻结为后续研究，不阻塞当前工程。
 Keep semantic contracts and broad AI background assumptions, while deferring unimplemented cognitive scores and unobserved future-value models instead of requiring a complete evaluation theory first.
 
