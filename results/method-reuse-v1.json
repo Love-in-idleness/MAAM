@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "method_id": "left_inverse_cancel_v1",
+  "origin": {
+    "kind": "author_extraction_from_verified_model_proof",
+    "task_id": "d03",
+    "proof_sha256": "01b21d2f0e9085366b9b1a7acc3f6cfbd63bdfe6005bf8fa5d075d98e93216d3"
+  },
+  "plan_sha256": "5f0387970b277df89c8a9c2e2e26dd7670efe6198474a2ff7eef31f436017c4b",
+  "runtime": {
+    "python_version": "3.14.8",
+    "zlib_runtime_version": "1.3.2"
+  },
+  "source_model_usage": {
+    "input_tokens": 3260,
+    "output_tokens": 12805,
+    "total_tokens": 16065
+  },
+  "new_model_calls": 0,
+  "generation_usage": null,
+  "counts": {
+    "scans": 2,
+    "candidates": 1,
+    "retained": 1,
+    "verified": 1,
+    "rejected": 0,
+    "incomplete": 0
+  },
+  "applications": [
+    {
+      "slot": 1,
+      "sweep": 1,
+      "task_id": "d02",
+      "method": "left_inverse_cancel_v1",
+      "status": "retained",
+      "replaced": false
+    },
+    {
+      "slot": 2,
+      "sweep": 1,
+      "task_id": "d04",
+      "method": "left_inverse_cancel_v1",
+      "status": "verified",
+      "replaced": true,
+      "proof_source_tokens": 90
+    }
+  ],
+  "initial_source_tokens": 620,
+  "selected_source_tokens": 450,
+  "new_lean_package_source_tokens": 0,
+  "proof_documents": {
+    "baseline": {
+      "modules": [
+        "d02/Proof",
+        "d04/Proof"
+      ],
+      "source_utf8_bytes": 1879,
+      "serialized_utf8_bytes": 1958,
+      "payload_sha256": "7a2c1186d3179f1eba0f332f15cf1ece94a1d1a0c056b7b92fe11336190d8e95",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 510,
+          "sha256": "c60262cafabed90f4224bee0b3104727e001cd22a2092298b8a68b6b270873d0"
+        },
+        "bzip2-9": {
+          "bytes": 554,
+          "sha256": "4612588e1fc6ff651b46ff3c5b0bbb8a4b6bfe0110480d34c4fa514e8bb1d353"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "selected": {
+      "modules": [
+        "d02/Proof",
+        "d04/Proof"
+      ],
+      "source_utf8_bytes": 1433,
+      "serialized_utf8_bytes": 1504,
+      "payload_sha256": "679ae43e1581f29628a0e5b68fe76e213236e6a0c255178745deeb4ce5df0020",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 458,
+          "sha256": "9dbaea4d289adcb3f65b114d16641bdaae1417233b46965fc66b3cc0aad3de9e"
+        },
+        "bzip2-9": {
+          "bytes": 518,
+          "sha256": "f899a17e18265c1223d4404ddd1adb83c4e4de062a4b941a5d67cd79a04d8163"
+        }
+      },
+      "roundtrip_verified": true
+    }
+  },
+  "method_setup": {
+    "card_only": {
+      "modules": [
+        "method/method.json"
+      ],
+      "source_utf8_bytes": 3601,
+      "serialized_utf8_bytes": 3876,
+      "payload_sha256": "3532a194a3fb2e25f5530881ec2bd58b980c27a9c5b802c8e840d46fface5aac",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 1705,
+          "sha256": "505849d1683180802d29b9bd71555026cadd2d3f4e315e3671422b21c31326f0"
+        },
+        "bzip2-9": {
+          "bytes": 1736,
+          "sha256": "a721346bcdacbef3c4e9661bcbbe60d3366e5863844dea2bab39bc7747ec78ea"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "executable": {
+      "modules": [
+        "method/controller.py",
+        "method/method.json",
+        "method/renderer.py"
+      ],
+      "source_utf8_bytes": 24942,
+      "serialized_utf8_bytes": 26562,
+      "payload_sha256": "800e302c0a5b4d09d73e8e93d56b3e5d7d91581f8edf7fa67383372774e87e95",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 7683,
+          "sha256": "73ef369f85d7a8ad31d204c6acae015b4176e735a6732656323b5434d9ed3d9a"
+        },
+        "bzip2-9": {
+          "bytes": 7256,
+          "sha256": "6d447d959e9eca3cf17266b9ba3d3a7bb2d5f7a0adc0a0c983cf690ba3ed9f71"
+        }
+      },
+      "roundtrip_verified": true
+    }
+  },
+  "combined_documents": {
+    "selected_plus_card": {
+      "modules": [
+        "d02/Proof",
+        "d04/Proof",
+        "method/method.json"
+      ],
+      "source_utf8_bytes": 5034,
+      "serialized_utf8_bytes": 5379,
+      "payload_sha256": "8fd30c8804da8043f7cab08fd377a6ad793693398cc3441677039357deadaae6",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 2013,
+          "sha256": "344fdf8811f4fb2a57ecbdfc0f92e0ba19a1cb099f9c0c98584def50ba9c1812"
+        },
+        "bzip2-9": {
+          "bytes": 2068,
+          "sha256": "fcd141c456c253eacce1fa9bd88abbc289ddb4a84b84e97429be4165a63dae61"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "selected_plus_executable": {
+      "modules": [
+        "d02/Proof",
+        "d04/Proof",
+        "method/controller.py",
+        "method/method.json",
+        "method/renderer.py"
+      ],
+      "source_utf8_bytes": 26375,
+      "serialized_utf8_bytes": 28065,
+      "payload_sha256": "9d96b753851af3c267b212924c91df84d8280e628c54939b85898f8a14a3ebcf",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 7977,
+          "sha256": "05134bcf5a8da2eda21c43dde81b24c55e0d873eba3ecd33a3be0276558cf334"
+        },
+        "bzip2-9": {
+          "bytes": 7589,
+          "sha256": "7d945226ca9fc49a51e20b2db292fc219185df8c65fb92cd2ccd7b4a42d09510"
+        }
+      },
+      "roundtrip_verified": true
+    }
+  },
+  "selected_inventory_sha256": "902c0dc62eab46692a15cd6c91d55ef0509aaa3984407c0e63e5580a832b6476",
+  "search_report": {
+    "schema_version": 1,
+    "status": "sweep_budget_exhausted",
+    "stop_reason": "maximum_sweeps_reached",
+    "completed_sweeps": 1,
+    "stable_sweeps": 0,
+    "replacements": [
+      {
+        "slot": 2,
+        "task_id": "d04",
+        "before": 260,
+        "after": 90
+      }
+    ],
+    "initial_source_tokens": 620,
+    "selected_source_tokens": 450,
+    "tasks": [
+      {
+        "task_id": "d02",
+        "artifact": "incumbents/d02",
+        "proof_source_tokens": 360,
+        "proof_sha256": "0f1f253d7f28ea26d7d04e3524f5c0a79a357903df60d8a28e55775d0b48553d",
+        "files": {
+          "Proof.lean": "0f1f253d7f28ea26d7d04e3524f5c0a79a357903df60d8a28e55775d0b48553d",
+          "command-00.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-00.stdout": "36c0bbaf090c97bc8217c6ff497ff9144fd83d9003f12cd505162b943aaaee77",
+          "command-01.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-01.stdout": "c65254481e7a9867292a62cb9a1f19f6e76038a8d07a87537a4d9e67ec0d00fb",
+          "command-02.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-02.stdout": "568f068a5bef87d86bbcd1dd80de496bfe3227ae5680e42ded5859d5bf546f36",
+          "command-03.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-03.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-04.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "command-04.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pending.json": "b8fae000cbed04aa136c879187f2627f9a437accc120e6592beb0e8640674a3e",
+          "result.json": "2856b0e48ebc0aa04433ec4e5101696e0980b89243880dcb6f16e646f28cfe7a",
+          "submission.json": "54ca4eae32d376379daa6e86a70dfe3b5850ecef0de3ac1d35baccd03def6a7f"
+        }
+      },
+      {
+        "task_id": "d04",
+        "artifact": "sessions/s01/m01/attempts/d04/001",
+        "proof_source_tokens": 90,
+        "proof_sha256": "8d30743ea07c5c657cf1f69a571df9e67f0c42aa8ce8f3e638a46a1cae5c9690"
+      }
+    ],
+    "attempts": [
+      {
+        "slot": 1,
+        "sweep": 1,
+        "task_id": "d02",
+        "method": "left_inverse_cancel_v1",
+        "status": "retained",
+        "replaced": false
+      },
+      {
+        "slot": 2,
+        "sweep": 1,
+        "task_id": "d04",
+        "method": "left_inverse_cancel_v1",
+        "status": "verified",
+        "replaced": true,
+        "proof_source_tokens": 90
+      }
+    ],
+    "next_slot": null,
+    "baseline_search_complete": false,
+    "package_attribution_ready": false,
+    "globally_shortest": false,
+    "model_search_verified": false,
+    "definition_optimization_performed": false,
+    "generation_usage": null,
+    "generation_usage_status": "supplied_local_not_independently_metered",
+    "actual_provider_calls": 0,
+    "scope": "Finite supplied-local workflow only; no assertion of existing-tool exhaustion, sufficient baseline optimization, causal attribution or model performance."
+  },
+  "evidence": {
+    "extraction": "author_extracted_from_existing_model_certificate",
+    "ai_card_usability_measured": false,
+    "automatic_method_discovery": false,
+    "fair_model_comparison": false,
+    "broad_baseline_prepared": false,
+    "causal_theory_attribution": false,
+    "held_out_evaluation": false,
+    "scope": "Two development goals, one explicit source template and author-supplied bindings. Local helpers are charged in Proof; the whole card, renderer and controller are measured separately once against shared repository infrastructure, not as a dependency-closed standalone archive. Earlier development checks are outside these two fixed application slots. No weighted cognitive score. No new Lean theory module; inherited generation usage remains unknown."
+  }
+}

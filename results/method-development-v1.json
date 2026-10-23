@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "author_development_checks",
+  "session": "/home/idleness/Source/MAAM/data/method-reuse-development-20261022-v1",
+  "session_report_sha256": "0f4b441fc150f4d0e5245bf4cda3bc7f96f7339c1a59c17e9fe3e3b1a8ec11c4",
+  "model_calls": 0,
+  "lean_attempts": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "rejected",
+      "proof_sha256": "272a9b8bc1fb5ef6447c54d6175555a7ebc93046b3ad7c337ec0eaff5c333a8b",
+      "result_sha256": "109ef25e8f6a06b927304e8f14e02376861ff461677c5b3e226a7213c1468770",
+      "proof_source_tokens": null
+    },
+    {
+      "attempt": 2,
+      "status": "verified",
+      "proof_sha256": "6b2a1517701885f0feaa0a014d33bcde8feea54c03f08abca79ac62cfad3c833",
+      "result_sha256": "551f4410cfac6b9bab5e9de4dac6c6aef7019b31db3bb32df1eb3af321a379ba",
+      "proof_source_tokens": 90
+    }
+  ],
+  "scope": "Two author development checks preceding the fixed method pilot; the corrected proof was already known before the later replay and is not a second discovery."
+}
