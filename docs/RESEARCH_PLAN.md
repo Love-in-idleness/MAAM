@@ -1,5 +1,9 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
+| 中文 | English |
+| --- | --- |
+| **2026-10-26 · 下一阶段方案供审阅：**[数学工具组织与验证](METHOD_RESEARCH_DESIGN.md)把研究单位、分项计量、原证保留、指南试验与工程验收收敛为一份决定。实验仍暂停；批准后先完成离线工具验收，再执行最多 48 次 DeepSeek 调用的开发试验。下文是保留的历史计划和证据，不代表此次又运行了实验。 | **2026-10-26 · Next-phase proposal for review:** [Mathematical tool organization and evaluation](METHOD_RESEARCH_DESIGN.md) consolidates the research unit, separate measurements, certificate retention, guidance trial, and implementation checks. Experiments remain paused. After approval, complete offline acceptance before the development trial of at most 48 DeepSeek calls. The historical plan and evidence below do not represent new experiments. |
+
 日期：2026-10-21。状态：M1 已完成参考迁移并新增离线整包压缩计量；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
 Date: 2026-10-21. Status: checked reference migrations now include an offline compression sidecar; public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist, while baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
 
