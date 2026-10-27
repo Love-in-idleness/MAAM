@@ -46,3 +46,7 @@ python3 scripts/check_closure_transport.py input data/closure-transport-v1 --tas
 | 中文 | English |
 | --- | --- |
 | 后续独立模型试验的协议与运行接口见[受约束构造试验](CONSTRUCTION_USE.md)；本页的离线结果及材料继续保持原有证据范围。 | See the [constrained-construction trial](CONSTRUCTION_USE.md) for the subsequent model protocol and execution interface; offline results and material retain their original evidence scope. |
+
+| 中文 | English |
+| --- | --- |
+| 后续[真实构造试验](CONSTRUCTION_USE.md)已生成 16 份正向模型证书和 8 份边界证书，24/24 预算内通过；本页人工参考仍单独记录。首轮计分受输出声明种类歧义混杂，命名运输引理复用未观察到，不把构造完成升级为方法发现。 | The subsequent [live construction trial](CONSTRUCTION_USE.md) generates sixteen positive model certificates and eight boundary certificates, all 24 verified within budget. Author references here remain separate. Output-declaration ambiguity confounds initial scores, and no named transport reuse is observed; construction completion is not method discovery. |

@@ -28,3 +28,36 @@ python3 scripts/control_construct_use.py report data/closure-use-v1
 | 中文 | English |
 | --- | --- |
 | 冻结前验收：新增 16 项测试及全量 **431 项测试通过**，六份参考通过真实沙箱，历史静态报告与前两轮摘要回放一致。模拟收据只验证控制器，不计为供应商调用。 | Pre-freeze acceptance: all **431 tests pass**, including 16 new tests; six references pass the real sandbox. Historical static reports and both preceding summaries replay unchanged. Synthetic receipts test controller behavior and do not count as provider calls. |
+
+## 本地运行结果 / Local run results
+
+| 中文 | English |
+| --- | --- |
+| 实现与输入先冻结为 `5d082082e7de1af413980815a7aeff4030f92cba`，再生成 `data/closure-use-v1/`。**39 次真实 DeepSeek 调用完成 24 个会话，全部预算内核验通过，保留 15 次首次拒绝和模型自修复。**未追加调用、改题或手工修正模型答案。 | Freeze code and inputs at `5d082082e7de1af413980815a7aeff4030f92cba` before creating `data/closure-use-v1/`. **39 live DeepSeek calls complete all 24 sessions within budget, preserving 15 initial rejections and model repairs.** No extra calls, revised tasks, or manual model-answer repairs were added. |
+| **主要接口混杂：15 次拒绝中，14 次仅因 `Submission.solve` 用 `def` 声明，而核验器要求 theorem；另一次因未知的 `congrArg₂` 编译失败。**现有共享提示只写“define Submission.solve”，没有明确要求 Lean 的 `theorem` 声明。14 次中 8 次修复只改了 `def` 为 `theorem`。这是我们输出合约说明不足，不能归因为数学构造失败。回查上一轮方法指南试验的两次拒绝，也均为同一声明问题，已在[原说明](METHOD_USE.md)补充审查结论。 | **Primary interface confound: 14 of 15 rejections solely use `def` for `Submission.solve`, while the checker requires a theorem; one compilation fails on unknown `congrArg₂`.** The shared prompt says “define Submission.solve” without explicitly requiring Lean's `theorem` declaration. Eight of these fourteen repairs change only `def` to `theorem`. This is an underspecified output contract, not evidence of mathematical construction failure. Both rejections in the previous guidance trial share this cause; the [earlier documentation](METHOD_USE.md) now records that review. |
+| 以下首轮分数保留冻结规则的原计分，不事后改判。两组首次拒绝数的差异主要受声明格式影响，**不能据此推断指南损害数学推理**，也未证实指南带来可靠性收益。本版本作为研究档案保留，暂不把指南加入默认提示。 | Initial scores below retain the frozen scoring rules without retrospective rescoring. Declaration format dominates rejection differences, so they **cannot establish that guidance harms mathematical reasoning**. A reliability gain is also unestablished. Archive this version and keep the guide out of default prompts for now. |
+
+| 指标 / Metric | A：无指南 / No guide | B：有指南 / Guide |
+| --- | --- | --- |
+| 首轮核验 / Initial verification | 6/12 | 3/12 |
+| 预算内核验 / Within-budget verification | 12/12 | 12/12 |
+| 正向首轮 / Positive initial | 3/8 | 1/8 |
+| 正向预算内 / Positive within budget | 8/8 | 8/8 |
+| 边界首轮 / Boundary initial | 3/4 | 2/4 |
+| 边界预算内 / Boundary within budget | 4/4 | 4/4 |
+| 真实调用 / Live calls | 18 | 21 |
+| 自修复 / Model repairs | 6 | 9 |
+| 输入 token / Input tokens | 31,194 | 45,266 |
+| 输出 token / Output tokens | 45,587 | 45,476 |
+| 最终正向证明直接运输引理依赖 / Final positive direct transport dependencies | 0/8 | 0/8 |
+| 择优完整 Proof 源码 token / Selected complete Proof source tokens | 519 | 506 |
+| 非共享 zlib 字节 / Nonshared zlib bytes | 629 | 1530 |
+| 共同数学源码加择优材料 zlib 字节 / Joint mathematical source and selected material zlib bytes | 1883 | 2812 |
+
+| 中文 | English |
+| --- | --- |
+| 16 份成功正向证明的类型、保持性质、逐点一致性与封闭性均通过核验。它们打包 `Hom` 后内联证明封闭性；源码未出现 `preimage_mul_closed`，没有额外顶层辅助声明。没有观察到命名运输引理调用，但仍可能体现同一概念方法；不能声称模型没有使用方法，也不能声称已验证方法卡的独立复用。 | All sixteen successful positive proofs verify types, preservation, pointwise agreement, and closure. They bundle `Hom` and prove closure inline, without a `preimage_mul_closed` mention or extra top-level helper declaration. No named transport-lemma reuse is observed. Conceptual use remains possible; neither absence of method use nor independent method-card reuse is established. |
+| 同一组人工后备证明共 556 源码 token。两组都只在 c03/c04 采用严格更短的模型证书，其余保留原证。B 组所选证明少 13 token，但指南计一次后，完整压缩材料比 A 更大。此项是事后证书组合比较，不改写模型成功率，也不等同于新增理论收益。 | The same author fallbacks total 556 source tokens. Both arms adopt shorter model certificates only for c03/c04 and retain other originals. B's selected proofs use 13 fewer tokens, while its complete compressed material is larger after charging the guide once. This post-hoc certificate selection does not change model success rates or establish new-theory gains. |
+| 全轮输入 76,460、输出 91,063、总计 167,523 token，用量全部已知；峰时价加 25% 余量估算 **$0.165267**，账户账单未核对。39 个响应 ID 唯一且非空，均报告 `deepseek-flash` 和 completed；请求头 request ID 均未提供，保持 null。模型别名不是精确权重版本证据。 | The round uses 76,460 input and 91,063 output tokens, totaling 167,523, with complete usage. Peak rates plus 25% margin estimate **$0.165267**; account billing is unchecked. All 39 nonempty response IDs are unique and report `deepseek-flash` and completed; header request IDs are unavailable and remain null. The model alias does not prove an exact weight revision. |
+| [结果摘要](../results/closure-use-v1.json)与原始记录离线重算完全一致；独立只读审查另核对收据、用量、目标契约和严格缩短选择。原始记录保留在 Git 忽略目录，摘要不能代替收据和日志。导出检查未发现私有路径或凭据标记；真实调用仅用 DeepSeek。 | The [summary](../results/closure-use-v1.json) exactly matches offline replay from raw evidence. Independent read-only review checks receipts, usage, goal contracts, and strict-shorter selection. Raw evidence remains ignored; summaries cannot replace receipts and logs. Export checks find no private-path or credential markers; all live calls use DeepSeek. |
+| **下一步先修输出契约，不扩题重跑。**后续版本应显式要求 `theorem Submission.solve`（可用 namespace 形式），在输入中声明 theorem 种类，并用测试检查提示与核验器一致。本轮源码、协议、原分数和失败保持冻结。继续用当前 6.1 Sol 完成这项接口修订与离线验收；这是工程契约问题，尚不需要转 Astra。新一轮真实调用需要另行冻结独立协议和预算。 | **Next clarify the output contract before expanding or rerunning tasks.** A subsequent version should explicitly require `theorem Submission.solve` (namespace syntax allowed), declare the theorem kind in the input, and test prompt/checker agreement. Preserve this run's code, protocol, original scores, and failures. Continue with the current 6.1 Sol for that interface revision and offline acceptance; this engineering contract issue does not yet require Astra. Any new live round needs a separately frozen protocol and budget. |
