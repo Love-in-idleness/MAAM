@@ -34,3 +34,11 @@ python3 scripts/check_closure_transport.py input data/closure-transport-v1 --tas
 | 中文 | English |
 | --- | --- |
 | 下一步继续用 6.1 Sol 准备独立构造试验的冻结输入与小额调用协议；实验模型优先 DeepSeek。保持数学内容相同、人工参考隔离和明确调用上限，再测量指南的使用效果。本次不扩大实验。 | Next use 6.1 Sol to prepare frozen inputs and a small-budget protocol for independent construction, prioritizing DeepSeek for experiments. Match mathematical content, isolate references, and fix call limits before measuring guidance effects. This round does not expand experimentation. |
+
+**本地验收记录 / Local acceptance record**
+
+| 中文 | English |
+| --- | --- |
+| 先提交实现与输入为 `ea04ac9`，再用该版本生成 `data/closure-transport-v1/`。正式记录中六题各检查一次，**6/6 通过 Lean 4.24.0**；四个正向证明都直接依赖一般运输引理，映射类型、保持性质、逐点一致性和封闭性均由内核检查。 | Commit implementation and inputs as `ea04ac9` before generating `data/closure-transport-v1/`. All **6/6 author references pass Lean 4.24.0**, one attempt each. All four positive proofs directly depend on the transport lemma, with types, preservation, pointwise agreement, and closure kernel-checked. |
+| [结果摘要](../results/closure-transport-v1.json)可从本地记录重新计算，无须再次运行 Lean。完整数学源码加指南的 zlib 长度为 2828 字节，是单个版本的绝对计量，不代表压缩改善。新增模型调用为零，人工准备时间未知，不填零。 | The [summary](../results/closure-transport-v1.json) replays locally without rerunning Lean. Joint mathematical source and guidance compress to 2828 zlib bytes: an absolute measurement, not an improvement claim. New model calls are zero; unknown author-preparation time remains unknown. |
+| **415 项全量测试通过**；历史结果与上一轮 26 次真实调用的报告回放保持一致。开发期的一次人工参考编译失败及后续修正检查保留在 `data/closure-transport-v1-development/`，不算模型失败。所有真实记录均保留在 Git 忽略目录；提交摘要不能单独代替原始日志。 | **All 415 tests pass**; historical reports and the previous 26-call live trial replay unchanged. An initial author-reference compile rejection and corrected development checks remain in `data/closure-transport-v1-development/`, without being counted as model failures. Raw evidence stays in Git-ignored directories; committed summaries do not replace it. |

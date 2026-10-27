@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "source_commit": "ea04ac969bc9a2853f173ba0dfa0c768c351e886",
+  "new_model_calls": 0,
+  "generation_usage": null,
+  "generation_mode": "author_supplied_reference",
+  "counts": {
+    "tasks": 6,
+    "verified": 6,
+    "attempts": 6
+  },
+  "tasks": [
+    {
+      "task_id": "c01",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c01/001"
+        }
+      ],
+      "source_tokens": 62,
+      "named_transport_dependency": true,
+      "proof_sha256": "ba2f5f4c84e1430871e59df45b8dfb547871886b64907b1f9442cd3d33c7fa7e",
+      "map_contract_verified": true
+    },
+    {
+      "task_id": "c02",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c02/001"
+        }
+      ],
+      "source_tokens": 101,
+      "named_transport_dependency": true,
+      "proof_sha256": "5e78abbbfd526ebd8315b9cf7a294b95f4b31ff20e379f5c4716671693be2cef",
+      "map_contract_verified": true
+    },
+    {
+      "task_id": "c03",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c03/001"
+        }
+      ],
+      "source_tokens": 171,
+      "named_transport_dependency": true,
+      "proof_sha256": "0f31a14bb66f4621351d6f98167cc69bb6ca739707eb419c0d12fe77c61c0818",
+      "map_contract_verified": true
+    },
+    {
+      "task_id": "c04",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c04/001"
+        }
+      ],
+      "source_tokens": 174,
+      "named_transport_dependency": true,
+      "proof_sha256": "49129c307d02d6c6bc48db751b04126c71fa356b8297a85906c2908355857d37",
+      "map_contract_verified": true
+    },
+    {
+      "task_id": "c05",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c05/001"
+        }
+      ],
+      "source_tokens": 24,
+      "named_transport_dependency": false,
+      "proof_sha256": "e67a537d4d51c9257ea82b456652710ffac984ecabb251f95726343da89dc9c5",
+      "map_contract_verified": false
+    },
+    {
+      "task_id": "c06",
+      "status": "verified",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "verified",
+          "failure": null,
+          "artifact": "attempts/c06/001"
+        }
+      ],
+      "source_tokens": 24,
+      "named_transport_dependency": false,
+      "proof_sha256": "46ce8ae29d74de562efdda24a51d592dc20bec825b43b32dea6b4e46f57d6829",
+      "map_contract_verified": false
+    }
+  ],
+  "sandbox": {
+    "status": "verified",
+    "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+    "checks": [
+      "private_file_denied",
+      "home_denied",
+      "private_environment_removed",
+      "frozen_source_readonly",
+      "prior_olean_readonly",
+      "audit_input_readonly",
+      "checker_readonly",
+      "toolchain_readonly",
+      "output_writable",
+      "host_network_denied"
+    ]
+  },
+  "math_fingerprints": {
+    "suite_sha256": "058dc6c6da4585bdd0ca70a40d638b67c86917a253c86c9e45d4f78f6598840b",
+    "package_sha256": "3360b54f84d12aff3e3417b98be617cfd8ed80a8e9248b2c51826dcd488048ed",
+    "source_sha256": {
+      "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+      "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+      "Method": "7900ae4a2d94317c79febe346bf3a35bb2dfec317a5d16fe1e1c8f27dd5e47a8",
+      "Products": "dd117fd9f94a6499a53976b36c10009a5fc2f9c1aacb61ebe216c406ab3a2743",
+      "Tasks.C01": "3506528f3697e40e43c373b2b9b30af81eec6a622acf6266ea5492cf761c1a4f",
+      "Tasks.C02": "779d714d1a69d1b5b61a7e272bf89fa4eb76ec349bf4fc69393f2196851ebf58",
+      "Tasks.C03": "6d6c457fc7e0d1d0441756cc8a49417234db4efd4641c962f989f991ea8bbc62",
+      "Tasks.C04": "0f161e751766790f9597d35910daa1c94ebf217bdb9735261eedbdc6b8269703",
+      "Tasks.C05": "e896f3ccdb569420bba3a18a9c29d6c5bab3119af84c5b5e2ccb28d03b741aef",
+      "Tasks.C06": "e6bc05fe569f9077b0a745ed686ea1fe882869b8ad6a559b19a0bbb63d0301eb"
+    },
+    "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+    "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+  },
+  "tool_sha256": {
+    "maam/closure_transport.py": "281fd019450643943cb98cc85d5d7ba448aef194e0472d00814897a29f32722c",
+    "scripts/check_closure_transport.py": "83c96f29baf954c28b95e94397f16b5e7cb60a0f67ff9b72c17168e36b4c08a4",
+    "maam/migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "maam/theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+    "maam/corpus.py": "72e43c40a211d70a1eec55a2af3612832f8e388078969b721f910ea6f9ec644f",
+    "maam/PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+    "maam/lean_sandbox.py": "eb4c5bd719e29fe60d37ab2ef03c56d9d0f0b543b0e04c725cca4c27b5caa868",
+    "maam/transfer.py": "5488d38751c81be9f52820e5d7e40af07b42bb3914a8a292daff4f03fdd7fb38",
+    "scripts/measure_compressed_reference.py": "5f8908db7894959217ea3207d0d0af23765db957fdd6dbf23b86e4748e90194d",
+    "scripts/check_theory_package.py": "e35decf92ca149d7c9e0efdaae99a70221457b060987c1cc0a532b2464227374"
+  },
+  "input_sha256": {
+    "guide.txt": "d8dfb31d97902280b7ac8c7e2fb10439ba2d2d0548e7997bd5d959d4315228c9",
+    "reference_proofs.json": "bc3815c3ab229a4797c18354c869694254b99ed8fcd524176241c40dbb6ea92d"
+  },
+  "runtime": {
+    "python": "3.14.8",
+    "zlib": "1.3.2"
+  },
+  "compression": {
+    "proofs_only": {
+      "modules": [
+        "proofs/c01.lean",
+        "proofs/c02.lean",
+        "proofs/c03.lean",
+        "proofs/c04.lean",
+        "proofs/c05.lean",
+        "proofs/c06.lean"
+      ],
+      "source_utf8_bytes": 2497,
+      "serialized_utf8_bytes": 2734,
+      "payload_sha256": "de50d4f4e3122f5e415ea6519ae04211456f713755d45589874f9438996c91d3",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 623,
+          "sha256": "95dfa981bb197609313c930686f9bc922bfbdc5a1d32caa23c9b4496ae01b35f"
+        },
+        "bzip2-9": {
+          "bytes": 801,
+          "sha256": "4069514adfe4cfa87ac58784b1066f700271a2510fff662ded726b8b19d40341"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "package_guide_and_proofs": {
+      "modules": [
+        "Method.lean",
+        "guide.txt",
+        "proofs/c01.lean",
+        "proofs/c02.lean",
+        "proofs/c03.lean",
+        "proofs/c04.lean",
+        "proofs/c05.lean",
+        "proofs/c06.lean"
+      ],
+      "source_utf8_bytes": 4943,
+      "serialized_utf8_bytes": 5260,
+      "payload_sha256": "2f9ca025629c0e8af134eb63c3303af1a2a6e99f36f719b9543d7cfc4ff96837",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 1715,
+          "sha256": "739f0d5e3a6c154f86c5f06217fac3996c997988290a71d0f3b4be0099da469e"
+        },
+        "bzip2-9": {
+          "bytes": 1893,
+          "sha256": "1443834dab1c40cc0860869d8618e10e6772fae321b250a0cf9489cf4aef804f"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "joint_local_sources": {
+      "modules": [
+        "Base.lean",
+        "Candidate.lean",
+        "Method.lean",
+        "Products.lean",
+        "Tasks.C01.lean",
+        "Tasks.C02.lean",
+        "Tasks.C03.lean",
+        "Tasks.C04.lean",
+        "Tasks.C05.lean",
+        "Tasks.C06.lean",
+        "guide.txt",
+        "proofs/c01.lean",
+        "proofs/c02.lean",
+        "proofs/c03.lean",
+        "proofs/c04.lean",
+        "proofs/c05.lean",
+        "proofs/c06.lean"
+      ],
+      "source_utf8_bytes": 10399,
+      "serialized_utf8_bytes": 11051,
+      "payload_sha256": "7ecea3aa2d6a763090c7610306875b6d8d421476dea24982a6c2c79647b2f5bd",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 2828,
+          "sha256": "3354b87e4ec67adade5239a50569d8126d794bb8894bb57e3d22e454cb5d12eb"
+        },
+        "bzip2-9": {
+          "bytes": 2924,
+          "sha256": "2b03d507699f666765933c01d5ba013e8790357cdefce2a2b8a8b3c16b3fc15c"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "comparison": "none; no old-tool baseline or matched model search was run"
+  },
+  "preparation_cost": {
+    "author_time_seconds": null,
+    "common_checker_source": {
+      "modules": [
+        "maam/PackageCheck.lean",
+        "maam/closure_transport.py",
+        "maam/corpus.py",
+        "maam/lean_sandbox.py",
+        "maam/migration.py",
+        "maam/theory.py",
+        "maam/transfer.py",
+        "scripts/check_closure_transport.py",
+        "scripts/check_theory_package.py",
+        "scripts/measure_compressed_reference.py"
+      ],
+      "source_utf8_bytes": 118308,
+      "serialized_utf8_bytes": 125150,
+      "payload_sha256": "81717e6e83a9eac0f68364f636e8835485a3ddad701fcd83efb934244ef377c1",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 31070,
+          "sha256": "f67244430fae4ad101df1405a90b2e9d5e78ffa2364cf86649bf828e9258d7b3"
+        },
+        "bzip2-9": {
+          "bytes": 26961,
+          "sha256": "e72c83f20d8adc1828771790874e0c4e6657752f24a639ff152f50124b9a1efc"
+        }
+      },
+      "roundtrip_verified": true
+    }
+  },
+  "evidence": {
+    "author_map_choices": true,
+    "ai_constructed_maps": false,
+    "automatic_extraction": false,
+    "guide_effect_measured": false,
+    "new_theory_effect_established": false,
+    "held_out_transfer": false,
+    "training_eligible": false,
+    "scope": "Group specialization, explicit existential map/compatibility/preservation obligations; source references supply the constructions. No executable witness extraction or mathematical novelty claim."
+  }
+}
