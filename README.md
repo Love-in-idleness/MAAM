@@ -6,6 +6,7 @@ Calculate compression and structural metrics for formal propositions, and use ve
 | 中文 | English |
 | --- | --- |
 | **2026-10-26 待审阅方案：**[数学工具组织与验证](docs/METHOD_RESEARCH_DESIGN.md)确定工具包表示、完整成本、证据边界和下一次有界指南试验：同一数学库、两种说明条件、六题各重复两次，最多 48 次 DeepSeek 调用。本次仅完成方案，实验仍暂停；下文保留历史进度。 | **Proposal for review, 2026-10-26:** [Mathematical tool organization and evaluation](docs/METHOD_RESEARCH_DESIGN.md) specifies packages, complete costs, evidence boundaries, and one bounded guidance trial: the same mathematical library, two guidance conditions, six tasks repeated twice, at most 48 DeepSeek calls. This delivery is a proposal; experiments remain paused. Historical progress follows. |
+| **2026-10-27 已审阅并启动：**[方法指南试验](docs/METHOD_USE.md)已落地六题、共同引理、通用指南、沙箱及有界调用账本；真实模型结果与离线验收分开记录。 | **Reviewed and started, 2026-10-27:** the [guidance trial](docs/METHOD_USE.md) now has six tasks, a common lemma, a generic guide, sandboxing, and a bounded call ledger. Live results remain distinct from offline acceptance. |
 
 新增理论包提供可选的缩短证明机会：旧证明保留，只有核验通过且按既定长度指标严格更短的新证明才替换，失败、更长、等长或长度未知都不覆盖旧证明，也不要求全库重证。
 The default source-length policy retains existing verified witnesses and reports proof savings separately from the full package cost charged once; future searches can target promising local improvements.
