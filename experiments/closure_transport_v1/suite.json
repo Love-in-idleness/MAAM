@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "suite_id": "closure-transport-v1",
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "package": "package.json",
+  "base": {
+    "id": "groups-hom-products-v1",
+    "modules": [
+      "Base",
+      "Candidate",
+      "Products"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75"
+    },
+    "Products": {
+      "path": "Products.lean",
+      "sha256": "dd117fd9f94a6499a53976b36c10009a5fc2f9c1aacb61ebe216c406ab3a2743"
+    },
+    "Method": {
+      "path": "Method.lean",
+      "sha256": "7900ae4a2d94317c79febe346bf3a35bb2dfec317a5d16fe1e1c8f27dd5e47a8"
+    },
+    "Tasks.C01": {
+      "path": "Tasks/C01.lean",
+      "sha256": "3506528f3697e40e43c373b2b9b30af81eec6a622acf6266ea5492cf761c1a4f"
+    },
+    "Tasks.C02": {
+      "path": "Tasks/C02.lean",
+      "sha256": "779d714d1a69d1b5b61a7e272bf89fa4eb76ec349bf4fc69393f2196851ebf58"
+    },
+    "Tasks.C03": {
+      "path": "Tasks/C03.lean",
+      "sha256": "6d6c457fc7e0d1d0441756cc8a49417234db4efd4641c962f989f991ea8bbc62"
+    },
+    "Tasks.C04": {
+      "path": "Tasks/C04.lean",
+      "sha256": "0f161e751766790f9597d35910daa1c94ebf217bdb9735261eedbdc6b8269703"
+    },
+    "Tasks.C05": {
+      "path": "Tasks/C05.lean",
+      "sha256": "e896f3ccdb569420bba3a18a9c29d6c5bab3119af84c5b5e2ccb28d03b741aef"
+    },
+    "Tasks.C06": {
+      "path": "Tasks/C06.lean",
+      "sha256": "e6bc05fe569f9077b0a745ed686ea1fe882869b8ad6a559b19a0bbb63d0301eb"
+    }
+  },
+  "tasks": [
+    {
+      "id": "c01",
+      "split": "development",
+      "family": "raw_preimage",
+      "module": "Tasks.C01",
+      "goal": "ClosureTransport.Tasks.c01"
+    },
+    {
+      "id": "c02",
+      "split": "development",
+      "family": "composite_preimage",
+      "module": "Tasks.C02",
+      "goal": "ClosureTransport.Tasks.c02"
+    },
+    {
+      "id": "c03",
+      "split": "development",
+      "family": "simultaneous_constraints",
+      "module": "Tasks.C03",
+      "goal": "ClosureTransport.Tasks.c03"
+    },
+    {
+      "id": "c04",
+      "split": "development",
+      "family": "diagonal_equalizer",
+      "module": "Tasks.C04",
+      "goal": "ClosureTransport.Tasks.c04"
+    },
+    {
+      "id": "c05",
+      "split": "development",
+      "family": "missing_preservation_boundary",
+      "module": "Tasks.C05",
+      "goal": "ClosureTransport.Tasks.c05"
+    },
+    {
+      "id": "c06",
+      "split": "development",
+      "family": "missing_target_closure_boundary",
+      "module": "Tasks.C06",
+      "goal": "ClosureTransport.Tasks.c06"
+    }
+  ],
+  "budget": {
+    "max_attempts_per_task": 1,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "provenance": {
+    "base_source": "Base.lean and Candidate.lean copied byte-for-byte from experiments/hom_kernel; Products.lean is new shared generic infrastructure.",
+    "task_authorship": "Six author-designed development tasks. No reserved, random-sample, externally blind, pretraining-unseen, or cross-domain claim.",
+    "stage": "Offline preparation only. No provider calls or new spending authorization.",
+    "references": "Author references are offline verification inputs; never generation-request fields.",
+    "scope": "Explicit construction and multiplication-preservation evidence, then preimage multiplication closure. Group specialization, not minimal assumptions or subgroup closure."
+  }
+}
