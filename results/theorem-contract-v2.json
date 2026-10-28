@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "source_commit": "a6334b17ddcfd3d4032fb5d6cdd56da9b6348e27",
+  "provenance": "offline_author_controls",
+  "new_model_calls": 0,
+  "generation_usage": null,
+  "counts": {
+    "slots": 12,
+    "completed": 12,
+    "verified": 7,
+    "rejected": 5
+  },
+  "cases": [
+    {
+      "case_id": "c01",
+      "task_id": "c01",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c01",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c02",
+      "task_id": "c02",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c02",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c03",
+      "task_id": "c03",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c03",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c04",
+      "task_id": "c04",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c04",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c05",
+      "task_id": "c05",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c05",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c06",
+      "task_id": "c06",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c06",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_fully_qualified_theorem",
+      "task_id": "c01",
+      "expected": "verified",
+      "status": "verified",
+      "matched": true,
+      "verification_failure": null,
+      "artifact": "attempts/c01_fully_qualified_theorem",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_def",
+      "task_id": "c01",
+      "expected": "rejected",
+      "status": "rejected",
+      "matched": true,
+      "verification_failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: target is not a theorem: Submission.solve\n"
+      },
+      "artifact": "attempts/c01_def",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_wrong_goal",
+      "task_id": "c01",
+      "expected": "rejected",
+      "status": "rejected",
+      "matched": true,
+      "verification_failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: target proposition changed: Submission.solve\n"
+      },
+      "artifact": "attempts/c01_wrong_goal",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_new_axiom",
+      "task_id": "c01",
+      "expected": "rejected",
+      "status": "rejected",
+      "matched": true,
+      "verification_failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: forbidden axiom: contract_extra\n"
+      },
+      "artifact": "attempts/c01_new_axiom",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_extra_import",
+      "task_id": "c01",
+      "expected": "rejected",
+      "status": "rejected",
+      "matched": true,
+      "verification_failure": {
+        "kind": "verification_failed",
+        "stage": "audit",
+        "message": "uncaught exception: forbidden imported module: Lean.Data.AssocList\n"
+      },
+      "artifact": "attempts/c01_extra_import",
+      "proof_compiled": true
+    },
+    {
+      "case_id": "c01_proof_term",
+      "task_id": "c01",
+      "expected": "rejected",
+      "status": "rejected",
+      "matched": true,
+      "verification_failure": {
+        "kind": "verification_failed",
+        "stage": "compile:Proof",
+        "message": "Proof.lean:1:0: error: unexpected token 'by'; expected command\n"
+      },
+      "artifact": "attempts/c01_proof_term",
+      "proof_compiled": false
+    }
+  ],
+  "sandbox": {
+    "status": "verified",
+    "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+    "checks": [
+      "private_file_denied",
+      "home_denied",
+      "private_environment_removed",
+      "frozen_source_readonly",
+      "prior_olean_readonly",
+      "audit_input_readonly",
+      "checker_readonly",
+      "toolchain_readonly",
+      "output_writable",
+      "host_network_denied"
+    ]
+  },
+  "scope": "Offline declaration-contract controls; no model search, guide-effect measurement or new live allowance."
+}
