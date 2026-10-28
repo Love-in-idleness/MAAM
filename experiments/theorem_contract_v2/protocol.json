@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "experiment_id": "theorem-contract-v2",
+  "fixture": "../closure_transport_v1",
+  "suite_sha256": "058dc6c6da4585bdd0ca70a40d638b67c86917a253c86c9e45d4f78f6598840b",
+  "references_sha256": "bc3815c3ab229a4797c18354c869694254b99ed8fcd524176241c40dbb6ea92d",
+  "guide_sha256": "d8dfb31d97902280b7ac8c7e2fb10439ba2d2d0548e7997bd5d959d4315228c9",
+  "task_ids": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06"
+  ],
+  "case_ids": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c01_fully_qualified_theorem",
+    "c01_def",
+    "c01_wrong_goal",
+    "c01_new_axiom",
+    "c01_extra_import",
+    "c01_proof_term"
+  ]
+}
