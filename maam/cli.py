@@ -49,6 +49,12 @@ def parser():
     p.add_argument("--corpus", required=True)
     p.add_argument("--format", choices=("json", "markdown"), default="json")
     p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("measure-conjecture-compression", help="audit and measure replacement proofs under a conjecture")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--mathlib", required=True, help="prepared checkout of the suite's pinned Mathlib commit")
+    p.add_argument("--lean", default="lean")
+    p.add_argument("--lake", default="lake")
+    p.add_argument("--output", help="write the report to a new file")
     p = commands.add_parser("evaluate-package", help="verify a controlled Lean theory-package migration")
     p.add_argument("--experiment", required=True)
     p.add_argument("--lean", default="lean")
@@ -138,6 +144,9 @@ def main(argv=None):
         elif args.command == "rank-conjectures":
             from .conjectures import rank_conjectures
             report = rank_conjectures(args.corpus)
+        elif args.command == "measure-conjecture-compression":
+            from .conjecture_compression import measure_compression
+            report = measure_compression(args.suite, args.mathlib, lean=args.lean, lake=args.lake)
         elif args.command == "export-lean":
             from .lean import export
             report = export(args.project, args.module, args.corpus_output, targets=args.target,
@@ -192,7 +201,7 @@ def main(argv=None):
             return 2
         if report.get("status") == "rejected":
             return 3
-        if report.get("status") in {"insufficient_evidence", "ambiguous_statement", "inconclusive"}:
+        if report.get("status") in {"insufficient_evidence", "ambiguous_statement", "inconclusive", "unmeasured"}:
             return 2
         if "assessment" in report and report["assessment"]["kind"] == "conjecture":
             return 2

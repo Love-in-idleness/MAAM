@@ -1,4 +1,7 @@
-# 开放猜想榜验收 / Open conjecture ranking
+# 开放目标的条件覆盖 / Conditional coverage of open goals
+
+本实验记录开放目标的条件覆盖。已证明目标的压缩验收及其计算见[后一轮 Lean 实验](../conjecture_compression/README.md)。
+This experiment records conditional coverage of open targets. For measured compression of already-proved goals, see the [subsequent Lean experiment](../conjecture_compression/README.md).
 
 | 中文 | English |
 | --- | --- |
@@ -18,4 +21,4 @@ python -m maam rank-conjectures --corpus experiments/conjecture_ranking/corpus-v
 | 从同一个已知结论集出发，每次只额外假设一个候选。每条推导规则的所有前提均须可达，才可加入其结论。 | Each run starts from the same established results and assumes one candidate. A rule fires when all its premises have been reached. |
 | 先扣除基线可导目标和候选本身。若语料也提供目标推出候选的路径，则将它记为等价表述。其余新增目标按族计数，每族一分，同分并列。 | Remove targets already reachable at baseline and the candidate itself. If the graph also derives the candidate from a reached target, record an equivalence. Each remaining family counts once and equal scores share a rank. |
 | 软件重用 MAAM 的有限证明求解器。单位长度用于选出一条可展示路径。JSON 报告保留规则 ID、原始语料指纹，以及逐次去掉一个目标族后的全部名次。 | The command reuses MAAM’s finite proof solver. Unit lengths select a witness path. The JSON report preserves rule IDs, the input hash and all ranks after each single-family omission. |
-| 第一阶段的验收覆盖排序、条件推导、等价改写与已知结论去重。分值衡量语料中的下游覆盖；对猜想的演绎压缩、所需证明成本与社会影响仍缺测量。 | This milestone tests ranking, conditional inference and the exclusion of equivalent formulations and established outcomes. The score measures downstream coverage in the corpus. Deductive compression, proof cost and social impact have no measurements here. |
+| 图计算检验覆盖排序、条件推导，以及等价改写和已知结论去重。分值衡量语料中的下游覆盖。 | The graph experiment tests ranking, conditional inference and the exclusion of equivalent formulations and established outcomes. The score measures downstream coverage in the corpus. |
