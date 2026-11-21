@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "panel_id": "prime_theorems_v2",
+  "panel_sha256": "8d37ec9f1dbe5b735d0e73c0725d2342c3866aaa652db638fab6d85b29b03244",
+  "mathlib_revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "target_evidence": {
+    "euclid": {
+      "report": "euclid-report.json",
+      "sha256": "6964f62714107248f8fc794b6ea2ea43d42f10a97d3a24f4b033b6592ae817a2",
+      "auditor_source_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+    },
+    "bertrand": {
+      "report": "bertrand-report.json",
+      "sha256": "0c2855e329229c6ec87c37ff509f7b6759a8c0c8b5486dccc8603cd2a879fcae",
+      "auditor_source_sha256": "cc950664e272b35bce857bcb02c804813773bd59403f06a17964c93d3c7bacee"
+    }
+  },
+  "originals": {
+    "euclid": {
+      "proof_module_tokens": 113,
+      "assumption_module_tokens": null,
+      "signature_tokens": 17,
+      "proof_body_tokens": 85,
+      "proof_expr_nodes": 433,
+      "proof_dependencies": [
+        "And",
+        "And.intro",
+        "Dvd.dvd",
+        "Exists.intro",
+        "HAdd.hAdd",
+        "Iff.mpr",
+        "LE.le",
+        "LinearOrder.toPartialOrder",
+        "Nat",
+        "Nat.Prime",
+        "Nat.Prime.not_dvd_one",
+        "Nat.dvd_add_iff_right",
+        "Nat.dvd_factorial",
+        "Nat.factorial",
+        "Nat.factorial_pos",
+        "Nat.instDvd",
+        "Nat.instLinearOrder",
+        "Nat.minFac",
+        "Nat.minFac_dvd",
+        "Nat.minFac_pos",
+        "Nat.minFac_prime",
+        "Nat.ne_of_gt",
+        "Nat.succ_lt_succ",
+        "Ne",
+        "OfNat.ofNat",
+        "PartialOrder.toPreorder",
+        "Preorder.toLE",
+        "instAddNat",
+        "instHAdd",
+        "instLENat",
+        "instOfNatNat",
+        "le_of_not_ge"
+      ],
+      "axioms_used": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "library_imports_count": 2128,
+      "library_imports_sha256": "2e4bc263b3c3748bd1460160762cfdb3292a1ee780e06011355d105148908b66",
+      "upstream": {
+        "declaration": "Nat.exists_infinite_primes",
+        "path": "Mathlib/Data/Nat/Prime/Infinite.lean",
+        "lines": [
+          29,
+          38
+        ],
+        "upstream_declaration_sha256": "a0cc754663cd1284631cebdf1a8efe03207492cd0e0b5a2efcc5a9d19c84f259"
+      }
+    },
+    "bertrand": {
+      "proof_module_tokens": 111,
+      "assumption_module_tokens": null,
+      "signature_tokens": 31,
+      "proof_body_tokens": 72,
+      "proof_expr_nodes": 5055,
+      "proof_dependencies": [
+        "And",
+        "Bool",
+        "Bool.false",
+        "Bool.true",
+        "Eq",
+        "Eq.mpr",
+        "Eq.refl",
+        "Eq.symm",
+        "Eq.trans",
+        "Exists",
+        "HDiv.hDiv",
+        "HMul.hMul",
+        "HPow.hPow",
+        "IsStrictOrderedRing.toIsOrderedRing",
+        "LE.le",
+        "LT.lt",
+        "LinearOrder.toPartialOrder",
+        "Mathlib.Meta.NormNum.isNat_le_true",
+        "Mathlib.Meta.NormNum.isNat_lt_true",
+        "Mathlib.Meta.NormNum.isNat_ofNat",
+        "Mathlib.Tactic.Contrapose.mtr",
+        "Mathlib.Tactic.Push.not_and_eq",
+        "Mathlib.Tactic.Push.not_exists._simp_1",
+        "Monoid.toNatPow",
+        "Nat",
+        "Nat.Prime",
+        "Nat.centralBinom",
+        "Nat.four_pow_lt_mul_centralBinom",
+        "Nat.instAddMonoidWithOne",
+        "Nat.instCharZero",
+        "Nat.instDiv",
+        "Nat.instIsStrictOrderedRing",
+        "Nat.instLinearOrder",
+        "Nat.instMonoid",
+        "Nat.instMulLeftMono",
+        "Nat.instPartialOrder",
+        "Nat.instPreorder",
+        "Nat.instSemigroup",
+        "Nat.instSemiring",
+        "Nat.sqrt",
+        "Not",
+        "OfNat.ofNat",
+        "PartialOrder.toPreorder",
+        "Preorder.toLE",
+        "Preorder.toLT",
+        "Semigroup.toMul",
+        "bertrand_main_inequality",
+        "binderNameHint",
+        "centralBinom_le_of_no_bertrand_prime",
+        "congrArg",
+        "forall_congr",
+        "id",
+        "implies_congr",
+        "instHDiv",
+        "instHMul",
+        "instHPow",
+        "instLENat",
+        "instLTNat",
+        "instMulNat",
+        "instOfNatNat",
+        "le_imp_le_of_le_of_le",
+        "le_refl",
+        "le_trans",
+        "lt_of_lt_of_le",
+        "mul_assoc",
+        "mul_le_mul_left'",
+        "not_le._simp_1",
+        "not_lt._simp_1"
+      ],
+      "axioms_used": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "library_imports_count": 3685,
+      "library_imports_sha256": "45059e00266fbc8b7d501f9ae801a560831e73c6cbaf556b638255656e895bfe",
+      "upstream": {
+        "declaration": "Nat.exists_prime_lt_and_le_two_mul_eventually",
+        "path": "Mathlib/NumberTheory/Bertrand.lean",
+        "lines": [
+          191,
+          202
+        ],
+        "upstream_declaration_sha256": "e60c833b8981687dc762800c52e3c56482099891c39ff69d0479382365e3aa71"
+      }
+    }
+  },
+  "ranking": [
+    {
+      "candidate": "twin_primes",
+      "label": "孪生素数 / Twin primes",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 55,
+          "replacement_tokens": 55,
+          "replacement_body_tokens": 22,
+          "replacement_expression_nodes": 509
+        },
+        "bertrand": {
+          "status": "original_carried",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": null
+        }
+      },
+      "assumption_sha256": "784fc4581c7047e8dde04b3a1e8b7c2eb7ada1a7e0f8f04b7a6e8a35f4a128c3",
+      "statement_tokens": 31,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 166,
+      "observed_gross_tokens_saved": 58,
+      "conditional_net_tokens_saved": 27,
+      "proof_of_conjecture_tokens": null,
+      "rank": 1
+    },
+    {
+      "candidate": "sophie_germain",
+      "label": "Sophie Germain 素数无穷 / Infinitely many Sophie Germain primes",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 55,
+          "replacement_tokens": 55,
+          "replacement_body_tokens": 22,
+          "replacement_expression_nodes": 725
+        },
+        "bertrand": {
+          "status": "original_carried",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": null
+        }
+      },
+      "assumption_sha256": "9c08eaeffe3f57282d9318d6a2e450674140d56e658c07f2b014b9048a2f54a7",
+      "statement_tokens": 33,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 166,
+      "observed_gross_tokens_saved": 58,
+      "conditional_net_tokens_saved": 25,
+      "proof_of_conjecture_tokens": null,
+      "rank": 2
+    },
+    {
+      "candidate": "landau",
+      "label": "Landau 的 n²+1 素数猜想 / Landau’s n²+1 primes",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 65,
+          "replacement_tokens": 65,
+          "replacement_body_tokens": 32,
+          "replacement_expression_nodes": 599
+        },
+        "bertrand": {
+          "status": "original_carried",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": null
+        }
+      },
+      "assumption_sha256": "a578e57be5b8d2c60f30602c8d074c024704898cb42ba9c8c90b9b5d4bbc8f35",
+      "statement_tokens": 30,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 176,
+      "observed_gross_tokens_saved": 48,
+      "conditional_net_tokens_saved": 18,
+      "proof_of_conjecture_tokens": null,
+      "rank": 3
+    },
+    {
+      "candidate": "binary_goldbach",
+      "label": "强哥德巴赫 / Binary Goldbach",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 82,
+          "replacement_tokens": 82,
+          "replacement_body_tokens": 49,
+          "replacement_expression_nodes": 1673
+        },
+        "bertrand": {
+          "status": "original_carried",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": null
+        }
+      },
+      "assumption_sha256": "c59461f05a2d9d7c4d603e31414e9a973752afd64c741da1325524f9e02b31d2",
+      "statement_tokens": 36,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 193,
+      "observed_gross_tokens_saved": 31,
+      "conditional_net_tokens_saved": -5,
+      "proof_of_conjecture_tokens": null,
+      "rank": 4
+    },
+    {
+      "candidate": "legendre",
+      "label": "Legendre 猜想 / Legendre",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 77,
+          "replacement_tokens": 77,
+          "replacement_body_tokens": 44,
+          "replacement_expression_nodes": 1899
+        },
+        "bertrand": {
+          "status": "verified",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": 119,
+          "replacement_body_tokens": 75,
+          "replacement_expression_nodes": 120802
+        }
+      },
+      "assumption_sha256": "18beb14d991a54ca2b8f5d94e020ad7aefc899c0b290395970ce5c9b0de70434",
+      "statement_tokens": 44,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 188,
+      "observed_gross_tokens_saved": 36,
+      "conditional_net_tokens_saved": -8,
+      "proof_of_conjecture_tokens": null,
+      "rank": 5
+    },
+    {
+      "candidate": "oppermann",
+      "label": "Oppermann 猜想 / Oppermann",
+      "targets": {
+        "euclid": {
+          "status": "verified",
+          "baseline_tokens": 113,
+          "retained_tokens": 87,
+          "replacement_tokens": 87,
+          "replacement_body_tokens": 54,
+          "replacement_expression_nodes": 2436
+        },
+        "bertrand": {
+          "status": "verified",
+          "baseline_tokens": 111,
+          "retained_tokens": 111,
+          "replacement_tokens": 123,
+          "replacement_body_tokens": 79,
+          "replacement_expression_nodes": 116440
+        }
+      },
+      "assumption_sha256": "d1cf6afa6256d1549afd68b1d9a57c0039ec91fa3d14f0cce3247cd81c952ca6",
+      "statement_tokens": 68,
+      "baseline_tokens": 224,
+      "retained_proof_tokens": 198,
+      "observed_gross_tokens_saved": 26,
+      "conditional_net_tokens_saved": -42,
+      "proof_of_conjecture_tokens": null,
+      "rank": 6
+    }
+  ]
+}

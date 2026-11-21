@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "panel_id": "prime_theorems_v2",
+  "targets": {
+    "euclid": {
+      "suite": "euclid-suite.json",
+      "report": "euclid-report.json",
+      "allowed_auditor_sources": ["2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29", "cc950664e272b35bce857bcb02c804813773bd59403f06a17964c93d3c7bacee"],
+      "carry_original": []
+    },
+    "bertrand": {
+      "suite": "bertrand-suite.json",
+      "report": "bertrand-report.json",
+      "allowed_auditor_sources": ["cc950664e272b35bce857bcb02c804813773bd59403f06a17964c93d3c7bacee"],
+      "carry_original": ["binary_goldbach", "landau", "sophie_germain", "twin_primes"]
+    }
+  },
+  "candidate_labels": {
+    "binary_goldbach": "强哥德巴赫 / Binary Goldbach",
+    "landau": "Landau 的 n²+1 素数猜想 / Landau’s n²+1 primes",
+    "legendre": "Legendre 猜想 / Legendre",
+    "oppermann": "Oppermann 猜想 / Oppermann",
+    "sophie_germain": "Sophie Germain 素数无穷 / Infinitely many Sophie Germain primes",
+    "twin_primes": "孪生素数 / Twin primes"
+  }
+}

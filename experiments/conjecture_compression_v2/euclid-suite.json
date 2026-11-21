@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "suite_id": "prime_infinitude_v2",
+  "lean_version": "4.24.0",
+  "mathlib_revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+  "allowed_library_prefixes": [
+    "Init",
+    "Lean",
+    "Std",
+    "Mathlib",
+    "Batteries",
+    "Aesop",
+    "Qq",
+    "Plausible",
+    "ProofWidgets",
+    "ImportGraph",
+    "LeanSearchClient"
+  ],
+  "common": "Goal.lean",
+  "targets": {
+    "euclid": {
+      "goal": "Bench.B",
+      "original": "Euclid.lean",
+      "withheld_declarations": [
+        "Nat.exists_infinite_primes",
+        "Nat.not_bddAbove_setOf_prime",
+        "Nat.infinite_setOf_prime"
+      ],
+      "source": "https://github.com/leanprover-community/mathlib4/blob/d167cc6dc962ab340507362ea2f4bcfcff44f01b/Mathlib/Data/Nat/Prime/Infinite.lean#L27",
+      "upstream": {
+        "declaration": "Nat.exists_infinite_primes",
+        "path": "Mathlib/Data/Nat/Prime/Infinite.lean",
+        "first_line": 29,
+        "last_line": 38
+      }
+    }
+  },
+  "candidates": {
+    "twin_primes": {
+      "assumption": "TwinPrimes.lean",
+      "alternatives": {
+        "euclid": "TwinBridge.lean"
+      }
+    },
+    "landau": {
+      "assumption": "Landau.lean",
+      "alternatives": {
+        "euclid": "LandauBridge.lean"
+      }
+    },
+    "binary_goldbach": {
+      "assumption": "Goldbach.lean",
+      "alternatives": {
+        "euclid": "GoldbachBridge.lean"
+      }
+    },
+    "legendre": {
+      "assumption": "Legendre.lean",
+      "alternatives": {
+        "euclid": "LegendreEuclid.lean"
+      }
+    },
+    "oppermann": {
+      "assumption": "Oppermann.lean",
+      "alternatives": {
+        "euclid": "OppermannEuclid.lean"
+      }
+    },
+    "sophie_germain": {
+      "assumption": "SophieGermain.lean",
+      "alternatives": {
+        "euclid": "SophieBridge.lean"
+      }
+    }
+  },
+  "source_sha256": {
+    "common": "41e215a06215fb2394fcfad97079d72dcef0c187e692ce91172177b4d97070dc",
+    "original/euclid": "92a7ef8d8c37a17d68112fee18050cd35d9912b6a4a8687d996092392f375b22",
+    "assumption/twin_primes": "784fc4581c7047e8dde04b3a1e8b7c2eb7ada1a7e0f8f04b7a6e8a35f4a128c3",
+    "alternative/twin_primes/euclid": "a946e4355367090bd2e1de00012377fa5d543fcc5f1ad17a6c5e75dd93bf5eaf",
+    "assumption/landau": "a578e57be5b8d2c60f30602c8d074c024704898cb42ba9c8c90b9b5d4bbc8f35",
+    "alternative/landau/euclid": "17f0bbdf664679e434cfe6f6ee7ff04a4abae321056a447cd95e12f22692010d",
+    "assumption/binary_goldbach": "c59461f05a2d9d7c4d603e31414e9a973752afd64c741da1325524f9e02b31d2",
+    "alternative/binary_goldbach/euclid": "ce4564fca0e7f6f20c0e347db8ee75b5d7891b60f202a52b26eb4b1fd5a52cbb",
+    "assumption/legendre": "18beb14d991a54ca2b8f5d94e020ad7aefc899c0b290395970ce5c9b0de70434",
+    "alternative/legendre/euclid": "60bc52799c7564ccd628216b0d46eee1b0c32b089f7337858ed39a620eec80ef",
+    "assumption/oppermann": "d1cf6afa6256d1549afd68b1d9a57c0039ec91fa3d14f0cce3247cd81c952ca6",
+    "alternative/oppermann/euclid": "b01722a03d2dcb1db671210faa7907d9a43e7dc3f8c0de64aaa7c5b77fe34cdb",
+    "assumption/sophie_germain": "9c08eaeffe3f57282d9318d6a2e450674140d56e658c07f2b014b9048a2f54a7",
+    "alternative/sophie_germain/euclid": "a946e4355367090bd2e1de00012377fa5d543fcc5f1ad17a6c5e75dd93bf5eaf"
+  }
+}

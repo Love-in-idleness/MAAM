@@ -144,8 +144,8 @@ python -m maam query --corpus examples/paper_simple_lemma.json --statement 'A �
 未匹配的命题和未证明的猜想会返回缺少的证据与空分数，退出码为 2。
 Unmatched statements and unproved conjectures return the missing evidence and a null score, with exit code 2.
 
-已有证明的目标可用 `measure-conjecture-compression` 核验原证和依赖猜想的替代证，并计算实际压缩。[首轮 Lean 验收](experiments/conjecture_compression/README.md)给出证据、固定口径和排名。`rank-conjectures` 的[早期实验](experiments/conjecture_ranking/README.md)只记录开放目标的条件覆盖。
-For already-proved goals, `measure-conjecture-compression` checks original and conjecture-dependent proofs and measures the actual compression. The [first Lean experiment](experiments/conjecture_compression/README.md) includes its evidence, fixed convention and ranking. The [earlier coverage experiment](experiments/conjecture_ranking/README.md) records conditional coverage of open targets.
+已有证明的目标可用 `measure-conjecture-compression` 核验原证和依赖猜想的替代证，并计算实际压缩。[猜想条件压缩榜 v2](experiments/conjecture_compression_v2/README.md)比较同一目标组的整数净节省。[首轮单目标实验](experiments/conjecture_compression/README.md)和[开放目标覆盖实验](experiments/conjecture_ranking/README.md)均可独立复现。
+For already-proved goals, `measure-conjecture-compression` checks original and conjecture-dependent proofs and measures their compression. The [v2 conjecture compression ranking](experiments/conjecture_compression_v2/README.md) compares integer net savings on a common panel. The [original single-goal experiment](experiments/conjecture_compression/README.md) and the [open-goal coverage experiment](experiments/conjecture_ranking/README.md) remain separately reproducible.
 
 ## Lean 接口 / Lean adapter
 
