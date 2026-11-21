@@ -45,6 +45,10 @@ def parser():
     p.add_argument("--system", required=True)
     p.add_argument("--name", required=True)
     p.add_argument("--goal", action="append", required=True)
+    p = commands.add_parser("rank-conjectures", help="rank conjectures by conditional coverage of open targets")
+    p.add_argument("--corpus", required=True)
+    p.add_argument("--format", choices=("json", "markdown"), default="json")
+    p.add_argument("--output", help="write the report to a new file")
     p = commands.add_parser("evaluate-package", help="verify a controlled Lean theory-package migration")
     p.add_argument("--experiment", required=True)
     p.add_argument("--lean", default="lean")
@@ -131,6 +135,9 @@ def main(argv=None):
         elif args.command in {"efficiency", "reuse"}:
             system = ProofSystem.load(args.system)
             report = system.evaluate(args.name) if args.command == "efficiency" else system.reuse_gain(args.name, args.goal)
+        elif args.command == "rank-conjectures":
+            from .conjectures import rank_conjectures
+            report = rank_conjectures(args.corpus)
         elif args.command == "export-lean":
             from .lean import export
             report = export(args.project, args.module, args.corpus_output, targets=args.target,
@@ -166,8 +173,13 @@ def main(argv=None):
                 report = calc.rank(args.limit)
             else:
                 report = calc.query(args.statement)
-        rendered = (as_text(report) if getattr(args, "format", "json") == "text"
-                    else json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+        if getattr(args, "format", None) == "markdown":
+            from .conjectures import as_markdown
+            rendered = as_markdown(report)
+        elif getattr(args, "format", None) == "text":
+            rendered = as_text(report)
+        else:
+            rendered = json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
         output = getattr(args, "output", None)
         if output:
             # Do not accidentally overwrite a corpus, source file, or previous report.

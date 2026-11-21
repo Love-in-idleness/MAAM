@@ -144,6 +144,9 @@ python -m maam query --corpus examples/paper_simple_lemma.json --statement 'A �
 未匹配的命题和未证明的猜想会返回缺少的证据与空分数，退出码为 2。
 Unmatched statements and unproved conjectures return the missing evidence and a null score, with exit code 2.
 
+开放猜想可以用独立的 `rank-conjectures` 命令比较条件覆盖范围。[首版榜单与复现说明](experiments/conjecture_ranking/README.md)给出固定目标、文献证据和实际排名。
+The separate `rank-conjectures` command compares conditional coverage for open conjectures. The [first ranking and reproduction guide](experiments/conjecture_ranking/README.md) includes the fixed panel, cited evidence and computed results.
+
 ## Lean 接口 / Lean adapter
 
 适配器从已有 Lean 工程导出命题类型、证明体及带重复次数的依赖；已通过 GitHub Actions 上 Lean 4.24.0 的小命题端到端检查。
