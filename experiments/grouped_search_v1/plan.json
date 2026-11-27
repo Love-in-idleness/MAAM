@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "phase": "grouped_precompression_search",
+  "id": "grouped-precompression-calibration-v1",
+  "lean_version": "4.33.1",
+  "base": {
+    "id": "proposition-base-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ]
+  },
+  "candidate": {
+    "schema_version": 1,
+    "package_id": "keep-v1",
+    "base_id": "proposition-base-v1",
+    "status": "proved_extension",
+    "modules": [
+      "Candidate"
+    ],
+    "declarations": [
+      "Calibration.keep"
+    ],
+    "conjectures": []
+  },
+  "targets": [
+    {
+      "id": "one",
+      "goal": "Calibration.GoalOne"
+    },
+    {
+      "id": "two",
+      "goal": "Calibration.GoalTwo"
+    }
+  ],
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49"
+    }
+  },
+  "budget": {
+    "max_attempts_per_task": 2,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "historical": {
+    "helpers": "",
+    "proofs": {
+      "one": "by\n  intro P Q hp hq\n  exact (And.intro hp hq).left",
+      "two": "by\n  intro P Q R hp hq hr\n  exact (And.intro (And.intro hp hq) hr).left.left"
+    }
+  }
+}

@@ -1,0 +1,1369 @@
+{
+  "schema_version": 1,
+  "status": "verified_grouped_search_calibration",
+  "provider_calls": 0,
+  "supplied_reference": true,
+  "checks": [
+    "treatment request blocked before preparation freeze",
+    "both arms inherit identical prepared proofs; candidate source is treatment-only",
+    "a wrong original component rejects the entire group",
+    "two deterministic methods generate verified groups in all three search phases"
+  ],
+  "driver_sha256": "2248ef63b0809ffe04de7fbf2bfd75262a04cac40b2f986110abcf0afeb81fe1",
+  "verified_group_attempts_including_preflight": 14,
+  "verified_attempts_by_run": {
+    "supplied": 6,
+    "local_methods": 8
+  },
+  "rejected_group_attempts": 1,
+  "retained_decisions": 1,
+  "report": {
+    "schema_version": 1,
+    "status": "grouped_schedule_complete",
+    "targets": [
+      {
+        "id": "one",
+        "goal": "Calibration.GoalOne"
+      },
+      {
+        "id": "two",
+        "goal": "Calibration.GoalTwo"
+      }
+    ],
+    "solver_id": "supplied-grouped-calibration",
+    "mode": "supplied_reference",
+    "fingerprints": {
+      "group_sha256": "9b4ce608bf7864e2e989c676907f67c7d00c5cea406cb7bf641d5e174c85ef2e",
+      "tools": {
+        "grouped_search.py": "6a8c7b3ff8e6de769ff1346b0af07a81a86526f823bf7e070c1200afc69fd38b",
+        "migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+        "theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+        "PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+        "precompression.py": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+        "attribution.py": "2bc1237096cf52433be549296606ec5843e07ea65c9377b6458d5584cb1ee2fd",
+        "grouped_methods.py": "658a1a245e4aa59e873cd7e52d1066224b7f72f32ae16b1ca1ae47cbff287c77"
+      },
+      "suite": {
+        "suite_sha256": "4aef75d6afe3bf35e7c63a9c00004f918c59c460575b10a879ac39dfcb01328c",
+        "package_sha256": "5c55bc73a8bc629acfaf80725cf930c23188983a63e90743b069241810cb459c",
+        "source_sha256": {
+          "Base": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7",
+          "Candidate": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49",
+          "GroupGoal": "20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f"
+        },
+        "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+        "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+        "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+      }
+    },
+    "preparation_frozen": true,
+    "attempt_cap_per_stage": 2,
+    "stages": {
+      "preparation": {
+        "issued": 2,
+        "outcomes": [
+          {
+            "phase": "preparation",
+            "slot": 1,
+            "status": "verified",
+            "request_sha256": "4aeff03a301d99a018c44823f2a34b820241da8ccbb792de91bb251f093c0e7b",
+            "generation_usage": null,
+            "failure": null,
+            "artifact": "preparation/attempts/group/001"
+          },
+          {
+            "phase": "preparation",
+            "slot": 2,
+            "status": "verified",
+            "request_sha256": "486cc775fff3cf511ba0770b87f7de253a21256dd41fcf96690f0f42ec5a72fd",
+            "generation_usage": null,
+            "failure": null,
+            "artifact": "preparation/attempts/group/002"
+          }
+        ]
+      },
+      "control": {
+        "issued": 2,
+        "outcomes": [
+          {
+            "phase": "control",
+            "slot": 1,
+            "status": "rejected",
+            "request_sha256": "10e2fc7395d7d9551e980dc6aee69b9531164aacc4ead893573abbba3097ec9e",
+            "generation_usage": null,
+            "failure": {
+              "kind": "verification_failed",
+              "stage": "compile:Proof",
+              "message": "Proof.lean:12:10: error: Type mismatch\n  hq\nhas type\n  Q\nbut is expected to have type\n  P\n"
+            },
+            "artifact": "control/attempts/group/001"
+          },
+          {
+            "phase": "control",
+            "slot": 2,
+            "status": "verified",
+            "request_sha256": "d316914cd89f8bf44a505f5e11ecce582efef97e1d7ac937813bdc638345970c",
+            "generation_usage": null,
+            "failure": null,
+            "artifact": "control/attempts/group/002"
+          }
+        ]
+      },
+      "treatment": {
+        "issued": 2,
+        "outcomes": [
+          {
+            "phase": "treatment",
+            "slot": 1,
+            "status": "verified",
+            "request_sha256": "d02ffc36154d0d0969f2a3ec0b51213dd9bf6d1ee49baccac2f9c67ca797abb0",
+            "generation_usage": null,
+            "failure": null,
+            "artifact": "treatment/attempts/group/001"
+          },
+          {
+            "phase": "treatment",
+            "slot": 2,
+            "status": "retained",
+            "request_sha256": "b6fcc32ac95b7d7430cb38652711cdbda5c001d62de63d4fdfeeb228cd554932",
+            "generation_usage": null
+          }
+        ]
+      }
+    },
+    "verified_complete_routes": 5,
+    "measurement": {
+      "schema_version": 1,
+      "status": "measured_source_portfolios",
+      "study_id": "grouped-precompression-calibration-v1",
+      "candidate": {
+        "id": "keep-v1",
+        "modules": [
+          "Candidate"
+        ]
+      },
+      "targets": [
+        "Calibration.GoalOne",
+        "Calibration.GoalTwo"
+      ],
+      "background_modules": [
+        "Base",
+        "GroupGoal"
+      ],
+      "fingerprints": {
+        "study_sha256": "728fa07dc55038e2bc1498b829685703946638bd388b02e3bf90fd9ffac3867f",
+        "source_sha256": {
+          "Base": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7",
+          "GroupGoal": "20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f",
+          "Candidate": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49",
+          "GroupMeasured.Route0000": "bef4c3b37504c181733a8a9f0efb1d518f44b2658b5f6ae551ee47fdbae83ea8",
+          "GroupMeasured.Route0001": "9769806e4e3e0531e10e49751a9aace79652e06b3ca973f744e0618a5f0cf536",
+          "GroupMeasured.Route0002": "86a8ff572810bbd93b29b65575c85fd8846673a3883cc485892e710cd4999e61",
+          "GroupMeasured.Route0003": "2ac7f8a58c06699d9c39cf972dc56a796cc48878109977a6af5e072e7bb12aa1",
+          "GroupMeasured.Route0004": "3fe71e515fa5a335e272229ace9a184385295a9809338bf9b122da5daf76e442"
+        },
+        "evaluator_sha256": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+        "attribution_sha256": "2bc1237096cf52433be549296606ec5843e07ea65c9377b6458d5584cb1ee2fd",
+        "serialization_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4"
+      },
+      "routes": [
+        {
+          "id": "GroupMeasured.Route0000",
+          "stage": "historical",
+          "costs": {
+            "complete": {
+              "charged_modules": [
+                "GroupMeasured.Route0000"
+              ],
+              "source_utf8_bytes": 392,
+              "serialized_utf8_bytes": 441,
+              "zlib_9_bytes": 214,
+              "bzip2_9_bytes": 261,
+              "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8",
+              "roundtrip_verified": true
+            },
+            "mandatory": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0000"
+              ],
+              "source_utf8_bytes": 500,
+              "serialized_utf8_bytes": 571,
+              "zlib_9_bytes": 264,
+              "bzip2_9_bytes": 314,
+              "payload_sha256": "e1430b29ebad86f9949740d1844541961a0d8d88facea272e95fa02683a0e81a",
+              "roundtrip_verified": true
+            },
+            "installed": {
+              "charged_modules": [
+                "GroupMeasured.Route0000"
+              ],
+              "source_utf8_bytes": 392,
+              "serialized_utf8_bytes": 441,
+              "zlib_9_bytes": 214,
+              "bzip2_9_bytes": 261,
+              "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8",
+              "roundtrip_verified": true
+            }
+          }
+        },
+        {
+          "id": "GroupMeasured.Route0001",
+          "stage": "prepared",
+          "costs": {
+            "complete": {
+              "charged_modules": [
+                "GroupMeasured.Route0001"
+              ],
+              "source_utf8_bytes": 465,
+              "serialized_utf8_bytes": 515,
+              "zlib_9_bytes": 260,
+              "bzip2_9_bytes": 308,
+              "payload_sha256": "ab4f264ab8435d07577b1ce0685fb5aedef55caf8943af5c543f2c40c68fc43d",
+              "roundtrip_verified": true
+            },
+            "mandatory": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0001"
+              ],
+              "source_utf8_bytes": 573,
+              "serialized_utf8_bytes": 645,
+              "zlib_9_bytes": 298,
+              "bzip2_9_bytes": 349,
+              "payload_sha256": "f15e89e257e659f99fde4b6d6c825f189bca6bca2aef66c9dce73865b351842b",
+              "roundtrip_verified": true
+            },
+            "installed": {
+              "charged_modules": [
+                "GroupMeasured.Route0001"
+              ],
+              "source_utf8_bytes": 465,
+              "serialized_utf8_bytes": 515,
+              "zlib_9_bytes": 260,
+              "bzip2_9_bytes": 308,
+              "payload_sha256": "ab4f264ab8435d07577b1ce0685fb5aedef55caf8943af5c543f2c40c68fc43d",
+              "roundtrip_verified": true
+            }
+          }
+        },
+        {
+          "id": "GroupMeasured.Route0002",
+          "stage": "prepared",
+          "costs": {
+            "complete": {
+              "charged_modules": [
+                "GroupMeasured.Route0002"
+              ],
+              "source_utf8_bytes": 332,
+              "serialized_utf8_bytes": 381,
+              "zlib_9_bytes": 200,
+              "bzip2_9_bytes": 245,
+              "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13",
+              "roundtrip_verified": true
+            },
+            "mandatory": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0002"
+              ],
+              "source_utf8_bytes": 440,
+              "serialized_utf8_bytes": 511,
+              "zlib_9_bytes": 249,
+              "bzip2_9_bytes": 293,
+              "payload_sha256": "010e54540b6d85952e0cfed75041fd20f2836c3451fab9487c03d9c4f701a2e6",
+              "roundtrip_verified": true
+            },
+            "installed": {
+              "charged_modules": [
+                "GroupMeasured.Route0002"
+              ],
+              "source_utf8_bytes": 332,
+              "serialized_utf8_bytes": 381,
+              "zlib_9_bytes": 200,
+              "bzip2_9_bytes": 245,
+              "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13",
+              "roundtrip_verified": true
+            }
+          }
+        },
+        {
+          "id": "GroupMeasured.Route0003",
+          "stage": "control",
+          "costs": {
+            "complete": {
+              "charged_modules": [
+                "GroupMeasured.Route0003"
+              ],
+              "source_utf8_bytes": 352,
+              "serialized_utf8_bytes": 401,
+              "zlib_9_bytes": 216,
+              "bzip2_9_bytes": 263,
+              "payload_sha256": "52e3db70ceac608c2f61bf8dc261bf2a5ccad8f761f85fd3a6595e84aaf68d8c",
+              "roundtrip_verified": true
+            },
+            "mandatory": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0003"
+              ],
+              "source_utf8_bytes": 460,
+              "serialized_utf8_bytes": 531,
+              "zlib_9_bytes": 265,
+              "bzip2_9_bytes": 309,
+              "payload_sha256": "da00a37606653047eaada04aa61d96e003d2814dc8a5d78aac89ed53ed6a756c",
+              "roundtrip_verified": true
+            },
+            "installed": {
+              "charged_modules": [
+                "GroupMeasured.Route0003"
+              ],
+              "source_utf8_bytes": 352,
+              "serialized_utf8_bytes": 401,
+              "zlib_9_bytes": 216,
+              "bzip2_9_bytes": 263,
+              "payload_sha256": "52e3db70ceac608c2f61bf8dc261bf2a5ccad8f761f85fd3a6595e84aaf68d8c",
+              "roundtrip_verified": true
+            }
+          }
+        },
+        {
+          "id": "GroupMeasured.Route0004",
+          "stage": "treatment",
+          "costs": {
+            "complete": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0004"
+              ],
+              "source_utf8_bytes": 528,
+              "serialized_utf8_bytes": 600,
+              "zlib_9_bytes": 280,
+              "bzip2_9_bytes": 335,
+              "payload_sha256": "a3b2312213f3d5ef62bd901edbfb99291a8640df8946de2504b04ef2ba1d49bd",
+              "roundtrip_verified": true
+            },
+            "mandatory": {
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0004"
+              ],
+              "source_utf8_bytes": 528,
+              "serialized_utf8_bytes": 600,
+              "zlib_9_bytes": 280,
+              "bzip2_9_bytes": 335,
+              "payload_sha256": "a3b2312213f3d5ef62bd901edbfb99291a8640df8946de2504b04ef2ba1d49bd",
+              "roundtrip_verified": true
+            },
+            "installed": {
+              "charged_modules": [
+                "GroupMeasured.Route0004"
+              ],
+              "source_utf8_bytes": 420,
+              "serialized_utf8_bytes": 470,
+              "zlib_9_bytes": 234,
+              "bzip2_9_bytes": 287,
+              "payload_sha256": "19fea4c6f59d933d4e2a5ba201ece12991d1f8ba32fd9c3cc2773de6298a906e",
+              "roundtrip_verified": true
+            }
+          }
+        }
+      ],
+      "metrics": {
+        "source_utf8_bytes": {
+          "optional_adoption": {
+            "selected": {
+              "historical": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 392,
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+              },
+              "prepared": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 332,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "control": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 332,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "treatment": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 332,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              }
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "source_utf8_bytes",
+              "historical_net_saving": 60,
+              "old_tool_preparation_saving": 60,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": 0,
+              "decomposition_total": 60,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "mandatory_adoption": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 440,
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "010e54540b6d85952e0cfed75041fd20f2836c3451fab9487c03d9c4f701a2e6"
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "source_utf8_bytes",
+              "historical_net_saving": -48,
+              "old_tool_preparation_saving": 60,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": -108,
+              "decomposition_total": -48,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "installed_reuse": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 332,
+              "charged_modules": [
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+            },
+            "control_cost": 332,
+            "marginal_cost_difference": 0,
+            "background": "candidate already installed and paid for outside this decision"
+          }
+        },
+        "zlib_9_bytes": {
+          "optional_adoption": {
+            "selected": {
+              "historical": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 214,
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+              },
+              "prepared": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 200,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "control": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 200,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "treatment": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 200,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              }
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "zlib_9_bytes",
+              "historical_net_saving": 14,
+              "old_tool_preparation_saving": 14,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": 0,
+              "decomposition_total": 14,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "mandatory_adoption": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 249,
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "010e54540b6d85952e0cfed75041fd20f2836c3451fab9487c03d9c4f701a2e6"
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "zlib_9_bytes",
+              "historical_net_saving": -35,
+              "old_tool_preparation_saving": 14,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": -49,
+              "decomposition_total": -35,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "installed_reuse": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 200,
+              "charged_modules": [
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+            },
+            "control_cost": 200,
+            "marginal_cost_difference": 0,
+            "background": "candidate already installed and paid for outside this decision"
+          }
+        },
+        "bzip2_9_bytes": {
+          "optional_adoption": {
+            "selected": {
+              "historical": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 261,
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+              },
+              "prepared": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 245,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "control": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 245,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              },
+              "treatment": {
+                "route_id": "GroupMeasured.Route0002",
+                "cost": 245,
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+              }
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "bzip2_9_bytes",
+              "historical_net_saving": 16,
+              "old_tool_preparation_saving": 16,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": 0,
+              "decomposition_total": 16,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "mandatory_adoption": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 293,
+              "charged_modules": [
+                "Candidate",
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "010e54540b6d85952e0cfed75041fd20f2836c3451fab9487c03d9c4f701a2e6"
+            },
+            "attribution": {
+              "status": "complete_bookkeeping",
+              "unit": "bzip2_9_bytes",
+              "historical_net_saving": -32,
+              "old_tool_preparation_saving": 16,
+              "continued_old_tool_search_saving": 0,
+              "candidate_provision_observed_difference": -48,
+              "decomposition_total": -32,
+              "identity_verified": true,
+              "causal_effect_established": false,
+              "global_minimum_established": false
+            }
+          },
+          "installed_reuse": {
+            "selected": {
+              "route_id": "GroupMeasured.Route0002",
+              "cost": 245,
+              "charged_modules": [
+                "GroupMeasured.Route0002"
+              ],
+              "payload_sha256": "4d9264ac3959cefeb240155f0e98d4b19587f5d328aec91d28227b3ba0e9ba13"
+            },
+            "control_cost": 245,
+            "marginal_cost_difference": 0,
+            "background": "candidate already installed and paid for outside this decision"
+          }
+        }
+      },
+      "formal_verification": "not_run_by_source_measurer",
+      "goal_coverage": "declared_by_manifest; requires independent formal verification",
+      "search_executed": false,
+      "information_separation_established": false,
+      "baseline_search_complete": false,
+      "package_attribution_ready": false,
+      "causal_effect_established": false,
+      "global_minimum_established": false,
+      "selection_scope": "exact over supplied complete routes for each metric and mode",
+      "accounting_scope": "new source modules jointly encoded once per route; common background bytes excluded, import lines retained; dependencies and automation must be listed by the caller and audited externally"
+    },
+    "formal_scope": "controller-assembled conjunction of all fixed original goal constants",
+    "generation_usage": null,
+    "generation_budget_verified": false,
+    "information_separation_established": false,
+    "training_eligible": false,
+    "scope": "Condition-specific requests and equal attempt/verification caps. External model isolation, metered generation and mathematical discovery are not certified."
+  },
+  "local_methods": {
+    "method_sha256": "658a1a245e4aa59e873cd7e52d1066224b7f72f32ae16b1ca1ae47cbff287c77",
+    "methods": [
+      "core_direct",
+      "core_shared_identity"
+    ],
+    "report": {
+      "schema_version": 1,
+      "status": "grouped_schedule_complete",
+      "targets": [
+        {
+          "id": "one",
+          "goal": "Calibration.GoalOne"
+        },
+        {
+          "id": "two",
+          "goal": "Calibration.GoalTwo"
+        }
+      ],
+      "solver_id": "deterministic-core-v1",
+      "mode": "supplied_reference",
+      "fingerprints": {
+        "group_sha256": "f4f671518fa469c8fb5f65cbf1caeefd3f87bdb022d5ca3ef7b97471b16e9508",
+        "tools": {
+          "grouped_search.py": "6a8c7b3ff8e6de769ff1346b0af07a81a86526f823bf7e070c1200afc69fd38b",
+          "migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+          "theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+          "PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+          "precompression.py": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+          "attribution.py": "2bc1237096cf52433be549296606ec5843e07ea65c9377b6458d5584cb1ee2fd",
+          "grouped_methods.py": "658a1a245e4aa59e873cd7e52d1066224b7f72f32ae16b1ca1ae47cbff287c77"
+        },
+        "suite": {
+          "suite_sha256": "4aef75d6afe3bf35e7c63a9c00004f918c59c460575b10a879ac39dfcb01328c",
+          "package_sha256": "5c55bc73a8bc629acfaf80725cf930c23188983a63e90743b069241810cb459c",
+          "source_sha256": {
+            "Base": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7",
+            "Candidate": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49",
+            "GroupGoal": "20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f"
+          },
+          "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+          "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+          "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+        }
+      },
+      "preparation_frozen": true,
+      "attempt_cap_per_stage": 2,
+      "stages": {
+        "preparation": {
+          "issued": 2,
+          "outcomes": [
+            {
+              "phase": "preparation",
+              "slot": 1,
+              "status": "verified",
+              "request_sha256": "aa8c02630c8ff9591920cb57a09e973d8e5e7e8d32d98fbcc4433f8713246dd5",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "preparation/attempts/group/001"
+            },
+            {
+              "phase": "preparation",
+              "slot": 2,
+              "status": "verified",
+              "request_sha256": "ee45716d16e60237a651ae77597e637fd63671d459801ec77472364305a3145c",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "preparation/attempts/group/002"
+            }
+          ]
+        },
+        "control": {
+          "issued": 2,
+          "outcomes": [
+            {
+              "phase": "control",
+              "slot": 1,
+              "status": "verified",
+              "request_sha256": "839909c09e8edc583db3deb16f27288e5b06832f4c8859c352c3be48da556c04",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "control/attempts/group/001"
+            },
+            {
+              "phase": "control",
+              "slot": 2,
+              "status": "verified",
+              "request_sha256": "0a1a521b408b3d3cbc9de9ba7caa4ce84f16436d9cd7c09bb3f2bc48732df9b8",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "control/attempts/group/002"
+            }
+          ]
+        },
+        "treatment": {
+          "issued": 2,
+          "outcomes": [
+            {
+              "phase": "treatment",
+              "slot": 1,
+              "status": "verified",
+              "request_sha256": "725e4b9310c19dad7d645058d1d789a8269e322816973894041c8e5b795bcc7e",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "treatment/attempts/group/001"
+            },
+            {
+              "phase": "treatment",
+              "slot": 2,
+              "status": "verified",
+              "request_sha256": "3795a346761d54083872f6170709e2adeda9b634649436c218cabda219a18f8d",
+              "generation_usage": null,
+              "failure": null,
+              "artifact": "treatment/attempts/group/002"
+            }
+          ]
+        }
+      },
+      "verified_complete_routes": 7,
+      "measurement": {
+        "schema_version": 1,
+        "status": "measured_source_portfolios",
+        "study_id": "grouped-precompression-calibration-v1",
+        "candidate": {
+          "id": "keep-v1",
+          "modules": [
+            "Candidate"
+          ]
+        },
+        "targets": [
+          "Calibration.GoalOne",
+          "Calibration.GoalTwo"
+        ],
+        "background_modules": [
+          "Base",
+          "GroupGoal"
+        ],
+        "fingerprints": {
+          "study_sha256": "250acc429e509998e0fa56068f51f7ac55551e4625b78f141b9d4f3969978213",
+          "source_sha256": {
+            "Base": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7",
+            "GroupGoal": "20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f",
+            "Candidate": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49",
+            "GroupMeasured.Route0000": "bef4c3b37504c181733a8a9f0efb1d518f44b2658b5f6ae551ee47fdbae83ea8",
+            "GroupMeasured.Route0001": "a3675cef4e3d82d4291babd8cf94f68686b7010341dfbe2ed716036af20a1988",
+            "GroupMeasured.Route0002": "bb3eb3e0d8b37ac7bbf968d312fdd2ac8473cf671f1f58954e52281b57eea8e6",
+            "GroupMeasured.Route0003": "a3675cef4e3d82d4291babd8cf94f68686b7010341dfbe2ed716036af20a1988",
+            "GroupMeasured.Route0004": "bb3eb3e0d8b37ac7bbf968d312fdd2ac8473cf671f1f58954e52281b57eea8e6",
+            "GroupMeasured.Route0005": "4d1e487b42e33e10aeadcf31470c1de887f409eefa7f5d10afc482c01f055119",
+            "GroupMeasured.Route0006": "7372e62e120e53030305a1bbaaea516f5ff64911885931fd729aa01725c555fc"
+          },
+          "evaluator_sha256": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+          "attribution_sha256": "2bc1237096cf52433be549296606ec5843e07ea65c9377b6458d5584cb1ee2fd",
+          "serialization_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4"
+        },
+        "routes": [
+          {
+            "id": "GroupMeasured.Route0000",
+            "stage": "historical",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "source_utf8_bytes": 392,
+                "serialized_utf8_bytes": 441,
+                "zlib_9_bytes": 214,
+                "bzip2_9_bytes": 261,
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0000"
+                ],
+                "source_utf8_bytes": 500,
+                "serialized_utf8_bytes": 571,
+                "zlib_9_bytes": 264,
+                "bzip2_9_bytes": 314,
+                "payload_sha256": "e1430b29ebad86f9949740d1844541961a0d8d88facea272e95fa02683a0e81a",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "source_utf8_bytes": 392,
+                "serialized_utf8_bytes": 441,
+                "zlib_9_bytes": 214,
+                "bzip2_9_bytes": 261,
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0001",
+            "stage": "prepared",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "GroupMeasured.Route0001"
+                ],
+                "source_utf8_bytes": 415,
+                "serialized_utf8_bytes": 466,
+                "zlib_9_bytes": 210,
+                "bzip2_9_bytes": 259,
+                "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0001"
+                ],
+                "source_utf8_bytes": 523,
+                "serialized_utf8_bytes": 596,
+                "zlib_9_bytes": 261,
+                "bzip2_9_bytes": 315,
+                "payload_sha256": "ca136688a33355f3ed93fa38fc34db2708f597ea5c01edff3422ba069ec65d6a",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0001"
+                ],
+                "source_utf8_bytes": 415,
+                "serialized_utf8_bytes": 466,
+                "zlib_9_bytes": 210,
+                "bzip2_9_bytes": 259,
+                "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0002",
+            "stage": "prepared",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "source_utf8_bytes": 500,
+                "serialized_utf8_bytes": 554,
+                "zlib_9_bytes": 242,
+                "bzip2_9_bytes": 294,
+                "payload_sha256": "93546d38f7eac758fb55012cda01dd63cc87a8231f7f112f960e13e2d89acc04",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0002"
+                ],
+                "source_utf8_bytes": 608,
+                "serialized_utf8_bytes": 684,
+                "zlib_9_bytes": 287,
+                "bzip2_9_bytes": 340,
+                "payload_sha256": "1ba093cb270a2f8f361a61311dde6062033754d70c47cd4216c2b56a83fb0667",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0002"
+                ],
+                "source_utf8_bytes": 500,
+                "serialized_utf8_bytes": 554,
+                "zlib_9_bytes": 242,
+                "bzip2_9_bytes": 294,
+                "payload_sha256": "93546d38f7eac758fb55012cda01dd63cc87a8231f7f112f960e13e2d89acc04",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0003",
+            "stage": "control",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "GroupMeasured.Route0003"
+                ],
+                "source_utf8_bytes": 415,
+                "serialized_utf8_bytes": 466,
+                "zlib_9_bytes": 210,
+                "bzip2_9_bytes": 259,
+                "payload_sha256": "8c0c4d5f4b19859c30640b20a51df37978e59b44bbf015146ef61220a662f3f1",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0003"
+                ],
+                "source_utf8_bytes": 523,
+                "serialized_utf8_bytes": 596,
+                "zlib_9_bytes": 262,
+                "bzip2_9_bytes": 315,
+                "payload_sha256": "66bb4a34460b3ff097acdf7d4440dbc90d1c30ad9b6252d9ab8376dd65800154",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0003"
+                ],
+                "source_utf8_bytes": 415,
+                "serialized_utf8_bytes": 466,
+                "zlib_9_bytes": 210,
+                "bzip2_9_bytes": 259,
+                "payload_sha256": "8c0c4d5f4b19859c30640b20a51df37978e59b44bbf015146ef61220a662f3f1",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0004",
+            "stage": "control",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "GroupMeasured.Route0004"
+                ],
+                "source_utf8_bytes": 500,
+                "serialized_utf8_bytes": 554,
+                "zlib_9_bytes": 242,
+                "bzip2_9_bytes": 294,
+                "payload_sha256": "d90eaea0450c45d597b40753baa9d045b31de0f5285187e970b30ba2b74b8b5e",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0004"
+                ],
+                "source_utf8_bytes": 608,
+                "serialized_utf8_bytes": 684,
+                "zlib_9_bytes": 287,
+                "bzip2_9_bytes": 340,
+                "payload_sha256": "0ac6d95246a1e3b43f665d55e8bf59943a3d59efdba430c8c5be4aa4637e9253",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0004"
+                ],
+                "source_utf8_bytes": 500,
+                "serialized_utf8_bytes": 554,
+                "zlib_9_bytes": 242,
+                "bzip2_9_bytes": 294,
+                "payload_sha256": "d90eaea0450c45d597b40753baa9d045b31de0f5285187e970b30ba2b74b8b5e",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0005",
+            "stage": "treatment",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0005"
+                ],
+                "source_utf8_bytes": 540,
+                "serialized_utf8_bytes": 614,
+                "zlib_9_bytes": 268,
+                "bzip2_9_bytes": 319,
+                "payload_sha256": "8fa45f1d0a519649c33b2dfccfe778733ce2b591e79286dd36aa707bd8d7da9c",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0005"
+                ],
+                "source_utf8_bytes": 540,
+                "serialized_utf8_bytes": 614,
+                "zlib_9_bytes": 268,
+                "bzip2_9_bytes": 319,
+                "payload_sha256": "8fa45f1d0a519649c33b2dfccfe778733ce2b591e79286dd36aa707bd8d7da9c",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0005"
+                ],
+                "source_utf8_bytes": 432,
+                "serialized_utf8_bytes": 484,
+                "zlib_9_bytes": 218,
+                "bzip2_9_bytes": 267,
+                "payload_sha256": "d92f484cd4b7ba467d513ea17f9744e993075eeaf6ddce95073c48da691c563f",
+                "roundtrip_verified": true
+              }
+            }
+          },
+          {
+            "id": "GroupMeasured.Route0006",
+            "stage": "treatment",
+            "costs": {
+              "complete": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0006"
+                ],
+                "source_utf8_bytes": 625,
+                "serialized_utf8_bytes": 702,
+                "zlib_9_bytes": 292,
+                "bzip2_9_bytes": 344,
+                "payload_sha256": "218a21436bae8351f48ef005e99833f9bc20ff9bec847582836b759944b47a13",
+                "roundtrip_verified": true
+              },
+              "mandatory": {
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0006"
+                ],
+                "source_utf8_bytes": 625,
+                "serialized_utf8_bytes": 702,
+                "zlib_9_bytes": 292,
+                "bzip2_9_bytes": 344,
+                "payload_sha256": "218a21436bae8351f48ef005e99833f9bc20ff9bec847582836b759944b47a13",
+                "roundtrip_verified": true
+              },
+              "installed": {
+                "charged_modules": [
+                  "GroupMeasured.Route0006"
+                ],
+                "source_utf8_bytes": 517,
+                "serialized_utf8_bytes": 572,
+                "zlib_9_bytes": 250,
+                "bzip2_9_bytes": 301,
+                "payload_sha256": "684f2d968ee89d85ecfa7f16823780bf88891d01f253da6da62a1feb5ff42938",
+                "roundtrip_verified": true
+              }
+            }
+          }
+        ],
+        "metrics": {
+          "source_utf8_bytes": {
+            "optional_adoption": {
+              "selected": {
+                "historical": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 392,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                },
+                "prepared": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 392,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                },
+                "control": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 392,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                },
+                "treatment": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 392,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                }
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "source_utf8_bytes",
+                "historical_net_saving": 0,
+                "old_tool_preparation_saving": 0,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": 0,
+                "decomposition_total": 0,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "mandatory_adoption": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 500,
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "e1430b29ebad86f9949740d1844541961a0d8d88facea272e95fa02683a0e81a"
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "source_utf8_bytes",
+                "historical_net_saving": -108,
+                "old_tool_preparation_saving": 0,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": -108,
+                "decomposition_total": -108,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "installed_reuse": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 392,
+                "charged_modules": [
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+              },
+              "control_cost": 392,
+              "marginal_cost_difference": 0,
+              "background": "candidate already installed and paid for outside this decision"
+            }
+          },
+          "zlib_9_bytes": {
+            "optional_adoption": {
+              "selected": {
+                "historical": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 214,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                },
+                "prepared": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 210,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                },
+                "control": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 210,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                },
+                "treatment": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 210,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                }
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "zlib_9_bytes",
+                "historical_net_saving": 4,
+                "old_tool_preparation_saving": 4,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": 0,
+                "decomposition_total": 4,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "mandatory_adoption": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0001",
+                "cost": 261,
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0001"
+                ],
+                "payload_sha256": "ca136688a33355f3ed93fa38fc34db2708f597ea5c01edff3422ba069ec65d6a"
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "zlib_9_bytes",
+                "historical_net_saving": -47,
+                "old_tool_preparation_saving": 4,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": -51,
+                "decomposition_total": -47,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "installed_reuse": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0001",
+                "cost": 210,
+                "charged_modules": [
+                  "GroupMeasured.Route0001"
+                ],
+                "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+              },
+              "control_cost": 210,
+              "marginal_cost_difference": 0,
+              "background": "candidate already installed and paid for outside this decision"
+            }
+          },
+          "bzip2_9_bytes": {
+            "optional_adoption": {
+              "selected": {
+                "historical": {
+                  "route_id": "GroupMeasured.Route0000",
+                  "cost": 261,
+                  "charged_modules": [
+                    "GroupMeasured.Route0000"
+                  ],
+                  "payload_sha256": "178e3643aee9dd5e1509955700c354f60a5ff457a9ef4c7876df3567bb6457a8"
+                },
+                "prepared": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 259,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                },
+                "control": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 259,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                },
+                "treatment": {
+                  "route_id": "GroupMeasured.Route0001",
+                  "cost": 259,
+                  "charged_modules": [
+                    "GroupMeasured.Route0001"
+                  ],
+                  "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+                }
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "bzip2_9_bytes",
+                "historical_net_saving": 2,
+                "old_tool_preparation_saving": 2,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": 0,
+                "decomposition_total": 2,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "mandatory_adoption": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0000",
+                "cost": 314,
+                "charged_modules": [
+                  "Candidate",
+                  "GroupMeasured.Route0000"
+                ],
+                "payload_sha256": "e1430b29ebad86f9949740d1844541961a0d8d88facea272e95fa02683a0e81a"
+              },
+              "attribution": {
+                "status": "complete_bookkeeping",
+                "unit": "bzip2_9_bytes",
+                "historical_net_saving": -53,
+                "old_tool_preparation_saving": 2,
+                "continued_old_tool_search_saving": 0,
+                "candidate_provision_observed_difference": -55,
+                "decomposition_total": -53,
+                "identity_verified": true,
+                "causal_effect_established": false,
+                "global_minimum_established": false
+              }
+            },
+            "installed_reuse": {
+              "selected": {
+                "route_id": "GroupMeasured.Route0001",
+                "cost": 259,
+                "charged_modules": [
+                  "GroupMeasured.Route0001"
+                ],
+                "payload_sha256": "a133e62c91658d61860cac61e3b0e8a9ee955d412cd05c9b65e806a3ebf7b143"
+              },
+              "control_cost": 259,
+              "marginal_cost_difference": 0,
+              "background": "candidate already installed and paid for outside this decision"
+            }
+          }
+        },
+        "formal_verification": "not_run_by_source_measurer",
+        "goal_coverage": "declared_by_manifest; requires independent formal verification",
+        "search_executed": false,
+        "information_separation_established": false,
+        "baseline_search_complete": false,
+        "package_attribution_ready": false,
+        "causal_effect_established": false,
+        "global_minimum_established": false,
+        "selection_scope": "exact over supplied complete routes for each metric and mode",
+        "accounting_scope": "new source modules jointly encoded once per route; common background bytes excluded, import lines retained; dependencies and automation must be listed by the caller and audited externally"
+      },
+      "formal_scope": "controller-assembled conjunction of all fixed original goal constants",
+      "generation_usage": null,
+      "generation_budget_verified": false,
+      "information_separation_established": false,
+      "training_eligible": false,
+      "scope": "Condition-specific requests and equal attempt/verification caps. External model isolation, metered generation and mathematical discovery are not certified."
+    }
+  },
+  "scope": "Supplied full-group witnesses, shared local helper, one failed component and repair, plus two deterministic core-tactic methods. No model API or isolated model search."
+}
