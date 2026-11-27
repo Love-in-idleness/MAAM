@@ -1,5 +1,11 @@
 # MAAM · 数学概念与命题评估
 
+| 中文 | English |
+| --- | --- |
+| 已接入[证明预压缩与理论边际价值](docs/PROOF_PRECOMPRESSION.md)及完整路线计量入口。共享模块计一次，分别报告可选采用、完整建库与已建库复用。 | Added precompression theory and finite complete-route measurement, charging shared modules once and distinguishing optional adoption, mandatory delivery and installed reuse. |
+| 两道给定命题的四组证明完成新 Lean 核验；跨模块自动搜索与同预算概念归因仍待实现。 | Four supplied proof variants on two goals receive fresh Lean checks. Automatic cross-module search and matched-budget concept attribution remain future work. |
+
+
 计算形式命题的压缩与结构指标，并通过可验证的迁移实验，比较引入新定义和理论包后的表达与证明成本。
 Calculate compression and structural metrics for formal propositions, and use verified migration experiments to compare expression and proof costs after introducing definitions and theory packages.
 

@@ -1,5 +1,11 @@
 # 冻结任务与证明迁移 / Frozen tasks and proof migration
 
+| 中文 | English |
+| --- | --- |
+| 已接入[证明预压缩与理论边际价值](PROOF_PRECOMPRESSION.md)及完整路线计量入口。共享模块计一次，分别报告可选采用、完整建库与已建库复用。 | Added precompression theory and finite complete-route measurement, charging shared modules once and distinguishing optional adoption, mandatory delivery and installed reuse. |
+| 两道给定命题的四组证明完成新 Lean 核验；跨模块自动搜索与同预算概念归因仍待实现。 | Four supplied proof variants on two goals receive fresh Lean checks. Automatic cross-module search and matched-budget concept attribution remain future work. |
+
+
 M2 的第一步是让 LLM 提交真正回到原目标的证明，并留下可核查的尝试记录。
 The first M2 step lets an LLM submit proofs of the original goals and leaves inspectable attempt records.
 

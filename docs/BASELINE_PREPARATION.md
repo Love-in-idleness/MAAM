@@ -3,6 +3,14 @@
 日期：2026-10-20；当前重心是理论论证、工具搭建与小范围检查，大规模实验暂缓。
 Date: 2026-10-20; the current focus is theory, tooling and small checks, with large experiments deferred.
 
+## 完整路线口径 / Complete-route extension
+
+[证明预压缩协议](PROOF_PRECOMPRESSION.md)固定最终目标，允许改变中间陈述和自行发明共享引理。对完整多目标路线计量，并分别评价提供候选、首次建库与已建库复用。
+The complete-route protocol fixes final goals while allowing different intermediate statements and invented helpers. It measures whole portfolios with separate provision, adoption and reuse decisions.
+
+预压缩产物仍计入使用它的组合。相同表示与整包计费下，无预算限制的两侧可交付同一组合。新入口测量有限给定路线，旧逐题保留流程继续用于其声明范围。
+Prepared artifacts remain chargeable wherever used. Under identical representations and complete accounting, unlimited search admits identical final portfolios. The new entry point measures supplied complete routes while per-task retention retains its narrower scope.
+
 ## 比较什么 / What the comparison measures
 
 先充分利用原有条件整理定义、检索已有引理并缩短证明，再评价新增理论包，避免把普通整理的收益算到新概念头上。

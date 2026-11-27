@@ -1,5 +1,11 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
+| 中文 | English |
+| --- | --- |
+| 已接入[证明预压缩与理论边际价值](PROOF_PRECOMPRESSION.md)及完整路线计量入口。共享模块计一次，分别报告可选采用、完整建库与已建库复用。 | Added precompression theory and finite complete-route measurement, charging shared modules once and distinguishing optional adoption, mandatory delivery and installed reuse. |
+| 两道给定命题的四组证明完成新 Lean 核验；跨模块自动搜索与同预算概念归因仍待实现。 | Four supplied proof variants on two goals receive fresh Lean checks. Automatic cross-module search and matched-budget concept attribution remain future work. |
+
+
 日期：2026-10-21。状态：M1 已完成参考迁移并新增离线整包压缩计量；M2 保留 20 题公开校准、另 20 题的 40 个独立求解上下文及一次 8 题计量对照，但尚未证明原有基线充分优化，严格概念归因与训练验收未完成；M3 已实现整包消融、成本偏序及父子版本复用校准，自动多轮探索与 M4 未完成。
 Date: 2026-10-21. Status: checked reference migrations now include an offline compression sidecar; public and independent-context calibrations, a small metered comparison, package ablations and version-reuse controls exist, while baseline preparation, strict concept attribution, automatic multi-round search and learning acceptance remain incomplete.
 
