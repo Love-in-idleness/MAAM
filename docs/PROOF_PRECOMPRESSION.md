@@ -1,5 +1,11 @@
 # 证明预压缩与理论边际价值 / Proof precompression and marginal theory value
 
+| 中文 | English |
+| --- | --- |
+| 新增[成组求证控制器](GROUPED_PROOF_SEARCH.md)：共同预压缩、冻结、控制与候选阶段，支持在整组中复用局部辅助引理并核验全部原目标。 | Added a grouped controller with shared preparation, freezing, control and treatment phases, local shared helpers and verification of every original goal. |
+| 两种有限旧工具方法已可生成候选并自动执行，双方使用同样的响应与 Lean 预算上限。模型生成用量与外部信息隔离仍需另行计量。 | Two bounded existing-tool methods generate candidates automatically under equal response and Lean caps. Model usage and external information isolation require separate evidence. |
+
+
 理论稿 2026-11-27 · 项目接入 2026-11-28
 
 | 中文 | English |
