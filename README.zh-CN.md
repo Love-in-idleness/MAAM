@@ -28,12 +28,13 @@ python -m maam rank --corpus examples/toy_corpus.json --format text
 - [理论包评估指南](docs/THEORY_PACKAGES.zh-CN.md) — 隔离 Lean 核验与整包成本账本。
 - [证明预压缩与整包分账](docs/PROOF_PRECOMPRESSION.md) — 完整路线计量入口（`maam precompression --study ...`），共享模块计一次，区分可选采用、完整建库与已建库复用。
 - [成组求证控制器](docs/GROUPED_PROOF_SEARCH.md) — 共同预压缩、冻结、对照与候选阶段，支持整组复用局部辅助引理（`maam group-*`）。
+- [群论跨模块重写实验](docs/PROOF_REFACTORING.md) — 从四份归档旧证自动提取共享引理、核验改写后的原定理并计量全部 15 个题组（`maam refactor-proofs`）。
 - [固定快照复现指南](docs/REPRODUCTION.zh-CN.md) — Mathlib 固定快照（`d167cc6dc962ab340507362ea2f4bcfcff44f01b`）与单子覆盖实验（[实验摘要](reports/mathlib/summary.json)、[复现状态](results/reproduction_status.json)）。
 
 ## 当前进展
 
-- **已实现**：静态指标 CLI、Lean 4.24.0 导出与隔离核验、群同态/核参考迁移（[experiments/hom_kernel/README.md](experiments/hom_kernel/README.md)）、DeepSeek 计量迁移/指南/构造控制器、v2 显式 `theorem` 声明契约、包消融对照、证明预压缩（`maam precompression`）、成组求证控制器（`maam group-*`）及离线整包压缩计量（`zlib`/`bzip2`）。
-- **已观测**：在 M1 同态/核参考迁移中，局部证明体从 `77` 缩至 `29` 个源码 token，但计入候选包后非共享源码从 `89` 增至 `353` token；在 DeepSeek 计量对照、成组求证校准与原证保留压缩中，证明节省均尚未抵消整包引入成本。
+- **已实现**：静态指标 CLI、Lean 4.24.0 导出与隔离核验、群同态/核参考迁移（[experiments/hom_kernel/README.md](experiments/hom_kernel/README.md)）、DeepSeek 计量迁移/指南/构造控制器、v2 显式 `theorem` 声明契约、包消融对照、证明预压缩（`maam precompression`）、成组求证控制器（`maam group-*`）、跨模块旧证重写（`maam refactor-proofs`）及离线整包压缩计量（`zlib`/`bzip2`）。
+- **已观测**：在 M1 同态/核参考迁移中，局部证明体从 `77` 缩至 `29` 个源码 token，但计入候选包后非共享源码从 `89` 增至 `353` token；在四题群论跨模块重写实验中，旧证源码从 `1985` 降至 `1855 → 1772 → 1651` token，计完整理论包的归档证书为 `1574` token / `1685` 联合压缩字节，而继续求证旧证为 `1651` 联合压缩字节（源码 token 与联合压缩排序出现分歧）。
 - **未完成**：旧工具基线充分优化、严格因果概念归因、大范围预留任务迁移、自动多轮候选搜索与学习闭环验收仍待完成。
 
 ## 参考文献

@@ -1,0 +1,5067 @@
+{
+  "schema_version": 1,
+  "status": "completed_development_pilot",
+  "tasks": [
+    "kernel_group",
+    "restriction",
+    "intersection",
+    "words"
+  ],
+  "input_fingerprints": {
+    "suite_sha256": "7548b3427ce1e4b8eac3a3150a7f9f816414c1c5df9ca97bb4fbb7bebc62a2af",
+    "package_sha256": "401d367bd4c15947a5366029cda3852b1b064738a7069ab53a82f42687ffbd79",
+    "source_sha256": {
+      "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+      "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+      "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+      "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+      "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+      "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+      "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a"
+    },
+    "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+    "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+  },
+  "evaluators": {
+    "proof_refactor.py": "2c15542abc189f73bade02de7b7efaa863e565409674586b34b9616bc3ed184e",
+    "proof_portfolio.py": "d25143c31eaaa502f1bb54e72e3a07b93283fd7d4d1b189204eee51d413cab1f",
+    "RefactorSites.lean": "554d682790d7701d4363bca3c0f158141cf737f7600fd194581c0917300118e6",
+    "Inventory.lean": "c01d44a3522d80ac512c16c02db38307a3c5808dd548fc9b124718d640bd6068",
+    "PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+    "precompression.py": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+    "migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+    "theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9"
+  },
+  "archive_sha256": {
+    "baseline.json": "d84c8c0ecee9bb99c6cbb4169fe521be6958c8a7b63b000fe26b11e5662d62b5",
+    "v2.json": "dbc63bafd322b84c78f990fc7bda74698b19bd9bfc70504f7afbf4f81ea08ed1"
+  },
+  "archive_receipts": {
+    "historical": {
+      "kernel_group": {
+        "attempt": 1,
+        "proof_sha256": "f498b2d758240fb9cfada2336232f3dfb9c78f1980db2cf2f57e33e5ecaf46c4"
+      },
+      "restriction": {
+        "attempt": 1,
+        "proof_sha256": "c29cfa94937c59bdcb0319d35ac55154186edc608e40bcd2b1521504dddcec0c"
+      },
+      "intersection": {
+        "attempt": 2,
+        "proof_sha256": "39836cad6cfe5a0888a31571f835bfc4f97677b77e3a8683148c9c030eb1f479"
+      },
+      "words": {
+        "attempt": 1,
+        "proof_sha256": "d96765fdc647057539328f52132623ed2001688990397f5ad06b83113a0133d8"
+      }
+    },
+    "archive_v2": {
+      "kernel_group": {
+        "attempt": 1,
+        "proof_sha256": "7c2ba205dd161a8f39c1f8bb1029062e39c54ac10f603ef706b84a0fc90ace75"
+      },
+      "restriction": {
+        "attempt": 1,
+        "proof_sha256": "b7e1eae3d77e89be6b2c4a0e27e0c8eb74c23c3c508245371e87f010f5f9774d"
+      },
+      "intersection": {
+        "attempt": 1,
+        "proof_sha256": "138d7eb0b3314901b29ee6a09d9502f34a314e595434cc9e41760c9ff56efda6"
+      },
+      "words": {
+        "attempt": 1,
+        "proof_sha256": "564cddec2c98d44c9095727dc3052ce855d380e616e2b9511ad099320d39b28f"
+      }
+    }
+  },
+  "preparation_sha256": "43abb0202cdc99bb048d0c945e63543a639375c1a7298739edc61c440d2ad202",
+  "continuation_from": "joint-3",
+  "attempts": {
+    "historical": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorProofs.kernel_group": "1063c6e64533a001aeefa778326311a7b7c81c85897405fbacae1eeda7a1f56d",
+          "RefactorProofs.restriction": "c3e4a24ebc5eef890fe1061df86f708638e224974942047a32cf80e6745a1fe0",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "8052c0d09c2639c44581778e819635eabae2dae2d9696aa82024ca39feb21155",
+          "RefactorEntry": "f5b5265daffbe7e6cf7a03d010e11d90396b2ede73167831db7a0ebcc4451411"
+        },
+        "charged": [
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "c9d54d4a5c1cda49a23ed0bc70d47a5774d8ead6a8233980530c2bf9fccd8af4",
+      "inventory_sha256": "976c0acc49490d1c1c8357a6bf882851ce0adcc5162ee0e30157af4636bdc6d8",
+      "lean_commands": 14,
+      "lean_seconds": 8.386565
+    },
+    "individual-1": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorProofs.kernel_group": "afe36dece1d2778d8910b8f5293cd356763f3c11c42b9d53f95fc66de2fc7abd",
+          "RefactorProofs.restriction": "ac9fd38b843d776b6fdba9b52ba1261af8454e8817695b2da2dfbf3869aef2e5",
+          "RefactorProofs.intersection": "504a3ff2f0dc576034da95ce08ee5a7f3bb994e681a4902c539ce9cfafc7c606",
+          "RefactorProofs.words": "b088d270abc3227c245e76154d308c3b5d8352541d34b581b9a168d1d4f013a5",
+          "RefactorEntry": "f5b5265daffbe7e6cf7a03d010e11d90396b2ede73167831db7a0ebcc4451411"
+        },
+        "charged": [
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "36cbd93af08368552f1adf9d4906cb3e20c13adcecc6717cc205271309da8b3c",
+      "inventory_sha256": "ca445b510dc31f34a61c052db52adb017f472a12e759fc662ce493e2793b76c1",
+      "lean_commands": 14,
+      "lean_seconds": 8.486883
+    },
+    "individual-1-retained": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorProofs.kernel_group": "afe36dece1d2778d8910b8f5293cd356763f3c11c42b9d53f95fc66de2fc7abd",
+          "RefactorProofs.restriction": "ac9fd38b843d776b6fdba9b52ba1261af8454e8817695b2da2dfbf3869aef2e5",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "b088d270abc3227c245e76154d308c3b5d8352541d34b581b9a168d1d4f013a5",
+          "RefactorEntry": "f5b5265daffbe7e6cf7a03d010e11d90396b2ede73167831db7a0ebcc4451411"
+        },
+        "charged": [
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "3f5a446351916fd5380a2006145515a880f65dc2e2de9ea46e40909a1147fd30",
+      "inventory_sha256": "ca445b510dc31f34a61c052db52adb017f472a12e759fc662ce493e2793b76c1",
+      "lean_commands": 14,
+      "lean_seconds": 7.921831
+    },
+    "individual-2": {
+      "status": "retained",
+      "reason": "No repeated typed goal within one proof."
+    },
+    "individual-3": {
+      "status": "retained",
+      "reason": "No repeated typed goal within one proof."
+    },
+    "joint-2": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "4f2235f910657b781d987dc7b62692fc83eb7e0c3967def1099f1b1873e5842f",
+          "RefactorProofs.kernel_group": "a8e88782bd61b741d770a575f9dcc33744a8ab2f4c20b218efcf3f6bec239e6e",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "d1b50c4c33c7b2c952208252b66aec3575a9b115155f955a8be0fbbcc1210fbb",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "2d6b3d577c0841f4691cfd826a98cab3a36297968bc60dddf191fc45a25007c1",
+      "inventory_sha256": "a47911cf249b66fd78793ead5a7ca282a29191b0ae25ff08e148a330933cc26c",
+      "lean_commands": 15,
+      "lean_seconds": 7.852819,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ]
+        ]
+      }
+    },
+    "joint-3": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "da7e97cf4e116e4b2530e49ec569eeac52e41b9c63ebadc23e30e24bfeb48e07",
+      "inventory_sha256": "cff1c509d2f3bee505b15b01cf27f5740c5fd38c81f51230f89a9f974d832427",
+      "lean_commands": 15,
+      "lean_seconds": 7.960168,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "control-compact": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "504a3ff2f0dc576034da95ce08ee5a7f3bb994e681a4902c539ce9cfafc7c606",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "6ea07ae1c5a14cd03d9257675d6e1034b19120da2fc58f216e568bec1ee89836",
+      "inventory_sha256": "cff1c509d2f3bee505b15b01cf27f5740c5fd38c81f51230f89a9f974d832427",
+      "lean_commands": 14,
+      "lean_seconds": 7.006905,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "treatment-compact": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "105ceba2176a5bf7f87bae22e8f6a5f71fe6d526deb3cbe9839006ecb513fc49",
+          "RefactorProofs.restriction": "f5b224b441435d1a6a614e9c91c0eb0db4f56c98736ba7e158bb4c4cf2b60061",
+          "RefactorProofs.intersection": "c341b2c78c16ab0fec06e9a1ac8daeafd427d9a7849873e11926e7331380177f",
+          "RefactorProofs.words": "340be7206e06ce07d57eeac6ea745b4a5de971b1c9845b49217db636ac03373b",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "d43ce3a8546913c86bde112a2a8588cdb4c96d3bd7f7913c3bf5d77d4273919c",
+      "inventory_sha256": "49c4d703848269c2315493092525555ab8d1e8996f043b709abfa2cd2b976b05",
+      "lean_commands": 16,
+      "lean_seconds": 7.818584,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      },
+      "candidate_dependencies": {
+        "kernel_group": [],
+        "restriction": [],
+        "intersection": [],
+        "words": []
+      }
+    },
+    "treatment-compact-without-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "504a3ff2f0dc576034da95ce08ee5a7f3bb994e681a4902c539ce9cfafc7c606",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "6ea07ae1c5a14cd03d9257675d6e1034b19120da2fc58f216e568bec1ee89836",
+      "inventory_sha256": "cff1c509d2f3bee505b15b01cf27f5740c5fd38c81f51230f89a9f974d832427",
+      "lean_commands": 14,
+      "lean_seconds": 6.640714,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "control-reprove": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "a451d4e8efd1b26976eb1e5c45a91022dd0c7632b00e76a888649cf9735b80ae",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "c13fb7034a8fcddbe24d8e3a7ba6dd311a8bebaf42ed221ec1f668412397a730",
+      "inventory_sha256": "84787d530fb804dc8a9b77b35b665973bd4b47cc66830558ff7e44dc074fc73a",
+      "lean_commands": 14,
+      "lean_seconds": 6.964312,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [
+          [
+            "Submission.solve_intersection",
+            "Refactored.shared_1"
+          ]
+        ],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "treatment-reprove": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "105ceba2176a5bf7f87bae22e8f6a5f71fe6d526deb3cbe9839006ecb513fc49",
+          "RefactorProofs.restriction": "f5b224b441435d1a6a614e9c91c0eb0db4f56c98736ba7e158bb4c4cf2b60061",
+          "RefactorProofs.intersection": "157bd7c0f6406925aa2cb5151b463200b95de30b965e8c31b7ffcb20d2ea12a8",
+          "RefactorProofs.words": "340be7206e06ce07d57eeac6ea745b4a5de971b1c9845b49217db636ac03373b",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "9dca5741961adee892b84eb884358fe3ccaea5464130248ba8ed5237ddb2a08d",
+      "inventory_sha256": "7522d9a0db1a6d891c5be2eaa5163c7639c8aee3f87409bccae7f87f9f3fe36d",
+      "lean_commands": 16,
+      "lean_seconds": 8.376991,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [
+          [
+            "Submission.solve_intersection",
+            "Refactored.shared_1"
+          ]
+        ],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      },
+      "candidate_dependencies": {
+        "kernel_group": [],
+        "restriction": [],
+        "intersection": [],
+        "words": []
+      }
+    },
+    "treatment-reprove-without-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "a451d4e8efd1b26976eb1e5c45a91022dd0c7632b00e76a888649cf9735b80ae",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "99f16ad96e1e0ec6d21a61f12f77e85ce2a7aa81d96bce9eb31f49d7cac1428d"
+        },
+        "charged": [
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "c13fb7034a8fcddbe24d8e3a7ba6dd311a8bebaf42ed221ec1f668412397a730",
+      "inventory_sha256": "84787d530fb804dc8a9b77b35b665973bd4b47cc66830558ff7e44dc074fc73a",
+      "lean_commands": 14,
+      "lean_seconds": 7.17991,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [
+          [
+            "Submission.solve_intersection",
+            "Refactored.shared_1"
+          ]
+        ],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "historical-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorProofs.kernel_group": "1063c6e64533a001aeefa778326311a7b7c81c85897405fbacae1eeda7a1f56d",
+          "RefactorProofs.restriction": "c3e4a24ebc5eef890fe1061df86f708638e224974942047a32cf80e6745a1fe0",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "8052c0d09c2639c44581778e819635eabae2dae2d9696aa82024ca39feb21155",
+          "RefactorEntry": "b269ea176a7118adceb07df906152b5f4f9c3c6497ef846bc0e5910a99f9ccd8"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "cb9beb09ff7b0485f2a824f72625a31c63ced50c9ad1e6b549a8d1d3bea0a4d1",
+      "inventory_sha256": "f8de7e06158b67da77624c9fe6d0b13a9da0a96916805afaac8f857b08465153",
+      "lean_commands": 15,
+      "lean_seconds": 7.62953
+    },
+    "individual-1-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorProofs.kernel_group": "afe36dece1d2778d8910b8f5293cd356763f3c11c42b9d53f95fc66de2fc7abd",
+          "RefactorProofs.restriction": "ac9fd38b843d776b6fdba9b52ba1261af8454e8817695b2da2dfbf3869aef2e5",
+          "RefactorProofs.intersection": "504a3ff2f0dc576034da95ce08ee5a7f3bb994e681a4902c539ce9cfafc7c606",
+          "RefactorProofs.words": "b088d270abc3227c245e76154d308c3b5d8352541d34b581b9a168d1d4f013a5",
+          "RefactorEntry": "b269ea176a7118adceb07df906152b5f4f9c3c6497ef846bc0e5910a99f9ccd8"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "64d0ea73bbce8600edda3250c7e04abc826b7f4d210338463d4d1a569042f6d2",
+      "inventory_sha256": "907f9ae9128bc0f13a6ab5414824bb5943def4f49aa27e7c5f3ba52f1513e838",
+      "lean_commands": 15,
+      "lean_seconds": 6.761763
+    },
+    "individual-1-retained-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorProofs.kernel_group": "afe36dece1d2778d8910b8f5293cd356763f3c11c42b9d53f95fc66de2fc7abd",
+          "RefactorProofs.restriction": "ac9fd38b843d776b6fdba9b52ba1261af8454e8817695b2da2dfbf3869aef2e5",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "b088d270abc3227c245e76154d308c3b5d8352541d34b581b9a168d1d4f013a5",
+          "RefactorEntry": "b269ea176a7118adceb07df906152b5f4f9c3c6497ef846bc0e5910a99f9ccd8"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "f6c54d74ce9f68a096a0214b4177b6a8c923f49002c8af0bc1c49d38194c9413",
+      "inventory_sha256": "907f9ae9128bc0f13a6ab5414824bb5943def4f49aa27e7c5f3ba52f1513e838",
+      "lean_commands": 15,
+      "lean_seconds": 6.959466
+    },
+    "joint-2-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "4f2235f910657b781d987dc7b62692fc83eb7e0c3967def1099f1b1873e5842f",
+          "RefactorProofs.kernel_group": "a8e88782bd61b741d770a575f9dcc33744a8ab2f4c20b218efcf3f6bec239e6e",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "d1b50c4c33c7b2c952208252b66aec3575a9b115155f955a8be0fbbcc1210fbb",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "6084340e21758a49bcf713e5dfd1b9499ae6114cb4ea456063b2022179b30806",
+      "inventory_sha256": "7e72db1844f11b6e93fe01b9cb211b87cf0bc75ad9c805b8b66ca765a4850bff",
+      "lean_commands": 16,
+      "lean_seconds": 7.461179,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ]
+        ]
+      }
+    },
+    "joint-3-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "9772414d0bc8096847a03cc0c4a66bfbb91f48c6309a832f8a4ac44b2be98178",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "9c5adcab64fbaa6102f81f074ae2f689a80c8bf871bd24276e5623b0af444b80",
+      "inventory_sha256": "49c4d703848269c2315493092525555ab8d1e8996f043b709abfa2cd2b976b05",
+      "lean_commands": 16,
+      "lean_seconds": 7.566959,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "treatment-compact-without-package-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "504a3ff2f0dc576034da95ce08ee5a7f3bb994e681a4902c539ce9cfafc7c606",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "f2cf7203c497106782d41a5ca3c1acb179f3d4558a21d86c100765d69334daeb",
+      "inventory_sha256": "49c4d703848269c2315493092525555ab8d1e8996f043b709abfa2cd2b976b05",
+      "lean_commands": 16,
+      "lean_seconds": 7.313481,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "treatment-reprove-without-package-delivered-with-package": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorShared": "f84b95ae59ca70a503d794c398c1f2b8e9286db1e51ac5904da1c189ae2c2307",
+          "RefactorProofs.kernel_group": "194868139ea7b0f3a80fb7d5f63106f2534bcfc7716c6df21bf2af0d502894d1",
+          "RefactorProofs.restriction": "cbe6d52dd66de3bbc88f50ed8f89b4daa6419d9dd7b78b71fdd6b5ccdf806dbd",
+          "RefactorProofs.intersection": "a451d4e8efd1b26976eb1e5c45a91022dd0c7632b00e76a888649cf9735b80ae",
+          "RefactorProofs.words": "9c9181dc823c2eda39a2680ec499ee9f85e5e14e16a8751dee8cd4df42f858af",
+          "RefactorEntry": "cdae74535f32e0552f502eda7881f6d323f275ebe26899c3d2a11a64890ff347"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorShared",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "1f92807fb9acf0e0fbf6b05a611dd57bc10ffdea722906b9eed7f353a48e9710",
+      "inventory_sha256": "7522d9a0db1a6d891c5be2eaa5163c7639c8aee3f87409bccae7f87f9f3fe36d",
+      "lean_commands": 16,
+      "lean_seconds": 7.908486,
+      "shared_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Refactored.shared_2"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Refactored.shared_1"
+          ]
+        ],
+        "intersection": [
+          [
+            "Submission.solve_intersection",
+            "Refactored.shared_1"
+          ]
+        ],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Refactored.shared_1"
+          ],
+          [
+            "Submission.solve_words",
+            "Refactored.shared_2"
+          ]
+        ]
+      }
+    },
+    "archive-v2": {
+      "status": "verified",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "Candidate": "c266a1188248e57a1e67117d7a59fc40cb58c79f7ab3980f9e3059d2dd418c75",
+          "Extension": "b80577f425194bcc18cc8e2e443b300bb55caeaab2e401f9f2d1bbe3d7a6878c",
+          "RefactorProofs.kernel_group": "c3dba0e9b34cdc2745c509f7bc3f4cc036117c6535dc6942178e5086465aa40a",
+          "RefactorProofs.restriction": "c5de212198d9567627889e05b7d326d2779d6de758f9b7499e1bfc5190a5a356",
+          "RefactorProofs.intersection": "0d44b7d814e0bbe9b95102bda59f24d0493dda6a6713c17d1b6c752587422426",
+          "RefactorProofs.words": "8e098ea44a5249f096ac2fd222ac75fc37ce4ddc5c86537e8a7622bc575f6f27",
+          "RefactorEntry": "b269ea176a7118adceb07df906152b5f4f9c3c6497ef846bc0e5910a99f9ccd8"
+        },
+        "charged": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "audit_sha256": "8d79dc0daa0067eee58db1eba668e34c81d6bb42d86c7fa2671e02946ee3cf35",
+      "inventory_sha256": "cccfa0f594157ea68962aa14a6b774b93bac2da8385df6de668b90beffcab59a",
+      "lean_commands": 15,
+      "lean_seconds": 7.547525,
+      "candidate_dependencies": {
+        "kernel_group": [
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Hom"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Hom.mk"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_2"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_3"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_4"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_5"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel_one"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.GroupFacts.left_cancel"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.Hom.map_mul"
+          ],
+          [
+            "Submission.solve_kernel_group",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        ],
+        "restriction": [
+          [
+            "Submission.solve_restriction",
+            "Theory.Hom"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Hom.mk"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_2"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_3"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_4"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_5"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel_one"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.mul",
+            "Theory.Kernel.mul._proof_1",
+            "Theory.kernel_mul"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.GroupFacts.left_cancel"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one",
+            "Theory.Hom.map_mul"
+          ],
+          [
+            "Submission.solve_restriction",
+            "Theory.Kernel.group",
+            "Theory.Kernel.group._proof_1",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        ],
+        "intersection": [
+          [
+            "Submission.solve_intersection",
+            "Theory.Hom"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.Hom.mk"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_mul"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_one"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.Hom.toFun"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.kernel"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.left_cancel"
+          ],
+          [
+            "Submission.solve_intersection",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        ],
+        "words": [
+          [
+            "Submission.solve_words",
+            "Theory.Hom"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.Hom.mk"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_inv"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_mul"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_one"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel",
+            "Theory.Hom.toFun"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_inv",
+            "Theory.GroupFacts.inv_one"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_mul",
+            "Theory.Hom.map_mul"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_one",
+            "Theory.Hom.map_one"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.left_cancel"
+          ],
+          [
+            "Submission.solve_words",
+            "Theory.kernel_inv",
+            "Theory.Hom.map_inv",
+            "Theory.GroupFacts.mul_inv"
+          ]
+        ]
+      }
+    },
+    "archive-v2-without-package": {
+      "status": "rejected",
+      "identity": {
+        "sources": {
+          "Base": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394",
+          "Tasks.KernelGroup": "3a89a30e33e4787aeb62efb2efb8f1f630178c9afe2a37e1b395d13c15fe2a2b",
+          "Tasks.Restriction": "13d13ded9fe559fa6c5e99f531fbb58830e4c61fd83a449a1f8e076e62929fed",
+          "Tasks.Intersection": "8a3ac200e2deee3c1f05b78a750925991e1a75f407c714cee252b4a93d9e8cb7",
+          "Tasks.Words": "fb97e55b55426ca27bb35456f844a89c792843f92376214458110079c6fac14a",
+          "RefactorProofs.kernel_group": "75dd0dd86cc9919c3d58fe3ba3dcc3063c9dd11dcdb7365a26b0e44dd1e4db05",
+          "RefactorProofs.restriction": "4f16483542aa60645b47571f1b61516bc256351598afa9bb432232a4e63af524",
+          "RefactorProofs.intersection": "29027063557fd79b941ba7f8b001dbb571d3ba7e4d00b3aae2e5bc04f72383ae",
+          "RefactorProofs.words": "ee6543edf42189b5b3dbfe25c511ca999f6a0c1627f27e29962a218b05b5d640",
+          "RefactorEntry": "f5b5265daffbe7e6cf7a03d010e11d90396b2ede73167831db7a0ebcc4451411"
+        },
+        "charged": [
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.intersection",
+          "RefactorProofs.words"
+        ],
+        "goals": {
+          "kernel_group": "Tasks.kernelGroup",
+          "restriction": "Tasks.restriction",
+          "intersection": "Tasks.intersection",
+          "words": "Tasks.words"
+        }
+      },
+      "failure": "RefactorProofs/kernel_group.lean:8:10: error(lean.unknownIdentifier): Unknown identifier `Theory.Hom`\nRefactorProofs/kernel_group.lean:9:10: error(lean.unknownIdentifier): Unknown identifier `Theory.Kernel.group`\n",
+      "lean_commands": 7,
+      "lean_seconds": 0.934814
+    }
+  },
+  "shared_proposals": {
+    "joint-2": {
+      "lemmas": [
+        {
+          "name": "Refactored.shared_1",
+          "seed_task": "words",
+          "seed_local_name": "hone",
+          "seed_source_start_byte": 28,
+          "call_sites": [
+            {
+              "task": "words",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 28
+            },
+            {
+              "task": "restriction",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 42
+            },
+            {
+              "task": "kernel_group",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 215
+            }
+          ]
+        }
+      ],
+      "removed_bindings": [
+        {
+          "task": "kernel_group",
+          "local_name": "cancel",
+          "former_users": [
+            "hone"
+          ]
+        }
+      ]
+    },
+    "joint-3": {
+      "lemmas": [
+        {
+          "name": "Refactored.shared_1",
+          "seed_task": "words",
+          "seed_local_name": "hone",
+          "seed_source_start_byte": 28,
+          "call_sites": [
+            {
+              "task": "words",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 28
+            },
+            {
+              "task": "restriction",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 42
+            },
+            {
+              "task": "kernel_group",
+              "local_name": "hone",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf"
+              ],
+              "source_start_byte": 215
+            }
+          ]
+        },
+        {
+          "name": "Refactored.shared_2",
+          "seed_task": "words",
+          "seed_local_name": "hinv",
+          "seed_source_start_byte": 552,
+          "call_sites": [
+            {
+              "task": "kernel_group",
+              "local_name": "hinv",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf",
+                "hone"
+              ],
+              "source_start_byte": 393
+            },
+            {
+              "task": "words",
+              "local_name": "hinv",
+              "arguments": [
+                "G",
+                "H",
+                "g",
+                "h",
+                "f",
+                "hf",
+                "hone"
+              ],
+              "source_start_byte": 552
+            }
+          ]
+        }
+      ],
+      "removed_bindings": [
+        {
+          "task": "kernel_group",
+          "local_name": "cancel",
+          "former_users": [
+            "hone"
+          ]
+        }
+      ]
+    }
+  },
+  "routes": {
+    "historical": {
+      "costs": {
+        "source_utf8_bytes": 7756,
+        "serialized_utf8_bytes": 8119,
+        "zlib_9_bytes": 1784,
+        "bzip2_9_bytes": 1787,
+        "payload_sha256": "b0e51e9a90ff44589b7ba9d2580fc9ee26dfd55ddf8ff7e8584ef632aa4ec529",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 1985,
+        "expr_nodes": 24568
+      },
+      "module_tokens": {
+        "RefactorProofs.kernel_group": 461,
+        "RefactorProofs.restriction": 501,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 368
+      },
+      "module_expr_nodes": {
+        "RefactorProofs.kernel_group": 4822,
+        "RefactorProofs.restriction": 6731,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "individual-1": {
+      "costs": {
+        "source_utf8_bytes": 7278,
+        "serialized_utf8_bytes": 7615,
+        "zlib_9_bytes": 1743,
+        "bzip2_9_bytes": 1773,
+        "payload_sha256": "9ea2ec91e8cb4a81d4f87082de8da20599f91b03ec970d3b8d2fa66838223fcd",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 1863,
+        "expr_nodes": 24612
+      },
+      "module_tokens": {
+        "RefactorProofs.kernel_group": 422,
+        "RefactorProofs.restriction": 431,
+        "RefactorProofs.intersection": 663,
+        "RefactorProofs.words": 347
+      },
+      "module_expr_nodes": {
+        "RefactorProofs.kernel_group": 4834,
+        "RefactorProofs.restriction": 6763,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "individual-1-retained": {
+      "costs": {
+        "source_utf8_bytes": 7366,
+        "serialized_utf8_bytes": 7715,
+        "zlib_9_bytes": 1750,
+        "bzip2_9_bytes": 1775,
+        "payload_sha256": "c424dd4c1f0c314f596ecc5c1f9b52d24a928ef60c03455b34073d11e29f12d0",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 1855,
+        "expr_nodes": 24612
+      },
+      "module_tokens": {
+        "RefactorProofs.kernel_group": 422,
+        "RefactorProofs.restriction": 431,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 347
+      },
+      "module_expr_nodes": {
+        "RefactorProofs.kernel_group": 4834,
+        "RefactorProofs.restriction": 6763,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "joint-2": {
+      "costs": {
+        "source_utf8_bytes": 7130,
+        "serialized_utf8_bytes": 7506,
+        "zlib_9_bytes": 1710,
+        "bzip2_9_bytes": 1769,
+        "payload_sha256": "14bc0268cedd35d09f45ca9f98c5f9c13c4ef04fa2ec5db52cfa79b330731679",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1776,
+        "expr_nodes": 23084
+      },
+      "module_tokens": {
+        "RefactorShared": 202,
+        "RefactorProofs.kernel_group": 330,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 221
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1261,
+        "RefactorProofs.kernel_group": 3702,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1926
+      }
+    },
+    "joint-3": {
+      "costs": {
+        "source_utf8_bytes": 7111,
+        "serialized_utf8_bytes": 7490,
+        "zlib_9_bytes": 1726,
+        "bzip2_9_bytes": 1784,
+        "payload_sha256": "2e953a7463f8871ad92a4bc9bb4d70f8cf16ffbe329745f153851a85c321881e",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1772,
+        "expr_nodes": 22780
+      },
+      "module_tokens": {
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "control-compact": {
+      "costs": {
+        "source_utf8_bytes": 7023,
+        "serialized_utf8_bytes": 7390,
+        "zlib_9_bytes": 1721,
+        "bzip2_9_bytes": 1786,
+        "payload_sha256": "e126fc6f80d9dd12cc09158b15c9ab9296b24c0e93702baec5f43f357bf0ff38",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1780,
+        "expr_nodes": 22780
+      },
+      "module_tokens": {
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 663,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "control-reprove": {
+      "costs": {
+        "source_utf8_bytes": 6679,
+        "serialized_utf8_bytes": 7046,
+        "zlib_9_bytes": 1651,
+        "bzip2_9_bytes": 1706,
+        "payload_sha256": "66b13caabe289a3ab7e50578ad60ce5a1c2bf69c29b883179de2e056995d0674",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1651,
+        "expr_nodes": 21065
+      },
+      "module_tokens": {
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 534,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 8243,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-compact": {
+      "costs": {
+        "source_utf8_bytes": 11556,
+        "serialized_utf8_bytes": 12070,
+        "zlib_9_bytes": 2656,
+        "bzip2_9_bytes": 2580,
+        "payload_sha256": "afdbfc6dd56e8f1851bcf0f3045582c2a383cbf49df555c9463d1877fde2b677",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2896,
+        "expr_nodes": 31937
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 254,
+        "RefactorProofs.restriction": 372,
+        "RefactorProofs.intersection": 667,
+        "RefactorProofs.words": 149
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-compact-without-package": {
+      "costs": {
+        "source_utf8_bytes": 7023,
+        "serialized_utf8_bytes": 7390,
+        "zlib_9_bytes": 1721,
+        "bzip2_9_bytes": 1786,
+        "payload_sha256": "e126fc6f80d9dd12cc09158b15c9ab9296b24c0e93702baec5f43f357bf0ff38",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1780,
+        "expr_nodes": 22780
+      },
+      "module_tokens": {
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 663,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-reprove": {
+      "costs": {
+        "source_utf8_bytes": 11212,
+        "serialized_utf8_bytes": 11726,
+        "zlib_9_bytes": 2586,
+        "bzip2_9_bytes": 2524,
+        "payload_sha256": "123017f404d663dec6941de2e2f01ab2171fa882721da4ca48a911b9f6200570",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2767,
+        "expr_nodes": 30222
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 254,
+        "RefactorProofs.restriction": 372,
+        "RefactorProofs.intersection": 538,
+        "RefactorProofs.words": 149
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 8243,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-reprove-without-package": {
+      "costs": {
+        "source_utf8_bytes": 6679,
+        "serialized_utf8_bytes": 7046,
+        "zlib_9_bytes": 1651,
+        "bzip2_9_bytes": 1706,
+        "payload_sha256": "66b13caabe289a3ab7e50578ad60ce5a1c2bf69c29b883179de2e056995d0674",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 1651,
+        "expr_nodes": 21065
+      },
+      "module_tokens": {
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 534,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 8243,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "historical-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 12153,
+        "serialized_utf8_bytes": 12655,
+        "zlib_9_bytes": 2690,
+        "bzip2_9_bytes": 2577,
+        "payload_sha256": "6e042c8b63078b9dbdeafd48ed360dc00680c9d061ec124d2011162597ecb5b2",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 3085,
+        "expr_nodes": 33725
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorProofs.kernel_group": 461,
+        "RefactorProofs.restriction": 501,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 368
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorProofs.kernel_group": 4822,
+        "RefactorProofs.restriction": 6731,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "individual-1-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11675,
+        "serialized_utf8_bytes": 12151,
+        "zlib_9_bytes": 2649,
+        "bzip2_9_bytes": 2591,
+        "payload_sha256": "cc8e4bf44745c8c28f88027fb0acbbdae6e247f39cde4c1b172088656d2f4166",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 2963,
+        "expr_nodes": 33769
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorProofs.kernel_group": 422,
+        "RefactorProofs.restriction": 431,
+        "RefactorProofs.intersection": 663,
+        "RefactorProofs.words": 347
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorProofs.kernel_group": 4834,
+        "RefactorProofs.restriction": 6763,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "individual-1-retained-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11763,
+        "serialized_utf8_bytes": 12251,
+        "zlib_9_bytes": 2662,
+        "bzip2_9_bytes": 2582,
+        "payload_sha256": "2d95711230d32d4ac2f13d96f0226a7eb6724edd9a472dac923b930c0725875c",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 2955,
+        "expr_nodes": 33769
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorProofs.kernel_group": 422,
+        "RefactorProofs.restriction": 431,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 347
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorProofs.kernel_group": 4834,
+        "RefactorProofs.restriction": 6763,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 3057
+      }
+    },
+    "joint-2-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11527,
+        "serialized_utf8_bytes": 12042,
+        "zlib_9_bytes": 2635,
+        "bzip2_9_bytes": 2563,
+        "payload_sha256": "9a74001b3848e5071dd936912efc78db6ae3189f450d6169cbcb3bbb0f0c3116",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2876,
+        "expr_nodes": 32241
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 202,
+        "RefactorProofs.kernel_group": 330,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 221
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1261,
+        "RefactorProofs.kernel_group": 3702,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1926
+      }
+    },
+    "joint-3-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11508,
+        "serialized_utf8_bytes": 12026,
+        "zlib_9_bytes": 2656,
+        "bzip2_9_bytes": 2590,
+        "payload_sha256": "c8016658847b703d39d806c73e167f3bcbc184f61dec7ae1201ba88e1d47f861",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2872,
+        "expr_nodes": 31937
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 655,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-compact-without-package-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11420,
+        "serialized_utf8_bytes": 11926,
+        "zlib_9_bytes": 2642,
+        "bzip2_9_bytes": 2568,
+        "payload_sha256": "99120aeb8a5422be83fffd4c0411920947cc615d0624997c47eea37da4d8b513",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2880,
+        "expr_nodes": 31937
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 663,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 9958,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "treatment-reprove-without-package-delivered-with-package": {
+      "costs": {
+        "source_utf8_bytes": 11076,
+        "serialized_utf8_bytes": 11582,
+        "zlib_9_bytes": 2577,
+        "bzip2_9_bytes": 2513,
+        "payload_sha256": "dd8c0dd9311766348cc8dc37f2cd93f3263f8a997a9943da1501cd6c38cfbb2e",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words",
+          "RefactorShared"
+        ],
+        "source_tokens": 2751,
+        "expr_nodes": 30222
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorShared": 354,
+        "RefactorProofs.kernel_group": 250,
+        "RefactorProofs.restriction": 368,
+        "RefactorProofs.intersection": 534,
+        "RefactorProofs.words": 145
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorShared": 1921,
+        "RefactorProofs.kernel_group": 3212,
+        "RefactorProofs.restriction": 6237,
+        "RefactorProofs.intersection": 8243,
+        "RefactorProofs.words": 1452
+      }
+    },
+    "archive-v2": {
+      "costs": {
+        "source_utf8_bytes": 6735,
+        "serialized_utf8_bytes": 7089,
+        "zlib_9_bytes": 1685,
+        "bzip2_9_bytes": 1748,
+        "payload_sha256": "23a2343c0dace8289af756c5c00c71b879a89cf168261712aee4b71518935894",
+        "roundtrip_verified": true,
+        "charged_modules": [
+          "Candidate",
+          "Extension",
+          "RefactorProofs.intersection",
+          "RefactorProofs.kernel_group",
+          "RefactorProofs.restriction",
+          "RefactorProofs.words"
+        ],
+        "source_tokens": 1574,
+        "expr_nodes": 55487
+      },
+      "module_tokens": {
+        "Candidate": 312,
+        "Extension": 788,
+        "RefactorProofs.kernel_group": 65,
+        "RefactorProofs.restriction": 102,
+        "RefactorProofs.intersection": 198,
+        "RefactorProofs.words": 109
+      },
+      "module_expr_nodes": {
+        "Candidate": 4341,
+        "Extension": 4816,
+        "RefactorProofs.kernel_group": 1259,
+        "RefactorProofs.restriction": 3275,
+        "RefactorProofs.intersection": 41261,
+        "RefactorProofs.words": 535
+      }
+    }
+  },
+  "cohorts": [
+    {
+      "targets": [
+        "kernel_group"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 461,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 422,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 422,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 422,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 422,
+            "route": "individual-1"
+          },
+          "archive_v2": 1165,
+          "mandatory_treatment": {
+            "cost": 1522,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 422,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -743,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 1825,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1716,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1716,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1716,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1716,
+            "route": "individual-1"
+          },
+          "archive_v2": 4713,
+          "mandatory_treatment": {
+            "cost": 6113,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1716,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -2997,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 662,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 651,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 651,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 651,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 651,
+            "route": "individual-1"
+          },
+          "archive_v2": 1263,
+          "mandatory_treatment": {
+            "cost": 1566,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 651,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -612,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "archive_v2": 1289,
+          "mandatory_treatment": {
+            "cost": 1570,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 696,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -593,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "archive_v2": 10416,
+          "mandatory_treatment": {
+            "cost": 13979,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 4822,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -5594,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "restriction"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 501,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 431,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 431,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 431,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 431,
+            "route": "individual-1"
+          },
+          "archive_v2": 1202,
+          "mandatory_treatment": {
+            "cost": 1531,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 431,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -771,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 2092,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1868,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1868,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1868,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1868,
+            "route": "individual-1"
+          },
+          "archive_v2": 4841,
+          "mandatory_treatment": {
+            "cost": 6265,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1868,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -2973,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 653,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 623,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 623,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 623,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 623,
+            "route": "individual-1"
+          },
+          "archive_v2": 1308,
+          "mandatory_treatment": {
+            "cost": 1569,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 623,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -685,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 702,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 693,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 693,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 693,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 693,
+            "route": "individual-1"
+          },
+          "archive_v2": 1330,
+          "mandatory_treatment": {
+            "cost": 1583,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 693,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -637,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "archive_v2": 12432,
+          "mandatory_treatment": {
+            "cost": 15888,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 6731,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -5701,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "intersection"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "archive_v2": 1298,
+          "mandatory_treatment": {
+            "cost": 1755,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 655,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -643,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 2403,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 2315,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 2315,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 2315,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 2315,
+            "route": "individual-1"
+          },
+          "archive_v2": 5406,
+          "mandatory_treatment": {
+            "cost": 6712,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 2315,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -3091,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 810,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 799,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 799,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 799,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 799,
+            "route": "individual-1"
+          },
+          "archive_v2": 1380,
+          "mandatory_treatment": {
+            "cost": 1755,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 799,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -581,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 877,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 870,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 870,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 870,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 870,
+            "route": "individual-1"
+          },
+          "archive_v2": 1416,
+          "mandatory_treatment": {
+            "cost": 1739,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 870,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -546,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "archive_v2": 50418,
+          "mandatory_treatment": {
+            "cost": 19115,
+            "route": "treatment-compact"
+          },
+          "installed_treatment": {
+            "cost": 9958,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -40460,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 368,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 347,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 347,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 347,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 347,
+            "route": "individual-1"
+          },
+          "archive_v2": 1209,
+          "mandatory_treatment": {
+            "cost": 1447,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 347,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -862,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 1436,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1379,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1379,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1379,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1379,
+            "route": "individual-1"
+          },
+          "archive_v2": 4966,
+          "mandatory_treatment": {
+            "cost": 5776,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1379,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -3587,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "archive_v2": 1352,
+          "mandatory_treatment": {
+            "cost": 1544,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 546,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -806,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "archive_v2": 1375,
+          "mandatory_treatment": {
+            "cost": 1538,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 577,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -798,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "archive_v2": 9692,
+          "mandatory_treatment": {
+            "cost": 12214,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 3057,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -6635,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "restriction"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 962,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 853,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 853,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 853,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 853,
+            "route": "individual-1"
+          },
+          "archive_v2": 1267,
+          "mandatory_treatment": {
+            "cost": 1953,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 853,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -414,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 3917,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 3584,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 3584,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 3584,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 3584,
+            "route": "individual-1"
+          },
+          "archive_v2": 5157,
+          "mandatory_treatment": {
+            "cost": 7981,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 3584,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -1573,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 986,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 945,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 945,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 945,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 945,
+            "route": "individual-1"
+          },
+          "archive_v2": 1359,
+          "mandatory_treatment": {
+            "cost": 1858,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 945,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -414,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1027,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1017,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1017,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1017,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1017,
+            "route": "individual-1"
+          },
+          "archive_v2": 1408,
+          "mandatory_treatment": {
+            "cost": 1875,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1017,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -391,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 11553,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 11553,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 11200,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 11200,
+            "route": "joint-2"
+          },
+          "treatment": {
+            "cost": 11200,
+            "route": "joint-2"
+          },
+          "archive_v2": 13691,
+          "mandatory_treatment": {
+            "cost": 20357,
+            "route": "joint-2-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 11200,
+            "route": "joint-2"
+          },
+          "joint_saving_over_individual": 353,
+          "archive_v2_saving_over_joint": -2491,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "intersection"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1116,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1077,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1077,
+            "route": "individual-1-retained"
+          },
+          "control": {
+            "cost": 1077,
+            "route": "individual-1-retained"
+          },
+          "treatment": {
+            "cost": 1077,
+            "route": "individual-1-retained"
+          },
+          "archive_v2": 1363,
+          "mandatory_treatment": {
+            "cost": 2177,
+            "route": "individual-1-retained-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1077,
+            "route": "individual-1-retained"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -286,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 4228,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 4031,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 4031,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 4031,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 4031,
+            "route": "individual-1"
+          },
+          "archive_v2": 5722,
+          "mandatory_treatment": {
+            "cost": 8428,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 4031,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -1691,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1206,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1197,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1197,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1197,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1197,
+            "route": "individual-1"
+          },
+          "archive_v2": 1445,
+          "mandatory_treatment": {
+            "cost": 2106,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1197,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -248,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "archive_v2": 1502,
+          "mandatory_treatment": {
+            "cost": 2070,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1227,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -275,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 14780,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 14780,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 14780,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 13376,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 13376,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 51677,
+          "mandatory_treatment": {
+            "cost": 22533,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 13376,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -36897,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 829,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 769,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 749,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 749,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 749,
+            "route": "joint-3"
+          },
+          "archive_v2": 1274,
+          "mandatory_treatment": {
+            "cost": 1849,
+            "route": "joint-3-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 749,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 20,
+          "archive_v2_saving_over_joint": -525,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 3261,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 3095,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 3049,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 3049,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 3049,
+            "route": "joint-3"
+          },
+          "archive_v2": 5282,
+          "mandatory_treatment": {
+            "cost": 7446,
+            "route": "joint-3-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 3049,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 46,
+          "archive_v2_saving_over_joint": -2233,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 962,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 941,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 934,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 934,
+            "route": "joint-2"
+          },
+          "treatment": {
+            "cost": 934,
+            "route": "joint-2"
+          },
+          "archive_v2": 1418,
+          "mandatory_treatment": {
+            "cost": 1845,
+            "route": "joint-2-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 934,
+            "route": "joint-2"
+          },
+          "joint_saving_over_individual": 7,
+          "archive_v2_saving_over_joint": -484,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "archive_v2": 1463,
+          "mandatory_treatment": {
+            "cost": 1840,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1014,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -449,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 7879,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 7879,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 6585,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 6585,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 6585,
+            "route": "joint-3"
+          },
+          "archive_v2": 10951,
+          "mandatory_treatment": {
+            "cost": 15742,
+            "route": "treatment-compact"
+          },
+          "installed_treatment": {
+            "cost": 6585,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 1294,
+          "archive_v2_saving_over_joint": -4366,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "restriction",
+        "intersection"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1156,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1086,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1086,
+            "route": "individual-1-retained"
+          },
+          "control": {
+            "cost": 1086,
+            "route": "individual-1-retained"
+          },
+          "treatment": {
+            "cost": 1086,
+            "route": "individual-1-retained"
+          },
+          "archive_v2": 1400,
+          "mandatory_treatment": {
+            "cost": 2186,
+            "route": "individual-1-retained-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1086,
+            "route": "individual-1-retained"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -314,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 4495,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 4183,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 4183,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 4183,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 4183,
+            "route": "individual-1"
+          },
+          "archive_v2": 5850,
+          "mandatory_treatment": {
+            "cost": 8580,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 4183,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -1667,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1210,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1196,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1196,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1196,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1196,
+            "route": "individual-1"
+          },
+          "archive_v2": 1492,
+          "mandatory_treatment": {
+            "cost": 2121,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1196,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -296,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "archive_v2": 1550,
+          "mandatory_treatment": {
+            "cost": 2108,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1252,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -298,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 16689,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 16689,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 16689,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 16401,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 16401,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 53693,
+          "mandatory_treatment": {
+            "cost": 25558,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 16401,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -37004,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "restriction",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 869,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 778,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 778,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 778,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 778,
+            "route": "individual-1"
+          },
+          "archive_v2": 1311,
+          "mandatory_treatment": {
+            "cost": 1878,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 778,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -533,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 3528,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 3247,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 3247,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 3247,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 3247,
+            "route": "individual-1"
+          },
+          "archive_v2": 5410,
+          "mandatory_treatment": {
+            "cost": 7644,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 3247,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -2163,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 980,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 968,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 968,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 968,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 968,
+            "route": "individual-1"
+          },
+          "archive_v2": 1464,
+          "mandatory_treatment": {
+            "cost": 1901,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 968,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -496,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "archive_v2": 1515,
+          "mandatory_treatment": {
+            "cost": 1881,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1025,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -490,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 9788,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 9788,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 9424,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 9424,
+            "route": "joint-2"
+          },
+          "treatment": {
+            "cost": 9424,
+            "route": "joint-2"
+          },
+          "archive_v2": 12967,
+          "mandatory_treatment": {
+            "cost": 18581,
+            "route": "joint-2-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 9424,
+            "route": "joint-2"
+          },
+          "joint_saving_over_individual": 364,
+          "archive_v2_saving_over_joint": -3543,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "intersection",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1023,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1002,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1002,
+            "route": "individual-1-retained"
+          },
+          "control": {
+            "cost": 1002,
+            "route": "individual-1-retained"
+          },
+          "treatment": {
+            "cost": 1002,
+            "route": "individual-1-retained"
+          },
+          "archive_v2": 1407,
+          "mandatory_treatment": {
+            "cost": 2102,
+            "route": "individual-1-retained-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1002,
+            "route": "individual-1-retained"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -405,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 3839,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 3694,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 3694,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 3694,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 3694,
+            "route": "individual-1"
+          },
+          "archive_v2": 5975,
+          "mandatory_treatment": {
+            "cost": 8091,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 3694,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -2281,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1169,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1162,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1162,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1162,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1162,
+            "route": "individual-1"
+          },
+          "archive_v2": 1532,
+          "mandatory_treatment": {
+            "cost": 2101,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1162,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -370,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "archive_v2": 1576,
+          "mandatory_treatment": {
+            "cost": 2074,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1205,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -371,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 13015,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 13015,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 13015,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 11616,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 11616,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 50953,
+          "mandatory_treatment": {
+            "cost": 20773,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 11616,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -37938,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "restriction",
+        "intersection"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1617,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1508,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1508,
+            "route": "individual-1-retained"
+          },
+          "control": {
+            "cost": 1506,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1506,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1465,
+          "mandatory_treatment": {
+            "cost": 2606,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1506,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": 43,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 6320,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 5899,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 5899,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 5899,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 5899,
+            "route": "individual-1"
+          },
+          "archive_v2": 6166,
+          "mandatory_treatment": {
+            "cost": 10296,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 5899,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -267,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1508,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1477,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1477,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1477,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1477,
+            "route": "individual-1"
+          },
+          "archive_v2": 1537,
+          "mandatory_treatment": {
+            "cost": 2388,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1477,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -60,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "archive_v2": 1603,
+          "mandatory_treatment": {
+            "cost": 2327,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1523,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -80,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 21511,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 21511,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 21158,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 19613,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 19613,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 54952,
+          "mandatory_treatment": {
+            "cost": 28770,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 19613,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 353,
+          "archive_v2_saving_over_joint": -33794,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "restriction",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1330,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1200,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1117,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 1117,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 1117,
+            "route": "joint-3"
+          },
+          "archive_v2": 1376,
+          "mandatory_treatment": {
+            "cost": 2217,
+            "route": "joint-3-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1117,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 83,
+          "archive_v2_saving_over_joint": -259,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 5353,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 4963,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 4708,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 4708,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 4708,
+            "route": "joint-3"
+          },
+          "archive_v2": 5726,
+          "mandatory_treatment": {
+            "cost": 9105,
+            "route": "joint-3-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 4708,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 255,
+          "archive_v2_saving_over_joint": -1018,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1271,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1228,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1182,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 1182,
+            "route": "joint-2"
+          },
+          "treatment": {
+            "cost": 1182,
+            "route": "joint-2"
+          },
+          "archive_v2": 1512,
+          "mandatory_treatment": {
+            "cost": 2092,
+            "route": "joint-2-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1182,
+            "route": "joint-2"
+          },
+          "joint_saving_over_individual": 46,
+          "archive_v2_saving_over_joint": -330,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1319,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1319,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1267,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 1267,
+            "route": "joint-2"
+          },
+          "treatment": {
+            "cost": 1267,
+            "route": "joint-2"
+          },
+          "archive_v2": 1571,
+          "mandatory_treatment": {
+            "cost": 2091,
+            "route": "joint-2-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1267,
+            "route": "joint-2"
+          },
+          "joint_saving_over_individual": 52,
+          "archive_v2_saving_over_joint": -304,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 14610,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 14610,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 12822,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 12822,
+            "route": "joint-3"
+          },
+          "treatment": {
+            "cost": 12822,
+            "route": "joint-3"
+          },
+          "archive_v2": 14226,
+          "mandatory_treatment": {
+            "cost": 21979,
+            "route": "treatment-compact"
+          },
+          "installed_treatment": {
+            "cost": 12822,
+            "route": "joint-3"
+          },
+          "joint_saving_over_individual": 1788,
+          "archive_v2_saving_over_joint": -1404,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "intersection",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1484,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1424,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1404,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 1283,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1283,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1472,
+          "mandatory_treatment": {
+            "cost": 2383,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1283,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 20,
+          "archive_v2_saving_over_joint": -68,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 5664,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 5410,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 5410,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 5020,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 5020,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 6291,
+          "mandatory_treatment": {
+            "cost": 9417,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 5020,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -881,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1480,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1457,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1457,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1392,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1392,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1591,
+          "mandatory_treatment": {
+            "cost": 2320,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1392,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -134,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1504,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1504,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1504,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1466,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1466,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1640,
+          "mandatory_treatment": {
+            "cost": 2291,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1466,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -136,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 17837,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 17837,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 16543,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 14828,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 14828,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 52212,
+          "mandatory_treatment": {
+            "cost": 23985,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 14828,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 1294,
+          "archive_v2_saving_over_joint": -35669,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1524,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1433,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1433,
+            "route": "individual-1-retained"
+          },
+          "control": {
+            "cost": 1401,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1401,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1509,
+          "mandatory_treatment": {
+            "cost": 2501,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1401,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -76,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 5931,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 5562,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 5562,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 5521,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 5521,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 6419,
+          "mandatory_treatment": {
+            "cost": 9918,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 5521,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -857,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1520,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1507,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1507,
+            "route": "individual-1"
+          },
+          "control": {
+            "cost": 1507,
+            "route": "individual-1"
+          },
+          "treatment": {
+            "cost": 1507,
+            "route": "individual-1"
+          },
+          "archive_v2": 1641,
+          "mandatory_treatment": {
+            "cost": 2437,
+            "route": "individual-1-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1507,
+            "route": "individual-1"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -134,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "control": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "treatment": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "archive_v2": 1692,
+          "mandatory_treatment": {
+            "cost": 2368,
+            "route": "historical-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1546,
+            "route": "historical"
+          },
+          "joint_saving_over_individual": 0,
+          "archive_v2_saving_over_joint": -146,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 19746,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 19746,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 19382,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 17853,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 17853,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 54228,
+          "mandatory_treatment": {
+            "cost": 27010,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 17853,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 364,
+          "archive_v2_saving_over_joint": -34846,
+          "candidate_provision_difference": 0
+        }
+      }
+    },
+    {
+      "targets": [
+        "kernel_group",
+        "restriction",
+        "intersection",
+        "words"
+      ],
+      "metrics": {
+        "source_tokens": {
+          "historical": {
+            "cost": 1985,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1855,
+            "route": "individual-1-retained"
+          },
+          "prepared": {
+            "cost": 1772,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 1651,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1651,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1574,
+          "mandatory_treatment": {
+            "cost": 2751,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1651,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 83,
+          "archive_v2_saving_over_joint": 198,
+          "candidate_provision_difference": 0
+        },
+        "source_utf8_bytes": {
+          "historical": {
+            "cost": 7756,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 7278,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 7111,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 6679,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 6679,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 6735,
+          "mandatory_treatment": {
+            "cost": 11076,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 6679,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 167,
+          "archive_v2_saving_over_joint": 376,
+          "candidate_provision_difference": 0
+        },
+        "zlib_9_bytes": {
+          "historical": {
+            "cost": 1784,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1743,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1710,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 1651,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1651,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1685,
+          "mandatory_treatment": {
+            "cost": 2577,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1651,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 33,
+          "archive_v2_saving_over_joint": 25,
+          "candidate_provision_difference": 0
+        },
+        "bzip2_9_bytes": {
+          "historical": {
+            "cost": 1787,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 1773,
+            "route": "individual-1"
+          },
+          "prepared": {
+            "cost": 1769,
+            "route": "joint-2"
+          },
+          "control": {
+            "cost": 1706,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 1706,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 1748,
+          "mandatory_treatment": {
+            "cost": 2513,
+            "route": "treatment-reprove-without-package-delivered-with-package"
+          },
+          "installed_treatment": {
+            "cost": 1706,
+            "route": "treatment-reprove-without-package"
+          },
+          "joint_saving_over_individual": 4,
+          "archive_v2_saving_over_joint": 21,
+          "candidate_provision_difference": 0
+        },
+        "expr_nodes": {
+          "historical": {
+            "cost": 24568,
+            "route": "historical"
+          },
+          "individual": {
+            "cost": 24568,
+            "route": "historical"
+          },
+          "prepared": {
+            "cost": 22780,
+            "route": "joint-3"
+          },
+          "control": {
+            "cost": 21065,
+            "route": "control-reprove"
+          },
+          "treatment": {
+            "cost": 21065,
+            "route": "treatment-reprove-without-package"
+          },
+          "archive_v2": 55487,
+          "mandatory_treatment": {
+            "cost": 30222,
+            "route": "treatment-reprove"
+          },
+          "installed_treatment": {
+            "cost": 21065,
+            "route": "treatment-reprove"
+          },
+          "joint_saving_over_individual": 1788,
+          "archive_v2_saving_over_joint": -32707,
+          "candidate_provision_difference": 0
+        }
+      }
+    }
+  ],
+  "scope": {
+    "preparation_slots_per_scope": 3,
+    "continuation_slots_per_condition": 2,
+    "provider_calls": 0,
+    "provider_generation_usage": null,
+    "held_out_evaluation": false,
+    "training_eligible": false,
+    "global_minimum_established": false
+  }
+}
