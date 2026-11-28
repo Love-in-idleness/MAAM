@@ -2,6 +2,7 @@
 
 | 中文 | English |
 | --- | --- |
+| **2026-10-29 · 审查后的决定已记录：**用户选择[以整包压缩为主的研究目标](REUSE_COMPRESSION_OBJECTIVE.md)，本阶段只落实目标文档。下文保留作出决定时的事实与问题；尚未测量 AI 理解或新方案下的独立使用效果。 | **2026-10-29 · Review decision recorded:** the user selected [whole-package compression as the primary objective](REUSE_COMPRESSION_OBJECTIVE.md), with objective documentation as this phase's deliverable. The facts and questions below retain their review context; AI understanding and independent use under a new design remain unmeasured. |
 | **2026-10-28 · 策略审查材料，非新试验协议。** 这份材料供切到 Astra 后审查；它整理已知事实、替代解释与必须作出的研究选择，不授权新调用或扩充任务。应先读[声明契约验收](THEOREM_CONTRACT.md)，再讨论如何测量方法复用。 | **2026-10-28 · Strategy-review material, not a new trial protocol.** This packet is for review after switching to Astra. It records facts, alternatives, and research decisions without authorizing calls or additional tasks. Read [declaration-contract acceptance](THEOREM_CONTRACT.md) before discussing method-reuse measurement. |
 
 ## 已知证据 / Established evidence

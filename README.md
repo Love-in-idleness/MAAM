@@ -1,288 +1,39 @@
-# MAAM · 数学概念与命题评估
+# MAAM
 
-计算形式命题的压缩与结构指标，并通过可验证的迁移实验，比较引入新定义和理论包后的表达与证明成本。
-Calculate compression and structural metrics for formal propositions, and use verified migration experiments to compare expression and proof costs after introducing definitions and theory packages.
+[简体中文](README.zh-CN.md)
 
-| 中文 | English |
-| --- | --- |
-| **2026-10-26 待审阅方案：**[数学工具组织与验证](docs/METHOD_RESEARCH_DESIGN.md)确定工具包表示、完整成本、证据边界和下一次有界指南试验：同一数学库、两种说明条件、六题各重复两次，最多 48 次 DeepSeek 调用。本次仅完成方案，实验仍暂停；下文保留历史进度。 | **Proposal for review, 2026-10-26:** [Mathematical tool organization and evaluation](docs/METHOD_RESEARCH_DESIGN.md) specifies packages, complete costs, evidence boundaries, and one bounded guidance trial: the same mathematical library, two guidance conditions, six tasks repeated twice, at most 48 DeepSeek calls. This delivery is a proposal; experiments remain paused. Historical progress follows. |
-| **2026-10-27 已审阅并启动：**[方法指南试验](docs/METHOD_USE.md)已落地六题、共同引理、通用指南、沙箱及有界调用账本；真实模型结果与离线验收分开记录。 | **Reviewed and started, 2026-10-27:** the [guidance trial](docs/METHOD_USE.md) now has six tasks, a common lemma, a generic guide, sandboxing, and a bounded call ledger. Live results remain distinct from offline acceptance. |
-| **首次真实试验已完成：**24 个会话、26 次 DeepSeek 调用，两组均为首轮 11/12、预算内 12/12；各有一次模型修复，费用保守估算合计 $0.057759。有指南组输出更少、存储更大；[结果](docs/METHOD_USE.md)只支持这批开发任务上的分项观察。 | **First live trial completed:** 24 sessions and 26 DeepSeek calls; both arms verified 11/12 initially and 12/12 within budget, each using one model repair. Total conservative estimated cost is $0.057759. Guidance used less output but more storage; the [results](docs/METHOD_USE.md) support only separate observations on these development tasks. |
-| **下一步离线材料：**[构造映射与封闭性运输](docs/CLOSURE_TRANSPORT.md)新增四个构造任务、两个前提边界反例及通用指南，明确检查映射见证和保持性质；人工参考与模型能力继续分开。本轮不增加模型调用。 | **Next offline material:** [Map construction and closure transport](docs/CLOSURE_TRANSPORT.md) adds four construction tasks, two premise-boundary counterexamples, and general guidance, explicitly checking map witnesses and preservation. Author references remain distinct from model capability; no new model calls occur. |
-| **构造试验工程：**[新协议与控制器](docs/CONSTRUCTION_USE.md)复用冻结的六题，计划 24 个独立会话、最多 48 次 DeepSeek 调用。共同数学内容只差指南；受约束构造证书与未知映射发现明确区分。 | **Construction-trial engineering:** [New protocol and controller](docs/CONSTRUCTION_USE.md) reuse the six frozen tasks for 24 independent sessions and at most 48 DeepSeek calls. Mathematical content is shared, with guidance as the only difference; constrained certificates remain distinct from map discovery. |
-| **构造试验已完成：**[39 次真实调用](docs/CONSTRUCTION_USE.md)使 24 个会话全部预算内核验，费用估算 $0.165267。独立复核发现 15 次首轮拒绝中 14 次来自 `def/theorem` 输出合约歧义；首轮组间差异不能解释为数学能力差异。先修清契约，再决定新试验。 | **Construction trial complete:** [39 live calls](docs/CONSTRUCTION_USE.md) verify all 24 sessions within budget, costing an estimated $0.165267. Independent review attributes 14 of 15 initial rejections to an underspecified `def/theorem` output contract; initial-score differences do not establish mathematical ability differences. Clarify the contract before deciding on another trial. |
-| **2026-10-28 · 输出契约修复：**[v2 离线验收](docs/THEOREM_CONTRACT.md)明确要求 theorem，用真实 Lean 检查格式与语义边界；保留所有旧实验，本次不新增付费调用器。 | **2026-10-28 · Output-contract fix:** [v2 offline acceptance](docs/THEOREM_CONTRACT.md) explicitly requires a theorem and checks format and semantic boundaries with real Lean. Preserve all earlier experiments without adding a paid controller. |
-| **契约验收完成：**[12/12 固定对照符合预期](docs/THEOREM_CONTRACT.md)，449 项测试通过；没有新增实验 API 调用。下一轮按 [Astra 审查包](docs/METHOD_REUSE_REVIEW.md)审查方法复用的主问题、可计算判据与最小对照。 | **Contract acceptance complete:** [12/12 fixed controls match expectations](docs/THEOREM_CONTRACT.md), with 449 tests passing and no new experiment API calls. Next use the [Astra review packet](docs/METHOD_REUSE_REVIEW.md) to examine the primary question, computable criteria, and minimal controls for method reuse. |
+MAAM is a research toolkit for measuring how formal mathematics is organised in Lean. It computes static compression and dependency metrics over Lean declarations, and evaluates the full cost of introducing reusable theory packages (definitions, lemmas, and bridges) into a fixed base library.
 
-新增理论包提供可选的缩短证明机会：旧证明保留，只有核验通过且按既定长度指标严格更短的新证明才替换，失败、更长、等长或长度未知都不覆盖旧证明，也不要求全库重证。
-The default source-length policy retains existing verified witnesses and reports proof savings separately from the full package cost charged once; future searches can target promising local improvements.
+## Quick Start
 
-当前先进行[理论框架与反例审查](docs/COMPRESSION_FRAMEWORK.md)：区分定义、规格、实现和证明，保留推广前后的命题，分别评价表达、共享、推导、适用范围与后续复用。
-The framework treats immediate shortening as one criterion among several and documents semantic contracts, complete costs and nineteen acceptance cases; these broader controls remain proposed rather than implemented.
-
-理解难度面向具有广泛数学背景的 AI：通用理论已有的掌握不重复收费，新理论的获取成本计一次，再观察跨任务用途；[文献与测量提案](docs/COGNITIVE_COMPRESSION.md)说明非线性、分块及 16 项设计验收要求。
-The AI-cost proposal separates shared knowledge, marginal processing and cross-task acquisition costs; its literature review and conditional model do not constitute an implemented or calibrated comprehension score.
-
-当前把可计算、可实现的工作放在前面：[整包压缩工具](docs/COMPRESSED_PACKAGES.md)已能离线测量完整候选与证明，历史 M1 单题的非共享 zlib 成本为 203→516 字节；[方法说明](docs/PROOF_METHODS.md)明确已有核封闭性证明的入口、参数和义务。
-The compressed-source sidecar is implemented; the method card describes one existing checked instance, while new-instance reuse, cognitive scoring and general concept attribution remain untested.
-
-引入新理论前，应先充分利用原有定义、引理与工具准备相对简短的基线，避免把普通整理或额外搜索的收益归给新概念；当前按[基线准备说明](docs/BASELINE_PREPARATION.md)推进理论、工具与小范围验证，大规模实验暂缓。
-The new offline inventory collects the shortest existing baseline certificates, while the attribution checker separates old-tool cleanup, continued search and package-associated differences; neither certifies that general Lean proofs are globally shortest or that baseline search is complete.
-
-已有[小范围搜索记录流程](docs/BASELINE_SEARCH.md)可绑定原证、核验严格缩短并按完整轮次停止，另已[实际执行两种旧工具改写](docs/BASELINE_METHODS.md)：两道开发题四次扫描、两份候选通过 Lean，仅采用更短的一份，所选源码为 370→367 token。
-The local execution uses no model API and keeps the valid longer candidate as evidence; sufficient baseline preparation, metered model search, definition acceptance and concept attribution remain unfinished.
-
-已有[有限确认工具](docs/BASELINE_STABILITY.md)从已保留的 367 token 继续，完成两轮、八次扫描和两次隔离 Lean 核验，未发现更短证明，满足两种固定改写的停止规则。
-This completes only the declared method scope; broader existing-tool preparation and package-attribution readiness remain unestablished.
-
-| 中文 | English |
-| --- | --- |
-| 新增[保留原证的整包压缩对照](docs/RETAINED_COMPRESSION.md)：将有限确认后的基线与历史参考接通，所选证明 367→229 token，完整包另计 1100，非共享 zlib 字节 425→1360。 | The retained-proof comparison connects confirmed baseline certificates to archived alternatives: selected proofs shrink from 367 to 229 tokens, but the full package adds 1100 and nonshared zlib size grows from 425 to 1360 bytes. |
-| 这是已有证据的组合与计量；公平模型比较、新方法发现及因果归因仍未建立。 | This is an archived-evidence composition and measurement, without a fair model comparison, new method discovery, or causal attribution. |
-
-| 中文 | English |
-| --- | --- |
-| 新增[旧工具的 DeepSeek 搜索](docs/MODEL_BASELINE.md)：两次真实调用、两份隔离 Lean 核验证明，完整源码合计 367→186 token；用量已记录，保守估算 $0.02043。 | The new metered old-tool search made two live DeepSeek calls and verified both candidates in isolated Lean, reducing full proof source from 367 to 186 tokens with a conservative $0.02043 cost estimate. |
-| 这份缩短来自现有工具；367→229 的历史包对照仍使用旧基线，与下方新版本分开保存，不能当作当前新理论收益。 | This gain comes from existing tools. The historical 367→229 package comparison retains its old baseline separately from the new version below and does not establish current theory-package benefit. |
-
-| 中文 | English |
-| --- | --- |
-| 已完成[模型基线到整包压缩的来源衔接](docs/MODEL_PORTFOLIO.md)：186-token 新基线保留择优后为 121，计入完整包 1100 后合计 1221；非共享 zlib 字节 313→1293。 | The new end-to-end comparison connects the 186-token model baseline to a retained 121-token proof portfolio. Charging the full 1100-token package gives 1221 tokens; nonshared zlib size grows from 313 to 1293 bytes. |
-| 新旧版本分别保存，真实调用用量与历史未知用量分开记录。本阶段完成工程接线与可重放计量，没有新增模型调用，也不声称新理论有效。 | Versions remain separate, with known latest-call usage distinguished from unknown historical usage. This milestone completes integration and replayable measurement, with no new model calls or claim of theory effectiveness. |
-
-本项目根据 Freedman 参与的两篇论文实现研究用指标，已完成固定 Mathlib 快照的全量依赖导出、SCC 收缩、精确展开量及兴趣索引；与原文的数值差异和缺失测量均明确保留，人类兴趣标注验证尚未完成。
-This project implements research metrics from two papers coauthored by Freedman, with a completed fixed-snapshot Mathlib export, SCC condensation, exact expansions, and interest index; numerical discrepancies and missing measurements remain explicit, and human-interest validation is unfinished.
-
-## 理论包评估进度 / Theory-package evaluation progress
-
-项目的长期目标是评估新命题、新数学对象及围绕核心思想形成的理论包，并为 LLM 学习提供可核查的比较反馈。
-The long-term goal is to evaluate new propositions, mathematical objects and theory packages built around a core idea, providing auditable comparative feedback for LLM learning.
-
-M1 已实现第一条 [群同态与核的参考迁移](experiments/hom_kernel/README.md)：两份证明在隔离的 Lean 4.24.0 环境中编译，检查原目标、依赖和公理，并将候选包成本纳入账本。
-M1 implements the first [homomorphism/kernel reference migration](experiments/hom_kernel/README.md): both proofs compile in isolated Lean 4.24.0 environments, with original-goal, dependency and axiom checks and explicit package-cost accounting.
-
-局部证明体从 77 降至 29 个源码 token；计入候选定义和引理后，总非共享源码从 89 增至 353 个 token，这是单条参考任务上的实际结果。
-The local proof body shrinks from 77 to 29 source tokens; including candidate definitions and lemmas, total nonshared source grows from 89 to 353 tokens, as measured on this single reference task.
-
-M1 运行方法见 [理论包接口](docs/THEORY_PACKAGES.md)，M2 的校准任务与 LLM skill 见 [迁移协议](docs/MIGRATION_PROTOCOL.md)。新增的 [独立上下文实验](docs/INDEPENDENT_EXPERIMENT.md) 在另 20 个冻结目标上实际运行了 40 个求解上下文，两边均通过 20/20 个原目标核验。
-See the [theory-package interface](docs/THEORY_PACKAGES.md) for M1 and the [migration protocol](docs/MIGRATION_PROTOCOL.md) for M2 calibration and the LLM skill. The new [independent-context experiment](docs/INDEPENDENT_EXPERIMENT.md) actually ran 40 solving contexts on another 20 frozen goals, with both conditions verifying 20/20 original goals.
-
-本轮计入整包后，源码成本为 2632→3251 token，完整表达式成本为 29006→23136 节点，观察到的证明在两项成本上不可比；生成预算与精确模型版本未取得，因此不声称公平模型效果或可训练偏好。
-Charging the whole package, this round measures 2632→3251 source tokens and 29006→23136 complete expression nodes: the observed witnesses are incomparable on these costs. Generation budgets and exact model revision were unavailable, so no fair model-effectiveness or training-preference claim is made.
-
-M3 的 [四配置消融](docs/PACKAGE_ABLATIONS.md) 已检查 140 份给定证明；[父子版本复用校准](docs/VERSION_EVOLUTION.md) 另在四个预选任务上保留 12 份核验证明及一次失败后修复，计入整包后基础库与 v2 在源码和表达式成本上不可比。
-M3's [four-configuration ablation](docs/PACKAGE_ABLATIONS.md) checks 140 supplied proofs; the [parent-child version reuse calibration](docs/VERSION_EVOLUTION.md) separately retains twelve checked proofs and one repaired failure on four preselected tasks, with baseline and v2 incomparable in source and expression costs after charging whole packages.
-
-两轮的生成预算都没有供应商计量，自动多轮探索、严格预留验证和实际学习继续按 [研究计划](docs/RESEARCH_PLAN.md) 推进。
-Neither cohort has provider-metered generation budgets; automatic multi-round search, strict held-out validation and actual learning remain in the [research plan](docs/RESEARCH_PLAN.md).
-
-## 快速运行 / Quick start
-
-需要 Python 3.11 或以上，计算核心没有第三方依赖，也不调用 LLM 或外部服务。
-The core needs Python 3.11 or later, has no third-party dependencies, and makes no LLM or external service calls.
+Requires Python 3.11+ (core commands use only the Python standard library):
 
 ```bash
 python -m maam score --corpus examples/paper_simple_lemma.json --name simple_lemma --format text
 python -m maam rank --corpus examples/toy_corpus.json --format text
-python -m maam efficiency --system examples/finite_proofs.json --name D
-python -m unittest discover -s tests -v
 ```
 
-也可在虚拟环境中执行 `pip install -e .`，随后用 `maam` 替换 `python -m maam`。
-You may also run `pip install -e .` in a virtual environment and use `maam` instead of `python -m maam`.
+The first command measures a supplied proof of `A ∧ B → B`, reporting reductive compression `T0 = 1` and proof-to-statement ratio `I0 = 4/3`. The second ranks a small synthetic corpus. All metrics depend on the chosen corpus, representation, and primitive boundary.
 
-实际运行的论文小例子 `A ∧ B → B` 返回 `T0 = 1`、`I0 = 4/3`；只有一个对照命题时，相对分按约定为 50，不能据此声称它具有中等数学价值。
-The paper's small example `A ∧ B → B` returns `T0 = 1` and `I0 = 4/3`; a singleton comparison cohort receives 50 by convention, which does not establish middling mathematical value.
+## Documentation
 
-## 计算什么 / What is calculated
+### Research Objective & Plan
+- [Tool Reuse & Whole-Package Compression Objective](docs/REUSE_COMPRESSION_OBJECTIVE.md) — Current research focus, full-cost accounting, proof-selection rules, and stopping criteria.
+- [Research Plan & Progress](docs/RESEARCH_PLAN.md) — Milestones (M0–M4), observed experimental evidence, and open research questions.
 
-令 `Ws, Wb` 为命题和证明的 wrapped 长度，`Us, Ub` 为递归展开后的原始引用数。
-Let `Ws, Wb` be the wrapped statement and proof lengths, and `Us, Ub` their recursively expanded primitive-reference counts.
+### User & Technical Guides
+- [Metrics & Operational Definitions](docs/METRICS.md) — `T0`, `I0`, PageRank `I1`, `E_finite`, and known interpretive limits.
+- [Data Formats](docs/DATA.md) — JSON schemas for reference corpora, precision handling, and finite proof hypergraphs.
+- [Lean Adapter](lean/README.md) — Exporting declarations and dependencies from Lean 4.24.0 projects.
+- [Theory-Package Evaluation](docs/THEORY_PACKAGES.md) — Isolated Lean verification and full-package cost ledgers.
+- [Fixed-Snapshot Reproduction](docs/REPRODUCTION.md) — Mathlib snapshot (`d167cc6dc962ab340507362ea2f4bcfcff44f01b`) and monoid coverage experiments ([summary](reports/mathlib/summary.json), [status](results/reproduction_status.json)).
 
-| 输出 / Output | 定义 / Definition | 来源与状态 / Attribution and status |
-| --- | --- | --- |
-| `T0` | `(Us + Ub) / (Ws + Wb)` | ABFM §5；约化压缩 / reductive compression |
-| `I0` | `Wb / Ws` | ABFM §5；演绎压缩 / deductive compression |
-| `primitive_proof_to_statement` | `Ub / Us` | ABFM §5 脚注中的替代量 / footnote alternative |
-| `I1` | 压缩偏置的加权 PageRank 平稳分布 / compression-biased weighted PageRank stationary mass | ABFM §5.1；归一化等操作约定见下 / operational choices below |
-| `E_finite` | `min Σ statement_length / target_statement_length` | BDF §3.4.1 的有限树证明版本 / restricted finite tree-proof version |
-| `score` | `I1` 在合格定理中的 midrank 百分位 / midrank percentile of `I1` among eligible theorems | 本项目的展示约定，非论文标定分数 / MAAM presentation convention |
-| `direct_users`, `user_domains` | 直接使用者数量和模块类别 / direct users and module labels | 结构描述量；不额外混入综合分 / descriptive only |
-| `reuse` | 多目标证明节省减去定理构造成本 / multi-goal savings minus construction cost | 本项目扩展，不冒充论文指标 / MAAM extension |
+## Current Status
 
-默认 `references` 模式用内部表达式中的引用数度量 wrapped 长度，这是原文 §3.2 讨论的替代口径。
-The default `references` mode measures wrapped length using internal-expression references, an alternative discussed in §3.2.
+- **Implemented**: Static metric CLI, Lean 4.24.0 export and isolated verification, hom/kernel reference migration ([experiments/hom_kernel/README.md](experiments/hom_kernel/README.md)), metered DeepSeek transfer/guidance/construction controllers, v2 explicit theorem contract, package ablations, and offline whole-package compression (`zlib`/`bzip2`).
+- **Observed**: In the M1 hom/kernel reference migration, the local proof body shrinks from `77` to `29` source tokens, while total nonshared source grows from `89` to `353` tokens. Across metered DeepSeek trials and retained-proof compression comparisons, whole-package cost has not yet been offset by proof savings.
+- **Open**: Baseline optimization sufficiency, causal concept attribution, broad held-out transfer, automatic multi-round candidate search, and learning-loop acceptance remain uncompleted.
 
-它与论文实证图表采用的源代码 token 计数不同，尤其会受到 `simp` 等策略展开的影响。
-It differs from the source-token measurement used for the paper's empirical figures, particularly when tactics such as `simp` elaborate into large proof terms.
+## References
 
-如已取得真实的命题和证明 token 数，可提供 `source_tokens` 语料；程序不会用内部引用数替代缺失的 token 数。
-If actual statement and proof token counts are available, supply a `source_tokens` corpus; missing token counts are never replaced with internal-reference counts.
-
-完整定义和操作约定见 [指标说明](docs/METRICS.md)，输入格式见 [数据说明](docs/DATA.md)。
-See [metric definitions](docs/METRICS.md) for the operational conventions and [data documentation](docs/DATA.md) for input formats.
-
-## 输入你自己的命题 / Evaluate your own proposition
-
-已有四个长度时，可直接计算压缩指标。
-If you have the four measured lengths, calculate the compression metrics directly.
-
-```bash
-python -m maam metrics \
-  --signature-wrapped 10 --body-wrapped 90 \
-  --signature-unwrapped 100 --body-unwrapped 9000
-```
-
-这会得到 `T0 = 91`、`I0 = 9`；没有对照语料和依赖图时，不生成虚假的 `I1` 或综合分。
-This returns `T0 = 91` and `I0 = 9`; without a comparison corpus and dependency graph, it does not fabricate an `I1` value or overall score.
-
-已有形式命题语料时，用声明名称评分，或批量排序。
-For a formal corpus, score a declaration by name or rank the corpus.
-
-```bash
-python -m maam validate examples/toy_corpus.json
-python -m maam score --corpus examples/toy_corpus.json --name Toy.StructuralLemma
-python -m maam rank --corpus examples/toy_corpus.json --alpha 0.85 --beta 0.5
-```
-
-`query` 只匹配语料中存储的原文；它不负责把任意自然语言自动形式化，也不根据命题的名气打分。
-`query` matches stored statement text exactly; it does not automatically formalise arbitrary natural language or assign scores based on a proposition's fame.
-
-```bash
-python -m maam query --corpus examples/paper_simple_lemma.json --statement 'A ∧ B → B'
-```
-
-未匹配的命题和未证明的猜想会返回缺少的证据与空分数，退出码为 2。
-Unmatched statements and unproved conjectures return the missing evidence and a null score, with exit code 2.
-
-## Lean 接口 / Lean adapter
-
-适配器从已有 Lean 工程导出命题类型、证明体及带重复次数的依赖；已通过 GitHub Actions 上 Lean 4.24.0 的小命题端到端检查。
-The adapter exports statement types, proof bodies, and dependency multiplicities from an existing Lean project; it passes the small-proposition end-to-end check on Lean 4.24.0 in GitHub Actions.
-
-小例检查包含真实证明导出、指标计算与 `sorry` 污染排除；全库实验的执行证据另见 [远程验证记录](results/remote_validation.json) 和 [实际报告](reports/mathlib/summary.json)。
-The small cases check actual proof export, metric calculation, and exclusion of `sorry` taint; see the [remote validation record](results/remote_validation.json) and [measured report](reports/mathlib/summary.json) for the separate full-library experiment.
-
-```bash
-python -m maam export-lean --project /absolute/path/to/your/lean/project \
-  --module YourModule --target YourNamespace.yourTheorem \
-  --expand-prefix YourModule --output data/your-corpus.json
-python -m maam score --corpus data/your-corpus.json --name YourNamespace.yourTheorem
-```
-
-工具链、边界设置、局部导出偏差与测试步骤见 [Lean 接口说明](lean/README.md)。
-See the [Lean adapter guide](lean/README.md) for toolchains, primitive boundaries, local-export bias, and smoke checks.
-
-全库实验使用独立的流式导出器 `maam/PaperExport.lean`，保留 unsafe 声明，收缩 SCC 并测量真实源码 token；运行方法与明确的过滤约定见 [固定快照复现说明](docs/REPRODUCTION.md)。
-The full-library experiment uses the separate streaming exporter `maam/PaperExport.lean`, retains unsafe declarations, condenses SCCs, and measures actual source tokens; see the [fixed-snapshot reproduction guide](docs/REPRODUCTION.md) for commands and explicit filtering conventions.
-
-工作流生成完整 SQLite 指标索引；下载并解压后，可直接查询固定语料中的命题，无需本地 Lean 工具链。
-The workflow generates a complete SQLite metric index; after downloading and decompressing it, query propositions in the fixed corpus without a local Lean toolchain.
-
-```bash
-python -m maam score-index --index data/mathlib-metrics.sqlite \
-  --name Hyperreal.infinitesimal_zero
-```
-
-## 已测得的 Mathlib 结果 / Measured Mathlib results
-
-固定使用论文给出的提交 `d167cc6d` 和 Lean 4.24.0；下表区分模块范围内声明与为递推保留的基础依赖节点。
-The experiment pins the paper's commit `d167cc6d` and Lean 4.24.0; the table distinguishes module-scope declarations from primitive boundary nodes retained for the recurrence.
-
-| 测量 / Measurement | MAAM | 原文 / Paper |
-| --- | ---: | ---: |
-| Mathlib 声明，收缩前 / declarations before SCC | 463,719 | 463,719 |
-| Mathlib 分量，收缩后 / components after SCC | 463,661 | 463,661 |
-| 额外显式基础边界 / additional explicit primitive boundary | 9,626 | 未单列 / not separate |
-| 最大深度 / maximum depth | 299 | ≈300 |
-| 深度对中位 `log2 U` 的斜率 / depth-to-median-log2 slope | 0.9957 | ≈1 |
-| 最大 `log10 U` / maximum log10 expansion | 110.6394 | ≈104 |
-| token 对中位 `log2 U` 的斜率 / token-to-median-log2 slope | 0.2281 | ≈0.4 |
-| 可评分已证明定理 / eligible proved theorems | 356,733 | 未报告 / not reported |
-
-最大展开量对应同一条代数几何定理，但数值尚未一致；[依赖贡献表](reports/mathlib/max_expansion_dependencies.csv) 可用于逐层追查，程序不会调整引用次数来强行匹配。
-The maximum occurs at the same algebraic-geometry theorem but its magnitude still differs; the [dependency contribution table](reports/mathlib/max_expansion_dependencies.csv) supports inspection without tuning reference counts to force agreement.
-
-完整图保留 473,345 个节点，收缩后为 473,287 个；27 个多声明 SCC 共减少 58 个节点，另有 952 个单节点自环。
-The complete graph retains 473,345 vertices and 473,287 after condensation; 27 multi-declaration SCCs account for the reduction of 58 vertices, alongside 952 singleton self-loops.
-
-正长度的具名源码测量覆盖 212,012 个声明，较初次实验的 137,217 个增加 54.5%；仍有 9,307 个有范围的声明因上下文或解析失败而缺失，187,444 个声明没有源码范围。
-Positive named-source measurements cover 212,012 declarations, up 54.5% from the initial 137,217; 9,307 ranged declarations remain missing because of context or parse failures, and 187,444 declarations have no source range.
-
-[完整实验记录](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) 保留原始数据和完整索引；[原文示例指标](results/mathlib_examples.json) 可直接查看四个真实声明的计算结果。
-The [completed experiment](https://github.com/Love-in-idleness/MAAM/actions/runs/39060623030) retains raw data and the complete index; the [measured paper examples](results/mathlib_examples.json) show calculated results for four actual declarations.
-
-![Median expansion versus dependency depth](reports/mathlib/figure5_expansion_by_depth.png)
-
-## 验证与复现状态 / Validation and reproduction status
-
-执行以下命令生成确定性的演示语料、九组参数敏感性结果，以及每项复现目标的状态。
-Run the following to generate deterministic demonstration corpora, nine parameter-sensitivity runs, and an explicit reproduction-status report.
-
-```bash
-python scripts/reproduce.py
-python scripts/reproduce_monoids.py
-python -m unittest discover -s tests -v
-```
-
-已提交的 [结果](results/) 来自实际运行，包含论文小例子、人工语料排序、有限证明效率以及未证明命题的处理。
-The committed [results](results/) come from actual runs and cover the paper's small example, a synthetic ranking, finite proof efficiency, and handling of an unproved statement.
-
-测试还将 PageRank 与独立的稠密线性方程求解器比较，将超图最小证明算法与独立松弛算法比较。
-The tests also compare PageRank against an independent dense linear solver and the hypergraph minimum-proof algorithm against an independent relaxation solver.
-
-[单子实验](reports/monoids/summary.json) 已实际枚举加法模型至 65536、二元字符串至长度 12；覆盖半径到达枚举上限时只报告下界，有限数值实验不冒充渐近定理的证明。
-The [monoid experiments](reports/monoids/summary.json) enumerate additive models through 65536 and binary words through length 12; coverage reaching the cutoff is only a lower bound, and finite computations are not presented as proofs of asymptotic theorems.
-
-这些检查验证算法实现；尚没有证据表明本项目的综合分与数学家对任意命题的兴趣判断一致。
-These checks validate the implementation; they do not establish agreement between the overall score and mathematicians' interest judgements for arbitrary propositions.
-
-全量 Mathlib 实验已执行；尚未解决的目标包括与原作者全部数值的一致性、普遍最短证明复杂度和人类兴趣评估，详见 [复现状态](results/reproduction_status.json)。
-The full Mathlib experiment has run; remaining targets include agreement with every reported numerical result, universal minimum proof complexity, and human-interest evaluation; see [reproduction status](results/reproduction_status.json).
-
-## 论文与发布 / Papers and publishing
-
-1. Vitaly Aksenov, Eve Bodnia, Michael H. Freedman, Michael Mulligan, [*Compression is all you need: Modeling Mathematics*](https://arxiv.org/abs/2603.20396v1), 2026，尤其是 §3 和 §5 / especially §§3, 5.
-2. Maissam Barkeshli, Michael R. Douglas, Michael H. Freedman, [*Artificial Intelligence and the Structure of Mathematics*](https://arxiv.org/abs/2604.06107v1), 2026，尤其是 §3.4 和 §4.4 / especially §§3.4, 4.4.
-
-第二篇是 Freedman 参与的相关后续框架文章，不应被描述为已有完善兴趣评分基准的实验论文。
-The second is a related follow-up framework coauthored by Freedman, rather than an experimental paper with an established interest-scoring benchmark.
-
-代码仓库为 [Love-in-idleness/MAAM](https://github.com/Love-in-idleness/MAAM)；克隆、开发与发布步骤见 [仓库使用说明](docs/PUBLISHING.md)。
-The repository is [Love-in-idleness/MAAM](https://github.com/Love-in-idleness/MAAM); see the [repository guide](docs/PUBLISHING.md) for cloning, development, and publishing instructions.
-
-## 逐任务证明迁移 / Per-task proof migration
-
-M2 已提供冻结候选的单任务请求、受预算约束的提交、Lean 审计和覆盖／成本比较；包含 12 个开发与 8 个预留校准任务，以及 [evaluate-theory-package skill](skills/evaluate-theory-package/SKILL.md)。
-M2 supplies task-local requests for frozen candidates, budgeted submissions, Lean audits and coverage/cost comparisons; it includes 12 development and 8 reserved calibration tasks and the [skill](skills/evaluate-theory-package/SKILL.md).
-
-参见 [迁移协议与运行方法](docs/MIGRATION_PROTOCOL.md)；公开参考证明用于校准，完整的独立预留实验与强化学习仍是后续工作。
-See the [migration protocol and commands](docs/MIGRATION_PROTOCOL.md); public reference proofs are calibration material, while a complete independent held-out experiment and reinforcement learning remain future work.
-
-## 整包消融与成本偏序 / Package ablations and cost order
-
-已增加四种配置、140 份冻结证明候选和完整声明表达式计量；每个候选保留原证明，输出源码／表达式成本的有限 Pareto 前沿，允许等价与不可比。
-Four configurations, 140 frozen proof candidates and complete declaration-expression inventories are implemented; each candidate retains the original proofs and produces finite Pareto frontiers over source/expression costs, allowing equivalence and incomparability.
-
-运行与口径见 [包消融协议](docs/PACKAGE_ABLATIONS.md) 与 [版本复用实验](docs/VERSION_EVOLUTION.md)；现有版本比较只是预选任务上的校准，自动概念发展与生成预算公平的独立模型实验仍待开展。
-See the [package-ablation protocol](docs/PACKAGE_ABLATIONS.md) and [version reuse experiment](docs/VERSION_EVOLUTION.md) for commands and conventions; current version comparison is calibration on preselected tasks, while automatic concept development and generation-budget-controlled independent model experiments remain pending.
-
-## 生成用量与预算 / Generation usage and budgets
-
-新实验仅使用 DeepSeek：[冻结对照协议](docs/METERED_TRANSFER.md) 管理四个开发目标、四个预留目标、阶段门控和隔离核验；当前正式 v1 的独立费用估算上限为 US$1.00，失败时不会回退到 OpenAI。
-New experiments use the DeepSeek-only transfer controller with fixed task splits, whole-run reservations and isolated Lean verification; preparation and offline checks make no provider calls.
-
-作为独立模型输出对照，正式 v1 已完成 16 次调用：开发集基础库通过 4/4、工具包组 3/4；预留集均为 3/4，但各有一道独有成功题，三次未通过的提交全部保留，这些数字不代表添加理论包后要丢弃旧证明。
-The fixed-allowance run is complete with known provider usage and thirteen Lean-verified proofs; its five commonly solved goals cost 2572 baseline source tokens versus 3679 including the full candidate once, showing no net source saving on that portfolio.
-
-按保留原证的项目口径，本轮七个已有目标全部保留，仅两份更短的新证明入选，源码从 3975 降为 3651；计入整包后为 4751，净节省 -776，另一个新解出的目标单列，不给不存在的旧证明记零成本。
-The derived retained-proof portfolio covers all eight goals without promoting inherited witnesses into model-generated successes; it selects archived proofs in their original import contexts and does not build one combined Lean library.
-
-本次含余量费用估算为 US$0.296767125，连同此前三轮校准共 40 次调用、US$0.430350750；开发集另有两份明确复用引理的参考证明通过，但其生成用量未知，不混入正式结果。
-This completes a small metered reserved-stage execution, while representative effectiveness, exact model revision and training acceptance remain unverified; subsequent searches should target possible shortening rather than reprove the entire existing collection.
-
-[生成计量接口](docs/GENERATION.md) 为冻结的开发任务增加 OpenAI Responses 调用、逐任务修复、调用前预算预约及原始响应收据，未知用量或中断会停止后续生成。
-The [generation-metering interface](docs/GENERATION.md) adds OpenAI Responses calls, task-local repair, pre-call budget reservations and raw response receipts for frozen development tasks, stopping further generation on unknown usage or interruption.
-
-早期接口已用确定性响应和真实 Lean 检查失败后修复，并在一个公开开发任务上完成两次 GPT-6 Luna 调用；后续新增的真实付费调用均走上述 DeepSeek 控制器。
-The historical GPT-6 Luna calibration and the later DeepSeek reserved run remain separate cohorts, without implying a verified model revision or general effectiveness.
+Metric implementations draw on [*Compression is all you need: Modeling Mathematics*](https://arxiv.org/abs/2603.20396v1) (ABFM) and [*Artificial Intelligence and the Structure of Mathematics*](https://arxiv.org/abs/2604.06107v1) (BDF).
