@@ -1,0 +1,34 @@
+name: Archived proof refactoring
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned Lean
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Recheck archived and rewritten proof modules
+        run: |
+          python -m maam refactor-proofs \
+            --suite experiments/hom_kernel_evolution/suite-v2.json \
+            --archives results/evolution \
+            --workdir "$RUNNER_TEMP/proof-refactoring" \
+            --output "$RUNNER_TEMP/proof-refactoring.json"
+          python scripts/verify_proof_refactoring.py --workdir "$RUNNER_TEMP/proof-refactoring"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proof-refactoring
+          path: |
+            ${{ runner.temp }}/proof-refactoring/
+            !${{ runner.temp }}/proof-refactoring/**/*.olean

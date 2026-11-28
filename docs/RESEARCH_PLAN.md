@@ -1,5 +1,7 @@
 # 新概念与理论包的评估计划 / Evaluating new concepts and theory packages
 
+[四题跨模块重写实验](PROOF_REFACTORING.md)已在相同群公理下提取两条共享引理并回放全部原定理。联合压缩与源码词元对归档候选包的排序出现分歧。后续用未参与开发的题组检验共享引理的迁移，并记录独立模型求证的实际消耗。
+
 | 中文 | English |
 | --- | --- |
 | 新增[成组求证控制器](GROUPED_PROOF_SEARCH.md)：共同预压缩、冻结、控制与候选阶段，支持在整组中复用局部辅助引理并核验全部原目标。 | Added a grouped controller with shared preparation, freezing, control and treatment phases, local shared helpers and verification of every original goal. |

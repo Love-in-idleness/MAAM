@@ -1,5 +1,7 @@
 # MAAM · 数学概念与命题评估
 
+新的[群论跨模块重写实验](docs/PROOF_REFACTORING.md)从四份旧证明中自动提取共享引理，核验改写后的原定理，并计量全部 15 个题组。
+
 | 中文 | English |
 | --- | --- |
 | 新增[成组求证控制器](docs/GROUPED_PROOF_SEARCH.md)：共同预压缩、冻结、控制与候选阶段，支持在整组中复用局部辅助引理并核验全部原目标。 | Added a grouped controller with shared preparation, freezing, control and treatment phases, local shared helpers and verification of every original goal. |

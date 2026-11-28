@@ -52,6 +52,12 @@ def parser():
     p = commands.add_parser("precompression", help="measure frozen complete proof portfolios and candidate costs")
     p.add_argument("--study", required=True)
     p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("refactor-proofs", help="recheck and rewrite a cohort of archived Lean proofs")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--archives", required=True, help="directory containing baseline.json and v2.json")
+    p.add_argument("--workdir", required=True, help="new directory for witness sources and verification logs")
+    p.add_argument("--lean", default="lean")
+    p.add_argument("--output", help="write a copy of the report to a new file")
     for command in ("group-start", "group-request", "group-submit", "group-freeze", "group-report", "group-run-local"):
         p = commands.add_parser(command, help="bounded grouped proof search and shared helpers")
         p.add_argument("--session", required=True)
@@ -144,6 +150,9 @@ def main(argv=None):
         elif args.command == "precompression":
             from .precompression import compare_study
             report = compare_study(args.study)
+        elif args.command == "refactor-proofs":
+            from .proof_refactor import research_run
+            report = research_run(args.suite, args.archives, args.workdir, lean=args.lean)
         elif args.command.startswith("group-"):
             from . import grouped_search
             from .theory import read_object
