@@ -1,0 +1,1508 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "execution_mode": "provider",
+  "halt_reason": null,
+  "source_commit": "42a49e45beb77a6dc5140d1b8f6f1eb4b041fe9f",
+  "provider": "deepseek",
+  "transport": "deepseek_responses",
+  "model": "deepseek-flash",
+  "exact_model_revision_verified": false,
+  "actual_provider_calls": 26,
+  "simulated_calls": 0,
+  "initiated_slots": 26,
+  "call_count_scope": "Initiated slots; uncertain transport may not have reached the provider.",
+  "sessions": [
+    {
+      "task_id": "u01",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 1,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 673,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 1000,
+            "output_tokens_details": {
+              "reasoning_tokens": 878
+            },
+            "total_tokens": 1673
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 6.3790047919610515,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "3e09e08d-097d-4271-bc70-7352fab5ff70",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U01\\nimport Method\\n\\nnamespace Submission\\n\\nopen MethodUse\\n\\ntheorem solve : MethodUse.Tasks.u01 := by\\n  intro G g a x y h\\n  calc\\n    x = g.mul (g.inv a) (g.mul a y) := MethodUse.left_factor g a x (g.mul a y) h\\n    _ = y := by\\n      rw [← g.mul_assoc, g.inv_mul, g.one_mul]\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6465567559935153,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "Trans.trans",
+              "congrArg",
+              "id",
+              "instTransEq"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u01",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 2,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1055,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 567,
+            "output_tokens_details": {
+              "reasoning_tokens": 424
+            },
+            "total_tokens": 1622
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 3.924466969037894,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "b98493db-2506-4b46-8462-d5483712bf78",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U01\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u01 := by\\n  intro G g a x y h\\n  have hx : x = g.mul (g.inv a) (g.mul a y) :=\\n    MethodUse.left_factor g a x (g.mul a y) h\\n  have hy : y = g.mul (g.inv a) (g.mul a y) :=\\n    MethodUse.left_factor g a y (g.mul a y) rfl\\n  exact hx.trans hy.symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5479114421177655,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor",
+              "rfl"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u01",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 3,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1055,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 918,
+            "output_tokens_details": {
+              "reasoning_tokens": 772
+            },
+            "total_tokens": 1973
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 5.057026025024243,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "13e13eec-e1dd-41c3-b437-9502449657e3",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U01\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u01 := by\\n  intro G g a x y e\\n  have hx : x = g.mul (g.inv a) (g.mul a y) :=\\n    MethodUse.left_factor g a x (g.mul a y) e\\n  have h : g.mul (g.inv a) (g.mul a y) = y := by\\n    rw [← g.mul_assoc, g.inv_mul, g.one_mul]\\n  exact hx.trans h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.554212430899497,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg",
+              "id"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u01",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 4,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 673,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 2149,
+            "output_tokens_details": {
+              "reasoning_tokens": 2009
+            },
+            "total_tokens": 2822
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 12.291725063987542,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "1b490e00-bfa7-4cf1-85b6-d4cf08328748",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U01\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u01 := by\\n  intro G g a x y h\\n  calc\\n    x = g.mul (g.inv a) (g.mul a x) := MethodUse.left_factor g a x (g.mul a x) rfl\\n    _ = g.mul (g.inv a) (g.mul a y) := by rw [h]\\n    _ = y := (MethodUse.left_factor g a y (g.mul a y) rfl).symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5854665489168838,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor",
+              "Trans.trans",
+              "congrArg",
+              "id",
+              "instTransEq",
+              "rfl"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u02",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 5,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 678,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 374,
+            "output_tokens_details": {
+              "reasoning_tokens": 312
+            },
+            "total_tokens": 1052
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.862384726991877,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "6974b253-71ee-476b-8acd-8d728c2ff506",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U02\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u02 := by\\n  intro G g a x c h\\n  exact MethodUse.left_factor g a x c h.symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.61601309600519,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u02",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 6,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1060,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 195,
+            "output_tokens_details": {
+              "reasoning_tokens": 133
+            },
+            "total_tokens": 1255
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.0431822900427505,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "4f987a04-8b77-41b5-9bc6-e9c04fe611da",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U02\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u02 := by\\n  intro G g a x c h\\n  exact MethodUse.left_factor g a x c h.symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5546587870339863,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u02",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 7,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1060,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 322,
+            "output_tokens_details": {
+              "reasoning_tokens": 260
+            },
+            "total_tokens": 1382
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.7859421909670345,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "bcab15f4-ca48-4b68-a60e-3fdcfee0f9d7",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U02\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u02 := by\\n  intro G g a x c h\\n  exact MethodUse.left_factor g a x c h.symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5383557990426198,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u02",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 8,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 678,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 377,
+            "output_tokens_details": {
+              "reasoning_tokens": 315
+            },
+            "total_tokens": 1055
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 8.881295097002294,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "264063e1-be86-41fd-8b21-68988a29055e",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U02\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u02 := by\\n  intro G g a x c h\\n  exact MethodUse.left_factor g a x c h.symm\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6303519100765698,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.mul",
+              "MethodUse.left_factor"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u03",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 9,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 686,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 2017,
+            "output_tokens_details": {
+              "reasoning_tokens": 1824
+            },
+            "total_tokens": 2703
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 10.56361608102452,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "99cf340d-f6b9-469a-a99b-cb8a79039df7",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U03\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u03 := by\\n  intro G g a b x y h\\n  have h1 : g.mul b x = g.mul b y := by\\n    have h' := MethodUse.left_factor g a (g.mul b x) (g.mul a (g.mul b y)) h\\n    simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h'\\n  have h2 : x = y := by\\n    have h' := MethodUse.left_factor g b x (g.mul b y) h1\\n    simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h'\\n  exact h2\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.605728719034232,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mp",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u03",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 10,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1068,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 1058,
+            "output_tokens_details": {
+              "reasoning_tokens": 881
+            },
+            "total_tokens": 2126
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 5.93182841304224,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "5d2e045c-ae3b-4d36-9f9d-4211d75beb25",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U03\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u03 := by\\n  intro G g a b x y h\\n  have h1 : g.mul b x = g.mul b y := by\\n    have h' := MethodUse.left_factor g a (g.mul b x) (g.mul a (g.mul b y)) h\\n    simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h'\\n  have h2 := MethodUse.left_factor g b x (g.mul b y) h1\\n  simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h2\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.607428176968824,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mp",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u03",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 11,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1068,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 1850,
+            "output_tokens_details": {
+              "reasoning_tokens": 1620
+            },
+            "total_tokens": 2918
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 8.86370722798165,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "b50f4046-a73e-4dee-b465-c685b1b4ce8a",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U03\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u03 := by\\n  intro G g a b x y h\\n  have h1 : g.mul b x = g.mul (g.inv a) (g.mul a (g.mul b y)) :=\\n    MethodUse.left_factor g a (g.mul b x) (g.mul a (g.mul b y)) h\\n  have h2 : g.mul b x = g.mul b y := by\\n    simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h1\\n  have h3 : x = g.mul (g.inv b) (g.mul b y) :=\\n    MethodUse.left_factor g b x (g.mul b y) h2\\n  simpa only [← g.mul_assoc, g.inv_mul, g.one_mul] using h3\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.615226897003595,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mp",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u03",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 12,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 686,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 4954,
+            "output_tokens_details": {
+              "reasoning_tokens": 4588
+            },
+            "total_tokens": 5640
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 23.888337732991204,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "30958a39-6da6-48d5-aa93-1781bc0176fc",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U03\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u03 := by\\n  intro G g a b x y h\\n  have h1 : g.mul b x = g.mul b y := by\\n    calc\\n      g.mul b x = g.mul (g.inv a) (g.mul a (g.mul b y)) := MethodUse.left_factor g a (g.mul b x) (g.mul a (g.mul b y)) h\\n      _ = g.mul (g.mul (g.inv a) a) (g.mul b y) := (g.mul_assoc (g.inv a) a (g.mul b y)).symm\\n      _ = g.mul g.one (g.mul b y) := by rw [g.inv_mul]\\n      _ = g.mul b y := by rw [g.one_mul]\\n  have h2 : x = g.mul (g.inv b) (g.mul b y) := MethodUse.left_factor g b x (g.mul b y) h1\\n  calc\\n    x = g.mul (g.inv b) (g.mul b y) := h2\\n    _ = g.mul (g.mul (g.inv b) b) y := (g.mul_assoc (g.inv b) b y).symm\\n    _ = g.mul g.one y := by rw [g.inv_mul]\\n    _ = y := by rw [g.one_mul]\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5736992819583975,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "Trans.trans",
+              "congrArg",
+              "id",
+              "instTransEq"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u04",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 13,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 710,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 4441,
+            "output_tokens_details": {
+              "reasoning_tokens": 4270
+            },
+            "total_tokens": 5151
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 22.096441291971132,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "19d277b2-a384-4a4d-ab5f-2643a5888c54",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U04\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u04 := by\\n  intro X H h f hf a x y hxy\\n  have h1 : f x = h.mul (h.inv a) (h.mul a (f y)) :=\\n    MethodUse.left_factor h a (f x) (h.mul a (f y)) hxy\\n  have h2 : h.mul (h.inv a) (h.mul a (f y)) = f y := by\\n    rw [← h.mul_assoc, h.inv_mul, h.one_mul]\\n  exact hf x y (h1.trans h2)\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6019813749589957,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg",
+              "id"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u04",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 14,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1092,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 1723,
+            "output_tokens_details": {
+              "reasoning_tokens": 1614
+            },
+            "total_tokens": 2815
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 9.102658276970033,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "f50bf27b-0b08-4914-8d60-516858c1187d",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U04\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u04 := by\\n  intro X H h f hf a x y e\\n  apply hf x y\\n  have lifted := congrArg (fun z => h.mul (h.inv a) z) e\\n  simpa only [← h.mul_assoc, h.inv_mul, h.one_mul] using lifted\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6183300061384216,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mp",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "congr",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u04",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 15,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1092,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 1533,
+            "output_tokens_details": {
+              "reasoning_tokens": 1365
+            },
+            "total_tokens": 2625
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 8.45370885101147,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "399587bf-754e-4648-81da-95270e876af7",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U04\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u04 := by\\n  intro X H h f hf a x y e\\n  apply hf\\n  have hleft : f x = h.mul (h.inv a) (h.mul a (f y)) :=\\n    MethodUse.left_factor h a (f x) (h.mul a (f y)) e\\n  have hright : h.mul (h.inv a) (h.mul a (f y)) = f y := by\\n    rw [← h.mul_assoc, h.inv_mul, h.one_mul]\\n  exact hleft.trans hright\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5308695729472674,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Eq.trans",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "congrArg",
+              "id"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u04",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 16,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 710,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 3827,
+            "output_tokens_details": {
+              "reasoning_tokens": 3585
+            },
+            "total_tokens": 4537
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 18.939949412015267,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "b121cc32-affb-4832-9697-d60656422c26",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U04\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u04 := by\\n  intro X H h f hf a x y hxy\\n  have hx : f x = h.mul (h.inv a) (h.mul a (f y)) :=\\n    MethodUse.left_factor h a (f x) (h.mul a (f y)) hxy\\n  have hfxy : f x = f y := by\\n    calc\\n      f x = h.mul (h.inv a) (h.mul a (f y)) := hx\\n      _ = h.mul (h.mul (h.inv a) a) (f y) := (h.mul_assoc (h.inv a) a (f y)).symm\\n      _ = h.mul h.one (f y) := by rw [h.inv_mul a]\\n      _ = f y := h.one_mul (f y)\\n  exact hf x y hfxy\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5610982539947145,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": true,
+            "direct_proof_dependencies": [
+              "Eq",
+              "Eq.mpr",
+              "Eq.refl",
+              "Eq.symm",
+              "Foundation.Group",
+              "Foundation.Group.inv",
+              "Foundation.Group.inv_mul",
+              "Foundation.Group.mul",
+              "Foundation.Group.mul_assoc",
+              "Foundation.Group.one",
+              "Foundation.Group.one_mul",
+              "MethodUse.left_factor",
+              "Trans.trans",
+              "congrArg",
+              "id",
+              "instTransEq"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u05",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 17,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 655,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 580,
+            "output_tokens_details": {
+              "reasoning_tokens": 513
+            },
+            "total_tokens": 1235
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 4.028509222029243,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "fd3860e0-4bd3-47c3-b1fc-f80636a8d953",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U05\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u05 := by\\n  unfold MethodUse.Tasks.u05\\n  exact \\u27e80, 1, by simp, by decide\\u27e9\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.5398956770077348,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "And",
+              "And.intro",
+              "Bool",
+              "Bool.true",
+              "Decidable.decide",
+              "Eq",
+              "Eq.refl",
+              "Eq.trans",
+              "Exists",
+              "Exists.intro",
+              "HMul.hMul",
+              "MethodUse.Tasks.u05",
+              "Nat",
+              "Nat.mul_one",
+              "Ne",
+              "OfNat.ofNat",
+              "True",
+              "congrArg",
+              "eq_self",
+              "id",
+              "instDecidableEqNat",
+              "instDecidableNot",
+              "instHMul",
+              "instMulNat",
+              "instOfNatNat",
+              "of_decide_eq_true",
+              "of_eq_true"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u05",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 18,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1037,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 759,
+            "output_tokens_details": {
+              "reasoning_tokens": 697
+            },
+            "total_tokens": 1796
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 5.233997536008246,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "ee00ce8b-29aa-40f4-926a-97476931ecad",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U05\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u05 := by\\n  unfold MethodUse.Tasks.u05\\n  exact ⟨0, 1, rfl, by decide⟩\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.629381316015497,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "And",
+              "And.intro",
+              "Bool",
+              "Bool.true",
+              "Decidable.decide",
+              "Eq",
+              "Eq.refl",
+              "Exists",
+              "Exists.intro",
+              "HMul.hMul",
+              "MethodUse.Tasks.u05",
+              "Nat",
+              "Ne",
+              "OfNat.ofNat",
+              "id",
+              "instDecidableEqNat",
+              "instDecidableNot",
+              "instHMul",
+              "instMulNat",
+              "instOfNatNat",
+              "of_decide_eq_true",
+              "rfl"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u05",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 19,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1037,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 519,
+            "output_tokens_details": {
+              "reasoning_tokens": 457
+            },
+            "total_tokens": 1556
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 3.8915617540478706,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "814e70c6-1783-428a-a3d5-ddc58d154a74",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U05\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u05 := by\\n  unfold MethodUse.Tasks.u05\\n  exact ⟨0, 1, by simp, by decide⟩\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.539425805909559,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "And",
+              "And.intro",
+              "Bool",
+              "Bool.true",
+              "Decidable.decide",
+              "Eq",
+              "Eq.refl",
+              "Eq.trans",
+              "Exists",
+              "Exists.intro",
+              "HMul.hMul",
+              "MethodUse.Tasks.u05",
+              "Nat",
+              "Nat.mul_one",
+              "Ne",
+              "OfNat.ofNat",
+              "True",
+              "congrArg",
+              "eq_self",
+              "id",
+              "instDecidableEqNat",
+              "instDecidableNot",
+              "instHMul",
+              "instMulNat",
+              "instOfNatNat",
+              "of_decide_eq_true",
+              "of_eq_true"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u05",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 20,
+          "attempt": 1,
+          "sent": true,
+          "kind": "rejected",
+          "usage": {
+            "input_tokens": 655,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 1420,
+            "output_tokens_details": {
+              "reasoning_tokens": 1347
+            },
+            "total_tokens": 2075
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 9.040978549979627,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "bc3a1746-93bd-4537-ab88-aba336e90938",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U05\\nimport Method\\n\\nnamespace Submission\\n\\ndef solve : MethodUse.Tasks.u05 := by\\n  unfold MethodUse.Tasks.u05\\n  refine Exists.intro 0 (Exists.intro 1 ?_)\\n  constructor\\n  · decide\\n  · decide\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6092102379188873,
+          "verification_failure": {
+            "kind": "verification_failed",
+            "stage": "audit",
+            "message": "uncaught exception: target is not a theorem: Submission.solve\n"
+          }
+        },
+        {
+          "event": 21,
+          "attempt": 2,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 771,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 585,
+            "output_tokens_details": {
+              "reasoning_tokens": 523
+            },
+            "total_tokens": 1356
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 4.458162031020038,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "bec3c2aa-28f2-4455-abdd-f83e7b064468",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U05\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u05 := by\\n  unfold MethodUse.Tasks.u05\\n  refine ⟨0, 1, ?_⟩\\n  decide\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.648306697024964,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "And",
+              "Bool",
+              "Bool.true",
+              "Decidable.decide",
+              "Eq",
+              "Eq.refl",
+              "Exists",
+              "Exists.intro",
+              "HMul.hMul",
+              "MethodUse.Tasks.u05",
+              "Nat",
+              "Ne",
+              "OfNat.ofNat",
+              "id",
+              "instDecidableAnd",
+              "instDecidableEqNat",
+              "instDecidableNot",
+              "instHMul",
+              "instMulNat",
+              "instOfNatNat",
+              "of_decide_eq_true"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u06",
+      "arm": "A",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 22,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 665,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens": 408,
+            "output_tokens_details": {
+              "reasoning_tokens": 353
+            },
+            "total_tokens": 1073
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 4.951854119019117,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "eec21ee1-9cab-484c-9267-d65db8ff85c0",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U06\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u06 := by\\n  intro X Y f x y h\\n  exact congrArg f h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.572823233087547,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "Eq",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u06",
+      "arm": "B",
+      "repetition": 1,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 23,
+          "attempt": 1,
+          "sent": true,
+          "kind": "rejected",
+          "usage": {
+            "input_tokens": 1047,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 222,
+            "output_tokens_details": {
+              "reasoning_tokens": 169
+            },
+            "total_tokens": 1269
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.0717877770075575,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "48b9d87a-f720-4742-9ec0-7681a1526211",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U06\\nimport Method\\n\\nnamespace Submission\\n\\ndef solve : MethodUse.Tasks.u06 := by\\n  intro X Y f x y h\\n  exact congrArg f h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.616931051015854,
+          "verification_failure": {
+            "kind": "verification_failed",
+            "stage": "audit",
+            "message": "uncaught exception: target is not a theorem: Submission.solve\n"
+          }
+        },
+        {
+          "event": 24,
+          "attempt": 2,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1141,
+            "input_tokens_details": {
+              "cached_tokens": 384
+            },
+            "output_tokens": 201,
+            "output_tokens_details": {
+              "reasoning_tokens": 146
+            },
+            "total_tokens": 1342
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.2320731339859776,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "b48fb01c-278f-48a3-8ec1-80f4e86ce81b",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U06\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u06 := by\\n  intro X Y f x y h\\n  exact congrArg f h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.539367501041852,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "Eq",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u06",
+      "arm": "B",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 25,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 1047,
+            "input_tokens_details": {
+              "cached_tokens": 896
+            },
+            "output_tokens": 258,
+            "output_tokens_details": {
+              "reasoning_tokens": 203
+            },
+            "total_tokens": 1305
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 2.6006205989979208,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "38133858-bea4-449d-b0b6-eae99920fec4",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U06\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u06 := by\\n  intro X Y f x y h\\n  exact congrArg f h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.6010617849533446,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "Eq",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "u06",
+      "arm": "A",
+      "repetition": 2,
+      "status": "verified",
+      "attempts": [
+        {
+          "event": 26,
+          "attempt": 1,
+          "sent": true,
+          "kind": "verified",
+          "usage": {
+            "input_tokens": 665,
+            "input_tokens_details": {
+              "cached_tokens": 512
+            },
+            "output_tokens": 558,
+            "output_tokens_details": {
+              "reasoning_tokens": 503
+            },
+            "total_tokens": 1223
+          },
+          "requested_model": "deepseek-flash",
+          "elapsed_seconds": 4.924816032988019,
+          "provider_request_id": null,
+          "reported_model": "deepseek-flash",
+          "provider_response_id": "df9ff09e-4941-406b-b297-163e3f549643",
+          "candidate_output": "{\"proof\":\"import Base\\nimport Tasks.U06\\nimport Method\\n\\nnamespace Submission\\n\\ntheorem solve : MethodUse.Tasks.u06 := by\\n  intro X Y f x y h\\n  exact congrArg f h\\n\\nend Submission\\n\"}",
+          "verification_seconds": 2.537330342049245,
+          "verification_failure": null,
+          "method_application_evidence": {
+            "named_lemma_direct_dependency": false,
+            "direct_proof_dependencies": [
+              "Eq",
+              "congrArg"
+            ],
+            "absence_means": "No direct named dependency; inline or indirect use is unclassified."
+          }
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "positive": {
+      "A": {
+        "sessions": 8,
+        "first_attempt_verified": 8,
+        "within_budget_verified": 8
+      },
+      "B": {
+        "sessions": 8,
+        "first_attempt_verified": 8,
+        "within_budget_verified": 8
+      }
+    },
+    "boundary": {
+      "A": {
+        "sessions": 4,
+        "first_attempt_verified": 3,
+        "within_budget_verified": 4
+      },
+      "B": {
+        "sessions": 4,
+        "first_attempt_verified": 3,
+        "within_budget_verified": 4
+      }
+    }
+  },
+  "generation_usage": {
+    "input_tokens": 22764,
+    "output_tokens": 32815,
+    "total_tokens": 55579
+  },
+  "known_generation_usage": {
+    "input_tokens": 22764,
+    "output_tokens": 32815,
+    "total_tokens": 55579
+  },
+  "estimated_cost_usd": "0.057759",
+  "reserved_cost_usd": "1.437696",
+  "whole_round_reserved_cost_usd": "2.654208",
+  "next": null,
+  "preparation": {
+    "offline_preflight_seconds": 16.13953984400723,
+    "author_preparation_seconds": null,
+    "historical_preparation_cost": "unknown",
+    "shared_research_infrastructure_source": {
+      "modules": [
+        "maam/PackageCheck.lean",
+        "maam/corpus.py",
+        "maam/deepseek.py",
+        "maam/generation.py",
+        "maam/lean_sandbox.py",
+        "maam/live_calibration.py",
+        "maam/method_use.py",
+        "maam/migration.py",
+        "maam/theory.py",
+        "maam/transfer.py",
+        "scripts/check_theory_package.py",
+        "scripts/control_method_use.py",
+        "scripts/measure_compressed_reference.py"
+      ],
+      "source_utf8_bytes": 175743,
+      "serialized_utf8_bytes": 185946,
+      "payload_sha256": "9ca1068e8a7dbcffe001d14ce776e76dd999250f319cc132440b8c3cd56f89a5",
+      "compressed": {
+        "zlib-9": {
+          "bytes": 45543,
+          "sha256": "d87dc950c3cc36e15c6dc3fb486759b37e2440ebab3d3e12ae1cdd5b0e65621b"
+        },
+        "bzip2-9": {
+          "bytes": 37085,
+          "sha256": "34f405f93f2bd6b24cdc0e69d7e52ef4db254ea12b78ec30897447096376989b"
+        }
+      },
+      "roundtrip_verified": true
+    },
+    "scope": "Shared controller source counted once separately; installed Lean/Python are external shared prerequisites."
+  },
+  "compression": {
+    "A": {
+      "nonshared_payload": {
+        "modules": [
+          "proofs/u01.lean",
+          "proofs/u02.lean",
+          "proofs/u03.lean",
+          "proofs/u04.lean",
+          "proofs/u05.lean",
+          "proofs/u06.lean"
+        ],
+        "source_utf8_bytes": 1583,
+        "serialized_utf8_bytes": 1785,
+        "payload_sha256": "e422b31c3e3cc78d9447fbb8df9e794e2e6ddc90ef52d6c2ccebc63b4e749c0e",
+        "compressed": {
+          "zlib-9": {
+            "bytes": 414,
+            "sha256": "f62cecf04a8785a3e4f97ef25ff3725902a94880879fcd8b8eb428227f76f548"
+          },
+          "bzip2-9": {
+            "bytes": 520,
+            "sha256": "cea402a2e1e7aa5eb675a59826288123e035b597cac4b7289ce4b5f656d02a65"
+          }
+        },
+        "roundtrip_verified": true
+      },
+      "joint_local_sources": {
+        "modules": [
+          "Base",
+          "Method",
+          "Tasks.U01",
+          "Tasks.U02",
+          "Tasks.U03",
+          "Tasks.U04",
+          "Tasks.U05",
+          "Tasks.U06",
+          "proofs/u01.lean",
+          "proofs/u02.lean",
+          "proofs/u03.lean",
+          "proofs/u04.lean",
+          "proofs/u05.lean",
+          "proofs/u06.lean"
+        ],
+        "source_utf8_bytes": 3494,
+        "serialized_utf8_bytes": 3889,
+        "payload_sha256": "c193fd080386b3942503ff5893761fd89e1d15d6245b49d050f2e3f850e49e5f",
+        "compressed": {
+          "zlib-9": {
+            "bytes": 989,
+            "sha256": "26b9d5fcc06b0f0a440d649fd7920df0263e3aab95d5399bf22e5493b30cc0ff"
+          },
+          "bzip2-9": {
+            "bytes": 1084,
+            "sha256": "f0be39aa591d22e826d4369a956786ee09a9df5a39c98ca80d817075d9c4bc05"
+          }
+        },
+        "roundtrip_verified": true
+      }
+    },
+    "B": {
+      "nonshared_payload": {
+        "modules": [
+          "guide.txt",
+          "proofs/u01.lean",
+          "proofs/u02.lean",
+          "proofs/u03.lean",
+          "proofs/u04.lean",
+          "proofs/u05.lean",
+          "proofs/u06.lean"
+        ],
+        "source_utf8_bytes": 3209,
+        "serialized_utf8_bytes": 3453,
+        "payload_sha256": "d3ecaab52fb3eafe04b0c44110cdfa2657ae0ca677b2732400b971793678f3da",
+        "compressed": {
+          "zlib-9": {
+            "bytes": 1296,
+            "sha256": "088ec095a62ea78870fcdfae4f2dc1e6e48e3501bd1a9c0441b2e22e8fba126a"
+          },
+          "bzip2-9": {
+            "bytes": 1432,
+            "sha256": "19157e603691db4e0549de1b5fcbd16a366e98d11cec21e6e62d3e5fc475a30f"
+          }
+        },
+        "roundtrip_verified": true
+      },
+      "joint_local_sources": {
+        "modules": [
+          "Base",
+          "Method",
+          "Tasks.U01",
+          "Tasks.U02",
+          "Tasks.U03",
+          "Tasks.U04",
+          "Tasks.U05",
+          "Tasks.U06",
+          "guide.txt",
+          "proofs/u01.lean",
+          "proofs/u02.lean",
+          "proofs/u03.lean",
+          "proofs/u04.lean",
+          "proofs/u05.lean",
+          "proofs/u06.lean"
+        ],
+        "source_utf8_bytes": 5120,
+        "serialized_utf8_bytes": 5557,
+        "payload_sha256": "b627c6cd2381f1031b89b4d990aae89f912a287db511015a922557c7ccf24bc6",
+        "compressed": {
+          "zlib-9": {
+            "bytes": 1798,
+            "sha256": "47976ec4957c0ad513896556d32adfb6f3cea4a7f8370b5c11428f634fa30390"
+          },
+          "bzip2-9": {
+            "bytes": 1894,
+            "sha256": "6c99179cc32580334c8cc8679891a2f734bea09e5edfbfa2171e903b5a6356e8"
+          }
+        },
+        "roundtrip_verified": true
+      }
+    },
+    "guide_utf8_bytes": 1685,
+    "scope": "Same six verified fallback goals; shared mathematics stored once; logs and common research infrastructure excluded."
+  },
+  "scope": {
+    "author_designed_development_tasks": true,
+    "guidance_only": true,
+    "new_theory_effect_established": false,
+    "held_out_transfer_established": false,
+    "training_eligible": false
+  }
+}

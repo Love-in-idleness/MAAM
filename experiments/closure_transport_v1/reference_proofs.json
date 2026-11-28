@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provenance": "Author-supplied offline Lean proof terms, not model output, measured generation, or evidence of independent method use. proof is the term after :=; migration.proof_source constructs the complete module.",
+  "tasks": {
+    "c01": {
+      "proof": "by\n  intro G H g h f hf P hP\n  let F : Theory.Hom g h := \u27e8f, hf\u27e9\n  refine \u27e8F, ?_, ?_\u27e9\n  \u00b7 intro x\n    rfl\n  \u00b7 exact Theory.preimage_mul_closed F P hP\n",
+      "bridge": "Bundle the supplied raw map and multiplication-preservation equation, return pointwise agreement, then transport target-predicate closure."
+    },
+    "c02": {
+      "proof": "by\n  intro G H J g h j f q hf hq P hP\n  let F : Theory.Hom g j :=\n    { toFun := fun x => q (f x)\n      map_mul := fun x y => (congrArg q (hf x y)).trans (hq (f x) (f y)) }\n  refine \u27e8F, ?_, ?_\u27e9\n  \u00b7 intro x\n    rfl\n  \u00b7 exact Theory.preimage_mul_closed F P hP\n",
+      "bridge": "Construct the composite Hom locally; equality transport followed by the second preservation equation proves its map_mul field. Transport the supplied target closure."
+    },
+    "c03": {
+      "proof": "by\n  intro G H J g h j f q hf hq P Q hP hQ\n  let F : Theory.Hom g (Foundation.prodGroup h j) :=\n    { toFun := fun x => (f x, q x)\n      map_mul := fun x y => Prod.ext (hf x y) (hq x y) }\n  have closed : Theory.MulClosed (Foundation.prodGroup h j)\n      (fun z => P z.1 \u2227 Q z.2) := by\n    intro u v hu hv\n    exact \u27e8hP u.1 v.1 hu.1 hv.1, hQ u.2 v.2 hu.2 hv.2\u27e9\n  refine \u27e8F, ?_, ?_\u27e9\n  \u00b7 intro x\n    rfl\n  \u00b7 exact Theory.preimage_mul_closed F (fun z => P z.1 \u2227 Q z.2) closed\n",
+      "bridge": "Construct a paired Hom and coordinatewise preservation locally. Prove closure of the simultaneous target predicate from the two supplied closures, then transport it."
+    },
+    "c04": {
+      "proof": "by\n  intro G H g h f q hf hq\n  let F : Theory.Hom g (Foundation.prodGroup h h) :=\n    { toFun := fun x => (f x, q x)\n      map_mul := fun x y => Prod.ext (hf x y) (hq x y) }\n  have diagonal : Theory.MulClosed (Foundation.prodGroup h h)\n      (fun z => z.1 = z.2) := by\n    intro u v hu hv\n    change h.mul u.1 v.1 = h.mul u.2 v.2\n    exact (congrArg (fun z => h.mul z v.1) hu).trans\n      (congrArg (h.mul u.2) hv)\n  refine \u27e8F, ?_, ?_\u27e9\n  \u00b7 intro x\n    rfl\n  \u00b7 exact Theory.preimage_mul_closed F (fun z => z.1 = z.2) diagonal\n",
+      "bridge": "Construct the paired Hom locally and show the diagonal predicate closed using coordinate equality transport. Its preimage is the equalizer constraint; no commutativity is assumed."
+    },
+    "c05": {
+      "proof": "by\n  unfold ClosureTransport.Tasks.c05\n  decide\n",
+      "bridge": "Bool XOR has a closed neutral singleton. Complement maps true to that singleton, while true XOR true maps outside; complement does not preserve XOR. Finite witnesses refute the omitted premise."
+    },
+    "c06": {
+      "proof": "by\n  unfold ClosureTransport.Tasks.c06\n  decide\n",
+      "bridge": "The identity map preserves Bool XOR. The singleton true is not multiplication closed because true XOR true is false. This isolates the missing target-closure premise."
+    }
+  }
+}

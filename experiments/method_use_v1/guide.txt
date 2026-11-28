@@ -1,0 +1,29 @@
+Left-factor reduction
+
+Inputs and types: Work in a supplied Foundation.Group G with multiplication g.mul,
+inverse g.inv, and an equality g.mul a x = c. The general lemma
+MethodUse.left_factor g a x c turns that equality into x = g.mul (g.inv a) c.
+
+Premises: The group structure and equality must actually be available. An arbitrary
+binary operation does not supply an inverse or a cancellation rule.
+
+Choices: Identify the common left factor and the remaining expression. Reverse an
+equality first when necessary. The remaining expression may itself be composite;
+work from the outer factor inward when repeated reduction is useful.
+
+Steps: Apply the general lemma, or reproduce its construction by applying
+congrArg (fun z => g.mul (g.inv a) z) to the equality, then using associativity,
+g.inv_mul, and g.one_mul. Keep track of the resulting equality's orientation.
+For two expressions with the same left factor, reducing both sides to a common
+expression permits an equality by transitivity.
+
+Outputs and residual obligations: Reduction gives an equality in the group. If
+the desired conclusion concerns arguments of a map, additional hypotheses may
+be needed to recover those arguments. Discharge those obligations explicitly;
+do not infer injectivity from a function's type. Conversely, an already known
+equality can be transported through any function with congrArg.
+
+Boundaries: This guide directly handles a left factor, not an automatic right
+cancellation procedure. Missing inverses or a failed match mean this reduction
+does not directly apply; they do not establish that the requested proposition
+is unprovable. Inspect the actual goal and use any permitted proof instead.
