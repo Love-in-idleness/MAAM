@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provenance": "Author-supplied offline Lean proof terms, not model output, measured generation, or evidence of independent method use. The proof field is the term after :=; migration.proof_source constructs the complete module.",
+  "tasks": {
+    "u01": {
+      "proof": "by\n  intro G g a x y e\n  have hx := MethodUse.left_factor g a x (g.mul a y) e\n  have hy := MethodUse.left_factor g a y (g.mul a y) rfl\n  exact hx.trans hy.symm\n",
+      "bridge": "Reduce both terms with the common left factor; the two resulting equalities have a common right side."
+    },
+    "u02": {
+      "proof": "by\n  intro G g a x c e\n  exact MethodUse.left_factor g a x c e.symm\n",
+      "bridge": "Reverse the given equality before applying the common reduction lemma."
+    },
+    "u03": {
+      "proof": "by\n  intro G g a b x y e\n  have hx := MethodUse.left_factor g a (g.mul b x) (g.mul a (g.mul b y)) e\n  have hy := MethodUse.left_factor g a (g.mul b y) (g.mul a (g.mul b y)) rfl\n  have inner := hx.trans hy.symm\n  have hx' := MethodUse.left_factor g b x (g.mul b y) inner\n  have hy' := MethodUse.left_factor g b y (g.mul b y) rfl\n  exact hx'.trans hy'.symm\n",
+      "bridge": "Reduce the outer left factor, then reduce the inner left factor."
+    },
+    "u04": {
+      "proof": "by\n  intro X H h f hf a x y e\n  apply hf x y\n  have hx := MethodUse.left_factor h a (f x) (h.mul a (f y)) e\n  have hy := MethodUse.left_factor h a (f y) (h.mul a (f y)) rfl\n  exact hx.trans hy.symm\n",
+      "bridge": "Group reduction establishes equality of images; the explicitly supplied injectivity condition recovers equality of arguments."
+    },
+    "u05": {
+      "proof": "by\n  exact ⟨0, 1, rfl, by decide⟩\n",
+      "bridge": "Supply distinct natural-number witnesses whose products by zero agree; no group cancellation premise is assumed."
+    },
+    "u06": {
+      "proof": "by\n  intro X Y f x y e\n  exact congrArg f e\n",
+      "bridge": "Transport the given equality through the arbitrary function; injectivity and group inverses are unnecessary."
+    }
+  }
+}

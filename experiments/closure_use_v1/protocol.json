@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment_id": "closure-use-v1",
+  "fixture": "../closure_transport_v1",
+  "suite_sha256": "058dc6c6da4585bdd0ca70a40d638b67c86917a253c86c9e45d4f78f6598840b",
+  "references_sha256": "bc3815c3ab229a4797c18354c869694254b99ed8fcd524176241c40dbb6ea92d",
+  "guide_sha256": "d8dfb31d97902280b7ac8c7e2fb10439ba2d2d0548e7997bd5d959d4315228c9",
+  "conditions": [
+    "A",
+    "B"
+  ],
+  "repetitions": 2,
+  "task_ids": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06"
+  ],
+  "role_task_ids": {
+    "positive": [
+      "c01",
+      "c02",
+      "c03",
+      "c04"
+    ],
+    "boundary": [
+      "c05",
+      "c06"
+    ]
+  },
+  "config": {
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "reasoning_effort": "low",
+    "input_reservation": 16384,
+    "max_output_tokens": 32768,
+    "call_deadline_seconds": 180,
+    "max_calls": 48,
+    "max_cost_usd": "5",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "cost_margin": "1.25",
+    "pricing_checked_on": "2026-10-27"
+  }
+}

@@ -59,6 +59,29 @@ def parser():
     p.add_argument("--experiment", required=True)
     p.add_argument("--lean", default="lean")
     p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("precompression", help="measure frozen complete proof portfolios and candidate costs")
+    p.add_argument("--study", required=True)
+    p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("refactor-proofs", help="recheck and rewrite a cohort of archived Lean proofs")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--archives", required=True, help="directory containing baseline.json and v2.json")
+    p.add_argument("--workdir", required=True, help="new directory for witness sources and verification logs")
+    p.add_argument("--lean", default="lean")
+    p.add_argument("--output", help="write a copy of the report to a new file")
+    for command in ("group-start", "group-request", "group-submit", "group-freeze", "group-report", "group-run-local"):
+        p = commands.add_parser(command, help="bounded grouped proof search and shared helpers")
+        p.add_argument("--session", required=True)
+        p.add_argument("--output")
+        if command == "group-start":
+            p.add_argument("--plan", required=True)
+            p.add_argument("--solver-id", required=True)
+            p.add_argument("--mode", choices=("interactive_agent", "supplied_reference"), default="interactive_agent")
+        if command in {"group-request", "group-submit", "group-run-local"}:
+            p.add_argument("--phase", choices=("preparation", "control", "treatment"), required=True)
+        if command == "group-submit":
+            p.add_argument("--response", required=True)
+        if command in {"group-start", "group-submit", "group-run-local"}:
+            p.add_argument("--lean", default="lean")
     p = commands.add_parser("migration-start", help="freeze a task-local proof-migration session")
     p.add_argument("--suite", required=True)
     p.add_argument("--session", required=True)
@@ -134,6 +157,30 @@ def main(argv=None):
         elif args.command == "score-index":
             from .index import score_index
             report = score_index(args.index, args.name)
+        elif args.command == "precompression":
+            from .precompression import compare_study
+            report = compare_study(args.study)
+        elif args.command == "refactor-proofs":
+            from .proof_refactor import research_run
+            report = research_run(args.suite, args.archives, args.workdir, lean=args.lean)
+        elif args.command.startswith("group-"):
+            from . import grouped_search
+            from .theory import read_object
+            if args.command == "group-start":
+                report = grouped_search.start(args.plan, args.session, solver_id=args.solver_id,
+                                              mode=args.mode, lean=args.lean)
+            elif args.command == "group-request":
+                report = grouped_search.request(args.session, args.phase)
+            elif args.command == "group-submit":
+                report = grouped_search.submit(args.session, args.phase,
+                    read_object(Path(args.response)), lean=args.lean)
+            elif args.command == "group-freeze":
+                report = grouped_search.freeze(args.session)
+            elif args.command == "group-run-local":
+                from .grouped_methods import run
+                report = run(args.session, args.phase, lean=args.lean)
+            else:
+                report = grouped_search.report(args.session)
         elif args.command == "validate":
             corpus = Corpus.load(args.corpus)
             report = {"status": "valid", "nodes": len(corpus.nodes), "sha256": corpus.sha256,

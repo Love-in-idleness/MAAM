@@ -1,0 +1,33 @@
+Construct a map, establish preservation, and transport closure
+
+Inputs and types: The shared library supplies Foundation.Group, Theory.Hom,
+and Foundation.prodGroup. A raw function becomes a Hom only after providing its
+toFun and map_mul fields. Theory.MulClosed g P means that P is preserved by
+the multiplication g.mul.
+
+Premises: Obtain multiplication preservation for the intended map and closure
+of the chosen target predicate. Neither follows merely from a function type or
+from an arbitrary predicate. Closure under multiplication alone does not assert
+identity membership or inverse closure.
+
+Choices: Express the desired constraints as a predicate on the image of a map.
+Select the codomain and target predicate together. A composite map may use
+successive preservation equations; multiple observations may use a product
+codomain. The diagonal predicate on a product expresses equality of coordinates.
+
+Steps: Construct the Hom locally. Prove its map_mul field using the supplied
+equations, equality transport, and coordinate equalities as appropriate. Prove
+target-predicate closure locally. Apply Theory.preimage_mul_closed to that Hom,
+predicate, and closure proof. If an existential output requests a map, return
+the constructed object together with its pointwise agreement and closure evidence.
+
+Outputs and residual obligations: The result is multiplication closure of the
+preimage predicate, with an explicit map and checked preservation. Keep raw
+functions, bundled maps, product projections, and their types aligned. Agreement
+with a required raw function must be shown, not inferred from a matching name.
+
+Boundaries: Failure to construct the needed map or prove the target predicate
+closed means this transport rule has unmet premises. It does not prove the goal
+impossible. When asked for a counterexample, give actual witnesses and check the
+failed implication. Any permitted proof may be used; this guide is not a claim
+of novelty, automatic method discovery, or general transfer.

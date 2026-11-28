@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "status": "retained_development_failures",
+  "reason": "The initial intros-only methods did not unfold the named goal definitions. The final method explicitly unfolds each original goal before introductions.",
+  "group_record": {
+    "schema_version": 1,
+    "group_id": "d4078bdff30147acaf48ba0d2d42d1b1",
+    "plan_sha256": "599ce2ee8b6275b85eb66ce8542e4b8cf0a9e2148ddc87e2b306fd14d5cdff81",
+    "suite_fingerprints": {
+      "suite_sha256": "4aef75d6afe3bf35e7c63a9c00004f918c59c460575b10a879ac39dfcb01328c",
+      "package_sha256": "5c55bc73a8bc629acfaf80725cf930c23188983a63e90743b069241810cb459c",
+      "source_sha256": {
+        "Base": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7",
+        "Candidate": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49",
+        "GroupGoal": "20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f"
+      },
+      "evaluator_sha256": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+      "reference_evaluator_sha256": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+      "checker_sha256": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29"
+    },
+    "targets": [
+      {
+        "id": "one",
+        "goal": "Calibration.GoalOne"
+      },
+      {
+        "id": "two",
+        "goal": "Calibration.GoalTwo"
+      }
+    ],
+    "tools": {
+      "grouped_search.py": "e32029060c46c4b7a6440fcd432685ca72508e71a2924a419039fdd2fe2b58bb",
+      "migration.py": "fe45e1754c130671274a5ee11343c1d5dafb8fcc1e940e7217ca62c0b6ee53f4",
+      "theory.py": "882293f69390e30555f8f1486b3fb2712d4087c58419abadd1f7aca401cdd7e9",
+      "PackageCheck.lean": "2175e411aea983f06544742e2b760be022b51746cbf1db45e6dcb15548fc8e29",
+      "precompression.py": "843703f3fc5b23cc54ce11e77e7f55702dc36b433cada9b2625e61cd5aede850",
+      "attribution.py": "2bc1237096cf52433be549296606ec5843e07ea65c9377b6458d5584cb1ee2fd",
+      "grouped_methods.py": "8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317"
+    },
+    "solver_id": "deterministic-core-v1",
+    "mode": "supplied_reference"
+  },
+  "snapshot": {
+    "Base.lean": "import Init\n\nnamespace Calibration\n\ndef GoalOne : Prop := ∀ (P Q : Prop), P → Q → P\ndef GoalTwo : Prop := ∀ (P Q R : Prop), P → Q → R → P\n\nend Calibration\n",
+    "Candidate.lean": "import Base\n\nnamespace Calibration\n\ntheorem keep (P Q : Prop) (hp : P) (_hq : Q) : P := hp\n\nend Calibration\n",
+    "GroupGoal.lean": "import Base\n\nnamespace GroupGoal\ndef goal : Prop := Calibration.GoalOne ∧ Calibration.GoalTwo\nend GroupGoal\n",
+    "package.json": "{\n  \"schema_version\": 1,\n  \"package_id\": \"keep-v1\",\n  \"base_id\": \"proposition-base-v1\",\n  \"status\": \"proved_extension\",\n  \"modules\": [\n    \"Candidate\"\n  ],\n  \"declarations\": [\n    \"Calibration.keep\"\n  ],\n  \"conjectures\": []\n}\n",
+    "suite.json": "{\n  \"schema_version\": 1,\n  \"phase\": \"migration_calibration\",\n  \"suite_id\": \"grouped-precompression-calibration-v1\",\n  \"lean_version\": \"4.33.1\",\n  \"base\": {\n    \"id\": \"proposition-base-v1\",\n    \"modules\": [\n      \"Base\"\n    ],\n    \"allowed_axioms\": [\n      \"propext\",\n      \"Quot.sound\",\n      \"Classical.choice\"\n    ],\n    \"allowed_core_prefixes\": [\n      \"Init\"\n    ]\n  },\n  \"package\": \"package.json\",\n  \"sources\": {\n    \"Base\": {\n      \"path\": \"Base.lean\",\n      \"sha256\": \"0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7\"\n    },\n    \"Candidate\": {\n      \"path\": \"Candidate.lean\",\n      \"sha256\": \"6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49\"\n    },\n    \"GroupGoal\": {\n      \"path\": \"GroupGoal.lean\",\n      \"sha256\": \"20048b756da8bed08a794ecf6232535af968a1975bc0e835b0cfadb11202e61f\"\n    }\n  },\n  \"tasks\": [\n    {\n      \"id\": \"group\",\n      \"split\": \"development\",\n      \"family\": \"grouped\",\n      \"module\": \"GroupGoal\",\n      \"goal\": \"GroupGoal.goal\"\n    }\n  ],\n  \"budget\": {\n    \"max_attempts_per_task\": 2,\n    \"max_proof_bytes\": 32768,\n    \"max_heartbeats\": 200000,\n    \"per_command_timeout_seconds\": 60,\n    \"per_attempt_timeout_seconds\": 180\n  }\n}\n"
+  },
+  "attempts": [
+    {
+      "phase": "control",
+      "result": {
+        "task_id": "group",
+        "attempt": 1,
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof_sha256": "8196e96c6a9e3e7a6b18e4f28ba52ace0af4dd978206f5fa77c447488f1fa63a",
+        "submission_sha256": "53e356e0a9be7a238688b4592ba49b49bcae01239fce6c0a94ed3f5821ce0af6",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.03314922100003059,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.15946583900006317,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.1649168330000066,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.15506081900002755,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "c750f4c0f279d208a6e11c790d31fc4f74ea714d72f56fc2bfa0c0ed257bad88"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:12:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:17:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof": "by\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_direct; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "Proof.lean:12:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:17:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+      }
+    },
+    {
+      "phase": "control",
+      "result": {
+        "task_id": "group",
+        "attempt": 2,
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof_sha256": "c9d6dec6475f7bb35b2f0c3bf4b3d186e2c0c463de79d159c5eef744286d49fe",
+        "submission_sha256": "2087c18f3ac9a4ee8d93e1e8b791645b45bc04fbd56cbc7ca27c0fd86a2d0910",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.028537546000052316,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.15729722700007187,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.20677507300001707,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.15466552299994873,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "6f4f46a85ec1d5bbca5e76dadc829122247588e816fd04dc59b8733619ab1392"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:14:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:20:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof": "by\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_shared_identity; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "Proof.lean:14:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:20:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+      }
+    },
+    {
+      "phase": "preparation",
+      "result": {
+        "task_id": "group",
+        "attempt": 1,
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof_sha256": "8196e96c6a9e3e7a6b18e4f28ba52ace0af4dd978206f5fa77c447488f1fa63a",
+        "submission_sha256": "53e356e0a9be7a238688b4592ba49b49bcae01239fce6c0a94ed3f5821ce0af6",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.03304866200005563,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.17688480000003892,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.15579838099995413,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.1604556650000859,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "c750f4c0f279d208a6e11c790d31fc4f74ea714d72f56fc2bfa0c0ed257bad88"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:12:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:17:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof": "by\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_direct; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "Proof.lean:12:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:17:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+      }
+    },
+    {
+      "phase": "preparation",
+      "result": {
+        "task_id": "group",
+        "attempt": 2,
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof_sha256": "c9d6dec6475f7bb35b2f0c3bf4b3d186e2c0c463de79d159c5eef744286d49fe",
+        "submission_sha256": "2087c18f3ac9a4ee8d93e1e8b791645b45bc04fbd56cbc7ca27c0fd86a2d0910",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.0297035879999612,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.15690819400003875,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.18703605200005313,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.2197651889999861,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "6f4f46a85ec1d5bbca5e76dadc829122247588e816fd04dc59b8733619ab1392"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:14:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:20:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "3369c224cc3378883ca57576b5a5e1a360028b6571eced2231c1540a7a4ab55a",
+        "proof": "by\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_shared_identity; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "Proof.lean:14:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:20:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+      }
+    },
+    {
+      "phase": "treatment",
+      "result": {
+        "task_id": "group",
+        "attempt": 1,
+        "request_sha256": "2600ffdc5cffab018dd1652414c84a8c5d10246b02b847cd07d36cc8c2265afb",
+        "proof_sha256": "5c5503a319c862c2c86d2d6b46c5efe020708fe837a867c1646bb20518c66c30",
+        "submission_sha256": "eb5bf2bb86302cc898cfc2537228607eaca287faba98ac342d00b943ac10e5ac",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.03290494600003058,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.17823021900005642,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.15817975599998135,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Candidate",
+            "seconds": 0.20445882800004256,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.16386962100000346,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-04.stdout",
+                "sha256": "00d922385817c8a0bf37f41a8acb0b0c30d235b59b85e55731b940ea4eee6519"
+              },
+              "stderr": {
+                "path": "command-04.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:13:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:18:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\nimport Candidate\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "2600ffdc5cffab018dd1652414c84a8c5d10246b02b847cd07d36cc8c2265afb",
+        "proof": "by\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_direct; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "",
+        "command-04.stderr": "",
+        "command-04.stdout": "Proof.lean:13:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalOne\nProof.lean:18:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\n⊢ Calibration.GoalTwo\n"
+      }
+    },
+    {
+      "phase": "treatment",
+      "result": {
+        "task_id": "group",
+        "attempt": 2,
+        "request_sha256": "2600ffdc5cffab018dd1652414c84a8c5d10246b02b847cd07d36cc8c2265afb",
+        "proof_sha256": "59a16d232dbb2ec49bae2b4940511c728f8a84218e403483a79adfb74ffb2606",
+        "submission_sha256": "a2b24edeabb600c5a6b311bc720a937d8020815906192c1da2862ce70dcac47b",
+        "generation_usage": "caller supplied; not independently verified",
+        "status": "rejected",
+        "trace": [
+          {
+            "stage": "toolchain",
+            "seconds": 0.02989323199994942,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-00.stdout",
+                "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9"
+              },
+              "stderr": {
+                "path": "command-00.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Base",
+            "seconds": 0.1610397560000365,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-01.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-01.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:GroupGoal",
+            "seconds": 0.17073192800000925,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-02.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-02.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Candidate",
+            "seconds": 0.17228634600007808,
+            "returncode": 0,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-03.stdout",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              },
+              "stderr": {
+                "path": "command-03.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          },
+          {
+            "stage": "compile:Proof",
+            "seconds": 0.17719686399993861,
+            "returncode": 1,
+            "timed_out": false,
+            "logs": {
+              "stdout": {
+                "path": "command-04.stdout",
+                "sha256": "cc86d00d92c01a840c1f3423333fa0887a9f50e0cc15ee495dac2108851a2fdc"
+              },
+              "stderr": {
+                "path": "command-04.stderr",
+                "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          }
+        ],
+        "audit": null,
+        "toolchain": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "failure": {
+          "kind": "verification_failed",
+          "stage": "compile:Proof",
+          "message": "Proof.lean:15:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:21:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+        }
+      },
+      "proof_source": "import Base\nimport GroupGoal\nimport Candidate\n\nnamespace Submission\ntheorem solve : GroupGoal.goal :=\nby\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\nend Submission\n",
+      "submission": {
+        "task_id": "group",
+        "request_sha256": "2600ffdc5cffab018dd1652414c84a8c5d10246b02b847cd07d36cc8c2265afb",
+        "proof": "by\n  have reuse (P : Prop) (h : P) : P := h\n  exact\n    And.intro\n      (show Calibration.GoalOne from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )\n      (show Calibration.GoalTwo from\n        by\n          intros\n          apply reuse\n          first | assumption | rfl\n      )",
+        "bridge": "Deterministic core_shared_identity; method source SHA-256 8166b742dcdb147e57fe4513db68a7b88e5890cd53d841e50f56c3fcc3deb317. Lean must verify every original target."
+      },
+      "logs": {
+        "command-00.stderr": "",
+        "command-00.stdout": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)\n",
+        "command-01.stderr": "",
+        "command-01.stdout": "",
+        "command-02.stderr": "",
+        "command-02.stdout": "",
+        "command-03.stderr": "",
+        "command-03.stdout": "",
+        "command-04.stderr": "",
+        "command-04.stdout": "Proof.lean:15:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalOne\nProof.lean:21:31: error: Tactic `rfl` failed: Expected the goal to be a binary relation\n\nHint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`\n\nreuse : ∀ (P : Prop), P → P\n⊢ Calibration.GoalTwo\n"
+      }
+    }
+  ],
+  "usage": "No model API calls; these are failed deterministic method proposals, not measured theory benefits."
+}

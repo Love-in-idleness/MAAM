@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "package_id": "preimage-closure-v1",
+  "base_id": "groups-hom-products-v1",
+  "idea": "Multiplication closure transports through a caller-constructed multiplication-preserving map.",
+  "status": "proved_extension",
+  "modules": [
+    "Method"
+  ],
+  "declarations": [
+    "Theory.MulClosed",
+    "Theory.preimage_mul_closed"
+  ],
+  "conjectures": []
+}

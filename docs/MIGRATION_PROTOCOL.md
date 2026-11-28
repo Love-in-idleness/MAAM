@@ -1,5 +1,17 @@
 # 冻结任务与证明迁移 / Frozen tasks and proof migration
 
+| 中文 | English |
+| --- | --- |
+| 新增[成组求证控制器](GROUPED_PROOF_SEARCH.md)：共同预压缩、冻结、控制与候选阶段，支持在整组中复用局部辅助引理并核验全部原目标。 | Added a grouped controller with shared preparation, freezing, control and treatment phases, local shared helpers and verification of every original goal. |
+| 两种有限旧工具方法已可生成候选并自动执行，双方使用同样的响应与 Lean 预算上限。模型生成用量与外部信息隔离仍需另行计量。 | Two bounded existing-tool methods generate candidates automatically under equal response and Lean caps. Model usage and external information isolation require separate evidence. |
+
+
+| 中文 | English |
+| --- | --- |
+| 已接入[证明预压缩与理论边际价值](PROOF_PRECOMPRESSION.md)及完整路线计量入口。共享模块计一次，分别报告可选采用、完整建库与已建库复用。 | Added precompression theory and finite complete-route measurement, charging shared modules once and distinguishing optional adoption, mandatory delivery and installed reuse. |
+| 两道给定命题的四组证明完成新 Lean 核验；跨模块自动搜索与同预算概念归因仍待实现。 | Four supplied proof variants on two goals receive fresh Lean checks. Automatic cross-module search and matched-budget concept attribution remain future work. |
+
+
 M2 的第一步是让 LLM 提交真正回到原目标的证明，并留下可核查的尝试记录。
 The first M2 step lets an LLM submit proofs of the original goals and leaves inspectable attempt records.
 
