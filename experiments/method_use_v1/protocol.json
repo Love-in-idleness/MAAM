@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment_id": "method-use-v1",
+  "suite": "suite.json",
+  "references": "reference_proofs.json",
+  "guide": "guide.txt",
+  "math_condition": "treatment",
+  "conditions": [
+    "A",
+    "B"
+  ],
+  "repetitions": 2,
+  "task_ids": [
+    "u01",
+    "u02",
+    "u03",
+    "u04",
+    "u05",
+    "u06"
+  ],
+  "role_task_ids": {
+    "positive": [
+      "u01",
+      "u02",
+      "u03",
+      "u04"
+    ],
+    "boundary": [
+      "u05",
+      "u06"
+    ]
+  },
+  "config": {
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "reasoning_effort": "low",
+    "input_reservation": 16384,
+    "max_output_tokens": 32768,
+    "call_deadline_seconds": 180,
+    "max_calls": 48,
+    "max_cost_usd": "5",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "cost_margin": "1.25",
+    "pricing_checked_on": "2026-10-27"
+  }
+}

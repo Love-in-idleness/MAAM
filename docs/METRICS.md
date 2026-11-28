@@ -1,151 +1,80 @@
-# 指标与操作定义 / Metrics and operational definitions
+# Metrics and Operational Definitions
 
-## 测量对象 / Measurement object
+[简体中文](METRICS.zh-CN.md)
 
-评价的对象是 `(proposition, supplied proof, corpus, primitive boundary, representation, parameters)`，只给命题的自然语言句子不足以计算这些指标。
-The evaluated object is `(proposition, supplied proof, corpus, primitive boundary, representation, parameters)`; a natural-language statement alone does not determine these metrics.
+## Measurement Object
 
-独立的[整包压缩计量](COMPRESSED_PACKAGES.md)使用固定 JSON 编码与标准库压缩器，报告完整候选和实际证明共同压缩后的绝对字节数；它不替代下述论文指标或冻结的源码选择规则。
-This implemented sidecar reports both a nonshared payload and joint local sources with the common base; its archived single-task result is not a calibrated comprehension score or a new-theory effectiveness estimate.
+MAAM evaluates the tuple `(proposition, supplied proof, corpus, primitive boundary, representation, parameters)`. A natural-language proposition alone does not determine these metrics.
 
-对于依赖图中的非原始节点 `u`，用 `w(u,v)` 表示在命题类型和证明体中引用 `v` 的总次数。
-For a nonprimitive node `u`, let `w(u,v)` count occurrences of `v` in its signature and body together.
+For a nonprimitive node `u` in the dependency graph, let `w(u, v)` count occurrences of `v` across `u`'s signature and body together:
 
 ```math
-U(u)=\sum_v w(u,v)U(v),\qquad U(g)=1\quad(g\text{ primitive}).
+U(u) = \sum_v w(u, v)\,U(v), \qquad U(g) = 1 \quad (g \text{ primitive}).
 ```
 
-分别对命题类型及证明体求和，得到 `Us` 和 `Ub`；引用定理时，展开其类型与证明的合计长度，符合原文图模型。
-Summing separately over signature and body references gives `Us` and `Ub`; a reference to a theorem expands its combined signature-and-body length, following the paper's graph model.
+Summing separately over signature and body references gives `Us` and `Ub`. Referencing a theorem expands its combined signature-and-body length, following the paper's graph model. This is purely recursive reference substitution — it does not perform beta reduction, search for optimal definitions, or find shortest proofs.
 
-这一过程只做引用的递归代换，不做 beta 归约、自动寻找最佳定义、或最短证明搜索。
-This recursively substitutes references; it does not perform beta reduction, search for optimal definitions, or find shortest proofs.
+- The general JSON corpus interface rejects cycles.
+- The separate full-library Mathlib reproduction pipeline condenses strongly connected components (SCCs), removes internal edges, sums external multiplicities, and records each node's component size.
+- Whole-package compression ([COMPRESSED_PACKAGES.md](COMPRESSED_PACKAGES.md)) is an independent sidecar using canonical JSON and standard-library compressors (`zlib`/`bzip2`); it does not replace the paper metrics below.
 
-循环会使这种展开失去有限解释，因此通用 JSON 语料接口拒绝带环数据。
-Cycles prevent a finite interpretation of this expansion, so the general JSON corpus interface rejects cyclic data.
-
-独立的全库复现脚本按论文先收缩强连通分量，删除内部边、合并外部重复次数，再计算图统计；每条索引结果都标出分量大小，该约定不声称将递归程序真正展开成了有限字符串。
-The separate full-library reproduction script first condenses strongly connected components, removes internal edges, and combines external multiplicities before computing graph statistics; each indexed result records its component size, and this convention does not claim an actual finite expansion of a recursive program.
-
-## 论文指标 / Paper metrics
-
-以下为 [ABFM §5](https://arxiv.org/html/2603.20396v1#S5) 中的两项比值及其原始层级替代量。
-These are the two ratios and the primitive-level alternative in [ABFM §5](https://arxiv.org/html/2603.20396v1#S5).
+## Paper Metrics ([ABFM §5](https://arxiv.org/html/2603.20396v1#S5))
 
 ```math
-T_0=\frac{U_s+U_b}{W_s+W_b},\qquad
-I_0=\frac{W_b}{W_s},\qquad I_{\mathrm{primitive}}=\frac{U_b}{U_s}.
+T_0 = \frac{U_s + U_b}{W_s + W_b}, \qquad
+I_0 = \frac{W_b}{W_s}, \qquad
+I_{\mathrm{primitive}} = \frac{U_b}{U_s}.
 ```
 
-`references` 模式使 `Ws` 和 `Wb` 分别等于类型和证明中的引用次数；`source_tokens` 模式使用调用方提供的真实 token 数。
-In `references` mode, `Ws` and `Wb` are signature and body reference counts; `source_tokens` mode uses the caller's actual token counts.
+- **Length conventions**: `references` mode sets `Ws` and `Wb` to signature and body reference counts; `source_tokens` mode uses caller-supplied token counts. Do not mix modes in one corpus.
+- **Boundary & missing values**: Primitive nodes use `Ws = Us = 1`, `Wb = Ub = 0`. Axioms have no body and are not treated as proved theorems. Conjectures have `null` body lengths, so `T0`, `I0`, and overall scores are `null` (as are ratios with zero denominators).
 
-这两种口径不能混合进入同一语料，原始计数和口径会随报告一起输出。
-These measurement conventions must not be mixed in one corpus, and the report includes both the raw lengths and their convention.
+## PageRank and Relative Score
 
-原始边界节点按约定取 `Ws=Us=1`、`Wb=Ub=0`；有类型而无证明体的公理不视为已经证明的命题。
-Primitive boundary nodes use `Ws=Us=1` and `Wb=Ub=0` by convention; an axiom with a signature and no body is not treated as a proved proposition.
-
-猜想的 `Wb` 和 `Ub` 为未知，`I0`、`T0`、综合分均为空；分母为零的比值也为空。
-A conjecture has unknown `Wb` and `Ub`, so `I0`, `T0`, and its overall score are null; ratios with a zero denominator are also null.
-
-## PageRank 与相对分 / PageRank and relative score
-
-原文要求将两个指标归一化到可比尺度，但未给出唯一约定；本实现选择以下可审查的变换。
-The paper calls for normalising the metrics to comparable scales without prescribing a unique convention; this implementation chooses the following auditable transformation.
+Intrinsic metrics are normalised via logarithms (zero if the corpus maximum is zero; nodes with incomplete metrics or `sorry` taint contribute no intrinsic preference):
 
 ```math
-\widetilde T(u)=\frac{\log(1+T_0(u))}{\max_v\log(1+T_0(v))},\qquad
-\widetilde I(u)=\frac{\log(1+I_0(u))}{\max_v\log(1+I_0(v))}.
+\widetilde T(u) = \frac{\log(1 + T_0(u))}{\max_v \log(1 + T_0(v))}, \qquad
+\widetilde I(u) = \frac{\log(1 + I_0(u))}{\max_v \log(1 + I_0(v))}.
 ```
-
-最大值为零时，相应归一化分量取零；缺少完整内在指标或受 `sorry` 污染的节点不提供内在偏好证据。
-If a maximum is zero, that normalised component is zero; nodes with incomplete intrinsic metrics or `sorry` taint supply no intrinsic preference evidence.
 
 ```math
-J_0(u)=\beta\widetilde T(u)+(1-\beta)\widetilde I(u),\qquad
-q(u)=(1-\epsilon)\frac{J_0(u)}{\sum_vJ_0(v)}+\frac{\epsilon}{N}.
+J_0(u) = \beta\,\widetilde T(u) + (1 - \beta)\,\widetilde I(u), \qquad
+q(u) = (1 - \epsilon)\,\frac{J_0(u)}{\sum_v J_0(v)} + \frac{\epsilon}{N}.
 ```
 
-若所有 `J0` 为零则使用均匀跳转；`epsilon=10^-12` 的显式平滑保证每个跳转概率为正。
-If all `J0` values vanish, teleportation is uniform; explicit smoothing with `epsilon=10^-12` makes each teleportation probability positive.
-
-依赖边从使用者指向被使用的声明，转移概率与重复次数成比例。
-Dependency edges point from a user to the declaration it uses, and transition probabilities are proportional to multiplicities.
+Teleportation is uniform when all `J0` vanish, with explicit smoothing `epsilon = 10^-12`. Dependency edges point from user to dependency with transition probability proportional to multiplicity, and dangling-node mass is redistributed via `q`:
 
 ```math
-\pi(v)=(1-\alpha)q(v)
-+\alpha\sum_{u:W(u)>0}\pi(u)\frac{w(u,v)}{W(u)}
-+\alpha q(v)\sum_{u:W(u)=0}\pi(u),\qquad I_1(v)=\pi(v).
+\pi(v) = (1 - \alpha)\,q(v)
++ \alpha \sum_{u:\,W(u) > 0} \pi(u)\,\frac{w(u, v)}{W(u)}
++ \alpha\,q(v) \sum_{u:\,W(u) = 0} \pi(u), \qquad I_1(v) = \pi(v).
 ```
 
-最后一项明确处理了没有依赖的悬挂节点，将其质量按 `q` 再分配；否则概率会流失。
-The last term handles dangling nodes explicitly by redistributing their mass according to `q`, so probability is conserved.
+Defaults `alpha = 0.85` and `beta = 0.5` are editable engineering choices. Reports include iteration count, L1 stationary residual, and total mass; non-convergence raises an error.
 
-默认 `alpha=0.85`、`beta=0.5` 只是可修改的工程初值，并非作者验证过的最优参数。
-The defaults `alpha=0.85` and `beta=0.5` are editable engineering choices, not author-validated optimal parameters.
-
-程序输出收敛步数、平稳方程的 L1 残差和概率总质量，未收敛时拒绝输出评分。
-The report includes iteration count, L1 stationary-equation residual, and total probability mass; failure to converge produces an error rather than a score.
-
-综合分仅对具有完整指标、无已知 admission 污染且 `kind=theorem` 的节点计算。
-The overall score is calculated only for nodes with complete metrics, no known admission taint, and `kind=theorem`.
+The relative `score` (0–100) is computed only for `kind = theorem` nodes with complete metrics and no admission taint, using midranks for ties (50 for a singleton cohort):
 
 ```math
-\operatorname{score}(u)=100\frac{\#\{v:I_1(v)<I_1(u)\}+\tfrac12(\#\{v:I_1(v)=I_1(u)\}-1)}{n-1}.
+\operatorname{score}(u) = 100\,\frac{\#\{v : I_1(v) < I_1(u)\} + \tfrac{1}{2}(\#\{v : I_1(v) = I_1(u)\} - 1)}{n - 1}.
 ```
 
-同分使用平均秩，单元素对照组约定为 50；浮点近似相等的判据在代码中固定，输出 `I1` 保留原始值。
-Ties use midranks and a singleton cohort gets 50 by convention; floating-point tie tolerances are fixed in code, while raw `I1` is retained.
+Scores are corpus- and parameter-relative and cannot be compared across different corpora or boundaries.
 
-语料新增节点、边界改变、证明改写或参数改变都可能改变综合分，因此跨语料的分数不能直接比较。
-Adding corpus nodes, changing boundaries, rewriting proofs, or changing parameters can alter the score, so scores from different corpora are not directly comparable.
+## Proof Efficiency ([BDF §3.4.1](https://arxiv.org/html/2604.06107v1#S3.SS4.SSS1))
 
-## 后续论文的证明效率 / Proof efficiency from the follow-up
-
-[BDF §3.4.1](https://arxiv.org/html/2604.06107v1#S3.SS4.SSS1) 按证明中所有命题的长度之和定义代价，再取最小值。
-[BDF §3.4.1](https://arxiv.org/html/2604.06107v1#S3.SS4.SSS1) defines proof cost by summing statement lengths along a proof and then minimising it.
-
-本实现接收显式的有限推理超图；每条规则的全部前提必须成立，多个规则构成备选证明。
-This implementation accepts an explicit finite inference hypergraph; all premises of a rule must hold, and different rules provide alternative proofs.
+Given an explicit finite inference hypergraph (axioms `A`, statement lengths `l`, rules `r => P`):
 
 ```math
-m_F(P)=\min\left(\{l(P):P\in A\}\cup
-\left\{l(P)+\sum_{s\in r}m_F(s):r\Rightarrow P\right\}\right),\qquad
-E_F(P)=m_F(P)/l(P).
+m_F(P) = \min\left(\{l(P) : P \in A\} \cup \left\{l(P) + \sum_{s \in r} m_F(s) : r \Rightarrow P\right\}\right), \qquad
+E_F(P) = \frac{m_F(P)}{l(P)}.
 ```
 
-未从公理或无前提规则建立的循环不会证明自身，无法导出时返回空值。
-A cycle without an axiom or a premise-free rule cannot prove itself; underivability returns null.
+Cycles without an axiom or premise-free rule cannot prove themselves (underivable statements return `null`). This computes the exact minimum in the supplied finite **tree-proof** space (repeated subproofs are charged repeatedly); it is not DAG subproof sharing or a global minimum over all formal systems, and is not mixed into `score`.
 
-该算法精确解决给定有限树证明空间的最小代价，但同一子证明被多次使用时重复计费；它既不是 DAG 共享子证明最优化，也不是遍历所有形式系统所得的普遍最小值。
-The algorithm finds the exact minimum in the supplied finite tree-proof space, charging repeated subproofs repeatedly; it does not optimise shared-subproof DAGs or minimise over all formal systems.
+## Known Interpretive Limits
 
-`E_finite` 没有自动混入 `score`，因为两者使用的成本模型与对照对象不同。
-`E_finite` is not automatically mixed into `score`, because their cost models and comparison objects differ.
-
-## 已知解释限制 / Known interpretive limits
-
-当前指标是[分层压缩框架](COMPRESSION_FRAMEWORK.md)中的部分描述量，不直接度量规格的充分性、命题的推广范围、AI 的理解难度或未来复用价值。
-The current metrics cover only some descriptive layers and do not directly measure specification adequacy, generality, AI comprehension or future reuse.
-
-[AI 理解成本提案](COGNITIVE_COMPRESSION.md)以广泛的已有数学知识为条件，区分新增获取成本、当前使用成本与跨任务摊销；依赖展开量不表示每次都要重新学习全部前置理论。
-The proposed AI evaluation conditions on broad mathematical knowledge and separates acquisition, use and amortization, without interpreting dependency expansion as repeated learning.
-
-同依赖下的 200 与 100 长度不蕴含难度比例，1200 的模块化证明也可能比 1000 的整体证明更易被 AI 使用；非线性与统摄力须通过条件明确的行为和不同任务族验证，现有 `score` 不据此重新解释或调整。
-Equal dependencies do not make difficulty proportional to length, and longer modular proofs may help; these hypotheses leave the existing descriptive score unchanged.
-
-构造被重新组织为存在性证据时，须保留原构造与验证的依赖；声明由定义改列为定理、或节点被拆分，会改变评分资格及图统计，但不能据此推断数学价值改变。
-Reorganizing a construction as existence evidence preserves its dependencies, while recategorizing or splitting declarations can change scoring eligibility and graph statistics without establishing a change in mathematical value.
-
-源码长度、核证明项大小、引用树展开及共享声明账本使用不同成本模型，不能把其中一个冒充另一个；改变原始边界或计量规则时应另建可辨识的比较。
-Source size, kernel-term size, reference-tree expansion and shared-declaration ledgers use distinct cost models and require explicit versioning when their boundaries or conventions change.
-
-一个命题可以有多种证明，较差或刻意冗长的证明可能抬高 `I0`；本版并不声称识别了最优证明。
-A proposition may have many proofs, and a poor or deliberately padded proof may inflate `I0`; this version does not claim to have identified an optimal proof.
-
-数学兴趣还可能来自猜想的启发性、物理意义、概念生成能力与历史处境，这些未被当前指标完整捕获。
-Mathematical interest may also come from a conjecture's suggestiveness, physical meaning, concept formation, and historical context, which the current metrics do not fully capture.
-
-输出旨在提供可检验的研究信号，不能将启发式分位数理解为命题有价值的概率。
-The output supplies testable research signals; its heuristic percentile is not a probability that a proposition is valuable.
+- Static metrics do not measure specification adequacy, generality, AI comprehension difficulty, or future reuse value.
+- Dependency expansion does not represent repeated learning of background theory; longer modular proofs can be easier to use than shorter monolithic proofs.
+- Source size, kernel-term size, reference-tree expansion, and shared-declaration ledgers are distinct cost models and must not be conflated.
+- Padding a proof can inflate `I0`; MAAM does not claim to find optimal proofs, and percentile scores are testable research signals rather than probabilities of mathematical value.

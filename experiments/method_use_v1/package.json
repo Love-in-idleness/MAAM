@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "package_id": "left-factor-common-v1",
+  "base_id": "minimal-groups-v1",
+  "idea": "A checked left-factor reduction lemma shared by both guidance conditions.",
+  "status": "proved_extension",
+  "modules": ["Method"],
+  "declarations": ["MethodUse.left_factor"],
+  "conjectures": []
+}
