@@ -49,6 +49,9 @@ def parser():
     p.add_argument("--experiment", required=True)
     p.add_argument("--lean", default="lean")
     p.add_argument("--output", help="write the report to a new file")
+    p = commands.add_parser("precompression", help="measure frozen complete proof portfolios and candidate costs")
+    p.add_argument("--study", required=True)
+    p.add_argument("--output", help="write the report to a new file")
     p = commands.add_parser("migration-start", help="freeze a task-local proof-migration session")
     p.add_argument("--suite", required=True)
     p.add_argument("--session", required=True)
@@ -124,6 +127,9 @@ def main(argv=None):
         elif args.command == "score-index":
             from .index import score_index
             report = score_index(args.index, args.name)
+        elif args.command == "precompression":
+            from .precompression import compare_study
+            report = compare_study(args.study)
         elif args.command == "validate":
             corpus = Corpus.load(args.corpus)
             report = {"status": "valid", "nodes": len(corpus.nodes), "sha256": corpus.sha256,

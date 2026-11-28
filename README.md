@@ -26,11 +26,12 @@ The first command measures a supplied proof of `A ∧ B → B`, reporting reduct
 - [Data Formats](docs/DATA.md) — JSON schemas for reference corpora, precision handling, and finite proof hypergraphs.
 - [Lean Adapter](lean/README.md) — Exporting declarations and dependencies from Lean 4.24.0 projects.
 - [Theory-Package Evaluation](docs/THEORY_PACKAGES.md) — Isolated Lean verification and full-package cost ledgers.
+- [Proof Precompression & Portfolio Accounting](docs/PROOF_PRECOMPRESSION.md) — Complete-route measurement (`maam precompression --study ...`), charging shared modules once across optional adoption, mandatory delivery, and installed reuse.
 - [Fixed-Snapshot Reproduction](docs/REPRODUCTION.md) — Mathlib snapshot (`d167cc6dc962ab340507362ea2f4bcfcff44f01b`) and monoid coverage experiments ([summary](reports/mathlib/summary.json), [status](results/reproduction_status.json)).
 
 ## Current Status
 
-- **Implemented**: Static metric CLI, Lean 4.24.0 export and isolated verification, hom/kernel reference migration ([experiments/hom_kernel/README.md](experiments/hom_kernel/README.md)), metered DeepSeek transfer/guidance/construction controllers, v2 explicit theorem contract, package ablations, and offline whole-package compression (`zlib`/`bzip2`).
+- **Implemented**: Static metric CLI, Lean 4.24.0 export and isolated verification, hom/kernel reference migration ([experiments/hom_kernel/README.md](experiments/hom_kernel/README.md)), metered DeepSeek transfer/guidance/construction controllers, v2 explicit theorem contract, package ablations, proof precompression & complete-route accounting (`maam precompression`), and offline whole-package compression (`zlib`/`bzip2`).
 - **Observed**: In the M1 hom/kernel reference migration, the local proof body shrinks from `77` to `29` source tokens, while total nonshared source grows from `89` to `353` tokens. Across metered DeepSeek trials and retained-proof compression comparisons, whole-package cost has not yet been offset by proof savings.
 - **Open**: Baseline optimization sufficiency, causal concept attribution, broad held-out transfer, automatic multi-round candidate search, and learning-loop acceptance remain uncompleted.
 

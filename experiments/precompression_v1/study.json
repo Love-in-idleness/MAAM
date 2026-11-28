@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "phase": "precompression_source_portfolios",
+  "study_id": "precompression-calibration-v1",
+  "targets": [
+    "Calibration.one",
+    "Calibration.two"
+  ],
+  "background_modules": [
+    "Base"
+  ],
+  "candidate": {
+    "id": "keep-v1",
+    "modules": [
+      "Candidate"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "0ff80420b7bf7f328b946ac13a8631ec738295d00ccd99722de875af9b5351e7"
+    },
+    "Candidate": {
+      "path": "Candidate.lean",
+      "sha256": "6185274d1f67c3e12fee60322eeb3910103f31bdbda77193ab868033a4f88f49"
+    },
+    "Control": {
+      "path": "Control.lean",
+      "sha256": "2027a9a9a3f29e5fec57854e962bd331cfdeeacb7a75c9566c70bb84457283b9"
+    },
+    "Historical": {
+      "path": "Historical.lean",
+      "sha256": "23b448b8048525917092269328e3e32c1dfd8a2974c1404b54f120b097d65353"
+    },
+    "Prepared": {
+      "path": "Prepared.lean",
+      "sha256": "259555928a5041dcd23b27fe71a80ab4bc5f50ef4f60da6175bf424eaa133b67"
+    },
+    "Treatment": {
+      "path": "Treatment.lean",
+      "sha256": "9c7b8dd16493f8c6dc71dd13aa1ccdd4af4bbe3c44f8bd7431fb0c7766f69dba"
+    }
+  },
+  "routes": [
+    {
+      "id": "historical",
+      "stage": "historical",
+      "modules": [
+        "Historical"
+      ],
+      "targets": [
+        "Calibration.one",
+        "Calibration.two"
+      ]
+    },
+    {
+      "id": "prepared",
+      "stage": "prepared",
+      "modules": [
+        "Prepared"
+      ],
+      "targets": [
+        "Calibration.one",
+        "Calibration.two"
+      ]
+    },
+    {
+      "id": "control",
+      "stage": "control",
+      "modules": [
+        "Control"
+      ],
+      "targets": [
+        "Calibration.one",
+        "Calibration.two"
+      ]
+    },
+    {
+      "id": "treatment",
+      "stage": "treatment",
+      "modules": [
+        "Treatment",
+        "Candidate"
+      ],
+      "targets": [
+        "Calibration.one",
+        "Calibration.two"
+      ]
+    }
+  ]
+}
