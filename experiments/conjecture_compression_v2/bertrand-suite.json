@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "suite_id": "large_bertrand_v2",
+  "lean_version": "4.24.0",
+  "mathlib_revision": "d167cc6dc962ab340507362ea2f4bcfcff44f01b",
+  "allowed_library_prefixes": [
+    "Init",
+    "Lean",
+    "Std",
+    "Mathlib",
+    "Batteries",
+    "Aesop",
+    "Qq",
+    "Plausible",
+    "ProofWidgets",
+    "ImportGraph",
+    "LeanSearchClient"
+  ],
+  "common": "BertrandGoal.lean",
+  "targets": {
+    "bertrand": {
+      "goal": "Bench.B",
+      "original": "Bertrand.lean",
+      "withheld_declarations": [
+        "Nat.exists_prime_lt_and_le_two_mul_eventually",
+        "Nat.exists_prime_lt_and_le_two_mul",
+        "bertrand"
+      ],
+      "upstream": {
+        "declaration": "Nat.exists_prime_lt_and_le_two_mul_eventually",
+        "path": "Mathlib/NumberTheory/Bertrand.lean",
+        "first_line": 191,
+        "last_line": 202
+      }
+    }
+  },
+  "candidates": {
+    "legendre": {
+      "assumption": "Legendre.lean",
+      "alternatives": {
+        "bertrand": "LegendreBertrand.lean"
+      }
+    },
+    "oppermann": {
+      "assumption": "Oppermann.lean",
+      "alternatives": {
+        "bertrand": "OppermannBertrand.lean"
+      }
+    }
+  },
+  "source_sha256": {
+    "common": "644638466e3f2fd9ee875539fece60ee667783e9f02258dec58e0e8fa00d90dc",
+    "original/bertrand": "3063c106c879470a4bf054917ec0b0581e80933ed7542d40cc333b94a7a910d1",
+    "assumption/legendre": "18beb14d991a54ca2b8f5d94e020ad7aefc899c0b290395970ce5c9b0de70434",
+    "alternative/legendre/bertrand": "f4b90f3ec509026426c52d4558a50cf7063420ee4591b95261ba405200a9e52f",
+    "assumption/oppermann": "d1cf6afa6256d1549afd68b1d9a57c0039ec91fa3d14f0cce3247cd81c952ca6",
+    "alternative/oppermann/bertrand": "7671bea29be861430cce965d827f2a1d428824a9eb95cd5bf8bf7dd89f3657ee"
+  }
+}

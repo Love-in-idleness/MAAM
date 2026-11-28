@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "corpus_id": "open-conjectures-v1",
+  "reviewed_on": "2026-11-21",
+  "candidates": [
+    "rh",
+    "p-eq-np",
+    "p-ne-np",
+    "artin-reciprocity",
+    "bsd-rank",
+    "hodge",
+    "lefschetz-finite",
+    "lindelof",
+    "goldbach"
+  ],
+  "targets": [
+    "prime-count",
+    "prime-gaps",
+    "lindelof",
+    "zeta-moments",
+    "ph-p",
+    "np-conp",
+    "factoring-p",
+    "gi-p",
+    "p-ne-pspace",
+    "artin-holomorphy",
+    "tunnell-converse",
+    "lefschetz-c",
+    "absolute-hodge",
+    "tate-abelian",
+    "hodge-standard-abelian",
+    "almost-algebraic-hodge",
+    "ternary-goldbach"
+  ],
+  "statements": {
+    "rh": {
+      "label_zh": "黎曼猜想",
+      "label_en": "Riemann hypothesis",
+      "statement": "All nontrivial zeros of the Riemann zeta function have real part 1/2.",
+      "family": "zeta-growth",
+      "status": "open",
+      "source": "https://www.claymath.org/millennium/Riemann-Hypothesis/"
+    },
+    "prime-count": {
+      "label_zh": "素数计数的平方根误差界",
+      "label_en": "Square-root error in prime counting",
+      "statement": "π(x) = Li(x) + O(√x log x).",
+      "family": "prime-counting",
+      "status": "open",
+      "source": "https://www.claymath.org/library/monographs/MPPc.pdf"
+    },
+    "prime-gaps": {
+      "label_zh": "相邻素数间隙的平方根级上界",
+      "label_en": "Square-root scale prime gaps",
+      "statement": "As n tends to infinity, p_(n+1) − p_n = O(√p_n log p_n).",
+      "family": "prime-intervals",
+      "status": "open",
+      "source": "https://doi.org/10.4171/CMH/467"
+    },
+    "lindelof": {
+      "label_zh": "林德勒夫猜想",
+      "label_en": "Lindelöf hypothesis",
+      "statement": "For every ε > 0, ζ(1/2+it) = O_ε(t^ε) as t tends to infinity.",
+      "family": "zeta-growth",
+      "status": "open",
+      "source": "https://sites.math.rutgers.edu/~zeilberg/EM18/TitchmarshZeta.pdf"
+    },
+    "zeta-moments": {
+      "label_zh": "ζ 函数所有正整数阶矩的界",
+      "label_en": "All positive integral moments of ζ",
+      "statement": "For every positive integer k and every ε > 0, (1/T) ∫_T^{2T} |ζ(1/2+it)|^k dt = O_(k,ε)(T^ε).",
+      "family": "zeta-growth",
+      "status": "open",
+      "source": "https://sites.math.rutgers.edu/~zeilberg/EM18/TitchmarshZeta.pdf"
+    },
+    "p-eq-np": {
+      "label_zh": "P = NP",
+      "label_en": "P = NP",
+      "statement": "Deterministic polynomial-time decision equals nondeterministic polynomial-time decision.",
+      "family": "complexity-collapse",
+      "status": "open",
+      "source": "https://www.claymath.org/millennium/p-vs-np/"
+    },
+    "p-ne-np": {
+      "label_zh": "P ≠ NP",
+      "label_en": "P ≠ NP",
+      "statement": "P is a proper subclass of NP.",
+      "family": "complexity-separation",
+      "status": "open",
+      "source": "https://www.claymath.org/millennium/p-vs-np/"
+    },
+    "ph-p": {
+      "label_zh": "多项式层级坍缩到 P",
+      "label_en": "PH collapses to P",
+      "statement": "The polynomial hierarchy PH equals P.",
+      "family": "complexity-collapse",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+    },
+    "np-conp": {
+      "label_zh": "NP = coNP",
+      "label_en": "NP = coNP",
+      "statement": "The class NP is closed under complement.",
+      "family": "complexity-collapse",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+    },
+    "p-ne-pspace": {
+      "label_zh": "P ≠ PSPACE",
+      "label_en": "P ≠ PSPACE",
+      "statement": "P is a proper subclass of PSPACE.",
+      "family": "complexity-separation",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+    },
+    "factoring-p": {
+      "label_zh": "整数分解有经典确定性多项式时间算法",
+      "label_en": "Deterministic polynomial-time factoring",
+      "statement": "A deterministic Turing machine can factor every positive integer given in binary in polynomial time.",
+      "family": "integer-factorisation",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+    },
+    "gi-p": {
+      "label_zh": "图同构可在确定性多项式时间判定",
+      "label_en": "Graph isomorphism in P",
+      "statement": "Graph isomorphism for arbitrary finite undirected simple graphs is in deterministic P.",
+      "family": "graph-isomorphism",
+      "status": "open",
+      "source": "https://arxiv.org/abs/1512.03547"
+    },
+    "artin-reciprocity": {
+      "label_zh": "Langlands 互反律（Artin 表示情形）",
+      "label_en": "Langlands reciprocity for Artin representations",
+      "statement": "For every number field F and every nontrivial irreducible finite-image complex representation of its absolute Galois group of dimension n, a cuspidal automorphic representation of GL(n,A_F) matches the completed L-function at all places.",
+      "family": "artin-automorphy",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/03/cmip04c.pdf"
+    },
+    "artin-holomorphy": {
+      "label_zh": "Artin L 函数整性",
+      "label_en": "Artin holomorphy",
+      "statement": "Over every number field, the Artin L-function of every nontrivial irreducible complex Artin representation extends to an entire function.",
+      "family": "artin-l-functions",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/03/cmip04c.pdf"
+    },
+    "bsd-rank": {
+      "label_zh": "BSD 猜想（秩形式）",
+      "label_en": "Birch and Swinnerton-Dyer rank conjecture",
+      "statement": "For every elliptic curve E over Q, rank E(Q) equals the order of vanishing of L(E,s) at s=1.",
+      "family": "elliptic-ranks",
+      "status": "open",
+      "source": "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/"
+    },
+    "tunnell-converse": {
+      "label_zh": "Tunnell 计数判据的逆向",
+      "label_en": "Converse of Tunnell’s criterion",
+      "statement": "For square-free odd positive n, if the number of integer solutions to 2x²+y²+8z²=n equals twice the number for 2x²+y²+32z²=n, then n is the area of a rational right triangle.",
+      "family": "congruent-numbers",
+      "status": "open",
+      "source": "https://www.claymath.org/library/monographs/MPPc.pdf"
+    },
+    "hodge": {
+      "label_zh": "有理 Hodge 猜想",
+      "label_en": "Rational Hodge conjecture",
+      "statement": "Every rational Hodge class on a smooth projective complex variety is the class of an algebraic cycle with rational coefficients.",
+      "family": "hodge-algebraicity",
+      "status": "open",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/hodge.pdf"
+    },
+    "lefschetz-c": {
+      "label_zh": "复数域上的 Lefschetz 标准猜想 B",
+      "label_en": "Lefschetz standard conjecture B over C",
+      "statement": "For each smooth projective variety over C, inverses to the hard Lefschetz isomorphisms on rational Betti cohomology are induced by algebraic correspondences.",
+      "family": "lefschetz-correspondences",
+      "status": "open",
+      "source": "https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/voisinhodge.pdf"
+    },
+    "absolute-hodge": {
+      "label_zh": "Hodge 类皆为绝对 Hodge 类",
+      "label_en": "All Hodge classes are absolute Hodge",
+      "statement": "Every rational Hodge class on every smooth projective complex variety is absolute Hodge.",
+      "family": "hodge-absoluteness",
+      "status": "open",
+      "source": "https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/voisinhodge.pdf"
+    },
+    "lefschetz-finite": {
+      "label_zh": "Lefschetz 标准猜想 B（有限域代数闭包）",
+      "label_en": "Lefschetz standard conjecture B over finite-field closures",
+      "statement": "For every prime p, the Lefschetz standard conjecture holds for all smooth projective varieties over the algebraic closure of F_p for the classical Weil cohomology theories, as in the hypotheses of Milne Theorems 1–2.",
+      "family": "lefschetz-correspondences",
+      "status": "open",
+      "source": "https://jmilne.org/math/articles/LFF.pdf"
+    },
+    "tate-abelian": {
+      "label_zh": "有限域上阿贝尔簇的完全 Tate 猜想",
+      "label_en": "Full Tate conjecture for abelian varieties over finite fields",
+      "statement": "The full Tate conjecture in the sense of Milne §3 holds in all codimensions for abelian varieties over algebraic closures of finite fields.",
+      "family": "tate-algebraicity",
+      "status": "open",
+      "source": "https://jmilne.org/math/articles/LFF.pdf"
+    },
+    "hodge-standard-abelian": {
+      "label_zh": "正特征阿贝尔簇的 Hodge 型标准猜想",
+      "label_en": "Hodge standard conjecture for abelian varieties in positive characteristic",
+      "statement": "The standard conjecture of Hodge type holds for abelian varieties in every positive characteristic for the classical Weil cohomology theories as in Milne Theorem 3.3.",
+      "family": "cycle-positivity",
+      "status": "open",
+      "source": "https://jmilne.org/math/articles/LFF.pdf"
+    },
+    "almost-algebraic-hodge": {
+      "label_zh": "阿贝尔簇的 Hodge 类近似代数",
+      "label_en": "Almost-algebraicity of Hodge classes on abelian varieties",
+      "statement": "All absolute Hodge classes on abelian varieties over fields of characteristic zero are almost-algebraic in the sense of Milne Definition 1.3.",
+      "family": "cycle-specialisation",
+      "status": "open",
+      "source": "https://jmilne.org/math/articles/LFF.pdf"
+    },
+    "goldbach": {
+      "label_zh": "强哥德巴赫猜想",
+      "label_en": "Binary Goldbach conjecture",
+      "statement": "Every even integer greater than 2 is the sum of two primes.",
+      "family": "additive-primes",
+      "status": "open",
+      "source": "https://arxiv.org/abs/1312.7748"
+    },
+    "ternary-goldbach": {
+      "label_zh": "三素数定理",
+      "label_en": "Ternary Goldbach theorem",
+      "statement": "Every odd integer greater than 5 is the sum of three primes.",
+      "family": "additive-primes",
+      "status": "established",
+      "source": "https://arxiv.org/abs/1312.7748"
+    }
+  },
+  "rules": [
+    {
+      "id": "rh-prime-count",
+      "premises": [
+        "rh"
+      ],
+      "conclusion": "prime-count",
+      "source": "https://www.claymath.org/library/monographs/MPPc.pdf",
+      "locator": "Bombieri, pp. 110–111",
+      "argument": "The prime-counting error estimate is the forward direction of the classical equivalence."
+    },
+    {
+      "id": "prime-count-rh",
+      "premises": [
+        "prime-count"
+      ],
+      "conclusion": "rh",
+      "source": "https://www.claymath.org/library/monographs/MPPc.pdf",
+      "locator": "Bombieri, pp. 110–111",
+      "argument": "The converse direction of the same classical equivalence."
+    },
+    {
+      "id": "rh-short-gaps",
+      "premises": [
+        "rh"
+      ],
+      "conclusion": "prime-gaps",
+      "source": "https://doi.org/10.4171/CMH/467",
+      "locator": "Carneiro–Milinovich–Soundararajan §1.2, (1.11)",
+      "argument": "Cramér’s conditional bound is stated explicitly as (1.11)."
+    },
+    {
+      "id": "rh-lindelof",
+      "premises": [
+        "rh"
+      ],
+      "conclusion": "lindelof",
+      "source": "https://sites.math.rutgers.edu/~zeilberg/EM18/TitchmarshZeta.pdf",
+      "locator": "Titchmarsh §13.1",
+      "argument": "Section 13.1 states that RH implies the critical-line subpower bound for ζ."
+    },
+    {
+      "id": "lindelof-moments",
+      "premises": [
+        "lindelof"
+      ],
+      "conclusion": "zeta-moments",
+      "source": "https://sites.math.rutgers.edu/~zeilberg/EM18/TitchmarshZeta.pdf",
+      "locator": "Titchmarsh §13.2, Theorem 13.2",
+      "argument": "Pointwise Lindelöf bounds with exponent ε/k give the moment bounds."
+    },
+    {
+      "id": "moments-lindelof",
+      "premises": [
+        "zeta-moments"
+      ],
+      "conclusion": "lindelof",
+      "source": "https://sites.math.rutgers.edu/~zeilberg/EM18/TitchmarshZeta.pdf",
+      "locator": "Titchmarsh §13.2, Theorem 13.2",
+      "argument": "The converse is included in the stated equivalences."
+    },
+    {
+      "id": "p-eq-np-ph",
+      "premises": [
+        "p-eq-np"
+      ],
+      "conclusion": "ph-p",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "locator": "Cook §5, Proposition 2 discussion",
+      "argument": "If P equals NP, the polynomial hierarchy collapses to P."
+    },
+    {
+      "id": "ph-p-eq-np",
+      "premises": [
+        "ph-p"
+      ],
+      "conclusion": "p-eq-np",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "locator": "Cook §5, Proposition 2 discussion",
+      "argument": "The first existential level of PH includes NP."
+    },
+    {
+      "id": "p-eq-np-np-conp",
+      "premises": [
+        "p-eq-np"
+      ],
+      "conclusion": "np-conp",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "locator": "Cook §1, Definitions 3–4",
+      "argument": "Since deterministic polynomial-time decision is closed under complement, NP would be too."
+    },
+    {
+      "id": "p-eq-np-factoring",
+      "premises": [
+        "p-eq-np"
+      ],
+      "conclusion": "factoring-p",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "locator": "Cook §§1–2, the language L_fact",
+      "argument": "The existence of a proper divisor below a binary threshold is in NP. Binary search finds the least proper divisor, and repeating on the reduced quotient produces its prime factors."
+    },
+    {
+      "id": "p-eq-np-gi",
+      "premises": [
+        "p-eq-np"
+      ],
+      "conclusion": "gi-p",
+      "source": "https://arxiv.org/abs/1512.03547",
+      "locator": "Babai §1.1, GI definition",
+      "argument": "A bijection of the vertices that preserves adjacency gives a polynomially checkable certificate, so GI is in NP."
+    },
+    {
+      "id": "p-ne-np-pspace",
+      "premises": [
+        "p-ne-np"
+      ],
+      "conclusion": "p-ne-pspace",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "locator": "Cook §5, complexity-class inclusion chain",
+      "argument": "The chain P ⊆ NP ⊆ PSPACE makes the outer inclusion strict."
+    },
+    {
+      "id": "automorphy-entireness",
+      "premises": [
+        "artin-reciprocity"
+      ],
+      "conclusion": "artin-holomorphy",
+      "source": "https://www.claymath.org/wp-content/uploads/2022/03/cmip04c.pdf",
+      "locator": "Arthur §26, (26.6) and discussion",
+      "argument": "The cuspidal standard L-function transfers holomorphy to the matching Artin L-function. Nontriviality excludes the trivial character pole."
+    },
+    {
+      "id": "bsd-tunnell",
+      "premises": [
+        "bsd-rank"
+      ],
+      "conclusion": "tunnell-converse",
+      "source": "https://www.claymath.org/library/monographs/MPPc.pdf",
+      "locator": "Wiles, pp. 38–39",
+      "argument": "Rank BSD makes vanishing of the central L-value equivalent to positive rational rank, supplying the missing direction of Tunnell’s criterion."
+    },
+    {
+      "id": "hodge-lefschetz",
+      "premises": [
+        "hodge"
+      ],
+      "conclusion": "lefschetz-c",
+      "source": "https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/voisinhodge.pdf",
+      "locator": "Voisin §3.2, Conjecture 2",
+      "argument": "The inverse Lefschetz correspondence has a rational Hodge class on X × X by Künneth and Poincaré duality. Hodge for that product makes it algebraic."
+    },
+    {
+      "id": "hodge-absolute",
+      "premises": [
+        "hodge"
+      ],
+      "conclusion": "absolute-hodge",
+      "source": "https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/voisinhodge.pdf",
+      "locator": "Voisin §4.3, Proposition 2 and Conjecture 7",
+      "argument": "Algebraic cycle classes are absolute Hodge, so the Hodge conjecture implies that all rational Hodge classes are absolute."
+    },
+    {
+      "id": "hodge-tate-abelian",
+      "premises": [
+        "hodge"
+      ],
+      "conclusion": "tate-abelian",
+      "source": "https://jmilne.org/math/articles/LFF.pdf",
+      "locator": "Milne Theorem 3.2 proof",
+      "argument": "The proof cites the reduction from the complex Hodge conjecture for CM abelian varieties to Tate for abelian varieties in characteristic p and uses semisimplicity for the full form."
+    },
+    {
+      "id": "hodge-positivity",
+      "premises": [
+        "hodge"
+      ],
+      "conclusion": "hodge-standard-abelian",
+      "source": "https://jmilne.org/math/articles/LFF.pdf",
+      "locator": "Milne Theorem 3.3 proof",
+      "argument": "The proof cites the implication from the Hodge conjecture for complex CM abelian varieties established by Milne (2002)."
+    },
+    {
+      "id": "finite-lefschetz-tate",
+      "premises": [
+        "lefschetz-finite"
+      ],
+      "conclusion": "tate-abelian",
+      "source": "https://jmilne.org/math/articles/LFF.pdf",
+      "locator": "Milne Theorem 2(a) and Theorem 3.2",
+      "argument": "Apply the theorem separately at each prime."
+    },
+    {
+      "id": "finite-lefschetz-positivity",
+      "premises": [
+        "lefschetz-finite"
+      ],
+      "conclusion": "hodge-standard-abelian",
+      "source": "https://jmilne.org/math/articles/LFF.pdf",
+      "locator": "Milne Theorem 2(b) and Theorem 3.3",
+      "argument": "Apply the theorem separately at each prime."
+    },
+    {
+      "id": "finite-lefschetz-almost-algebraic",
+      "premises": [
+        "lefschetz-finite"
+      ],
+      "conclusion": "almost-algebraic-hodge",
+      "source": "https://jmilne.org/math/articles/LFF.pdf",
+      "locator": "Milne Theorem 1.4",
+      "argument": "The theorem turns finite-field Lefschetz correspondences into specialisation data for absolute Hodge classes."
+    },
+    {
+      "id": "binary-ternary",
+      "premises": [
+        "goldbach"
+      ],
+      "conclusion": "ternary-goldbach",
+      "source": "https://arxiv.org/abs/1312.7748",
+      "locator": "Helfgott §1 and Main Theorem",
+      "argument": "For odd n > 5, subtract 3 and apply binary Goldbach. The target already has an unconditional proof by Helfgott."
+    }
+  ]
+}
