@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "suite_id": "method-use-v1",
+  "phase": "migration_calibration",
+  "lean_version": "4.24.0",
+  "package": "package.json",
+  "base": {
+    "id": "minimal-groups-v1",
+    "modules": [
+      "Base"
+    ],
+    "allowed_core_prefixes": [
+      "Init"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "sources": {
+    "Base": {
+      "path": "Base.lean",
+      "sha256": "c362364652a37d494e37777f7274ee7ffc458e8917fe298bf17eb6a177a85394"
+    },
+    "Method": {
+      "path": "Method.lean",
+      "sha256": "538b077f0dae45cb26ca258f78041edfa0af002077c95d6984f4abaa1506aabc"
+    },
+    "Tasks.U01": {
+      "path": "Tasks/U01.lean",
+      "sha256": "08122c9711d392339426e278a3f52eba3befcbaef0f24f8b629e46bfd296e4cc"
+    },
+    "Tasks.U02": {
+      "path": "Tasks/U02.lean",
+      "sha256": "4fcea3a62dc52d9cfc7f0bcbeaa4595520fe29f534619ce601cf060a1d45e919"
+    },
+    "Tasks.U03": {
+      "path": "Tasks/U03.lean",
+      "sha256": "95930f0cd160d6d9fd30a0d137fd3e5cd74945d1ebc7940a857b12e19fc41200"
+    },
+    "Tasks.U04": {
+      "path": "Tasks/U04.lean",
+      "sha256": "5e953a40b4d07dd79acbf097860a20658f32de48a6763520808484ddb43dab15"
+    },
+    "Tasks.U05": {
+      "path": "Tasks/U05.lean",
+      "sha256": "093eba438014ee400a36170aedb6f8ab30ddf186078426112873cdc8c306dcc6"
+    },
+    "Tasks.U06": {
+      "path": "Tasks/U06.lean",
+      "sha256": "468e878748a8163b9d015d6ef025ad46a4e5461eae6dc941f9a712fa8cd4c931"
+    }
+  },
+  "tasks": [
+    {
+      "id": "u01",
+      "split": "development",
+      "family": "left_factor_near_transfer",
+      "module": "Tasks.U01",
+      "goal": "MethodUse.Tasks.u01"
+    },
+    {
+      "id": "u02",
+      "split": "development",
+      "family": "left_factor_near_transfer",
+      "module": "Tasks.U02",
+      "goal": "MethodUse.Tasks.u02"
+    },
+    {
+      "id": "u03",
+      "split": "development",
+      "family": "left_factor_near_transfer",
+      "module": "Tasks.U03",
+      "goal": "MethodUse.Tasks.u03"
+    },
+    {
+      "id": "u04",
+      "split": "development",
+      "family": "left_factor_near_transfer",
+      "module": "Tasks.U04",
+      "goal": "MethodUse.Tasks.u04"
+    },
+    {
+      "id": "u05",
+      "split": "development",
+      "family": "applicability_boundary",
+      "module": "Tasks.U05",
+      "goal": "MethodUse.Tasks.u05"
+    },
+    {
+      "id": "u06",
+      "split": "development",
+      "family": "applicability_boundary",
+      "module": "Tasks.U06",
+      "goal": "MethodUse.Tasks.u06"
+    }
+  ],
+  "budget": {
+    "max_attempts_per_task": 2,
+    "max_proof_bytes": 32768,
+    "max_heartbeats": 200000,
+    "per_command_timeout_seconds": 60,
+    "per_attempt_timeout_seconds": 180
+  },
+  "provenance": {
+    "base_source": "Base.lean copied byte-for-byte from experiments/metered_transfer_v1/Base.lean.",
+    "task_authorship": "Six author-constructed development tasks specified in docs/METHOD_RESEARCH_DESIGN.md; correlated near-transfer and boundary calibration, not a random or pretraining-unseen sample.",
+    "condition_semantics": "Both outer conditions A and B use migration treatment and therefore identical Base and Method sources. Only outer B includes guide.txt.",
+    "references": "Author references are offline verification inputs, never generation-request fields.",
+    "schema_note": "The migration_calibration label reuses the unchanged loader and does not imply new mathematical content in outer condition B."
+  }
+}

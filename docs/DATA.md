@@ -1,9 +1,10 @@
-# 数据输入 / Data input
+# Data Input Formats
 
-## 引用语料 / Reference corpus
+[简体中文](DATA.zh-CN.md)
 
-以下为最小可用语料，其中所有依赖必须出现，重复次数必须为正整数。
-This is a minimal usable corpus: every dependency must be present and multiplicities must be positive integers.
+## Reference Corpus
+
+Minimal valid corpus JSON (all referenced dependencies must be declared; multiplicities must be positive integers):
 
 ```json
 {
@@ -24,52 +25,33 @@ This is a minimal usable corpus: every dependency must be present and multiplici
 }
 ```
 
-`signature` 和 `body` 的键是声明名称，值是该声明在相应表达式中出现的次数；它们不是集合。
-The keys in `signature` and `body` are declaration names and the values are occurrence counts in the respective expression; these are not sets.
+- `signature` and `body` map declaration names to occurrence counts (multisets, not sets).
+- `primitive` marks an explicit expansion boundary and must have no outgoing references. Undeclared dependencies raise an error rather than becoming primitives automatically.
 
-`primitive` 是明确选择的展开边界，必须没有出边；缺失依赖会报错，不会自动当作原始节点。
-A `primitive` is an explicit expansion boundary and must have no outgoing references; missing dependencies are errors, not automatically primitive nodes.
-
-| 字段 / Field | 值 / Values | 含义 / Meaning |
+| Field | Values | Meaning |
 | --- | --- | --- |
-| `kind` | `primitive`, `axiom`, `definition`, `theorem`, `conjecture` | 节点身份 / node role |
-| `body` | 引用对象或 `null` / reference object or `null` | `theorem` 必须提供；猜想与公理必须为空 / required for theorems; null for conjectures and axioms |
-| `signature_tokens` | 正整数 / positive integer | `source_tokens` 模式必填 / required in source-token mode |
-| `body_tokens` | 非负整数 / nonnegative integer | `source_tokens` 模式下有证明体时必填 / required for bodies in source-token mode |
-| `statement` | 可选文本 / optional text | 用于精确查询，不解析其含义 / exact text lookup, not semantic parsing |
-| `domain` | 可选模块标签 / optional module label | 仅用于描述直接使用者 / descriptive user-domain metadata |
-| `admitted` | 布尔值 / boolean | admission 标记，沿依赖传播 / admission flag, propagated through dependencies |
+| `kind` | `primitive`, `axiom`, `definition`, `theorem`, `conjecture` | Node role |
+| `body` | Reference map or `null` | Required for `theorem`; must be `null` for `conjecture` and `axiom` |
+| `signature_tokens` | Positive integer | Required when `length_basis = "source_tokens"` |
+| `body_tokens` | Nonnegative integer | Required for nodes with bodies in `source_tokens` mode |
+| `statement` | Optional string | Exact text lookup (not semantically parsed) |
+| `domain` | Optional module tag | Descriptive metadata for direct users |
+| `admitted` | Boolean | Admission taint flag, propagated through dependents |
 
-一个只有命题、没有证明的记录应使用 `kind: "conjecture"`、`body: null`；即使它是著名猜想，也不会凭知名度生成分数。
-A statement without a proof must use `kind: "conjecture"` and `body: null`; fame does not provide a score, even for a famous conjecture.
+### Soundness & Taint Caveats
 
-`body: {}` 表示已提供的证明表达式中没有被计数的引用，不表示缺少证明；数据提供者须保证这种声明真实。
-`body: {}` means a supplied proof expression with no counted references, not an absent proof; the data provider must substantiate that claim.
+- Unproved statements must use `kind: "conjecture"` and `body: null`.
+- `body: {}` indicates a supplied proof with zero counted references (not a missing proof) and must be substantiated by the data provider.
+- Importing JSON into Python does not confer Lean type-checking guarantees; record verification provenance separately.
+- Nodes with `admitted: true` or named `sorryAx` / `Lean.sorryAx` taint all transitive dependents, excluding them from the scoring cohort. This does not defend against adversarial JSON falsification.
 
-在 Python 中导入的 JSON 不会自动获得 Lean 的正确性保证，类型检查和证明来源需在 `provenance` 中独立记录。
-JSON imported into Python does not automatically inherit Lean's correctness guarantees; type checking and proof provenance must be documented separately.
+## Precision Handling
 
-为避免把 `sorry` 当作真实证明，`admitted: true` 和名为 `sorryAx` 或 `Lean.sorryAx` 的节点会污染所有依赖它们的声明，后者不进入评分对照组。
-To keep `sorry` admissions out of proved-theorem rankings, `admitted: true` and nodes named `sorryAx` or `Lean.sorryAx` taint their dependents, excluding them from the scoring cohort.
+Primitive expansions use arbitrary-precision integers without materialising expanded strings. Reports include bit length, `log2`, and an exact decimal string up to 3,300 bits (`exact: null` above that). Ratios exceeding floating-point range set `value: null` while retaining `log2`, and normalisation operates directly in log space to avoid overflow.
 
-这不是对恶意伪造 JSON 的真实性认证；手工删除标记或隐藏公理当然能伪造数据。
-This does not authenticate adversarial JSON; manually removing flags or hiding axioms can still falsify the data.
+## Finite Proof Hypergraph
 
-## 计数精度 / Count precision
-
-原始展开数使用任意精度整数，复杂度随依赖图和整数位数增长，不会真正构造巨大证明字符串。
-Primitive expansions use arbitrary-precision integers, with work proportional to graph structure and integer sizes rather than constructing enormous proof strings.
-
-报告中每个整数包含位数和二进制对数；不超过 3300 位时同时提供精确十进制字符串，过大时 `exact` 为 `null`。
-Reports include bit length and base-two logarithm for each integer, plus an exact decimal string up to 3300 bits; larger values have `exact: null`.
-
-比值溢出浮点范围时 `value` 为空，但 `log2` 仍保留；归一化直接使用对数，评分不会因为大计数溢出。
-If a ratio exceeds floating-point range, `value` is null while `log2` remains available; normalisation uses logarithms directly, avoiding overflow in the score.
-
-## 有限证明超图 / Finite proof hypergraph
-
-独立的超图输入用命题长度、公理集合和推理规则表示，不把引用图伪装成完整证明搜索空间。
-The separate hypergraph input contains statement lengths, axioms, and inference rules; a reference graph is not misrepresented as a complete proof-search space.
+Used for `E_finite` without conflating a reference graph with a proof-search space:
 
 ```json
 {
@@ -81,16 +63,9 @@ The separate hypergraph input contains statement lengths, axioms, and inference 
 }
 ```
 
-此例中 `m(A)=2`、`m(B)=3+2=5`，所以 `E_finite(B)=5/3`。
-Here `m(A)=2` and `m(B)=3+2=5`, so `E_finite(B)=5/3`.
+Here `m(A) = 2`, `m(B) = 3 + 2 = 5`, and `E_finite(B) = 5/3`. Premise lists preserve duplicates; logical validity of rules is the caller's responsibility.
 
-前提列表保留重复项，规则的有效性由输入方负责，程序只验证结构并计算最小代价。
-Premise lists retain duplicates; the caller supplies valid inference rules, while the program validates their structure and computes minimum cost.
+## Bundled Examples
 
-## 复现实验 / Reproduction fixtures
-
-`paper_simple_lemma.json` 是对论文中展示的内部表达式计数的人工转录，并非在本环境中重新执行 Lean 得到。
-`paper_simple_lemma.json` manually transcribes the paper's displayed internal-expression counts; it was not regenerated by running Lean here.
-
-`toy_corpus.json` 是显式标注的人工语料，用来检查压缩层级、重复使用和证明膨胀效应，不包含真实人类兴趣标签。
-`toy_corpus.json` is explicitly synthetic and exercises hierarchical compression, reuse, and proof padding; it contains no ground-truth human interest labels.
+- `examples/paper_simple_lemma.json`: manual transcription of the paper's displayed internal-expression counts (not regenerated locally with Lean).
+- `examples/toy_corpus.json`: synthetic corpus exercising hierarchical compression, reuse, and proof padding (no human interest labels).

@@ -1,7 +1,7 @@
-# Working on MAAM
+# MAAM 工程开发规范
 
-- Continue the research plan in `docs/RESEARCH_PLAN.md`; distinguish implemented controls, observed evidence and uncompleted research claims.
-- Keep frozen experiments and package versions immutable. Add a version when changing a candidate. Several archived reports fingerprint evaluator source files; changes to those files require the affected evidence to be regenerated and checked.
-- Preserve failed and interrupted attempts, charge complete packages and retain unknown generation usage as unknown rather than zero.
-- At the end of every completed work round, report what changed, verification results, remaining limitations, and the recommended model for the next round with a task-specific reason. A recommendation does not itself select or change the running model.
-- User-facing progress and final responses use side-by-side Chinese and English, preferably a two-column table; do not alternate individual sentences. The user's latest language-format instruction takes precedence over historical documents.
+- **交流语言**：使用简体中文与用户沟通，不使用中英双语对照格式。
+- **文档规范**：核心文档按中英文分文件维护（英文 `*.md`，简体中文 `*.zh-CN.md`），并在文件顶部互相链接。历史实验文档保留归档，不随意改动。
+- **冻结数据与版本**：冻结的实验、候选包版本及带指纹的归档文件不可原地修改。修改候选时新增版本；改动被归档指纹校验的评估器源码时，须重新生成并核验受影响的证据（`skills/evaluate-theory-package/SKILL.md` 受指纹校验，修改前需确认）。
+- **实验记录完整性**：完整保留失败与中断尝试；候选包按整包计费；未知的生成用量与成本保持未知，不记为零。
+- **事实边界与验证**：文档与汇报中明确区分已实现的控制、已观测到的证据与未完成的研究目标；修改代码后运行相关单元测试并确认通过。
